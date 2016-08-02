@@ -1,0 +1,14 @@
+<Solution>
+  <PropertyGroup Name="NewCocosProject1" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Image Name="HelloWorld.png" />
+        <Image Name="hpSliderGray.png" />
+        <Image Name="hpSliderRed.png" />
+        <Project Name="MainScene.csd" Type="Scene" />
+        <ExportJsonFile Name="monster_01.ExportJson" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

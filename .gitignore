@@ -27,3 +27,7 @@
 *.exe
 *.out
 *.app
+cocos2d/
+bin/
+proj.win32/
+proj.android/assets/

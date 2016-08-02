@@ -1,0 +1,6 @@
+BEGIN TRANSACTION;
+CREATE TABLE "Hero" (
+	`Name`	TEXT DEFAULT '',
+	`PicName`	TEXT DEFAULT ''
+);
+COMMIT;

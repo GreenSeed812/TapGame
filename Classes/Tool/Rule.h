@@ -1,12 +1,7 @@
 #ifndef __Ruler_H__
 #define __Ruler_H__
 #include<string>
-struct MyNum
-{
-	double number = 0;
-	int Mathbit = 0;
-
-};
+#include "Tool\MyNum.h"
 class Ruler
 {
 public:
@@ -16,6 +11,7 @@ public:
 	MyNum* subNum(MyNum *, MyNum *);
 	MyNum* multiplay(MyNum*,double scale);
 	int devid(MyNum*,MyNum*);
+	bool Zero(MyNum* num){ if (num->Mathbit >= 0 && num->number > 0) return false; else return true; }
 private:
 	int Ary;									// 进制(final)
 	int Accuracy;								// 除法精度位数(final)

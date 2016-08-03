@@ -1,6 +1,11 @@
 #include "ClickLayer.h"
 #include <cocostudio\CocoStudio.h>
 #include "cocos-ext.h"
+#include "Tool\SqLite.h"
+#include "SaveData\PlayerData.h"
+#include "ui/CocosGUI.h"
+USING_NS_CC_EXT;
+USING_NS_CC;
 using namespace cocostudio;
 using namespace ui;
 bool ClickLayer::init()
@@ -17,6 +22,7 @@ bool ClickLayer::init()
 	touchListener->onTouchEnded = CC_CALLBACK_2(ClickLayer::onTouchEnded, this);
 	touchListener->onTouchCancelled = CC_CALLBACK_2(ClickLayer::onTouchCanceled, this);
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this);
+	
 	return true;
 }
 
@@ -29,8 +35,10 @@ bool ClickLayer::onTouchBegan(Touch *touch, Event*)
 	auto t_now = tv.tv_sec * 1000 + tv.tv_usec / 1000;
 	if (t_now - time > 1000 / m_clickPerSecond)
 	{
-		Armature* amature = (Armature*)this->getParent()->getChildByName("MonsterNode");
-		amature->getAnimation()->play("Hurt",-1,0);
+		Node* monsterNode = (Node*)this->getParent()->getChildByName("MonsterNode");
+		Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
+		armature->getAnimation()->play("Hurt",-1,0);
+		normalAtk();
 		time = t_now;
 		return true;
 	}
@@ -44,8 +52,10 @@ void ClickLayer::onTouchMoved(Touch *touch, Event*)
 	auto t_now = tv.tv_sec * 1000 + tv.tv_usec / 1000;
 	if (t_now - time > 1000 / m_clickPerSecond)
 	{
-		Armature* amature = (Armature*)this->getParent()->getChildByName("MonsterNode");
-		amature->getAnimation()->play("Hurt", -1, 0);
+		Node* monsterNode = (Node*)this->getParent()->getChildByName("MonsterNode");
+		Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
+		armature->getAnimation()->play("Hurt", -1, 0);
+		normalAtk();
 		time = t_now;
 	}
 
@@ -56,4 +66,36 @@ void ClickLayer::onTouchEnded(Touch *touch, Event*)
 }
 void ClickLayer::onTouchCanceled(Touch *touch, Event*)
 {
+}
+void ClickLayer::normalAtk()
+{
+	auto map = SqLite::getInstance()->getMapByID(PlayerData::getInstance()->getLevel());
+	PlayerData::getInstance()->subHp();
+	Slider* slider = (Slider*)this->getParent()->getChildByName("HpSlider");
+	if (map->hp.Mathbit == PlayerData::getInstance()->getHpNow().Mathbit)
+		slider->setPercent(PlayerData::getInstance()->getHpNow().number * 1000000);
+	else if (map->hp.Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 1)
+		slider->setPercent(PlayerData::getInstance()->getHpNow().number *  1000);
+	else if (map->hp.Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 2)
+		slider->setPercent(PlayerData::getInstance()->getHpNow().number );
+	else;
+
+
+	auto r = random(0, 360);
+	auto effectSprite = Sprite::create();
+	auto cache = SpriteFrameCache::getInstance();
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("effection/normalAttack.plist");
+	auto ani = Animation::create();
+	for (int i = 0; i < 9; i++)
+	{
+		ani->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(StringUtils::format("normalAttack_%d.png", i)));
+	}
+	ani->setDelayPerUnit(0.0416);
+	auto animate = Animate::create(ani);
+	Node* effection = (Node*)this->getParent()->getChildByName("normalAtk");
+	effection->addChild(effectSprite);
+	auto rotate = RotateBy::create(0.0416, Vec3(0, 0, r));
+	auto spawn = Spawn::create(rotate, animate, NULL);
+	effectSprite->runAction(spawn);
+
 }

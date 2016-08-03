@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"
 #include <cocostudio\CocoStudio.h>
+#include "MainScene\ClickLayer.h"
 using namespace cocostudio;
 
 class HelloWorld : public cocos2d::Layer
@@ -14,10 +15,12 @@ public:
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     virtual bool init();
 	void callBackFunc(Armature *, MovementEventType, const std::string&);
+	void createMonster();
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 private:
 	Node* rootNode;
+	ClickLayer * clickLayer;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

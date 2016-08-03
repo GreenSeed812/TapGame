@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include "Tool\sqlite3.h"
+#include "MyNum.h"
 struct MonsterData
 {
 	int ID;
@@ -10,7 +11,7 @@ struct MonsterData
 	std::string plist;
 	std::string exportJson;
 	std::string name;
-
+	std::string showName;
 
 };
 struct HeroData
@@ -30,28 +31,29 @@ struct Servant
 struct MapData
 {
 	int ID;
-	int hp;
+	MyNum hp;
+	MyNum drop;
+	float bossHp;
 	std::string name;
 	std::string bgMusic;
 	std::string mapIcon;
 	std::string bg;
-	std::string drop;
-	std::string m1;
-	std::string m2;
-	std::string m3;
-	std::string m4;
-	std::string m5;
+	
+	int npc[5];
+	
 };
 class SqLite
 {
 public:
 	
 	static SqLite* getInstance();
-	void readMonster();
-	void readMapData();
+	MapData * getMapByID(int);
+	MonsterData* getMonsterByID(int);
 private:
 	SqLite();
 	~SqLite();
+	void readMonster();
+	void readMapData();
 	sqlite3 *m_pDB;
 	std::vector<MonsterData> m_monsterData;
 	std::vector<Servant> m_servantData;

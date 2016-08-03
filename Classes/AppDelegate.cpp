@@ -1,6 +1,6 @@
 #include "AppDelegate.h"
 #include "MainScene/HelloWorldScene.h"
-
+#include "Tool\SqLite.h"
 USING_NS_CC;
 
 AppDelegate::AppDelegate() {
@@ -40,7 +40,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     FileUtils::getInstance()->addSearchPath("res");
-
+	SqLite::getInstance();
     // create a scene. it's an autorelease object
     auto scene = HelloWorld::createScene();
 

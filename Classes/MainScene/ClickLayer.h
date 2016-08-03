@@ -11,8 +11,10 @@ public:
 	void onTouchMoved(Touch *touch, Event*);
 	void onTouchEnded(Touch *touch, Event*);
 	void onTouchCanceled(Touch *touch, Event*);
+	void normalAtk();
 	CREATE_FUNC(ClickLayer);
 	EventListenerTouchOneByOne *touchListener;
+	void setTouchEnabled(bool boolean){ touchListener->setEnabled(boolean); }
 private:
 	int m_clickPerSecond;
 };

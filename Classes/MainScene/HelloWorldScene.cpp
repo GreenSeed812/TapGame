@@ -5,6 +5,8 @@
 #include <cocostudio\CocoStudio.h>
 #include "cocos-ext.h"
 #include "MainScene/ClickLayer.h"
+#include "SaveData\PlayerData.h"
+#include "Tool\Rule.h"
 using namespace cocostudio;
 USING_NS_CC_EXT;
 USING_NS_CC;
@@ -35,24 +37,74 @@ bool HelloWorld::init()
     {
         return false;
     }
-    
+	
     rootNode = CSLoader::createNode("MainScene.csb");
 	addChild(rootNode);
-	Armature *amature =  (Armature*)rootNode->getChildByName("MonsterNode");
-	amature->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(HelloWorld::callBackFunc));
+	Slider * hpSlider = (Slider*)rootNode->getChildByName("HpSlider");
 	
-	auto clickLayer = ClickLayer::create();
+	clickLayer = ClickLayer::create();
 	rootNode->addChild(clickLayer);
-	SqLite::getInstance()->readMonster();
+	
+	createMonster();
+
+	
+	//amature->setArmatureData();//读取动画数组
     return true;
 }
 void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const std::string& action)
 {
-	if (action == "Hurt")
+	static bool dead;
+	if (type == MovementEventType::LOOP_COMPLETE || type == MovementEventType::COMPLETE)
 	{
-		static int a = 100;
-		Slider* hpSlider = (Slider*)rootNode->getChildByName("HpSlider");
-		armature->getAnimation()->play("Wait");
+		if (action == "Start")
+		{
+			clickLayer->setTouchEnabled(true);
+			armature->getAnimation()->play("Wait");
+		}
+		
+		if (action == "Leave")
+		{
+			
+			armature->removeFromParent();
+			createMonster();
+		}
+	}
+	else
+	{
+
+		if (action == "Hurt")
+		{
+			Slider* hpSlider = (Slider*)rootNode->getChildByName("HpSlider");
+		
+			if (Ruler::getInstance()->Zero(&PlayerData::getInstance()->getHpNow()))
+			{
+				PlayerData::getInstance()->setLevel(PlayerData::getInstance()->getLevel() + 1);
+				clickLayer->setTouchEnabled(false);
+				armature->getAnimation()->play("Leave");
+
+
+			}
+			else
+				armature->getAnimation()->play("Wait");
+		}
+		
 	}
 	return;
+}
+void HelloWorld::createMonster()
+{
+	auto map = SqLite::getInstance()->getMapByID(PlayerData::getInstance()->getLevel());
+	auto r = random(0, 4);
+	auto monster = SqLite::getInstance()->getMonsterByID(map->npc[r]);
+	ArmatureDataManager::getInstance()->addArmatureFileInfo(monster->png, monster->plist, monster->exportJson);//读取动画相关文件
+	auto armature = Armature::create(monster->name);
+	armature->setName("MonsterArmature");
+	armature->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(HelloWorld::callBackFunc));
+	Node* monsterNode = (Node*)rootNode->getChildByName("MonsterNode");
+	armature->getAnimation()->play("Start");
+	Slider * hpSlider = (Slider*)rootNode->getChildByName("HpSlider");
+	hpSlider->setMaxPercent(map->hp.number * 1000000);
+	hpSlider->setPercent(map->hp.number * 1000000);
+	PlayerData::getInstance()->setHpNow(map->hp);
+	monsterNode->addChild(armature);
 }

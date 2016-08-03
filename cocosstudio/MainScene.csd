@@ -26,17 +26,25 @@
             <PrePosition X="0.6573" Y="0.7375" />
             <PreSize X="0.0781" Y="0.0234" />
           </AbstractNodeData>
-          <AbstractNodeData Name="MonsterNode" ActionTag="-1835426406" Tag="8" IconVisible="True" LeftMargin="485.3423" RightMargin="474.6577" TopMargin="487.8027" BottomMargin="152.1973" IsLoop="True" IsAutoPlay="True" CurrentAnimationName="Wait" ctype="ArmatureNodeObjectData">
+          <AbstractNodeData Name="MonsterNode" ActionTag="1028649609" Tag="8" IconVisible="True" LeftMargin="483.0000" RightMargin="477.0000" TopMargin="483.0000" BottomMargin="157.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="485.3423" Y="152.1973" />
+            <Position X="483.0000" Y="157.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5056" Y="0.2378" />
+            <PrePosition X="0.5031" Y="0.2453" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="monster_01.ExportJson" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="HpSlider" ActionTag="-1134919534" Tag="9" IconVisible="False" LeftMargin="356.0000" RightMargin="378.0000" TopMargin="155.0000" BottomMargin="463.0000" TouchEnable="True" PercentInfo="100" ctype="SliderObjectData">
+          <AbstractNodeData Name="normalAtk" ActionTag="1865554589" Tag="7" IconVisible="True" LeftMargin="486.0000" RightMargin="474.0000" TopMargin="364.0000" BottomMargin="276.0000" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="486.0000" Y="276.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5063" Y="0.4313" />
+            <PreSize X="0.0000" Y="0.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="HpSlider" ActionTag="-1134919534" Tag="9" IconVisible="False" LeftMargin="356.0002" RightMargin="377.9998" TopMargin="155.0010" BottomMargin="462.9990" TouchEnable="True" PercentInfo="100" ctype="SliderObjectData">
             <Size X="226.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.4823" ScaleY="0.5455" />
             <Position X="465.0000" Y="475.0000" />

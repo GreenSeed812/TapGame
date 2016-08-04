@@ -11,7 +11,7 @@ public:
 	MyNum* subNum(MyNum *, MyNum *);
 	MyNum* multiplay(MyNum*,double scale);
 	int devid(MyNum*,MyNum*);
-	bool Zero(MyNum* num){ if (num->Mathbit >= 0 && num->number > 0) return false; else return true; }
+	bool Zero(MyNum* num){ if (num->Mathbit <= 0 && num->number <= 0) return true; else return false; }
 private:
 	int Ary;									// 进制(final)
 	int Accuracy;								// 除法精度位数(final)

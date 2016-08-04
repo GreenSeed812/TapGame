@@ -1,4 +1,5 @@
 #include "Tool/SqLite.h"
+#include "Split.h"
 #include<cocos2d.h>
 using namespace cocos2d;
 
@@ -8,6 +9,7 @@ SqLite::SqLite()
 	sqlite3_open("config/config.db",&m_pDB);
 	readMonster();
 	readMapData();
+	readSimpleData();
 }
 
 SqLite::~SqLite()
@@ -49,8 +51,6 @@ void SqLite::readMonster()
 			for (int j = 0; j < nColum; j++)
 			{
 				
-				/*("hero %s %s", dbResult[j], dbResult[index]);*/
-				
 				if (id.compare(dbResult[j]) == 0)
 					monster.ID = atoi(dbResult[index]);
 				if (name.compare(dbResult[j]) == 0)
@@ -71,6 +71,117 @@ void SqLite::readMonster()
 		}
 	}
 }
+void SqLite::readSimpleData()
+{
+	char** dbResult;
+	int nRow;
+	int nColum;
+	char* errmsg;
+	auto tableresult = sqlite3_get_table(m_pDB, "select * from simpleConfig", &dbResult, &nRow, &nColum, &errmsg);
+	if (SQLITE_OK == tableresult)
+	{
+		auto index = nColum;
+		std::string tmp;
+
+		for (int i = 0; i < nRow; i++)
+		{
+			std::string key = "key";
+			std::string value = "value";
+			std::string bossMulti = "bossMulti";
+			std::string npc = "npc";
+			std::string hp = "hp";
+			std::string gold = "gold";
+			std::string baseDps = "baseDps";
+			for (int j = 0; j < nColum; j++)
+			{
+				if (key.compare(dbResult[j]) == 0)
+				{
+					if (bossMulti.compare(dbResult[index]) == 0)
+					{
+						list<string> list;
+						tmp = dbResult[index + 1];
+						list = Split::getInstance()->strsplit(tmp, ",");
+						for (int i = 0; list.size()>0; i++)
+						{
+						
+							m_bossHp[i] = atof(list.front().c_str());
+							list.pop_front();
+						}
+					}
+					if (npc.compare(dbResult[index]) == 0)
+					{
+						list<string> list;
+						tmp = dbResult[index + 1];
+						list = Split::getInstance()->strsplit(tmp, ",");
+						for (int i = 0; list.size()>0; i++)
+						{
+
+							m_randNpc[i] = atoi(list.front().c_str());
+							list.pop_front();
+						}
+
+					}
+					if (hp.compare(dbResult[index]) == 0)
+					{
+						list<string> list;
+						tmp = dbResult[index + 1];
+						list = Split::getInstance()->strsplit(tmp, ",");
+						MyNum tmpHp;
+						for (int i = 0; list.size()>0; i++)
+						{
+							
+							if (i % 2 == 0)
+								tmpHp.number = atof(list.front().c_str());
+							else
+							{
+								tmpHp.Mathbit = atoi(list.front().c_str());
+								m_HpData.push_back(tmpHp);
+							}
+							list.pop_front();
+						}
+
+					}
+					if (gold.compare(dbResult[index]) == 0)
+					{
+						list<string> list;
+						tmp = dbResult[index + 1];
+						list = Split::getInstance()->strsplit(tmp, ",");
+						MyNum tmpGD;
+						for (int i = 0; list.size()>0; i++)
+						{
+
+							if (i % 2 == 0)
+								m_dropData.number = atof(list.front().c_str());
+							else
+							{
+								m_dropData.Mathbit = atoi(list.front().c_str());
+							}
+							list.pop_front();
+						}
+
+					}
+					if (baseDps.compare(dbResult[index]) == 0)
+					{
+						list<string> list;
+						tmp = dbResult[index + 1];
+						list = Split::getInstance()->strsplit(tmp, ",");
+						MyNum tmpGD;
+						for (int i = 0; list.size()>0; i++)
+						{
+
+							m_baseDps[i].number = atof(list.front().c_str());
+							list.pop_front();
+						}
+
+					}
+					
+				}
+				++index;
+			}
+
+		}
+	}
+}
 void SqLite::readMapData()
 {
 	char** dbResult;
@@ -85,16 +196,6 @@ void SqLite::readMapData()
 		std::string music = "bgMusic";
 		std::string mapIcon = "mapIcon";
 		std::string bg = "bg";
-		std::string hp = "hp";
-		std::string drop = "drop";
-		std::string dropUnit = "dropUnit";
-		std::string hpUnit = "hpUnit";
-		std::string m1 = "m1";
-		std::string m2 = "m2";
-		std::string m3 = "m3";
-		std::string m4 = "m4";
-		std::string m5 = "m5";
-		std::string bossHp = "bossHp";
 		auto index = nColum;
 		for (int i = 0; i < nRow; i++)
 		{
@@ -111,35 +212,15 @@ void SqLite::readMapData()
 					map.mapIcon = dbResult[index];
 				if (bg.compare(dbResult[j]) == 0)
 					map.bg = dbResult[index];
-				if (hp.compare(dbResult[j]) == 0)
-					map.hp.number = atof(dbResult[index]);
-				if (drop.compare(dbResult[j]) == 0)
-					map.drop.number = atof(dbResult[index]);
-				if (m1.compare(dbResult[j]) == 0)
-					map.npc[0] = atoi(dbResult[index]);
-				if (m2.compare(dbResult[j]) == 0)
-					map.npc[1] = atoi(dbResult[index]);
-				if (m3.compare(dbResult[j]) == 0)
-					map.npc[2] = atoi(dbResult[index]);
-				if (m4.compare(dbResult[j]) == 0)
-					map.npc[3] = atoi(dbResult[index]);
-				if (m5.compare(dbResult[j]) == 0)
-					map.npc[4] = atoi(dbResult[index]);
-				if (bossHp.compare(dbResult[j]) == 0)
-					map.bossHp = atof(dbResult[index]);
-				if (dropUnit.compare(dbResult[j]) == 0)
-					map.drop.Mathbit = atoi(dbResult[index]);
-				if (hpUnit.compare(dbResult[j]) == 0)
-					map.hp.Mathbit = atoi(dbResult[index]);
 				++index;
 			}
 			m_mapData.push_back(map);
 		}
 	}
 }
-MapData * SqLite::getMapByID(int id)
+MyNum * SqLite::getHpByID(int id)
 {
-	return &m_mapData.at(id);
+	return &m_HpData.at(id);
 	
 }
 

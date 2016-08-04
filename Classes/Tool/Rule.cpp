@@ -135,6 +135,11 @@ MyNum* Ruler::subNum(MyNum *num1, MyNum *num2)
 		num->number = num1->number - num2->number / scale;
 		
 	}
+	if (num->number < 1 && num->Mathbit > 0)
+	{
+		num->Mathbit--;
+		num->number *= 1000;
+	}
 	return num;
 }
 

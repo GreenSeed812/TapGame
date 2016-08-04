@@ -37,8 +37,8 @@ bool ClickLayer::onTouchBegan(Touch *touch, Event*)
 	{
 		Node* monsterNode = (Node*)this->getParent()->getChildByName("MonsterNode");
 		Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
-		armature->getAnimation()->play("Hurt",-1,0);
 		normalAtk();
+		armature->getAnimation()->play("Hurt",-1,0);
 		time = t_now;
 		return true;
 	}
@@ -54,8 +54,8 @@ void ClickLayer::onTouchMoved(Touch *touch, Event*)
 	{
 		Node* monsterNode = (Node*)this->getParent()->getChildByName("MonsterNode");
 		Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
-		armature->getAnimation()->play("Hurt", -1, 0);
 		normalAtk();
+		armature->getAnimation()->play("Hurt", -1, 0);
 		time = t_now;
 	}
 
@@ -69,16 +69,19 @@ void ClickLayer::onTouchCanceled(Touch *touch, Event*)
 }
 void ClickLayer::normalAtk()
 {
-	auto map = SqLite::getInstance()->getMapByID(PlayerData::getInstance()->getLevel());
 	PlayerData::getInstance()->subHp();
 	Slider* slider = (Slider*)this->getParent()->getChildByName("HpSlider");
-	if (map->hp.Mathbit == PlayerData::getInstance()->getHpNow().Mathbit)
+	
+	if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())->Mathbit == PlayerData::getInstance()->getHpNow().Mathbit)
 		slider->setPercent(PlayerData::getInstance()->getHpNow().number * 1000000);
-	else if (map->hp.Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 1)
-		slider->setPercent(PlayerData::getInstance()->getHpNow().number *  1000);
-	else if (map->hp.Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 2)
-		slider->setPercent(PlayerData::getInstance()->getHpNow().number );
+	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())->Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 1)
+		slider->setPercent(PlayerData::getInstance()->getHpNow().number * 1000);
+	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())->Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 2)
+		slider->setPercent(PlayerData::getInstance()->getHpNow().number);
 	else;
+
+	TextBMFont* tbm = (TextBMFont*)this->getParent()->getChildByName("hpNow");
+	tbm->setString(Ruler::getInstance()->showNum(&PlayerData::getInstance()->getHpNow()));
 
 
 	auto r = random(0, 360);

@@ -31,33 +31,43 @@ struct Servant
 struct MapData
 {
 	int ID;
-	MyNum hp;
-	MyNum drop;
 	float bossHp;
 	std::string name;
 	std::string bgMusic;
 	std::string mapIcon;
 	std::string bg;
 	
-	int npc[5];
+
 	
 };
+
 class SqLite
 {
 public:
 	
 	static SqLite* getInstance();
-	MapData * getMapByID(int);
+	MyNum * getHpByID(int);
 	MonsterData* getMonsterByID(int);
+	MyNum getDropData(){ return m_dropData; }
+	int m_randNpc[5];
+	std::vector<MyNum> getHpData(){ return m_HpData; }
+	float getBossHp(int i){ return m_bossHp[i]; }
+	MyNum getDps(int i){ return m_baseDps[i]; }
 private:
 	SqLite();
 	~SqLite();
 	void readMonster();
 	void readMapData();
+	void readSimpleData();
 	sqlite3 *m_pDB;
 	std::vector<MonsterData> m_monsterData;
 	std::vector<Servant> m_servantData;
 	std::vector<MapData> m_mapData;
+	std::vector<MyNum> m_HpData;
+	float m_bossHp[5];
+	MyNum m_dropData;
+	MyNum m_baseDps[8];
+	
 };
 
 

@@ -41,7 +41,19 @@ bool HelloWorld::init()
     rootNode = CSLoader::createNode("MainScene.csb");
 	addChild(rootNode);
 	Slider * hpSlider = (Slider*)rootNode->getChildByName("HpSlider");
-	
+	Button * levelUpButton = (Button*)rootNode->getChildByName("heroLevelUp");
+	levelUpButton->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type) {
+		if (type == Widget::TouchEventType::ENDED) {
+			// 注意node的生命周期的问题  
+			
+			PlayerData::getInstance()->heroLevelUp();
+			TextBMFont* text = (TextBMFont*)rootNode->getChildByName("herolevel");
+			text->setString(StringUtils::format("%d", PlayerData::getInstance()->getPlayerLevel()));
+			TextBMFont* text1 = (TextBMFont*)rootNode->getChildByName("heroDps");
+			text1->setString(Ruler::getInstance()->showNum(&PlayerData::getInstance()->getDps()));
+		}
+	});
+	levelUpButton->setZOrder(100000000);
 	clickLayer = ClickLayer::create();
 	rootNode->addChild(clickLayer);
 	
@@ -58,6 +70,7 @@ void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const
 	{
 		if (action == "Start")
 		{
+			
 			clickLayer->setTouchEnabled(true);
 			armature->getAnimation()->play("Wait");
 		}
@@ -68,34 +81,34 @@ void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const
 			armature->removeFromParent();
 			createMonster();
 		}
-	}
-	else
-	{
-
 		if (action == "Hurt")
-		{
-			Slider* hpSlider = (Slider*)rootNode->getChildByName("HpSlider");
-		
-			if (Ruler::getInstance()->Zero(&PlayerData::getInstance()->getHpNow()))
-			{
-				PlayerData::getInstance()->setLevel(PlayerData::getInstance()->getLevel() + 1);
-				clickLayer->setTouchEnabled(false);
-				armature->getAnimation()->play("Leave");
-
-
-			}
-			else
-				armature->getAnimation()->play("Wait");
-		}
-		
+		armature->getAnimation()->play("Wait");
 	}
+	if (action == "Hurt")
+	{
+		Slider* hpSlider = (Slider*)rootNode->getChildByName("HpSlider");
+		
+		if (Ruler::getInstance()->Zero(&PlayerData::getInstance()->getHpNow()))
+		{
+			PlayerData::getInstance()->levelUp();
+			TextBMFont* text = (TextBMFont*)rootNode->getChildByName("level");
+			text->setString(StringUtils::format("%d", PlayerData::getInstance()->getLevel()));
+			clickLayer->setTouchEnabled(false);
+			armature->getAnimation()->play("Leave");
+
+
+		}
+		else
+			;
+	}
+		
+	
 	return;
 }
 void HelloWorld::createMonster()
 {
-	auto map = SqLite::getInstance()->getMapByID(PlayerData::getInstance()->getLevel());
 	auto r = random(0, 4);
-	auto monster = SqLite::getInstance()->getMonsterByID(map->npc[r]);
+	auto monster = SqLite::getInstance()->getMonsterByID(PlayerData::getInstance()->getRandNpc(r));
 	ArmatureDataManager::getInstance()->addArmatureFileInfo(monster->png, monster->plist, monster->exportJson);//读取动画相关文件
 	auto armature = Armature::create(monster->name);
 	armature->setName("MonsterArmature");
@@ -103,8 +116,11 @@ void HelloWorld::createMonster()
 	Node* monsterNode = (Node*)rootNode->getChildByName("MonsterNode");
 	armature->getAnimation()->play("Start");
 	Slider * hpSlider = (Slider*)rootNode->getChildByName("HpSlider");
-	hpSlider->setMaxPercent(map->hp.number * 1000000);
-	hpSlider->setPercent(map->hp.number * 1000000);
-	PlayerData::getInstance()->setHpNow(map->hp);
+	hpSlider->setMaxPercent(PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()%4)->number * 1000000);
+	hpSlider->setPercent(PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()%4)->number * 1000000);
+
+	TextBMFont* tbm = (TextBMFont*)rootNode->getChildByName("hpNow");
+	tbm->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel() % 4)));
+	PlayerData::getInstance()->setHpNow(*PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()%4));
 	monsterNode->addChild(armature);
 }

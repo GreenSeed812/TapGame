@@ -60,7 +60,7 @@ private:
 	void readMapData();
 	void readSimpleData();
 	sqlite3 *m_pDB;
-	std::vector<MonsterData> m_monsterData;
+	std::vector<MonsterData*> m_monsterData;
 	std::vector<Servant> m_servantData;
 	std::vector<MapData> m_mapData;
 	std::vector<MyNum> m_HpData;

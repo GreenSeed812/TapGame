@@ -44,25 +44,25 @@ void SqLite::readMonster()
 		auto index = nColum;
 		for (int i = 0; i < nRow; i++)
 		{
-			MonsterData monster = MonsterData();
-			monster.png = "monster/";
-			monster.plist = "monster/";
-			monster.exportJson = "monster/";
+			MonsterData *monster = new MonsterData();
+			monster->png = "monster/";
+			monster->plist = "monster/";
+			monster->exportJson = "monster/";
 			for (int j = 0; j < nColum; j++)
 			{
 				
 				if (id.compare(dbResult[j]) == 0)
-					monster.ID = atoi(dbResult[index]);
+					monster->ID = atoi(dbResult[index]);
 				if (name.compare(dbResult[j]) == 0)
-					monster.name = dbResult[index];
+					monster->name = dbResult[index];
 				if (plist.compare(dbResult[j]) == 0)
-					monster.plist += dbResult[index];
+					monster->plist += dbResult[index];
 				if (exportJson.compare(dbResult[j]) == 0)
-					monster.exportJson += dbResult[index]; 
+					monster->exportJson += dbResult[index]; 
 				if (png.compare(dbResult[j]) == 0)
-					monster.png += dbResult[index];
+					monster->png += dbResult[index];
 				if (showName.compare(dbResult[j]) == 0)
-					monster.showName = dbResult[index];
+					monster->showName = dbResult[index];
 				
 				++index;
 			}
@@ -226,5 +226,5 @@ MyNum * SqLite::getHpByID(int id)
 
 MonsterData* SqLite::getMonsterByID(int id)
 {
-	return &m_monsterData.at(id - 1);
+	return m_monsterData.at(id - 1);
 }

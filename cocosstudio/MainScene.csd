@@ -57,7 +57,7 @@
             <BallPressedData Type="Default" Path="Default/SliderNode_Press.png" Plist="" />
             <BallDisabledData Type="Default" Path="Default/SliderNode_Disable.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="heroLevelUP100" ActionTag="765653340" Tag="8" IconVisible="False" LeftMargin="96.0000" RightMargin="818.0001" TopMargin="316.0001" BottomMargin="287.9999" TouchEnable="True" FontSize="14" ButtonText="降级" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="heroLevelUP100" ActionTag="765653340" Tag="8" IconVisible="False" LeftMargin="96.0000" RightMargin="818.0000" TopMargin="316.0001" BottomMargin="287.9999" TouchEnable="True" FontSize="14" ButtonText="升100级" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="46.0000" Y="36.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="119.0000" Y="305.9999" />
@@ -105,14 +105,14 @@
             <PrePosition X="0.1250" Y="0.7188" />
             <PreSize X="0.0781" Y="0.0234" />
           </AbstractNodeData>
-          <AbstractNodeData Name="level" ActionTag="-239009431" Tag="15" IconVisible="False" LeftMargin="686.5000" RightMargin="198.5000" TopMargin="132.5000" BottomMargin="492.5000" LabelText="Fnt Text Label" ctype="TextBMFontObjectData">
-            <Size X="75.0000" Y="15.0000" />
+          <AbstractNodeData Name="level" ActionTag="-239009431" Tag="15" IconVisible="False" LeftMargin="720.5000" RightMargin="232.5000" TopMargin="132.5000" BottomMargin="492.5000" LabelText="1" ctype="TextBMFontObjectData">
+            <Size X="7.0000" Y="15.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="724.0000" Y="500.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition X="0.7542" Y="0.7813" />
-            <PreSize X="0.0781" Y="0.0234" />
+            <PreSize X="0.0073" Y="0.0234" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

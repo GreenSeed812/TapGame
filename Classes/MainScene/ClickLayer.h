@@ -15,8 +15,11 @@ public:
 	CREATE_FUNC(ClickLayer);
 	EventListenerTouchOneByOne *touchListener;
 	void setTouchEnabled(bool boolean){ touchListener->setEnabled(boolean); }
+	void attackeffection();
 private:
 	int m_clickPerSecond;
+	
+	Animation* ani;
 };
 
 

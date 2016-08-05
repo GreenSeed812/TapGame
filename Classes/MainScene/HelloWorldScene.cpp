@@ -42,6 +42,7 @@ bool HelloWorld::init()
 	addChild(rootNode);
 	Slider * hpSlider = (Slider*)rootNode->getChildByName("HpSlider");
 	Button * levelUpButton = (Button*)rootNode->getChildByName("heroLevelUp");
+	/*hpSlider->setEnabled(false);*/
 	levelUpButton->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type) {
 		if (type == Widget::TouchEventType::ENDED) {
 			// 注意node的生命周期的问题  
@@ -53,7 +54,22 @@ bool HelloWorld::init()
 			text1->setString(Ruler::getInstance()->showNum(&PlayerData::getInstance()->getDps()));
 		}
 	});
+	Button * levelUpButton100 = (Button*)rootNode->getChildByName("heroLevelUP100");
+	levelUpButton100->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type) {
+		if (type == Widget::TouchEventType::ENDED) {
+			// 注意node的生命周期的问题  
+			for (int i = 0; i < 100; i++)
+			{
+				PlayerData::getInstance()->heroLevelUp();
+			}
+			TextBMFont* text = (TextBMFont*)rootNode->getChildByName("herolevel");
+			text->setString(StringUtils::format("%d",1 + PlayerData::getInstance()->getPlayerLevel()));
+			TextBMFont* text1 = (TextBMFont*)rootNode->getChildByName("heroDps");
+			text1->setString(Ruler::getInstance()->showNum(&PlayerData::getInstance()->getDps()));
+		}
+	});
 	levelUpButton->setZOrder(100000000);
+	levelUpButton100->setZOrder(100000000);
 	clickLayer = ClickLayer::create();
 	rootNode->addChild(clickLayer);
 	
@@ -73,6 +89,7 @@ void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const
 			
 			clickLayer->setTouchEnabled(true);
 			armature->getAnimation()->play("Wait");
+			scheduleUpdate();
 		}
 		
 		if (action == "Leave")
@@ -90,9 +107,10 @@ void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const
 		
 		if (Ruler::getInstance()->Zero(&PlayerData::getInstance()->getHpNow()))
 		{
+			unscheduleUpdate();
 			PlayerData::getInstance()->levelUp();
 			TextBMFont* text = (TextBMFont*)rootNode->getChildByName("level");
-			text->setString(StringUtils::format("%d", PlayerData::getInstance()->getLevel()));
+			text->setString(StringUtils::format("%d", 1+PlayerData::getInstance()->getLevel()));
 			clickLayer->setTouchEnabled(false);
 			armature->getAnimation()->play("Leave");
 
@@ -110,17 +128,51 @@ void HelloWorld::createMonster()
 	auto r = random(0, 4);
 	auto monster = SqLite::getInstance()->getMonsterByID(PlayerData::getInstance()->getRandNpc(r));
 	ArmatureDataManager::getInstance()->addArmatureFileInfo(monster->png, monster->plist, monster->exportJson);//读取动画相关文件
-	auto armature = Armature::create(monster->name);
+	armature = Armature::create(monster->name);
 	armature->setName("MonsterArmature");
 	armature->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(HelloWorld::callBackFunc));
 	Node* monsterNode = (Node*)rootNode->getChildByName("MonsterNode");
 	armature->getAnimation()->play("Start");
 	Slider * hpSlider = (Slider*)rootNode->getChildByName("HpSlider");
-	hpSlider->setMaxPercent(PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()%4)->number * 1000000);
-	hpSlider->setPercent(PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()%4)->number * 1000000);
+
+	auto hpS = PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel() % 5)->number;
+	hpS *= 1000000;
+	hpSlider->setMaxPercent(hpS);
+	hpSlider->setPercent(hpS);
 
 	TextBMFont* tbm = (TextBMFont*)rootNode->getChildByName("hpNow");
-	tbm->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel() % 4)));
-	PlayerData::getInstance()->setHpNow(*PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()%4));
+	tbm->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel() % 5)));
+	PlayerData::getInstance()->setHpNow(*PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()%5));
 	monsterNode->addChild(armature);
+}
+void HelloWorld::update(float dt)
+{
+	auto heroDps = PlayerData::getInstance()->getHeroDps();
+	auto dps = Ruler::getInstance()->multiplay(&heroDps, dt);
+
+	Slider* slider = (Slider*)rootNode->getChildByName("HpSlider");
+	PlayerData::getInstance()->setHpNow(*Ruler::getInstance()->subNum(&PlayerData::getInstance()->getHpNow(), dps));
+	if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())->Mathbit == PlayerData::getInstance()->getHpNow().Mathbit)
+		slider->setPercent(PlayerData::getInstance()->getHpNow().number * 1000000);
+	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())->Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 1)
+		slider->setPercent(PlayerData::getInstance()->getHpNow().number * 1000);
+	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())->Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 2)
+		slider->setPercent(PlayerData::getInstance()->getHpNow().number);
+	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())->Mathbit - PlayerData::getInstance()->getHpNow().Mathbit > 3)
+		slider->setPercent(0);
+	
+	TextBMFont* tbm = (TextBMFont*)rootNode->getChildByName("hpNow");
+	tbm->setString(Ruler::getInstance()->showNum(&PlayerData::getInstance()->getHpNow()));
+	if (Ruler::getInstance()->Zero(&PlayerData::getInstance()->getHpNow()))
+	{
+		PlayerData::getInstance()->levelUp();
+		TextBMFont* text = (TextBMFont*)rootNode->getChildByName("level");
+		text->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel()));
+		clickLayer->setTouchEnabled(false);
+		armature->getAnimation()->play("Leave");
+		unscheduleUpdate();
+
+
+	}
+
 }

@@ -25,6 +25,7 @@ public:
 	MyNum *getHpByID(int id);
 	void levelUp();
 	void heroLevelUp();
+	MyNum getHeroDps(){ return m_heroDpsAll; }
 	int getPlayerLevel(){ return m_playerLevel; }
 private:
 	int m_waveNow;

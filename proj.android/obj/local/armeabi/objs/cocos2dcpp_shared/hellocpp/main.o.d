@@ -1,4 +1,4 @@
-obj/local/armeabi/objs-debug/cocos2dcpp_shared/hellocpp/main.o: \
+obj/local/armeabi/objs/cocos2dcpp_shared/hellocpp/main.o: \
  jni/hellocpp/main.cpp jni/../../Classes/AppDelegate.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../cocos2d.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../base/ccConfig.h \

@@ -22,7 +22,7 @@ bool ClickLayer::init()
 	touchListener->onTouchEnded = CC_CALLBACK_2(ClickLayer::onTouchEnded, this);
 	touchListener->onTouchCancelled = CC_CALLBACK_2(ClickLayer::onTouchCanceled, this);
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this);
-	
+	attackeffection();
 	return true;
 }
 
@@ -78,27 +78,40 @@ void ClickLayer::normalAtk()
 		slider->setPercent(PlayerData::getInstance()->getHpNow().number * 1000);
 	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())->Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 2)
 		slider->setPercent(PlayerData::getInstance()->getHpNow().number);
-	else;
+	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())->Mathbit - PlayerData::getInstance()->getHpNow().Mathbit > 2)
+		slider->setPercent(0);
 
 	TextBMFont* tbm = (TextBMFont*)this->getParent()->getChildByName("hpNow");
 	tbm->setString(Ruler::getInstance()->showNum(&PlayerData::getInstance()->getHpNow()));
 
-
-	auto r = random(0, 360);
 	auto effectSprite = Sprite::create();
+	
+	Node* effection = (Node*)this->getParent()->getChildByName("normalAtk");
+	effection->addChild(effectSprite);
+	auto animate = Animate::create(ani);
+	auto r = random(0, 360);
+	auto rotate = RotateBy::create(0.0416, Vec3(0, 0, r));
+	auto spawn = Spawn::create(rotate, animate, NULL);
+	effectSprite->runAction(spawn);
+
+}
+void ClickLayer::attackeffection()
+{
+	
+	
 	auto cache = SpriteFrameCache::getInstance();
+
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("effection/normalAttack.plist");
-	auto ani = Animation::create();
+	ani = Animation::create();
 	for (int i = 0; i < 9; i++)
 	{
 		ani->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(StringUtils::format("normalAttack_%d.png", i)));
 	}
 	ani->setDelayPerUnit(0.0416);
-	auto animate = Animate::create(ani);
-	Node* effection = (Node*)this->getParent()->getChildByName("normalAtk");
-	effection->addChild(effectSprite);
-	auto rotate = RotateBy::create(0.0416, Vec3(0, 0, r));
-	auto spawn = Spawn::create(rotate, animate, NULL);
-	effectSprite->runAction(spawn);
-
+	
+	
+   
+	
+	ani->retain();
+	
 }

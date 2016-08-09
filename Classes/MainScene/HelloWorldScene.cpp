@@ -40,21 +40,21 @@ bool HelloWorld::init()
 	
     rootNode = CSLoader::createNode("MainScene.csb");
 	addChild(rootNode);
-	Slider * hpSlider = (Slider*)rootNode->getChildByName("HpSlider");
-	Button * levelUpButton = (Button*)rootNode->getChildByName("heroLevelUp");
+	Slider * hpSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider");
+	Button * levelUpButton = (Button*)rootNode->getChildByName("TestNode")->getChildByName("heroLevelUp");
 	/*hpSlider->setEnabled(false);*/
 	levelUpButton->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type) {
 		if (type == Widget::TouchEventType::ENDED) {
 			// 注意node的生命周期的问题  
 			
 			PlayerData::getInstance()->heroLevelUp();
-			TextBMFont* text = (TextBMFont*)rootNode->getChildByName("herolevel");
+			TextBMFont* text = (TextBMFont*)rootNode->getChildByName("TestNode")->getChildByName("herolevel");
 			text->setString(StringUtils::format("%d", PlayerData::getInstance()->getPlayerLevel()));
-			TextBMFont* text1 = (TextBMFont*)rootNode->getChildByName("heroDps");
+			TextBMFont* text1 = (TextBMFont*)rootNode->getChildByName("TestNode")->getChildByName("heroDps");
 			text1->setString(Ruler::getInstance()->showNum(&PlayerData::getInstance()->getDps()));
 		}
 	});
-	Button * levelUpButton100 = (Button*)rootNode->getChildByName("heroLevelUP100");
+	Button * levelUpButton100 = (Button*)rootNode->getChildByName("TestNode")->getChildByName("heroLevelUP100");
 	levelUpButton100->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type) {
 		if (type == Widget::TouchEventType::ENDED) {
 			// 注意node的生命周期的问题  
@@ -62,15 +62,16 @@ bool HelloWorld::init()
 			{
 				PlayerData::getInstance()->heroLevelUp();
 			}
-			TextBMFont* text = (TextBMFont*)rootNode->getChildByName("herolevel");
+			TextBMFont* text = (TextBMFont*)rootNode->getChildByName("TestNode")->getChildByName("herolevel");
 			text->setString(StringUtils::format("%d",1 + PlayerData::getInstance()->getPlayerLevel()));
-			TextBMFont* text1 = (TextBMFont*)rootNode->getChildByName("heroDps");
+			TextBMFont* text1 = (TextBMFont*)rootNode->getChildByName("TestNode")->getChildByName("heroDps");
 			text1->setString(Ruler::getInstance()->showNum(&PlayerData::getInstance()->getDps()));
 		}
 	});
 	levelUpButton->setZOrder(100000000);
 	levelUpButton100->setZOrder(100000000);
 	clickLayer = ClickLayer::create();
+	clickLayer->setZOrder(-1);
 	rootNode->addChild(clickLayer);
 	
 	createMonster();
@@ -109,7 +110,7 @@ void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const
 		{
 			unscheduleUpdate();
 			PlayerData::getInstance()->levelUp();
-			TextBMFont* text = (TextBMFont*)rootNode->getChildByName("level");
+			TextBMFont* text = (TextBMFont*)rootNode->getChildByName("TestNode")->getChildByName("level");
 			text->setString(StringUtils::format("%d", 1+PlayerData::getInstance()->getLevel()));
 			clickLayer->setTouchEnabled(false);
 			armature->getAnimation()->play("Leave");
@@ -133,14 +134,14 @@ void HelloWorld::createMonster()
 	armature->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(HelloWorld::callBackFunc));
 	Node* monsterNode = (Node*)rootNode->getChildByName("MonsterNode");
 	armature->getAnimation()->play("Start");
-	Slider * hpSlider = (Slider*)rootNode->getChildByName("HpSlider");
+	Slider * hpSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider");
 
 	auto hpS = PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel() % 5)->number;
 	hpS *= 1000000;
 	hpSlider->setMaxPercent(hpS);
 	hpSlider->setPercent(hpS);
 
-	TextBMFont* tbm = (TextBMFont*)rootNode->getChildByName("hpNow");
+	TextBMFont* tbm = (TextBMFont*)rootNode->getChildByName("TestNode")->getChildByName("hpNow");
 	tbm->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel() % 5)));
 	PlayerData::getInstance()->setHpNow(*PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()%5));
 	monsterNode->addChild(armature);
@@ -150,7 +151,7 @@ void HelloWorld::update(float dt)
 	auto heroDps = PlayerData::getInstance()->getHeroDps();
 	auto dps = Ruler::getInstance()->multiplay(&heroDps, dt);
 
-	Slider* slider = (Slider*)rootNode->getChildByName("HpSlider");
+	Slider* slider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider");
 	PlayerData::getInstance()->setHpNow(*Ruler::getInstance()->subNum(&PlayerData::getInstance()->getHpNow(), dps));
 	if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())->Mathbit == PlayerData::getInstance()->getHpNow().Mathbit)
 		slider->setPercent(PlayerData::getInstance()->getHpNow().number * 1000000);
@@ -161,12 +162,12 @@ void HelloWorld::update(float dt)
 	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())->Mathbit - PlayerData::getInstance()->getHpNow().Mathbit > 3)
 		slider->setPercent(0);
 	
-	TextBMFont* tbm = (TextBMFont*)rootNode->getChildByName("hpNow");
+	TextBMFont* tbm = (TextBMFont*)rootNode->getChildByName("TestNode")->getChildByName("hpNow");
 	tbm->setString(Ruler::getInstance()->showNum(&PlayerData::getInstance()->getHpNow()));
 	if (Ruler::getInstance()->Zero(&PlayerData::getInstance()->getHpNow()))
 	{
 		PlayerData::getInstance()->levelUp();
-		TextBMFont* text = (TextBMFont*)rootNode->getChildByName("level");
+		TextBMFont* text = (TextBMFont*)rootNode->getChildByName("TestNode")->getChildByName("level");
 		text->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel()));
 		clickLayer->setTouchEnabled(false);
 		armature->getAnimation()->play("Leave");
@@ -175,4 +176,18 @@ void HelloWorld::update(float dt)
 
 	}
 
+}
+
+void HelloWorld::uiCallBack()
+{
+	Button* playerButton = (Button*)rootNode->getChildByName("UiNode")->getChildByName("OptionLayer")->getChildByName("playerButton");
+	Button* servantButton = (Button*)rootNode->getChildByName("UiNode")->getChildByName("OptionLayer")->getChildByName("servantButton");
+	Button* artifactButton = (Button*)rootNode->getChildByName("UiNode")->getChildByName("OptionLayer")->getChildByName("artifactButton");
+	Button* itemButton = (Button*)rootNode->getChildByName("UiNode")->getChildByName("OptionLayer")->getChildByName("itemButton");
+	playerButton->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type) {
+		if (type == Widget::TouchEventType::ENDED) {
+			// 注意node的生命周期的问题  
+			
+		}
+	});
 }

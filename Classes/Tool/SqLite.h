@@ -2,6 +2,7 @@
 #define _SqLite_H_
 #include <string>
 #include <vector>
+#include <map>
 #include "Tool\sqlite3.h"
 #include "MyNum.h"
 struct MonsterData
@@ -64,6 +65,7 @@ private:
 	std::vector<Servant> m_servantData;
 	std::vector<MapData> m_mapData;
 	std::vector<MyNum> m_HpData;
+	std::map<MyNum,int> m_monsterDataMap;
 	float m_bossHp[5];
 	MyNum m_dropData;
 	MyNum m_baseDps[8];

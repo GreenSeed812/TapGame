@@ -3,11 +3,28 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
+        <Image Name="bossButton.png" />
+        <Image Name="dpsPerS.png" />
+        <Image Name="dpsPerS_1.png" />
+        <Image Name="frame.png" />
+        <Image Name="gold.png" />
         <Image Name="HelloWorld.png" />
         <Image Name="hpSliderGray.png" />
         <Image Name="hpSliderRed.png" />
+        <Image Name="keepDps .png" />
         <Project Name="MainScene.csd" Type="Scene" />
+        <Image Name="mapLayer.png" />
+        <Image Name="mission.png" />
         <ExportJsonFile Name="monster_01.ExportJson" />
+        <Image Name="OptionButton.png" />
+        <Image Name="optionFrame.png" />
+        <Image Name="optionLayer.png" />
+        <Image Name="setting.png" />
+        <Image Name="sign.png" />
+        <Image Name="SkillButton.png" />
+        <Image Name="skillLayer.png" />
+        <Image Name="tapDps.png" />
+        <Image Name="time.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

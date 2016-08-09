@@ -70,7 +70,7 @@ void ClickLayer::onTouchCanceled(Touch *touch, Event*)
 void ClickLayer::normalAtk()
 {
 	PlayerData::getInstance()->subHp();
-	Slider* slider = (Slider*)this->getParent()->getChildByName("HpSlider");
+	Slider* slider = (Slider*)this->getParent()->getChildByName("UiNode")->getChildByName("HpSlider");
 	
 	if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())->Mathbit == PlayerData::getInstance()->getHpNow().Mathbit)
 		slider->setPercent(PlayerData::getInstance()->getHpNow().number * 1000000);
@@ -81,7 +81,7 @@ void ClickLayer::normalAtk()
 	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())->Mathbit - PlayerData::getInstance()->getHpNow().Mathbit > 2)
 		slider->setPercent(0);
 
-	TextBMFont* tbm = (TextBMFont*)this->getParent()->getChildByName("hpNow");
+	TextBMFont* tbm = (TextBMFont*)this->getParent()->getChildByName("TestNode")->getChildByName("hpNow");
 	tbm->setString(Ruler::getInstance()->showNum(&PlayerData::getInstance()->getHpNow()));
 
 	auto effectSprite = Sprite::create();

@@ -16,6 +16,7 @@ public:
     virtual bool init();
 	void callBackFunc(Armature *, MovementEventType, const std::string&);
 	void createMonster();
+	void uiCallBack();
 	virtual void update(float dt);
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);

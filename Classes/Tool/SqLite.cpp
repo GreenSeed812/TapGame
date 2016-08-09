@@ -66,7 +66,7 @@ void SqLite::readMonster()
 				
 				++index;
 			}
-
+			
 			m_monsterData.push_back(monster);
 		}
 	}

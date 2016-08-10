@@ -7,9 +7,11 @@
 #include "MainScene/ClickLayer.h"
 #include "SaveData\PlayerData.h"
 #include "Tool\Rule.h"
+#include "Ui\bossButton.h"
 using namespace cocostudio;
-USING_NS_CC_EXT;
+
 USING_NS_CC;
+USING_NS_CC_EXT;
 
 using namespace ui;
 
@@ -73,9 +75,8 @@ bool HelloWorld::init()
 	clickLayer = ClickLayer::create();
 	clickLayer->setZOrder(-1);
 	rootNode->addChild(clickLayer);
-	
+	uiInit();
 	createMonster();
-
 	
 	//amature->setArmatureData();//读取动画数组
     return true;
@@ -105,19 +106,32 @@ void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const
 	if (action == "Hurt")
 	{
 		Slider* hpSlider = (Slider*)rootNode->getChildByName("HpSlider");
-		
-		if (Ruler::getInstance()->Zero(&PlayerData::getInstance()->getHpNow()))
+		killBoss();
+		/*if (Ruler::getInstance()->Zero(&PlayerData::getInstance()->getHpNow()))
 		{
 			unscheduleUpdate();
-			PlayerData::getInstance()->levelUp();
-			TextBMFont* text = (TextBMFont*)rootNode->getChildByName("TestNode")->getChildByName("level");
-			text->setString(StringUtils::format("%d", 1+PlayerData::getInstance()->getLevel()));
+			if (PlayerData::getInstance()->getWaveNow() <= 10)
+			{
+				PlayerData::getInstance()->waveUp();
+				TextAtlas* waveNum = (TextAtlas*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("WaveNum");
+				waveNum->setString(StringUtils::format("%d//10",PlayerData::getInstance()->getWaveNow()));
+			}
+			else if (PlayerData::getInstance()->getWaveNow() == 11)
+			{
+
+			}
+			else
+			{ 
+				PlayerData::getInstance()->levelUp();
+				TextBMFont* text = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapNow")->getChildByName("level");
+				text->setString(StringUtils::format("%d", 1+PlayerData::getInstance()->getLevel()));
+			}
 			clickLayer->setTouchEnabled(false);
 			armature->getAnimation()->play("Leave");
 
 
-		}
-		else
+		}*/
+		
 			;
 	}
 		
@@ -136,12 +150,13 @@ void HelloWorld::createMonster()
 	armature->getAnimation()->play("Start");
 	Slider * hpSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider");
 
-	auto hpS = PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel() % 5)->number;
+	auto hpNum = PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel() % 5);
+	auto hpS = hpNum->number;
 	hpS *= 1000000;
 	hpSlider->setMaxPercent(hpS);
 	hpSlider->setPercent(hpS);
 
-	TextBMFont* tbm = (TextBMFont*)rootNode->getChildByName("TestNode")->getChildByName("hpNow");
+	TextBMFont* tbm = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider")->getChildByName("hpNow");
 	tbm->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel() % 5)));
 	PlayerData::getInstance()->setHpNow(*PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()%5));
 	monsterNode->addChild(armature);
@@ -162,22 +177,18 @@ void HelloWorld::update(float dt)
 	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())->Mathbit - PlayerData::getInstance()->getHpNow().Mathbit > 3)
 		slider->setPercent(0);
 	
-	TextBMFont* tbm = (TextBMFont*)rootNode->getChildByName("TestNode")->getChildByName("hpNow");
+	TextBMFont* tbm = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider")->getChildByName("hpNow");
 	tbm->setString(Ruler::getInstance()->showNum(&PlayerData::getInstance()->getHpNow()));
-	if (Ruler::getInstance()->Zero(&PlayerData::getInstance()->getHpNow()))
-	{
-		PlayerData::getInstance()->levelUp();
-		TextBMFont* text = (TextBMFont*)rootNode->getChildByName("TestNode")->getChildByName("level");
-		text->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel()));
-		clickLayer->setTouchEnabled(false);
-		armature->getAnimation()->play("Leave");
-		unscheduleUpdate();
-
-
-	}
+	killBoss();
+	
 
 }
-
+void HelloWorld::uiInit()
+{
+	Slider* timeSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("timeSlider");
+	timeSlider->runAction(Hide::create());
+	
+}
 void HelloWorld::uiCallBack()
 {
 	Button* playerButton = (Button*)rootNode->getChildByName("UiNode")->getChildByName("OptionLayer")->getChildByName("playerButton");
@@ -190,4 +201,44 @@ void HelloWorld::uiCallBack()
 			
 		}
 	});
+}
+void HelloWorld::killBoss()
+{
+	TextAtlas* waveNum = (TextAtlas*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("WaveNum");
+	Sprite* escapeBoss = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("escapeBoss");
+	if (Ruler::getInstance()->Zero(&PlayerData::getInstance()->getHpNow()))
+	{
+		unscheduleUpdate();
+		if (PlayerData::getInstance()->getWaveNow() < 10)
+		{
+			PlayerData::getInstance()->waveUp();
+			
+			waveNum->setString(StringUtils::format("%d//10", PlayerData::getInstance()->getWaveNow()));
+		}
+		else if (PlayerData::getInstance()->getWaveNow() == 10)
+		{
+			waveNum->runAction(Hide::create());
+			escapeBoss->runAction(Show::create());
+			PlayerData::getInstance()->waveUp();
+			Node* bossButtonNode = (Node*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("escapeBoss");
+			auto bossBt = bossButton::create();
+			bossButtonNode->addChild(bossBt);
+			bossBt->setName("bt");
+		}
+		else
+		{
+			PlayerData::getInstance()->resetWave();
+			PlayerData::getInstance()->levelUp();
+			TextBMFont* text = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapNow")->getChildByName("level");
+			text->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel()));
+			Node* bossButtonNode = (Node*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("escapeBoss");
+			bossButtonNode->removeChildByName("bt");
+			waveNum->setString(StringUtils::format("%d//10", PlayerData::getInstance()->getWaveNow()));
+			waveNum->runAction(Show::create());
+		}
+		clickLayer->setTouchEnabled(false);
+		armature->getAnimation()->play("Leave");
+
+
+	}
 }

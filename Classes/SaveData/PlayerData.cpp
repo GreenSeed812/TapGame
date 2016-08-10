@@ -6,6 +6,7 @@ PlayerData::PlayerData()
 	: m_level(0)
 	, m_monsterNum(1)
 	, m_playerLevel(1)
+	, m_waveNow(1)
 {
 	m_hpNow.number = SqLite::getInstance()->getHpByID(m_level)->number;
 	m_hpNow.Mathbit = SqLite::getInstance()->getHpByID(m_level)->Mathbit;
@@ -50,7 +51,13 @@ int PlayerData::getRandNpc(int r)
 }
 MyNum * PlayerData::getHpByID(int id)
 {
-	return &m_latest.m_HpData.at(id%5);
+	if (m_waveNow == 11)
+	{
+ 		auto ret = Ruler::getInstance()->multiplay(&m_latest.m_HpData.at(id % 5),SqLite::getInstance()->getBossHp(m_level));
+		return ret;
+	}
+	else
+		return &m_latest.m_HpData.at(id%5);
 
 }
 

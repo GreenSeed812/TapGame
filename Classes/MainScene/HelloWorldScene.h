@@ -16,6 +16,8 @@ public:
     virtual bool init();
 	void callBackFunc(Armature *, MovementEventType, const std::string&);
 	void createMonster();
+	void killBoss();
+	void uiInit();
 	void uiCallBack();
 	virtual void update(float dt);
     // implement the "static create()" method manually
@@ -24,6 +26,7 @@ private:
 	Node* rootNode;
 	ClickLayer * clickLayer;
 	Armature* armature;
+
 };
 
 #endif // __HELLOWORLD_SCENE_H__

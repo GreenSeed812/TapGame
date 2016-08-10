@@ -27,6 +27,11 @@ public:
 	void heroLevelUp();
 	MyNum getHeroDps(){ return m_heroDpsAll; }
 	int getPlayerLevel(){ return m_playerLevel; }
+	void addGold(MyNum* gold){ m_gold = *Ruler::getInstance()->addNum(&m_gold, gold); }
+	void subGold(MyNum* gold){ m_gold = *Ruler::getInstance()->subNum(&m_gold, gold); }
+	int getWaveNow(){ return m_waveNow; }
+	void waveUp(){ m_waveNow++; }
+	void resetWave(){ m_waveNow = 1; }
 private:
 	int m_waveNow;
 	int m_level;
@@ -34,6 +39,7 @@ private:
 	int m_playerLevel;
 	MyNum m_basedps;
 	MyNum m_hpNow;
+	MyNum m_gold;
 	LatestData m_latest;
 	PlayerData();
 	~PlayerData();

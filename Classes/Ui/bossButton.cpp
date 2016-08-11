@@ -1,5 +1,5 @@
 #include"bossButton.h"
-
+#include"SaveData/PlayerData.h"
 bossButton::bossButton()
 {
 }
@@ -39,15 +39,20 @@ bool bossButton::onTouchBegan(Touch *touch, Event*)
 }
 void bossButton::onTouchEnded(Touch *touch, Event*)
 {
-	
+	MyNum zero;
+	zero.Mathbit = 0;
+	zero.number = 0;
 	if (i == 1)
 	{
 		m_sprite->setTexture("ui/bossButton.png");
-		
+		PlayerData::getInstance()->setWave(10);
+		PlayerData::getInstance()->setHpNow(zero);
 	}
 	else
 	{
 		m_sprite->setTexture("ui/bossButton2.png");
+		PlayerData::getInstance()->setWave(0);
+		PlayerData::getInstance()->setHpNow(zero);
 	}
 	i = (i + 1) % 2;
 }

@@ -31,6 +31,7 @@ public:
 	void subGold(MyNum* gold){ m_gold = *Ruler::getInstance()->subNum(&m_gold, gold); }
 	int getWaveNow(){ return m_waveNow; }
 	void waveUp(){ m_waveNow++; }
+	void setWave(int wave){ m_waveNow = wave; }
 	void resetWave(){ m_waveNow = 1; }
 private:
 	int m_waveNow;

@@ -19,6 +19,7 @@ public:
 	void killBoss();
 	void uiInit();
 	void uiCallBack();
+	bool initDownLayer(Node*&);
 	virtual void update(float dt);
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
@@ -26,7 +27,11 @@ private:
 	Node* rootNode;
 	ClickLayer * clickLayer;
 	Armature* armature;
-
+	Node * m_heroLayer;
+	Node * m_servantLayer;
+	Node * m_artifactLayer;
+	Node * m_shopLayer;
+	Node * noNode;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

@@ -6,13 +6,13 @@
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
         <Size X="1080.0000" Y="1920.0000" />
         <Children>
-          <AbstractNodeData Name="mainBG" ActionTag="1146368906" Tag="39" IconVisible="False" LeftMargin="417.7990" RightMargin="412.2010" TopMargin="478.7330" BottomMargin="1141.2670" LeftEage="82" RightEage="82" TopEage="82" BottomEage="82" Scale9OriginX="82" Scale9OriginY="82" Scale9Width="86" Scale9Height="136" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="mainBG" ActionTag="1146368906" Tag="39" IconVisible="False" LeftMargin="422.0514" RightMargin="407.9486" TopMargin="478.7332" BottomMargin="1141.2668" LeftEage="82" RightEage="82" TopEage="82" BottomEage="82" Scale9OriginX="82" Scale9OriginY="82" Scale9Width="86" Scale9Height="136" ctype="ImageViewObjectData">
             <Size X="250.0000" Y="300.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="542.7990" Y="1291.2670" />
+            <Position X="547.0514" Y="1291.2668" />
             <Scale ScaleX="4.0000" ScaleY="4.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5026" Y="0.6725" />
+            <PrePosition X="0.5065" Y="0.6725" />
             <PreSize X="0.2315" Y="0.1563" />
             <FileData Type="Normal" Path="bg.jpg" Plist="" />
           </AbstractNodeData>
@@ -71,7 +71,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                <PressedFileData Type="Normal" Path="setting.png" Plist="" />
                 <NormalFileData Type="Normal" Path="setting.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -86,7 +86,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                <PressedFileData Type="Normal" Path="mission.png" Plist="" />
                 <NormalFileData Type="Normal" Path="mission.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -101,7 +101,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                <PressedFileData Type="Normal" Path="sign.png" Plist="" />
                 <NormalFileData Type="Normal" Path="sign.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -207,7 +207,7 @@
                     <PreSize X="0.3045" Y="0.8308" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="OptionButton.png" Plist="" />
                     <NormalFileData Type="Normal" Path="OptionButton.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -222,7 +222,7 @@
                     <PreSize X="0.3045" Y="0.8308" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="OptionButton.png" Plist="" />
                     <NormalFileData Type="Normal" Path="OptionButton.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -237,7 +237,7 @@
                     <PreSize X="0.3045" Y="0.8308" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="OptionButton.png" Plist="" />
                     <NormalFileData Type="Normal" Path="OptionButton.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -252,7 +252,7 @@
                     <PreSize X="0.3045" Y="0.8308" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="OptionButton.png" Plist="" />
                     <NormalFileData Type="Normal" Path="OptionButton.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -293,14 +293,15 @@
                   <AbstractNodeData Name="KeepDps" ActionTag="-865957150" Tag="35" IconVisible="False" LeftMargin="499.8965" RightMargin="105.1035" TopMargin="93.7181" BottomMargin="309.2819" LeftEage="130" RightEage="130" TopEage="17" BottomEage="17" Scale9OriginX="130" Scale9OriginY="17" Scale9Width="136" Scale9Height="19" ctype="ImageViewObjectData">
                     <Size X="396.0000" Y="53.0000" />
                     <Children>
-                      <AbstractNodeData Name="KeepDps" ActionTag="-638279155" Tag="50" IconVisible="False" LeftMargin="356.9058" RightMargin="32.0942" TopMargin="14.3491" BottomMargin="23.6509" LabelText="1" ctype="TextBMFontObjectData">
-                        <Size X="7.0000" Y="15.0000" />
+                      <AbstractNodeData Name="KeepDps" ActionTag="-638279155" Tag="50" IconVisible="False" LeftMargin="343.4789" RightMargin="26.5211" TopMargin="-20.5797" BottomMargin="-3.4203" LabelText="1" ctype="TextBMFontObjectData">
+                        <Size X="26.0000" Y="77.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="360.4058" Y="31.1509" />
-                        <Scale ScaleX="2.1142" ScaleY="1.0000" />
+                        <Position X="356.4789" Y="35.0797" />
+                        <Scale ScaleX="1.4493" ScaleY="0.5714" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.9101" Y="0.5878" />
-                        <PreSize X="0.0177" Y="0.2830" />
+                        <PrePosition X="0.9002" Y="0.6619" />
+                        <PreSize X="0.0657" Y="1.4528" />
+                        <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -311,45 +312,47 @@
                     <PreSize X="0.3956" Y="0.1162" />
                     <FileData Type="Normal" Path="keepDps .png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="TapDps" ActionTag="-1293321369" Tag="36" IconVisible="False" LeftMargin="86.3691" RightMargin="518.6309" TopMargin="93.2329" BottomMargin="309.7671" LeftEage="130" RightEage="130" TopEage="17" BottomEage="17" Scale9OriginX="130" Scale9OriginY="17" Scale9Width="136" Scale9Height="19" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="TapDps" ActionTag="-1293321369" Tag="36" IconVisible="False" LeftMargin="86.3691" RightMargin="518.6309" TopMargin="92.2329" BottomMargin="310.7671" LeftEage="130" RightEage="130" TopEage="17" BottomEage="17" Scale9OriginX="130" Scale9OriginY="17" Scale9Width="136" Scale9Height="19" ctype="ImageViewObjectData">
                     <Size X="396.0000" Y="53.0000" />
                     <Children>
-                      <AbstractNodeData Name="heroDps" ActionTag="-129022496" Tag="14" IconVisible="False" LeftMargin="344.9186" RightMargin="44.0814" TopMargin="12.6814" BottomMargin="25.3186" LabelText="1" ctype="TextBMFontObjectData">
-                        <Size X="7.0000" Y="15.0000" />
+                      <AbstractNodeData Name="heroDps" ActionTag="-129022496" Tag="14" IconVisible="False" LeftMargin="335.4186" RightMargin="34.5814" TopMargin="-18.3186" BottomMargin="-5.6814" LabelText="1" ctype="TextBMFontObjectData">
+                        <Size X="26.0000" Y="77.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="348.4186" Y="32.8186" />
-                        <Scale ScaleX="2.5724" ScaleY="1.0000" />
+                        <Scale ScaleX="0.8880" ScaleY="0.4750" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.8798" Y="0.6192" />
-                        <PreSize X="0.0177" Y="0.2830" />
+                        <PreSize X="0.0657" Y="1.4528" />
+                        <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.7233" ScaleY="0.3046" />
-                    <Position X="372.7959" Y="325.9109" />
+                    <Position X="372.7959" Y="326.9109" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.3724" Y="0.7147" />
+                    <PrePosition X="0.3724" Y="0.7169" />
                     <PreSize X="0.3956" Y="0.1162" />
                     <FileData Type="Normal" Path="tapDps.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="TotalDps" ActionTag="37583196" Tag="38" IconVisible="False" LeftMargin="90.3111" RightMargin="90.6889" TopMargin="173.9755" BottomMargin="230.0245" TouchEnable="True" ctype="SliderObjectData">
+                  <AbstractNodeData Name="TotalDps" ActionTag="37583196" Tag="38" IconVisible="False" LeftMargin="90.3112" RightMargin="90.6888" TopMargin="174.7613" BottomMargin="229.2387" TouchEnable="True" ctype="SliderObjectData">
                     <Size X="820.0000" Y="52.0000" />
                     <Children>
-                      <AbstractNodeData Name="TotalDps" ActionTag="740802538" Tag="51" IconVisible="False" LeftMargin="49.5818" RightMargin="763.4182" TopMargin="14.9127" BottomMargin="22.0873" LabelText="2" ctype="TextBMFontObjectData">
-                        <Size X="7.0000" Y="15.0000" />
+                      <AbstractNodeData Name="TotalDps" ActionTag="740802538" Tag="51" IconVisible="False" LeftMargin="34.0815" RightMargin="747.9185" TopMargin="-18.6553" BottomMargin="-6.3447" LabelText="2" ctype="TextBMFontObjectData">
+                        <Size X="38.0000" Y="77.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="53.0818" Y="29.5873" />
-                        <Scale ScaleX="3.4864" ScaleY="1.0000" />
+                        <Position X="53.0815" Y="32.1553" />
+                        <Scale ScaleX="0.9185" ScaleY="0.5331" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.0647" Y="0.5690" />
-                        <PreSize X="0.0085" Y="0.2885" />
+                        <PrePosition X="0.0647" Y="0.6184" />
+                        <PreSize X="0.0463" Y="1.4808" />
+                        <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="500.3111" Y="256.0245" />
+                    <Position X="500.3112" Y="255.2387" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4998" Y="0.5615" />
+                    <PrePosition X="0.4998" Y="0.5597" />
                     <PreSize X="0.8192" Y="0.1140" />
                     <BackGroundData Type="Normal" Path="dpsPerS_1.png" Plist="" />
                     <ProgressBarData Type="Normal" Path="dpsPerS.png" Plist="" />
@@ -364,7 +367,7 @@
                     <PreSize X="0.1748" Y="0.3860" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="SkillButton.png" Plist="" />
                     <NormalFileData Type="Normal" Path="SkillButton.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -379,7 +382,7 @@
                     <PreSize X="0.1748" Y="0.3860" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="SkillButton.png" Plist="" />
                     <NormalFileData Type="Normal" Path="SkillButton.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -394,7 +397,7 @@
                     <PreSize X="0.1748" Y="0.3860" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="SkillButton.png" Plist="" />
                     <NormalFileData Type="Normal" Path="SkillButton.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -409,7 +412,7 @@
                     <PreSize X="0.1748" Y="0.3860" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="SkillButton.png" Plist="" />
                     <NormalFileData Type="Normal" Path="SkillButton.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -424,7 +427,7 @@
                     <PreSize X="0.1748" Y="0.3860" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="SkillButton.png" Plist="" />
                     <NormalFileData Type="Normal" Path="SkillButton.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -439,7 +442,7 @@
                     <PreSize X="0.1748" Y="0.3860" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="SkillButton.png" Plist="" />
                     <NormalFileData Type="Normal" Path="SkillButton.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -456,7 +459,7 @@
               <AbstractNodeData Name="Wave_Button" ActionTag="-708098858" Tag="42" IconVisible="True" LeftMargin="928.8306" RightMargin="-928.8306" TopMargin="-1685.3473" BottomMargin="1685.3473" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="WaveNum" ActionTag="-1014528880" Tag="43" IconVisible="False" LeftMargin="-19.1247" RightMargin="-36.8753" TopMargin="-23.5424" BottomMargin="5.5424" CharWidth="14" CharHeight="18" LabelText="1/10" StartChar="." ctype="TextAtlasObjectData">
+                  <AbstractNodeData Name="WaveNum" ActionTag="-1014528880" Tag="43" IconVisible="False" LeftMargin="-19.1240" RightMargin="-36.8760" TopMargin="-23.5420" BottomMargin="5.5420" CharWidth="14" CharHeight="18" LabelText="1/10" StartChar="." ctype="TextAtlasObjectData">
                     <Size X="56.0000" Y="18.0000" />
                     <AnchorPoint ScaleX="1.1617" ScaleY="0.5936" />
                     <Position X="45.9312" Y="16.2268" />
@@ -482,6 +485,21 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="achiveButton" ActionTag="1617616136" Tag="49" IconVisible="False" LeftMargin="893.8591" RightMargin="-994.8591" TopMargin="-1621.7502" BottomMargin="1520.7502" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="71" Scale9Height="79" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="101.0000" Y="101.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="944.3591" Y="1571.2502" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <PressedFileData Type="Normal" Path="achive.png" Plist="" />
+                <NormalFileData Type="Normal" Path="achive.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
@@ -541,14 +559,15 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="goldNum" ActionTag="2061361315" Tag="41" IconVisible="False" LeftMargin="538.8793" RightMargin="534.1207" TopMargin="326.6641" BottomMargin="1578.3359" LabelText="0" ctype="TextBMFontObjectData">
-            <Size X="7.0000" Y="15.0000" />
+          <AbstractNodeData Name="goldNum" ActionTag="2061361315" Tag="41" IconVisible="False" LeftMargin="543.0917" RightMargin="497.9083" TopMargin="287.2444" BottomMargin="1555.7556" LabelText="0" ctype="TextBMFontObjectData">
+            <Size X="39.0000" Y="77.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="542.3793" Y="1585.8359" />
-            <Scale ScaleX="3.3349" ScaleY="3.5122" />
+            <Position X="562.5917" Y="1594.2556" />
+            <Scale ScaleX="0.9163" ScaleY="1.2810" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5022" Y="0.8260" />
-            <PreSize X="0.0065" Y="0.0078" />
+            <PrePosition X="0.5209" Y="0.8303" />
+            <PreSize X="0.0361" Y="0.0401" />
+            <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

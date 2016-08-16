@@ -44,55 +44,94 @@ std::string Ruler::showNum(MyNum* num)
 	}
 	
 	std::string s;
-	s = StringUtils::format("%.2lf", num->number);
+	s = StringUtils::format("%.1lf", num->number);
 	//sprintf_s(s, "%lf", num->number);
-	for (int i = 0; i < 10; i++)
+	if (num->Mathbit == 0)
 	{
-		if (s[i] == '.')
+		for (int i = 0; i < 10; i++)
 		{
-			s[i + 3] = '\0';
-			break;
+			if (s[i] == '.')
+			{
+				s[i] = '\0';
+				break;
+			}
+
 		}
-		
 	}
+	else
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			if (s[i] == '.')
+			{
+				s[i + 2] = '\0';
+				break;
+			}
+
+		}
+	}
+	
 	s += unit[num->Mathbit] ;
 	
 	return s;
 }
 
-MyNum* Ruler::addNum(MyNum *num1, MyNum *num2)
+MyNum Ruler::addNum(MyNum *num1, MyNum *num2)
 {
-	MyNum *num;
+	MyNum num;
 	if (num1->Mathbit > num2->Mathbit)
 	{
 		num = addRule(num1, num2);
 	}
 	else if (num1->Mathbit == num2->Mathbit)
 	{
-		num->Mathbit = num1->Mathbit;
-		num->number = num1->number + num2->number;
+		
+		num.Mathbit = num1->Mathbit;
+		num.number = num1->number + num2->number;
 	}
 	else
 	{
 		num = addRule(num2, num1);
 	}
-	if (num->number >= 1000)
+	if (num.number >= 1000)
 	{
-		num->number /= 1000;
-		num->Mathbit++;
+		num.number /= 1000;
+		num.Mathbit++;
 	}
+	
 	return num;
 
 	
 }
-
-MyNum* Ruler::addRule(MyNum* big, MyNum* little)
+MyNum Ruler::addNumS(MyNum* num1, MyNum* num2)
 {
-	auto num = new MyNum();
+	MyNum num = addNum(num1, num2);
+	if (num.Mathbit == 0)
+	{
+		int intNum = num.number + 0.5;
+		num.number = intNum;
+	}
+	return num;
+}
+MyNum Ruler::addNumUp(MyNum* num1, MyNum* num2)
+{
+	MyNum num = addNum(num1, num2);
+	if (num.Mathbit == 0)
+	{
+		int intNum = num.number;
+		if (intNum < num.number)
+			num.number = intNum + 1;
+	
+	}
+	return num;
+}
+MyNum Ruler::addRule(MyNum* big, MyNum* little)
+{
+	MyNum num = MyNum();
 	if (big->Mathbit - little->Mathbit > 2)
 	{
-		num->number = big->number;
-		num->Mathbit = big->Mathbit;
+		num.number = big->number;
+		num.Mathbit = big->Mathbit;
 	}
 	else
 	{
@@ -102,26 +141,31 @@ MyNum* Ruler::addRule(MyNum* big, MyNum* little)
 		{
 			scale *= Ary;
 		}
-		num->number = big->number + little->number / scale;
-		num->Mathbit = big->Mathbit;
+		num.number = big->number + little->number / scale;
+		num.Mathbit = big->Mathbit;
+	}
+	if (num.Mathbit == 0)
+	{
+		int intNum = num.number + 0.5;
+		num.number = intNum;
 	}
 	return num;
 
 }
-MyNum* Ruler::subNum(MyNum *num1, MyNum *num2)
+MyNum Ruler::subNum(MyNum *num1, MyNum *num2)
 {
-	MyNum *num = new MyNum();
+	MyNum num;
 	if (num1->Mathbit < num2->Mathbit)
 	{
-		num->Mathbit = 0;
-		num->number = 0;
+		num.Mathbit = 0;
+		num.number = 0;
 	}
 	else if (num1->Mathbit == num2->Mathbit)
 	{
 		if (num1->number < num2->number)
-			num->number = 0;
+			num.number = 0;
 		else
-			num->number = num1->number - num2->number;
+			num.number = num1->number - num2->number;
 	}
 	else
 	{
@@ -131,36 +175,51 @@ MyNum* Ruler::subNum(MyNum *num1, MyNum *num2)
 		{
 			scale *= Ary;
 		}
-		num->Mathbit = num1->Mathbit;
-		num->number = num1->number - num2->number / scale;
+		num.Mathbit = num1->Mathbit;
+		num.number = num1->number - num2->number / scale;
 		
 	}
-	if (num->number < 1 && num->Mathbit > 0)
+	if (num.number < 1 && num.Mathbit > 0)
 	{
-		num->Mathbit--;
-		num->number *= 1000;
+		num.Mathbit--;
+		num.number *= 1000;
 	}
+	
 	return num;
 }
 
-MyNum* Ruler::multiplay(MyNum* num, double scale)
+MyNum Ruler::multiplay(MyNum* num, double scale)
 {
-	auto newNum = new MyNum();
+	MyNum newNum ;
 	while (scale > 1000)
 	{
-		newNum->Mathbit++;
+		newNum.Mathbit++;
 		scale /= 1000;
 	}
 	
-	newNum->number = num->number*scale;
-	if (newNum->number > 1000)
+	newNum.number = num->number*scale;
+	if (newNum.number > 1000)
 	{
-		newNum->number /= 1000;
-		newNum->Mathbit++;
+		newNum.number /= 1000;
+		newNum.Mathbit++;
 	}
-	newNum->Mathbit += num->Mathbit;
+	newNum.Mathbit += num->Mathbit;
 	return newNum;
 }
+MyNum Ruler::multiplayUp(MyNum* num, double scale)
+{
+	auto retNum = multiplay(num, scale);
+	if (retNum.Mathbit == 0)
+	{
+		int n = retNum.number;
+		if (retNum.number - n != 0)
+		{
+			retNum.number = n+1;
+		}
+	}
+	return retNum;
+}
+
 int Ruler::devid(MyNum* dividend, MyNum* divisor)
 {
 	auto num = new MyNum();

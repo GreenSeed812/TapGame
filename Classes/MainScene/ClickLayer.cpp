@@ -72,13 +72,13 @@ void ClickLayer::normalAtk()
 	PlayerData::getInstance()->subHp();
 	Slider* slider = (Slider*)this->getParent()->getChildByName("UiNode")->getChildByName("HpSlider");
 	
-	if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())->Mathbit == PlayerData::getInstance()->getHpNow().Mathbit)
+	if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit == PlayerData::getInstance()->getHpNow().Mathbit)
 		slider->setPercent(PlayerData::getInstance()->getHpNow().number * 1000000);
-	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())->Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 1)
+	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 1)
 		slider->setPercent(PlayerData::getInstance()->getHpNow().number * 1000);
-	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())->Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 2)
+	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 2)
 		slider->setPercent(PlayerData::getInstance()->getHpNow().number);
-	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())->Mathbit - PlayerData::getInstance()->getHpNow().Mathbit > 2)
+	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit - PlayerData::getInstance()->getHpNow().Mathbit > 2)
 		slider->setPercent(0);
 
 	TextBMFont* tbm = (TextBMFont*)this->getParent()->getChildByName("UiNode")->getChildByName("HpSlider")->getChildByName("hpNow");

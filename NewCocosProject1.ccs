@@ -4,15 +4,24 @@
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
         <Image Name="achive.png" />
+        <Image Name="artifact.png" />
+        <Image Name="artifact_1.png" />
+        <Project Name="artifactButtonLayer.csd" Type="Layer" />
         <Image Name="bg.jpg" />
         <Image Name="bossButton.png" />
         <Image Name="buttonLayer.png" />
+        <Image Name="dimond.png" />
         <Image Name="discribe.png" />
         <Project Name="downLayer.csd" Type="Layer" />
+        <Project Name="downLayerAr.csd" Type="Layer" />
+        <Project Name="downLayerSh.csd" Type="Layer" />
         <Project Name="downUiButtonLayer.csd" Type="Layer" />
         <Image Name="dpsPerS.png" />
         <Image Name="dpsPerS_1.png" />
+        <Image Name="escbg.png" />
+        <Image Name="escButton.png" />
         <Fnt Name="font.fnt" />
+        <TTF Name="font.ttf" />
         <Image Name="frame.png" />
         <Image Name="gold.png" />
         <Image Name="head.png" />
@@ -21,6 +30,7 @@
         <Image Name="hpSliderRed.png" />
         <Image Name="keepDps .png" />
         <Image Name="layer.png" />
+        <Image Name="Layer.png" />
         <Image Name="mainBG.jpg" />
         <Project Name="MainScene.csd" Type="Scene" />
         <Image Name="mapLayer.png" />
@@ -32,6 +42,8 @@
         <Image Name="OptionButton.png" />
         <Image Name="optionFrame.png" />
         <Image Name="optionLayer.png" />
+        <Image Name="servantFrame.png" />
+        <Project Name="servantNode.csd" Type="Layer" />
         <Image Name="setting.png" />
         <Image Name="sign.png" />
         <Image Name="SkillButton.png" />

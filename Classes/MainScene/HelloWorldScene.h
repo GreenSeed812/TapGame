@@ -20,7 +20,9 @@ public:
 	void uiInit();
 	void uiCallBack();
 	bool initDownLayer(Node*&);
+	bool initDownLayerAr(Node*&);
 	virtual void update(float dt);
+	void calUpdate(float dt);
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 private:

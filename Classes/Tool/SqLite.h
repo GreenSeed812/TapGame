@@ -21,12 +21,22 @@ struct HeroData
 	int basedps;
 	int level;
 };
-
+struct servantSkill
+{
+	std::string skillname;
+	float effect;
+	int skillID;
+};
 struct Servant
 {
 	int ID;
-	int basedps;
-	int level;
+	std::string name;	
+	servantSkill skill[7];
+	std::string discribe;
+	MyNum dps;
+	MyNum gold;
+	std::string	picture;
+
 	
 };
 struct MapData
@@ -41,6 +51,22 @@ struct MapData
 
 	
 };
+struct SkillData
+{
+	int id; 
+	std::string effect;
+	float baseTime;
+	float baseBanTime;
+	float initEffect;
+	float effPerLevel;
+	MyNum unlockGold;
+
+};
+struct SkillEffect
+{
+	int id;
+	std::string effect;
+};
 
 class SqLite
 {
@@ -54,22 +80,35 @@ public:
 	std::vector<MyNum> getHpData(){ return m_HpData; }
 	float getBossHp(int i){ return m_bossHp[i]; }
 	MyNum getDps(int i){ return m_baseDps[i]; }
+	MyNum getGold(){ return m_gold; }
+	MyNum getGoldByID(int);
+	std::string getSkillDis(int i);
+	double getEff(int i){ return m_skillData.at(i)->initEffect; }
+	double getEffPer(int i){ return m_skillData.at(i)->effPerLevel; }
+	MyNum getServantDpsByID(int i){ return m_servantData.at(i)->dps; }
+	MyNum getServantGoldByID(int i){ return m_servantData.at(i)->gold; }
 private:
 	SqLite();
 	~SqLite();
 	void readMonster();
 	void readMapData();
 	void readSimpleData();
-	sqlite3 *m_pDB;
+	void readSkillData();
+	void readServant();
+	void readServantSkill();
+	sqlite3 *m_pDB; 
 	std::vector<MonsterData*> m_monsterData;
-	std::vector<Servant> m_servantData;
+	std::vector<Servant*> m_servantData;
 	std::vector<MapData> m_mapData;
 	std::vector<MyNum> m_HpData;
 	std::map<MyNum,int> m_monsterDataMap;
+	std::vector<SkillData*>m_skillData;
+	std::vector<SkillEffect*>m_skillEffect;
 	float m_bossHp[5];
 	MyNum m_dropData;
 	MyNum m_baseDps[8];
-	
+	MyNum m_gold;
+	std::vector<int> m_servantUnlock;
 };
 
 

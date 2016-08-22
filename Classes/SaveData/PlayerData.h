@@ -1,6 +1,6 @@
 #ifndef _PlayerData_H_
 #define _PlayerData_H_
-#include "Tool\Rule.h"
+#include "Tool/Rule.h"
 #include <vector>
 struct LatestData
 {
@@ -31,23 +31,27 @@ public:
 	int getRandNpc(int r);
 	int getServantLevel(int i){ return m_servantLevel[i]; }
 	int getServantNum(){ return m_servantNum; }
+	int getMaxTime(){ return m_maxTime; }
+	int getMaxWave(){ return m_maxWave; }
 	void heroLevelUp();
 	void levelUp();
 	void resetWave(){ m_waveNow = 1; }
 	void servantLevelUp(int i){ m_servantLevel[i]++;}
 	void setHpNow(MyNum hp){ m_hpNow = hp; }
 	void setLevel(int level){ m_level = level; }
-	void setServantBaseDps(MyNum dps, int id){ m_servantBaseDps[id] = dps; }
+	void setServantBaseDps(MyNum dps, int id);
 	void setWave(int wave){ m_waveNow = wave; }
 	void skillLevelUp(int i){ m_skillLevel[i-1]++; }
 	void subGold(MyNum* gold);
-	void subHp(){ m_hpNow = Ruler::getInstance()->subNum(&m_hpNow,&m_basedps); }
+	void subHp(){ m_hpNow = Ruler::getInstance()->subNum(m_hpNow,m_basedps); }
 	void waveUp(){ m_waveNow++; }	
 private:
 	int m_waveNow;
 	int m_level;
 	int m_monsterNum;
 	int m_playerLevel;
+	int m_maxTime;
+	int m_maxWave;
 	float m_dpsMulBase;
 	float m_dpsMul;
 	float m_goldMulBase;

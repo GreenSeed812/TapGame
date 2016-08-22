@@ -1,19 +1,19 @@
 obj/local/armeabi/objs-debug/recast_static/DetourCrowd/DetourPathQueue.o: \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/DetourCrowd/DetourPathQueue.cpp \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/DetourCrowd/DetourPathQueue.cpp \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/string.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs_elf.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/api-level.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/malloc.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/DetourCrowd/DetourPathQueue.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/../recast/Detour/DetourNavMesh.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/../recast/Detour/DetourAlloc.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/../recast/Detour/DetourStatus.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/../recast/Detour/DetourNavMeshQuery.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/../recast/Detour/DetourNavMesh.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/../recast/Detour/DetourAlloc.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/../recast/Detour/DetourCommon.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/../recast/Detour/DetourMath.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/DetourCrowd/DetourPathQueue.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/../recast/Detour/DetourNavMesh.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/../recast/Detour/DetourAlloc.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/../recast/Detour/DetourStatus.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/../recast/Detour/DetourNavMeshQuery.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/../recast/Detour/DetourNavMesh.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/../recast/Detour/DetourAlloc.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/../recast/Detour/DetourCommon.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/../recast/Detour/DetourMath.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/types.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/stdint.h \
@@ -45,23 +45,23 @@ D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/api-level.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/malloc.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/DetourCrowd/DetourPathQueue.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/DetourCrowd/DetourPathQueue.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/../recast/Detour/DetourNavMesh.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/../recast/Detour/DetourNavMesh.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/../recast/Detour/DetourAlloc.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/../recast/Detour/DetourAlloc.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/../recast/Detour/DetourStatus.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/../recast/Detour/DetourStatus.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/../recast/Detour/DetourNavMeshQuery.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/../recast/Detour/DetourNavMeshQuery.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/../recast/Detour/DetourNavMesh.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/../recast/Detour/DetourNavMesh.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/../recast/Detour/DetourAlloc.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/../recast/Detour/DetourAlloc.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/../recast/Detour/DetourCommon.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/../recast/Detour/DetourCommon.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/../recast/Detour/DetourMath.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/../recast/Detour/DetourMath.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h:
 

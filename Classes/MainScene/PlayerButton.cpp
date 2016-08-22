@@ -1,8 +1,8 @@
 #include"MainScene/PlayerButton.h"
 #include "ui/CocosGUI.h"
-#include <cocostudio\CocoStudio.h> 
+#include <cocostudio/CocoStudio.h> 
 #include "SaveData/PlayerData.h"
-#include "Tool\SqLite.h"
+#include "Tool/SqLite.h"
 #include "Tool/Rule.h"
 using namespace ui;
 bool PlayerButton::init()
@@ -29,25 +29,17 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 		Button* bt = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up");
 	    Sprite* sp = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("head");
 		sp->setTexture("ui/downUi/hero/heroHead0.png");
-		lblv = Label::create();
-		lblv->setScale(4); 
-		lblv->setPosition(Vec2(450,100));
-		this->addChild(lblv);
-		lbdps = Label::create();
-		lbdps->setPosition(Vec2(450, 50));
-		lbdps->setScale(4);
-		this->addChild(lbdps);
+		
+		
 		m_upGold = SqLite::getInstance()->getGold();
-		bt->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type){
+		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
 				PlayerData::getInstance()->heroLevelUp();
-				lbdps->setString(Ruler::getInstance()->showNum(&PlayerData::getInstance()->getDps()));
-				lblv->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getPlayerLevel()));
 				PlayerData::getInstance()->subGold(&m_upGold);
 				double playerLevel = PlayerData::getInstance()->getPlayerLevel();
 				auto mul = 1 / pow(playerLevel, 0.55) - 1 / pow(playerLevel, 1.03) + 1;
-				m_upGold = Ruler::getInstance()->multiplayUp(&m_upGold, mul) ;
+				m_upGold = Ruler::getInstance()->multiplayUp(m_upGold, mul) ;
 				coinChange(this);
 			}
 		});
@@ -59,12 +51,15 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 		sp->setTexture("ui/downUi/hero/heroHead1.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(1);
 		
-		bt->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type){
+		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
-				m_upGold = Ruler::getInstance()->multiplay(&m_upGold, 50);
+				
 				PlayerData::getInstance()->skillLevelUp(1);
-
+				PlayerData::getInstance()->subGold(&m_upGold);
+				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
+				coinChange(this);
+				
 			}
 		});
 	}
@@ -74,11 +69,13 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 		Sprite* sp = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("head");
 		sp->setTexture("ui/downUi/hero/heroHead2.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(2);
-		bt->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type){
+		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
-				m_upGold = Ruler::getInstance()->multiplay(&m_upGold, 50);
+				PlayerData::getInstance()->subGold(&m_upGold);
+				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
 				PlayerData::getInstance()->skillLevelUp(2);
+				coinChange(this);
 			}
 		});
 	}
@@ -88,11 +85,13 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 		Sprite* sp = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("head");
 		sp->setTexture("ui/downUi/hero/heroHead3.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(3);
-		bt->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type){
+		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
-				m_upGold = Ruler::getInstance()->multiplay(&m_upGold, 50);
+				PlayerData::getInstance()->subGold(&m_upGold);
+				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
 				PlayerData::getInstance()->skillLevelUp(3);
+				coinChange(this);
 			}
 		});
 	}
@@ -102,11 +101,13 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 		Sprite* sp = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("head");
 		sp->setTexture("ui/downUi/hero/heroHead4.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(4);
-		bt->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type){
+		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
-				m_upGold = Ruler::getInstance()->multiplay(&m_upGold, 50);
+				PlayerData::getInstance()->subGold(&m_upGold);
+				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
 				PlayerData::getInstance()->skillLevelUp(4);
+				coinChange(this);
 			}
 		});
 	}
@@ -116,11 +117,13 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 		Sprite* sp = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("head");
 		sp->setTexture("ui/downUi/hero/heroHead5.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(5);
-		bt->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type){
+		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
-				m_upGold = Ruler::getInstance()->multiplay(&m_upGold, 50);
+				PlayerData::getInstance()->subGold(&m_upGold);
+				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
 				PlayerData::getInstance()->skillLevelUp(5);
+				coinChange(this);
 			}
 		});
 	}
@@ -130,11 +133,13 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 		Sprite* sp = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("head");
 		sp->setTexture("ui/downUi/hero/heroHead6.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(6);
-		bt->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type){
+		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
-				m_upGold = Ruler::getInstance()->multiplay(&m_upGold, 50);
+				PlayerData::getInstance()->subGold(&m_upGold);
+				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
 				PlayerData::getInstance()->skillLevelUp(6);
+				coinChange(this);
 			}
 		});
 	}
@@ -144,7 +149,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 		Sprite* sp = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("head");
 		sp->setTexture("ui/downUi/hero/heroHead7.png");
 		bt->setEnabled("false");
-		bt->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type){
+		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
 
@@ -153,20 +158,16 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	}
 	coinChange(this);
 }
-void PlayerButton::update(float dt)
-{
-	
-}
 
 void PlayerButton::coinChange(Ref* pSender)
 {
-	Text* lb = (Text*)playerLayer->getChildByName("Layer")->getChildByName("up")->getChildByName("needGold");
+	TextBMFont* lb = (TextBMFont*)playerLayer->getChildByName("Layer")->getChildByName("up")->getChildByName("needGold");
 	
 	Text* text = (Text*)playerLayer->getChildByName("Layer")->getChildByName("discribe")->getChildByName("text");
 	Text* textD = (Text*)playerLayer->getChildByName("Layer")->getChildByName("discribe")->getChildByName("textD");
 	Button* bt = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up");
-	auto judge = Ruler::getInstance()->subNum(&m_upGold, PlayerData::getInstance()->getGold());
-	if (Ruler::getInstance()->Zero(&judge))
+	auto judge = Ruler::getInstance()->subNum(m_upGold, *PlayerData::getInstance()->getGold());
+	if (Ruler::getInstance()->Zero(judge))
 	{
 
 		bt->setEnabled(true);
@@ -178,52 +179,82 @@ void PlayerButton::coinChange(Ref* pSender)
 	if (m_type == PLAYER)
 	{
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getPlayerLevel()));
-
+		textD->setString(StringUtils::format("%d",PlayerData::getInstance()->getPlayerLevel()));
+		
 	}
 	else if (m_type == SKILL1)
 	{
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
 		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), eff));
+		if (PlayerData::getInstance()->getPlayerLevel() < 50)
+		{
+			bt->setEnabled(false);
+		}
 	}
 	else if (m_type == SKILL2)
 	{
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
 		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), eff));
+
+		if (PlayerData::getInstance()->getPlayerLevel() < 100)
+		{
+			bt->setEnabled(false);
+		}
 	}
 	else if (m_type == SKILL3)
 	{
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
-		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
-		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), eff));
+		float eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
+		int _eff = eff * 100;
+		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), _eff));
+		if (PlayerData::getInstance()->getPlayerLevel() < 200)
+		{
+			bt->setEnabled(false);
+		}
 	}
 	else if (m_type == SKILL4)
 	{
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
 		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
+		
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), eff));
+		if (PlayerData::getInstance()->getPlayerLevel() < 300)
+		{
+			bt->setEnabled(false);
+		}
 	}
 	else if (m_type == SKILL5)
 	{
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
-		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
-		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), eff));
+		float eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
+		int _eff = eff * 100;
+		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), _eff));
+		if (PlayerData::getInstance()->getPlayerLevel() < 400)
+		{
+			bt->setEnabled(false);
+		}
 	}
 	else if (m_type == SKILL6)
 	{
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
-		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
-		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), eff));
+		float eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
+		int _eff = eff * 100;
+		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), _eff));
+		if (PlayerData::getInstance()->getPlayerLevel() < 500)
+		{
+			bt->setEnabled(false);
+		}
 	}
 	else if (m_type == RELIFE)
 	{
 		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), eff));
-		if (PlayerData::getInstance()->getPlayerLevel() == 600)
+		if (PlayerData::getInstance()->getPlayerLevel() < 600)
 		{
-			bt->setEnabled(true);
+			bt->setEnabled(false);
 		}
 	}
-	lb->setString(Ruler::getInstance()->showNum(&m_upGold));
+	lb->setString(Ruler::getInstance()->showNum(m_upGold));
 }

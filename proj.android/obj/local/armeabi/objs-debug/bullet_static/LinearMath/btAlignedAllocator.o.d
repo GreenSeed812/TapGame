@@ -1,7 +1,7 @@
 obj/local/armeabi/objs-debug/bullet_static/LinearMath/btAlignedAllocator.o: \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/LinearMath/btAlignedAllocator.cpp \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/LinearMath/btAlignedAllocator.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/LinearMath/btScalar.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/LinearMath/btAlignedAllocator.cpp \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/LinearMath/btAlignedAllocator.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/LinearMath/btScalar.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -33,9 +33,9 @@ obj/local/armeabi/objs-debug/bullet_static/LinearMath/btAlignedAllocator.o: \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/memory.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/assert.h
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/LinearMath/btAlignedAllocator.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/LinearMath/btAlignedAllocator.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/LinearMath/btScalar.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/LinearMath/btScalar.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h:
 

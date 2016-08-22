@@ -16,10 +16,13 @@ public:
 	EventListenerTouchOneByOne *touchListener;
 	void setTouchEnabled(bool boolean){ touchListener->setEnabled(boolean); }
 	void attackeffection();
+	void effectInit();
+	void deleteSprite(Node *);
 private:
 	int m_clickPerSecond;
 	
 	Animation* ani;
+	Sprite * effectSprite;
 };
 
 

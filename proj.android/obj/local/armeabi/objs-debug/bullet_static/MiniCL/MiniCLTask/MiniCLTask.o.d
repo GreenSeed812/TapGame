@@ -1,8 +1,8 @@
 obj/local/armeabi/objs-debug/bullet_static/MiniCL/MiniCLTask/MiniCLTask.o: \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/MiniCL/MiniCLTask/MiniCLTask.cpp \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/MiniCL/MiniCLTask/MiniCLTask.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/BulletMultiThreaded/PlatformDefinitions.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/MiniCL/MiniCLTask/MiniCLTask.cpp \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/MiniCL/MiniCLTask/MiniCLTask.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/BulletMultiThreaded/PlatformDefinitions.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -33,29 +33,29 @@ obj/local/armeabi/objs-debug/bullet_static/MiniCL/MiniCLTask/MiniCLTask.o: \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/strings.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/memory.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/assert.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/vectormath/vmInclude.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/vectormath/scalar/vectormath_aos.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/vectormath/scalar/vec_aos.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/vectormath/scalar/quat_aos.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/vectormath/scalar/mat_aos.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/BulletMultiThreaded/PpuAddressSpace.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/BulletMultiThreaded/SpuFakeDma.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/BulletMultiThreaded/PlatformDefinitions.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/MiniCL/MiniCLTaskScheduler.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btAlignedObjectArray.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/vectormath/vmInclude.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/vectormath/scalar/vectormath_aos.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/vectormath/scalar/vec_aos.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/vectormath/scalar/quat_aos.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/vectormath/scalar/mat_aos.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/BulletMultiThreaded/PpuAddressSpace.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/BulletMultiThreaded/SpuFakeDma.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/BulletMultiThreaded/PlatformDefinitions.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/MiniCL/MiniCLTaskScheduler.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btAlignedObjectArray.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h \
  D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/new \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/MiniCL/MiniCLTask/MiniCLTask.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/MiniCL/MiniCLTask/MiniCLTask.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/stdio.h
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/MiniCL/MiniCLTask/MiniCLTask.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/MiniCL/MiniCLTask/MiniCLTask.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/BulletMultiThreaded/PlatformDefinitions.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/BulletMultiThreaded/PlatformDefinitions.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h:
 
@@ -117,36 +117,36 @@ D:/android/ndk/platforms/android-18/arch-arm/usr/include/memory.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/assert.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/vectormath/vmInclude.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/vectormath/vmInclude.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/vectormath/scalar/vectormath_aos.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/vectormath/scalar/vectormath_aos.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/vectormath/scalar/vec_aos.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/vectormath/scalar/vec_aos.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/vectormath/scalar/quat_aos.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/vectormath/scalar/quat_aos.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/vectormath/scalar/mat_aos.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/vectormath/scalar/mat_aos.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/BulletMultiThreaded/PpuAddressSpace.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/BulletMultiThreaded/PpuAddressSpace.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/BulletMultiThreaded/SpuFakeDma.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/BulletMultiThreaded/SpuFakeDma.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/BulletMultiThreaded/PlatformDefinitions.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/BulletMultiThreaded/PlatformDefinitions.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/MiniCL/MiniCLTaskScheduler.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/MiniCL/MiniCLTaskScheduler.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btAlignedObjectArray.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btAlignedObjectArray.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h:
 
 D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/new:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/MiniCL/MiniCLTask/MiniCLTask.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/MiniCL/MiniCLTask/MiniCLTask.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/stdio.h:

@@ -1,5 +1,5 @@
 obj/local/armeabi/objs-debug/recast_static/Detour/DetourAlloc.o: \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/Detour/DetourAlloc.cpp \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/Detour/DetourAlloc.cpp \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/stdlib.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -21,7 +21,7 @@ obj/local/armeabi/objs-debug/recast_static/Detour/DetourAlloc.o: \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/machine/kernel.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/sysmacros.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/memory.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/Detour/DetourAlloc.h
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/Detour/DetourAlloc.h
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/stdlib.h:
 
@@ -65,4 +65,4 @@ D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/sysmacros.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/memory.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/Detour/DetourAlloc.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/Detour/DetourAlloc.h:

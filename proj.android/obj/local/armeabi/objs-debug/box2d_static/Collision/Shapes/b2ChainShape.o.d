@@ -1,14 +1,14 @@
 obj/local/armeabi/objs-debug/box2d_static/Collision/Shapes/b2ChainShape.o: \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/Collision/Shapes/b2ChainShape.cpp \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/Shapes/b2ChainShape.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/Shapes/b2Shape.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2BlockAllocator.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2Settings.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/Collision/Shapes/b2ChainShape.cpp \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/Shapes/b2ChainShape.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/Shapes/b2Shape.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2BlockAllocator.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2Settings.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/assert.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs_elf.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/api-level.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2Math.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2Math.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/types.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/stdint.h \
@@ -29,20 +29,20 @@ obj/local/armeabi/objs-debug/box2d_static/Collision/Shapes/b2ChainShape.o: \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/machine/limits.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/syslimits.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/asm/page.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/b2Collision.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/Shapes/b2EdgeShape.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/b2Collision.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/Shapes/b2EdgeShape.h \
  D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/new \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/memory.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/string.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/malloc.h
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/Shapes/b2ChainShape.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/Shapes/b2ChainShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/Shapes/b2Shape.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/Shapes/b2Shape.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2BlockAllocator.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2BlockAllocator.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2Settings.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2Settings.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/assert.h:
 
@@ -52,7 +52,7 @@ D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs_elf.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/api-level.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2Math.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2Math.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h:
 
@@ -94,9 +94,9 @@ D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/syslimits.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/asm/page.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/b2Collision.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/b2Collision.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/Shapes/b2EdgeShape.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/Shapes/b2EdgeShape.h:
 
 D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/new:
 

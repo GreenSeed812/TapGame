@@ -6,7 +6,8 @@ using namespace cocos2d;
 SqLite * g_sql = nullptr;
 SqLite::SqLite()
 {
-	sqlite3_open("config/config.db",&m_pDB);
+	string s = FileUtils::getInstance()->getWritablePath() + "config.db";
+	sqlite3_open(s.c_str(),&m_pDB);
 	readMonster();
 	readMapData();
 	readSimpleData();
@@ -295,9 +296,9 @@ void SqLite::readSkillData()
 		}
 	}
 }
-MyNum * SqLite::getHpByID(int id)
+MyNum SqLite::getHpByID(int i)
 {
-	return &m_HpData.at(id);
+	return m_HpData.at(i);
 	
 }
 
@@ -400,7 +401,7 @@ void SqLite::readServantSkill()
 		std::string id = "ID";
 		std::string effect = "effect";
 		auto index = nColum;
-		for (int i = 0; i < nRow; i++)
+		for (int i = 0; i < nRow; i++) 
 		{
 			auto skill = new SkillEffect();
 			for (int j = 0; j < nColum; j++)

@@ -10,7 +10,6 @@ public:
 	void initServantLayer(int);
 	CREATE_FUNC(ServantButton);
 	static void getListView(Node* lv){ g_lv = lv; }
-	virtual void update(float dt);
 	void coinChange(Ref*);
 private:
 	Node* node;

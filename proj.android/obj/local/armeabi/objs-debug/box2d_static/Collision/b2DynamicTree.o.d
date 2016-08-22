@@ -1,9 +1,9 @@
 obj/local/armeabi/objs-debug/box2d_static/Collision/b2DynamicTree.o: \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/Collision/b2DynamicTree.cpp \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/b2DynamicTree.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/b2Collision.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2Math.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2Settings.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/Collision/b2DynamicTree.cpp \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/b2DynamicTree.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/b2Collision.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2Math.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2Settings.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/assert.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -28,18 +28,18 @@ obj/local/armeabi/objs-debug/box2d_static/Collision/b2DynamicTree.o: \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/machine/limits.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/syslimits.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/asm/page.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2GrowableStack.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2GrowableStack.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/memory.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/string.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/malloc.h
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/b2DynamicTree.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/b2DynamicTree.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/b2Collision.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Collision/b2Collision.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2Math.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2Math.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2Settings.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2Settings.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/assert.h:
 
@@ -89,7 +89,7 @@ D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/syslimits.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/asm/page.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2GrowableStack.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/Box2D/../Box2D/Common/b2GrowableStack.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/memory.h:
 

@@ -20,12 +20,9 @@ public:
 	bool init();
 	CREATE_FUNC(PlayerButton);
 	void initPlayerButton(BUTTONTYPE);
-	virtual void update(float dt);
 	void coinChange(Ref*);
 private:
 	Node * playerLayer;
-	Label *lblv; 
-	Label *lbdps;
 	BUTTONTYPE m_type;
 	MyNum m_upGold;
 };

@@ -7,10 +7,13 @@
 #include "MainScene/ClickLayer.h"
 #include "SaveData/PlayerData.h"
 #include "Tool/Rule.h"
-#include "Ui/bossButton.h"
 #include "MainScene/PlayerButton.h"
+#include "MainScene/ServantButton.h"
 #include "SaveData/State.h"
-#include "MainScene\ServantButton.h"
+#include "Ui/settingLayer.h"
+#include "Ui/AchieveLayer.h"
+#include "Ui/MissionLayer.h"
+#include "Ui/SignLayer.h"
 using namespace cocostudio;
 
 USING_NS_CC;
@@ -37,17 +40,18 @@ Scene* HelloWorld::createScene()
 // on "init" you need to initialize your instance
 bool HelloWorld::init()
 {
+
 	 if ( !Layer::init() )
     {
         return false;
     }
-
-	{
+	/*{
 		MyNum num;
-		num.Mathbit = 2;
-		num.number = 100;
+		num.Mathbit = 30;
+		num.number = 1;
 		PlayerData::getInstance()->addGold(&num);
-	}
+
+	}*/
 	m_heroLayer = nullptr;
 	m_servantLayer = nullptr;
     m_artifactLayer = nullptr;
@@ -55,22 +59,38 @@ bool HelloWorld::init()
     rootNode = CSLoader::createNode("MainScene.csb");
 	addChild(rootNode);
 	Slider * hpSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider");
-	
+	hpSlider->setTouchEnabled(false);
 	
 	clickLayer = ClickLayer::create();
 	clickLayer->setZOrder(-1);
 	rootNode->addChild(clickLayer);
+	clickLayer->effectInit();
 	uiInit();
 	uiCallBack();
 	createMonster();
-	schedule(SEL_SCHEDULE(&HelloWorld::calUpdate), 0);
-
+	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::coinChange), "CoinChange", nullptr);
+	showTime = false;
+	Slider* timeSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("timeSlider");
+	timeSlider->setMaxPercent(PlayerData::getInstance()->getMaxTime());
+	timeNow = PlayerData::getInstance()->getMaxTime();
+	coinChange(this);
+	
     return true;
 }
-void HelloWorld::calUpdate(float dt)
+void HelloWorld::coinChange(Ref *ref)
 {
 	TextBMFont* gold = (TextBMFont*)rootNode->getChildByName("goldNum");
-	gold->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getGold()));
+	gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
+	if (m_heroLayer)
+	{
+		TextBMFont* gold = (TextBMFont*)m_heroLayer->getChildByName("message")->getChildByName("gold");
+		gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
+	}
+	if (m_servantLayer)
+	{
+		TextBMFont* gold = (TextBMFont*)m_servantLayer->getChildByName("message")->getChildByName("gold");
+		gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
+	}
 }
 void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const std::string& action)
 {
@@ -122,17 +142,75 @@ void HelloWorld::createMonster()
 	hpSlider->setPercent(hpS);
 
 	TextBMFont* tbm = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider")->getChildByName("hpNow");
-	tbm->setString(Ruler::getInstance()->showNum(&PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())));
+	tbm->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())));
 	PlayerData::getInstance()->setHpNow(PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()));
 	monsterNode->addChild(armature);
+
+	Slider* timeSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("timeSlider");
+	armature->setScale(1.5f);
+	if (PlayerData::getInstance()->getWaveNow() == PlayerData::getInstance()->getMaxWave())
+	{
+		armature->setScale(2.0f);
+		timeNow = PlayerData::getInstance()->getMaxTime();
+		timeSlider->runAction(Show::create());
+		timeSlider->setPercent(timeNow);
+		rootNode->getChildByName("dragon")->runAction(Show::create());
+	}
+	else if (PlayerData::getInstance()->getWaveNow()<=1)
+	{
+		timeSlider->runAction(Hide::create());
+		rootNode->getChildByName("dragon")->runAction(Hide::create());
+		
+	}
+	
 }
 void HelloWorld::update(float dt)
 {
+	
 	auto heroDps = PlayerData::getInstance()->getHeroDps();
-	auto dps = Ruler::getInstance()->multiplay(&heroDps, dt);
+	auto dps = Ruler::getInstance()->multiplay(heroDps, dt);
+	TextBMFont* kdps = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("KeepDps")->getChildByName("KeepDps");
+	kdps->setString(Ruler::getInstance()->showNum(heroDps));
+	TextBMFont* tdps = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("TapDps")->getChildByName("heroDps");
+	tdps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getDps()).c_str());
+	auto tpDps = Ruler::getInstance()->addNum(heroDps, PlayerData::getInstance()->getDps());
+	TextBMFont* tpdps = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("TotalDps")->getChildByName("TotalDps");
+	tpdps->setString(Ruler::getInstance()->showNum(tpDps));
+	if (m_heroLayer)
+	{
+		TextBMFont* dps = (TextBMFont*)m_heroLayer->getChildByName("message")->getChildByName("Dps");
+		dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getDps()).c_str());
+	}
+	if (m_servantLayer)
+	{
+		TextBMFont* dps = (TextBMFont*)m_servantLayer->getChildByName("message")->getChildByName("Dps");
+		dps->setString(Ruler::getInstance()->showNum(heroDps));
+	}
+	if (PlayerData::getInstance()->getWaveNow() == 11)
+	{
+		Slider* timeSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("timeSlider");
+		
+		timeNow -= dt * 1000;
+		if (timeNow <= 0)
+		{
+			PlayerData::getInstance()->setWave(0);
+			MyState::getInstance()->setBossButtonDown(true);
+			timeNow = PlayerData::getInstance()->getMaxTime();
+			bossBt->onTouchEnded(nullptr, nullptr);
+		}
+		else
+		{
+			timeSlider->setPercent(timeNow);
+			Text* timeNum = (Text*)timeSlider->getChildByName("Time");
+			timeNum->setString(StringUtils::format("%.2f", (float)timeNow / 1000));
 
+		}
+		showTime = true;
+	
+	}
+	
 	Slider* slider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider");
-	auto subNow = Ruler::getInstance()->subNum(&PlayerData::getInstance()->getHpNow(), &dps);
+	auto subNow = Ruler::getInstance()->subNum(PlayerData::getInstance()->getHpNow(), dps);
 	PlayerData::getInstance()->setHpNow(subNow);
 	
 	if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit == PlayerData::getInstance()->getHpNow().Mathbit)
@@ -145,7 +223,7 @@ void HelloWorld::update(float dt)
 		slider->setPercent(0);
 	
 	TextBMFont* tbm = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider")->getChildByName("hpNow");
-	tbm->setString(Ruler::getInstance()->showNum(&PlayerData::getInstance()->getHpNow()));
+	tbm->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getHpNow()));
 	killBoss();
 	
 
@@ -162,23 +240,51 @@ void HelloWorld::uiCallBack()
 	Button* servantButton = (Button*)rootNode->getChildByName("UiNode")->getChildByName("OptionLayer")->getChildByName("servantButton");
 	Button* artifactButton = (Button*)rootNode->getChildByName("UiNode")->getChildByName("OptionLayer")->getChildByName("artifactButton");
 	Button* itemButton = (Button*)rootNode->getChildByName("UiNode")->getChildByName("OptionLayer")->getChildByName("itemButton");
-
-	playerButton->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type) {
+	Button* settingButton = (Button*)rootNode->getChildByName("UiNode")->getChildByName("Setting");
+	Button* achieveButton = (Button*)rootNode->getChildByName("UiNode")->getChildByName("achiveButton");
+	Button* missonButton = (Button*)rootNode->getChildByName("UiNode")->getChildByName("Mission");
+	Button* signButton = (Button*)rootNode->getChildByName("UiNode")->getChildByName("SignButton");
+	Node* node = rootNode->getChildByName("UiNode")->getChildByName("SkillLayer");
+	for (auto child : node->getChildren())
+	{
+		Button* bt = (Button*)child;
+		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
+			if (type == Widget::TouchEventType::ENDED)
+			{
+				Text* warning = (Text*)rootNode->getChildByName("Warning");
+				auto seq = Sequence::create(Show::create(), DelayTime::create(2), Hide::create(), NULL);
+				warning->runAction(seq);
+			}
+		});
+	
+	}
+	playerButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {
 		if (type == Widget::TouchEventType::BEGAN)
 		{
 			Button* bt = (Button*)sender;
-			bt->setScale(1.2);
 		}
 		if (type == Widget::TouchEventType::ENDED) {
 			// 注意node的生命周期的问题
 			Button* bt = (Button*)sender;
-			bt->setScale(1.0);
+			auto opLayer = rootNode->getChildByName("UiNode")->getChildByName("OptionLayer");
+			for (auto child : opLayer->getChildren())
+			{
+				Button* _child = (Button*)child;
+				_child->setEnabled(true);
+			}
+			bt->setEnabled(false);
 			if (initDownLayer(m_heroLayer))
 			{
+				Sprite* disc = (Sprite*)m_heroLayer->getChildByName("message")->getChildByName("discribe");
+				auto sprite = Sprite::create("ui/downUi/hero/dianjishanghai.png");
+				auto pos = disc->getPosition();
+				sprite->setPosition(disc->getPosition());
+				m_heroLayer->getChildByName("message")->addChild(sprite);
+				disc->removeFromParent();
 				TextBMFont* dps = (TextBMFont*)m_heroLayer->getChildByName("message")->getChildByName("Dps");
-				dps->setString(Ruler::getInstance()->showNum(&PlayerData::getInstance()->getHeroDps()));
+				dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getHeroDps()));
 				TextBMFont* gold = (TextBMFont*)m_heroLayer->getChildByName("message")->getChildByName("gold");
-				gold->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getGold()));
+				gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
 				for (int i = 0; i < 8; i++)
 				{
 					PlayerButton* bt = PlayerButton::create();
@@ -204,26 +310,31 @@ void HelloWorld::uiCallBack()
 			
 		}
 	});
-	servantButton->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type) {
+	servantButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {
 		if (type == Widget::TouchEventType::BEGAN)
 		{
 			
 			Button* bt = (Button*)sender;
-			bt->setScale(1.2);
 		}
 		if (type == Widget::TouchEventType::ENDED) {
 			// 注意node的生命周期的问题  
 			Button* bt = (Button*)sender;
-			bt->setScale(1.0);
+			auto opLayer = rootNode->getChildByName("UiNode")->getChildByName("OptionLayer");
+			for (auto child : opLayer->getChildren())
+			{
+				Button* _child = (Button*)child;
+				_child->setEnabled(true);
+			}
+			bt->setEnabled(false);
 			if (initDownLayer(m_servantLayer))
 			{
 
 				ListView* lv = (ListView*)m_servantLayer->getChildByName("ListView");
 				ServantButton::getListView(lv);
 				TextBMFont* dps = (TextBMFont*)m_servantLayer->getChildByName("message")->getChildByName("Dps");
-				dps->setString(Ruler::getInstance()->showNum(&PlayerData::getInstance()->getDps()));
+				dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getDps()));
 				TextBMFont* gold = (TextBMFont*)m_servantLayer->getChildByName("message")->getChildByName("gold");
-				gold->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getGold()));
+				gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
 				auto button = ServantButton::create();
 				button->initServantLayer(0);
 				auto widget = Widget::create();
@@ -242,45 +353,104 @@ void HelloWorld::uiCallBack()
 			
 		}
 	});
-	artifactButton->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type) {
+	artifactButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {
 		if (type == Widget::TouchEventType::BEGAN)
 		{
 			Button* bt = (Button*)sender;
-			bt->setScale(1.2);
 		}
 		if (type == Widget::TouchEventType::ENDED) {
 			// 注意node的生命周期的问题  
 			Button* bt = (Button*)sender;
-			bt->setScale(1.0);
+			auto opLayer = rootNode->getChildByName("UiNode")->getChildByName("OptionLayer");
+			for (auto child : opLayer->getChildren())
+			{
+				Button* _child = (Button*)child;
+				_child->setEnabled(true);
+			}
+			bt->setEnabled(false);
 			initDownLayerAr(m_artifactLayer);
 		}
 	});
-	itemButton->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type) {
+	itemButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {
 		if (type == Widget::TouchEventType::BEGAN)
 		{
 			Button* bt = (Button*)sender;
-			bt->setScale(1.2);
 		}
 		if (type == Widget::TouchEventType::ENDED) {
 			// 注意node的生命周期的问题  
 			Button* bt = (Button*)sender;
-			bt->setScale(1.0);
-			initDownLayer(m_shopLayer);
+			auto opLayer = rootNode->getChildByName("UiNode")->getChildByName("OptionLayer");
+			for (auto child : opLayer->getChildren())
+			{
+				
+				Button* _child = (Button*)child;
+				_child->setEnabled(true);
+			}
+			bt->setEnabled(false);
+			initDownLayerSh(m_shopLayer);
+		}
+	});
+	settingButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {
+		if (type == Widget::TouchEventType::BEGAN)
+		{
+			Button* bt = (Button*)sender;
+		}
+		if (type == Widget::TouchEventType::ENDED) {
+			// 注意node的生命周期的问题  
+			Button* bt = (Button*)sender;
+			auto layer = settingLayer::create();
+			this->addChild(layer);
+		}
+	});
+	achieveButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {
+		if (type == Widget::TouchEventType::BEGAN)
+		{
+			Button* bt = (Button*)sender;
+		}
+		if (type == Widget::TouchEventType::ENDED) {
+			// 注意node的生命周期的问题  
+			Button* bt = (Button*)sender;
+			auto layer = AchieveLayer::create();
+			this->addChild(layer);
+		}
+	});
+	missonButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {
+		if (type == Widget::TouchEventType::BEGAN)
+		{
+			Button* bt = (Button*)sender;
+		}
+		if (type == Widget::TouchEventType::ENDED) {
+			// 注意node的生命周期的问题  
+			Button* bt = (Button*)sender;
+			auto layer = MissionLayer::create();
+			this->addChild(layer);
+		}
+	});
+	signButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {
+		if (type == Widget::TouchEventType::BEGAN)
+		{
+			Button* bt = (Button*)sender;
+		}
+		if (type == Widget::TouchEventType::ENDED) {
+			// 注意node的生命周期的问题  
+			Button* bt = (Button*)sender;
+			auto layer = SignLayer::create();
+			this->addChild(layer);
 		}
 	});
 }
 void HelloWorld::killBoss()
 {
-	TextAtlas* waveNum = (TextAtlas*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("WaveNum");
+	TextBMFont* waveNum = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("WaveNum");
 	Sprite* escapeBoss = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("escapeBoss");
-	if (State::getInstance()->getBossButtonDown())
+	if (MyState::getInstance()->getBossButtonDown())
 	{
 		unscheduleUpdate();
 		armature->getAnimation()->play("Leave");
 		clickLayer->setTouchEnabled(false);
-		State::getInstance()->setBossButtonDown(false);
+		MyState::getInstance()->setBossButtonDown(false);
 	}
-	if (Ruler::getInstance()->Zero(&PlayerData::getInstance()->getHpNow()))
+	if (Ruler::getInstance()->Zero(PlayerData::getInstance()->getHpNow()))
 	{
 		unscheduleUpdate();
 		PlayerData::getInstance()->defeatMonsterGold();
@@ -288,7 +458,7 @@ void HelloWorld::killBoss()
 		{
 			PlayerData::getInstance()->waveUp();
 			
-			waveNum->setString(StringUtils::format("%d//10", PlayerData::getInstance()->getWaveNow()));
+			waveNum->setString(StringUtils::format("%d/10", PlayerData::getInstance()->getWaveNow()));
 		}
 		else if (PlayerData::getInstance()->getWaveNow() == 10)
 		{
@@ -299,9 +469,10 @@ void HelloWorld::killBoss()
 			Node* bossButtonNode = (Node*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("escapeBoss");
 			if (!bossButtonNode->getChildByName("bt"))
 			{
-				auto bossBt = bossButton::create();
+				bossBt = bossButton::create();
 				bossButtonNode->addChild(bossBt);
 				bossBt->setName("bt");
+				
 			}
 			
 			
@@ -319,7 +490,7 @@ void HelloWorld::killBoss()
 			text->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel()));
 			Node* bossButtonNode = (Node*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("escapeBoss");
 			bossButtonNode->removeChildByName("bt");
-			waveNum->setString(StringUtils::format("%d//10", PlayerData::getInstance()->getWaveNow()));
+			waveNum->setString(StringUtils::format("%d/10", PlayerData::getInstance()->getWaveNow()));
 			waveNum->runAction(Show::create());
 		}
 		clickLayer->setTouchEnabled(false);
@@ -340,9 +511,15 @@ bool HelloWorld::initDownLayer(Node* &downLayer)
 		downLayer->retain();
 		downLayer->setName("downLayerNow"); 
 		Button* escButton = (Button*)downLayer->getChildByName("message")->getChildByName("escButton");
-		escButton->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type) {
+		escButton->addTouchEventListener([downLayer,this](Ref* sender, Widget::TouchEventType type) {
 			if (type == Widget::TouchEventType::ENDED) {
 				// 注意node的生命周期的问题  
+				auto opLayer = rootNode->getChildByName("UiNode")->getChildByName("OptionLayer");
+				for (auto child : opLayer->getChildren())
+				{
+					Button* _child = (Button*)child;
+					_child->setEnabled(true);
+				}
 				downLayer->removeFromParent();
 			}
 		});
@@ -369,9 +546,15 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 		downLayer->retain();
 		downLayer->setName("downLayerNow");
 		Button* escButton = (Button*)downLayer->getChildByName("message")->getChildByName("escButton");
-		escButton->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type) {
+		escButton->addTouchEventListener([downLayer,this](Ref* sender, Widget::TouchEventType type) {
 			if (type == Widget::TouchEventType::ENDED) {
-				// 注意node的生命周期的问题  
+				// 注意node的生命周期的问题
+				auto opLayer = rootNode->getChildByName("UiNode")->getChildByName("OptionLayer");
+				for (auto child : opLayer->getChildren())
+				{
+					Button* _child = (Button*)child;
+					_child->setEnabled(true);
+				}
 				downLayer->removeFromParent();
 			}
 		});
@@ -384,5 +567,40 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 
 	rootNode->addChild(downLayer);
 	
+	return ret;
+}
+
+bool HelloWorld::initDownLayerSh(Node* &downLayer)
+{
+	bool ret = false;
+	if (!downLayer)
+	{
+		if (rootNode->getChildByName("downLayerNow"))
+			rootNode->removeChildByName("downLayerNow");
+		downLayer = CSLoader::createNode("downLayerSh.csb");
+		downLayer->retain();
+		downLayer->setName("downLayerNow");
+		Button* escButton = (Button*)downLayer->getChildByName("message")->getChildByName("escButton");
+		escButton->addTouchEventListener([downLayer, this](Ref* sender, Widget::TouchEventType type) {
+			if (type == Widget::TouchEventType::ENDED) {
+				// 注意node的生命周期的问题
+				auto opLayer = rootNode->getChildByName("UiNode")->getChildByName("OptionLayer");
+				for (auto child : opLayer->getChildren())
+				{
+					Button* _child = (Button*)child;
+					_child->setEnabled(true);
+				}
+				downLayer->removeFromParent();
+			}
+		});
+		ret = true;
+	}
+	else
+	{
+		rootNode->removeChildByName("downLayerNow");
+	}
+
+	rootNode->addChild(downLayer);
+
 	return ret;
 }

@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 #include <map>
-#include "Tool\sqlite3.h"
+#include "Tool/sqlite3.h"
 #include "MyNum.h"
 struct MonsterData
 {
@@ -73,7 +73,7 @@ class SqLite
 public:
 	
 	static SqLite* getInstance();
-	MyNum * getHpByID(int);
+	MyNum getHpByID(int);
 	MonsterData* getMonsterByID(int);
 	MyNum getDropData(){ return m_dropData; }
 	int m_randNpc[5];
@@ -87,7 +87,8 @@ public:
 	double getEffPer(int i){ return m_skillData.at(i)->effPerLevel; }
 	MyNum getServantDpsByID(int i){ return m_servantData.at(i)->dps; }
 	MyNum getServantGoldByID(int i){ return m_servantData.at(i)->gold; }
-private:
+	std::string getServantNameByID(int i){ return m_servantData.at(i)->name; }
+public:
 	SqLite();
 	~SqLite();
 	void readMonster();

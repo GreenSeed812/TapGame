@@ -2,8 +2,9 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
-#include <cocostudio\CocoStudio.h>
-#include "MainScene\ClickLayer.h"
+#include <cocostudio/CocoStudio.h>
+#include "MainScene/ClickLayer.h"
+#include "Ui/bossButton.h"
 using namespace cocostudio;
 
 class HelloWorld : public cocos2d::Layer
@@ -21,8 +22,9 @@ public:
 	void uiCallBack();
 	bool initDownLayer(Node*&);
 	bool initDownLayerAr(Node*&);
+	bool initDownLayerSh(Node*&);
+	void coinChange(Ref*);
 	virtual void update(float dt);
-	void calUpdate(float dt);
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 private:
@@ -34,6 +36,9 @@ private:
 	Node * m_artifactLayer;
 	Node * m_shopLayer;
 	Node * noNode;
+	bool showTime;
+	int timeNow;
+	bossButton * bossBt;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

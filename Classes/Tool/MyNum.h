@@ -2,8 +2,13 @@
 #define _MyNum_
 struct MyNum
 {
-	double number = 0;
-	int Mathbit = 0;
+	MyNum()
+	{
+		number = 0;
+		Mathbit = 0;
+	};
+	double number;
+	int Mathbit;
 
 };
 #endif

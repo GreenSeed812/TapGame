@@ -1,6 +1,6 @@
 obj/local/armeabi/objs-debug/cocos2dx_internal_static/__/external/xxhash/xxhash.o: \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./../external/xxhash/xxhash.c \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./../external/xxhash/xxhash.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/xxhash/xxhash.c \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/xxhash/xxhash.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/stdlib.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -24,7 +24,7 @@ obj/local/armeabi/objs-debug/cocos2dx_internal_static/__/external/xxhash/xxhash.
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/sysmacros.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/memory.h
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./../external/xxhash/xxhash.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/xxhash/xxhash.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/stdlib.h:
 

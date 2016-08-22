@@ -1,17 +1,17 @@
 #ifndef _State_H_
 #define _State_H_
-class State
+class MyState
 {
 public:
 	
-	static State* getInstance();
+	static MyState* getInstance();
 	void setBossButtonDown(bool boolean){ m_bossButton = boolean; }
 	bool getBossButtonDown(){ return m_bossButton; }
 private:
 	bool m_bossButton;
 	
-	State();
-	~State();
+	MyState();
+	~MyState();
 };
 
 

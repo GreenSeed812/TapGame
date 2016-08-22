@@ -1,6 +1,7 @@
 #include "AppDelegate.h"
 #include "MainScene/HelloWorldScene.h"
 #include "Tool\SqLite.h"
+#include "LoadingScene\LoadingScene.h"
 USING_NS_CC;
 
 AppDelegate::AppDelegate() {
@@ -27,26 +28,28 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::createWithRect("HelloCpp", Rect(0, 0, 540, 960),0.7);
+        glview = GLViewImpl::createWithRect("HelloCpp", Rect(0, 0, 540, 960),0.7f);
         director->setOpenGLView(glview);
     }
 
 	director->getOpenGLView()->setDesignResolutionSize(1080, 1920, ResolutionPolicy::SHOW_ALL);
-
+	auto data = FileUtils::getInstance()->getDataFromFile("config/test.db");
+	FileUtils::getInstance()->writeDataToFile(data, FileUtils::getInstance()->getWritablePath() + "config.db");
     // turn on display FPS
     director->setDisplayStats(true);
 
     // set FPS. the default value is 1.0/60 if you don't call this
-    director->setAnimationInterval(1.0 / 60);
+    director->setAnimationInterval(1.0f / 60);
 
     FileUtils::getInstance()->addSearchPath("res");
-	SqLite::getInstance();
+	
     // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
+	auto scene = HelloWorld::createScene();
+    /*auto scene1 = HelloWorld::createScene();*/
 
     // run
     director->runWithScene(scene);
-
+	
     return true;
 }
 

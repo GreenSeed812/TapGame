@@ -1,12 +1,12 @@
 obj/local/armeabi/objs-debug/recast_static/DebugUtils/DebugDraw.o: \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/DebugUtils/DebugDraw.cpp \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/DebugUtils/DebugDraw.cpp \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/string.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs_elf.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/api-level.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/malloc.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/DebugUtils/DebugDraw.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/../recast/Detour/DetourMath.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/DebugUtils/DebugDraw.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/../recast/Detour/DetourMath.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/types.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/stdint.h \
@@ -38,9 +38,9 @@ D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/api-level.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/malloc.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/DebugUtils/DebugDraw.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/DebugUtils/DebugDraw.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/recast/../recast/Detour/DetourMath.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/recast/../recast/Detour/DetourMath.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h:
 

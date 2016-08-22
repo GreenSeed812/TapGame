@@ -1,10 +1,10 @@
 obj/local/armeabi/objs-debug/bullet_static/BulletCollision/Gimpact/gim_box_set.o: \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_set.cpp \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_set.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_array.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_memory.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_math.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_set.cpp \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_set.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_array.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_memory.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_math.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -35,32 +35,32 @@ obj/local/armeabi/objs-debug/bullet_static/BulletCollision/Gimpact/gim_box_set.o
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/strings.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/memory.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/assert.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_radixsort.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_collision.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_basic_geometry_operations.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_linear_math.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_geom_types.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btTransform.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btMatrix3x3.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btVector3.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btQuaternion.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btQuadWord.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_radixsort.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_collision.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_basic_geometry_operations.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_linear_math.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_geom_types.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btTransform.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btMatrix3x3.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btVector3.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btQuaternion.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btQuadWord.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/stdio.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_tri_collision.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_clip_polygon.h
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_tri_collision.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_clip_polygon.h
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_set.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_set.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_array.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_array.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_memory.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_memory.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_math.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_math.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h:
 
@@ -122,34 +122,34 @@ D:/android/ndk/platforms/android-18/arch-arm/usr/include/memory.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/assert.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_radixsort.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_radixsort.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_collision.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_collision.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_basic_geometry_operations.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_basic_geometry_operations.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_linear_math.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_linear_math.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_geom_types.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_geom_types.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btTransform.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btTransform.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btMatrix3x3.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btMatrix3x3.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btVector3.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btVector3.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btQuaternion.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btQuaternion.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btQuadWord.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/../bullet/LinearMath/btQuadWord.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/stdio.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_tri_collision.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_tri_collision.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_clip_polygon.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/bullet/BulletCollision/Gimpact/gim_clip_polygon.h:

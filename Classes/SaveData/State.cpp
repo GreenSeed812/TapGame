@@ -1,19 +1,19 @@
 #include "SaveData/State.h"
-State *state;
-State::State()
+MyState *state;
+MyState::MyState()
 	:m_bossButton(false)
 {
 }
 
-State::~State()
+MyState::~MyState()
 {
 }
 
-State* State::getInstance()
+MyState* MyState::getInstance()
 {
 	if (!state)
 	{
-		state = new State();
+		state = new MyState();
 	}
 	return state;
 }

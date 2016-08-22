@@ -1,6 +1,6 @@
 obj/local/armeabi/objs-debug/cocos2dx_internal_static/__/external/clipper/clipper.o: \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./../external/clipper/clipper.cpp \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./../external/clipper/clipper.hpp \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/clipper/clipper.cpp \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/clipper/clipper.hpp \
  D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/vector \
  D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/set \
  D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/stdexcept \
@@ -11,7 +11,7 @@ obj/local/armeabi/objs-debug/cocos2dx_internal_static/__/external/clipper/clippe
  D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cmath \
  D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/algorithm
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./../external/clipper/clipper.hpp:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/clipper/clipper.hpp:
 
 D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/vector:
 

@@ -1,11 +1,11 @@
 obj/local/armeabi/objs-debug/cocos2dx_internal_static/2d/CCTweenFunction.o: \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./2d/CCTweenFunction.cpp \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./2d/CCTweenFunction.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./platform/CCPlatformMacros.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./base/ccConfig.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./platform/CCPlatformConfig.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./platform/CCPlatformDefine.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./platform/android/CCPlatformDefine-android.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./2d/CCTweenFunction.cpp \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./2d/CCTweenFunction.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformMacros.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccConfig.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformConfig.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformDefine.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCPlatformDefine-android.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/log.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs.h \
@@ -31,17 +31,17 @@ obj/local/armeabi/objs-debug/cocos2dx_internal_static/2d/CCTweenFunction.o: \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/syslimits.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/asm/page.h
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./2d/CCTweenFunction.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./2d/CCTweenFunction.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./platform/CCPlatformMacros.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformMacros.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./base/ccConfig.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccConfig.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./platform/CCPlatformConfig.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformConfig.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./platform/CCPlatformDefine.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformDefine.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./platform/android/CCPlatformDefine-android.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCPlatformDefine-android.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/log.h:
 

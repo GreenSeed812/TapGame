@@ -1,7 +1,7 @@
 obj/local/armeabi/objs-debug/cocos2dx_internal_static/__/external/unzip/ioapi.o: \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./../external/unzip/ioapi.cpp \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./../external/unzip/ioapi.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./platform/CCPlatformConfig.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/unzip/ioapi.cpp \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/unzip/ioapi.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformConfig.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/stdio.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -24,8 +24,8 @@ obj/local/armeabi/objs-debug/cocos2dx_internal_static/__/external/unzip/ioapi.o:
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/alloca.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/strings.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/memory.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/zlib/prebuilt/android/../../include/zlib.h \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/zlib/prebuilt/android/../../include/zconf.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/zlib/prebuilt/android/../../include/zlib.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/zlib/prebuilt/android/../../include/zconf.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/limits.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/limits.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/linux/limits.h \
@@ -47,9 +47,9 @@ obj/local/armeabi/objs-debug/cocos2dx_internal_static/__/external/unzip/ioapi.o:
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/linux/capability.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/pathconf.h
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./../external/unzip/ioapi.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/unzip/ioapi.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./platform/CCPlatformConfig.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformConfig.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/stdio.h:
 
@@ -95,9 +95,9 @@ D:/android/ndk/platforms/android-18/arch-arm/usr/include/strings.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/memory.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/zlib/prebuilt/android/../../include/zlib.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/zlib/prebuilt/android/../../include/zlib.h:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/external/zlib/prebuilt/android/../../include/zconf.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/zlib/prebuilt/android/../../include/zconf.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/limits.h:
 

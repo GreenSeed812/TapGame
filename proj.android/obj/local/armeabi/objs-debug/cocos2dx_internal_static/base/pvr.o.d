@@ -1,5 +1,5 @@
 obj/local/armeabi/objs-debug/cocos2dx_internal_static/base/pvr.o: \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./base/pvr.cpp \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/pvr.cpp \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/stdlib.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -32,7 +32,7 @@ obj/local/armeabi/objs-debug/cocos2dx_internal_static/base/pvr.o: \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/assert.h \
  D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstdint \
- C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./base/pvr.h
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/pvr.h
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/stdlib.h:
 
@@ -98,4 +98,4 @@ D:/android/ndk/platforms/android-18/arch-arm/usr/include/assert.h:
 
 D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstdint:
 
-C:\Users\Dengyz\Documents\Cocos\CocosProjects\NewCocosProject1\proj.android\../cocos2d/cocos/./base/pvr.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/pvr.h:

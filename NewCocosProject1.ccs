@@ -3,16 +3,51 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
+        <Image Name="1.png" />
+        <Image Name="8.png" />
+        <Project Name="achieveLayer.csd" Type="Layer" />
+        <Project Name="achieveLayer_0.csd" Type="Layer" />
         <Image Name="achive.png" />
+        <Image Name="anniu (2).png" />
+        <Image Name="anniu (4).png" />
+        <Image Name="anniu (5).png" />
+        <Image Name="anniu.png" />
+        <Image Name="anniu3.png" />
+        <Image Name="anniuhui.png" />
         <Image Name="artifact.png" />
         <Image Name="artifact_1.png" />
-        <Project Name="artifactButtonLayer.csd" Type="Layer" />
+        <Image Name="baofengxue.png" />
+        <Image Name="baofengxue-zjm.png" />
         <Image Name="bg.jpg" />
         <Image Name="bossButton.png" />
         <Image Name="buttonLayer.png" />
+        <Image Name="cchengjiudakuang.png" />
+        <Image Name="chengjiu1.png" />
+        <Image Name="chengjiudacheng.png" />
+        <Image Name="chengjiujindu.png" />
+        <Image Name="chengjiukuang.png" />
+        <Image Name="chengjiulingqu1.png" />
+        <Image Name="chengjiulingqu2.png" />
+        <Image Name="chengjiumiaoshu.png" />
+        <Project Name="configLayer.csd" Type="Layer" />
+        <Image Name="cxsh.png" />
+        <Image Name="dadiban.png" />
+        <Image Name="diban.png" />
+        <Image Name="diban0.png" />
+        <Image Name="diertian.png" />
+        <Image Name="diliutian.png" />
         <Image Name="dimond.png" />
+        <Image Name="diqitian.png" />
+        <Image Name="disantian.png" />
         <Image Name="discribe.png" />
+        <Image Name="disitian.png" />
+        <Image Name="diwutian.png" />
+        <Image Name="diyitian.png" />
+        <Image Name="dj.png" />
+        <Image Name="dj0.png" />
+        <Project Name="DmgNum.csd" Type="Node" />
         <Project Name="downLayer.csd" Type="Layer" />
+        <Project Name="downLayer_0.csd" Type="Layer" />
         <Project Name="downLayerAr.csd" Type="Layer" />
         <Project Name="downLayerSh.csd" Type="Layer" />
         <Project Name="downUiButtonLayer.csd" Type="Layer" />
@@ -20,37 +55,96 @@
         <Image Name="dpsPerS_1.png" />
         <Image Name="escbg.png" />
         <Image Name="escButton.png" />
+        <Project Name="everydayLayer.csd" Type="Layer" />
         <Fnt Name="font.fnt" />
         <TTF Name="font.ttf" />
         <Image Name="frame.png" />
         <Image Name="gold.png" />
         <Image Name="head.png" />
         <Image Name="HelloWorld.png" />
+        <Image Name="hpSlider.png" />
+        <Image Name="hpSliderDemo.png" />
         <Image Name="hpSliderGray.png" />
         <Image Name="hpSliderRed.png" />
+        <Image Name="jiangli.png" />
+        <Image Name="jinbi (2).png" />
+        <Image Name="jinbi.png" />
+        <Image Name="jinlong.png" />
+        <Image Name="js.png" />
+        <Image Name="js0.png" />
         <Image Name="keepDps .png" />
+        <Image Name="kssj.png" />
+        <Image Name="kssj-zjm.png" />
+        <Image Name="kuang.png" />
+        <Image Name="kuang1 (2).png" />
+        <Image Name="kuang1.png" />
+        <Image Name="kuang2.png" />
+        <Image Name="lan.png" />
         <Image Name="layer.png" />
-        <Image Name="Layer.png" />
+        <Image Name="lhs.png" />
+        <Image Name="linghunshi.png" />
+        <Image Name="lv.png" />
         <Image Name="mainBG.jpg" />
         <Project Name="MainScene.csd" Type="Scene" />
         <Image Name="mapLayer.png" />
         <Image Name="mapNow.png" />
         <Image Name="mapOther.png" />
+        <Image Name="meiriqiandao.png" />
+        <Image Name="meirirenwu.png" />
         <Image Name="message.png" />
         <Image Name="mission.png" />
         <ExportJsonFile Name="monster_01.ExportJson" />
+        <Image Name="monster_010.png" />
+        <Image Name="ms.png" />
         <Image Name="OptionButton.png" />
         <Image Name="optionFrame.png" />
         <Image Name="optionLayer.png" />
-        <Image Name="servantFrame.png" />
+        <Image Name="renwu.png" />
         <Project Name="servantNode.csd" Type="Layer" />
         <Image Name="setting.png" />
+        <Image Name="shezhianniu.png" />
+        <Image Name="shezhibeijing.png" />
         <Image Name="sign.png" />
+        <Project Name="singLayer.csd" Type="Layer" />
+        <Image Name="sjtj.png" />
         <Image Name="SkillButton.png" />
         <Image Name="skillLayer.png" />
+        <Image Name="sq.png" />
+        <Image Name="sq0.png" />
+        <Image Name="sx-zjm.png" />
+        <Image Name="sysh.png" />
+        <Image Name="sz.png" />
+        <Image Name="szjdj-zjm.png" />
         <Image Name="tapDps.png" />
+        <Image Name="tianshukuang.png" />
         <Image Name="time.png" />
+        <Image Name="tq-zjm.png" />
+        <Image Name="tubiao.png" />
+        <Image Name="tuteng.png" />
         <Image Name="upButton.png" />
+        <Image Name="weiqiandao.png" />
+        <Image Name="weiqiandao0.png" />
+        <Image Name="x.png" />
+        <Image Name="xing1.png" />
+        <Image Name="xing2.png" />
+        <Image Name="xsbz.png" />
+        <Image Name="xuetiao.png" />
+        <Image Name="xxx.png" />
+        <Image Name="yb.png" />
+        <Image Name="yb0.png" />
+        <Image Name="yinlong.png" />
+        <Image Name="yinxiao.png" />
+        <Image Name="yinxiao0.png" />
+        <Image Name="yinyue.png" />
+        <Image Name="yinyue0.png" />
+        <Image Name="yiqiandao0.png" />
+        <Image Name="yiquandao.png" />
+        <TTF Name="youyuan.ttf" />
+        <TTF Name="zhuan.ttf" />
+        <Image Name="zsdj-zjn.png" />
+        <Image Name="zuanshi (2).png" />
+        <Image Name="zuanshi.png" />
+        <Image Name="zuanshida.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

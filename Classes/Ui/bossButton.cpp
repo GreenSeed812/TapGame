@@ -47,14 +47,19 @@ void bossButton::onTouchEnded(Touch *touch, Event*)
 	{
 		m_sprite->setTexture("ui/bossButton.png");
 		PlayerData::getInstance()->setWave(11);
-		State::getInstance()->setBossButtonDown(true);
+		MyState::getInstance()->setBossButtonDown(true);
 		//PlayerData::getInstance()->setHpNow(zero);
 	}
 	else
 	{
 		m_sprite->setTexture("ui/bossButton2.png");
 		PlayerData::getInstance()->setWave(0);
-		State::getInstance()->setBossButtonDown(true);
+		MyState::getInstance()->setBossButtonDown(true);
 	}
 	i = (i + 1) % 2;
+}
+
+void bossButton::setSprite(std::string str)
+{
+	m_sprite->setTexture(str);
 }

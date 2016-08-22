@@ -12,16 +12,26 @@ LOCAL_MODULE_FILENAME := libcocos2dcpp
 
 LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/AppDelegate.cpp \
-                   ../../Classes/MainScene/HelloWorldScene.cpp \
 				   ../../Classes/Animation.cpp \
+                   ../../Classes/MainScene/HelloWorldScene.cpp \
+                   ../../Classes/MainScene/ServantButton.cpp \
+                   ../../Classes/MainScene/PlayerButton.cpp \
+                   ../../Classes/MainScene/ClickLayer.cpp \
 				   ../../Classes/Tool/Rand.cpp \
 				   ../../Classes/Tool/Rule.cpp \
 				   ../../Classes/Tool/Split.cpp \
 				   ../../Classes/Tool/SqLite.cpp \
+				   ../../Classes/Tool/SpecManager.cpp \
 				   ../../Classes/Tool/sqlite3.c \
+				   ../../Classes/SaveData/State.cpp \
 				   ../../Classes/SaveData/PlayerData.cpp \
-				   ../../Classes/MainScene/ClickLayer.cpp \
-				  
+				   ../../Classes/SaveData/PlayerButtonData.cpp \
+				   ../../Classes/Ui/bossButton.cpp \
+				   ../../Classes/LoadingScene/LoadingScene.cpp \
+				   ../../Classes/Ui/AchieveLayer.cpp \
+				   ../../Classes/Ui/MissionLayer.cpp \
+				   ../../Classes/Ui/settingLayer.cpp \
+				   ../../Classes/Ui/SignLayer.cpp \				  
 				   
 
 
@@ -42,3 +52,9 @@ $(call import-module,.)
 
 # _COCOS_LIB_IMPORT_ANDROID_BEGIN
 # _COCOS_LIB_IMPORT_ANDROID_END
+
+
+#ccc3 -> color3b
+#lanmuda 【&-》this】
+#Split 没有 include string
+#tbm->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())));

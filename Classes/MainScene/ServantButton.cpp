@@ -36,7 +36,7 @@ void ServantButton::initServantLayer(int id)
 	for (int skillNum = 1; skillNum < 8; skillNum++)
 	{
 		Sprite* skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d", skillNum));
-		skillSprite->setTexture(StringUtils::format("ui/downUi/servant/skill/%d/%d.png", id + 1, skillNum));
+		skillSprite->runAction(Hide::create());//setTexture(StringUtils::format("ui/downUi/servant/skill/%d/%d.png", id + 1, skillNum));
 	}
 	Text* name = (Text*)m_layer->getChildByName("discribe")->getChildByName("name");
 	name->setString(SqLite::getInstance()->getServantNameByID(m_id));

@@ -20,6 +20,7 @@ private:
 	std::vector<float> m_dpsMul;
 	int m_id;
 	Layer* m_layer;
+	bool m_unlock;
 };
 
 

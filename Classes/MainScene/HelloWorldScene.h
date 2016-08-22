@@ -20,6 +20,7 @@ public:
 	void killBoss();
 	void uiInit();
 	void uiCallBack();
+	void playerSkillCallBack();
 	bool initDownLayer(Node*&);
 	bool initDownLayerAr(Node*&);
 	bool initDownLayerSh(Node*&);
@@ -36,6 +37,7 @@ private:
 	Node * m_artifactLayer;
 	Node * m_shopLayer;
 	Node * noNode;
+	Node * m_skillButton[7];
 	bool showTime;
 	int timeNow;
 	bossButton * bossBt;

@@ -151,6 +151,7 @@ MyNum PlayerData::getHeroDps()
 	{
 		totalDps = Ruler::getInstance()->addNumS(totalDps, Ruler::getInstance()->multiplay(m_servantBaseDps[i], m_servantMul[i]));
 	}
+	totalDps = Ruler::getInstance()->multiplay(totalDps, m_servantAllMul);
 	return totalDps;
 }
 void PlayerData::addGold(MyNum* gold)

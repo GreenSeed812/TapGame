@@ -44,7 +44,8 @@ public:
 	void skillLevelUp(int i){ m_skillLevel[i-1]++; }
 	void subGold(MyNum* gold);
 	void subHp(){ m_hpNow = Ruler::getInstance()->subNum(m_hpNow,m_basedps); }
-	void waveUp(){ m_waveNow++; }	
+	void waveUp(){ m_waveNow++; }
+
 private:
 	int m_waveNow;
 	int m_level;
@@ -54,8 +55,11 @@ private:
 	int m_maxWave;
 	float m_dpsMulBase;
 	float m_dpsMul;
+	float m_explorePer;
+	int m_exploreProb;
 	float m_goldMulBase;
-	float m_goldMulAdd;
+	float m_goldMulBox;
+	float m_goldMulServantAdd;
 	MyNum m_basedps;
 	MyNum m_hpNow;
 	MyNum m_gold;
@@ -70,5 +74,9 @@ private:
 	MyNum m_servantBaseDps[33];
 	float m_servantMul[33];
 	float m_servantAllMul;
+	float m_servantTapDps;
+	
+
+	
 };
 #endif

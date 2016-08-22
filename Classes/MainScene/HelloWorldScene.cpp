@@ -45,13 +45,14 @@ bool HelloWorld::init()
     {
         return false;
     }
-	/*{
+	{
 		MyNum num;
 		num.Mathbit = 30;
 		num.number = 1;
 		PlayerData::getInstance()->addGold(&num);
 
-	}*/
+	}
+	
 	m_heroLayer = nullptr;
 	m_servantLayer = nullptr;
     m_artifactLayer = nullptr;
@@ -603,4 +604,13 @@ bool HelloWorld::initDownLayerSh(Node* &downLayer)
 	rootNode->addChild(downLayer);
 
 	return ret;
+}
+
+void HelloWorld::playerSkillCallBack()
+{
+	for (int i = 1; i < 7; i++)
+	{
+		Button* bt = (Button*)rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("SkillButton1");
+	}
+	
 }

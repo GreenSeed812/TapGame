@@ -14,8 +14,7 @@ Ruler::Ruler()
 	for (int i = 0; i < 26; i++)
 	{
 		std::string s;
-		s = StringUtils::format( "%c%c", 'a' + i, 'a' + i);/*
-		sprintf_s(s, "%c%c", 'a' + i,'a' + i);*/
+		s = StringUtils::format( "%c%c", 'a' + i, 'a' + i);
 		unit[i + 5] = s;
 
 	}
@@ -170,6 +169,10 @@ MyNum Ruler::subNum(MyNum num1, MyNum num2)
 			num.Mathbit = num1.Mathbit;
 		}
 	}
+	else if (num1.Mathbit - num2.Mathbit > 7)
+	{
+		num = num1;
+	}
 	else
 	{
 		auto circle = num1.Mathbit - num2.Mathbit;
@@ -201,7 +204,7 @@ MyNum Ruler::multiplay(MyNum num, double scale)
 	}
 	
 	newNum.number = num.number*scale;
-	if (newNum.number > 1000)
+	if (newNum.number >= 1000)
 	{
 		newNum.number /= 1000;
 		newNum.Mathbit++;

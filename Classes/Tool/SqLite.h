@@ -60,7 +60,7 @@ struct SkillData
 	float initEffect;
 	float effPerLevel;
 	MyNum unlockGold;
-
+	std::string name;
 };
 struct SkillEffect
 {
@@ -88,6 +88,7 @@ public:
 	MyNum getServantDpsByID(int i){ return m_servantData.at(i)->dps; }
 	MyNum getServantGoldByID(int i){ return m_servantData.at(i)->gold; }
 	std::string getServantNameByID(int i){ return m_servantData.at(i)->name; }
+	std::string getSkillNameByID(int i){ return m_skillData.at(i)->name; }
 public:
 	SqLite();
 	~SqLite();

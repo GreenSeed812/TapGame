@@ -48,6 +48,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	{
 		Button* bt = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up");
 		Sprite* sp = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("head");
+
 		sp->setTexture("ui/downUi/hero/heroHead1.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(1);
 		
@@ -67,6 +68,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	{
 		Button* bt = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up");
 		Sprite* sp = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("head");
+
 		sp->setTexture("ui/downUi/hero/heroHead2.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(2);
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
@@ -83,6 +85,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	{
 		Button* bt = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up");
 		Sprite* sp = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("head");
+
 		sp->setTexture("ui/downUi/hero/heroHead3.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(3);
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
@@ -99,6 +102,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	{
 		Button* bt = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up");
 		Sprite* sp = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("head");
+
 		sp->setTexture("ui/downUi/hero/heroHead4.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(4);
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
@@ -115,6 +119,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	{
 		Button* bt = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up");
 		Sprite* sp = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("head");
+
 		sp->setTexture("ui/downUi/hero/heroHead5.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(5);
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
@@ -131,6 +136,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	{
 		Button* bt = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up");
 		Sprite* sp = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("head");
+
 		sp->setTexture("ui/downUi/hero/heroHead6.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(6);
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
@@ -147,6 +153,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	{
 		Button* bt = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up");
 		Sprite* sp = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("head");
+
 		sp->setTexture("ui/downUi/hero/heroHead7.png");
 		bt->setEnabled("false");
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
@@ -162,7 +169,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 void PlayerButton::coinChange(Ref* pSender)
 {
 	TextBMFont* lb = (TextBMFont*)playerLayer->getChildByName("Layer")->getChildByName("up")->getChildByName("needGold");
-	
+	Text * textN = (Text *)playerLayer->getChildByName("Layer")->getChildByName("discribe")->getChildByName("textN");
 	Text* text = (Text*)playerLayer->getChildByName("Layer")->getChildByName("discribe")->getChildByName("text");
 	Text* textD = (Text*)playerLayer->getChildByName("Layer")->getChildByName("discribe")->getChildByName("textD");
 	Button* bt = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up");
@@ -178,12 +185,14 @@ void PlayerButton::coinChange(Ref* pSender)
 	}
 	if (m_type == PLAYER)
 	{
+		textN->setString("Player");
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getPlayerLevel()));
 		textD->setString(StringUtils::format("%d",PlayerData::getInstance()->getPlayerLevel()));
 		
 	}
 	else if (m_type == SKILL1)
 	{
+		textN->setString(StringUtils::format("%s",SqLite::getInstance()->getSkillNameByID(0).c_str()));
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
 		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), eff));
@@ -194,6 +203,7 @@ void PlayerButton::coinChange(Ref* pSender)
 	}
 	else if (m_type == SKILL2)
 	{
+		textN->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(1).c_str()));
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
 		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), eff));
@@ -205,6 +215,7 @@ void PlayerButton::coinChange(Ref* pSender)
 	}
 	else if (m_type == SKILL3)
 	{
+		textN->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(2).c_str()));
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
 		float eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
 		int _eff = eff * 100;
@@ -216,6 +227,7 @@ void PlayerButton::coinChange(Ref* pSender)
 	}
 	else if (m_type == SKILL4)
 	{
+		textN->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(3).c_str()));
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
 		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
 		
@@ -227,6 +239,7 @@ void PlayerButton::coinChange(Ref* pSender)
 	}
 	else if (m_type == SKILL5)
 	{
+		textN->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(4).c_str()));
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
 		float eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
 		int _eff = eff * 100;
@@ -238,6 +251,7 @@ void PlayerButton::coinChange(Ref* pSender)
 	}
 	else if (m_type == SKILL6)
 	{
+		textN->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(5).c_str()));
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
 		float eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
 		int _eff = eff * 100;
@@ -249,6 +263,7 @@ void PlayerButton::coinChange(Ref* pSender)
 	}
 	else if (m_type == RELIFE)
 	{
+		textN->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(6).c_str()));
 		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), eff));
 		if (PlayerData::getInstance()->getPlayerLevel() < 600)

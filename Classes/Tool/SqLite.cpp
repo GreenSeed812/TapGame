@@ -419,3 +419,15 @@ void SqLite::readServantSkill()
 		}
 	}
 }
+
+//std::string SqLite::getSkillNameByID(int i)
+//{
+//	for (auto skill : m_skillData)
+//	{
+//		if (skill->id == i)
+//		{
+//			return skill->name;
+//		}
+//	}
+//	return "Œ¥≤È’“µΩ£°";
+//}

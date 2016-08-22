@@ -88,7 +88,7 @@ public:
 	MyNum getServantDpsByID(int i){ return m_servantData.at(i)->dps; }
 	MyNum getServantGoldByID(int i){ return m_servantData.at(i)->gold; }
 	std::string getServantNameByID(int i){ return m_servantData.at(i)->name; }
-	std::string getSkillNameByID(int i){ return m_skillData.at(i)->name; }
+	std::string getSkillNameByID(int i){ return m_skillData.at(i)->name; };
 public:
 	SqLite();
 	~SqLite();
@@ -104,6 +104,7 @@ public:
 	std::vector<MapData> m_mapData;
 	std::vector<MyNum> m_HpData;
 	std::map<MyNum,int> m_monsterDataMap;
+	std::map<SkillData*, int> m_skillDataMap;
 	std::vector<SkillData*>m_skillData;
 	std::vector<SkillEffect*>m_skillEffect;
 	float m_bossHp[5];

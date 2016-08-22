@@ -610,7 +610,19 @@ void HelloWorld::playerSkillCallBack()
 {
 	for (int i = 1; i < 7; i++)
 	{
-		Button* bt = (Button*)rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("SkillButton1");
+		m_skillButton[i-1] = (Button*)rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("SkillButton1");
 	}
+	for (int i = 1; i < 7; i++)
+	{
+		Button* bt = (Button*)m_skillButton[i - 1];
+		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
+			if (type == Widget::TouchEventType::ENDED)
+			{
+				
+			}
+
+		});
+	}
+	
 	
 }

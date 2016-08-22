@@ -37,7 +37,7 @@ private:
 	Node * m_artifactLayer;
 	Node * m_shopLayer;
 	Node * noNode;
-	Node * m_skillButton[7];
+	Node * m_skillButton[6];
 	bool showTime;
 	int timeNow;
 	bossButton * bossBt;

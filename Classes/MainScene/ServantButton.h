@@ -11,6 +11,7 @@ public:
 	CREATE_FUNC(ServantButton);
 	static void getListView(Node* lv){ g_lv = lv; }
 	void coinChange(Ref*);
+
 private:
 	Node* node;
 	MyNum m_gold;
@@ -21,6 +22,10 @@ private:
 	int m_id;
 	Layer* m_layer;
 	bool m_unlock;
+	bool m_lock;
+	bool m_locked;
+	int m_lockCount;
+	int m_skillCount;
 };
 
 

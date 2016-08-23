@@ -61,6 +61,8 @@ public:
 	void closeSkill(int i){ m_skillOpen[i] = false; }
 	void openSkill(int i){ m_skillOpen[i] = true; }
 	bool getSkillopen(int i){ return m_skillOpen[i]; }
+	void subHp(){ m_hpNow = Ruler::getInstance()->subNum(m_hpNow,m_basedps); }
+	void unlockSernantSkill(int servantid, int skillid){};
 private:
 	int m_waveNow;
 	int m_level;
@@ -94,7 +96,6 @@ private:
 	float m_skillTap;
 	std::vector<SkillData*> m_skillData;
 	int m_skillexploreProb;
-
 	
 
 	

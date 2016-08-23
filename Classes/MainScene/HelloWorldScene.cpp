@@ -49,6 +49,7 @@ bool HelloWorld::init()
 	{
 		MyNum num;
 		num.Mathbit = 30;
+		num.Mathbit = 2;
 		num.number = 1;
 		PlayerData::getInstance()->addGold(&num);
 
@@ -76,6 +77,7 @@ bool HelloWorld::init()
 	timeNow = PlayerData::getInstance()->getMaxTime();
 
 	schedule(schedule_selector(HelloWorld::skillKpCDUpdate), 1.0f);
+
 	attackeffection();
 	coinChange(this);
 	
@@ -266,9 +268,9 @@ void HelloWorld::uiCallBack()
 	Node* node = rootNode->getChildByName("UiNode")->getChildByName("SkillLayer");
 	for (int i = 1; i < 7;i++)
 	{
-		m_skill[i - 1]->setEnabled(false);
-		m_skill[i - 1] = (Button*)node->getChildByName(StringUtils::format("SkillButton%d", i));
 		
+		m_skill[i - 1] = (Button*)node->getChildByName(StringUtils::format("SkillButton%d", i));
+		m_skill[i - 1]->setEnabled(false);
 		m_skill[i - 1]->addTouchEventListener([this,i](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
@@ -278,11 +280,15 @@ void HelloWorld::uiCallBack()
 				skillKpCD->setPosition(m_skill[i - 1]->getContentSize() / 2);
 				auto skillCD = SkillCD::create();
 				skillCD->initImage(i);
-				skillCD->setPosition(m_skill[i-1]->getContentSize() / 2);
-				skillCD->setName("SkillCD");
-				m_skill[i-1]->addChild(skillCD);
+
+				skillCD->setPosition(m_skill[i - 1]->getContentSize() / 2);
+				
+				m_skill[i - 1]->addChild(skillCD);
 				m_skill[i - 1]->addChild(skillKpCD,1);
 				skillKpCD->setName("SkillKpCD");
+
+				skillCD->setName("SkillCD");
+		
 				
 				m_skill[i - 1]->setEnabled(false);
 				if (i == 3)
@@ -668,6 +674,7 @@ void HelloWorld::skillCDUpdate(float dt)
 			
 			SkillCD *cd = (SkillCD*)m_skill[i]->getChildByName("SkillCD");
 			cd->setPercentNow(100/PlayerData::getInstance()->getBanTime(i)*dt);
+ 
 			if (cd->getPercentNow() <= 0)
 			{
 				cd->removeFromParent();
@@ -676,6 +683,7 @@ void HelloWorld::skillCDUpdate(float dt)
 
 
 			}
+
 		}
 			
 	}
@@ -688,6 +696,7 @@ void HelloWorld::skillKpCDUpdate(float dt)
 		{
 			SkillCD *cd = (SkillCD*)m_skill[i]->getChildByName("SkillKpCD");
 			cd->setPercentNow(100 / PlayerData::getInstance()->getKeepTime(i));
+
 			PlayerData::getInstance()->openSkill(i);
 			if (cd->getPercentNow() <= 0)
 			{
@@ -814,5 +823,9 @@ void HelloWorld::attackeffection()
 }
 void HelloWorld::deleteSprite(Node *node)
 {
+
 	node->removeFromParent();
+	
+
+		
 }

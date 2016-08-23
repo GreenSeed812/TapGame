@@ -361,7 +361,7 @@
                     <PrePosition X="0.1180" Y="0.2544" />
                     <PreSize X="0.1748" Y="0.3860" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                    <DisabledFileData Type="Normal" Path="zsdj-zjn.png" Plist="" />
                     <PressedFileData Type="Normal" Path="zsdj-zjn.png" Plist="" />
                     <NormalFileData Type="Normal" Path="zsdj-zjn.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
@@ -376,7 +376,7 @@
                     <PrePosition X="0.2624" Y="0.2544" />
                     <PreSize X="0.1748" Y="0.3860" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                    <DisabledFileData Type="Normal" Path="kssj-zjm.png" Plist="" />
                     <PressedFileData Type="Normal" Path="kssj-zjm.png" Plist="" />
                     <NormalFileData Type="Normal" Path="kssj-zjm.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
@@ -391,7 +391,7 @@
                     <PrePosition X="0.4208" Y="0.2544" />
                     <PreSize X="0.1748" Y="0.3860" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                    <DisabledFileData Type="Normal" Path="szjdj-zjm.png" Plist="" />
                     <PressedFileData Type="Normal" Path="szjdj-zjm.png" Plist="" />
                     <NormalFileData Type="Normal" Path="szjdj-zjm.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
@@ -406,7 +406,7 @@
                     <PrePosition X="0.5734" Y="0.2544" />
                     <PreSize X="0.1748" Y="0.3860" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                    <DisabledFileData Type="Normal" Path="baofengxue-zjm.png" Plist="" />
                     <PressedFileData Type="Normal" Path="baofengxue-zjm.png" Plist="" />
                     <NormalFileData Type="Normal" Path="baofengxue-zjm.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
@@ -421,7 +421,7 @@
                     <PrePosition X="0.7319" Y="0.2544" />
                     <PreSize X="0.1748" Y="0.3860" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                    <DisabledFileData Type="Normal" Path="sx-zjm.png" Plist="" />
                     <PressedFileData Type="Normal" Path="sx-zjm.png" Plist="" />
                     <NormalFileData Type="Normal" Path="sx-zjm.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
@@ -436,7 +436,7 @@
                     <PrePosition X="0.8839" Y="0.2544" />
                     <PreSize X="0.1748" Y="0.3860" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                    <DisabledFileData Type="Normal" Path="tq-zjm.png" Plist="" />
                     <PressedFileData Type="Normal" Path="tq-zjm.png" Plist="" />
                     <NormalFileData Type="Normal" Path="tq-zjm.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />

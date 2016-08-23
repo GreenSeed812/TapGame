@@ -66,7 +66,6 @@ bool HelloWorld::init()
 	clickLayer = ClickLayer::create();
 	clickLayer->setZOrder(-1);
 	rootNode->addChild(clickLayer);
-	clickLayer->effectInit();
 	uiInit();
 	uiCallBack();
 	createMonster();
@@ -76,7 +75,8 @@ bool HelloWorld::init()
 	timeSlider->setMaxPercent(PlayerData::getInstance()->getMaxTime());
 	timeNow = PlayerData::getInstance()->getMaxTime();
 
-	schedule(schedule_selector(HelloWorld::skillUpdate), 1.0f);
+	schedule(schedule_selector(HelloWorld::skillKpCDUpdate), 1.0f);
+	attackeffection();
 	coinChange(this);
 	
     return true;
@@ -121,7 +121,7 @@ void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const
 	if (action == "Hurt")
 	{
 		Slider* hpSlider = (Slider*)rootNode->getChildByName("HpSlider");
-		killBoss();
+	//	killBoss();
 	}
 		
 	
@@ -180,6 +180,21 @@ void HelloWorld::update(float dt)
 	auto tpDps = Ruler::getInstance()->addNum(heroDps, PlayerData::getInstance()->getDps());
 	TextBMFont* tpdps = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("TotalDps")->getChildByName("TotalDps");
 	tpdps->setString(Ruler::getInstance()->showNum(tpDps));
+	
+	static float t_now = 0;
+	t_now += dt;
+	if (t_now > 1 / 10.0f && MyState::getInstance()->getTaped())
+	{
+		num = PlayerData::getInstance()->getTapDps();
+		PlayerData::getInstance()->subHp(num);
+		Node* monsterNode = rootNode->getChildByName("MonsterNode");
+		Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
+		normalAtk();
+		armature->getAnimation()->play("Hurt", -1, 0);
+		t_now = 0;
+		MyState::getInstance()->setTaped(false);
+	}
+	skillEff(dt);
 	if (m_heroLayer)
 	{
 		TextBMFont* dps = (TextBMFont*)m_heroLayer->getChildByName("message")->getChildByName("Dps");
@@ -231,7 +246,7 @@ void HelloWorld::update(float dt)
 	killBoss();
 	
 
-}
+ }
 void HelloWorld::uiInit()
 {
 	Slider* timeSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("timeSlider");
@@ -251,16 +266,33 @@ void HelloWorld::uiCallBack()
 	Node* node = rootNode->getChildByName("UiNode")->getChildByName("SkillLayer");
 	for (int i = 1; i < 7;i++)
 	{
+		m_skill[i - 1]->setEnabled(false);
 		m_skill[i - 1] = (Button*)node->getChildByName(StringUtils::format("SkillButton%d", i));
 		
 		m_skill[i - 1]->addTouchEventListener([this,i](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
+				
+				auto skillKpCD = SkillCD::create();
+				skillKpCD->initkpImage(i);
+				skillKpCD->setPosition(m_skill[i - 1]->getContentSize() / 2);
 				auto skillCD = SkillCD::create();
 				skillCD->initImage(i);
-				skillCD->setPosition(m_skill[i - 1]->getContentSize() / 2);
-				m_skill[i - 1]->addChild(skillCD);
+				skillCD->setPosition(m_skill[i-1]->getContentSize() / 2);
 				skillCD->setName("SkillCD");
+				m_skill[i-1]->addChild(skillCD);
+				m_skill[i - 1]->addChild(skillKpCD,1);
+				skillKpCD->setName("SkillKpCD");
+				
+				m_skill[i - 1]->setEnabled(false);
+				if (i == 3)
+				{
+					PlayerData::getInstance()->setSkillexploreProb(PlayerData::getInstance()->getSkillEFF(3));
+				}
+				if (i == 5)
+				{
+					PlayerData::getInstance()->setSkillTap(PlayerData::getInstance()->getSkillEFF(5));
+				}
 				
 			}
 		});
@@ -307,11 +339,7 @@ void HelloWorld::uiCallBack()
 			}
 			else
 			{
-				ListView* lv = (ListView*)m_heroLayer->getChildByName("ListView");
-				for (auto child: lv->getChildren())
-				{
-					child->scheduleUpdate();
-				}
+			
 			}
 		
 			
@@ -352,11 +380,7 @@ void HelloWorld::uiCallBack()
 			}
 			else
 			{
-				ListView* lv = (ListView*)m_servantLayer->getChildByName("ListView");
-				for (auto child : lv->getChildren())
-				{
-					child->scheduleUpdate();
-				}
+				
 			}
 			
 		}
@@ -635,15 +659,160 @@ void HelloWorld::playerSkillCallBack()
 	
 }
 
-void HelloWorld::skillUpdate(float dt)
+void HelloWorld::skillCDUpdate(float dt)
 {
 	for (int i = 0; i < 6; i++)
 	{
 		if (m_skill[i]->getChildByName("SkillCD"))
 		{
+			
 			SkillCD *cd = (SkillCD*)m_skill[i]->getChildByName("SkillCD");
-			cd->setPercentNow(100/SqLite::getInstance()->getBanTime(i)*dt);
+			cd->setPercentNow(100/PlayerData::getInstance()->getBanTime(i)*dt);
+			if (cd->getPercentNow() <= 0)
+			{
+				cd->removeFromParent();
+				unschedule(schedule_selector(HelloWorld::skillCDUpdate));
+				m_skill[i]->setEnabled(true);
+
+
+			}
 		}
 			
 	}
+}
+void HelloWorld::skillKpCDUpdate(float dt)
+{
+	for (int i = 0; i < 6; i++)
+	{
+		if (m_skill[i]->getChildByName("SkillKpCD"))
+		{
+			SkillCD *cd = (SkillCD*)m_skill[i]->getChildByName("SkillKpCD");
+			cd->setPercentNow(100 / PlayerData::getInstance()->getKeepTime(i));
+			PlayerData::getInstance()->openSkill(i);
+			if (cd->getPercentNow() <= 0)
+			{
+				cd->removeFromParent();
+				schedule(schedule_selector(HelloWorld::skillCDUpdate));
+				PlayerData::getInstance()->closeSkill(i);
+				if (i == 3)
+				{
+					PlayerData::getInstance()->setSkillexploreProb(0);
+				}
+				
+			}
+
+		}
+
+	}
+}
+
+void HelloWorld::skillEff(float dt)
+{
+	static float t_now = 0;
+	t_now += dt;
+	if (PlayerData::getInstance()->getSkillopen(0))
+	{
+		PlayerData::getInstance()->subHp(Ruler::getInstance()->multiplay(PlayerData::getInstance()->getTapDps(), PlayerData::getInstance()->getSkillEFF(0)));
+		PlayerData::getInstance()->closeSkill(0);
+	}
+	if (MyState::getInstance()->getKTap() && PlayerData::getInstance()->getSkillopen(1))
+	{
+		if (t_now > 1 / 7.0f)
+		{
+			Node* monsterNode = rootNode->getChildByName("MonsterNode");
+			Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
+			num = PlayerData::getInstance()->getTapDps();
+			PlayerData::getInstance()->subHp(num);
+			normalAtk();
+			armature->getAnimation()->play("Hurt", -1, 0);
+			t_now = 0;
+			if (PlayerData::getInstance()->getSkillopen(5))
+			{
+				PlayerData::getInstance()->addGold(&Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(6)));
+			}
+		}
+	}
+	if (PlayerData::getInstance()->getSkillopen(4))
+	{
+		if (t_now > 1 / PlayerData::getInstance()->getSkillEFF(4))
+		{
+			Node* monsterNode = rootNode->getChildByName("MonsterNode");
+			Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
+			num = PlayerData::getInstance()->getTapDps();
+			PlayerData::getInstance()->subHp(num);
+			normalAtk();
+			armature->getAnimation()->play("Hurt", -1, 0);
+			t_now = 0;
+		}
+	}
+}
+
+void HelloWorld::normalAtk()
+{
+	
+	Slider* slider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider");
+
+	if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit == PlayerData::getInstance()->getHpNow().Mathbit)
+		slider->setPercent(PlayerData::getInstance()->getHpNow().number * 1000000);
+	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 1)
+		slider->setPercent(PlayerData::getInstance()->getHpNow().number * 1000);
+	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 2)
+		slider->setPercent(PlayerData::getInstance()->getHpNow().number);
+	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit - PlayerData::getInstance()->getHpNow().Mathbit > 2)
+		slider->setPercent(0);
+
+	TextBMFont* tbm = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider")->getChildByName("hpNow");
+	tbm->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getHpNow()));
+
+
+	effectSprite = Sprite::create();
+	Node* effection = (Node*)rootNode->getChildByName("normalAtk");
+	effection->addChild(effectSprite);
+
+	auto animate = Animate::create(ani);
+	auto r = random(0, 360);
+	auto rotate = RotateBy::create(0.0416f, Vec3(0, 0, r));
+	auto spawn = Spawn::create(rotate, animate, NULL);
+
+	auto seq = Sequence::create(spawn, CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+
+	effectSprite->runAction(seq);
+
+	TextBMFont* text = (TextBMFont*)CSLoader::createNode("DmgNum.csb")->getChildByName("Text");
+	text->retain();
+	text->removeFromParent();
+
+	Node* monsterNode = (Node*)rootNode->getChildByName("MonsterNode");
+	Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
+	text->setPosition(Vec2(0, armature->getContentSize().height * 10 / 7));
+	effection->addChild(text);
+	text->release();
+	text->setString(Ruler::getInstance()->showNum(num));
+
+
+	auto textSeq = Sequence::create(MoveBy::create(1, Vec2(0, 300)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+	text->runAction(textSeq);
+}
+void HelloWorld::attackeffection()
+{
+
+
+	auto cache = SpriteFrameCache::getInstance();
+
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("effection/normalAttack.plist");
+	ani = Animation::create();
+	for (int i = 0; i < 9; i++)
+	{
+		ani->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(StringUtils::format("normalAttack_%d.png", i)));
+	}
+	ani->setDelayPerUnit(0.0416f);
+	
+
+
+	ani->retain();
+
+}
+void HelloWorld::deleteSprite(Node *node)
+{
+	node->removeFromParent();
 }

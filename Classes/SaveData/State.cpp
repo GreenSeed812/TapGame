@@ -2,6 +2,8 @@
 MyState *state;
 MyState::MyState()
 	:m_bossButton(false)
+	, m_Tap(false)
+	, m_keepTap(false)
 {
 }
 

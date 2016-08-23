@@ -9,11 +9,15 @@ PlayerData::PlayerData()
 	, m_playerLevel(1)
 	, m_waveNow(1)
 	, m_dpsMul(0)
+	, m_dpsMulBase(1)
 	, m_bossTime(30)
 	, m_servantNum(0)
 	, m_servantAllMul(1)
 	, m_maxTime(30000)
 	, m_maxWave(11)
+	, m_explorePer(1.5)
+	, m_exploreProb(2)
+	, m_skillexploreProb(0)
 {
 	auto hp = SqLite::getInstance()->getHpByID(m_level);
 	m_hpNow.number = hp.number;
@@ -42,7 +46,11 @@ PlayerData::PlayerData()
 		m_servantBaseDps[i].number = 0;
 		m_servantMul[i] = 1;
 	}
-	
+	for (int i = 0; i < 6; i++)
+	{
+		m_skillOpen[i] = false;
+	}
+	m_skillData = SqLite::getInstance()->getSkillData();
 }
 
 PlayerData::~PlayerData()
@@ -137,9 +145,28 @@ void PlayerData::defeatMonsterGold()
 	m_gold = tmp;
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 }
+MyNum PlayerData::getdefeatMonsterGold()
+{
+	MyNum baseNum;
+	baseNum.number = 1;
+	baseNum.Mathbit = 0;
+	if (m_level < 2)
+		;
+	else
+	{
+		for (int i = 2; i <= m_level + 1; i++)
+		{
+			auto tmp = Ruler::getInstance()->multiplay(baseNum, 1.58);
+			baseNum = tmp;
+		}
+	}
+	auto tmp = Ruler::getInstance()->addNumUp(m_gold, baseNum);
+	return tmp;
+}
+
 MyNum PlayerData::getDps()
 {
-	
+	Ruler::getInstance()->multiplay(m_basedps, m_skillTap + m_dpsMulBase);
 	return m_basedps;
 }
 MyNum PlayerData::getHeroDps()
@@ -172,4 +199,22 @@ void PlayerData::setServantBaseDps(MyNum dps, int id)
 MyNum PlayerData::getServantDps(int i)
 {
 	return Ruler::getInstance()->multiplay(m_servantBaseDps[i], m_servantMul[i]);
+}
+MyNum PlayerData::getTapDps()
+{
+	auto rand = cocos2d::random(0,99);
+	if (rand < m_exploreProb + m_skillexploreProb)
+	{
+		auto num = Ruler::getInstance()->multiplay(m_basedps, m_explorePer);
+		return num;
+	}
+	else
+		return m_basedps;
+}
+float PlayerData::getSkillEFF(int i)
+{
+	if (m_skillLevel[i - 1] < 1)
+		return 0;
+	else
+		return m_skillData.at(i-1)->initEffect + (m_skillData.at(i-1)->effPerLevel - 1) * m_skillLevel[i-1];
 }

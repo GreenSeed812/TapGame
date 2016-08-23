@@ -6,6 +6,7 @@
 #include "MainScene/ClickLayer.h"
 #include "Ui/bossButton.h"
 #include "ui/CocosGUI.h"
+#include "Tool/MyNum.h"
 using namespace cocostudio;
 using namespace ui;
 class HelloWorld : public cocos2d::Layer
@@ -27,7 +28,12 @@ public:
 	bool initDownLayerSh(Node*&);
 	void coinChange(Ref*);
 	virtual void update(float dt);
-	void skillUpdate(float dt);
+	void skillCDUpdate(float dt);
+	void skillKpCDUpdate(float dt);
+	void skillEff(float);
+	void attackeffection();
+	void deleteSprite(Node *);
+	void normalAtk();
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 private:
@@ -44,6 +50,9 @@ private:
 	int timeNow;
 	bossButton * bossBt;
 	Button * m_skill[6];
+	Animation* ani;
+	Sprite * effectSprite;
+	MyNum num;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

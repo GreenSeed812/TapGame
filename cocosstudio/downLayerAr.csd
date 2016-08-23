@@ -109,18 +109,18 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="getArtifact" ActionTag="373749025" Tag="87" IconVisible="False" LeftMargin="267.7463" RightMargin="268.2537" TopMargin="1331.0674" BottomMargin="518.9326" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="514" Scale9Height="48" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="544.0000" Y="70.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="539.7463" Y="553.9326" />
+          <AbstractNodeData Name="getArtifact" ActionTag="373749025" Tag="87" IconVisible="False" LeftMargin="251.7463" RightMargin="252.2537" TopMargin="1333.5674" BottomMargin="525.4326" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="546" Scale9Height="39" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="576.0000" Y="61.0000" />
+            <AnchorPoint ScaleX="0.4851" ScaleY="0.6933" />
+            <Position X="531.1761" Y="567.7254" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4998" Y="0.2885" />
-            <PreSize X="0.5037" Y="0.0365" />
+            <PrePosition X="0.4918" Y="0.2957" />
+            <PreSize X="0.5333" Y="0.0318" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Normal" Path="artifact_1.png" Plist="" />
-            <PressedFileData Type="Normal" Path="artifact_1.png" Plist="" />
-            <NormalFileData Type="Normal" Path="artifact.png" Plist="" />
+            <DisabledFileData Type="Normal" Path="shengqikuang.png" Plist="" />
+            <PressedFileData Type="Normal" Path="shengqikuang.png" Plist="" />
+            <NormalFileData Type="Normal" Path="shengqikuang.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

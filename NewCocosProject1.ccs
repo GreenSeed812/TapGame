@@ -16,6 +16,7 @@
         <Image Name="anniuhui.png" />
         <Image Name="artifact.png" />
         <Image Name="artifact_1.png" />
+        <Project Name="artifactNode.csd" Type="Layer" />
         <Image Name="baofengxue.png" />
         <Image Name="baofengxue-zjm.png" />
         <Image Name="bg.jpg" />
@@ -102,8 +103,10 @@
         <Image Name="renwu.png" />
         <Project Name="servantNode.csd" Type="Layer" />
         <Image Name="setting.png" />
+        <Image Name="shengqikuang.png" />
         <Image Name="shezhianniu.png" />
         <Image Name="shezhibeijing.png" />
+        <Image Name="shitou.png" />
         <Image Name="sign.png" />
         <Project Name="singLayer.csd" Type="Layer" />
         <Image Name="sjtj.png" />

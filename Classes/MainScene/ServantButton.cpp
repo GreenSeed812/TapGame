@@ -18,9 +18,9 @@ bool ServantButton::init()
 	m_lockCount = 0;
     node = CSLoader::createNode("servantNode.csb");
 	m_layer = (Layer*)node->getChildByName("Layer");
-	this->setContentSize(node->getContentSize());
-	
+	this->setContentSize(node->getContentSize());	
 	this->addChild(node);
+
 	return true;
 }
 

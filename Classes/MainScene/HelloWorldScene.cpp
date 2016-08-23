@@ -9,6 +9,7 @@
 #include "Tool/Rule.h"
 #include "MainScene/PlayerButton.h"
 #include "MainScene/ServantButton.h"
+#include "MainScene/ArtifactButton.h"
 #include "SaveData/State.h"
 #include "Ui/settingLayer.h"
 #include "Ui/AchieveLayer.h"
@@ -329,7 +330,8 @@ void HelloWorld::uiCallBack()
 			
 			Button* bt = (Button*)sender;
 		}
-		if (type == Widget::TouchEventType::ENDED) {
+		if (type == Widget::TouchEventType::ENDED)
+		{
 			// 注意node的生命周期的问题  
 			Button* bt = (Button*)sender;
 			auto opLayer = rootNode->getChildByName("UiNode")->getChildByName("OptionLayer");
@@ -381,7 +383,25 @@ void HelloWorld::uiCallBack()
 				_child->setEnabled(true);
 			}
 			bt->setEnabled(false);
-			initDownLayerAr(m_artifactLayer);
+			if (initDownLayerAr(m_artifactLayer))
+			{
+				ListView* lv = (ListView*)m_artifactLayer->getChildByName("ListView");
+				ArtifactButton::getListView(lv);
+				auto button = ArtifactButton::create();
+				button->initArtifactLayer(0);
+				auto widget = Widget::create();
+				widget->setContentSize(button->getContentSize());
+				widget->addChild(button);
+				lv->pushBackCustomItem(widget);
+			}
+			else
+			{
+				ListView* lv = (ListView*)m_servantLayer->getChildByName("ListView");
+				for (auto child : lv->getChildren())
+				{
+					child->scheduleUpdate();
+				}
+			}
 		}
 	});
 	itemButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {

@@ -7,9 +7,11 @@ public:
 	bool init();
 
 	CREATE_FUNC(SkillCD);
-
+	void setPercentNow(float p);
+	void initImage(int i);
 private:
-
+	float m_percentNow;
+	cocos2d::ProgressTimer * cd;
 };
 
 

@@ -169,3 +169,7 @@ void PlayerData::setServantBaseDps(MyNum dps, int id)
 {
 	m_servantBaseDps[id] =  Ruler::getInstance()->addNum(m_servantBaseDps[id], dps); 
 }
+MyNum PlayerData::getServantDps(int i)
+{
+	return Ruler::getInstance()->multiplay(m_servantBaseDps[i], m_servantMul[i]);
+}

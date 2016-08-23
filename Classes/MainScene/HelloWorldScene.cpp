@@ -1,5 +1,5 @@
 #include "HelloWorldScene.h"
-#include "ui/CocosGUI.h"
+
 #include "Tool/Rule.h"
 #include "Tool/SqLite.h"
 #include <cocostudio/CocoStudio.h>
@@ -14,6 +14,7 @@
 #include "Ui/AchieveLayer.h"
 #include "Ui/MissionLayer.h"
 #include "Ui/SignLayer.h"
+#include "SkillCD.h"
 using namespace cocostudio;
 
 USING_NS_CC;
@@ -74,6 +75,8 @@ bool HelloWorld::init()
 	Slider* timeSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("timeSlider");
 	timeSlider->setMaxPercent(PlayerData::getInstance()->getMaxTime());
 	timeNow = PlayerData::getInstance()->getMaxTime();
+
+	schedule(schedule_selector(HelloWorld::skillUpdate), 1.0f);
 	coinChange(this);
 	
     return true;
@@ -246,15 +249,19 @@ void HelloWorld::uiCallBack()
 	Button* missonButton = (Button*)rootNode->getChildByName("UiNode")->getChildByName("Mission");
 	Button* signButton = (Button*)rootNode->getChildByName("UiNode")->getChildByName("SignButton");
 	Node* node = rootNode->getChildByName("UiNode")->getChildByName("SkillLayer");
-	for (auto child : node->getChildren())
+	for (int i = 1; i < 7;i++)
 	{
-		Button* bt = (Button*)child;
-		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
+		m_skill[i - 1] = (Button*)node->getChildByName(StringUtils::format("SkillButton%d", i));
+		
+		m_skill[i - 1]->addTouchEventListener([this,i](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
-				Text* warning = (Text*)rootNode->getChildByName("Warning");
-				auto seq = Sequence::create(Show::create(), DelayTime::create(2), Hide::create(), NULL);
-				warning->runAction(seq);
+				auto skillCD = SkillCD::create();
+				skillCD->initImage(i);
+				skillCD->setPosition(m_skill[i - 1]->getContentSize() / 2);
+				m_skill[i - 1]->addChild(skillCD);
+				skillCD->setName("SkillCD");
+				
 			}
 		});
 	
@@ -615,9 +622,10 @@ void HelloWorld::playerSkillCallBack()
 	for (int i = 1; i < 7; i++)
 	{
 		Button* bt = (Button*)m_skillButton[i - 1];
-		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
+		bt->addTouchEventListener([this,bt](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
+				bt->addChild(SkillCD::create());
 				
 			}
 
@@ -625,4 +633,17 @@ void HelloWorld::playerSkillCallBack()
 	}
 	
 	
+}
+
+void HelloWorld::skillUpdate(float dt)
+{
+	for (int i = 0; i < 6; i++)
+	{
+		if (m_skill[i]->getChildByName("SkillCD"))
+		{
+			SkillCD *cd = (SkillCD*)m_skill[i]->getChildByName("SkillCD");
+			cd->setPercentNow(100/SqLite::getInstance()->getBanTime(i)*dt);
+		}
+			
+	}
 }

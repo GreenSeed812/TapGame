@@ -29,6 +29,7 @@ public:
 	int getWaveNow(){ return m_waveNow; }
 	int getPlayerLevel(){ return m_playerLevel; }
 	int getRandNpc(int r);
+	MyNum getServantDps(int i);
 	int getServantLevel(int i){ return m_servantLevel[i]; }
 	int getServantNum(){ return m_servantNum; }
 	int getMaxTime(){ return m_maxTime; }
@@ -75,6 +76,7 @@ private:
 	float m_servantMul[33];
 	float m_servantAllMul;
 	float m_servantTapDps;
+
 	
 
 	

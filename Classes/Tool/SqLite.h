@@ -78,6 +78,7 @@ public:
 	MyNum getDropData(){ return m_dropData; }
 	int m_randNpc[5];
 	std::vector<MyNum> getHpData(){ return m_HpData; }
+	float getBanTime(int i){ return m_skillData.at(i)->baseBanTime; }
 	float getBossHp(int i){ return m_bossHp[i]; }
 	MyNum getDps(int i){ return m_baseDps[i]; }
 	MyNum getGold(){ return m_gold; }

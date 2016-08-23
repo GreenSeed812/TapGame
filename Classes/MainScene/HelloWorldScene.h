@@ -27,7 +27,8 @@ public:
 	bool initDownLayerSh(Node*&);
 	void coinChange(Ref*);
 	virtual void update(float dt);
-	void skillUpdate(float dt);
+	void skillCDUpdate(float dt);
+	void skillKpCDUpdate(float dt);
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 private:

@@ -78,7 +78,6 @@ public:
 	MyNum getDropData(){ return m_dropData; }
 	int m_randNpc[5];
 	std::vector<MyNum> getHpData(){ return m_HpData; }
-	float getBanTime(int i){ return m_skillData.at(i)->baseBanTime; }
 	float getBossHp(int i){ return m_bossHp[i]; }
 	MyNum getDps(int i){ return m_baseDps[i]; }
 	MyNum getGold(){ return m_gold; }
@@ -89,6 +88,7 @@ public:
 	MyNum getServantDpsByID(int i){ return m_servantData.at(i)->dps; }
 	MyNum getServantGoldByID(int i){ return m_servantData.at(i)->gold; }
 	std::string getServantNameByID(int i){ return m_servantData.at(i)->name; }
+	std::vector<SkillData*> getSkillData(){ return m_skillData; }
 	std::string getSkillNameByID(int i){ return m_skillData.at(i)->name; };
 public:
 	SqLite();

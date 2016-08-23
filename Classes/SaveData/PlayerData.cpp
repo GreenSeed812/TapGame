@@ -42,7 +42,7 @@ PlayerData::PlayerData()
 		m_servantBaseDps[i].number = 0;
 		m_servantMul[i] = 1;
 	}
-	
+	m_skillData = SqLite::getInstance()->getSkillData();
 }
 
 PlayerData::~PlayerData()

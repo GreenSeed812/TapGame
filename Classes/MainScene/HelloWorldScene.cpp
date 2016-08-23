@@ -48,7 +48,7 @@ bool HelloWorld::init()
     }
 	{
 		MyNum num;
-		num.Mathbit = 30;
+		num.Mathbit = 2;
 		num.number = 1;
 		PlayerData::getInstance()->addGold(&num);
 
@@ -76,7 +76,7 @@ bool HelloWorld::init()
 	timeSlider->setMaxPercent(PlayerData::getInstance()->getMaxTime());
 	timeNow = PlayerData::getInstance()->getMaxTime();
 
-	schedule(schedule_selector(HelloWorld::skillUpdate), 1.0f);
+	schedule(schedule_selector(HelloWorld::skillKpCDUpdate), 1.0f);
 	coinChange(this);
 	
     return true;
@@ -259,7 +259,12 @@ void HelloWorld::uiCallBack()
 				auto skillCD = SkillCD::create();
 				skillCD->initImage(i);
 				skillCD->setPosition(m_skill[i - 1]->getContentSize() / 2);
+				auto skillKpCD = SkillCD::create();
+				skillKpCD->initkpImage(i);
+				skillKpCD->setPosition(m_skill[i - 1]->getContentSize() / 2);
 				m_skill[i - 1]->addChild(skillCD);
+				m_skill[i - 1]->addChild(skillKpCD,1);
+				skillKpCD->setName("SkillKpCD");
 				skillCD->setName("SkillCD");
 				
 			}
@@ -635,15 +640,33 @@ void HelloWorld::playerSkillCallBack()
 	
 }
 
-void HelloWorld::skillUpdate(float dt)
+void HelloWorld::skillCDUpdate(float dt)
 {
 	for (int i = 0; i < 6; i++)
 	{
 		if (m_skill[i]->getChildByName("SkillCD"))
 		{
 			SkillCD *cd = (SkillCD*)m_skill[i]->getChildByName("SkillCD");
-			cd->setPercentNow(100/SqLite::getInstance()->getBanTime(i)*dt);
+			cd->setPercentNow(100/PlayerData::getInstance()->getBanTime(i)*dt);
+
 		}
 			
+	}
+}
+void HelloWorld::skillKpCDUpdate(float dt)
+{
+	for (int i = 0; i < 6; i++)
+	{
+		if (m_skill[i]->getChildByName("SkillKpCD"))
+		{
+			SkillCD *cd = (SkillCD*)m_skill[i]->getChildByName("SkillKpCD");
+			cd->setPercentNow(100 / PlayerData::getInstance()->getKeepTime(i));
+			if (cd->getPercentNow() <= 0)
+			{
+
+			}
+
+		}
+
 	}
 }

@@ -1,6 +1,7 @@
 #ifndef _PlayerData_H_
 #define _PlayerData_H_
 #include "Tool/Rule.h"
+#include "Tool/SqLite.h"
 #include <vector>
 struct LatestData
 {
@@ -16,6 +17,8 @@ public:
 	void addServantNum(){ m_servantNum++; }
 	void defeatMonsterGold();
 	static PlayerData * getInstance();
+	float getBanTime(int i){ return m_skillData.at(i)->baseBanTime; }
+	float getKeepTime(int i){ return m_skillData.at(i)->baseTime; }
 	int getLevel(){ return m_level; }
 	int getMonsterNum(){ return m_monsterNum; }
 	MyNum getDps();
@@ -45,8 +48,9 @@ public:
 	void skillLevelUp(int i){ m_skillLevel[i-1]++; }
 	void subGold(MyNum* gold);
 	void subHp(){ m_hpNow = Ruler::getInstance()->subNum(m_hpNow,m_basedps); }
+	void unlockSernantSkill(int servantid, int skillid){};
 	void waveUp(){ m_waveNow++; }
-
+	
 private:
 	int m_waveNow;
 	int m_level;
@@ -76,7 +80,7 @@ private:
 	float m_servantMul[33];
 	float m_servantAllMul;
 	float m_servantTapDps;
-
+	std::vector<SkillData*> m_skillData;
 	
 
 	

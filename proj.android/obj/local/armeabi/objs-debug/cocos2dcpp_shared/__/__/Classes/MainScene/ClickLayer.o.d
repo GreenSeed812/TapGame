@@ -348,7 +348,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/MainScene/ClickLaye
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCSet.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCString.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCDeprecated.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio\CocoStudio.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocoStudio.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCActionFrame.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocosStudioExport.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCActionFrameEasing.h \
@@ -413,7 +413,6 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/MainScene/ClickLaye
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/WidgetReader/WidgetReaderProtocol.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCSSceneReader.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/TriggerBase.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocoStudio.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/TriggerObj.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocoStudio.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/TriggerMng.h \
@@ -474,8 +473,8 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/MainScene/ClickLaye
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/extensions/./Particle3D/CCParticleSystem3D.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/extensions/./Particle3D/PU/CCPUParticleSystem3D.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/extensions/../extensions/Particle3D/CCParticleSystem3D.h \
- jni/../../Classes/Tool\SqLite.h jni/../../Classes/Tool/sqlite3.h \
- jni/../../Classes/Tool\MyNum.h jni/../../Classes/SaveData\PlayerData.h \
+ jni/../../Classes/Tool/SqLite.h jni/../../Classes/Tool/sqlite3.h \
+ jni/../../Classes/Tool/MyNum.h jni/../../Classes/SaveData/PlayerData.h \
  jni/../../Classes/Tool/Rule.h jni/../../Classes/Tool/MyNum.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/CocosGUI.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/UICheckBox.h \
@@ -501,7 +500,8 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/MainScene/ClickLaye
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/UIWebView.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/UIDeprecated.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/UILayoutComponent.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../editor-support/cocostudio/CocosStudioExtension.h
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../editor-support/cocostudio/CocosStudioExtension.h \
+ jni/../../Classes/SaveData/State.h
 
 jni/../../Classes/MainScene/ClickLayer.h:
 
@@ -1199,7 +1199,7 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../depr
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCDeprecated.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio\CocoStudio.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocoStudio.h:
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCActionFrame.h:
 
@@ -1329,8 +1329,6 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-sup
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/TriggerBase.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocoStudio.h:
-
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/TriggerObj.h:
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocoStudio.h:
@@ -1451,13 +1449,13 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/extensions/./Par
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/extensions/../extensions/Particle3D/CCParticleSystem3D.h:
 
-jni/../../Classes/Tool\SqLite.h:
+jni/../../Classes/Tool/SqLite.h:
 
 jni/../../Classes/Tool/sqlite3.h:
 
-jni/../../Classes/Tool\MyNum.h:
+jni/../../Classes/Tool/MyNum.h:
 
-jni/../../Classes/SaveData\PlayerData.h:
+jni/../../Classes/SaveData/PlayerData.h:
 
 jni/../../Classes/Tool/Rule.h:
 
@@ -1512,3 +1510,5 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/U
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/UILayoutComponent.h:
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../editor-support/cocostudio/CocosStudioExtension.h:
+
+jni/../../Classes/SaveData/State.h:

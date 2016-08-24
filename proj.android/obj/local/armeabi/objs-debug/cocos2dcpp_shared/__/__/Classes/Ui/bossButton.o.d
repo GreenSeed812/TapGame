@@ -348,7 +348,9 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/Ui/bossButton.o: \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCString.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCDeprecated.h \
  jni/../../Classes/SaveData/PlayerData.h jni/../../Classes/Tool/Rule.h \
- jni/../../Classes/Tool/MyNum.h jni/../../Classes/SaveData/State.h
+ jni/../../Classes/Tool/MyNum.h jni/../../Classes/Tool/SqLite.h \
+ jni/../../Classes/Tool/sqlite3.h jni/../../Classes/Tool/MyNum.h \
+ jni/../../Classes/SaveData/State.h
 
 jni/../../Classes/Ui/bossButton.h:
 
@@ -1049,6 +1051,12 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../depr
 jni/../../Classes/SaveData/PlayerData.h:
 
 jni/../../Classes/Tool/Rule.h:
+
+jni/../../Classes/Tool/MyNum.h:
+
+jni/../../Classes/Tool/SqLite.h:
+
+jni/../../Classes/Tool/sqlite3.h:
 
 jni/../../Classes/Tool/MyNum.h:
 

@@ -67,7 +67,24 @@ struct SkillEffect
 	int id;
 	std::string effect;
 };
-
+struct Artifact
+{
+	int ID;
+	std::string NAME;
+	float initAllDps;
+	float AllDpsUp;
+	int effid;
+	float effData;
+	float effDataUp;
+	int star2;
+	int star3;
+	int star4;
+};
+struct ArtifactSkill
+{
+	Artifact ar;
+	int skillID;
+};
 class SqLite
 {
 public:
@@ -82,6 +99,7 @@ public:
 	MyNum getDps(int i){ return m_baseDps[i]; }
 	MyNum getGold(){ return m_gold; }
 	MyNum getGoldByID(int);
+	Servant* getServantByID(int i){ return m_servantData.at(i); }
 	std::string getSkillDis(int i);
 	double getEff(int i){ return m_skillData.at(i)->initEffect; }
 	double getEffPer(int i){ return m_skillData.at(i)->effPerLevel; }
@@ -93,6 +111,8 @@ public:
 public:
 	SqLite();
 	~SqLite();
+	void readArtifact();
+	void readArtifactSkill();
 	void readMonster();
 	void readMapData();
 	void readSimpleData();
@@ -108,11 +128,14 @@ public:
 	std::map<SkillData*, int> m_skillDataMap;
 	std::vector<SkillData*>m_skillData;
 	std::vector<SkillEffect*>m_skillEffect;
+	std::map<int, Artifact*> m_artifact;
+	std::map<int,ArtifactSkill*>m_artifactSkill;
 	float m_bossHp[5];
 	MyNum m_dropData;
 	MyNum m_baseDps[8];
 	MyNum m_gold;
 	std::vector<int> m_servantUnlock;
+	
 };
 
 

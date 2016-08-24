@@ -15,6 +15,7 @@ class PlayerData
 public:
 	void addexplorPer(int per){ m_explorePer += per; }
 	void addexploreProb(int prob){ m_exploreProb += prob; }
+	void addArNum();
 	void addGold(MyNum* gold);
 	void addServantNum(){ m_servantNum++; }
 	void defeatMonsterGold();
@@ -62,7 +63,7 @@ public:
 	void openSkill(int i){ m_skillOpen[i] = true; }
 	bool getSkillopen(int i){ return m_skillOpen[i]; }
 	void subHp(){ m_hpNow = Ruler::getInstance()->subNum(m_hpNow,m_basedps); }
-	void unlockSernantSkill(int servantid, int skillid){};
+	void unlockSernantSkill(int servantid, int skillid);
 private:
 	int m_waveNow;
 	int m_level;
@@ -96,8 +97,10 @@ private:
 	float m_skillTap;
 	std::vector<SkillData*> m_skillData;
 	int m_skillexploreProb;
-	
-
-	
+	float m_bossDpsMul;
+	float m_TapDpsMul;
+	float m_latestTapMul;
+	int m_diamond;
+	int m_artifactStar[29];
 };
 #endif

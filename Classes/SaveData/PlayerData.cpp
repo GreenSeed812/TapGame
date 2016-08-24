@@ -18,6 +18,9 @@ PlayerData::PlayerData()
 	, m_explorePer(1.5)
 	, m_exploreProb(2)
 	, m_skillexploreProb(0)
+	, m_bossDpsMul(0)
+	, m_TapDpsMul(0)
+	, m_latestTapMul(0)
 {
 	auto hp = SqLite::getInstance()->getHpByID(m_level);
 	m_hpNow.number = hp.number;
@@ -202,14 +205,21 @@ MyNum PlayerData::getServantDps(int i)
 }
 MyNum PlayerData::getTapDps()
 {
+	auto num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul);
+	auto t = Ruler::getInstance()->addNum(num,getHeroDps());
+	auto num1 = Ruler::getInstance()->multiplay(t,m_latestTapMul);
+	num = Ruler::getInstance()->addNum(num,num1);
+
 	auto rand = cocos2d::random(0,99);
+	auto explor = m_explorePer;
 	if (rand < m_exploreProb + m_skillexploreProb)
 	{
-		auto num = Ruler::getInstance()->multiplay(m_basedps, m_explorePer);
+		
+		num = Ruler::getInstance()->multiplay(num, m_explorePer);
 		return num;
 	}
 	else
-		return m_basedps;
+		return num;
 }
 float PlayerData::getSkillEFF(int i)
 {
@@ -218,3 +228,44 @@ float PlayerData::getSkillEFF(int i)
 	else
 		return m_skillData.at(i-1)->initEffect + (m_skillData.at(i-1)->effPerLevel - 1) * m_skillLevel[i-1];
 }
+void PlayerData::unlockSernantSkill(int servantid, int skillid)
+{
+	auto servant = SqLite::getInstance()->getServantByID(servantid);
+	if (servant->skill[skillid].skillID == 1)
+	{
+		m_servantAllMul += servant->skill[skillid].effect;
+	}
+	else if (servant->skill[skillid].skillID == 3)
+	{
+		m_servantMul[servantid] += servant->skill[skillid].effect;
+	}
+	else if (servant->skill[skillid].skillID == 4)
+	{
+		m_bossDpsMul = servant->skill[skillid].effect;
+	}
+	else if (servant->skill[skillid].skillID == 6)
+	{
+		m_exploreProb += servant->skill[skillid].effect;
+	}
+	else if (servant->skill[skillid].skillID == 7)
+	{
+		m_explorePer += servant->skill[skillid].effect;
+	}
+	else if (servant->skill[skillid].skillID == 8)
+	{
+		m_TapDpsMul = servant->skill[skillid].effect;
+	}
+	else if (servant->skill[skillid].skillID == 9)
+	{
+		m_latestTapMul += servant->skill[skillid].effect;
+	}
+	else if (servant->skill[skillid].skillID == 25)
+	{
+		m_goldMulBase += servant->skill[skillid].effect;
+	}
+	else if (servant->skill[skillid].skillID == 26)
+	{
+		m_goldMulBox += servant->skill[skillid].effect;
+	}
+}
+

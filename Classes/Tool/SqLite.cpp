@@ -14,6 +14,8 @@ SqLite::SqLite()
 	readSkillData();
 	readServant();
 	readServantSkill();
+	readArtifact();
+	readArtifactSkill();
 }
 
 SqLite::~SqLite()
@@ -420,14 +422,111 @@ void SqLite::readServantSkill()
 	}
 }
 
-//std::string SqLite::getSkillNameByID(int i)
-//{
-//	for (auto skill : m_skillData)
-//	{
-//		if (skill->id == i)
-//		{
-//			return skill->name;
-//		}
-//	}
-//	return "Œ¥≤È’“µΩ£°";
-//}
+void SqLite::readArtifact()
+{
+	char** dbResult;
+	int nRow;
+	int nColum;
+	char* errmsg;
+	auto tableresult = sqlite3_get_table(m_pDB, "select * from artifact", &dbResult, &nRow, &nColum, &errmsg);
+	if (SQLITE_OK == tableresult)
+	{
+		std::string ID = "ID";
+		std::string NAME = "NAME";
+		std::string initAllDps = "initAllDps";
+		std::string AllDpsUp = "AllDpsUp";
+		std::string effid = "effid";
+		std::string effData = "effData";
+		std::string effDataUp = "effDataUP";
+		std::string star2 = "star_2";
+		std::string star3 = "star_3";
+		std::string star4 = "star_4";
+		auto index = nColum;
+		for (int i = 0; i < nRow; i++)
+		{
+			auto artifact = new Artifact();
+			for (int j = 0; j < nColum; j++)
+			{
+				if (ID.compare(dbResult[j]) == 0)
+					artifact->ID = atoi(dbResult[index]);
+				if (NAME.compare(dbResult[j]) == 0)
+					artifact->NAME = dbResult[index];
+				if (initAllDps.compare(dbResult[j]) == 0)
+					artifact->initAllDps = atof(dbResult[index]);
+				if (AllDpsUp.compare(dbResult[j]) == 0)
+					artifact->AllDpsUp = atof(dbResult[index]);
+				if (effid.compare(dbResult[j]) == 0)
+					artifact->effid = atoi(dbResult[index]);
+				if (effData.compare(dbResult[j]) == 0)
+					artifact->effData = atof(dbResult[index]);
+				if (effDataUp.compare(dbResult[j]) == 0)
+					artifact->effDataUp = atof(dbResult[index]);
+				if (star2.compare(dbResult[j]) == 0)
+					artifact->star2 = atof(dbResult[index]);
+				if (star3.compare(dbResult[j]) == 0)
+					artifact->star3 = atof(dbResult[index]);
+				if (star4.compare(dbResult[j]) == 0)
+					artifact->star4 = atof(dbResult[index]);
+				++index;
+			}
+			 
+			m_artifact[artifact->ID] = artifact;
+		}
+	}
+}
+void SqLite::readArtifactSkill()
+{
+	char** dbResult;
+	int nRow;
+	int nColum;
+	char* errmsg;
+	auto tableresult = sqlite3_get_table(m_pDB, "select * from artifactSkill", &dbResult, &nRow, &nColum, &errmsg);
+	if (SQLITE_OK == tableresult)
+	{
+		std::string ID = "ID";
+		std::string NAME = "NAME";
+		std::string initAllDps = "initAllDps";
+		std::string AllDpsUp = "AllDpsUp";
+		std::string effid = "effid";
+		std::string effData = "effData";
+		std::string effDataUp = "effDataUP";
+		std::string star2 = "star_2";
+		std::string star3 = "star_3";
+		std::string star4 = "star_4";
+		std::string skillID = "skillID";
+		auto index = nColum;
+		for (int i = 0; i < nRow; i++)
+		{
+			auto artifactSkill = new ArtifactSkill();
+			auto artifact = &artifactSkill->ar;
+			for (int j = 0; j < nColum; j++)
+			{
+				if (ID.compare(dbResult[j]) == 0)
+					artifact->ID = atoi(dbResult[index]);
+				if (NAME.compare(dbResult[j]) == 0)
+					artifact->NAME = dbResult[index];
+				if (initAllDps.compare(dbResult[j]) == 0)
+					artifact->initAllDps = atof(dbResult[index]);
+				if (AllDpsUp.compare(dbResult[j]) == 0)
+					artifact->AllDpsUp = atof(dbResult[index]);
+				if (effid.compare(dbResult[j]) == 0)
+					artifact->effid = atoi(dbResult[index]);
+				if (effData.compare(dbResult[j]) == 0)
+					artifact->effData = atof(dbResult[index]);
+				if (effDataUp.compare(dbResult[j]) == 0)
+					artifact->effDataUp = atof(dbResult[index]);
+				if (star2.compare(dbResult[j]) == 0)
+					artifact->star2 = atof(dbResult[index]);
+				if (star3.compare(dbResult[j]) == 0)
+					artifact->star3 = atof(dbResult[index]);
+				if (star4.compare(dbResult[j]) == 0)
+					artifact->star4 = atof(dbResult[index]);
+				if (skillID.compare(dbResult[j]) == 0)
+					artifactSkill->skillID = atoi(dbResult[index]);
+				++index;
+			}
+
+			m_artifactSkill[artifact->ID] = artifactSkill;
+		}
+	}
+}

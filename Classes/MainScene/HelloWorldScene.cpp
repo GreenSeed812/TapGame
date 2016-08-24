@@ -49,7 +49,7 @@ bool HelloWorld::init()
 	{
 		MyNum num;
 		num.Mathbit = 30;
-		num.Mathbit = 2;
+
 		num.number = 1;
 		PlayerData::getInstance()->addGold(&num);
 
@@ -80,7 +80,7 @@ bool HelloWorld::init()
 
 	attackeffection();
 	coinChange(this);
-	
+	PlayerButton::getSkillLayer(rootNode->getChildByName("UiNode")->getChildByName("SkillLayer"));
     return true;
 }
 void HelloWorld::coinChange(Ref *ref)
@@ -737,7 +737,8 @@ void HelloWorld::skillEff(float dt)
 			t_now = 0;
 			if (PlayerData::getInstance()->getSkillopen(5))
 			{
-				PlayerData::getInstance()->addGold(&Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(6)));
+				auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(6));
+				PlayerData::getInstance()->addGold(&num1);
 			}
 		}
 	}

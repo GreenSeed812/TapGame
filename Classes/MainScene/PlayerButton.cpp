@@ -5,6 +5,7 @@
 #include "Tool/SqLite.h"
 #include "Tool/Rule.h"
 using namespace ui;
+Node * PlayerButton::g_skillLayer = nullptr;
 bool PlayerButton::init()
 {
 	if (!Layer::init())
@@ -59,6 +60,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				PlayerData::getInstance()->skillLevelUp(1);
 				PlayerData::getInstance()->subGold(&m_upGold);
 				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
+				Button* button = (Button*)g_skillLayer->getChildByName("SkillButton1");
+				button->setEnabled(true);
 				coinChange(this);
 				
 			}
@@ -77,6 +80,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				PlayerData::getInstance()->subGold(&m_upGold);
 				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
 				PlayerData::getInstance()->skillLevelUp(2);
+				Button* button = (Button*)g_skillLayer->getChildByName("SkillButton2");
+				button->setEnabled(true);
 				coinChange(this);
 			}
 		});
@@ -94,6 +99,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				PlayerData::getInstance()->subGold(&m_upGold);
 				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
 				PlayerData::getInstance()->skillLevelUp(3);
+				Button* button = (Button*)g_skillLayer->getChildByName("SkillButton3");
+				button->setEnabled(true);
 				coinChange(this);
 			}
 		});
@@ -111,6 +118,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				PlayerData::getInstance()->subGold(&m_upGold);
 				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
 				PlayerData::getInstance()->skillLevelUp(4);
+				Button* button = (Button*)g_skillLayer->getChildByName("SkillButton4");
+				button->setEnabled(true);
 				coinChange(this);
 			}
 		});
@@ -128,6 +137,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				PlayerData::getInstance()->subGold(&m_upGold);
 				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
 				PlayerData::getInstance()->skillLevelUp(5);
+				Button* button = (Button*)g_skillLayer->getChildByName("SkillButton5");
+				button->setEnabled(true);
 				coinChange(this);
 			}
 		});
@@ -145,6 +156,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				PlayerData::getInstance()->subGold(&m_upGold);
 				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
 				PlayerData::getInstance()->skillLevelUp(6);
+				Button* button = (Button*)g_skillLayer->getChildByName("SkillButton6");
+				button->setEnabled(true);
 				coinChange(this);
 			}
 		});

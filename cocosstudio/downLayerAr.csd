@@ -112,28 +112,26 @@
           <AbstractNodeData Name="getArtifact" ActionTag="373749025" Tag="87" IconVisible="False" LeftMargin="251.7498" RightMargin="252.2502" TopMargin="1305.5691" BottomMargin="553.4310" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="546" Scale9Height="39" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="576.0000" Y="61.0000" />
             <Children>
-              <AbstractNodeData Name="SubAr" ActionTag="-1622209911" Tag="914" IconVisible="False" LeftMargin="416.0209" RightMargin="44.9791" TopMargin="15.0338" BottomMargin="-12.0338" FontSize="24" LabelText="消耗：100&#xA;" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="115.0000" Y="58.0000" />
-                <AnchorPoint ScaleX="0.5947" ScaleY="0.5392" />
-                <Position X="484.4069" Y="19.2411" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="237" G="209" B="169" />
-                <PrePosition X="0.8410" Y="0.3154" />
-                <PreSize X="0.1997" Y="0.9508" />
-                <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="arStone" ActionTag="962010551" Tag="915" IconVisible="False" LeftMargin="364.6350" RightMargin="168.3650" TopMargin="12.2305" BottomMargin="3.7695" ctype="SpriteObjectData">
+              <AbstractNodeData Name="arStone" ActionTag="962010551" Tag="915" IconVisible="False" LeftMargin="374.6354" RightMargin="158.3646" TopMargin="12.2304" BottomMargin="3.7696" ctype="SpriteObjectData">
                 <Size X="43.0000" Y="45.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="386.1350" Y="26.2695" />
+                <Position X="396.1354" Y="26.2696" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.6704" Y="0.4306" />
+                <PrePosition X="0.6877" Y="0.4306" />
                 <PreSize X="0.0747" Y="0.7377" />
                 <FileData Type="Normal" Path="lhs_ar.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="SubAr" ActionTag="1284807813" Tag="1007" IconVisible="False" LeftMargin="402.5112" RightMargin="66.4888" TopMargin="-9.7012" BottomMargin="-6.2988" LabelText="100" ctype="TextBMFontObjectData">
+                <Size X="107.0000" Y="77.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="456.0112" Y="32.2012" />
+                <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.7917" Y="0.5279" />
+                <PreSize X="0.1858" Y="1.2623" />
+                <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.4851" ScaleY="0.6933" />

@@ -90,6 +90,7 @@ class SqLite
 public:
 	
 	static SqLite* getInstance();
+	ArtifactSkill getArtifactSkillByID(int id);
 	MyNum getHpByID(int);
 	MonsterData* getMonsterByID(int);
 	MyNum getDropData(){ return m_dropData; }

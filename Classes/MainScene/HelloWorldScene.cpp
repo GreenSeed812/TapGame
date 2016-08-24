@@ -6,6 +6,7 @@
 #include "cocos-ext.h"
 #include "MainScene/ClickLayer.h"
 #include "SaveData/PlayerData.h"
+#include "SaveData/ArtifactData.h"
 #include "Tool/Rule.h"
 #include "MainScene/PlayerButton.h"
 #include "MainScene/ServantButton.h"
@@ -72,6 +73,7 @@ bool HelloWorld::init()
 	uiCallBack();
 	createMonster();
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::coinChange), "CoinChange", nullptr);
+	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::ArChange), "ArChange", nullptr);
 	showTime = false;
 	Slider* timeSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("timeSlider");
 	timeSlider->setMaxPercent(PlayerData::getInstance()->getMaxTime());
@@ -99,6 +101,30 @@ void HelloWorld::coinChange(Ref *ref)
 		gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
 	}
 }
+
+void HelloWorld::ArChange(Ref*)
+{
+	if (m_artifactLayer)
+	{
+		auto btn = (Button*)m_artifactLayer->getChildByName("getArtifact");
+		auto arStoneNum = ArtifactData::getInstance()->getArtiStone();
+		auto needStoneNum = ArtifactData::getInstance()->getNeededArStone();
+		TextBMFont* arStone = (TextBMFont*)m_artifactLayer->getChildByName("message")->getChildByName("Resource");
+		arStone->setString(StringUtils::format("%d", arStoneNum).c_str());
+		TextBMFont* subStone = (TextBMFont*)btn->getChildByName("SubAr");
+		subStone->setString(StringUtils::format("%d", needStoneNum).c_str());
+		if ((arStoneNum - needStoneNum) >= 0)
+		{		
+			btn->setEnabled(true);
+		}
+		else
+		{
+			btn->setEnabled(false);
+		}
+	}
+}
+	
+
 void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const std::string& action)
 {
 	static bool dead;
@@ -409,6 +435,7 @@ void HelloWorld::uiCallBack()
 			}
 			bt->setEnabled(false);
 			initDownLayerAr(m_artifactLayer);
+			ArChange(this);
 		}
 	});
 	itemButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {
@@ -612,6 +639,7 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 				widget->setContentSize(button->getContentSize());
 				widget->addChild(button);
 				lv->pushBackCustomItem(widget);
+				ArtifactData::getInstance()->subArtiStone(ArtifactData::getInstance()->getNeededArStone());
 			}
 		});
 	}

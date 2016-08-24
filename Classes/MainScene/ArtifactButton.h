@@ -10,7 +10,7 @@ class ArtifactButton : public Layer
 public:
 	bool init();
 	void initArtifactLayer();
-	void coinChange(Ref*);
+	void arChange(Ref*);
 	static void getListView(Node* lv){ g_lv = lv; }
 	static void getRootNode(Node * node){ g_node = node; };
 	CREATE_FUNC(ArtifactButton);

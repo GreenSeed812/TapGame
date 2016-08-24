@@ -27,6 +27,7 @@ public:
 	bool initDownLayerAr(Node*&);
 	bool initDownLayerSh(Node*&);
 	void coinChange(Ref*);
+	void ArChange(Ref*);
 	virtual void update(float dt);
 	void skillCDUpdate(float dt);
 	void skillKpCDUpdate(float dt);

@@ -16,7 +16,6 @@ bool ArtifactButton::init()
 		return false;
 	}
 
-	m_lhs = 0;
 	node = CSLoader::createNode("artifactNode.csb");
 	m_layer = (Layer*)node->getChildByName("Layer");
 	this->setContentSize(node->getContentSize());
@@ -27,9 +26,11 @@ bool ArtifactButton::init()
 
 void ArtifactButton::initArtifactLayer()
 {
-	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(ArtifactButton::coinChange), "CoinChange", nullptr);
-
+	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(ArtifactButton::arChange), "ArChange", nullptr);
+	
+	m_lhs = ArtifactData::getInstance()->getArtiStone();
 	m_id = cocos2d::random(0, 28);
+	ArtifactData::getInstance()->addArNum(m_id);
 	//»ñÈ¡¿Ø¼þ
 	auto head = (Sprite*)m_layer->getChildByName("head");
 	auto name = (Text*)m_layer->getChildByName("discribe")->getChildByName("name");
@@ -51,7 +52,7 @@ void ArtifactButton::initArtifactLayer()
 		if (event == Widget::TouchEventType::ENDED)
 		{
 
-			coinChange(this);
+			arChange(this);
 		}
 		
 	});
@@ -59,10 +60,10 @@ void ArtifactButton::initArtifactLayer()
 	listener->onTouchBegan = CC_CALLBACK_2(ArtifactButton::onTouchBegan, this);
 	listener->onTouchEnded = CC_CALLBACK_2(ArtifactButton::onTouchEnded, this);
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener,this);
-	coinChange(this);
+	arChange(this);
 }
 
-void ArtifactButton::coinChange(Ref*)
+void ArtifactButton::arChange(Ref*)
 {
 	auto bt = (Button*)m_layer->getChildByName("up");
 	auto judge = m_lhs - ArtifactData::getInstance()->getNeededArStone();

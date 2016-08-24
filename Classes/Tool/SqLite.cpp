@@ -530,3 +530,16 @@ void SqLite::readArtifactSkill()
 		}
 	}
 }
+ArtifactSkill SqLite::getArtifactSkillByID(int id)
+{
+	if(m_artifactSkill[id])
+		return *m_artifactSkill[id];
+	else if (m_artifact[id])
+	{
+		ArtifactSkill arts;
+		arts.ar = *m_artifact[id];
+		arts.skillID = 0;
+		return arts;
+	}
+		
+}

@@ -19,7 +19,7 @@ bool ArReset::init()
 	this->addChild(m_node);
 	auto listener = EventListenerTouchOneByOne::create();
 	listener->setSwallowTouches(true);
-	listener->onTouchBegan = [](){};
+	listener->onTouchBegan = [](Touch*, Event*)->bool{return true; };
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener,m_layer);
 
 	return true;

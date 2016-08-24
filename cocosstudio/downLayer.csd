@@ -6,15 +6,25 @@
       <ObjectData Name="downLayer" Tag="48" ctype="GameLayerObjectData">
         <Size X="1080.0000" Y="1920.0000" />
         <Children>
-          <AbstractNodeData Name="ListView" ActionTag="2109206512" Tag="66" IconVisible="False" LeftMargin="35.2956" RightMargin="42.7045" TopMargin="1306.8750" BottomMargin="204.3750" TouchEnable="True" ClipAble="True" ColorAngle="90.0000" LeftEage="330" RightEage="330" TopEage="161" BottomEage="161" Scale9OriginX="330" Scale9OriginY="161" Scale9Width="342" Scale9Height="86" ScrollDirectionType="0" DirectionType="Vertical" HorizontalType="Align_HorizontalCenter" ctype="ListViewObjectData">
-            <Size X="1002.0000" Y="408.7500" />
-            <AnchorPoint ScaleX="0.5003" ScaleY="0.5000" />
-            <Position X="536.5800" Y="408.7500" />
+          <AbstractNodeData Name="Sprite_1" ActionTag="-168950229" Tag="53" IconVisible="False" LeftMargin="37.4700" RightMargin="40.5300" TopMargin="1307.2500" BottomMargin="204.7500" ctype="SpriteObjectData">
+            <Size X="1002.0000" Y="408.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="538.4700" Y="408.7500" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4968" Y="0.2129" />
-            <PreSize X="0.9278" Y="0.2129" />
-            <FileData Type="Normal" Path="layer.png" Plist="" />
+            <PrePosition X="0.4986" Y="0.2129" />
+            <PreSize X="0.9278" Y="0.2125" />
+            <FileData Type="Normal" Path="diban0.png" Plist="" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="ListView" ActionTag="2109206512" Tag="66" IconVisible="False" LeftMargin="52.2954" RightMargin="53.7046" TopMargin="1321.8750" BottomMargin="217.3750" TouchEnable="True" ClipAble="True" ColorAngle="90.0000" LeftEage="330" RightEage="330" TopEage="161" BottomEage="161" Scale9OriginX="-330" Scale9OriginY="-161" Scale9Width="660" Scale9Height="322" ScrollDirectionType="0" DirectionType="Vertical" HorizontalType="Align_HorizontalCenter" ctype="ListViewObjectData">
+            <Size X="974.0000" Y="380.7500" />
+            <AnchorPoint ScaleX="0.5003" ScaleY="0.5000" />
+            <Position X="539.5876" Y="407.7500" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4996" Y="0.2124" />
+            <PreSize X="0.9019" Y="0.1983" />
             <SingleColor A="255" R="150" G="150" B="255" />
             <FirstColor A="255" R="150" G="150" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />

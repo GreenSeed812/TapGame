@@ -6,15 +6,25 @@
       <ObjectData Name="downLayer" Tag="48" ctype="GameLayerObjectData">
         <Size X="1080.0000" Y="1920.0000" />
         <Children>
-          <AbstractNodeData Name="ListView" ActionTag="2109206512" Tag="66" IconVisible="False" LeftMargin="35.3000" RightMargin="42.7000" TopMargin="1266.7500" BottomMargin="164.2500" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" LeftEage="330" RightEage="330" TopEage="161" BottomEage="161" Scale9OriginX="330" Scale9OriginY="161" Scale9Width="342" Scale9Height="86" ScrollDirectionType="0" DirectionType="Vertical" HorizontalType="Align_HorizontalCenter" ctype="ListViewObjectData">
-            <Size X="1002.0000" Y="489.0000" />
+          <AbstractNodeData Name="Sprite_1" ActionTag="-1608587296" Tag="61" IconVisible="False" LeftMargin="37.4700" RightMargin="40.5300" TopMargin="1307.2500" BottomMargin="204.7500" ctype="SpriteObjectData">
+            <Size X="1002.0000" Y="408.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="538.4700" Y="408.7500" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4986" Y="0.2129" />
+            <PreSize X="0.9278" Y="0.2125" />
+            <FileData Type="Normal" Path="diban0.png" Plist="" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="ListView" ActionTag="2109206512" Tag="66" IconVisible="False" LeftMargin="49.3000" RightMargin="56.7000" TopMargin="1320.8750" BottomMargin="218.3750" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" LeftEage="330" RightEage="330" TopEage="161" BottomEage="161" Scale9OriginX="-330" Scale9OriginY="-161" Scale9Width="660" Scale9Height="322" ScrollDirectionType="0" DirectionType="Vertical" HorizontalType="Align_HorizontalCenter" ctype="ListViewObjectData">
+            <Size X="974.0000" Y="380.7500" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="536.3000" Y="408.7500" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4966" Y="0.2129" />
-            <PreSize X="0.9278" Y="0.2547" />
-            <FileData Type="Normal" Path="diban0.png" Plist="" />
+            <PreSize X="0.9019" Y="0.1983" />
             <SingleColor A="255" R="26" G="26" B="26" />
             <FirstColor A="255" R="150" G="150" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />

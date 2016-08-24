@@ -408,25 +408,7 @@ void HelloWorld::uiCallBack()
 				_child->setEnabled(true);
 			}
 			bt->setEnabled(false);
-			if (initDownLayerAr(m_artifactLayer))
-			{
-				ListView* lv = (ListView*)m_artifactLayer->getChildByName("ListView");
-				ArtifactButton::getListView(lv);
-				auto button = ArtifactButton::create();
-				button->initArtifactLayer(0);
-				auto widget = Widget::create();
-				widget->setContentSize(button->getContentSize());
-				widget->addChild(button);
-				lv->pushBackCustomItem(widget);
-			}
-			else
-			{
-				ListView* lv = (ListView*)m_servantLayer->getChildByName("ListView");
-				for (auto child : lv->getChildren())
-				{
-					child->scheduleUpdate();
-				}
-			}
+			initDownLayerAr(m_artifactLayer);
 		}
 	});
 	itemButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {
@@ -617,6 +599,21 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 			}
 		});
 		ret = true;
+		auto btn = (Button*)downLayer->getChildByName("getArtifact");
+		btn->addTouchEventListener([downLayer, this](Ref* sender, Widget::TouchEventType type) {
+			if (type == Widget::TouchEventType::ENDED) {
+				ArtifactButton::getRootNode(downLayer);
+				ListView* lv = (ListView*)m_artifactLayer->getChildByName("ListView");
+				ArtifactButton::getListView(lv);
+				auto button = ArtifactButton::create();
+				auto id = rand()%29+1;
+				button->initArtifactLayer();
+				auto widget = Widget::create();
+				widget->setContentSize(button->getContentSize());
+				widget->addChild(button);
+				lv->pushBackCustomItem(widget);
+			}
+		});
 	}
 	else
 	{

@@ -17,6 +17,7 @@ public:
 	void addexploreProb(int prob){ m_exploreProb += prob; }
 	void addGold(MyNum* gold);
 	void addServantNum(){ m_servantNum++; }
+	int getArtiStone(){ return 1000; }
 	void defeatMonsterGold();
 	static PlayerData * getInstance();
 	float getBanTime(int i){ return m_skillData.at(i)->baseBanTime; }

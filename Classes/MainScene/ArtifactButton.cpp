@@ -1,11 +1,12 @@
 #include "MainScene/ArtifactButton.h"
+#include "MainScene/ArReset.h"
 #include "ui/CocosGUI.h"
 #include <cocostudio/CocoStudio.h> 
 #include "SaveData/PlayerData.h"
 #include "Tool/SqLite.h"
 using namespace ui;
 
-Node* ArtifactButton::g_lv = nullptr;
+Node * ArtifactButton::g_node = nullptr;
 
 bool ArtifactButton::init()
 {
@@ -22,19 +23,57 @@ bool ArtifactButton::init()
 	return true;
 }
 
-void ArtifactButton::initArtifactLayer(int id)
+void ArtifactButton::initArtifactLayer()
 {
-	/*auto newNode = ArtifactButton::create();
-	PlayerData::getInstance()->addServantNum();
-	newNode->initArtifactLayer(0);
-	auto frame = Widget::create();
-	frame->setContentSize(newNode->getContentSize());
-	frame->addChild(newNode);
-	ListView* lv = (ListView*)g_lv;
-	lv->pushBackCustomItem(frame);*/
+	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(ArtifactButton::coinChange), "CoinChange", nullptr);
+
+	m_id = cocos2d::random(0, 28);
+	auto head = (Sprite*)m_layer->getChildByName("head");
+	auto LevelUp = (Button*)m_layer->getChildByName("up");
+
+	head->setTexture(StringUtils::format("ui/downUi/artifact/%d.png", m_id+1));
+	LevelUp->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType event)
+	{
+		if (event == Widget::TouchEventType::ENDED)
+		{
+
+		}
+		
+	});
+	auto listener = EventListenerTouchOneByOne::create();
+	listener->onTouchBegan = CC_CALLBACK_2(ArtifactButton::onTouchBegan, this);
+	listener->onTouchEnded = CC_CALLBACK_2(ArtifactButton::onTouchEnded, this);
+	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener,this);
 }
 
-//void ArtifactButton::coinChange(Ref*)
-//{
-//
-//}
+void ArtifactButton::coinChange(Ref*)
+{
+	auto bt = (Button*)m_layer->getChildByName("up");
+	auto judge = m_lhs - PlayerData::getInstance()->getArtiStone();;
+
+	if (judge >= 0)
+	{
+		bt->setEnabled(true);
+		m_layer->setColor(Color3B(255, 255, 255));
+	}
+	else
+	{
+		bt->setEnabled(false);
+	}
+}
+
+bool ArtifactButton::onTouchBegan(Touch * touch, Event* event)
+{
+	return true;
+}
+void ArtifactButton::onTouchEnded(Touch * touch, Event * event)
+{
+	auto pos = this->convertTouchToNodeSpace(touch);
+	auto head = (Sprite*)m_layer->getChildByName("head");
+	if (head->getBoundingBox().containsPoint(pos))
+	{
+		auto arReset = ArReset::create();
+		arReset->initArResetLayer(m_id);
+		g_node->addChild(arReset);
+	}
+}

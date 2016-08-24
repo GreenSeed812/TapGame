@@ -12,10 +12,12 @@
         <Image Name="anniu (4).png" />
         <Image Name="anniu (5).png" />
         <Image Name="anniu.png" />
+        <Image Name="anniu_ar.png" />
         <Image Name="anniu3.png" />
         <Image Name="anniuhui.png" />
         <Image Name="artifact.png" />
         <Image Name="artifact_1.png" />
+        <Project Name="ArtifactLayer1.csd" Type="Layer" />
         <Project Name="artifactNode.csd" Type="Layer" />
         <Image Name="baofengxue.png" />
         <Image Name="baofengxue-zjm.png" />
@@ -30,6 +32,7 @@
         <Image Name="chengjiulingqu1.png" />
         <Image Name="chengjiulingqu2.png" />
         <Image Name="chengjiumiaoshu.png" />
+        <Image Name="chongzhukehuode_ar.png" />
         <Project Name="configLayer.csd" Type="Layer" />
         <Image Name="cxsh.png" />
         <Image Name="dadiban.png" />
@@ -54,6 +57,7 @@
         <Project Name="downUiButtonLayer.csd" Type="Layer" />
         <Image Name="dpsPerS.png" />
         <Image Name="dpsPerS_1.png" />
+        <Image Name="dqxs_ar.png" />
         <Image Name="escbg.png" />
         <Image Name="escButton.png" />
         <Project Name="everydayLayer.csd" Type="Layer" />
@@ -68,21 +72,29 @@
         <Image Name="hpSliderGray.png" />
         <Image Name="hpSliderRed.png" />
         <Image Name="jiangli.png" />
+        <Image Name="jiantou_ar.png" />
         <Image Name="jinbi (2).png" />
         <Image Name="jinbi.png" />
         <Image Name="jinlong.png" />
         <Image Name="js.png" />
         <Image Name="js0.png" />
+        <Image Name="k1_ar.png" />
+        <Image Name="k2_ar.png" />
+        <Image Name="k3_ar.png" />
+        <Image Name="k4_ar.png" />
+        <Image Name="k5_ar.png" />
         <Image Name="keepDps .png" />
         <Image Name="kssj.png" />
         <Image Name="kssj-zjm.png" />
         <Image Name="kuang.png" />
+        <Image Name="kuang_ar.png" />
         <Image Name="kuang1 (2).png" />
         <Image Name="kuang1.png" />
         <Image Name="kuang2.png" />
         <Image Name="lan.png" />
         <Image Name="layer.png" />
         <Image Name="lhs.png" />
+        <Image Name="lhs_ar.png" />
         <Image Name="linghunshi.png" />
         <Image Name="lv.png" />
         <Image Name="mainBG.jpg" />
@@ -93,6 +105,7 @@
         <Image Name="meiriqiandao.png" />
         <Image Name="meirirenwu.png" />
         <Image Name="message.png" />
+        <Image Name="mingchengkuang_ar.png" />
         <Image Name="mission.png" />
         <ExportJsonFile Name="monster_01.ExportJson" />
         <Image Name="monster_010.png" />
@@ -104,6 +117,7 @@
         <Project Name="servantNode.csd" Type="Layer" />
         <Image Name="setting.png" />
         <Image Name="shengqikuang.png" />
+        <Image Name="shenqichongzhu_ar.png" />
         <Image Name="shezhianniu.png" />
         <Image Name="shezhibeijing.png" />
         <Image Name="shitou.png" />
@@ -121,6 +135,8 @@
         <Image Name="tapDps.png" />
         <Image Name="tianshukuang.png" />
         <Image Name="time.png" />
+        <Image Name="touxiangkuang.png" />
+        <Image Name="touxiangkuang_ar.png" />
         <Image Name="tq-zjm.png" />
         <Image Name="tubiao.png" />
         <Image Name="tuteng.png" />
@@ -128,10 +144,13 @@
         <Image Name="weiqiandao.png" />
         <Image Name="weiqiandao0.png" />
         <Image Name="x.png" />
+        <Image Name="x_ar.png" />
         <Image Name="xing1.png" />
         <Image Name="xing2.png" />
+        <Image Name="xingxing_ar.png" />
         <Image Name="xsbz.png" />
         <Image Name="xuetiao.png" />
+        <Image Name="xx_ar.png" />
         <Image Name="xxx.png" />
         <Image Name="yb.png" />
         <Image Name="yb0.png" />
@@ -143,7 +162,9 @@
         <Image Name="yiqiandao0.png" />
         <Image Name="yiquandao.png" />
         <TTF Name="youyuan.ttf" />
+        <Image Name="zgdj_ar.png" />
         <TTF Name="zhuan.ttf" />
+        <Image Name="zs_ar.png" />
         <Image Name="zsdj-zjn.png" />
         <Image Name="zuanshi (2).png" />
         <Image Name="zuanshi.png" />

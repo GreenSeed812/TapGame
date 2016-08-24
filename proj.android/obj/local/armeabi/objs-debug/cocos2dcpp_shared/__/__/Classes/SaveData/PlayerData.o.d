@@ -2,11 +2,11 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/SaveData/PlayerData
  jni/../../Classes/SaveData/PlayerData.cpp \
  jni/../../Classes/SaveData\PlayerData.h jni/../../Classes/Tool/Rule.h \
  D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/string \
- jni/../../Classes/Tool/MyNum.h \
+ jni/../../Classes/Tool/MyNum.h jni/../../Classes/Tool/SqLite.h \
  D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/vector \
- jni/../../Classes/Tool\SqLite.h \
  D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/map \
- jni/../../Classes/Tool/sqlite3.h jni/../../Classes/Tool\MyNum.h \
+ jni/../../Classes/Tool/sqlite3.h jni/../../Classes/Tool/MyNum.h \
+ jni/../../Classes/Tool\SqLite.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../cocos2d.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../base/ccConfig.h \
@@ -361,15 +361,17 @@ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/string:
 
 jni/../../Classes/Tool/MyNum.h:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/vector:
+jni/../../Classes/Tool/SqLite.h:
 
-jni/../../Classes/Tool\SqLite.h:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/vector:
 
 D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/map:
 
 jni/../../Classes/Tool/sqlite3.h:
 
-jni/../../Classes/Tool\MyNum.h:
+jni/../../Classes/Tool/MyNum.h:
+
+jni/../../Classes/Tool\SqLite.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h:
 

@@ -18,7 +18,7 @@ public:
 private:
 	int Ary;									// 进制(final)
 	int Accuracy;								// 除法精度位数(final)
-	std::string unit[32];
+	std::string unit[60];
 	Ruler();
 	~Ruler();
 	MyNum addRule(MyNum, MyNum);

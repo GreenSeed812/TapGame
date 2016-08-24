@@ -11,7 +11,6 @@ public:
 	CREATE_FUNC(ServantButton);
 	static void getListView(Node* lv){ g_lv = lv; }
 	void coinChange(Ref*);
-
 private:
 	Node* node;
 	MyNum m_gold;

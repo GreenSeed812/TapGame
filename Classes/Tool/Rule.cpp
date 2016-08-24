@@ -18,7 +18,14 @@ Ruler::Ruler()
 		unit[i + 5] = s;
 
 	}
-	unit[31] = "¡Þ";
+	for (int i = 0; i < 26; i++)
+	{
+		std::string s;
+		s = StringUtils::format("%c+", 'a' + i);
+		unit[i + 31] = s;
+
+	}
+	unit[59] = "¡Þ";
 }
 
 Ruler::~Ruler()

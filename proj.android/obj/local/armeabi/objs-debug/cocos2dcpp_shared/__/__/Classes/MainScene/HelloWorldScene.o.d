@@ -461,7 +461,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/MainScene/HelloWorl
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/UIEditBox/UIEditBox.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/UILayoutComponent.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../editor-support/cocostudio/CocosStudioExtension.h \
- jni/../../Classes/Tool/Rule.h jni/../../Classes/Tool/MyNum.h \
+ jni/../../Classes/Tool/MyNum.h jni/../../Classes/Tool/Rule.h \
  jni/../../Classes/Tool/SqLite.h jni/../../Classes/Tool/sqlite3.h \
  jni/../../Classes/Tool/MyNum.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/extensions/./cocos-ext.h \
@@ -508,7 +508,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/MainScene/HelloWorl
  jni/../../Classes/MainScene/ServantButton.h \
  jni/../../Classes/SaveData/State.h jni/../../Classes/Ui/settingLayer.h \
  jni/../../Classes/Ui/AchieveLayer.h jni/../../Classes/Ui/MissionLayer.h \
- jni/../../Classes/Ui/SignLayer.h
+ jni/../../Classes/Ui/SignLayer.h jni/../../Classes/MainScene/SkillCD.h
 
 jni/../../Classes/MainScene/HelloWorldScene.h:
 
@@ -1432,9 +1432,9 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/U
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../editor-support/cocostudio/CocosStudioExtension.h:
 
-jni/../../Classes/Tool/Rule.h:
-
 jni/../../Classes/Tool/MyNum.h:
+
+jni/../../Classes/Tool/Rule.h:
 
 jni/../../Classes/Tool/SqLite.h:
 
@@ -1535,3 +1535,5 @@ jni/../../Classes/Ui/AchieveLayer.h:
 jni/../../Classes/Ui/MissionLayer.h:
 
 jni/../../Classes/Ui/SignLayer.h:
+
+jni/../../Classes/MainScene/SkillCD.h:

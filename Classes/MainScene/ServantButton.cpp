@@ -102,7 +102,8 @@ void ServantButton::initServantLayer(int id)
 				//¼¼ÄÜ½âËø
 				Sprite* skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d", m_skillCount + 1));
 				skillSprite->setVisible(true);
-				PlayerData::getInstance()->subGold(&Ruler::getInstance()->multiplay(m_gold, 5));
+				auto mul = Ruler::getInstance()->multiplay(m_gold, 5);
+				PlayerData::getInstance()->subGold(&mul);
 				PlayerData::getInstance()->unlockSernantSkill(m_id, m_skillCount);
 				m_skillCount++;
 				m_unlock = false;

@@ -21,10 +21,12 @@ public:
 	CREATE_FUNC(PlayerButton);
 	void initPlayerButton(BUTTONTYPE);
 	void coinChange(Ref*);
+	static void getSkillLayer(Node * layer){ g_skillLayer = layer; }
 private:
 	Node * playerLayer;
 	BUTTONTYPE m_type;
 	MyNum m_upGold;
+	static Node * g_skillLayer;
 };
 
 

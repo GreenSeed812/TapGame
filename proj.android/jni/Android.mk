@@ -17,6 +17,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/MainScene/ServantButton.cpp \
                    ../../Classes/MainScene/PlayerButton.cpp \
                    ../../Classes/MainScene/ClickLayer.cpp \
+				   ../../Classes/MainScene/SkillCD.cpp \
 				   ../../Classes/Tool/Rand.cpp \
 				   ../../Classes/Tool/Rule.cpp \
 				   ../../Classes/Tool/Split.cpp \

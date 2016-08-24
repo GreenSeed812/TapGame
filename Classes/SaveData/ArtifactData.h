@@ -20,7 +20,7 @@ public:
 	int getArtiStone(){ return m_artifactStone; }
 	int getNeededArStone();
 	int getLevel(int id);
-	void addArNum(int id);
+	int addArNum();
 	void arLevelUp(int id);
 	void arStarUp(int id);
 

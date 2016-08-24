@@ -76,9 +76,7 @@ struct Artifact
 	int effid;
 	float effData;
 	float effDataUp;
-	int star2;
-	int star3;
-	int star4;
+	int star[4];
 };
 struct ArtifactSkill
 {

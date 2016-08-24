@@ -1,6 +1,17 @@
 #ifndef _ArtifactData_H_
 #define _ArtifactData_H_
+
 #include<cocos2d.h>
+
+struct ArtiHave
+{
+	int m_artifactID;
+	int m_artifactStar;
+	int m_artifactLevel;
+	int m_artimaxLevel;
+	float m_artiDpsUp;
+};
+
 class ArtifactData
 {
 public:
@@ -20,11 +31,24 @@ private:
 	int m_artifactNum;
 	int m_star;
 	float m_AllDpsMul;
-	int m_artifactID[29];
-	int m_artifactStart[29];
-	int m_artifactLevel[29];
-
-
+	ArtiHave m_artifacts[29];
+	float m_dpsexper;
+	int m_exploreProb;
+	float m_explorePer;
+	float rmGoldPer;
+	float tenGoldPer;
+	float bossGoldPer;
+	float leaveGoldPer;
+	float skillBanTimeS;
+	float skilleffUp;
+	float skillTimeA;
+	float bossHpS;
+	float heroLevelUpDown;
+	float bossTimeUp;
+	float artiUpPer;
+	float servantLevelUpDown;
+	float WaveDown;
+	float servantUnlockDown;
 };
 
 

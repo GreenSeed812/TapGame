@@ -441,6 +441,7 @@ void SqLite::readArtifact()
 		std::string star2 = "star_2";
 		std::string star3 = "star_3";
 		std::string star4 = "star_4";
+		std::string star5 = "star_5";
 		auto index = nColum;
 		for (int i = 0; i < nRow; i++)
 		{
@@ -462,11 +463,13 @@ void SqLite::readArtifact()
 				if (effDataUp.compare(dbResult[j]) == 0)
 					artifact->effDataUp = atof(dbResult[index]);
 				if (star2.compare(dbResult[j]) == 0)
-					artifact->star2 = atof(dbResult[index]);
+					artifact->star[0] = atof(dbResult[index]);
 				if (star3.compare(dbResult[j]) == 0)
-					artifact->star3 = atof(dbResult[index]);
+					artifact->star[1] = atof(dbResult[index]);
 				if (star4.compare(dbResult[j]) == 0)
-					artifact->star4 = atof(dbResult[index]);
+					artifact->star[2] = atof(dbResult[index]);
+				if (star5.compare(dbResult[j]) == 0)
+					artifact->star[3] = atof(dbResult[index]);
 				++index;
 			}
 			 
@@ -493,6 +496,7 @@ void SqLite::readArtifactSkill()
 		std::string star2 = "star_2";
 		std::string star3 = "star_3";
 		std::string star4 = "star_4";
+		std::string star5 = "star_5";
 		std::string skillID = "skillID";
 		auto index = nColum;
 		for (int i = 0; i < nRow; i++)
@@ -516,11 +520,13 @@ void SqLite::readArtifactSkill()
 				if (effDataUp.compare(dbResult[j]) == 0)
 					artifact->effDataUp = atof(dbResult[index]);
 				if (star2.compare(dbResult[j]) == 0)
-					artifact->star2 = atof(dbResult[index]);
+					artifact->star[0] = atof(dbResult[index]);
 				if (star3.compare(dbResult[j]) == 0)
-					artifact->star3 = atof(dbResult[index]);
+					artifact->star[1] = atof(dbResult[index]);
 				if (star4.compare(dbResult[j]) == 0)
-					artifact->star4 = atof(dbResult[index]);
+					artifact->star[2] = atof(dbResult[index]);
+				if (star5.compare(dbResult[j]) == 0)
+					artifact->star[3] = atof(dbResult[index]);
 				if (skillID.compare(dbResult[j]) == 0)
 					artifactSkill->skillID = atoi(dbResult[index]);
 				++index;

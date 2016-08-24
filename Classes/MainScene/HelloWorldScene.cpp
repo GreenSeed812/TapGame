@@ -629,17 +629,16 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 		auto btn = (Button*)downLayer->getChildByName("getArtifact");
 		btn->addTouchEventListener([downLayer, this](Ref* sender, Widget::TouchEventType type) {
 			if (type == Widget::TouchEventType::ENDED) {
+				ArtifactData::getInstance()->subArtiStone(ArtifactData::getInstance()->getNeededArStone());
 				ArtifactButton::getRootNode(downLayer);
 				ListView* lv = (ListView*)m_artifactLayer->getChildByName("ListView");
 				ArtifactButton::getListView(lv);
 				auto button = ArtifactButton::create();
-				auto id = rand()%29+1;
 				button->initArtifactLayer();
 				auto widget = Widget::create();
 				widget->setContentSize(button->getContentSize());
 				widget->addChild(button);
 				lv->pushBackCustomItem(widget);
-				ArtifactData::getInstance()->subArtiStone(ArtifactData::getInstance()->getNeededArStone());
 			}
 		});
 	}

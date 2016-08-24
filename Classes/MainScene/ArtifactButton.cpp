@@ -6,6 +6,7 @@
 #include "Tool/SqLite.h"
 using namespace ui;
 
+Node* ArtifactButton::g_lv = nullptr;
 Node * ArtifactButton::g_node = nullptr;
 
 bool ArtifactButton::init()

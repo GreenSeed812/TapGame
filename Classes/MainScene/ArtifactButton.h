@@ -11,6 +11,7 @@ public:
 	bool init();
 	void initArtifactLayer();
 	void coinChange(Ref*);
+	static void getListView(Node* lv){ g_lv = lv; }
 	static void getRootNode(Node * node){ g_node = node; };
 	CREATE_FUNC(ArtifactButton);
 
@@ -21,6 +22,7 @@ private:
 	MyNum m_baseDps;
 	MyNum m_dps;
 	Layer* m_layer;
+	static Node* g_lv;
 	int m_id;
 	bool onTouchBegan(Touch *, Event*);
 	void onTouchEnded(Touch *, Event *);

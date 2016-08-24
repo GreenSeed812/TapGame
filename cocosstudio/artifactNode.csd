@@ -9,15 +9,15 @@
           <AbstractNodeData Name="Layer" ActionTag="1557582561" Tag="194" IconVisible="False" LeftMargin="-0.0001" RightMargin="0.0001" TopMargin="-1.9955" BottomMargin="1.9955" ctype="SpriteObjectData">
             <Size X="951.0000" Y="120.0000" />
             <Children>
-              <AbstractNodeData Name="head" ActionTag="-1731785946" Tag="196" IconVisible="False" LeftMargin="30.2700" RightMargin="788.7300" TopMargin="-3.0000" BottomMargin="-3.0000" ctype="SpriteObjectData">
-                <Size X="132.0000" Y="126.0000" />
+              <AbstractNodeData Name="head" ActionTag="-1731785946" Tag="196" IconVisible="False" LeftMargin="73.2700" RightMargin="831.7300" TopMargin="37.0000" BottomMargin="37.0000" ctype="SpriteObjectData">
+                <Size X="46.0000" Y="46.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="96.2700" Y="60.0000" />
-                <Scale ScaleX="0.6500" ScaleY="0.6500" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1012" Y="0.5000" />
-                <PreSize X="0.1388" Y="1.0500" />
-                <FileData Type="Normal" Path="head.png" Plist="" />
+                <PreSize X="0.0484" Y="0.3833" />
+                <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="up" ActionTag="-1819123928" Tag="198" IconVisible="False" LeftMargin="736.8990" RightMargin="44.1010" TopMargin="10.9976" BottomMargin="11.0024" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="76" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -85,19 +85,19 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="lv" ActionTag="-1019941671" Tag="305" IconVisible="False" LeftMargin="348.6799" RightMargin="94.3201" TopMargin="5.0000" BottomMargin="18.0000" FontSize="20" LabelText="Lv 1&#xA;&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="43.0000" Y="72.0000" />
+                  <AbstractNodeData Name="lv" ActionTag="-1019941671" Tag="305" IconVisible="False" LeftMargin="353.6799" RightMargin="99.3201" TopMargin="5.0000" BottomMargin="18.0000" FontSize="20" LabelText="Lv1&#xA;&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="33.0000" Y="72.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="370.1799" Y="54.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="240" G="212" B="172" />
                     <PrePosition X="0.7617" Y="0.5684" />
-                    <PreSize X="0.0885" Y="0.7579" />
+                    <PreSize X="0.0679" Y="0.7579" />
                     <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="TextD" ActionTag="-2103464895" Tag="307" IconVisible="False" LeftMargin="165.0000" RightMargin="155.0000" TopMargin="29.7999" BottomMargin="-6.7999" FontSize="20" LabelText="技能效果  +100%&#xA;&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="effect" ActionTag="-2103464895" Tag="307" IconVisible="False" LeftMargin="165.0000" RightMargin="155.0000" TopMargin="29.7999" BottomMargin="-6.7999" FontSize="20" LabelText="技能效果  +100%&#xA;&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="166.0000" Y="72.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="248.0000" Y="29.2001" />
@@ -109,7 +109,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="TextA" ActionTag="-2144357517" Tag="308" IconVisible="False" LeftMargin="164.5293" RightMargin="163.4707" TopMargin="55.4138" BottomMargin="-104.4138" FontSize="20" LabelText="所有攻击力 +100&#xA;&#xA;&#xA;&#xA;&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="dps" ActionTag="-2144357517" Tag="308" IconVisible="False" LeftMargin="164.5293" RightMargin="163.4707" TopMargin="55.4138" BottomMargin="-104.4138" FontSize="20" LabelText="所有攻击力 +100&#xA;&#xA;&#xA;&#xA;&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="158.0000" Y="144.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="243.5293" Y="-32.4138" />

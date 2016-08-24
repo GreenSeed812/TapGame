@@ -17,6 +17,10 @@ bool ArReset::init()
 	m_layer = (Layer*)m_node->getChildByName("layer");
 	this->setContentSize(m_node->getContentSize());
 	this->addChild(m_node);
+	auto listener = EventListenerTouchOneByOne::create();
+	listener->setSwallowTouches(true);
+	listener->onTouchBegan = [](){};
+	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener,m_layer);
 
 	return true;
 }

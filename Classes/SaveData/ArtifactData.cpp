@@ -1,29 +1,29 @@
 #include "ArtifactData.h"
 #include "math.h"
-static Artifact* g_ar = nullptr;
-Artifact* Artifact::getInstance()
+static ArtifactData* g_ar = nullptr;
+ArtifactData* ArtifactData::getInstance()
 {
 	if (!g_ar)
 	{
-		g_ar = new Artifact();
+		g_ar = new ArtifactData();
 	}
 	return g_ar;
 }
-Artifact::Artifact()
+ArtifactData::ArtifactData()
  :m_artifactStone(0)
  ,m_artifactNum(0)
 {
 }
 
-Artifact::~Artifact()
+ArtifactData::~ArtifactData()
 {
 }
-int Artifact::getNeededArStone()
+int ArtifactData::getNeededArStone()
 {
 	int a = pow(2.0f, m_artifactNum);
 	return a;
 }
-void Artifact::addArNum(int id)
+void ArtifactData::addArNum(int id)
 {
 
 }

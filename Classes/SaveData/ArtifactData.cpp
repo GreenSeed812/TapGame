@@ -53,6 +53,7 @@ int ArtifactData::addArNum()
 	auto artSkill = SqLite::getInstance()->getArtifactSkillByID(id);
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
 	arthave->m_artiDpsUp = artSkill.ar.AllDpsUp;
+	m_AllDpsMul += arthave->m_artiDpsUp;
 	m_artifacts.push_back(arthave);
 	if (artSkill.ar.effid == 2)
 	{
@@ -143,8 +144,9 @@ void ArtifactData::arLevelUp(int id)
 			
 	}
 }
-void ArtifactData::arStarUp(int id)
+void ArtifactData::arStarUp()
 {
+	auto id = cocos2d::random(0, m_artifactNum);
 	for (size_t i = 0; i < m_artifactNum; i++)
 	{
 		if (m_artifacts.at(i)->m_artifactID == id)
@@ -260,6 +262,7 @@ void ArtifactData::deleteArByID(int id)
 			{
 				servantUnlockDown -= artSkill.ar.effData;
 			}
+			m_AllDpsMul -= (*it)->m_artimaxLevel * (*it)->m_artiDpsUp;
 			m_artifacts.erase(it);
 			m_artifactNum--;
 		}

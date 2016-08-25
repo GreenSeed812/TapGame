@@ -16,7 +16,8 @@ class ArtifactData
 {
 public:
 	static ArtifactData* getInstance();
-	void subArtiStone(int i){ m_artifactStone -= i; cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange"); }
+	void subArtiStone(int i){ m_artifactStone -= i; 
+	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange"); }
 	int getArtiStone(){ return m_artifactStone; }
 	int getArNum(){ return m_artifactNum; }
 	int getNeededArStone();
@@ -25,8 +26,21 @@ public:
 	int getStarNum(int id);
 	int addArNum();
 	void arLevelUp(int id);
-	void arStarUp(int id);
+	void arStarUp();
 	void deleteArByID(int id);
+public:
+	float getAllDpsMul(){ return m_AllDpsMul; }
+	float getdpsexper(){ return m_dpsexper; }
+	int getexploreProb(){ return m_exploreProb; }
+	float getexplorePer(){ return m_explorePer; }
+	float getrmGoldPer(){ return rmGoldPer; }
+	float gettenGoldPer(){ return tenGoldPer; }
+	float getbossGoldPer(){ return bossGoldPer; }
+	float getleaveGoldPer(){ return leaveGoldPer; }
+	float getskillBanTimeS(){ return skillBanTimeS; }
+	float getskilleffUp(){ return skilleffUp; }
+	float getskillTimeA(){ return skillTimeA; }
+	float getbossHpS(){ return bossHpS; }
 private:
 	ArtifactData();
 	~ArtifactData();

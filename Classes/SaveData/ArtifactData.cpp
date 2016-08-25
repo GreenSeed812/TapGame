@@ -70,8 +70,8 @@ int ArtifactData::addArNum()
 	m_artifactNum++;
 	auto artSkill = SqLite::getInstance()->getArtifactSkillByID(id);
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
-	arthave->m_artiDpsUp = artSkill.ar.initAllDps;
-	m_AllDpsMul += arthave->m_artiDpsUp;
+	arthave->m_artiDpsUp = artSkill.ar.AllDpsUp;
+	m_AllDpsMul += artSkill.ar.initAllDps;
 	m_artifacts.push_back(arthave);
 	if (artSkill.ar.effid == 2)
 	{
@@ -156,6 +156,7 @@ void ArtifactData::arLevelUp(int id)
 	{
 		if (m_artifacts.at(i)->m_artifactID == id)
 		{
+			m_AllDpsMul += m_artifacts.at(i)->m_artiDpsUp;
 			m_artifacts.at(i)->m_artifactLevel++;
 			break;
 		}
@@ -176,11 +177,12 @@ void ArtifactData::arStarUp()
 }
 int ArtifactData::getLevel(int id)
 {
-	for (size_t i = 0; i < m_artifactNum; i++)
+	for (int i = 0; i < m_artifactNum; i++)
 	{
 		
 		if (m_artifacts.at(i)->m_artifactID == id)
 		{
+
 			return m_artifacts.at(i)->m_artifactLevel;
 		
 		}
@@ -189,7 +191,7 @@ int ArtifactData::getLevel(int id)
 }
 int ArtifactData::getMaxLevel(int id)
 {
-	for (size_t i = 0; i < m_artifactNum; i++)
+	for (int i = 0; i < m_artifactNum; i++)
 	{
 
 		if (m_artifacts.at(i)->m_artifactID == id)

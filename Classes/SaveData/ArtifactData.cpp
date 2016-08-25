@@ -53,6 +53,7 @@ int ArtifactData::addArNum()
 	auto artSkill = SqLite::getInstance()->getArtifactSkillByID(id);
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
 	arthave->m_artiDpsUp = artSkill.ar.AllDpsUp;
+	m_AllDpsMul += arthave->m_artiDpsUp;
 	m_artifacts.push_back(arthave);
 	if (artSkill.ar.effid == 2)
 	{
@@ -143,8 +144,9 @@ void ArtifactData::arLevelUp(int id)
 			
 	}
 }
-void ArtifactData::arStarUp(int id)
+void ArtifactData::arStarUp()
 {
+	auto id = cocos2d::random(0, m_artifactNum);
 	for (size_t i = 0; i < m_artifactNum; i++)
 	{
 		if (m_artifacts.at(i)->m_artifactID == id)
@@ -185,9 +187,82 @@ void ArtifactData::deleteArByID(int id)
 
 	for (std::vector<ArtiHave*>::iterator it = m_artifacts.begin(); it != m_artifacts.end();)
 	{
-		
+		auto artSkill = SqLite::getInstance()->getArtifactSkillByID(id);
 		if ((*it)->m_artifactID == id)
 		{
+			if (artSkill.ar.effid == 2)
+			{
+				m_dpsexper -= artSkill.ar.effData;
+			}
+			if (artSkill.ar.effid == 6)
+			{
+				m_exploreProb -= artSkill.ar.effData;
+			}
+			if (artSkill.ar.effid == 7)
+			{
+				m_explorePer -= artSkill.ar.effData;
+			}
+			if (artSkill.ar.effid == 8)
+			{
+				m_AllDpsMul -= artSkill.ar.effData;
+			}
+			if (artSkill.ar.effid == 19)
+			{
+				rmGoldPer -= artSkill.ar.effData;
+			}
+			if (artSkill.ar.effid == 20)
+			{
+				tenGoldPer -= artSkill.ar.effData;
+			}
+			if (artSkill.ar.effid == 21)
+			{
+				bossGoldPer -= artSkill.ar.effData;
+			}
+			if (artSkill.ar.effid == 22)
+			{
+				leaveGoldPer -= artSkill.ar.effData;
+			}
+			if (artSkill.ar.effid == 29)
+			{
+				skillBanTimeS -= artSkill.ar.effData;
+			}
+			if (artSkill.ar.effid == 30)
+			{
+				skilleffUp -= artSkill.ar.effData;
+			}
+			if (artSkill.ar.effid == 31)
+			{
+				skillTimeA -= artSkill.ar.effData;
+			}
+			if (artSkill.ar.effid == 32)
+			{
+				bossHpS -= artSkill.ar.effData;
+			}
+			if (artSkill.ar.effid == 33)
+			{
+				heroLevelUpDown -= artSkill.ar.effData;
+			}
+			if (artSkill.ar.effid == 34)
+			{
+				bossTimeUp -= artSkill.ar.effData;
+			}
+			if (artSkill.ar.effid == 35)
+			{
+				artiUpPer -= artSkill.ar.effData;
+			}
+			if (artSkill.ar.effid == 36)
+			{
+				servantLevelUpDown -= artSkill.ar.effData;
+			}
+			if (artSkill.ar.effid == 37)
+			{
+				WaveDown -= artSkill.ar.effData;
+			}
+			if (artSkill.ar.effid == 38)
+			{
+				servantUnlockDown -= artSkill.ar.effData;
+			}
+			m_AllDpsMul -= (*it)->m_artimaxLevel * (*it)->m_artiDpsUp;
 			m_artifacts.erase(it);
 			m_artifactNum--;
 		}
@@ -201,6 +276,7 @@ int ArtifactData::getStarNum(int id)
 		if ((*it)->m_artifactID == id)
 		{
 			return (*it)->m_artifactStar;
+
 		}
 		it++;
 	}

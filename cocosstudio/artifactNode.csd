@@ -109,13 +109,13 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="name" ActionTag="-394394912" Tag="91" IconVisible="False" LeftMargin="107.2555" RightMargin="295.7445" TopMargin="3.1452" BottomMargin="67.8548" FontSize="20" LabelText="神器名称" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="name" ActionTag="-394394912" Tag="91" IconVisible="False" LeftMargin="7.2560" RightMargin="395.7440" TopMargin="3.1451" BottomMargin="67.8549" FontSize="20" LabelText="神器名称" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="83.0000" Y="24.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="148.7555" Y="79.8548" />
+                    <AnchorPoint ScaleY="0.5000" />
+                    <Position X="7.2560" Y="79.8549" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="240" G="203" B="148" />
-                    <PrePosition X="0.3061" Y="0.8406" />
+                    <PrePosition X="0.0149" Y="0.8406" />
                     <PreSize X="0.1708" Y="0.2526" />
                     <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />

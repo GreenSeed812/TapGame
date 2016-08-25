@@ -110,7 +110,7 @@
                     <PreSize X="0.3745" Y="0.4947" />
                     <FileData Type="Normal" Path="cxsh.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="lv" ActionTag="1617761873" Tag="55" IconVisible="False" LeftMargin="237.1914" RightMargin="205.8086" TopMargin="5.7553" BottomMargin="65.2447" FontSize="20" LabelText="Lv 1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="lv" ActionTag="1617761873" Tag="55" IconVisible="False" LeftMargin="237.1902" RightMargin="205.8098" TopMargin="5.7556" BottomMargin="65.2444" FontSize="20" LabelText="Lv 1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="43.0000" Y="24.0000" />
                     <AnchorPoint ScaleX="0.4369" ScaleY="0.4244" />
                     <Position X="255.9769" Y="75.4300" />
@@ -132,14 +132,14 @@
                     <PreSize X="0.4342" Y="0.8105" />
                     <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="name" ActionTag="-1811933507" Tag="54" IconVisible="False" LeftMargin="9.1243" RightMargin="293.8757" TopMargin="8.0700" BottomMargin="62.9300" FontSize="20" LabelText="伊利丹伊利丹伊利丹" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="183.0000" Y="24.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="100.6243" Y="74.9300" />
+                  <AbstractNodeData Name="name" ActionTag="-1811933507" Tag="54" IconVisible="False" LeftMargin="8.1244" RightMargin="354.8756" TopMargin="8.0701" BottomMargin="62.9299" FontSize="20" LabelText="伊利丹伊利丹" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="123.0000" Y="24.0000" />
+                    <AnchorPoint ScaleY="0.5000" />
+                    <Position X="8.1244" Y="74.9299" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="245" G="217" B="177" />
-                    <PrePosition X="0.2070" Y="0.7887" />
-                    <PreSize X="0.3765" Y="0.2526" />
+                    <PrePosition X="0.0167" Y="0.7887" />
+                    <PreSize X="0.2531" Y="0.2526" />
                     <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />

@@ -12,7 +12,7 @@ ArtifactData* ArtifactData::getInstance()
 	return g_ar;
 }
 ArtifactData::ArtifactData()
- :m_artifactStone(100)
+ :m_artifactStone(999)
  ,m_artifactNum(0)
 {
 }
@@ -198,10 +198,10 @@ int ArtifactData::getStarNum(int id)
 {
 	for (std::vector<ArtiHave*>::iterator it = m_artifacts.begin(); it != m_artifacts.end();)
 	{
-
 		if ((*it)->m_artifactID == id)
 		{
 			return (*it)->m_artifactStar;
 		}
+		it++;
 	}
 }

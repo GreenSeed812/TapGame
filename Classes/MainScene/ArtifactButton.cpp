@@ -15,7 +15,7 @@ bool ArtifactButton::init()
 	{
 		return false;
 	}
-
+	m_levelUp = false;
 	node = CSLoader::createNode("artifactNode.csb");
 	m_layer = (Layer*)node->getChildByName("Layer");
 	this->setContentSize(node->getContentSize());
@@ -30,6 +30,15 @@ void ArtifactButton::initArtifactLayer()
 	
 	m_lhs = ArtifactData::getInstance()->getArtiStone();
 	m_id = ArtifactData::getInstance()->addArNum();
+	m_level = ArtifactData::getInstance()->getLevel(m_id);
+	if (m_level < ArtifactData::getInstance()->getMaxLevel(m_id))
+	{
+		m_levelUp = true;
+	}
+	else
+	{
+		m_levelUp = false;
+	}
 
 	//获取控件
 	auto head = (Sprite*)m_layer->getChildByName("head");
@@ -46,13 +55,12 @@ void ArtifactButton::initArtifactLayer()
 	auto effid = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.effid;
 	auto effData = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.effData;
 	{
-		auto effDataUp = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.effDataUp;
-		auto level = ArtifactData::getInstance()->getLevel(m_id);
-		effData += effDataUp*level;
+		auto effDataUp = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.effDataUp;	
+		effData += effDataUp*m_level;
 	}
-	effect->setString(SqLite::getInstance()->getSkillEffDis(effid)+StringUtils::format("+%.1f%%",effData*100).c_str());
+	effect->setString(SqLite::getInstance()->getSkillEffDis(effid) + StringUtils::format("+%.1f%%", effData * 100).c_str());
 	//dps->setString(StringUtils::format(""));//未设置，所有攻击力
-	arStone->setString(StringUtils::format("%d",ArtifactData::getInstance()->getArtiStone()).c_str());
+	arStone->setString(StringUtils::format("%d", ArtifactData::getInstance()->getLevel(m_id)*2).c_str());
 
 	LevelUp->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType event)
 	{
@@ -73,7 +81,7 @@ void ArtifactButton::initArtifactLayer()
 void ArtifactButton::arChange(Ref*)
 {
 	auto bt = (Button*)m_layer->getChildByName("up");
-	if (true)//判断是否到达最大等级，未实现
+	if (m_levelUp)
 	{
 		auto judge = m_lhs - ArtifactData::getInstance()->getNeededArStone();
 

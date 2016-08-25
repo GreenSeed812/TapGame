@@ -2,7 +2,7 @@
 #define _ArtifactData_H_
 
 #include<cocos2d.h>
-
+#include "Tool/Rule.h"
 struct ArtiHave
 {
 	int m_artifactID;

@@ -28,18 +28,5 @@
         <LastRunType Value="Windows" />
       </Value>
     </Item>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="ArtifactLayer1.csd" />
-          <FilePathData Path="downLayerAr.csd" />
-          <FilePathData Path="downLayerSh.csd" />
-          <FilePathData Path="downLayer.csd" />
-          <FilePathData Path="artifactNode.csd" />
-          <FilePathData Path="MainScene.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="downLayerAr.csd" />
-      </Value>
-    </Item>
   </Properties>
 </UserData>

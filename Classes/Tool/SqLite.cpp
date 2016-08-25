@@ -322,6 +322,11 @@ std::string SqLite::getSkillDis(int i)
 	return m_skillData.at(i)->effect;
 }
 
+std::string SqLite::getSkillEffDis(int i)
+{
+	return m_skillEffect.at(i-1)->effect;
+}
+
 void SqLite::readServant()
 {
 	char** dbResult;

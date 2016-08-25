@@ -3,6 +3,7 @@
 #include "ui/CocosGUI.h"
 #include <cocostudio/CocoStudio.h> 
 #include "SaveData/PlayerData.h"
+#include "SaveData/ArtifactData.h"
 #include "Tool/SqLite.h"
 using namespace ui;
 
@@ -44,7 +45,10 @@ void ArReset::initArResetLayer(int id)
 	auto arStoneNum = (Text*)m_layer->getChildByName("lshNum")->getChildByName("num");
 	auto zsNum = (Text*)m_layer->getChildByName("reset")->getChildByName("num");
 	//设置控件
-	head->setTexture(StringUtils::format("ui/downUi/artifact/%d.png",id+1));
+	head->setTexture(StringUtils::format("ui/downUi/artifact/%d.png",id));
+	name->setString(SqLite::getInstance()->getArtifactSkillByID(id).ar.NAME);
+	//starLvNow->setString("");星级未设置
+
 	escBtn->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType Event)
 	{
 		if (Event == Widget::TouchEventType::ENDED)

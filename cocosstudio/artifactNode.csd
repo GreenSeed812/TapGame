@@ -73,50 +73,50 @@
               <AbstractNodeData Name="discribe" ActionTag="-542438941" Tag="195" IconVisible="False" LeftMargin="195.3511" RightMargin="269.6489" TopMargin="14.3360" BottomMargin="10.6640" ctype="SpriteObjectData">
                 <Size X="486.0000" Y="95.0000" />
                 <Children>
-                  <AbstractNodeData Name="name" ActionTag="-569923759" Tag="304" IconVisible="False" LeftMargin="78.5000" RightMargin="324.5000" TopMargin="6.0000" BottomMargin="41.0000" FontSize="20" LabelText="神器名称&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="83.0000" Y="48.0000" />
+                  <AbstractNodeData Name="lv" ActionTag="-1446154108" Tag="88" IconVisible="False" LeftMargin="401.9346" RightMargin="47.0654" TopMargin="2.8799" BottomMargin="68.1201" FontSize="20" LabelText="Lv0" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="37.0000" Y="24.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="120.0000" Y="65.0000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="237" G="209" B="169" />
-                    <PrePosition X="0.2469" Y="0.6842" />
-                    <PreSize X="0.1708" Y="0.5053" />
-                    <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
-                    <OutlineColor A="255" R="255" G="0" B="0" />
-                    <ShadowColor A="255" R="110" G="110" B="110" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="lv" ActionTag="-1019941671" Tag="305" IconVisible="False" LeftMargin="353.6799" RightMargin="99.3201" TopMargin="5.0000" BottomMargin="18.0000" FontSize="20" LabelText="Lv1&#xA;&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="33.0000" Y="72.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="370.1799" Y="54.0000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="240" G="212" B="172" />
-                    <PrePosition X="0.7617" Y="0.5684" />
-                    <PreSize X="0.0679" Y="0.7579" />
-                    <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
-                    <OutlineColor A="255" R="255" G="0" B="0" />
-                    <ShadowColor A="255" R="110" G="110" B="110" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="effect" ActionTag="-2103464895" Tag="307" IconVisible="False" LeftMargin="165.0000" RightMargin="155.0000" TopMargin="29.7999" BottomMargin="-6.7999" FontSize="20" LabelText="技能效果  +100%&#xA;&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="166.0000" Y="72.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="248.0000" Y="29.2001" />
+                    <Position X="420.4346" Y="80.1201" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="240" G="203" B="148" />
-                    <PrePosition X="0.5103" Y="0.3074" />
-                    <PreSize X="0.3416" Y="0.7579" />
+                    <PrePosition X="0.8651" Y="0.8434" />
+                    <PreSize X="0.0761" Y="0.2526" />
                     <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="dps" ActionTag="-2144357517" Tag="308" IconVisible="False" LeftMargin="164.5293" RightMargin="163.4707" TopMargin="55.4138" BottomMargin="-104.4138" FontSize="20" LabelText="所有攻击力 +100&#xA;&#xA;&#xA;&#xA;&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="158.0000" Y="144.0000" />
+                  <AbstractNodeData Name="effect" ActionTag="376890614" Tag="89" IconVisible="False" LeftMargin="197.9851" RightMargin="206.0149" TopMargin="25.1486" BottomMargin="45.8514" FontSize="20" LabelText="神器效果" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="82.0000" Y="24.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="243.5293" Y="-32.4138" />
+                    <Position X="238.9851" Y="57.8514" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="240" G="203" B="148" />
-                    <PrePosition X="0.5011" Y="-0.3412" />
-                    <PreSize X="0.3251" Y="1.5158" />
+                    <PrePosition X="0.4917" Y="0.6090" />
+                    <PreSize X="0.1687" Y="0.2526" />
+                    <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="dps" ActionTag="344995183" Tag="90" IconVisible="False" LeftMargin="166.0389" RightMargin="171.9611" TopMargin="56.6786" BottomMargin="14.3214" FontSize="20" LabelText="所有攻击力+100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="148.0000" Y="24.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="240.0389" Y="26.3214" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="240" G="203" B="148" />
+                    <PrePosition X="0.4939" Y="0.2771" />
+                    <PreSize X="0.3045" Y="0.2526" />
+                    <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="name" ActionTag="-394394912" Tag="91" IconVisible="False" LeftMargin="107.2555" RightMargin="295.7445" TopMargin="3.1452" BottomMargin="67.8548" FontSize="20" LabelText="神器名称" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="83.0000" Y="24.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="148.7555" Y="79.8548" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="240" G="203" B="148" />
+                    <PrePosition X="0.3061" Y="0.8406" />
+                    <PreSize X="0.1708" Y="0.2526" />
                     <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />

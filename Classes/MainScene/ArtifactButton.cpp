@@ -29,8 +29,8 @@ void ArtifactButton::initArtifactLayer()
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(ArtifactButton::arChange), "ArChange", nullptr);
 	
 	m_lhs = ArtifactData::getInstance()->getArtiStone();
-	m_id = cocos2d::random(0, 28);
-	ArtifactData::getInstance()->addArNum();
+	m_id = ArtifactData::getInstance()->addArNum();
+
 	//获取控件
 	auto head = (Sprite*)m_layer->getChildByName("head");
 	auto name = (Text*)m_layer->getChildByName("discribe")->getChildByName("name");
@@ -40,18 +40,25 @@ void ArtifactButton::initArtifactLayer()
 	auto LevelUp = (Button*)m_layer->getChildByName("up");
 	auto arStone = (TextBMFont*)LevelUp->getChildByName("linghunshi");
 
-	head->setTexture(StringUtils::format("ui/downUi/artifact/%d.png", m_id+1));
-	name->setString("");
-	level->setString("");
-	effect->setString("");
-	dps->setString("");
-	arStone->setString("");
+	head->setTexture(StringUtils::format("ui/downUi/artifact/%d.png", m_id));
+	name->setString(SqLite::getInstance()->getArtifactSkillByID(m_id).ar.NAME);
+	level->setString(StringUtils::format("Lv%d",ArtifactData::getInstance()->getLevel(m_id)).c_str());
+	auto effid = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.effid;
+	auto effData = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.effData;
+	{
+		auto effDataUp = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.effDataUp;
+		auto level = ArtifactData::getInstance()->getLevel(m_id);
+		effData += effDataUp*level;
+	}
+	effect->setString(SqLite::getInstance()->getSkillEffDis(effid)+StringUtils::format("+%.1f%%",effData*100).c_str());
+	//dps->setString(StringUtils::format(""));//未设置，所有攻击力
+	arStone->setString(StringUtils::format("%d",ArtifactData::getInstance()->getArtiStone()).c_str());
 
 	LevelUp->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType event)
 	{
 		if (event == Widget::TouchEventType::ENDED)
 		{
-
+			ArtifactData::getInstance()->arLevelUp(m_id);
 			arChange(this);
 		}
 		
@@ -66,12 +73,19 @@ void ArtifactButton::initArtifactLayer()
 void ArtifactButton::arChange(Ref*)
 {
 	auto bt = (Button*)m_layer->getChildByName("up");
-	auto judge = m_lhs - ArtifactData::getInstance()->getNeededArStone();
-
-	if (judge >= 0)
+	if (true)//判断是否到达最大等级，未实现
 	{
-		bt->setEnabled(true);
-		m_layer->setColor(Color3B(255, 255, 255));
+		auto judge = m_lhs - ArtifactData::getInstance()->getNeededArStone();
+
+		if (judge >= 0)
+		{
+			bt->setEnabled(true);
+			m_layer->setColor(Color3B(255, 255, 255));
+		}
+		else
+		{
+			bt->setEnabled(false);
+		}
 	}
 	else
 	{

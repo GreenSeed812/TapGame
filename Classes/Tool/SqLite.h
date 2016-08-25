@@ -100,6 +100,7 @@ public:
 	MyNum getGoldByID(int);
 	Servant* getServantByID(int i){ return m_servantData.at(i); }
 	std::string getSkillDis(int i);
+	std::string getSkillEffDis(int i);
 	double getEff(int i){ return m_skillData.at(i)->initEffect; }
 	double getEffPer(int i){ return m_skillData.at(i)->effPerLevel; }
 	MyNum getServantDpsByID(int i){ return m_servantData.at(i)->dps; }

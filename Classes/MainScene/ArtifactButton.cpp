@@ -59,7 +59,7 @@ void ArtifactButton::initArtifactLayer()
 		effData += effDataUp*m_level;
 	}
 	effect->setString(SqLite::getInstance()->getSkillEffDis(effid) + StringUtils::format("+%.1f%%", effData * 100).c_str());
-	//dps->setString(StringUtils::format(""));//未设置，所有攻击力
+	dps->setString(StringUtils::format("所有攻击力+%.1f%%", ArtifactData::getInstance()->getdpsexper()).c_str());
 	arStone->setString(StringUtils::format("%d", ArtifactData::getInstance()->getLevel(m_id)*2).c_str());
 
 	LevelUp->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType event)

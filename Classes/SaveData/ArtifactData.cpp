@@ -14,6 +14,7 @@ ArtifactData* ArtifactData::getInstance()
 ArtifactData::ArtifactData()
  :m_artifactStone(999)
  ,m_artifactNum(0)
+ , m_dpsexper(0)
 {
 }
 

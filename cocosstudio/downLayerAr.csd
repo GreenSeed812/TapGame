@@ -6,7 +6,7 @@
       <ObjectData Name="downLayer" Tag="48" ctype="GameLayerObjectData">
         <Size X="1080.0000" Y="1920.0000" />
         <Children>
-          <AbstractNodeData Name="layerBg" ActionTag="2077853151" Tag="84" IconVisible="False" LeftMargin="37.4598" RightMargin="40.5402" TopMargin="1279.2522" BottomMargin="232.7478" ctype="SpriteObjectData">
+          <AbstractNodeData Name="layerBg" ActionTag="2077853151" Tag="84" IconVisible="False" LeftMargin="37.4598" RightMargin="40.5403" TopMargin="1279.2522" BottomMargin="232.7478" ctype="SpriteObjectData">
             <Size X="1002.0000" Y="408.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="538.4598" Y="436.7478" />
@@ -41,13 +41,13 @@
                 <FileData Type="Normal" Path="escbg.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Dps" ActionTag="470883295" Tag="128" RotationSkewX="-0.0145" RotationSkewY="-0.0117" IconVisible="False" LeftMargin="255.4284" RightMargin="620.5716" TopMargin="-5.9248" BottomMargin="6.9248" LabelText="+0%" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="Dps" ActionTag="470883295" Tag="128" RotationSkewX="-0.0145" RotationSkewY="-0.0117" IconVisible="False" LeftMargin="263.7448" RightMargin="612.2552" TopMargin="-5.9126" BottomMargin="6.9126" LabelText="+0%" ctype="TextBMFontObjectData">
                 <Size X="136.0000" Y="77.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="323.4284" Y="45.4248" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position X="263.7448" Y="45.4126" />
                 <Scale ScaleX="0.8777" ScaleY="0.7242" />
                 <CColor A="255" R="246" G="218" B="178" />
-                <PrePosition X="0.3196" Y="0.5824" />
+                <PrePosition X="0.2606" Y="0.5822" />
                 <PreSize X="0.1344" Y="0.9872" />
                 <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
               </AbstractNodeData>

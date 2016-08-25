@@ -24,6 +24,8 @@ private:
 	Layer* m_layer;
 	static Node* g_lv;
 	int m_id;
+	int m_level;
+	bool m_levelUp;
 	bool onTouchBegan(Touch *, Event*);
 	void onTouchEnded(Touch *, Event *);
 

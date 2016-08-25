@@ -59,7 +59,12 @@ void ArtifactButton::initArtifactLayer()
 		effData += effDataUp*m_level;
 	}
 	effect->setString(SqLite::getInstance()->getSkillEffDis(effid) + StringUtils::format("+%.1f%%", effData * 100).c_str());
-	dps->setString(StringUtils::format("ËùÓÐ¹¥»÷Á¦+%.1f%%", ArtifactData::getInstance()->getdpsexper()).c_str());
+	auto dpsData = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.initAllDps;
+	{
+		auto dpsUp = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.AllDpsUp;
+		dpsData += dpsUp*(m_level-1);
+	}
+	dps->setString(StringUtils::format("%.1f%%", dpsData * 100).c_str());
 	arStone->setString(StringUtils::format("%d", ArtifactData::getInstance()->getLevel(m_id)*2).c_str());
 
 	LevelUp->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType event)

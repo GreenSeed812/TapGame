@@ -22,10 +22,11 @@ public:
 	int getNeededArStone();
 	int getLevel(int id);
 	int getMaxLevel(int id);
+	int getStarNum(int id);
 	int addArNum();
 	void arLevelUp(int id);
 	void arStarUp(int id);
-
+	void deleteArByID(int id);
 private:
 	ArtifactData();
 	~ArtifactData();
@@ -33,7 +34,7 @@ private:
 	int m_artifactNum;
 	int m_star;
 	float m_AllDpsMul;
-	ArtiHave m_artifacts[29];
+	std::vector<ArtiHave*> m_artifacts;
 	float m_dpsexper;
 	int m_exploreProb;
 	float m_explorePer;

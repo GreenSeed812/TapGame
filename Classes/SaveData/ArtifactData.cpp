@@ -14,6 +14,24 @@ ArtifactData* ArtifactData::getInstance()
 ArtifactData::ArtifactData()
  :m_artifactStone(100)
  ,m_artifactNum(0)
+ ,m_AllDpsMul(0)
+ ,m_dpsexper(0)
+ ,m_exploreProb(0)
+ ,m_explorePer(0)
+ ,rmGoldPer(0)
+ ,tenGoldPer(0)
+ ,bossGoldPer(0)
+ ,leaveGoldPer(0)
+ ,skillBanTimeS(0)
+ ,skilleffUp(0)
+ ,skillTimeA(0)
+ ,bossHpS(0)
+ ,heroLevelUpDown(0)
+ ,bossTimeUp(0)
+ ,artiUpPer(0)
+ ,servantLevelUpDown(0)
+ ,WaveDown(0) 
+ ,servantUnlockDown(0)
 {
 }
 
@@ -185,6 +203,7 @@ int ArtifactData::getMaxLevel(int id)
 void ArtifactData::deleteArByID(int id)
 {
 
+
 	for (std::vector<ArtiHave*>::iterator it = m_artifacts.begin(); it != m_artifacts.end();)
 	{
 		auto artSkill = SqLite::getInstance()->getArtifactSkillByID(id);
@@ -265,6 +284,7 @@ void ArtifactData::deleteArByID(int id)
 			m_AllDpsMul -= (*it)->m_artimaxLevel * (*it)->m_artiDpsUp;
 			m_artifacts.erase(it);
 			m_artifactNum--;
+			break;
 		}
 	}
 }

@@ -30,7 +30,7 @@ void ArtifactButton::initArtifactLayer()
 	
 	m_lhs = ArtifactData::getInstance()->getArtiStone();
 	m_id = cocos2d::random(0, 28);
-	ArtifactData::getInstance()->addArNum(m_id);
+	ArtifactData::getInstance()->addArNum();
 	//»ñÈ¡¿Ø¼þ
 	auto head = (Sprite*)m_layer->getChildByName("head");
 	auto name = (Text*)m_layer->getChildByName("discribe")->getChildByName("name");

@@ -51,7 +51,61 @@ int ArtifactData::addArNum()
 	m_artifactNum++;
 	auto artSkill = SqLite::getInstance()->getArtifactSkillByID(id);
 	m_artifacts[m_artifactNum].m_artiDpsUp = artSkill.ar.AllDpsUp;
-
+	if (artSkill.ar.effid == 2)
+	{
+		m_dpsexper = artSkill.ar.effData;
+	}
+	if (artSkill.ar.effid == 6)
+	{
+	}
+	if (artSkill.ar.effid == 7)
+	{
+	}
+	if (artSkill.ar.effid == 8)
+	{
+	}
+	if (artSkill.ar.effid == 19)
+	{
+	}
+	if (artSkill.ar.effid == 20)
+	{
+	}
+	if (artSkill.ar.effid == 21)
+	{
+	}
+	if (artSkill.ar.effid == 22)
+	{
+	}
+	if (artSkill.ar.effid == 29)
+	{
+	}
+	if (artSkill.ar.effid == 30)
+	{
+	}
+	if (artSkill.ar.effid == 31)
+	{
+	}
+	if (artSkill.ar.effid == 32)
+	{
+	}
+	if (artSkill.ar.effid == 33)
+	{
+	}
+	if (artSkill.ar.effid == 34)
+	{
+	}
+	if (artSkill.ar.effid == 35)
+	{
+	}
+	if (artSkill.ar.effid == 36)
+	{
+	}
+	if (artSkill.ar.effid == 37)
+	{
+	}
+	if (artSkill.ar.effid == 38)
+	{
+	}
 	return id;
 
 }
@@ -87,6 +141,19 @@ int ArtifactData::getLevel(int id)
 		{
 			return m_artifacts[i].m_artifactLevel;
 		
+		}
+	}
+	return -1;
+}
+int ArtifactData::getMaxLevel(int id)
+{
+	for (size_t i = 0; i < m_artifactNum; i++)
+	{
+
+		if (m_artifacts[i].m_artifactID == id)
+		{
+			return m_artifacts[i].m_artimaxLevel;
+
 		}
 	}
 	return -1;

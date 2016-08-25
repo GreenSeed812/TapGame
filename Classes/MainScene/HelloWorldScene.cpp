@@ -111,6 +111,8 @@ void HelloWorld::ArChange(Ref*)
 		auto needStoneNum = ArtifactData::getInstance()->getNeededArStone();
 		TextBMFont* arStone = (TextBMFont*)m_artifactLayer->getChildByName("message")->getChildByName("Resource");
 		arStone->setString(StringUtils::format("%d", arStoneNum).c_str());
+		TextBMFont* dps = (TextBMFont*)m_artifactLayer->getChildByName("message")->getChildByName("Dps");
+		dps->setString(StringUtils::format("+%.1f%%", ArtifactData::getInstance()->getAllDpsMul() * 100).c_str());
 		TextBMFont* subStone = (TextBMFont*)btn->getChildByName("SubAr");
 		subStone->setString(StringUtils::format("%d", needStoneNum).c_str());
 		if ((arStoneNum - needStoneNum) >= 0)

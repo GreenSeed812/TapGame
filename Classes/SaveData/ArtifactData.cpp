@@ -70,7 +70,7 @@ int ArtifactData::addArNum()
 	m_artifactNum++;
 	auto artSkill = SqLite::getInstance()->getArtifactSkillByID(id);
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
-	arthave->m_artiDpsUp = artSkill.ar.AllDpsUp;
+	arthave->m_artiDpsUp = artSkill.ar.initAllDps;
 	m_AllDpsMul += arthave->m_artiDpsUp;
 	m_artifacts.push_back(arthave);
 	if (artSkill.ar.effid == 2)

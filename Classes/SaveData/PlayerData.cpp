@@ -186,6 +186,7 @@ MyNum PlayerData::getHeroDps()
 }
 void PlayerData::addGold(MyNum* gold)
 {
+
 	m_gold = Ruler::getInstance()->addNum(m_gold, *gold); 
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 }
@@ -202,6 +203,15 @@ void PlayerData::setServantBaseDps(MyNum dps, int id)
 MyNum PlayerData::getServantDps(int i)
 {
 	return Ruler::getInstance()->multiplay(m_servantBaseDps[i], m_servantMul[i]);
+}
+
+MyNum PlayerData::getTapDpsNoExp()
+{
+	auto num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul);
+	auto t = Ruler::getInstance()->addNum(num, getHeroDps());
+	auto num1 = Ruler::getInstance()->multiplay(t, m_latestTapMul);
+	num = Ruler::getInstance()->addNum(num, num1);
+	return num;
 }
 MyNum PlayerData::getTapDps()
 {
@@ -223,10 +233,10 @@ MyNum PlayerData::getTapDps()
 }
 float PlayerData::getSkillEFF(int i)
 {
-	if (m_skillLevel[i - 1] < 1)
+	if (m_skillLevel[i] < 1)
 		return 0;
 	else
-		return m_skillData.at(i-1)->initEffect + (m_skillData.at(i-1)->effPerLevel - 1) * m_skillLevel[i-1];
+		return m_skillData.at(i)->initEffect + (m_skillData.at(i)->effPerLevel - 1) * m_skillLevel[i];
 }
 void PlayerData::unlockSernantSkill(int servantid, int skillid)
 {

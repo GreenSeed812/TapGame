@@ -21,9 +21,9 @@ public:
 	int getArtiStone(){ return 1000; }
 	void defeatMonsterGold();
 	static PlayerData * getInstance();
-	float getBanTime(int i){ return m_skillData.at(i)->baseBanTime; }
+	float getBanTime(int i){ return m_skillData.at(i-1)->baseBanTime; }
 	MyNum getdefeatMonsterGold();
-	float getKeepTime(int i){ return m_skillData.at(i)->baseTime; }
+	float getKeepTime(int i){ return m_skillData.at(i-1)->baseTime; }
 	int getLevel(){ return m_level; }
 	int getMonsterNum(){ return m_monsterNum; }
 	MyNum getDps();
@@ -34,7 +34,8 @@ public:
 	MyNum getHpNow(){ return m_hpNow; }
 	MyNum getMaxHp();
 	float getSkillEFF(int i);
-	int getSkillLevel(int i){ return m_skillLevel[i];}	
+	int getSkillLevel(int i){ return m_skillLevel[i];}
+	MyNum getTapDpsNoExp();
 	int getWaveNow(){ return m_waveNow; }
 	int getPlayerLevel(){ return m_playerLevel; }
 	int getRandNpc(int r);

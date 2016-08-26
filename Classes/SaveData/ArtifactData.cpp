@@ -66,10 +66,8 @@ int ArtifactData::addArNum()
 	arthave->m_artifactStar = 1;
 	arthave->m_artifactLevel = 1;
 	arthave->m_artimaxLevel = 1;
-
 	m_artifactNum++;
 	auto artSkill = SqLite::getInstance()->getArtifactSkillByID(id);
-	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
 	arthave->m_artiDpsUp = artSkill.ar.AllDpsUp;
 	m_AllDpsMul += artSkill.ar.initAllDps;
 	m_artifacts.push_back(arthave);
@@ -145,6 +143,8 @@ int ArtifactData::addArNum()
 	{
 		servantUnlockDown += artSkill.ar.effData;
 	}
+
+	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
 	return id;
 
 }

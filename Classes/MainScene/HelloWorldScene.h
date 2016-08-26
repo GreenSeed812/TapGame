@@ -54,6 +54,7 @@ private:
 	Animation* ani;
 	Sprite * effectSprite;
 	MyNum num;
+	bool m_hitlogic;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

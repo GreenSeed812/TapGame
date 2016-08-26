@@ -56,7 +56,7 @@ bool HelloWorld::init()
 		PlayerData::getInstance()->addGold(&num);
 
 	}
-	
+	m_hitlogic = true;
 	m_heroLayer = nullptr;
 	m_servantLayer = nullptr;
     m_artifactLayer = nullptr;
@@ -79,8 +79,7 @@ bool HelloWorld::init()
 	timeSlider->setMaxPercent(PlayerData::getInstance()->getMaxTime());
 	timeNow = PlayerData::getInstance()->getMaxTime();
 
-	schedule(schedule_selector(HelloWorld::skillKpCDUpdate), 1.0f);
-
+	scheduleUpdate();
 	attackeffection();
 	coinChange(this);
 	PlayerButton::getSkillLayer(rootNode->getChildByName("UiNode")->getChildByName("SkillLayer"));
@@ -135,9 +134,9 @@ void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const
 		if (action == "Start")
 		{
 			
-			clickLayer->setTouchEnabled(true);
+			//clickLayer->setTouchEnabled(true);
 			armature->getAnimation()->play("Wait");
-			scheduleUpdate();
+			m_hitlogic = true;
 		}
 		
 		if (action == "Leave")
@@ -201,80 +200,86 @@ void HelloWorld::createMonster()
 }
 void HelloWorld::update(float dt)
 {
-	
-	auto heroDps = PlayerData::getInstance()->getHeroDps();
-	auto dps = Ruler::getInstance()->multiplay(heroDps, dt);
-	TextBMFont* kdps = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("KeepDps")->getChildByName("KeepDps");
-	kdps->setString(Ruler::getInstance()->showNum(heroDps));
-	TextBMFont* tdps = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("TapDps")->getChildByName("heroDps");
-	tdps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getDps()).c_str());
-	auto tpDps = Ruler::getInstance()->addNum(heroDps, PlayerData::getInstance()->getDps());
-	TextBMFont* tpdps = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("TotalDps")->getChildByName("TotalDps");
-	tpdps->setString(Ruler::getInstance()->showNum(tpDps));
-	
-	static float t_now = 0;
-	t_now += dt;
-	if (t_now > 1 / 10.0f && MyState::getInstance()->getTaped())
+	if (m_hitlogic == true)
 	{
-		num = PlayerData::getInstance()->getTapDps();
-		PlayerData::getInstance()->subHp(num);
-		Node* monsterNode = rootNode->getChildByName("MonsterNode");
-		Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
-		normalAtk();
-		armature->getAnimation()->play("Hurt", -1, 0);
-		t_now = 0;
-		MyState::getInstance()->setTaped(false);
-	}
-	skillEff(dt);
-	if (m_heroLayer)
-	{
-		TextBMFont* dps = (TextBMFont*)m_heroLayer->getChildByName("message")->getChildByName("Dps");
-		dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getDps()).c_str());
-	}
-	if (m_servantLayer)
-	{
-		TextBMFont* dps = (TextBMFont*)m_servantLayer->getChildByName("message")->getChildByName("Dps");
-		dps->setString(Ruler::getInstance()->showNum(heroDps));
-	}
-	if (PlayerData::getInstance()->getWaveNow() == 11)
-	{
-		Slider* timeSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("timeSlider");
-		
-		timeNow -= dt * 1000;
-		if (timeNow <= 0)
+		auto heroDps = PlayerData::getInstance()->getHeroDps();
+		auto dps = Ruler::getInstance()->multiplay(heroDps, dt);
+		TextBMFont* kdps = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("KeepDps")->getChildByName("KeepDps");
+		kdps->setString(Ruler::getInstance()->showNum(heroDps));
+		TextBMFont* tdps = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("TapDps")->getChildByName("heroDps");
+		tdps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getDps()).c_str());
+		auto tpDps = Ruler::getInstance()->addNum(heroDps, PlayerData::getInstance()->getDps());
+		TextBMFont* tpdps = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("TotalDps")->getChildByName("TotalDps");
+		tpdps->setString(Ruler::getInstance()->showNum(tpDps));
+		skillEff(dt);
+		static float t_now = 0;
+		t_now += dt;
+		if (t_now > 1 / 10.0f && MyState::getInstance()->getTaped())
 		{
-			PlayerData::getInstance()->setWave(0);
-			MyState::getInstance()->setBossButtonDown(true);
-			timeNow = PlayerData::getInstance()->getMaxTime();
-			bossBt->onTouchEnded(nullptr, nullptr);
+			num = PlayerData::getInstance()->getTapDps();
+			PlayerData::getInstance()->subHp(num);
+			Node* monsterNode = rootNode->getChildByName("MonsterNode");
+			Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
+			normalAtk();
+			armature->getAnimation()->play("Hurt", -1, 0);
+			t_now = 0;
+			MyState::getInstance()->setTaped(false);
 		}
-		else
+
+		if (m_heroLayer)
 		{
-			timeSlider->setPercent(timeNow);
-			Text* timeNum = (Text*)timeSlider->getChildByName("Time");
-			timeNum->setString(StringUtils::format("%.2f", (float)timeNow / 1000));
+			TextBMFont* dps = (TextBMFont*)m_heroLayer->getChildByName("message")->getChildByName("Dps");
+			dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getDps()).c_str());
+		}
+		if (m_servantLayer)
+		{
+			TextBMFont* dps = (TextBMFont*)m_servantLayer->getChildByName("message")->getChildByName("Dps");
+			dps->setString(Ruler::getInstance()->showNum(heroDps));
+		}
+		if (PlayerData::getInstance()->getWaveNow() == 11)
+		{
+			Slider* timeSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("timeSlider");
+
+			timeNow -= dt * 1000;
+			if (timeNow <= 0)
+			{
+				PlayerData::getInstance()->setWave(0);
+				MyState::getInstance()->setBossButtonDown(true);
+				timeNow = PlayerData::getInstance()->getMaxTime();
+				bossBt->onTouchEnded(nullptr, nullptr);
+			}
+			else
+			{
+				timeSlider->setPercent(timeNow);
+				Text* timeNum = (Text*)timeSlider->getChildByName("Time");
+				timeNum->setString(StringUtils::format("%.2f", (float)timeNow / 1000));
+
+			}
+			showTime = true;
 
 		}
-		showTime = true;
-	
+
+		Slider* slider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider");
+		auto subNow = Ruler::getInstance()->subNum(PlayerData::getInstance()->getHpNow(), dps);
+		PlayerData::getInstance()->setHpNow(subNow);
+
+		if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit == PlayerData::getInstance()->getHpNow().Mathbit)
+			slider->setPercent(PlayerData::getInstance()->getHpNow().number * 1000000);
+		else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 1)
+			slider->setPercent(PlayerData::getInstance()->getHpNow().number * 1000);
+		else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 2)
+			slider->setPercent(PlayerData::getInstance()->getHpNow().number);
+		else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit - PlayerData::getInstance()->getHpNow().Mathbit > 3)
+			slider->setPercent(0);
+
+		TextBMFont* tbm = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider")->getChildByName("hpNow");
+		tbm->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getHpNow()));
+		killBoss();
 	}
-	
-	Slider* slider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider");
-	auto subNow = Ruler::getInstance()->subNum(PlayerData::getInstance()->getHpNow(), dps);
-	PlayerData::getInstance()->setHpNow(subNow);
-	
-	if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit == PlayerData::getInstance()->getHpNow().Mathbit)
-		slider->setPercent(PlayerData::getInstance()->getHpNow().number * 1000000);
-	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 1)
-		slider->setPercent(PlayerData::getInstance()->getHpNow().number * 1000);
-	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 2)
-		slider->setPercent(PlayerData::getInstance()->getHpNow().number);
-	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit - PlayerData::getInstance()->getHpNow().Mathbit > 3)
-		slider->setPercent(0);
-	
-	TextBMFont* tbm = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider")->getChildByName("hpNow");
-	tbm->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getHpNow()));
-	killBoss();
+	else
+	{
+		skillEff(dt);
+	}
 	
 
  }
@@ -294,39 +299,8 @@ void HelloWorld::uiCallBack()
 	Button* achieveButton = (Button*)rootNode->getChildByName("UiNode")->getChildByName("achiveButton");
 	Button* missonButton = (Button*)rootNode->getChildByName("UiNode")->getChildByName("Mission");
 	Button* signButton = (Button*)rootNode->getChildByName("UiNode")->getChildByName("SignButton");
-	Node* node = rootNode->getChildByName("UiNode")->getChildByName("SkillLayer");
-	for (int i = 1; i < 7;i++)
-	{
-		
-		m_skill[i - 1] = (Button*)node->getChildByName(StringUtils::format("SkillButton%d", i));
-		m_skill[i - 1]->setEnabled(false);
-		m_skill[i - 1]->addTouchEventListener([this,i](Ref* sender, Widget::TouchEventType type){
-			if (type == Widget::TouchEventType::ENDED)
-			{
-				
-				auto skillKpCD = SkillCD::create();
-				skillKpCD->initkpImage(i);
-				skillKpCD->setPosition(m_skill[i - 1]->getContentSize() / 2);
-				auto skillCD = SkillCD::create();
-				skillCD->initImage(i);
-
-				skillCD->setPosition(m_skill[i - 1]->getContentSize() / 2);
-				
-				m_skill[i - 1]->addChild(skillCD);
-				m_skill[i - 1]->addChild(skillKpCD,1);
-				skillKpCD->setName("SkillKpCD");
-
-				skillCD->setName("SkillCD");
-		
-				
-				m_skill[i - 1]->setEnabled(false);
-				PlayerData::getInstance()->setSkillexploreProb(PlayerData::getInstance()->getSkillEFF(i));
-				
-				
-			}
-		});
 	
-	}
+	playerSkillCallBack();
 	playerButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {
 		if (type == Widget::TouchEventType::BEGAN)
 		{
@@ -508,14 +482,14 @@ void HelloWorld::killBoss()
 	Sprite* escapeBoss = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("escapeBoss");
 	if (MyState::getInstance()->getBossButtonDown())
 	{
-		unscheduleUpdate();
+		m_hitlogic = false;
 		armature->getAnimation()->play("Leave");
-		clickLayer->setTouchEnabled(false);
+		//clickLayer->setTouchEnabled(false);
 		MyState::getInstance()->setBossButtonDown(false);
 	}
 	if (Ruler::getInstance()->Zero(PlayerData::getInstance()->getHpNow()))
 	{
-		unscheduleUpdate();
+		m_hitlogic = false;
 		PlayerData::getInstance()->defeatMonsterGold();
 		if (PlayerData::getInstance()->getWaveNow() < 10 && PlayerData::getInstance()->getWaveNow() != 0)
 		{
@@ -556,7 +530,7 @@ void HelloWorld::killBoss()
 			waveNum->setString(StringUtils::format("%d/10", PlayerData::getInstance()->getWaveNow()));
 			waveNum->runAction(Show::create());
 		}
-		clickLayer->setTouchEnabled(false);
+		//clickLayer->setTouchEnabled(false);
 		armature->getAnimation()->play("Leave");
 		
 
@@ -685,21 +659,38 @@ bool HelloWorld::initDownLayerSh(Node* &downLayer)
 
 void HelloWorld::playerSkillCallBack()
 {
+	Node* node = rootNode->getChildByName("UiNode")->getChildByName("SkillLayer");
 	for (int i = 1; i < 7; i++)
 	{
-		m_skillButton[i-1] = (Button*)rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("SkillButton1");
-	}
-	for (int i = 1; i < 7; i++)
-	{
-		Button* bt = (Button*)m_skillButton[i - 1];
-		bt->addTouchEventListener([this,bt](Ref* sender, Widget::TouchEventType type){
+
+		m_skill[i - 1] = (Button*)node->getChildByName(StringUtils::format("SkillButton%d", i));
+		m_skill[i - 1]->setEnabled(false);
+		m_skill[i - 1]->addTouchEventListener([this, i](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
-				bt->addChild(SkillCD::create());
-				
-			}
 
+				auto skillKpCD = SkillCD::create();
+				skillKpCD->initkpImage(i);
+				skillKpCD->setPosition(m_skill[i - 1]->getContentSize() / 2);
+				auto skillCD = SkillCD::create();
+				skillCD->initImage(i);
+
+				skillCD->setPosition(m_skill[i - 1]->getContentSize() / 2);
+
+				m_skill[i - 1]->addChild(skillCD);
+				m_skill[i - 1]->addChild(skillKpCD, 1);
+				skillKpCD->setName("SkillKpCD");
+
+				skillCD->setName("SkillCD");
+
+
+				m_skill[i - 1]->setEnabled(false);
+				PlayerData::getInstance()->openSkill(i - 1);
+
+
+			}
 		});
+
 	}
 	
 	
@@ -711,18 +702,20 @@ void HelloWorld::skillCDUpdate(float dt)
 	{
 		if (m_skill[i]->getChildByName("SkillCD"))
 		{
-			
-			SkillCD *cd = (SkillCD*)m_skill[i]->getChildByName("SkillCD");
-			cd->setPercentNow(100/PlayerData::getInstance()->getBanTime(i)*dt);
- 
-			if (cd->getPercentNow() <= 0)
+			if (!PlayerData::getInstance()->getSkillopen(i))
 			{
-				cd->removeFromParent();
-				unschedule(schedule_selector(HelloWorld::skillCDUpdate));
-				m_skill[i]->setEnabled(true);
+				SkillCD *cd = (SkillCD*)m_skill[i]->getChildByName("SkillCD");
+				cd->setPercentNow(dt);
+
+				if (cd->getkpTime() <= 0)
+				{
+					cd->removeFromParent();
+					m_skill[i]->setEnabled(true);
 
 
+				}
 			}
+			
 
 		}
 			
@@ -734,21 +727,29 @@ void HelloWorld::skillKpCDUpdate(float dt)
 	{
 		if (m_skill[i]->getChildByName("SkillKpCD"))
 		{
-			SkillCD *cd = (SkillCD*)m_skill[i]->getChildByName("SkillKpCD");
-			cd->setPercentNow(100 / PlayerData::getInstance()->getKeepTime(i));
-
-			PlayerData::getInstance()->openSkill(i);
-			if (cd->getPercentNow() <= 0)
+			if(PlayerData::getInstance()->getSkillopen(i))
 			{
-				cd->removeFromParent();
-				schedule(schedule_selector(HelloWorld::skillCDUpdate));
-				PlayerData::getInstance()->closeSkill(i);
-				if (i == 3)
+				SkillCD *cd = (SkillCD*)m_skill[i]->getChildByName("SkillKpCD");
+				cd->setPercentNow(dt);
+
+				PlayerData::getInstance()->openSkill(i);
+				if (cd->getkpTime() <= 0)
 				{
-					PlayerData::getInstance()->setSkillexploreProb(0);
+					cd->removeFromParent();
+					PlayerData::getInstance()->closeSkill(i);
+
+					if (i == 2)
+					{
+						PlayerData::getInstance()->setSkillexploreProb(0);
+					}
+					if (i == 4)
+					{
+						PlayerData::getInstance()->setSkillTap(0);
+					}
+
 				}
-				
 			}
+			
 
 		}
 
@@ -757,44 +758,65 @@ void HelloWorld::skillKpCDUpdate(float dt)
 
 void HelloWorld::skillEff(float dt)
 {
-	static float t_now = 0;
-	t_now += dt;
-	if (PlayerData::getInstance()->getSkillopen(0))
+	if (m_hitlogic)
 	{
-		PlayerData::getInstance()->subHp(Ruler::getInstance()->multiplay(PlayerData::getInstance()->getTapDps(), PlayerData::getInstance()->getSkillEFF(0)));
-		PlayerData::getInstance()->closeSkill(0);
-	}
-	if (MyState::getInstance()->getKTap() && PlayerData::getInstance()->getSkillopen(1))
-	{
-		if (t_now > 1 / 7.0f)
+		static float t_now = 0;
+		t_now += dt;
+		if (PlayerData::getInstance()->getSkillopen(0))
 		{
-			Node* monsterNode = rootNode->getChildByName("MonsterNode");
-			Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
-			num = PlayerData::getInstance()->getTapDps();
-			PlayerData::getInstance()->subHp(num);
-			normalAtk();
-			armature->getAnimation()->play("Hurt", -1, 0);
-			t_now = 0;
-			if (PlayerData::getInstance()->getSkillopen(5))
+
+
+			PlayerData::getInstance()->subHp(Ruler::getInstance()->multiplay(PlayerData::getInstance()->getTapDps(), PlayerData::getInstance()->getSkillEFF(0)));
+			
+		}
+		if (MyState::getInstance()->getKTap() && PlayerData::getInstance()->getSkillopen(1))
+		{
+		
+			if (t_now > 1 / 7.0f)
 			{
-				auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(6));
-				PlayerData::getInstance()->addGold(&num1);
+				Node* monsterNode = rootNode->getChildByName("MonsterNode");
+				Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
+				num = PlayerData::getInstance()->getTapDps();
+				PlayerData::getInstance()->subHp(num);
+				normalAtk();
+				armature->getAnimation()->play("Hurt", -1, 0);
+				t_now = 0;
+				if (PlayerData::getInstance()->getSkillopen(5))
+				{
+					auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(6));
+					PlayerData::getInstance()->addGold(&num1);
+				}
 			}
 		}
-	}
-	if (PlayerData::getInstance()->getSkillopen(4))
-	{
-		if (t_now > 1 / PlayerData::getInstance()->getSkillEFF(4))
+		if (PlayerData::getInstance()->getSkillopen(2))
 		{
-			Node* monsterNode = rootNode->getChildByName("MonsterNode");
-			Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
-			num = PlayerData::getInstance()->getTapDps();
+			PlayerData::getInstance()->setSkillexploreProb(PlayerData::getInstance()->getSkillEFF(2));
+		
+		
+		}
+		if (PlayerData::getInstance()->getSkillopen(3))
+		{
+			auto mul = PlayerData::getInstance()->getSkillEFF(2);
+			auto num = PlayerData::getInstance()->getTapDpsNoExp();
+			num = Ruler::getInstance()->multiplay(num, dt * mul);
 			PlayerData::getInstance()->subHp(num);
-			normalAtk();
-			armature->getAnimation()->play("Hurt", -1, 0);
-			t_now = 0;
+
+		}
+		if (PlayerData::getInstance()->getSkillopen(4))
+		{
+			PlayerData::getInstance()->setSkillTap(PlayerData::getInstance()->getSkillEFF(4));
+
+		}
+		if (PlayerData::getInstance()->getSkillopen(5))
+		{
+			auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(6));
+			PlayerData::getInstance()->addGold(&num1);
+
 		}
 	}
+	skillCDUpdate(dt);
+	skillKpCDUpdate(dt);
+	
 }
 
 void HelloWorld::normalAtk()

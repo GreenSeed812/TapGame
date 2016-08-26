@@ -327,14 +327,8 @@ void HelloWorld::uiCallBack()
 		
 				
 				m_skill[i - 1]->setEnabled(false);
-				if (i == 3)
-				{
-					PlayerData::getInstance()->setSkillexploreProb(PlayerData::getInstance()->getSkillEFF(3));
-				}
-				if (i == 5)
-				{
-					PlayerData::getInstance()->setSkillTap(PlayerData::getInstance()->getSkillEFF(5));
-				}
+				PlayerData::getInstance()->setSkillexploreProb(PlayerData::getInstance()->getSkillEFF(i));
+				
 				
 			}
 		});

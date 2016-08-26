@@ -65,6 +65,12 @@ bool HelloWorld::init()
 	addChild(rootNode);
 	Slider * hpSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider");
 	hpSlider->setTouchEnabled(false);
+	TextBMFont* textLast = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("level");
+	textLast->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel() - 1));
+	TextBMFont* textNow = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("level_1");
+	textNow->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel()));
+	TextBMFont* textNext = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("level_0");
+	textNext->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel() + 1));
 	
 	clickLayer = ClickLayer::create();
 	clickLayer->setZOrder(-1);
@@ -104,15 +110,16 @@ void HelloWorld::coinChange(Ref *ref)
 
 void HelloWorld::ArChange(Ref*)
 {
+	TextBMFont* dps = (TextBMFont*)m_artifactLayer->getChildByName("message")->getChildByName("Dps");
+	auto dpsAll = ArtifactData::getInstance()->getAllDpsMul();
+	dps->setString(StringUtils::format("+%.1f%%", dpsAll * 100).c_str());
 	if (m_artifactLayer)
-	{
+	{	
 		auto btn = (Button*)m_artifactLayer->getChildByName("getArtifact");
 		auto arStoneNum = ArtifactData::getInstance()->getArtiStone();
 		auto needStoneNum = ArtifactData::getInstance()->getNeededArStone();
 		TextBMFont* arStone = (TextBMFont*)m_artifactLayer->getChildByName("message")->getChildByName("Resource");
 		arStone->setString(StringUtils::format("%d", arStoneNum).c_str());
-		TextBMFont* dps = (TextBMFont*)m_artifactLayer->getChildByName("message")->getChildByName("Dps");
-		dps->setString(StringUtils::format("+%.1f%%", ArtifactData::getInstance()->getAllDpsMul() * 100).c_str());
 		TextBMFont* subStone = (TextBMFont*)btn->getChildByName("SubAr");
 		subStone->setString(StringUtils::format("%d", needStoneNum).c_str());
 		if ((arStoneNum - needStoneNum) >= 0)
@@ -543,9 +550,7 @@ void HelloWorld::killBoss()
 				bossBt->setName("bt");
 				
 			}
-			
-			
-			
+				
 		}
 		else if (PlayerData::getInstance()->getWaveNow() == 0)
 		{
@@ -555,8 +560,12 @@ void HelloWorld::killBoss()
 		{
 			PlayerData::getInstance()->resetWave();
 			PlayerData::getInstance()->levelUp();
-			TextBMFont* text = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapNow")->getChildByName("level");
-			text->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel()));
+			TextBMFont* textLast = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("level");
+			textLast->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel()-1));
+			TextBMFont* textNow = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("level_1");
+			textNow->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel()));
+			TextBMFont* textNext = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("level_0");
+			textNext->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel()+1));
 			Node* bossButtonNode = (Node*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("escapeBoss");
 			bossButtonNode->removeChildByName("bt");
 			waveNum->setString(StringUtils::format("%d/10", PlayerData::getInstance()->getWaveNow()));
@@ -631,7 +640,6 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 		auto btn = (Button*)downLayer->getChildByName("getArtifact");
 		btn->addTouchEventListener([downLayer, this](Ref* sender, Widget::TouchEventType type) {
 			if (type == Widget::TouchEventType::ENDED) {
-				ArtifactData::getInstance()->subArtiStone(ArtifactData::getInstance()->getNeededArStone());
 				ArtifactButton::getRootNode(downLayer);
 				ListView* lv = (ListView*)m_artifactLayer->getChildByName("ListView");
 				ArtifactButton::getListView(lv);

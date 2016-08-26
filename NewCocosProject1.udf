@@ -31,15 +31,16 @@
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
         <OpenedDocuments>
-          <FilePathData Path="ArtifactLayer1.csd" />
-          <FilePathData Path="downLayerAr.csd" />
-          <FilePathData Path="downLayerSh.csd" />
-          <FilePathData Path="downLayer.csd" />
-          <FilePathData Path="artifactNode.csd" />
-          <FilePathData Path="MainScene.csd" />
+          <FilePathData Path="denglu.csd" />
+          <FilePathData Path="shujutongji.csd" />
+          <FilePathData Path="yongbing.csd" />
+          <FilePathData Path="zhuansheng.csd" />
+          <FilePathData Path="zhujiaojieshao.csd" />
           <FilePathData Path="servantNode.csd" />
+          <FilePathData Path="zhujiaotiao.csd" />
+          <FilePathData Path="downUiButtonLayer.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="downLayerAr.csd" />
+        <ActiveDocument Path="zhujiaotiao.csd" />
       </Value>
     </Item>
   </Properties>

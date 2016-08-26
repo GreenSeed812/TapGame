@@ -4,6 +4,7 @@
 #include <cocostudio/CocoStudio.h> 
 #include "SaveData/PlayerData.h"
 #include "SaveData/ArtifactData.h"
+#include "SaveData/ShopData.h"
 #include "Tool/SqLite.h"
 using namespace ui;
 
@@ -28,8 +29,9 @@ bool ArReset::init()
 
 void ArReset::initArResetLayer(int id)
 {
-	m_id = id;
+	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(ArReset::arResetChange), "arResetChange", nullptr);
 
+	m_id = id;
 	//获取控件
 	auto escBtn = (Button*)m_layer->getChildByName("esc");
 	auto head = (Sprite*)m_layer->getChildByName("head");
@@ -41,11 +43,12 @@ void ArReset::initArResetLayer(int id)
 	auto arLvNow = (Text*)m_layer->getChildByName("lvBg")->getChildByName("lvNowbg")->getChildByName("lvNow");
 	auto arlvNext = (Text*)m_layer->getChildByName("lvBg")->getChildByName("lvNextbg")->getChildByName("lvNext");
 	auto arNowNL = (Text*)m_layer->getChildByName("lvBg")->getChildByName("jiNeng1")->getChildByName("nengLi");
-	auto arNowGJ = (Text*)m_layer->getChildByName("lvBg")->getChildByName("jiNeng1")->getChildByName("gonfJi");
+	auto arNowGJ = (Text*)m_layer->getChildByName("lvBg")->getChildByName("jiNeng1")->getChildByName("gongJi");
 	auto arNextNL = (Text*)m_layer->getChildByName("lvBg")->getChildByName("jiNeng2")->getChildByName("nengLi");
-	auto arNextGJ = (Text*)m_layer->getChildByName("lvBg")->getChildByName("jiNeng2")->getChildByName("gonfJi");
+	auto arNextGJ = (Text*)m_layer->getChildByName("lvBg")->getChildByName("jiNeng2")->getChildByName("gongJi");
 	auto arStoneNum = (Text*)m_layer->getChildByName("lshNum")->getChildByName("num");
-	auto zsNum = (Text*)m_layer->getChildByName("reset")->getChildByName("num");
+	auto reSet = (Button*)m_layer->getChildByName("reset");
+	auto reSetNum = (Text*)m_layer->getChildByName("reset")->getChildByName("num");
 
 	//设置控件
 	head->setTexture(StringUtils::format("ui/downUi/artifact/%d.png",id));
@@ -65,7 +68,27 @@ void ArReset::initArResetLayer(int id)
 	arNowNL->setString(SqLite::getInstance()->getSkillEffDis(effid) + StringUtils::format("+%.1f%%", effData * 100).c_str());
 	effData += effDataUp*(level+1);
 	arNextNL->setString(SqLite::getInstance()->getSkillEffDis(effid) + StringUtils::format("+%.1f%%", effData * 100).c_str());
+	auto dpsData = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.initAllDps;
+	auto dpsUp = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.AllDpsUp;
+	auto levelNum = ArtifactData::getInstance()->getLevel(m_id);
+	dpsData += dpsUp*(levelNum - 1);
+	arNowGJ->setString(StringUtils::format("+%.1f%%",dpsData*100).c_str());
+	dpsData += dpsUp*levelNum;
+	arNextGJ->setString(StringUtils::format("+%.1f%%", dpsData * 100).c_str());
+	arStoneNum->setString(StringUtils::format("%d", m_StoneNum).c_str());
+	reSetNum->setString(StringUtils::format("%d", 200).c_str());
 
+	reSet->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType Event)
+	{
+		if (Event == Widget::TouchEventType::ENDED)
+		{
+			ShopData::getInstance()->subShopGold(200);
+			ArtifactData::getInstance()->deleteArByID(m_id);
+			ArtifactData::getInstance()->addArtiStone(m_StoneNum);
+			m_StoneNum = 0;
+			arResetChange(this);
+		}
+	});
 
 	escBtn->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType Event)
 	{
@@ -74,7 +97,18 @@ void ArReset::initArResetLayer(int id)
 			m_node->removeFromParent();
 		}
 	});
-	
+	arResetChange(this);
+}
 
-
+void ArReset::arResetChange(Ref*)
+{
+	auto reSet = (Button*)m_layer->getChildByName("reset");
+	if (ShopData::getInstance()->getShopGold() >= 200)
+	{
+		reSet->setEnabled(true);
+	}
+	else
+	{
+		reSet->setEnabled(false);
+	}
 }

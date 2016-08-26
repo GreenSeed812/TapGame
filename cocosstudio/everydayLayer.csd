@@ -34,103 +34,103 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_4" ActionTag="965219678" Tag="134" IconVisible="False" LeftMargin="334.5739" RightMargin="131.4261" TopMargin="118.4724" BottomMargin="887.5275" LeftEage="203" RightEage="203" TopEage="57" BottomEage="57" Scale9OriginX="203" Scale9OriginY="57" Scale9Width="211" Scale9Height="61" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_4" ActionTag="965219678" Tag="134" IconVisible="False" LeftMargin="331.5000" RightMargin="134.5000" TopMargin="118.4724" BottomMargin="887.5275" LeftEage="203" RightEage="203" TopEage="57" BottomEage="57" Scale9OriginX="203" Scale9OriginY="57" Scale9Width="211" Scale9Height="61" ctype="ImageViewObjectData">
                 <Size X="617.0000" Y="175.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="643.0739" Y="975.0275" />
+                <Position X="640.0000" Y="975.0275" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5938" Y="0.8256" />
+                <PrePosition X="0.5910" Y="0.8256" />
                 <PreSize X="0.5697" Y="0.1482" />
                 <FileData Type="Normal" Path="kuang2.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_5" ActionTag="466937423" Tag="135" IconVisible="False" LeftMargin="125.3167" RightMargin="767.6833" TopMargin="119.1926" BottomMargin="883.8074" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_5" ActionTag="466937423" Tag="135" IconVisible="False" LeftMargin="120.0000" RightMargin="773.0000" TopMargin="119.1926" BottomMargin="883.8074" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
                 <Size X="190.0000" Y="178.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="220.3167" Y="972.8074" />
+                <Position X="215.0000" Y="972.8074" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2034" Y="0.8237" />
+                <PrePosition X="0.1985" Y="0.8237" />
                 <PreSize X="0.1754" Y="0.1507" />
                 <FileData Type="Normal" Path="kuang1.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_4_0" ActionTag="705695545" Tag="136" IconVisible="False" LeftMargin="330.8148" RightMargin="135.1852" TopMargin="320.4260" BottomMargin="685.5740" LeftEage="203" RightEage="203" TopEage="57" BottomEage="57" Scale9OriginX="203" Scale9OriginY="57" Scale9Width="211" Scale9Height="61" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_4_0" ActionTag="705695545" Tag="136" IconVisible="False" LeftMargin="331.5000" RightMargin="134.5000" TopMargin="320.4260" BottomMargin="685.5740" LeftEage="203" RightEage="203" TopEage="57" BottomEage="57" Scale9OriginX="203" Scale9OriginY="57" Scale9Width="211" Scale9Height="61" ctype="ImageViewObjectData">
                 <Size X="617.0000" Y="175.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="639.3148" Y="773.0740" />
+                <Position X="640.0000" Y="773.0740" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5903" Y="0.6546" />
+                <PrePosition X="0.5910" Y="0.6546" />
                 <PreSize X="0.5697" Y="0.1482" />
                 <FileData Type="Normal" Path="kuang2.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_4_1" ActionTag="2061593463" Tag="137" IconVisible="False" LeftMargin="336.2184" RightMargin="129.7816" TopMargin="932.6026" BottomMargin="73.3974" LeftEage="203" RightEage="203" TopEage="57" BottomEage="57" Scale9OriginX="203" Scale9OriginY="57" Scale9Width="211" Scale9Height="61" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_4_1" ActionTag="2061593463" Tag="137" IconVisible="False" LeftMargin="331.5000" RightMargin="134.5000" TopMargin="932.6026" BottomMargin="73.3974" LeftEage="203" RightEage="203" TopEage="57" BottomEage="57" Scale9OriginX="203" Scale9OriginY="57" Scale9Width="211" Scale9Height="61" ctype="ImageViewObjectData">
                 <Size X="617.0000" Y="175.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="644.7184" Y="160.8974" />
+                <Position X="640.0000" Y="160.8974" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5953" Y="0.1362" />
+                <PrePosition X="0.5910" Y="0.1362" />
                 <PreSize X="0.5697" Y="0.1482" />
                 <FileData Type="Normal" Path="kuang2.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_4_2" ActionTag="-1277969574" Tag="138" IconVisible="False" LeftMargin="334.8267" RightMargin="131.1733" TopMargin="724.0321" BottomMargin="281.9679" LeftEage="203" RightEage="203" TopEage="57" BottomEage="57" Scale9OriginX="203" Scale9OriginY="57" Scale9Width="211" Scale9Height="61" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_4_2" ActionTag="-1277969574" Tag="138" IconVisible="False" LeftMargin="331.5000" RightMargin="134.5000" TopMargin="724.0321" BottomMargin="281.9679" LeftEage="203" RightEage="203" TopEage="57" BottomEage="57" Scale9OriginX="203" Scale9OriginY="57" Scale9Width="211" Scale9Height="61" ctype="ImageViewObjectData">
                 <Size X="617.0000" Y="175.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="643.3267" Y="369.4679" />
+                <Position X="640.0000" Y="369.4679" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5940" Y="0.3128" />
+                <PrePosition X="0.5910" Y="0.3128" />
                 <PreSize X="0.5697" Y="0.1482" />
                 <FileData Type="Normal" Path="kuang2.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_4_3" ActionTag="-257848869" Tag="139" IconVisible="False" LeftMargin="331.7360" RightMargin="134.2640" TopMargin="523.9364" BottomMargin="482.0636" LeftEage="203" RightEage="203" TopEage="57" BottomEage="57" Scale9OriginX="203" Scale9OriginY="57" Scale9Width="211" Scale9Height="61" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_4_3" ActionTag="-257848869" Tag="139" IconVisible="False" LeftMargin="331.5000" RightMargin="134.5000" TopMargin="523.9364" BottomMargin="482.0636" LeftEage="203" RightEage="203" TopEage="57" BottomEage="57" Scale9OriginX="203" Scale9OriginY="57" Scale9Width="211" Scale9Height="61" ctype="ImageViewObjectData">
                 <Size X="617.0000" Y="175.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="640.2360" Y="569.5636" />
+                <Position X="640.0000" Y="569.5636" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5912" Y="0.4823" />
+                <PrePosition X="0.5910" Y="0.4823" />
                 <PreSize X="0.5697" Y="0.1482" />
                 <FileData Type="Normal" Path="kuang2.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_5_2" ActionTag="420394853" Tag="142" IconVisible="False" LeftMargin="121.6254" RightMargin="771.3746" TopMargin="320.0740" BottomMargin="682.9260" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_5_2" ActionTag="420394853" Tag="142" IconVisible="False" LeftMargin="120.0000" RightMargin="773.0000" TopMargin="320.0740" BottomMargin="682.9260" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
                 <Size X="190.0000" Y="178.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="216.6254" Y="771.9260" />
+                <Position X="215.0000" Y="771.9260" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2000" Y="0.6536" />
+                <PrePosition X="0.1985" Y="0.6536" />
                 <PreSize X="0.1754" Y="0.1507" />
                 <FileData Type="Normal" Path="kuang1.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_5_3" ActionTag="-1256383000" Tag="143" IconVisible="False" LeftMargin="116.1352" RightMargin="776.8648" TopMargin="519.8748" BottomMargin="483.1252" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_5_3" ActionTag="-1256383000" Tag="143" IconVisible="False" LeftMargin="120.0000" RightMargin="773.0000" TopMargin="519.8748" BottomMargin="483.1252" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
                 <Size X="190.0000" Y="178.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="211.1352" Y="572.1252" />
+                <Position X="215.0000" Y="572.1252" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1950" Y="0.4844" />
+                <PrePosition X="0.1985" Y="0.4844" />
                 <PreSize X="0.1754" Y="0.1507" />
                 <FileData Type="Normal" Path="kuang1.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_5_4" ActionTag="-336265738" Tag="144" IconVisible="False" LeftMargin="113.7728" RightMargin="779.2272" TopMargin="719.4899" BottomMargin="283.5101" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_5_4" ActionTag="-336265738" Tag="144" IconVisible="False" LeftMargin="120.0000" RightMargin="773.0000" TopMargin="719.4899" BottomMargin="283.5101" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
                 <Size X="190.0000" Y="178.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="208.7728" Y="372.5101" />
+                <Position X="215.0000" Y="372.5101" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1928" Y="0.3154" />
+                <PrePosition X="0.1985" Y="0.3154" />
                 <PreSize X="0.1754" Y="0.1507" />
                 <FileData Type="Normal" Path="kuang1.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_5_5" ActionTag="1698965146" Tag="145" IconVisible="False" LeftMargin="113.4063" RightMargin="779.5937" TopMargin="929.4132" BottomMargin="73.5868" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_5_5" ActionTag="1698965146" Tag="145" IconVisible="False" LeftMargin="120.0000" RightMargin="773.0000" TopMargin="929.4132" BottomMargin="73.5868" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
                 <Size X="190.0000" Y="178.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="208.4063" Y="162.5868" />
+                <Position X="215.0000" Y="162.5868" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1924" Y="0.1377" />
+                <PrePosition X="0.1985" Y="0.1377" />
                 <PreSize X="0.1754" Y="0.1507" />
                 <FileData Type="Normal" Path="kuang1.png" Plist="" />
               </AbstractNodeData>
@@ -329,13 +329,13 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_1_2" ActionTag="-297454315" Tag="172" IconVisible="False" LeftMargin="385.3608" RightMargin="634.6392" TopMargin="1025.1919" BottomMargin="865.8081" FontSize="24" LabelText="任务1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_1_2" ActionTag="-297454315" Tag="172" IconVisible="False" LeftMargin="374.4473" RightMargin="645.5527" TopMargin="1027.3740" BottomMargin="863.6259" FontSize="24" LabelText="任务1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="60.0000" Y="29.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="415.3608" Y="880.3081" />
+            <Position X="404.4473" Y="878.1259" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.3846" Y="0.4585" />
+            <PrePosition X="0.3745" Y="0.4574" />
             <PreSize X="0.0556" Y="0.0151" />
             <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />

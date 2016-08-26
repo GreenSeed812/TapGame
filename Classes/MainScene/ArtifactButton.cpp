@@ -16,6 +16,7 @@ bool ArtifactButton::init()
 		return false;
 	}
 	m_levelUp = false;
+	m_StoneNum = 0;
 	node = CSLoader::createNode("artifactNode.csb");
 	m_layer = (Layer*)node->getChildByName("Layer");
 	this->setContentSize(node->getContentSize());
@@ -27,7 +28,7 @@ bool ArtifactButton::init()
 void ArtifactButton::initArtifactLayer()
 {
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(ArtifactButton::arChange), "ArChange", nullptr);
-	
+	ArtifactData::getInstance()->subArtiStone(ArtifactData::getInstance()->getNeededArStone());
 	m_lhs = ArtifactData::getInstance()->getArtiStone();
 	m_id = ArtifactData::getInstance()->addArNum();
 	m_level = ArtifactData::getInstance()->getLevel(m_id);
@@ -92,6 +93,7 @@ void ArtifactButton::arChange(Ref*)
 
 		if (judge >= 0)
 		{
+			m_StoneNum += ArtifactData::getInstance()->getNeededArStone();
 			bt->setEnabled(true);
 			m_layer->setColor(Color3B(255, 255, 255));
 		}
@@ -117,7 +119,9 @@ void ArtifactButton::onTouchEnded(Touch * touch, Event * event)
 	if (head->getBoundingBox().containsPoint(pos))
 	{
 		auto arReset = ArReset::create();
+		arReset->setStoneNum(m_StoneNum);
 		arReset->initArResetLayer(m_id);
 		g_node->addChild(arReset);
+
 	}
 }

@@ -198,7 +198,7 @@
             <PreSize X="0.1667" Y="0.0573" />
             <FileData Type="Normal" Path="chengjiulingqu1.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_7_2" ActionTag="-1549935365" Tag="132" IconVisible="False" LeftMargin="726.4136" RightMargin="173.5864" TopMargin="782.0768" BottomMargin="1027.9232" LeftEage="59" RightEage="59" TopEage="36" BottomEage="36" Scale9OriginX="59" Scale9OriginY="36" Scale9Width="62" Scale9Height="38" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_7_2" ActionTag="-1549935365" Tag="132" IconVisible="False" LeftMargin="726.4147" RightMargin="173.5853" TopMargin="782.0715" BottomMargin="1027.9285" LeftEage="59" RightEage="59" TopEage="36" BottomEage="36" Scale9OriginX="59" Scale9OriginY="36" Scale9Width="62" Scale9Height="38" ctype="ImageViewObjectData">
             <Size X="180.0000" Y="110.0000" />
             <AnchorPoint ScaleX="0.5011" ScaleY="0.5302" />
             <Position X="816.6116" Y="1086.2452" />
@@ -604,7 +604,7 @@
             <PreSize X="0.0398" Y="0.0224" />
             <FileData Type="Normal" Path="xing2.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="BitmapFontLabel_2_1_0_0" ActionTag="1021862937" Tag="182" IconVisible="False" LeftMargin="551.2031" RightMargin="403.7969" TopMargin="1157.0576" BottomMargin="685.9423" LabelText="1/10" ctype="TextBMFontObjectData">
+          <AbstractNodeData Name="BitmapFontLabel_2_1_0_0" ActionTag="1021862937" Tag="182" IconVisible="False" LeftMargin="551.2031" RightMargin="403.7969" TopMargin="1157.0577" BottomMargin="685.9423" LabelText="1/10" ctype="TextBMFontObjectData">
             <Size X="125.0000" Y="77.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="613.7031" Y="724.4423" />
@@ -624,7 +624,7 @@
             <PreSize X="0.1481" Y="0.0224" />
             <FileData Type="Normal" Path="chengjiumiaoshu.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_1_1_0_0" ActionTag="-2028099666" Tag="184" IconVisible="False" LeftMargin="387.5049" RightMargin="451.4951" TopMargin="1117.8579" BottomMargin="773.1420" FontSize="24" LabelText="AAAAAAAAAAAAAA" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_1_1_0_0" ActionTag="-2028099666" Tag="184" IconVisible="False" LeftMargin="387.5049" RightMargin="451.4951" TopMargin="1117.8580" BottomMargin="773.1420" FontSize="24" LabelText="AAAAAAAAAAAAAA" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="241.0000" Y="29.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="508.0049" Y="787.6420" />
@@ -646,7 +646,7 @@
             <PreSize X="0.0398" Y="0.0224" />
             <FileData Type="Normal" Path="xing2.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_9_2_0_1_1_0_0" ActionTag="188590911" Tag="186" IconVisible="False" LeftMargin="305.5112" RightMargin="731.4888" TopMargin="1177.7837" BottomMargin="699.2164" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="15" Scale9Height="15" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_9_2_0_1_1_0_0" ActionTag="188590911" Tag="186" IconVisible="False" LeftMargin="305.5112" RightMargin="731.4888" TopMargin="1177.7836" BottomMargin="699.2164" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="15" Scale9Height="15" ctype="ImageViewObjectData">
             <Size X="43.0000" Y="43.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="327.0112" Y="720.7164" />
@@ -706,7 +706,7 @@
             <PreSize X="0.0398" Y="0.0224" />
             <FileData Type="Normal" Path="xing1.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_9_2_2_0_0_0" ActionTag="-558123549" Tag="217" IconVisible="False" LeftMargin="262.9241" RightMargin="774.0759" TopMargin="1343.8135" BottomMargin="533.1866" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="15" Scale9Height="15" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_9_2_2_0_0_0" ActionTag="-558123549" Tag="217" IconVisible="False" LeftMargin="262.9241" RightMargin="774.0759" TopMargin="1343.8134" BottomMargin="533.1866" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="15" Scale9Height="15" ctype="ImageViewObjectData">
             <Size X="43.0000" Y="43.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="284.4241" Y="554.6866" />
@@ -828,7 +828,7 @@
             <PreSize X="0.0398" Y="0.0224" />
             <FileData Type="Normal" Path="xing1.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_9_2_2_0_0_0_0" ActionTag="1876316724" Tag="229" IconVisible="False" LeftMargin="265.0987" RightMargin="771.9013" TopMargin="1505.5519" BottomMargin="371.4481" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="15" Scale9Height="15" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_9_2_2_0_0_0_0" ActionTag="1876316724" Tag="229" IconVisible="False" LeftMargin="265.0987" RightMargin="771.9013" TopMargin="1505.5520" BottomMargin="371.4481" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="15" Scale9Height="15" ctype="ImageViewObjectData">
             <Size X="43.0000" Y="43.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="286.5987" Y="392.9481" />
@@ -909,21 +909,6 @@
             <PrePosition X="0.5000" Y="0.9692" />
             <PreSize X="0.1231" Y="0.0375" />
             <FileData Type="Normal" Path="chengjiu1.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="esc" ActionTag="1314717561" Tag="384" IconVisible="False" LeftMargin="942.5360" RightMargin="59.4640" TopMargin="11.2078" BottomMargin="1828.7922" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="48" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="78.0000" Y="80.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="981.5360" Y="1868.7922" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.9088" Y="0.9733" />
-            <PreSize X="0.0722" Y="0.0417" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
-            <NormalFileData Type="Normal" Path="anniu (2).png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

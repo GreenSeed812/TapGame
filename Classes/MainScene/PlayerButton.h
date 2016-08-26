@@ -26,7 +26,10 @@ private:
 	Node * playerLayer;
 	BUTTONTYPE m_type;
 	MyNum m_upGold;
+	MyNum m_upGold10;
+	MyNum m_upGold100;
 	static Node * g_skillLayer;
+	void upLevelCount();
 };
 
 

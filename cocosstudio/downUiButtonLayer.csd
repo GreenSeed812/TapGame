@@ -6,7 +6,7 @@
       <ObjectData Name="Layer" Tag="97" ctype="GameLayerObjectData">
         <Size X="951.0000" Y="120.0000" />
         <Children>
-          <AbstractNodeData Name="Layer" ActionTag="-1784766646" Tag="98" IconVisible="False" LeftMargin="1.1694" RightMargin="-1.1694" TopMargin="0.5229" BottomMargin="-0.5229" ctype="SpriteObjectData">
+          <AbstractNodeData Name="Layer" ActionTag="-1784766646" Tag="98" IconVisible="False" LeftMargin="1.1688" RightMargin="-1.1688" TopMargin="1.1886" BottomMargin="-1.1886" ctype="SpriteObjectData">
             <Size X="951.0000" Y="120.0000" />
             <Children>
               <AbstractNodeData Name="head" ActionTag="649781542" Tag="99" IconVisible="False" LeftMargin="68.9029" RightMargin="836.0971" TopMargin="38.4141" BottomMargin="35.5859" ctype="SpriteObjectData">
@@ -68,35 +68,35 @@
                 <FileData Type="Normal" Path="diban.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="up" ActionTag="-20608098" Tag="26" IconVisible="False" LeftMargin="737.7610" RightMargin="43.2390" TopMargin="13.6724" BottomMargin="8.3276" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="76" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="up" ActionTag="-20608098" Tag="26" IconVisible="False" LeftMargin="739.7349" RightMargin="41.2651" TopMargin="12.9630" BottomMargin="9.0370" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="76" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="170.0000" Y="98.0000" />
                 <Children>
-                  <AbstractNodeData Name="needGold" ActionTag="-590024287" Tag="132" IconVisible="False" LeftMargin="-3.8814" RightMargin="-37.1186" TopMargin="-16.7485" BottomMargin="37.7485" LabelText="111.1aa" ctype="TextBMFontObjectData">
+                  <AbstractNodeData Name="needGold" ActionTag="-590024287" Tag="132" IconVisible="False" LeftMargin="2.3485" RightMargin="-43.3485" TopMargin="26.8165" BottomMargin="-5.8165" LabelText="111.1aa" ctype="TextBMFontObjectData">
                     <Size X="211.0000" Y="77.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="101.6186" Y="76.2485" />
-                    <Scale ScaleX="0.3959" ScaleY="0.3906" />
+                    <AnchorPoint ScaleX="0.4021" ScaleY="0.3119" />
+                    <Position X="87.1916" Y="18.1998" />
+                    <Scale ScaleX="0.3959" ScaleY="0.3629" />
                     <CColor A="255" R="241" G="203" B="149" />
-                    <PrePosition X="0.5978" Y="0.7780" />
+                    <PrePosition X="0.5129" Y="0.1857" />
                     <PreSize X="1.2412" Y="0.7857" />
                     <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="needGold_0" ActionTag="-129572642" Tag="137" IconVisible="False" LeftMargin="-31.6288" RightMargin="-49.3712" TopMargin="41.8552" BottomMargin="-20.8552" LabelText="+111.1aa" ctype="TextBMFontObjectData">
+                  <AbstractNodeData Name="needGold_0" ActionTag="-129572642" Tag="137" IconVisible="False" LeftMargin="-36.7409" RightMargin="-44.2591" TopMargin="8.5487" BottomMargin="12.4513" LabelText="+111.1aa" ctype="TextBMFontObjectData">
                     <Size X="251.0000" Y="77.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="93.8712" Y="17.6448" />
-                    <Scale ScaleX="0.3786" ScaleY="0.3193" />
+                    <Position X="88.7591" Y="50.9513" />
+                    <Scale ScaleX="0.4210" ScaleY="0.3712" />
                     <CColor A="255" R="241" G="203" B="149" />
-                    <PrePosition X="0.5522" Y="0.1800" />
+                    <PrePosition X="0.5221" Y="0.5199" />
                     <PreSize X="1.4765" Y="0.7857" />
                     <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="822.7610" Y="57.3276" />
+                <Position X="824.7349" Y="58.0370" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8652" Y="0.4777" />
+                <PrePosition X="0.8672" Y="0.4836" />
                 <PreSize X="0.1788" Y="0.8167" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Normal" Path="anniuhui.png" Plist="" />
@@ -107,33 +107,33 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="476.6694" Y="59.4771" />
+            <Position X="476.6688" Y="58.8114" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5012" Y="0.4956" />
+            <PrePosition X="0.5012" Y="0.4901" />
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="dadiban.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_3" ActionTag="1574335424" Tag="135" IconVisible="False" LeftMargin="809.0701" RightMargin="98.9299" TopMargin="55.0652" BottomMargin="40.9348" FontSize="20" LabelText="升级" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_3" ActionTag="1574335424" Tag="135" IconVisible="False" LeftMargin="802.1151" RightMargin="105.8849" TopMargin="22.5427" BottomMargin="73.4573" FontSize="20" LabelText="升级" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="43.0000" Y="24.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="830.5701" Y="52.9348" />
+            <Position X="823.6151" Y="85.4573" />
             <Scale ScaleX="0.8797" ScaleY="1.0390" />
             <CColor A="255" R="239" G="203" B="148" />
-            <PrePosition X="0.8734" Y="0.4411" />
+            <PrePosition X="0.8661" Y="0.7121" />
             <PreSize X="0.0452" Y="0.2000" />
             <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_1" ActionTag="-824232088" Tag="131" IconVisible="False" LeftMargin="745.5746" RightMargin="144.4254" TopMargin="6.3356" BottomMargin="47.6644" LeftEage="20" RightEage="20" TopEage="21" BottomEage="21" Scale9OriginX="20" Scale9OriginY="21" Scale9Width="21" Scale9Height="24" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_1" ActionTag="-824232088" Tag="131" IconVisible="False" LeftMargin="745.6797" RightMargin="144.3203" TopMargin="56.9185" BottomMargin="-2.9185" LeftEage="20" RightEage="20" TopEage="21" BottomEage="21" Scale9OriginX="20" Scale9OriginY="21" Scale9Width="21" Scale9Height="24" ctype="ImageViewObjectData">
             <Size X="61.0000" Y="66.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="776.0746" Y="80.6644" />
+            <Position X="776.1797" Y="30.0815" />
             <Scale ScaleX="0.3721" ScaleY="0.4373" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8161" Y="0.6722" />
+            <PrePosition X="0.8162" Y="0.2507" />
             <PreSize X="0.0641" Y="0.5500" />
             <FileData Type="Normal" Path="gold.png" Plist="" />
           </AbstractNodeData>

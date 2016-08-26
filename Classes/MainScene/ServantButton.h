@@ -10,6 +10,7 @@ public:
 	void initServantLayer(int);
 	CREATE_FUNC(ServantButton);
 	static void getListView(Node* lv){ g_lv = lv; }
+	static void getRootNode(Node * node){ g_node = node; }
 	void coinChange(Ref*);
 private:
 	Node* node;
@@ -17,6 +18,7 @@ private:
 	MyNum m_baseDps;
 	MyNum m_dps;
 	static Node* g_lv;
+	static Node * g_node;
 	std::vector<float> m_dpsMul;
 	int m_id;
 	Layer* m_layer;
@@ -25,6 +27,8 @@ private:
 	bool m_locked;
 	int m_lockCount;
 	int m_skillCount;
+	bool onTouchBegan(Touch * touch, Event* event);
+	void onTouchEnded(Touch * touch, Event * event);
 };
 
 

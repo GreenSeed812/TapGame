@@ -12,7 +12,7 @@ public:
 	bool init();
 	void initArResetLayer(int id);
 	void setStoneNum(int num){ m_StoneNum = num; };
-	void ArReset::arResetChange(Ref*);
+	void arResetChange(Ref*);
 	CREATE_FUNC(ArReset);
 private:
 	Node * m_node;

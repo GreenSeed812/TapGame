@@ -1,4 +1,5 @@
 #include"MainScene/PlayerButton.h"
+#include"MainScene/PlayerInfo.h"
 #include "ui/CocosGUI.h"
 #include <cocostudio/CocoStudio.h> 
 #include "SaveData/PlayerData.h"
@@ -6,6 +7,7 @@
 #include "Tool/Rule.h"
 using namespace ui;
 Node * PlayerButton::g_skillLayer = nullptr;
+Node * PlayerButton::g_node = nullptr;
 bool PlayerButton::init()
 {
 	if (!Layer::init())
@@ -52,7 +54,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 		{
 			if (type == Widget::TouchEventType::ENDED)
 			{
-				for (size_t i = 0; i < 9; i++)
+				for (size_t i = 0; i < 10; i++)
 				{
 					PlayerData::getInstance()->heroLevelUp();
 					double playerLevel = PlayerData::getInstance()->getPlayerLevel();
@@ -68,7 +70,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 		{
 			if (type == Widget::TouchEventType::ENDED)
 			{
-				for (size_t i = 0; i < 99; i++)
+				for (size_t i = 0; i < 100; i++)
 				{
 					PlayerData::getInstance()->heroLevelUp();
 					double playerLevel = PlayerData::getInstance()->getPlayerLevel();
@@ -79,6 +81,11 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				coinChange(this);
 			}
 		});
+
+		auto listener = EventListenerTouchOneByOne::create();
+		listener->onTouchBegan = CC_CALLBACK_2(PlayerButton::onTouchBegan, this);
+		listener->onTouchEnded = CC_CALLBACK_2(PlayerButton::onTouchEnded, this);
+		Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
 	}
 	else if (type == SKILL1)
 	{
@@ -222,18 +229,19 @@ void PlayerButton::coinChange(Ref* pSender)
 	}
 	if (m_type == PLAYER)
 	{
+		//下级增加dps计算，有问题
 		auto level = PlayerData::getInstance()->getPlayerLevel();
 		auto baseDps = SqLite::getInstance()->getDps(level);
 		double f = (1 + 1 / std::pow((double)level, 0.6) - 1 / pow((double)level, 1.008));
 		baseDps = Ruler::getInstance()->multiplay(baseDps, f);
-		dps->setString(StringUtils::format("+%.1lf%%", SqLite::getInstance()->getDps(level)).c_str());
+		dps->setString(StringUtils::format("+%.1lf%%", baseDps).c_str());
 		
 		auto dps10 = (TextBMFont*)up10->getChildByName("needGold_1");
 		auto dps100 = (TextBMFont*)up100->getChildByName("needGold_1_0");
 		textN->setString("Player");
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getPlayerLevel()));
 		textD->setString(StringUtils::format("%d",PlayerData::getInstance()->getPlayerLevel()));
-		upLevelCount();
+		//upLevelCount();
 	}
 	else if (m_type == SKILL1)
 	{
@@ -363,5 +371,22 @@ void PlayerButton::upLevelCount()
 	else
 	{
 		up100->setVisible(false);
+	}
+}
+
+bool PlayerButton::onTouchBegan(Touch * touch, Event* event)
+{
+	return true;
+}
+void PlayerButton::onTouchEnded(Touch * touch, Event * event)
+{
+	auto pos = this->convertTouchToNodeSpace(touch);
+	auto head = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("head");
+	if (head->getBoundingBox().containsPoint(pos))
+	{
+		auto playerInfo = PlayerInfo::create();
+		playerInfo->initPlayerInfo();
+		g_node->addChild(playerInfo);
+
 	}
 }

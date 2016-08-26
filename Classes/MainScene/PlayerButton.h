@@ -22,6 +22,7 @@ public:
 	void initPlayerButton(BUTTONTYPE);
 	void coinChange(Ref*);
 	static void getSkillLayer(Node * layer){ g_skillLayer = layer; }
+	static void getRootNode(Node * node){ g_node = node; }
 private:
 	Node * playerLayer;
 	BUTTONTYPE m_type;
@@ -29,7 +30,10 @@ private:
 	MyNum m_upGold10;
 	MyNum m_upGold100;
 	static Node * g_skillLayer;
+	static Node * g_node;
 	void upLevelCount();
+	bool onTouchBegan(Touch * touch, Event* event);
+	void onTouchEnded(Touch * touch, Event * event);
 };
 
 

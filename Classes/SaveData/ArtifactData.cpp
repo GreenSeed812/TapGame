@@ -22,9 +22,6 @@ ArtifactData::ArtifactData()
  ,tenGoldPer(0)
  ,bossGoldPer(0)
  ,leaveGoldPer(0)
- ,skillBanTimeS(0)
- ,skilleffUp(0)
- ,skillTimeA(0)
  ,bossHpS(0)
  ,heroLevelUpDown(0)
  ,bossTimeUp(0)
@@ -33,6 +30,12 @@ ArtifactData::ArtifactData()
  ,WaveDown(0) 
  ,servantUnlockDown(0)
 {
+	for (int i = 0; i < 6; i++)
+	{
+		skillBanTimeS[i] = 0;
+		skilleffUp[i] = 0;
+		skillTimeA[i] = 0;
+	}
 }
 
 ArtifactData::~ArtifactData()
@@ -71,78 +74,85 @@ int ArtifactData::addArNum()
 	arthave->m_artiDpsUp = artSkill.ar.AllDpsUp;
 	m_AllDpsMul += artSkill.ar.initAllDps;
 	m_artifacts.push_back(arthave);
-	if (artSkill.ar.effid == 2)
+	if (artSkill.skillID != 0)
 	{
-		m_dpsexper += artSkill.ar.effData;
+		if (artSkill.ar.effid == 29)
+		{
+			skillBanTimeS[artSkill.skillID] += artSkill.ar.effData;
+		}
+		if (artSkill.ar.effid == 30)
+		{
+			skilleffUp[artSkill.skillID] += artSkill.ar.effData;
+		}
+		if (artSkill.ar.effid == 31)
+		{
+			skillTimeA[artSkill.skillID] += artSkill.ar.effData;
+		}
 	}
-	if (artSkill.ar.effid == 6)
+	else
 	{
-		m_exploreProb += artSkill.ar.effData;
+		if (artSkill.ar.effid == 2)
+		{
+			m_dpsexper += artSkill.ar.effData;
+		}
+		if (artSkill.ar.effid == 6)
+		{
+			m_exploreProb += artSkill.ar.effData;
+		}
+		if (artSkill.ar.effid == 7)
+		{
+			m_explorePer += artSkill.ar.effData;
+		}
+		if (artSkill.ar.effid == 8)
+		{
+			m_AllDpsMul;
+		}
+		if (artSkill.ar.effid == 19)
+		{
+			rmGoldPer += artSkill.ar.effData;
+		}
+		if (artSkill.ar.effid == 20)
+		{
+			tenGoldPer += artSkill.ar.effData;
+		}
+		if (artSkill.ar.effid == 21)
+		{
+			bossGoldPer += artSkill.ar.effData;
+		}
+		if (artSkill.ar.effid == 22)
+		{
+			leaveGoldPer += artSkill.ar.effData;
+		}
+		if (artSkill.ar.effid == 32)
+		{
+			bossHpS += artSkill.ar.effData;
+		}
+		if (artSkill.ar.effid == 33)
+		{
+			heroLevelUpDown += artSkill.ar.effData;
+		}
+		if (artSkill.ar.effid == 34)
+		{
+			bossTimeUp += artSkill.ar.effData;
+		}
+		if (artSkill.ar.effid == 35)
+		{
+			artiUpPer += artSkill.ar.effData;
+		}
+		if (artSkill.ar.effid == 36)
+		{
+			servantLevelUpDown += artSkill.ar.effData;
+		}
+		if (artSkill.ar.effid == 37)
+		{
+			WaveDown += artSkill.ar.effData;
+		}
+		if (artSkill.ar.effid == 38)
+		{
+			servantUnlockDown += artSkill.ar.effData;
+		}
 	}
-	if (artSkill.ar.effid == 7)
-	{
-		m_explorePer += artSkill.ar.effData;
-	}
-	if (artSkill.ar.effid == 8)
-	{
-		m_AllDpsMul;
-	}
-	if (artSkill.ar.effid == 19)
-	{
-		rmGoldPer += artSkill.ar.effData;
-	}
-	if (artSkill.ar.effid == 20)
-	{
-		tenGoldPer += artSkill.ar.effData;
-	}
-	if (artSkill.ar.effid == 21)
-	{
-		bossGoldPer += artSkill.ar.effData;
-	}
-	if (artSkill.ar.effid == 22)
-	{
-		leaveGoldPer += artSkill.ar.effData;
-	}
-	if (artSkill.ar.effid == 29)
-	{
-		skillBanTimeS += artSkill.ar.effData;
-	}
-	if (artSkill.ar.effid == 30)
-	{
-		skilleffUp += artSkill.ar.effData;
-	}
-	if (artSkill.ar.effid == 31)
-	{
-		skillTimeA += artSkill.ar.effData;
-	}
-	if (artSkill.ar.effid == 32)
-	{
-		bossHpS += artSkill.ar.effData;
-	}
-	if (artSkill.ar.effid == 33)
-	{
-		heroLevelUpDown += artSkill.ar.effData;
-	}
-	if (artSkill.ar.effid == 34)
-	{
-		bossTimeUp += artSkill.ar.effData;
-	}
-	if (artSkill.ar.effid == 35)
-	{
-		artiUpPer += artSkill.ar.effData;
-	}
-	if (artSkill.ar.effid == 36)
-	{
-		servantLevelUpDown += artSkill.ar.effData;
-	}
-	if (artSkill.ar.effid == 37)
-	{
-		WaveDown += artSkill.ar.effData;
-	}
-	if (artSkill.ar.effid == 38)
-	{
-		servantUnlockDown += artSkill.ar.effData;
-	}
+	
 
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
 	return id;
@@ -242,18 +252,6 @@ void ArtifactData::deleteArByID(int id)
 			if (artSkill.ar.effid == 22)
 			{
 				leaveGoldPer -= artSkill.ar.effData;
-			}
-			if (artSkill.ar.effid == 29)
-			{
-				skillBanTimeS -= artSkill.ar.effData;
-			}
-			if (artSkill.ar.effid == 30)
-			{
-				skilleffUp -= artSkill.ar.effData;
-			}
-			if (artSkill.ar.effid == 31)
-			{
-				skillTimeA -= artSkill.ar.effData;
 			}
 			if (artSkill.ar.effid == 32)
 			{

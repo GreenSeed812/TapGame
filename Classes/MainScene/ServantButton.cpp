@@ -4,6 +4,7 @@
 #include "SaveData/PlayerData.h"
 #include "Tool/SqLite.h"
 #include "ServantInfo.h"
+#include "SaveData/ArtifactData.h"
 using namespace ui;
 Node* ServantButton::g_lv = nullptr;
 Node * ServantButton::g_node = nullptr;
@@ -74,7 +75,7 @@ void ServantButton::initServantLayer(int id)
 				}
 
 				PlayerData::getInstance()->servantLevelUp(m_id);
-				PlayerData::getInstance()->subGold(&m_gold);
+			//	PlayerData::getInstance()->subGold(&m_gold);
 
 				auto i = PlayerData::getInstance()->getServantLevel(m_id);
 				auto pow1 = pow(PlayerData::getInstance()->getServantLevel(m_id) + 1, 0.7);
@@ -103,7 +104,7 @@ void ServantButton::initServantLayer(int id)
 						bt->loadTexturePressed("ui/downUi/servant/anniu2.png");
 						Text* text = (Text*)m_layer->getChildByName("up")->getChildByName("up");
 						text->setString(StringUtils::format("%s", "解锁").c_str());
-						gold->setString(Ruler::getInstance()->showNum(Ruler::getInstance()->multiplay(m_gold, 5)));
+						gold->setString(Ruler::getInstance()->showNum(Ruler::getInstance()->multiplay(m_gold, 5 * ArtifactData::getInstance()->getSSUD())));
 					}
 				}
 			}
@@ -112,7 +113,7 @@ void ServantButton::initServantLayer(int id)
 				//技能解锁
 				Sprite* skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d", m_skillCount + 1));
 				skillSprite->setVisible(true);
-				auto mul = Ruler::getInstance()->multiplay(m_gold, 5);
+				auto mul = Ruler::getInstance()->multiplay(m_gold, 5 * ArtifactData::getInstance()->getSSUD() );
 				PlayerData::getInstance()->subGold(&mul);
 				PlayerData::getInstance()->unlockSernantSkill(m_id, m_skillCount);
 				m_skillCount++;
@@ -140,7 +141,7 @@ void ServantButton::coinChange(Ref*)
 
 	if (!m_lock)
 	{	
-		judge = Ruler::getInstance()->subNum(Ruler::getInstance()->multiplay(m_gold, 5), *PlayerData::getInstance()->getGold());
+		judge = Ruler::getInstance()->subNum(Ruler::getInstance()->multiplay(m_gold, 5 * ArtifactData::getInstance()->getSSUD()), *PlayerData::getInstance()->getGold());
 	}
 	else
 	{

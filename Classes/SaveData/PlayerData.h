@@ -41,15 +41,19 @@ public:
 	int getRandNpc(int r);
 	MyNum getServantDps(int i);
 	int getServantLevel(int i){ return m_servantLevel[i]; }
+	MyNum getservantLevelUpGold(int id);
 	int getServantNum(){ return m_servantNum; }
+	bool getSkillopen(int i){ return m_skillOpen[i]; }
 	MyNum getTapDps();
 	int getMaxTime(){ return m_maxTime; }
 	int getMaxWave(){ return m_maxWave; }
 	void heroLevelUp();
 	void levelUp();
 	void randRareMonster();
+	void resetMaxWave();
+	void resetTime();
 	void resetWave(){ m_waveNow = 1; }
-	void servantLevelUp(int i){ m_servantLevel[i]++;}
+	void servantLevelUp(int i);
 	void setHpNow(MyNum hp){ m_hpNow = hp; }
 	void setLevel(int level){ m_level = level; }
 	void setServantBaseDps(MyNum dps, int id);
@@ -64,7 +68,6 @@ public:
 	void waveUp(){ 	m_waveNow++;}
 	void closeSkill(int i){ m_skillOpen[i] = false; }
 	void openSkill(int i){ m_skillOpen[i] = true; }
-	bool getSkillopen(int i){ return m_skillOpen[i]; }
 	void subHp(){ m_hpNow = Ruler::getInstance()->subNum(m_hpNow,m_basedps); }
 	void unlockSernantSkill(int servantid, int skillid);
 private:

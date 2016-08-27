@@ -6,6 +6,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/SaveData/PlayerData
  D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/vector \
  D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/map \
  jni/../../Classes/Tool/sqlite3.h jni/../../Classes/Tool/MyNum.h \
+ jni/../../Classes/SaveData/MonsterState.h \
  jni/../../Classes/SaveData/ArtifactData.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../cocos2d.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../base/ccConfig.h \
@@ -371,6 +372,8 @@ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/map:
 jni/../../Classes/Tool/sqlite3.h:
 
 jni/../../Classes/Tool/MyNum.h:
+
+jni/../../Classes/SaveData/MonsterState.h:
 
 jni/../../Classes/SaveData/ArtifactData.h:
 

@@ -17,7 +17,7 @@
 #include "Ui/MissionLayer.h"
 #include "Ui/SignLayer.h"
 #include "SkillCD.h"
-#include "SaveData/MonsterData.h"
+#include "SaveData/MonsterState.h"
 using namespace cocostudio;
 
 USING_NS_CC;
@@ -49,14 +49,14 @@ bool HelloWorld::init()
     {
         return false;
     }
-	/*{
+	{
 		MyNum num;
-		num.Mathbit = 30;
+		num.Mathbit = 0;
 
-		num.number = 1;
+		num.number = 500;
 		PlayerData::getInstance()->addGold(&num);
 
-	}*/
+	}
 	m_hitlogic = true;
 	m_heroLayer = nullptr;
 	m_servantLayer = nullptr;
@@ -194,19 +194,28 @@ void HelloWorld::createMonster()
 	armature->setScale(1.5f);
 	if (PlayerData::getInstance()->getWaveNow() == PlayerData::getInstance()->getMaxWave())
 	{
+		PlayerData::getInstance()->resetTime();
 		armature->setScale(2.0f);
 		timeNow = PlayerData::getInstance()->getMaxTime();
 		timeSlider->runAction(Show::create());
 		timeSlider->setPercent(timeNow);
-		MonsterData::getInstance()->setMonsterData(BOSS);
+		MonsterState::getInstance()->setMonsterState(BOSS);
 		rootNode->getChildByName("dragon")->runAction(Show::create());
+		rootNode->getChildByName("grayDragon")->runAction(Hide::create());
 	}
 	else if (PlayerData::getInstance()->getWaveNow()<=1)
 	{
 		PlayerData::getInstance()->randRareMonster();
 		timeSlider->runAction(Hide::create());
 		rootNode->getChildByName("dragon")->runAction(Hide::create());
-		
+		if (MonsterState::getInstance()->getTypeNow() == MONSTER_TYPE::RARE)
+		{
+			rootNode->getChildByName("grayDragon")->runAction(Show::create());
+		}
+		else
+		{
+			rootNode->getChildByName("grayDragon")->runAction(Hide::create());
+		}
 	}
 	
 }
@@ -233,6 +242,11 @@ void HelloWorld::update(float dt)
 			Node* monsterNode = rootNode->getChildByName("MonsterNode");
 			Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
 			normalAtk();
+			if (PlayerData::getInstance()->getSkillopen(5))
+			{
+				auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(5) * (1 + ArtifactData::getInstance()->getskilleffUp(6)));
+				PlayerData::getInstance()->addGold(&num1);
+			}
 			armature->getAnimation()->play("Hurt", -1, 0);
 			t_now = 0;
 			MyState::getInstance()->setTaped(false);
@@ -676,7 +690,6 @@ void HelloWorld::playerSkillCallBack()
 	{
 
 		m_skill[i - 1] = (Button*)node->getChildByName(StringUtils::format("SkillButton%d", i));
-		m_skill[i - 1]->setEnabled(false);
 		m_skill[i - 1]->addTouchEventListener([this, i](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
@@ -778,7 +791,7 @@ void HelloWorld::skillEff(float dt)
 		{
 
 
-			PlayerData::getInstance()->subHp(Ruler::getInstance()->multiplay(PlayerData::getInstance()->getTapDps(), PlayerData::getInstance()->getSkillEFF(0)));
+			PlayerData::getInstance()->subHp(Ruler::getInstance()->multiplay(PlayerData::getInstance()->getTapDps(), PlayerData::getInstance()->getSkillEFF(0) * ArtifactData::getInstance()->getskilleffUp(1)));
 			
 		}
 		if (MyState::getInstance()->getKTap() && PlayerData::getInstance()->getSkillopen(1))
@@ -795,20 +808,20 @@ void HelloWorld::skillEff(float dt)
 				t_now = 0;
 				if (PlayerData::getInstance()->getSkillopen(5))
 				{
-					auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(6));
+					auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(5) * (1 + ArtifactData::getInstance()->getskilleffUp(6)));
 					PlayerData::getInstance()->addGold(&num1);
 				}
 			}
 		}
 		if (PlayerData::getInstance()->getSkillopen(2))
 		{
-			PlayerData::getInstance()->setSkillexploreProb(PlayerData::getInstance()->getSkillEFF(2));
+			PlayerData::getInstance()->setSkillexploreProb(PlayerData::getInstance()->getSkillEFF(2) *(1 + ArtifactData::getInstance()->getskilleffUp(3)));
 		
 		
 		}
 		if (PlayerData::getInstance()->getSkillopen(3))
 		{
-			auto mul = PlayerData::getInstance()->getSkillEFF(2);
+			auto mul = PlayerData::getInstance()->getSkillEFF(2) * (1 + ArtifactData::getInstance()->getskilleffUp(4));
 			auto num = PlayerData::getInstance()->getTapDpsNoExp();
 			num = Ruler::getInstance()->multiplay(num, dt * mul);
 			PlayerData::getInstance()->subHp(num);
@@ -816,15 +829,10 @@ void HelloWorld::skillEff(float dt)
 		}
 		if (PlayerData::getInstance()->getSkillopen(4))
 		{
-			PlayerData::getInstance()->setSkillTap(PlayerData::getInstance()->getSkillEFF(4));
+			PlayerData::getInstance()->setSkillTap(PlayerData::getInstance()->getSkillEFF(4) *(1 + ArtifactData::getInstance()->getskilleffUp(5)));
 
 		}
-		if (PlayerData::getInstance()->getSkillopen(5))
-		{
-			auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(6));
-			PlayerData::getInstance()->addGold(&num1);
-
-		}
+		
 	}
 	skillCDUpdate(dt);
 	skillKpCDUpdate(dt);

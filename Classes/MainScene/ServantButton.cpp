@@ -3,8 +3,10 @@
 #include <cocostudio/CocoStudio.h> 
 #include "SaveData/PlayerData.h"
 #include "Tool/SqLite.h"
+#include "ServantInfo.h"
 using namespace ui;
 Node* ServantButton::g_lv = nullptr;
+Node * ServantButton::g_node = nullptr;
 bool ServantButton::init()
 {
 	if (!Layer::init())
@@ -31,21 +33,29 @@ void ServantButton::initServantLayer(int id)
 	m_id = id;
 	m_baseDps = SqLite::getInstance()->getServantDpsByID(m_id);
 	m_gold = SqLite::getInstance()->getServantGoldByID(m_id);
-	Button* bt = (Button*)m_layer->getChildByName("up");
-	TextBMFont* dps = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("dps");
-	TextBMFont* gold = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("gold");
+
+	auto bt = (Button*)m_layer->getChildByName("up");
+	auto up10 = (Button*)m_layer->getChildByName("Button_1_1");
+	auto up100 = (Button*)m_layer->getChildByName("Button_1_1_0");
+	auto dps = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("dps");
+	auto gold = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("gold");
+	auto head = (Sprite*)m_layer->getChildByName("head");
+	auto name = (Text*)m_layer->getChildByName("discribe")->getChildByName("name");
+
+	up10->setVisible(false);
+	up100->setVisible(false);
 	dps->setString(Ruler::getInstance()->showNum(m_baseDps));
 	gold->setString(Ruler::getInstance()->showNum(m_gold));
-	Sprite *head = (Sprite*)m_layer->getChildByName("head");
 	head->setTexture(StringUtils::format("ui/downUi/servant/head/%d.png",id+1));
+	name->setString(SqLite::getInstance()->getServantNameByID(m_id));
+
 	for (int skillNum = 1; skillNum < 8; skillNum++)
 	{
 		Sprite* skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d", skillNum));
 		skillSprite->setTexture(StringUtils::format("ui/downUi/servant/skill/%d/%d.png", id + 1, skillNum));
 		skillSprite->setVisible(false);
 	}
-	Text* name = (Text*)m_layer->getChildByName("discribe")->getChildByName("name");
-	name->setString(SqLite::getInstance()->getServantNameByID(m_id));
+
 	bt->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType Event){
 		if (Event == Widget::TouchEventType::ENDED)
 		{
@@ -113,6 +123,12 @@ void ServantButton::initServantLayer(int id)
 			coinChange(this);
 		}
 	});
+
+	auto listener = EventListenerTouchOneByOne::create();
+	listener->onTouchBegan = CC_CALLBACK_2(ServantButton::onTouchBegan, this);
+	listener->onTouchEnded = CC_CALLBACK_2(ServantButton::onTouchEnded, this);
+	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
+
 	coinChange(this);
 }
 
@@ -145,5 +161,22 @@ void ServantButton::coinChange(Ref*)
 	else
 	{
 		bt->setEnabled(false);
+	}
+}
+
+bool ServantButton::onTouchBegan(Touch * touch, Event* event)
+{
+	return true;
+}
+void ServantButton::onTouchEnded(Touch * touch, Event * event)
+{
+	auto pos = this->convertTouchToNodeSpace(touch);
+	auto head = (Sprite*)m_layer->getChildByName("head");
+	if (head->getBoundingBox().containsPoint(pos))
+	{
+		auto serInfo = ServantInfo::create();
+		serInfo->initServantInfo(m_id);
+		g_node->addChild(serInfo);
+
 	}
 }

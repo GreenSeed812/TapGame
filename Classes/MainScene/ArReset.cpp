@@ -37,7 +37,7 @@ void ArReset::initArResetLayer(int id)
 	auto head = (Sprite*)m_layer->getChildByName("head");
 	auto name = (Text*)m_layer->getChildByName("arName")->getChildByName("name");
 	auto starLvNow = (Text*)m_layer->getChildByName("starBg")->getChildByName("starLvNow");
-	auto starLvNext = (Text*)m_layer->getChildByName("starBg")->getChildByName("starLvNext");
+	auto starLvNext = (Text*)m_layer->getChildByName("starBg")->getChildByName("starNext");
 	auto LvNow = (Text*)m_layer->getChildByName("starBg")->getChildByName("LvNow");
 	auto LvNext = (Text*)m_layer->getChildByName("starBg")->getChildByName("LvNext");
 	auto arLvNow = (Text*)m_layer->getChildByName("lvBg")->getChildByName("lvNowbg")->getChildByName("lvNow");

@@ -594,6 +594,17 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
+          <AbstractNodeData Name="grayDragon" ActionTag="805445610" VisibleForFrame="False" Tag="210" IconVisible="False" LeftMargin="794.4580" RightMargin="173.5420" TopMargin="100.6431" BottomMargin="1639.3569" ctype="SpriteObjectData">
+            <Size X="112.0000" Y="180.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="850.4580" Y="1729.3569" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.7875" Y="0.9007" />
+            <PreSize X="0.0426" Y="0.0240" />
+            <FileData Type="Normal" Path="yinlong.png" Plist="" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

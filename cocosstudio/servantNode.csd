@@ -156,6 +156,28 @@
               </AbstractNodeData>
               <AbstractNodeData Name="Button_1_1_0" ActionTag="1334016742" Tag="481" IconVisible="False" LeftMargin="569.8487" RightMargin="259.1513" TopMargin="15.0354" BottomMargin="10.9646" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="92" Scale9Height="72" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="122.0000" Y="94.0000" />
+                <Children>
+                  <AbstractNodeData Name="needGold_1_1_0" ActionTag="-892248010" Tag="479" IconVisible="False" LeftMargin="-63.5622" RightMargin="-25.4378" TopMargin="-13.4588" BottomMargin="30.4588" LabelText="111.1aa" ctype="TextBMFontObjectData">
+                    <Size X="211.0000" Y="77.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="41.9378" Y="68.9588" />
+                    <Scale ScaleX="0.3311" ScaleY="0.3399" />
+                    <CColor A="255" R="241" G="203" B="149" />
+                    <PrePosition X="0.3438" Y="0.7336" />
+                    <PreSize X="1.7295" Y="0.8191" />
+                    <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="needGold_0_1_0_0" ActionTag="-1916494322" Tag="480" IconVisible="False" LeftMargin="-34.9617" RightMargin="9.9617" TopMargin="21.9908" BottomMargin="-4.9908" LabelText="+100" ctype="TextBMFontObjectData">
+                    <Size X="147.0000" Y="77.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="38.5383" Y="33.5092" />
+                    <Scale ScaleX="0.3786" ScaleY="0.3496" />
+                    <CColor A="255" R="241" G="203" B="149" />
+                    <PrePosition X="0.3159" Y="0.3565" />
+                    <PreSize X="1.2049" Y="0.8191" />
+                    <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
+                  </AbstractNodeData>
+                </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="630.8487" Y="57.9646" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -171,6 +193,28 @@
               </AbstractNodeData>
               <AbstractNodeData Name="Button_1_1" ActionTag="-711031064" Tag="478" IconVisible="False" LeftMargin="654.9702" RightMargin="174.0298" TopMargin="14.6960" BottomMargin="11.3040" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="92" Scale9Height="72" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="122.0000" Y="94.0000" />
+                <Children>
+                  <AbstractNodeData Name="needGold_1_1" ActionTag="343746469" Tag="476" IconVisible="False" LeftMargin="-63.3851" RightMargin="-25.6149" TopMargin="-11.4669" BottomMargin="28.4669" LabelText="111.1aa" ctype="TextBMFontObjectData">
+                    <Size X="211.0000" Y="77.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="42.1149" Y="66.9669" />
+                    <Scale ScaleX="0.3311" ScaleY="0.3399" />
+                    <CColor A="255" R="241" G="203" B="149" />
+                    <PrePosition X="0.3452" Y="0.7124" />
+                    <PreSize X="1.7295" Y="0.8191" />
+                    <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="needGold_0_1_0" ActionTag="-1235292721" Tag="477" IconVisible="False" LeftMargin="-15.3367" RightMargin="29.3367" TopMargin="21.1960" BottomMargin="-4.1960" LabelText="+10" ctype="TextBMFontObjectData">
+                    <Size X="108.0000" Y="77.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="38.6633" Y="34.3040" />
+                    <Scale ScaleX="0.3786" ScaleY="0.3193" />
+                    <CColor A="255" R="241" G="203" B="149" />
+                    <PrePosition X="0.3169" Y="0.3649" />
+                    <PreSize X="0.8852" Y="0.8191" />
+                    <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
+                  </AbstractNodeData>
+                </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="715.9702" Y="58.3040" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -197,13 +241,13 @@
                     <PreSize X="1.4765" Y="0.7857" />
                     <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="gold" ActionTag="1524819024" Tag="141" IconVisible="False" LeftMargin="0.1505" RightMargin="-41.1505" TopMargin="37.3059" BottomMargin="-16.3059" LabelText="111.1aa" ctype="TextBMFontObjectData">
+                  <AbstractNodeData Name="gold" ActionTag="1524819024" Tag="141" IconVisible="False" LeftMargin="-0.8494" RightMargin="-40.1506" TopMargin="36.3059" BottomMargin="-15.3059" LabelText="111.1aa" ctype="TextBMFontObjectData">
                     <Size X="211.0000" Y="77.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="105.6505" Y="22.1941" />
+                    <Position X="104.6506" Y="23.1941" />
                     <Scale ScaleX="0.4332" ScaleY="0.3862" />
                     <CColor A="255" R="236" G="209" B="168" />
-                    <PrePosition X="0.6215" Y="0.2265" />
+                    <PrePosition X="0.6156" Y="0.2367" />
                     <PreSize X="1.2412" Y="0.7857" />
                     <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
                   </AbstractNodeData>
@@ -252,46 +296,6 @@
             <PrePosition X="0.8206" Y="0.2731" />
             <PreSize X="0.0641" Y="0.5500" />
             <FileData Type="Normal" Path="gold.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="needGold_1_1" ActionTag="343746469" Tag="476" IconVisible="False" LeftMargin="592.0948" RightMargin="147.9052" TopMargin="3.5563" BottomMargin="39.4437" LabelText="111.1aa" ctype="TextBMFontObjectData">
-            <Size X="211.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="697.5948" Y="77.9437" />
-            <Scale ScaleX="0.3311" ScaleY="0.3399" />
-            <CColor A="255" R="241" G="203" B="149" />
-            <PrePosition X="0.7335" Y="0.6495" />
-            <PreSize X="0.2219" Y="0.6417" />
-            <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="needGold_0_1_0" ActionTag="-1235292721" Tag="477" IconVisible="False" LeftMargin="641.7478" RightMargin="201.2522" TopMargin="38.4682" BottomMargin="4.5318" LabelText="+10" ctype="TextBMFontObjectData">
-            <Size X="108.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="695.7478" Y="43.0318" />
-            <Scale ScaleX="0.3786" ScaleY="0.3193" />
-            <CColor A="255" R="241" G="203" B="149" />
-            <PrePosition X="0.7316" Y="0.3586" />
-            <PreSize X="0.1136" Y="0.6417" />
-            <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="needGold_1_1_0" ActionTag="-892248010" Tag="479" IconVisible="False" LeftMargin="510.1057" RightMargin="229.8943" TopMargin="3.5598" BottomMargin="39.4402" LabelText="111.1aa" ctype="TextBMFontObjectData">
-            <Size X="211.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="615.6057" Y="77.9402" />
-            <Scale ScaleX="0.3311" ScaleY="0.3399" />
-            <CColor A="255" R="241" G="203" B="149" />
-            <PrePosition X="0.6473" Y="0.6495" />
-            <PreSize X="0.2219" Y="0.6417" />
-            <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="needGold_0_1_0_0" ActionTag="-1916494322" Tag="480" IconVisible="False" LeftMargin="537.7129" RightMargin="266.2871" TopMargin="38.0092" BottomMargin="4.9908" LabelText="+100" ctype="TextBMFontObjectData">
-            <Size X="147.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="611.2129" Y="43.4908" />
-            <Scale ScaleX="0.3786" ScaleY="0.3496" />
-            <CColor A="255" R="241" G="203" B="149" />
-            <PrePosition X="0.6427" Y="0.3624" />
-            <PreSize X="0.1546" Y="0.6417" />
-            <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

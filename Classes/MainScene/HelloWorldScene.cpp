@@ -90,6 +90,8 @@ bool HelloWorld::init()
 	attackeffection();
 	coinChange(this);
 	PlayerButton::getSkillLayer(rootNode->getChildByName("UiNode")->getChildByName("SkillLayer"));
+	PlayerButton::getRootNode(rootNode);
+	ServantButton::getRootNode(rootNode);
     return true;
 }
 void HelloWorld::coinChange(Ref *ref)
@@ -354,10 +356,7 @@ void HelloWorld::uiCallBack()
 			else
 			{
 			
-			}
-		
-			
-			
+			}		
 		}
 	});
 	servantButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {

@@ -29,7 +29,10 @@ bool ServantInfo::init()
 void ServantInfo::initServantInfo(int id)
 {
 	auto escBtn = (Button*)m_layer->getChildByName("esc");
-	auto head = (ImageView*)m_layer->getChildByName("name");
+	auto head = (ImageView*)m_layer->getChildByName("headBg")->getChildByName("head");
+	auto name = (Text*)m_layer->getChildByName("serInfo")->getChildByName("name");
+	auto level = (TextBMFont*)m_layer->getChildByName("serInfo")->getChildByName("lv");
+	auto dps = (TextBMFont*)m_layer->getChildByName("serInfo")->getChildByName("dps");
 	auto skillHead_1 = (ImageView*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillHead_1");
 	auto skillHead_2 = (ImageView*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillHead_2");
 	auto skillHead_3 = (ImageView*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillHead_3");

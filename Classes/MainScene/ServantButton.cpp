@@ -18,6 +18,9 @@ bool ServantButton::init()
 	m_locked = true;
 	m_skillCount = 0;
 	m_lockCount = 0;
+	auto strings = FileUtils::getInstance()->getValueMapFromFile("fonts/skillState.xml");
+	m_skillUp = strings["up"].asString();
+	m_skillUnLock = strings["unLock"].asString();
     node = CSLoader::createNode("servantNode.csb");
 	m_layer = (Layer*)node->getChildByName("Layer");
 	this->setContentSize(node->getContentSize());	
@@ -59,67 +62,41 @@ void ServantButton::initServantLayer(int id)
 	bt->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType Event){
 		if (Event == Widget::TouchEventType::ENDED)
 		{
-			if (!m_unlock)
+			if (PlayerData::getInstance()->getServantLevel(m_id) == 0)
 			{
-				if (PlayerData::getInstance()->getServantLevel(m_id) == 0)
-				{
-					auto newNode = ServantButton::create();
-					PlayerData::getInstance()->addServantNum();
-					newNode->initServantLayer(PlayerData::getInstance()->getServantNum());
-					auto frame = Widget::create();
-					frame->setContentSize(newNode->getContentSize());
-					frame->addChild(newNode);
-					ListView* lv = (ListView*)g_lv;
-					lv->pushBackCustomItem(frame);
-				}
-
-				PlayerData::getInstance()->servantLevelUp(m_id);
-				PlayerData::getInstance()->subGold(&m_gold);
-
-				auto i = PlayerData::getInstance()->getServantLevel(m_id);
-				auto pow1 = pow(PlayerData::getInstance()->getServantLevel(m_id) + 1, 0.7);
-				auto pow2 = pow(PlayerData::getInstance()->getServantLevel(m_id) + 1, 6);
-				auto mul = 1 + 1 / pow1 - 1 / pow2;
-
-				PlayerData::getInstance()->setServantBaseDps(m_baseDps, m_id);
-				m_baseDps = Ruler::getInstance()->multiplay(m_baseDps, mul);
-				mul = 1 + 1 / (pow(PlayerData::getInstance()->getServantLevel(m_id) + 1, 0.45) - 1 / pow(PlayerData::getInstance()->getServantLevel(m_id) + 1, 6.13));			
-				m_gold = Ruler::getInstance()->multiplay(m_gold, mul);
-				TextBMFont* gold = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("gold");
-				gold->setString(Ruler::getInstance()->showNum(m_gold));
-				TextBMFont* dps = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("dps");			
-				dps->setString(Ruler::getInstance()->showNum(m_baseDps));
-				Text* textlv = (Text*)m_layer->getChildByName("discribe")->getChildByName("lv");
-				textlv->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getServantLevel(m_id)));
-				for (auto level : SqLite::getInstance()->m_servantUnlock)
-				{
-					if (PlayerData::getInstance()->getServantLevel(m_id) == level)
-					{
-						m_unlock = true;
-						m_lock = false;
-						m_lockCount++;
-						Button* bt = (Button*)m_layer->getChildByName("up");
-						bt->loadTextureNormal("ui/downUi/servant/anniu2.png");
-						bt->loadTexturePressed("ui/downUi/servant/anniu2.png");
-						Text* text = (Text*)m_layer->getChildByName("up")->getChildByName("up");
-						text->setString(StringUtils::format("%s", "解锁").c_str());
-						gold->setString(Ruler::getInstance()->showNum(Ruler::getInstance()->multiplay(m_gold, 5)));
-					}
-				}
+				auto newNode = ServantButton::create();
+				PlayerData::getInstance()->addServantNum();
+				newNode->initServantLayer(PlayerData::getInstance()->getServantNum());
+				auto frame = Widget::create();
+				frame->setContentSize(newNode->getContentSize());
+				frame->addChild(newNode);
+				ListView* lv = (ListView*)g_lv;
+				lv->pushBackCustomItem(frame);
 			}
-			else
+			oneUp();
+			upLevel();
+			coinChange(this);
+		}
+	});
+
+	up10->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType Event){
+		if (Event == Widget::TouchEventType::ENDED)
+		{
+			for (size_t i = 0; i < 10; i++)
 			{
-				//技能解锁
-				Sprite* skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d", m_skillCount + 1));
-				skillSprite->setVisible(true);
-				auto mul = Ruler::getInstance()->multiplay(m_gold, 5);
-				PlayerData::getInstance()->subGold(&mul);
-				PlayerData::getInstance()->unlockSernantSkill(m_id, m_skillCount);
-				m_skillCount++;
-				m_unlock = false;
-				m_lock = true;
+				oneUp();
 			}
+			coinChange(this);
+		}
+	});
 
+	up100->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType Event){
+		if (Event == Widget::TouchEventType::ENDED)
+		{
+			for (size_t i = 0; i < 100; i++)
+			{
+				oneUp();
+			}
 			coinChange(this);
 		}
 	});
@@ -136,21 +113,32 @@ void ServantButton::initServantLayer(int id)
 void ServantButton::coinChange(Ref*)
 {
 	Button* bt = (Button*)m_layer->getChildByName("up");
+	Text* text = (Text*)m_layer->getChildByName("up")->getChildByName("up");
+	auto gold = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("gold");
+	auto * dps = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("dps");
+	auto * textlv = (Text*)m_layer->getChildByName("discribe")->getChildByName("lv");
+	Sprite* skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d", m_skillCount + 1));
+	dps->setString(Ruler::getInstance()->showNum(m_baseDps));
+	gold->setString(Ruler::getInstance()->showNum(m_gold));
+	textlv->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getServantLevel(m_id)));
 	MyNum judge;
 
 	if (!m_lock)
 	{	
 		judge = Ruler::getInstance()->subNum(Ruler::getInstance()->multiplay(m_gold, 5), *PlayerData::getInstance()->getGold());
+		bt->loadTextureNormal("ui/downUi/servant/anniu2.png");
+		bt->loadTexturePressed("ui/downUi/servant/anniu2.png");
+		skillSprite->setVisible(true);
+		text->setString(m_skillUnLock);
+		gold->setString(Ruler::getInstance()->showNum(Ruler::getInstance()->multiplay(m_gold, 5)));
 	}
 	else
 	{
-		TextBMFont* gold = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("gold");
 		gold->setString(Ruler::getInstance()->showNum(m_gold));
 		judge = Ruler::getInstance()->subNum(m_gold, *PlayerData::getInstance()->getGold());
 		bt->loadTextureNormal("ui/downUi/servant/anniu1.png");
 		bt->loadTexturePressed("ui/downUi/servant/anniu1.png");
-		Text* text = (Text*)m_layer->getChildByName("up")->getChildByName("up");
-		//text->setString(StringUtils::);
+		text->setString(m_skillUp);
 	}
 
 	if (Ruler::getInstance()->Zero(judge))
@@ -177,6 +165,88 @@ void ServantButton::onTouchEnded(Touch * touch, Event * event)
 		auto serInfo = ServantInfo::create();
 		serInfo->initServantInfo(m_id);
 		g_node->addChild(serInfo);
+	}
+}
 
+void ServantButton::upLevel()
+{
+	auto up10 = (Button*)m_layer->getChildByName("Button_1_1");
+	auto up100 = (Button*)m_layer->getChildByName("Button_1_1_0");
+	MyNum upGold;
+	MyNum judge10;
+	MyNum judge100;
+	auto levelNow = PlayerData::getInstance()->getServantLevel(m_id);
+	for (size_t i = levelNow; i < levelNow+100; i++)
+	{
+		auto pow1 = pow(i + 1, 0.7);
+		auto pow2 = pow(i + 1, 6);
+		auto mul = 1 + 1 / pow1 - 1 / pow2;
+		mul = 1 + 1 / (pow(i + 1, 0.45) - 1 / pow(i+ 1, 6.13));
+		auto gold = Ruler::getInstance()->multiplayUp(m_gold, mul);
+		upGold = Ruler::getInstance()->addNum(gold, upGold);
+		if (i == levelNow+10)
+		{
+			judge10 = Ruler::getInstance()->subNum(upGold, *PlayerData::getInstance()->getGold());
+			if (Ruler::getInstance()->Zero(judge10))
+			{
+				up10->setVisible(true);
+				m_upGold10 = upGold;
+			}
+			else
+			{
+				up10->setVisible(false);
+			}
+		}
+	}
+	judge100 = Ruler::getInstance()->subNum(upGold, *PlayerData::getInstance()->getGold());
+	if (Ruler::getInstance()->Zero(judge100))
+	{
+		up100->setVisible(true);
+		m_upGold100 = upGold;
+	}
+	else
+	{
+		up100->setVisible(false);
+	}
+}
+
+void ServantButton::oneUp()
+{
+	if (!m_unlock)
+	{
+		PlayerData::getInstance()->servantLevelUp(m_id);
+		PlayerData::getInstance()->subGold(&m_gold);
+		auto i = PlayerData::getInstance()->getServantLevel(m_id);
+		auto pow1 = pow(PlayerData::getInstance()->getServantLevel(m_id) + 1, 0.7);
+		auto pow2 = pow(PlayerData::getInstance()->getServantLevel(m_id) + 1, 6);
+		auto mul = 1 + 1 / pow1 - 1 / pow2;
+
+		PlayerData::getInstance()->setServantBaseDps(m_baseDps, m_id);
+		m_baseDps = Ruler::getInstance()->multiplay(m_baseDps, mul);
+		mul = 1 + 1 / (pow(PlayerData::getInstance()->getServantLevel(m_id) + 1, 0.45) - 1 / pow(PlayerData::getInstance()->getServantLevel(m_id) + 1, 6.13));
+		m_gold = Ruler::getInstance()->multiplay(m_gold, mul);
+		switch (PlayerData::getInstance()->getServantLevel(m_id))
+		{
+		case 10:
+		case 25:
+		case 50:
+		case 100:
+		case 200:
+		case 400:
+		case 800:
+			m_unlock = true;
+			m_lock = false;
+			m_lockCount++;
+			break;
+		}
+	}
+	else
+	{
+		auto goldNum = Ruler::getInstance()->multiplay(m_gold, 5);
+		PlayerData::getInstance()->subGold(&goldNum);
+		PlayerData::getInstance()->unlockSernantSkill(m_id, m_skillCount);
+		m_skillCount++;
+		m_unlock = false;
+		m_lock = true;
 	}
 }

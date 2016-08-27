@@ -33,11 +33,9 @@
         <OpenedDocuments>
           <FilePathData Path="denglu.csd" />
           <FilePathData Path="shujutongji.csd" />
-          <FilePathData Path="yongbing.csd" />
-          <FilePathData Path="zhuansheng.csd" />
-          <FilePathData Path="MainScene.csd" />
+          <FilePathData Path="jinbi.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="MainScene.csd" />
+        <ActiveDocument Path="jinbi.csd" />
       </Value>
     </Item>
   </Properties>

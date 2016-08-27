@@ -1,5 +1,6 @@
 #include"MainScene/PlayerButton.h"
 #include"MainScene/PlayerInfo.h"
+#include"Relife.h"
 #include "ui/CocosGUI.h"
 #include <cocostudio/CocoStudio.h> 
 #include "SaveData/PlayerData.h"
@@ -200,7 +201,9 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
-
+				auto relife = Relife::create();
+				relife->initRelife();
+				g_node->addChild(relife);
 			}
 		});
 	}

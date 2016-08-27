@@ -1,6 +1,7 @@
 #include "MonsterData.h"
 static MonsterData * g_monster;
 MonsterData::MonsterData()
+	:m_type(NORMAL)
 {
 }
 

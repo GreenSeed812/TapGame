@@ -17,6 +17,7 @@
 #include "Ui/MissionLayer.h"
 #include "Ui/SignLayer.h"
 #include "SkillCD.h"
+#include "SaveData/MonsterData.h"
 using namespace cocostudio;
 
 USING_NS_CC;
@@ -48,14 +49,14 @@ bool HelloWorld::init()
     {
         return false;
     }
-	{
+	/*{
 		MyNum num;
 		num.Mathbit = 30;
 
 		num.number = 1;
 		PlayerData::getInstance()->addGold(&num);
 
-	}
+	}*/
 	m_hitlogic = true;
 	m_heroLayer = nullptr;
 	m_servantLayer = nullptr;
@@ -195,10 +196,12 @@ void HelloWorld::createMonster()
 		timeNow = PlayerData::getInstance()->getMaxTime();
 		timeSlider->runAction(Show::create());
 		timeSlider->setPercent(timeNow);
+		MonsterData::getInstance()->setMonsterData(BOSS);
 		rootNode->getChildByName("dragon")->runAction(Show::create());
 	}
 	else if (PlayerData::getInstance()->getWaveNow()<=1)
 	{
+		PlayerData::getInstance()->randRareMonster();
 		timeSlider->runAction(Hide::create());
 		rootNode->getChildByName("dragon")->runAction(Hide::create());
 		
@@ -281,6 +284,7 @@ void HelloWorld::update(float dt)
 
 		TextBMFont* tbm = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider")->getChildByName("hpNow");
 		tbm->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getHpNow()));
+		auto hpnow = PlayerData::getInstance()->getHpNow();
 		killBoss();
 	}
 	else
@@ -504,7 +508,7 @@ void HelloWorld::killBoss()
 			
 			waveNum->setString(StringUtils::format("%d/10", PlayerData::getInstance()->getWaveNow()));
 		}
-		else if (PlayerData::getInstance()->getWaveNow() == 10)
+		else if (PlayerData::getInstance()->getWaveNow() == PlayerData::getInstance()->getMaxWave()-1)
 		{
 			
 			waveNum->runAction(Hide::create());
@@ -540,6 +544,7 @@ void HelloWorld::killBoss()
 			waveNum->runAction(Show::create());
 		}
 		//clickLayer->setTouchEnabled(false);
+		auto hpnow = PlayerData::getInstance()->getHpNow();
 		armature->getAnimation()->play("Leave");
 		
 

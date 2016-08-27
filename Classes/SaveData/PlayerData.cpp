@@ -1,4 +1,6 @@
 #include"SaveData\PlayerData.h"
+#include "MonsterData.h"
+#include "ArtifactData.h"
 #include "Tool\SqLite.h"
 #include <math.h>
 #include<cocos2d.h>
@@ -21,6 +23,7 @@ PlayerData::PlayerData()
 	, m_bossDpsMul(0)
 	, m_TapDpsMul(0)
 	, m_latestTapMul(0)
+	, m_rareProb(10)
 {
 	auto hp = SqLite::getInstance()->getHpByID(m_level);
 	m_hpNow.number = hp.number;
@@ -181,7 +184,7 @@ MyNum PlayerData::getHeroDps()
 	{
 		totalDps = Ruler::getInstance()->addNumS(totalDps, Ruler::getInstance()->multiplay(m_servantBaseDps[i], m_servantMul[i]));
 	}
-	totalDps = Ruler::getInstance()->multiplay(totalDps, m_servantAllMul);
+	totalDps = Ruler::getInstance()->multiplay(totalDps, m_servantAllMul + ArtifactData::getInstance()->getAllDpsMul() + ArtifactData::getInstance()->getdpsexper());
 	return totalDps;
 }
 void PlayerData::addGold(MyNum* gold)
@@ -207,7 +210,7 @@ MyNum PlayerData::getServantDps(int i)
 
 MyNum PlayerData::getTapDpsNoExp()
 {
-	auto num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul);
+	auto num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul + ArtifactData::getInstance()->getdpsexper());
 	auto t = Ruler::getInstance()->addNum(num, getHeroDps());
 	auto num1 = Ruler::getInstance()->multiplay(t, m_latestTapMul);
 	num = Ruler::getInstance()->addNum(num, num1);
@@ -215,17 +218,17 @@ MyNum PlayerData::getTapDpsNoExp()
 }
 MyNum PlayerData::getTapDps()
 {
-	auto num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul);
+	auto num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul + ArtifactData::getInstance()->getdpsexper());
 	auto t = Ruler::getInstance()->addNum(num,getHeroDps());
 	auto num1 = Ruler::getInstance()->multiplay(t,m_latestTapMul);
 	num = Ruler::getInstance()->addNum(num,num1);
 
 	auto rand = cocos2d::random(0,99);
 	auto explor = m_explorePer;
-	if (rand < m_exploreProb + m_skillexploreProb)
+	if (rand < m_exploreProb + m_skillexploreProb + ArtifactData::getInstance()->getexploreProb())
 	{
 		
-		num = Ruler::getInstance()->multiplay(num, m_explorePer);
+		num = Ruler::getInstance()->multiplay(num, m_explorePer + ArtifactData::getInstance()->getexplorePer());
 		return num;
 	}
 	else
@@ -279,3 +282,12 @@ void PlayerData::unlockSernantSkill(int servantid, int skillid)
 	}
 }
 
+void PlayerData::randRareMonster()
+{
+	auto r = cocos2d::random(0, 99);
+	if (r < m_rareProb)
+		MonsterData::getInstance()->setMonsterData(MONSTER_TYPE::RARE);
+	else
+		MonsterData::getInstance()->setMonsterData(MONSTER_TYPE::NORMAL);
+
+}

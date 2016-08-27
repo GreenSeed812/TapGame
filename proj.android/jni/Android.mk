@@ -13,6 +13,8 @@ LOCAL_MODULE_FILENAME := libcocos2dcpp
 LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/AppDelegate.cpp \
 				   ../../Classes/Animation.cpp \
+				   ../../Classes/MainScene/ArtifactButton.cpp \
+				   ../../Classes/MainScene/ArReset.cpp \
                    ../../Classes/MainScene/HelloWorldScene.cpp \
                    ../../Classes/MainScene/ServantButton.cpp \
                    ../../Classes/MainScene/PlayerButton.cpp \
@@ -27,6 +29,9 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/SaveData/State.cpp \
 				   ../../Classes/SaveData/PlayerData.cpp \
 				   ../../Classes/SaveData/PlayerButtonData.cpp \
+				   ../../Classes/SaveData/ArtifactData.cpp \
+				   ../../Classes/SaveData/ShopData.cpp \
+				   ../../Classes/SaveData/MonsterData.cpp \
 				   ../../Classes/Ui/bossButton.cpp \
 				   ../../Classes/LoadingScene/LoadingScene.cpp \
 				   ../../Classes/Ui/AchieveLayer.cpp \

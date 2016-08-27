@@ -216,6 +216,11 @@ MyNum Ruler::multiplay(MyNum num, double scale)
 		newNum.number /= 1000;
 		newNum.Mathbit++;
 	}
+	if (newNum.number<1)
+	{
+		newNum.number *= 1000;
+		newNum.Mathbit--;
+	}
 	newNum.Mathbit += num.Mathbit;
 	return newNum;
 }

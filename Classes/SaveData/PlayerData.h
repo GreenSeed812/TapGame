@@ -47,6 +47,7 @@ public:
 	int getMaxWave(){ return m_maxWave; }
 	void heroLevelUp();
 	void levelUp();
+	void randRareMonster();
 	void resetWave(){ m_waveNow = 1; }
 	void servantLevelUp(int i){ m_servantLevel[i]++;}
 	void setHpNow(MyNum hp){ m_hpNow = hp; }
@@ -88,6 +89,7 @@ private:
 	~PlayerData();
 	MyNum m_heroDpsAll;
 	float m_bossTime;
+	int m_rareProb;
 	int m_skillLevel[6];
 	int m_servantNum;
 	int m_servantLevel[33];

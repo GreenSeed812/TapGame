@@ -10,7 +10,8 @@ class MonsterData
 {
 public:
 	static MonsterData * getInstance();
-	
+	void setMonsterData(MONSTER_TYPE type){ m_type = type; }
+	MONSTER_TYPE getTypeNow(){ return m_type; }
 private:
 	MonsterData();
 	~MonsterData();

@@ -53,8 +53,9 @@ bool LoadingScene::init()
 
 void LoadingScene::end(float ref)
 {
-	SqLite::getInstance();
+	
 	auto bg = Sprite::create("mainBG.jpg");
+	SqLite::getInstance();
 	bg->setAnchorPoint(Vec2(0, 0));
 	this->addChild(bg);
 
@@ -68,7 +69,7 @@ void LoadingScene::end(float ref)
 
 
 	SqLite::getInstance()->getHpByID(0);
-	PlayerData::getInstance();
-	HelloWorld::createScene();
+	//PlayerData::getInstance();
+	//HelloWorld::createScene();
 	//Director::getInstance()->replaceScene(HelloWorld::createScene());
 }

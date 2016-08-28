@@ -4,6 +4,7 @@
 #include "SaveData/PlayerData.h"
 #include "Tool/SqLite.h"
 #include "ServantInfo.h"
+#include "SaveData/ArtifactData.h"
 using namespace ui;
 Node* ServantButton::g_lv = nullptr;
 Node * ServantButton::g_node = nullptr;
@@ -86,6 +87,7 @@ void ServantButton::initServantLayer(int id)
 			{
 				oneUp();
 			}
+			upLevel();
 			coinChange(this);
 		}
 	});
@@ -97,6 +99,7 @@ void ServantButton::initServantLayer(int id)
 			{
 				oneUp();
 			}
+			upLevel();
 			coinChange(this);
 		}
 	});
@@ -125,17 +128,17 @@ void ServantButton::coinChange(Ref*)
 
 	if (!m_lock)
 	{	
-		judge = Ruler::getInstance()->subNum(Ruler::getInstance()->multiplay(m_gold, 5), *PlayerData::getInstance()->getGold());
+		judge = Ruler::getInstance()->subNum(Ruler::getInstance()->multiplay(m_gold, 5 * (1 - ArtifactData::getInstance()->getSSUD())), *PlayerData::getInstance()->getGold());
 		bt->loadTextureNormal("ui/downUi/servant/anniu2.png");
 		bt->loadTexturePressed("ui/downUi/servant/anniu2.png");
 		skillSprite->setVisible(true);
 		text->setString(m_skillUnLock);
-		gold->setString(Ruler::getInstance()->showNum(Ruler::getInstance()->multiplay(m_gold, 5)));
+		gold->setString(Ruler::getInstance()->showNum(Ruler::getInstance()->multiplay(m_gold, 5 * (1 - ArtifactData::getInstance()->getSSUD()))));
 	}
 	else
 	{
 		gold->setString(Ruler::getInstance()->showNum(m_gold));
-		judge = Ruler::getInstance()->subNum(m_gold, *PlayerData::getInstance()->getGold());
+		judge = Ruler::getInstance()->subNum(m_gold, PlayerData::getInstance()->getservantLevelUpGold(m_id));
 		bt->loadTextureNormal("ui/downUi/servant/anniu1.png");
 		bt->loadTexturePressed("ui/downUi/servant/anniu1.png");
 		text->setString(m_skillUp);

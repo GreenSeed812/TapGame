@@ -504,11 +504,14 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/MainScene/HelloWorl
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/extensions/./Particle3D/PU/CCPUParticleSystem3D.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/extensions/../extensions/Particle3D/CCParticleSystem3D.h \
  jni/../../Classes/SaveData/PlayerData.h \
+ jni/../../Classes/SaveData/ArtifactData.h \
  jni/../../Classes/MainScene/PlayerButton.h \
  jni/../../Classes/MainScene/ServantButton.h \
+ jni/../../Classes/MainScene/ArtifactButton.h \
  jni/../../Classes/SaveData/State.h jni/../../Classes/Ui/settingLayer.h \
  jni/../../Classes/Ui/AchieveLayer.h jni/../../Classes/Ui/MissionLayer.h \
- jni/../../Classes/Ui/SignLayer.h jni/../../Classes/MainScene/SkillCD.h
+ jni/../../Classes/Ui/SignLayer.h jni/../../Classes/MainScene/SkillCD.h \
+ jni/../../Classes/SaveData/MonsterState.h
 
 jni/../../Classes/MainScene/HelloWorldScene.h:
 
@@ -1522,9 +1525,13 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/extensions/../ex
 
 jni/../../Classes/SaveData/PlayerData.h:
 
+jni/../../Classes/SaveData/ArtifactData.h:
+
 jni/../../Classes/MainScene/PlayerButton.h:
 
 jni/../../Classes/MainScene/ServantButton.h:
+
+jni/../../Classes/MainScene/ArtifactButton.h:
 
 jni/../../Classes/SaveData/State.h:
 
@@ -1537,3 +1544,5 @@ jni/../../Classes/Ui/MissionLayer.h:
 jni/../../Classes/Ui/SignLayer.h:
 
 jni/../../Classes/MainScene/SkillCD.h:
+
+jni/../../Classes/SaveData/MonsterState.h:

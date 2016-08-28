@@ -12,13 +12,13 @@
               <AbstractNodeData Name="headBg" ActionTag="1188061614" Tag="413" IconVisible="False" LeftMargin="169.6057" RightMargin="761.3943" TopMargin="127.5652" BottomMargin="1422.4348" LeftEage="56" RightEage="56" TopEage="56" BottomEage="56" Scale9OriginX="56" Scale9OriginY="56" Scale9Width="58" Scale9Height="58" ctype="ImageViewObjectData">
                 <Size X="170.0000" Y="170.0000" />
                 <Children>
-                  <AbstractNodeData Name="head" ActionTag="-1460742058" Tag="383" IconVisible="False" LeftMargin="19.3450" RightMargin="-9.3450" TopMargin="-5.4935" BottomMargin="15.4935" LeftEage="52" RightEage="52" TopEage="52" BottomEage="52" Scale9OriginX="52" Scale9OriginY="52" Scale9Width="56" Scale9Height="56" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="head" ActionTag="-1460742058" Tag="383" IconVisible="False" LeftMargin="3.3710" RightMargin="6.6290" TopMargin="-5.4998" BottomMargin="15.4998" LeftEage="52" RightEage="52" TopEage="52" BottomEage="52" Scale9OriginX="52" Scale9OriginY="52" Scale9Width="56" Scale9Height="56" ctype="ImageViewObjectData">
                     <Size X="160.0000" Y="160.0000" />
                     <AnchorPoint ScaleX="0.4766" ScaleY="0.4061" />
-                    <Position X="95.6062" Y="80.4758" />
+                    <Position X="79.6270" Y="80.4758" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5624" Y="0.4734" />
+                    <PrePosition X="0.4684" Y="0.4734" />
                     <PreSize X="0.9412" Y="0.9412" />
                     <FileData Type="Normal" Path="zz.png" Plist="" />
                   </AbstractNodeData>
@@ -44,7 +44,7 @@
                     <PreSize X="0.5721" Y="0.4118" />
                     <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="name" ActionTag="1973561639" Tag="379" IconVisible="False" LeftMargin="20.4995" RightMargin="-2.4995" TopMargin="10.5788" BottomMargin="128.4212" FontSize="48" LabelText="名称（级别名称）" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="name" ActionTag="1973561639" Tag="379" IconVisible="False" LeftMargin="20.5082" RightMargin="-2.5082" TopMargin="10.5811" BottomMargin="128.4189" FontSize="48" LabelText="名称（级别名称）" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="384.0000" Y="48.0000" />
                     <AnchorPoint ScaleX="0.4611" ScaleY="0.8821" />
                     <Position X="197.5706" Y="170.7597" />

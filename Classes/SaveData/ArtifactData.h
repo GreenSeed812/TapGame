@@ -41,10 +41,15 @@ public:
 	float gettenGoldPer(){ return tenGoldPer; }
 	float getbossGoldPer(){ return bossGoldPer; }
 	float getleaveGoldPer(){ return leaveGoldPer; }
-	float getskillBanTimeS(){ return skillBanTimeS; }
-	float getskilleffUp(){ return skilleffUp; }
-	float getskillTimeA(){ return skillTimeA; }
+	float getskillBanTimeS(int id){ return skillBanTimeS[id-1]; }
+	float getskilleffUp(int id){ return skilleffUp[id-1]; }
+	float getskillTimeA(int id){ return skillTimeA[id-1]; }
 	float getbossHpS(){ return bossHpS; }
+	float getHeroLevelupDown(){ return heroLevelUpDown; }
+	float getbossTimeUp(){ return bossTimeUp; }
+	float getWaveDown(){ return WaveDown; }
+	float getSSUD(){ return servantUnlockDown; }
+	float getSLUP(){ return servantLevelUpDown; }
 private:
 	ArtifactData();
 	~ArtifactData();
@@ -60,9 +65,9 @@ private:
 	float tenGoldPer;
 	float bossGoldPer;
 	float leaveGoldPer;
-	float skillBanTimeS;
-	float skilleffUp;
-	float skillTimeA;
+	float skillBanTimeS[6];
+	float skilleffUp[6];
+	float skillTimeA[6];
 	float bossHpS;
 	float heroLevelUpDown;
 	float bossTimeUp;

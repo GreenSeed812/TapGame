@@ -54,7 +54,9 @@ void ServantInfo::initServantInfo(int id)
 	auto skillInfo_5 = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillBg_5")->getChildByName("skillInfo_5");
 	auto skillInfo_6 = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillBg_6")->getChildByName("skillInfo_6");
 	auto skillInfo_7 = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillBg_7")->getChildByName("skillInfo_7");
-	
+
+	head->loadTexture(StringUtils::format("ui/downUi/servant/head/%d.png", id + 1));
+
 	escBtn->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType Event)
 	{
 		if (Event == Widget::TouchEventType::ENDED)

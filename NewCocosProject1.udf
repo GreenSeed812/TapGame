@@ -1,26 +1,5 @@
 <UserData Version="3.10.0.0">
   <Properties>
-    <Item Key="PackageParamsKey">
-      <Value ctype="PackageParams">
-        <LuaIsEncrypt Value="False" />
-        <LuaEncryptKey Value="" />
-        <LuaEncryptSign Value="" />
-        <Android_PackageName Value="org.cocos.NewCocosProject1" />
-        <AndroidkeyStore Value="" />
-        <AndroidVersion Value="android-18" />
-        <iOS_Target Value="NewCocosProject1-mobile" />
-        <iOS_BundleID Value="" />
-        <Platform Value="Android" />
-        <RunPlatform Value="Windows" />
-        <FrameworkVersion Value="cocos2d-x-3.10" />
-        <IsDebugKeystore Value="True" />
-        <KeystorePassword Value="" />
-        <KeystoreAliasName Value="" />
-        <KeystoreAliasPassword Value="" />
-        <EnableSourceMap Value="False" />
-        <EnableHTML5Advanced Value="False" />
-      </Value>
-    </Item>
     <Item Key="CocosRecentOperation">
       <Value ctype="CocosRecentOperation">
         <LastPublishType Value="Resource" />
@@ -31,11 +10,10 @@
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
         <OpenedDocuments>
-          <FilePathData Path="denglu.csd" />
-          <FilePathData Path="shujutongji.csd" />
-          <FilePathData Path="jinbi.csd" />
+          <FilePathData Path="zhujiaojieshao.csd" />
+          <FilePathData Path="yongbing.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="jinbi.csd" />
+        <ActiveDocument Path="yongbing.csd" />
       </Value>
     </Item>
   </Properties>

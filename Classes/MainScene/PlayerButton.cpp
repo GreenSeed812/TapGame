@@ -44,7 +44,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 			{
 				upLevelCount();
 				PlayerData::getInstance()->heroLevelUp();
-				PlayerData::getInstance()->subGold(&m_upGold);
+				//PlayerData::getInstance()->subGold(&m_upGold);
 				double playerLevel = PlayerData::getInstance()->getPlayerLevel();
 				auto mul = 1 / pow(playerLevel, 0.55) - 1 / pow(playerLevel, 1.03) + 1;
 				m_upGold = Ruler::getInstance()->multiplayUp(m_upGold, mul) ;
@@ -61,10 +61,9 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 					double playerLevel = PlayerData::getInstance()->getPlayerLevel();
 					auto mul = 1 / pow(playerLevel, 0.55) - 1 / pow(playerLevel, 1.03) + 1;
 					m_upGold = Ruler::getInstance()->multiplayUp(m_upGold, mul);
-				}		
-				PlayerData::getInstance()->subGold(&m_upGold10);	
-						
-				coinChange(this);
+				}	
+				upLevelCount();
+				//cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 			}
 		});
 		up100->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type)
@@ -78,8 +77,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 					auto mul = 1 / pow(playerLevel, 0.55) - 1 / pow(playerLevel, 1.03) + 1;
 					m_upGold = Ruler::getInstance()->multiplayUp(m_upGold, mul);
 				}
-				PlayerData::getInstance()->subGold(&m_upGold100);
-				coinChange(this);
+				upLevelCount();
+				//cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 			}
 		});
 
@@ -102,7 +101,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				PlayerData::getInstance()->subGold(&m_upGold);
 				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
 				Button* button = (Button*)g_skillLayer->getChildByName("SkillButton1");
-				button->setEnabled(true);
+				button->runAction(Show::create());
 				coinChange(this);
 				
 			}
@@ -120,7 +119,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
 				PlayerData::getInstance()->skillLevelUp(2);
 				Button* button = (Button*)g_skillLayer->getChildByName("SkillButton2");
-				button->setEnabled(true);
+				button->runAction(Show::create());
 				coinChange(this);
 			}
 		});
@@ -137,7 +136,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
 				PlayerData::getInstance()->skillLevelUp(3);
 				Button* button = (Button*)g_skillLayer->getChildByName("SkillButton3");
-				button->setEnabled(true);
+				button->runAction(Show::create());
 				coinChange(this);
 			}
 		});
@@ -154,7 +153,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
 				PlayerData::getInstance()->skillLevelUp(4);
 				Button* button = (Button*)g_skillLayer->getChildByName("SkillButton4");
-				button->setEnabled(true);
+				button->runAction(Show::create());
 				coinChange(this);
 			}
 		});
@@ -171,7 +170,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
 				PlayerData::getInstance()->skillLevelUp(5);
 				Button* button = (Button*)g_skillLayer->getChildByName("SkillButton5");
-				button->setEnabled(true);
+				button->runAction(Show::create());
 				coinChange(this);
 			}
 		});
@@ -188,7 +187,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
 				PlayerData::getInstance()->skillLevelUp(6);
 				Button* button = (Button*)g_skillLayer->getChildByName("SkillButton6");
-				button->setEnabled(true);
+				button->runAction(Show::create());
 				coinChange(this);
 			}
 		});

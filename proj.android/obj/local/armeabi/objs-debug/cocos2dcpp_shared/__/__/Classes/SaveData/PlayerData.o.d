@@ -6,8 +6,8 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/SaveData/PlayerData
  D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/vector \
  D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/map \
  jni/../../Classes/Tool/sqlite3.h jni/../../Classes/Tool/MyNum.h \
- jni/../../Classes/Tool\SqLite.h \
- D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h \
+ jni/../../Classes/SaveData/MonsterState.h \
+ jni/../../Classes/SaveData/ArtifactData.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../cocos2d.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../base/ccConfig.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../platform/CCPlatformConfig.h \
@@ -28,6 +28,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/SaveData/PlayerData
  D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/mutex \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../platform/CCStdC.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../platform/android/CCStdC-android.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/stdlib.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/alloca.h \
  D:/android/ndk/platforms/android-18/arch-arm/usr/include/strings.h \
@@ -351,7 +352,8 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/SaveData/PlayerData
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCNotificationCenter.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCSet.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCString.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCDeprecated.h
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCDeprecated.h \
+ jni/../../Classes/Tool\SqLite.h
 
 jni/../../Classes/SaveData\PlayerData.h:
 
@@ -371,9 +373,9 @@ jni/../../Classes/Tool/sqlite3.h:
 
 jni/../../Classes/Tool/MyNum.h:
 
-jni/../../Classes/Tool\SqLite.h:
+jni/../../Classes/SaveData/MonsterState.h:
 
-D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h:
+jni/../../Classes/SaveData/ArtifactData.h:
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../cocos2d.h:
 
@@ -414,6 +416,8 @@ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/mutex:
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../platform/CCStdC.h:
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../platform/android/CCStdC-android.h:
+
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h:
 
 D:/android/ndk/platforms/android-18/arch-arm/usr/include/stdlib.h:
 
@@ -1062,3 +1066,5 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../depr
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCString.h:
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCDeprecated.h:
+
+jni/../../Classes/Tool\SqLite.h:

@@ -462,7 +462,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/MainScene/ServantBu
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CSLoader.h \
  jni/../../Classes/SaveData/PlayerData.h jni/../../Classes/Tool/Rule.h \
  jni/../../Classes/Tool/SqLite.h jni/../../Classes/Tool/sqlite3.h \
- jni/../../Classes/Tool/MyNum.h
+ jni/../../Classes/Tool/MyNum.h jni/../../Classes/MainScene/ServantInfo.h
 
 jni/../../Classes/MainScene/ServantButton.h:
 
@@ -1393,3 +1393,5 @@ jni/../../Classes/Tool/SqLite.h:
 jni/../../Classes/Tool/sqlite3.h:
 
 jni/../../Classes/Tool/MyNum.h:
+
+jni/../../Classes/MainScene/ServantInfo.h:

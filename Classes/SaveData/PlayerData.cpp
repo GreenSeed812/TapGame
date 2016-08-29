@@ -367,7 +367,9 @@ int PlayerData::getServantRelifeStone()
 	{
 		slevel += m_servantLevel[i];
 	}
+	return slevel / 33;
 }
 int PlayerData::getLevelRelifeStone()
 {
+	return m_level / 50;
 }

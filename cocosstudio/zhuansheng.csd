@@ -134,13 +134,13 @@
                     <PreSize X="0.0682" Y="0.1066" />
                     <FileData Type="Normal" Path="zhuansheng (3).png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Image_10_0_0" ActionTag="287165654" Tag="438" IconVisible="False" LeftMargin="587.2144" RightMargin="205.7856" TopMargin="418.5779" BottomMargin="92.4221" LeftEage="19" RightEage="19" TopEage="20" BottomEage="20" Scale9OriginX="19" Scale9OriginY="20" Scale9Width="20" Scale9Height="21" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="Image_10_0_0" ActionTag="287165654" Tag="438" IconVisible="False" LeftMargin="587.2144" RightMargin="205.7856" TopMargin="415.5777" BottomMargin="95.4223" LeftEage="19" RightEage="19" TopEage="20" BottomEage="20" Scale9OriginX="19" Scale9OriginY="20" Scale9Width="20" Scale9Height="21" ctype="ImageViewObjectData">
                     <Size X="58.0000" Y="61.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="616.2144" Y="122.9221" />
+                    <Position X="616.2144" Y="125.9223" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.7241" Y="0.2149" />
+                    <PrePosition X="0.7241" Y="0.2201" />
                     <PreSize X="0.0682" Y="0.1066" />
                     <FileData Type="Normal" Path="zhuansheng (3).png" Plist="" />
                   </AbstractNodeData>
@@ -194,13 +194,13 @@
                     <PreSize X="0.1328" Y="0.1346" />
                     <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="allStone" ActionTag="385078368" Tag="446" IconVisible="False" LeftMargin="666.2173" RightMargin="33.7827" TopMargin="410.5782" BottomMargin="84.4218" LabelText="x999" ctype="TextBMFontObjectData">
+                  <AbstractNodeData Name="allStone" ActionTag="385078368" Tag="446" IconVisible="False" LeftMargin="666.2177" RightMargin="33.7823" TopMargin="406.5779" BottomMargin="88.4220" LabelText="x999" ctype="TextBMFontObjectData">
                     <Size X="151.0000" Y="77.0000" />
                     <AnchorPoint ScaleY="0.5000" />
-                    <Position X="666.2173" Y="122.9218" />
+                    <Position X="666.2177" Y="126.9220" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="246" G="187" B="108" />
-                    <PrePosition X="0.7829" Y="0.2149" />
+                    <PrePosition X="0.7829" Y="0.2219" />
                     <PreSize X="0.1774" Y="0.1346" />
                     <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
                   </AbstractNodeData>

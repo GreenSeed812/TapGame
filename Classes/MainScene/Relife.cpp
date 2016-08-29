@@ -39,11 +39,16 @@ void Relife::initRelife()
 	auto count = (TextBMFont*)m_layer->getChildByName("infoBg")->getChildByName("count");
 	auto countStone = (TextBMFont*)m_layer->getChildByName("infoBg")->getChildByName("countStone");
 	auto allLv = (TextBMFont*)m_layer->getChildByName("infoBg")->getChildByName("allLv");
-	auto alStone = (TextBMFont*)m_layer->getChildByName("infoBg")->getChildByName("allStone");
+	auto allStone = (TextBMFont*)m_layer->getChildByName("infoBg")->getChildByName("allStone");
 
 	playerLv->setString(StringUtils::format(":%d", PlayerData::getInstance()->getPlayerLevel()).c_str());
-	playerStone->setString(StringUtils::format("X%d", ArtifactData::getInstance()->getArtiStone()).c_str());
-
+	playerStone->setString(StringUtils::format("X%d",PlayerData::getInstance()->getHeroRelifeStone()).c_str());
+	servantLv->setString(StringUtils::format(":%d", PlayerData::getInstance()->getServantRelifeStone()).c_str());
+	serStone->setString(StringUtils::format("X%d", PlayerData::getInstance()->getServantRelifeStone()).c_str());
+	count->setString(StringUtils::format(":%d", PlayerData::getInstance()->getLevel()).c_str());
+	countStone->setString(StringUtils::format("X%d", PlayerData::getInstance()->getLevelRelifeStone()).c_str());
+	allLv->setString(StringUtils::format(":").c_str());
+	allStone->setString(StringUtils::format("X%d", PlayerData::getInstance()->getRelifeStone()).c_str());
 
 	escBtn->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType Event)
 	{

@@ -351,7 +351,7 @@ MyNum PlayerData::getservantLevelUpGold(int id)
 }
 int PlayerData::getRelifeStone()
 {
-	return true;
+	return getHeroRelifeStone() + getServantRelifeStone()+getLevelRelifeStone();
 }
 int PlayerData::getHeroRelifeStone()
 {
@@ -365,9 +365,12 @@ int PlayerData::getServantRelifeStone()
 	{
 		slevel += m_servantLevel[i];
 	}
-	return true;
+
+	return slevel / 33;;
 }
+
 int PlayerData::getLevelRelifeStone()
 {
-	return true;
+	return m_level / 50;
+
 }

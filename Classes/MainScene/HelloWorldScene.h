@@ -56,6 +56,7 @@ private:
 	Sprite * effectSprite;
 	MyNum num;
 	bool m_hitlogic;
+	int m_arCount;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

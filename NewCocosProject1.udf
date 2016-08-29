@@ -13,8 +13,9 @@
           <FilePathData Path="ArtifactLayer1.csd" />
           <FilePathData Path="zhuansheng.csd" />
           <FilePathData Path="zhujiaojieshao.csd" />
+          <FilePathData Path="yongbing.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="zhujiaojieshao.csd" />
+        <ActiveDocument Path="yongbing.csd" />
       </Value>
     </Item>
   </Properties>

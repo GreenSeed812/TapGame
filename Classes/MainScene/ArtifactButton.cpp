@@ -6,6 +6,7 @@
 #include "Tool/SqLite.h"
 using namespace ui;
 
+
 Node* ArtifactButton::g_lv = nullptr;
 Node * ArtifactButton::g_node = nullptr;
 
@@ -86,25 +87,28 @@ void ArtifactButton::initArtifactLayer()
 
 void ArtifactButton::arChange(Ref*)
 {
-	auto bt = (Button*)m_layer->getChildByName("up");
-	if (m_levelUp)
+	if (node != nullptr)
 	{
-		auto judge = m_lhs - ArtifactData::getInstance()->getNeededArStone();
-
-		if (judge >= 0)
+		auto bt = (Button*)m_layer->getChildByName("up");
+		if (m_levelUp)
 		{
-			m_StoneNum += ArtifactData::getInstance()->getNeededArStone();
-			bt->setEnabled(true);
-			m_layer->setColor(Color3B(255, 255, 255));
+			auto judge = m_lhs - ArtifactData::getInstance()->getNeededArStone();
+
+			if (judge >= 0)
+			{
+				m_StoneNum += ArtifactData::getInstance()->getNeededArStone();
+				bt->setEnabled(true);
+				m_layer->setColor(Color3B(255, 255, 255));
+			}
+			else
+			{
+				bt->setEnabled(false);
+			}
 		}
 		else
 		{
 			bt->setEnabled(false);
 		}
-	}
-	else
-	{
-		bt->setEnabled(false);
 	}
 }
 
@@ -114,14 +118,18 @@ bool ArtifactButton::onTouchBegan(Touch * touch, Event* event)
 }
 void ArtifactButton::onTouchEnded(Touch * touch, Event * event)
 {
-	auto pos = this->convertTouchToNodeSpace(touch);
-	auto head = (Sprite*)m_layer->getChildByName("head");
-	if (head->getBoundingBox().containsPoint(pos))
+	if (node != nullptr)
 	{
-		auto arReset = ArReset::create();
-		arReset->setStoneNum(m_StoneNum);
-		arReset->initArResetLayer(m_id);
-		g_node->addChild(arReset);
+		auto pos = this->convertTouchToNodeSpace(touch);
+		auto head = (Sprite*)m_layer->getChildByName("head");
+		if (head->getBoundingBox().containsPoint(pos))
+		{
+			auto arReset = ArReset::create();
+			arReset->setNode(g_lv, node->getTag());
+			arReset->setStoneNum(m_StoneNum);
+			arReset->initArResetLayer(m_id);
+			g_node->addChild(arReset);
 
+		}
 	}
 }

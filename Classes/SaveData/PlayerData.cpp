@@ -349,3 +349,25 @@ MyNum PlayerData::getservantLevelUpGold(int id)
 	m_gold = Ruler::getInstance()->multiplay(m_gold, (1 - ArtifactData::getInstance()->getSLUP()));
 	return m_upGold;
 }
+int PlayerData::getRelifeStone()
+{
+	return true;
+}
+int PlayerData::getHeroRelifeStone()
+{
+	return (m_playerLevel - 600) / 100 + 1;
+}
+int PlayerData::getServantRelifeStone()
+{
+ 
+	int slevel = 0;
+	for (int i = 0; i < m_servantNum; i++)
+	{
+		slevel += m_servantLevel[i];
+	}
+	return true;
+}
+int PlayerData::getLevelRelifeStone()
+{
+	return true;
+}

@@ -8,6 +8,9 @@
 #include "Tool/SqLite.h"
 using namespace ui;
 
+Node* ArReset::g_lv = nullptr;
+int ArReset::g_tag = 0;
+
 bool ArReset::init()
 {
 	if (!Layer::init())
@@ -89,7 +92,8 @@ void ArReset::initArResetLayer(int id)
 		{
 			ShopData::getInstance()->subShopGold(200);
 			ArtifactData::getInstance()->deleteArByID(m_id);
-			arResetChange(this);
+			m_arBtn->removeChildByTag(g_tag);
+			m_node->removeFromParent();
 		}
 	});
 

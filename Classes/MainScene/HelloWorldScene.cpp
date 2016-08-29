@@ -62,6 +62,7 @@ bool HelloWorld::init()
 	m_servantLayer = nullptr;
     m_artifactLayer = nullptr;
 	m_shopLayer = nullptr;
+	m_arCount = 0;
     rootNode = CSLoader::createNode("MainScene.csb");
 	addChild(rootNode);
 	Slider * hpSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider");
@@ -628,8 +629,9 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 			if (type == Widget::TouchEventType::ENDED) {
 				ArtifactButton::getRootNode(downLayer);
 				ListView* lv = (ListView*)m_artifactLayer->getChildByName("ListView");
-				ArtifactButton::getListView(lv);
+				ArtifactButton::setListView(lv);
 				auto button = ArtifactButton::create();
+				button->setTag(m_arCount);
 				button->initArtifactLayer();
 				auto widget = Widget::create();
 				widget->setContentSize(button->getContentSize());

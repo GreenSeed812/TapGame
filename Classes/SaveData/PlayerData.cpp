@@ -353,7 +353,7 @@ MyNum PlayerData::getservantLevelUpGold(int id)
 }
 int PlayerData::getRelifeStone()
 {
-	 
+	return getHeroRelifeStone() + getServantRelifeStone() + getLevelRelifeStone();
 }
 int PlayerData::getHeroRelifeStone()
 {
@@ -362,14 +362,23 @@ int PlayerData::getHeroRelifeStone()
 int PlayerData::getServantRelifeStone()
 {
  
+
+	return getServantAverLevel() / 33;
+}
+int PlayerData::getLevelRelifeStone()
+{
+	return m_level / 50;
+}
+void PlayerData::saveUserData()
+{
+}
+int PlayerData::getServantAverLevel()
+{
 	int slevel = 0;
 	for (int i = 0; i < m_servantNum; i++)
 	{
 		slevel += m_servantLevel[i];
 	}
-	return slevel / 33;
-}
-int PlayerData::getLevelRelifeStone()
-{
-	return m_level / 50;
+	return slevel / m_servantNum;
+
 }

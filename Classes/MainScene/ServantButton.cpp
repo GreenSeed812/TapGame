@@ -64,7 +64,7 @@ void ServantButton::initServantLayer(int id)
 			{
 				if (PlayerData::getInstance()->getServantLevel(m_id) == 0)
 				{
-					auto newNode = ServantButton::create();
+ 					auto newNode = ServantButton::create();
 					PlayerData::getInstance()->addServantNum();
 					newNode->initServantLayer(PlayerData::getInstance()->getServantNum());
 					auto frame = Widget::create();

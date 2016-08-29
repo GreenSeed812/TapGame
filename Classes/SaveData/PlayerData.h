@@ -33,6 +33,7 @@ public:
 	MyNum getHpByID(int id);
 	MyNum getHpNow(){ return m_hpNow; }
 	MyNum getMaxHp();
+	int getServantAverLevel();
 	float getSkillEFF(int i);
 	int getSkillLevel(int i){ return m_skillLevel[i];}
 	MyNum getTapDpsNoExp();
@@ -74,6 +75,7 @@ public:
 	void openSkill(int i){ m_skillOpen[i] = true; }
 	void subHp(){ m_hpNow = Ruler::getInstance()->subNum(m_hpNow,m_basedps); }
 	void unlockSernantSkill(int servantid, int skillid);
+	void saveUserData();
 private:
 	int m_waveNow;
 	int m_level;

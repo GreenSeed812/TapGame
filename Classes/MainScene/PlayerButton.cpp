@@ -238,7 +238,7 @@ void PlayerButton::coinChange(Ref* pSender)
 		textN->setString("Player");
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getPlayerLevel()));
 		textD->setString(StringUtils::format("%d",PlayerData::getInstance()->getPlayerLevel()));
-		//upLevelCount();
+		upLevelCount();
 	}
 	else if (m_type == SKILL1)
 	{

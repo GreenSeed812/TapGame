@@ -235,7 +235,7 @@ MyNum PlayerData::getServantDps(int i)
 
 MyNum PlayerData::getTapDpsNoExp()
 {
-	auto num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul + ArtifactData::getInstance()->getdpsexper());
+	auto num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul + ArtifactData::getInstance()->getdpsexper() + ArtifactData::getInstance()->getAllDpsMul());
 	auto t = Ruler::getInstance()->addNum(num, getHeroDps());
 	auto num1 = Ruler::getInstance()->multiplay(t, m_latestTapMul);
 	num = Ruler::getInstance()->addNum(num, num1);
@@ -245,9 +245,9 @@ MyNum PlayerData::getTapDps()
 {
 	MyNum num;
 	if(MonsterState::getInstance()->getTypeNow() == MONSTER_TYPE::BOSS)
-		num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul + ArtifactData::getInstance()->getdpsexper() + m_bossDpsMul);
+		num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul + ArtifactData::getInstance()->getdpsexper() + ArtifactData::getInstance()->getAllDpsMul() + m_bossDpsMul);
 	else
-		num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul + ArtifactData::getInstance()->getdpsexper());
+		num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul + ArtifactData::getInstance()->getdpsexper() + ArtifactData::getInstance()->getAllDpsMul());
 	
 	auto t = Ruler::getInstance()->addNum(num,getHeroDps());
 	auto num1 = Ruler::getInstance()->multiplay(t,m_latestTapMul);

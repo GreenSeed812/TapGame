@@ -51,7 +51,7 @@ bool HelloWorld::init()
     }
 	{
 		MyNum num;
-		num.Mathbit = 0;
+		num.Mathbit = 5;
 
 		num.number = 500;
 		PlayerData::getInstance()->addGold(&num);
@@ -83,7 +83,6 @@ bool HelloWorld::init()
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::ArChange), "ArChange", nullptr);
 	showTime = false;
 	Slider* timeSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("timeSlider");
-	timeSlider->setMaxPercent(PlayerData::getInstance()->getMaxTime());
 	timeNow = PlayerData::getInstance()->getMaxTime();
 
 	scheduleUpdate();
@@ -196,9 +195,10 @@ void HelloWorld::createMonster()
 	{
 		PlayerData::getInstance()->resetTime();
 		armature->setScale(2.0f);
-		timeNow = PlayerData::getInstance()->getMaxTime();
+		timeNow = PlayerData::getInstance()->getMaxTime() * 1000;
 		timeSlider->runAction(Show::create());
-		timeSlider->setPercent(timeNow);
+		timeSlider->setMaxPercent(PlayerData::getInstance()->getMaxTime()*1000);
+		timeSlider->setPercent(timeNow * 1000);
 		MonsterState::getInstance()->setMonsterState(BOSS);
 		rootNode->getChildByName("dragon")->runAction(Show::create());
 		rootNode->getChildByName("grayDragon")->runAction(Hide::create());
@@ -305,7 +305,7 @@ void HelloWorld::update(float dt)
 	}
 	else
 	{
-		skillEff(dt);
+		skillKpCDUpdate(dt);
 	}
 	
 
@@ -791,7 +791,7 @@ void HelloWorld::skillEff(float dt)
 		{
 
 
-			PlayerData::getInstance()->subHp(Ruler::getInstance()->multiplay(PlayerData::getInstance()->getTapDps(), PlayerData::getInstance()->getSkillEFF(0) * ArtifactData::getInstance()->getskilleffUp(1)));
+			PlayerData::getInstance()->subHp(Ruler::getInstance()->multiplay(PlayerData::getInstance()->getTapDps(), PlayerData::getInstance()->getSkillEFF(0) * (1 + ArtifactData::getInstance()->getskilleffUp(1))));
 			
 		}
 		if (MyState::getInstance()->getKTap() && PlayerData::getInstance()->getSkillopen(1))

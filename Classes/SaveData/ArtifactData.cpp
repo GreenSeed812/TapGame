@@ -301,3 +301,7 @@ int ArtifactData::getStarNum(int id)
 		it++;
 	}
 }
+
+void ArtifactData::arReset(int id)
+{
+}

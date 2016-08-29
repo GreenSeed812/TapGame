@@ -44,9 +44,9 @@ void SkillCD::initkpImage(int i)
 	cd->setType(ProgressTimer::Type::RADIAL);
 	cd->setPercentage(100);
 	m_kpTime = PlayerData::getInstance()->getKeepTime(i);
-	if (i == 2)
+	if (i == 1)
 	{
-		m_kpTime = m_kpTime * PlayerData::getInstance()->getSkillEFF(3);
+		m_kpTime = m_kpTime * PlayerData::getInstance()->getSkillEFF(2);
 	}
 	m_kpTime = m_kpTime * (1 + ArtifactData::getInstance()->getskillTimeA(i));
 	m_kpMaxTime = m_kpTime;

@@ -51,7 +51,7 @@ bool HelloWorld::init()
     }
 	{
 		MyNum num;
-		num.Mathbit = 5;
+		num.Mathbit = 50;
 		num.number = 500;
 		PlayerData::getInstance()->addGold(&num);
 

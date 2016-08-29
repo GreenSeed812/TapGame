@@ -12,7 +12,7 @@ ArtifactData* ArtifactData::getInstance()
 	return g_ar;
 }
 ArtifactData::ArtifactData()
- :m_artifactStone(999)
+ :m_artifactStone(10000000000)
  ,m_artifactNum(0)
  , m_dpsexper(0)
  ,m_AllDpsMul(0)

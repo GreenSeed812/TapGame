@@ -43,7 +43,7 @@ void Relife::initRelife()
 
 	playerLv->setString(StringUtils::format(":%d", PlayerData::getInstance()->getPlayerLevel()).c_str());
 	playerStone->setString(StringUtils::format("X%d",PlayerData::getInstance()->getHeroRelifeStone()).c_str());
-	servantLv->setString(StringUtils::format(":%d", PlayerData::getInstance()->getServantRelifeStone()).c_str());
+	servantLv->setString(StringUtils::format(":%d", PlayerData::getInstance()->getServantAverLevel()).c_str());
 	serStone->setString(StringUtils::format("X%d", PlayerData::getInstance()->getServantRelifeStone()).c_str());
 	count->setString(StringUtils::format(":%d", PlayerData::getInstance()->getLevel()).c_str());
 	countStone->setString(StringUtils::format("X%d", PlayerData::getInstance()->getLevelRelifeStone()).c_str());

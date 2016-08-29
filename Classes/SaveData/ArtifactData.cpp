@@ -215,7 +215,7 @@ int ArtifactData::getMaxLevel(int id)
 void ArtifactData::deleteArByID(int id)
 {
 
-	m_artifactStone += m_artifacts[id]->m_artifactLevel * 2;
+	m_artifactStone += (m_artifacts[id]->m_artifactLevel - 1) * 2;
 	m_artifactStone += pow(2, m_artifactNum-1);
 	for (std::vector<ArtiHave*>::iterator it = m_artifacts.begin(); it != m_artifacts.end();)
 	{

@@ -39,6 +39,7 @@ public:
 	int getWaveNow(){ return m_waveNow; }
 	int getPlayerLevel(){ return m_playerLevel; }
 	int getRandNpc(int r);
+	int getRelifeStone()
 	MyNum getServantDps(int i);
 	int getServantLevel(int i){ return m_servantLevel[i]; }
 	MyNum getservantLevelUpGold(int id);

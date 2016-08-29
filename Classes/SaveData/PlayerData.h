@@ -33,7 +33,7 @@ public:
 	MyNum getHpByID(int id);
 	MyNum getHpNow(){ return m_hpNow; }
 	MyNum getMaxHp();
-	int getServantAverLevel();
+	int getServantAverLevel(); 
 	float getSkillEFF(int i);
 	int getSkillLevel(int i){ return m_skillLevel[i];}
 	MyNum getTapDpsNoExp();
@@ -55,6 +55,7 @@ public:
 	void heroLevelUp();
 	void levelUp();
 	void randRareMonster();
+	void relife();
 	void resetMaxWave();
 	void resetTime();
 	void resetWave(){ m_waveNow = 1; }

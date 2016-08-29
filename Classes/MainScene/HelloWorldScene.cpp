@@ -217,6 +217,10 @@ void HelloWorld::createMonster()
 			rootNode->getChildByName("grayDragon")->runAction(Hide::create());
 		}
 	}
+	else
+	{
+		PlayerData::getInstance()->randRareMonster();
+	}
 	
 }
 void HelloWorld::update(float dt)

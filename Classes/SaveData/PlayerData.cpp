@@ -187,8 +187,8 @@ MyNum PlayerData::getdefeatMonsterGold()
 			baseNum = tmp;
 		}
 	}
-	auto tmp = Ruler::getInstance()->addNumUp(m_gold, baseNum);
-	return tmp;
+	
+	return baseNum;
 }
 
 MyNum PlayerData::getDps()
@@ -270,7 +270,7 @@ float PlayerData::getSkillEFF(int i)
 	if (m_skillLevel[i] < 1)
 		return 0;
 	else
-		return m_skillData.at(i)->initEffect + (m_skillData.at(i)->effPerLevel - 1) * m_skillLevel[i];
+		return m_skillData.at(i)->initEffect + m_skillData.at(i)->effPerLevel * (m_skillLevel[i] - 1);
 }
 void PlayerData::unlockSernantSkill(int servantid, int skillid)
 {
@@ -361,8 +361,6 @@ int PlayerData::getHeroRelifeStone()
 }
 int PlayerData::getServantRelifeStone()
 {
- 
-
 	return getServantAverLevel() / 33;
 }
 int PlayerData::getLevelRelifeStone()
@@ -379,6 +377,14 @@ int PlayerData::getServantAverLevel()
 	{
 		slevel += m_servantLevel[i];
 	}
+	if (m_servantNum == 0)
+	{
+		return 0;
+	}		
 	return slevel / m_servantNum;
+
+}
+void PlayerData::relife()
+{
 
 }

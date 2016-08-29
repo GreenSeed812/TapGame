@@ -235,7 +235,7 @@ MyNum PlayerData::getServantDps(int i)
 
 MyNum PlayerData::getTapDpsNoExp()
 {
-	auto num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul + ArtifactData::getInstance()->getdpsexper());
+	auto num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul + ArtifactData::getInstance()->getdpsexper() + ArtifactData::getInstance()->getAllDpsMul());
 	auto t = Ruler::getInstance()->addNum(num, getHeroDps());
 	auto num1 = Ruler::getInstance()->multiplay(t, m_latestTapMul);
 	num = Ruler::getInstance()->addNum(num, num1);
@@ -245,9 +245,9 @@ MyNum PlayerData::getTapDps()
 {
 	MyNum num;
 	if(MonsterState::getInstance()->getTypeNow() == MONSTER_TYPE::BOSS)
-		num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul + ArtifactData::getInstance()->getdpsexper() + m_bossDpsMul);
+		num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul + ArtifactData::getInstance()->getdpsexper() + ArtifactData::getInstance()->getAllDpsMul() + m_bossDpsMul);
 	else
-		num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul + ArtifactData::getInstance()->getdpsexper());
+		num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul + ArtifactData::getInstance()->getdpsexper() + ArtifactData::getInstance()->getAllDpsMul());
 	
 	auto t = Ruler::getInstance()->addNum(num,getHeroDps());
 	auto num1 = Ruler::getInstance()->multiplay(t,m_latestTapMul);
@@ -331,14 +331,14 @@ void PlayerData::resetMaxWave()
 }
 void PlayerData::servantLevelUp(int id)
 {
-	
+	m_servantLevel[id]++;
 	auto m_upGold = getservantLevelUpGold(id);
 	m_gold = Ruler::getInstance()->subNum(m_gold, m_upGold);
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 }
 MyNum PlayerData::getservantLevelUpGold(int id)
 {
-	m_servantLevel[id]++;
+	
 	auto m_upGold = SqLite::getInstance()->getServantGoldByID(id);
 
 	for (int i = 1; i < m_servantLevel[id]; i++)

@@ -5,9 +5,9 @@ BgMusic*  bgm = nullptr;
 
 bool BgMusic::init()
 {
+	m_count = 0;
 	SimpleAudioEngine::getInstance()->preloadBackgroundMusic(BG_MUSIC);
 	SimpleAudioEngine::getInstance()->preloadEffect(EFFECT_MUSIC);
-
 	return true;
 }
 
@@ -33,14 +33,7 @@ void BgMusic::playBg(bool off_on)
 	}
 }
 
-void BgMusic::playEff(bool off_on)
+void BgMusic::playEff()
 {
-	if (off_on)
-	{
-		SimpleAudioEngine::getInstance()->playEffect(EFFECT_MUSIC);
-	}
-	else
-	{
-		SimpleAudioEngine::getInstance()->stopAllEffects();
-	}
+	SimpleAudioEngine::getInstance()->playEffect(EFFECT_MUSIC);
 }

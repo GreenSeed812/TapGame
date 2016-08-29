@@ -10,9 +10,9 @@
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
         <OpenedDocuments>
-          <FilePathData Path="configLayer.csd" />
+          <FilePathData Path="yongbing.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="configLayer.csd" />
+        <ActiveDocument Path="yongbing.csd" />
       </Value>
     </Item>
   </Properties>

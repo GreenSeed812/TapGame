@@ -85,7 +85,7 @@ void ArReset::initArResetLayer(int id)
 			ShopData::getInstance()->subShopGold(200);
 			ArtifactData::getInstance()->deleteArByID(m_id);
 			ArtifactData::getInstance()->addArtiStone(m_StoneNum);
-
+			ArtifactData::getInstance()->arReset(m_id);
 			m_StoneNum = 0;
 			arResetChange(this);
 		}

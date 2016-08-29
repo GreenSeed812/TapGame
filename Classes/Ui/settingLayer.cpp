@@ -67,7 +67,6 @@ bool settingLayer::init()
 				((Button*)rootNode->getChildByName("bg")->getChildByName("sound"))->loadTexturePressed("yinyue0.png");
 			}
 			BgMusic::getInstance()->playBg(m_mus_off_on);
-			BgMusic::getInstance()->playEff(false);
 		}
 	});
 	return true;

@@ -31,6 +31,7 @@ public:
 	int addArNum();
 	void arLevelUp(int id);
 	void arStarUp();
+	void arReset(int id);
 	void deleteArByID(int id);
 public:
 	float getAllDpsMul(){ return m_AllDpsMul; }

@@ -12,15 +12,16 @@
               <AbstractNodeData Name="headBg" ActionTag="1188061614" Tag="413" IconVisible="False" LeftMargin="169.6057" RightMargin="761.3943" TopMargin="127.5652" BottomMargin="1422.4348" LeftEage="56" RightEage="56" TopEage="56" BottomEage="56" Scale9OriginX="56" Scale9OriginY="56" Scale9Width="58" Scale9Height="58" ctype="ImageViewObjectData">
                 <Size X="170.0000" Y="170.0000" />
                 <Children>
-                  <AbstractNodeData Name="head" ActionTag="-1460742058" Tag="383" IconVisible="False" LeftMargin="3.3710" RightMargin="6.6290" TopMargin="-5.4998" BottomMargin="15.4998" LeftEage="52" RightEage="52" TopEage="52" BottomEage="52" Scale9OriginX="52" Scale9OriginY="52" Scale9Width="56" Scale9Height="56" ctype="ImageViewObjectData">
-                    <Size X="160.0000" Y="160.0000" />
-                    <AnchorPoint ScaleX="0.4766" ScaleY="0.4061" />
-                    <Position X="79.6270" Y="80.4758" />
+                  <AbstractNodeData Name="head" ActionTag="-1432006225" Tag="292" IconVisible="False" LeftMargin="61.3907" RightMargin="62.6093" TopMargin="55.4591" BottomMargin="68.5409" ctype="SpriteObjectData">
+                    <Size X="46.0000" Y="46.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="84.3907" Y="91.5409" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4684" Y="0.4734" />
-                    <PreSize X="0.9412" Y="0.9412" />
-                    <FileData Type="Normal" Path="zz.png" Plist="" />
+                    <PrePosition X="0.4964" Y="0.5385" />
+                    <PreSize X="0.2706" Y="0.2706" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -91,25 +92,36 @@
                   <AbstractNodeData Name="skillHead_1" ActionTag="-763612851" Tag="417" IconVisible="False" LeftMargin="60.5621" RightMargin="679.4379" TopMargin="30.0022" BottomMargin="858.9978" LeftEage="47" RightEage="47" TopEage="45" BottomEage="45" Scale9OriginX="47" Scale9OriginY="45" Scale9Width="50" Scale9Height="47" ctype="ImageViewObjectData">
                     <Size X="144.0000" Y="137.0000" />
                     <Children>
-                      <AbstractNodeData Name="Image_9" ActionTag="-582395625" Tag="231" IconVisible="False" LeftMargin="42.0566" RightMargin="39.9434" TopMargin="21.8589" BottomMargin="73.1411" LeftEage="20" RightEage="20" TopEage="13" BottomEage="13" Scale9OriginX="20" Scale9OriginY="13" Scale9Width="22" Scale9Height="16" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="Image_9" ActionTag="-582395625" Tag="231" IconVisible="False" LeftMargin="42.0565" RightMargin="39.9435" TopMargin="25.0365" BottomMargin="69.9635" LeftEage="20" RightEage="20" TopEage="13" BottomEage="13" Scale9OriginX="20" Scale9OriginY="13" Scale9Width="22" Scale9Height="16" ctype="ImageViewObjectData">
                         <Size X="62.0000" Y="42.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="73.0566" Y="94.1411" />
+                        <Position X="73.0565" Y="90.9635" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5073" Y="0.6872" />
+                        <PrePosition X="0.5073" Y="0.6640" />
                         <PreSize X="0.4306" Y="0.3066" />
                         <FileData Type="Normal" Path="jiaoselv (2).png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Image_16" ActionTag="851591597" Tag="238" IconVisible="False" LeftMargin="45.0495" RightMargin="42.9505" TopMargin="66.6299" BottomMargin="25.3701" LeftEage="18" RightEage="18" TopEage="14" BottomEage="14" Scale9OriginX="18" Scale9OriginY="14" Scale9Width="20" Scale9Height="17" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="Image_16" ActionTag="851591597" Tag="238" IconVisible="False" LeftMargin="45.0495" RightMargin="42.9505" TopMargin="71.0301" BottomMargin="20.9699" LeftEage="18" RightEage="18" TopEage="14" BottomEage="14" Scale9OriginX="18" Scale9OriginY="14" Scale9Width="20" Scale9Height="17" ctype="ImageViewObjectData">
                         <Size X="56.0000" Y="45.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="73.0495" Y="47.8701" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5366" />
+                        <Position X="73.0512" Y="45.1150" />
+                        <Scale ScaleX="1.0000" ScaleY="0.9318" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5073" Y="0.3494" />
+                        <PrePosition X="0.5073" Y="0.3293" />
                         <PreSize X="0.3889" Y="0.3285" />
                         <FileData Type="Normal" Path="10.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="head1" ActionTag="-97698592" Tag="293" IconVisible="False" LeftMargin="46.5592" RightMargin="51.4408" TopMargin="43.8308" BottomMargin="47.1692" ctype="SpriteObjectData">
+                        <Size X="46.0000" Y="46.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="69.5592" Y="70.1692" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.4831" Y="0.5122" />
+                        <PreSize X="0.3194" Y="0.3358" />
+                        <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+                        <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -433,11 +445,11 @@
                       </AbstractNodeData>
                       <AbstractNodeData Name="Image_22" ActionTag="-372539623" Tag="385" IconVisible="False" LeftMargin="39.5427" RightMargin="41.4573" TopMargin="73.6874" BottomMargin="18.3126" LeftEage="20" RightEage="20" TopEage="14" BottomEage="14" Scale9OriginX="20" Scale9OriginY="14" Scale9Width="23" Scale9Height="17" ctype="ImageViewObjectData">
                         <Size X="63.0000" Y="45.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="71.0427" Y="40.8126" />
+                        <AnchorPoint ScaleX="0.5897" ScaleY="0.5024" />
+                        <Position X="76.6962" Y="40.9212" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.4934" Y="0.2979" />
+                        <PrePosition X="0.5326" Y="0.2987" />
                         <PreSize X="0.4375" Y="0.3285" />
                         <FileData Type="Normal" Path="25.png" Plist="" />
                       </AbstractNodeData>

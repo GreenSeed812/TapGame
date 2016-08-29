@@ -63,17 +63,6 @@ void ServantButton::initServantLayer(int id)
 	bt->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType Event){
 		if (Event == Widget::TouchEventType::ENDED)
 		{
-			if (PlayerData::getInstance()->getServantLevel(m_id) == 0)
-			{
-				auto newNode = ServantButton::create();
-				PlayerData::getInstance()->addServantNum();
-				newNode->initServantLayer(PlayerData::getInstance()->getServantNum());
-				auto frame = Widget::create();
-				frame->setContentSize(newNode->getContentSize());
-				frame->addChild(newNode);
-				ListView* lv = (ListView*)g_lv;
-				lv->pushBackCustomItem(frame);
-			}
 			oneUp();
 			upLevel();
 			coinChange(this);
@@ -138,7 +127,7 @@ void ServantButton::coinChange(Ref*)
 	else
 	{
 		gold->setString(Ruler::getInstance()->showNum(m_gold));
-		judge = Ruler::getInstance()->subNum(m_gold, PlayerData::getInstance()->getservantLevelUpGold(m_id));
+		judge = Ruler::getInstance()->subNum(PlayerData::getInstance()->getservantLevelUpGold(m_id), *PlayerData::getInstance()->getGold());
 		bt->loadTextureNormal("ui/downUi/servant/anniu1.png");
 		bt->loadTexturePressed("ui/downUi/servant/anniu1.png");
 		text->setString(m_skillUp);
@@ -217,8 +206,19 @@ void ServantButton::oneUp()
 {
 	if (!m_unlock)
 	{
+		if (PlayerData::getInstance()->getServantLevel(m_id) == 0)
+		{
+			auto newNode = ServantButton::create();
+			PlayerData::getInstance()->addServantNum();
+			newNode->initServantLayer(PlayerData::getInstance()->getServantNum());
+			auto frame = Widget::create();
+			frame->setContentSize(newNode->getContentSize());
+			frame->addChild(newNode);
+			ListView* lv = (ListView*)g_lv;
+			lv->pushBackCustomItem(frame);
+		}
+
 		PlayerData::getInstance()->servantLevelUp(m_id);
-		PlayerData::getInstance()->subGold(&m_gold);
 		auto i = PlayerData::getInstance()->getServantLevel(m_id);
 		auto pow1 = pow(PlayerData::getInstance()->getServantLevel(m_id) + 1, 0.7);
 		auto pow2 = pow(PlayerData::getInstance()->getServantLevel(m_id) + 1, 6);

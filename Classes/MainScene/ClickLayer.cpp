@@ -26,8 +26,7 @@ bool ClickLayer::init()
 	touchListener->onTouchCancelled = CC_CALLBACK_2(ClickLayer::onTouchCanceled, this);
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this);
 	
-	this->setContentSize(Size(1080,1960));
-	
+
 	return true;
 }
 
@@ -56,9 +55,18 @@ bool ClickLayer::onTouchBegan(Touch *touch, Event*)
 		}
 	
 	}*/
-	MyState::getInstance()->setTaped(true);
-	MyState::getInstance()->setKTap(true);
-	return true;
+	auto point = touch->getLocation();
+	
+	if (point.y >= 607)
+	{
+
+		MyState::getInstance()->setTaped(true);
+		MyState::getInstance()->setKTap(true);
+		return true;
+	}
+	else
+		return false;
+
 }
 
 void ClickLayer::onTouchEnded(Touch *touch, Event*)

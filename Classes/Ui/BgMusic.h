@@ -15,10 +15,11 @@ public:
 	bool init();
 	static BgMusic* getInstance();
 	void playBg(bool off_on);
-	void playEff(bool off_on);
+	void playEff();
 private:
 	BgMusic(){}
 	bool m_Off_ON;
+	int m_count;
 };
 
 

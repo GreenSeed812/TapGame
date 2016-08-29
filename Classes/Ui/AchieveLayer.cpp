@@ -12,7 +12,7 @@ bool AchieveLayer::init()
 	{
 		return false;
 	}
-	rootNode = CSLoader::createNode("achieveLayer_0.csb");
+	rootNode = CSLoader::createNode("achieveLayer.csb");
 	this->addChild(rootNode);
 	auto touchListener = EventListenerTouchOneByOne::create();
 	touchListener->setSwallowTouches(true);

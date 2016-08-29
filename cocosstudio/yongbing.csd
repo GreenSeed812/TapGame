@@ -569,7 +569,7 @@
                 <PreSize X="0.2225" Y="0.0384" />
                 <FileData Type="Normal" Path="ybjs.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="infoText" ActionTag="-1442549254" Tag="394" IconVisible="False" LeftMargin="94.2270" RightMargin="139.7730" TopMargin="388.7576" BottomMargin="1159.2424" FontSize="36" LabelText="手贱小王子，游学者周卓整理并分享有关潘达利亚大陆&#xA;的轶事，但他最喜欢的故事，是乔伊和菲比一起外出旅&#xA;行发生的事情。&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="infoText" ActionTag="-1442549254" Tag="394" IconVisible="False" LeftMargin="94.2270" RightMargin="139.7730" TopMargin="388.7576" BottomMargin="1159.2424" IsCustomSize="True" FontSize="36" LabelText="手贱小王子，游学者周卓整理并分享有关潘达利亚大陆&#xA;的轶事，但他最喜欢的故事，是乔伊和菲比一起外出旅&#xA;行发生的事情。&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="867.0000" Y="172.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="527.7270" Y="1245.2424" />

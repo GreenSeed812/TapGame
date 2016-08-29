@@ -54,7 +54,7 @@ void PlayerInfo::initPlayerInfo()
 	
 	//设置控件显示信息
 	name->setString(StringUtils::format("Player"));
-	level->setString(StringUtils::format("Lv%d",PlayerData::getInstance()->getLevel()));
+	level->setString(StringUtils::format("Lv%d", PlayerData::getInstance()->getPlayerLevel()));
 	dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getTapDpsNoExp()));
 	skillName_1->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(0).c_str()));
 	skillName_2->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(1).c_str()));

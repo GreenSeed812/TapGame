@@ -34,6 +34,7 @@ public:
 	void skillEff(float);
 	void attackeffection();
 	void deleteSprite(Node *);
+	void playMusic(Node * node);
 	void normalAtk();
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);

@@ -57,6 +57,7 @@ bool HelloWorld::init()
 		PlayerData::getInstance()->addGold(&num);
 
 	}
+	BgMusic::getInstance()->playBg(true);
 	m_hitlogic = true;
 	m_heroLayer = nullptr;
 	m_servantLayer = nullptr;
@@ -864,7 +865,7 @@ void HelloWorld::normalAtk()
 	auto animate = Animate::create(ani);
 	auto r = random(0, 360);
 	auto rotate = RotateBy::create(0.0416f, Vec3(0, 0, r));
-	auto spawn = Spawn::create(rotate, animate, NULL);
+	auto spawn = Spawn::create(rotate, animate, CallFuncN::create(CC_CALLBACK_1(HelloWorld::playMusic, this)), NULL);
 
 	auto seq = Sequence::create(spawn, CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
 
@@ -906,9 +907,10 @@ void HelloWorld::attackeffection()
 }
 void HelloWorld::deleteSprite(Node *node)
 {
+	node->removeFromParent();	
+}
 
-	node->removeFromParent();
-	
-
-		
+void HelloWorld::playMusic(Node * node)
+{
+	BgMusic::getInstance()->playEff(true);
 }

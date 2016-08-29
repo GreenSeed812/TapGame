@@ -6,7 +6,7 @@
       <ObjectData Name="Layer" Tag="68" ctype="GameLayerObjectData">
         <Size X="1080.0000" Y="1920.0000" />
         <Children>
-          <AbstractNodeData Name="Sprite_1" ActionTag="-1652640400" Tag="69" IconVisible="False" LeftMargin="-1.5000" RightMargin="-1.5000" TopMargin="300.0000" BottomMargin="682.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="bg" ActionTag="-1652640400" Tag="69" IconVisible="False" LeftMargin="-1.5000" RightMargin="-1.5000" TopMargin="300.0000" BottomMargin="682.0000" ctype="SpriteObjectData">
             <Size X="1083.0000" Y="938.0000" />
             <Children>
               <AbstractNodeData Name="Image_1" ActionTag="-1323880657" Tag="70" IconVisible="False" LeftMargin="488.4626" RightMargin="502.5374" TopMargin="21.0467" BottomMargin="873.9533" LeftEage="30" RightEage="30" TopEage="14" BottomEage="14" Scale9OriginX="30" Scale9OriginY="14" Scale9Width="32" Scale9Height="15" ctype="ImageViewObjectData">
@@ -19,7 +19,7 @@
                 <PreSize X="0.0849" Y="0.0458" />
                 <FileData Type="Normal" Path="sz.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_1" ActionTag="-911522464" Tag="72" IconVisible="False" LeftMargin="115.1008" RightMargin="695.8992" TopMargin="183.8137" BottomMargin="500.1863" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="242" Scale9Height="232" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="music" ActionTag="-911522464" Tag="72" IconVisible="False" LeftMargin="115.1008" RightMargin="695.8992" TopMargin="183.8137" BottomMargin="500.1863" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="242" Scale9Height="232" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="272.0000" Y="254.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="251.1008" Y="627.1863" />
@@ -34,7 +34,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_2" ActionTag="492564402" Tag="73" IconVisible="False" LeftMargin="400.8806" RightMargin="410.1194" TopMargin="184.1309" BottomMargin="499.8691" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="242" Scale9Height="232" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="sound" ActionTag="492564402" Tag="73" IconVisible="False" LeftMargin="400.8806" RightMargin="410.1194" TopMargin="184.1309" BottomMargin="499.8691" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="242" Scale9Height="232" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="272.0000" Y="254.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="536.8806" Y="626.8691" />
@@ -59,7 +59,7 @@
                 <PreSize X="0.2512" Y="0.2708" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                <PressedFileData Type="Normal" Path="sjtj.png" Plist="" />
                 <NormalFileData Type="Normal" Path="sjtj.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

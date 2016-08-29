@@ -32,14 +32,18 @@ void Relife::initRelife()
 	auto escBtn = (Button*)m_layer->getChildByName("esc");
 	auto submitBtn = (Button*)m_layer->getChildByName("submit");
 	auto head = (ImageView*)m_layer->getChildByName("head");
-	auto playerLv = (Text*)m_layer->getChildByName("infoBg")->getChildByName("plLv");
-	auto playerStone = (Text*)m_layer->getChildByName("infoBg")->getChildByName("playerStone");
-	auto servantLv = (Text*)m_layer->getChildByName("infoBg")->getChildByName("serLv");
-	auto serStone = (Text*)m_layer->getChildByName("infoBg")->getChildByName("serStone");
-	auto count = (Text*)m_layer->getChildByName("infoBg")->getChildByName("count");
-	auto countStone = (Text*)m_layer->getChildByName("infoBg")->getChildByName("countStone");
-	auto allLv = (Text*)m_layer->getChildByName("infoBg")->getChildByName("allLv");
-	auto alStone = (Text*)m_layer->getChildByName("infoBg")->getChildByName("allStone");
+	auto playerLv = (TextBMFont*)m_layer->getChildByName("infoBg")->getChildByName("plLv");
+	auto playerStone = (TextBMFont*)m_layer->getChildByName("infoBg")->getChildByName("playerStone");
+	auto servantLv = (TextBMFont*)m_layer->getChildByName("infoBg")->getChildByName("serLv");
+	auto serStone = (TextBMFont*)m_layer->getChildByName("infoBg")->getChildByName("serStone");
+	auto count = (TextBMFont*)m_layer->getChildByName("infoBg")->getChildByName("count");
+	auto countStone = (TextBMFont*)m_layer->getChildByName("infoBg")->getChildByName("countStone");
+	auto allLv = (TextBMFont*)m_layer->getChildByName("infoBg")->getChildByName("allLv");
+	auto alStone = (TextBMFont*)m_layer->getChildByName("infoBg")->getChildByName("allStone");
+
+	playerLv->setString(StringUtils::format(":%d", PlayerData::getInstance()->getPlayerLevel()).c_str());
+	playerStone->setString(StringUtils::format("X%d", ArtifactData::getInstance()->getArtiStone()).c_str());
+
 
 	escBtn->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType Event)
 	{
@@ -53,7 +57,7 @@ void Relife::initRelife()
 	{
 		if (Event == Widget::TouchEventType::ENDED)
 		{
-
+			
 		}
 	});
 }

@@ -57,7 +57,7 @@ void ServantInfo::initServantInfo(int id)
 	auto skillInfo_7 = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillBg_7")->getChildByName("skillInfo_7");
 
 	head->setTexture(StringUtils::format("ui/downUi/servant/head/%d.png", id + 1));
-	skillHead_1->loadTexture()
+	//skillHead_1->loadTexture()
 	name->setString(SqLite::getInstance()->getServantNameByID(id));
 	level->setString(StringUtils::format("Lv%d", PlayerData::getInstance()->getServantLevel(id)));
 	dps->setString(Ruler::getInstance()->showNum(SqLite::getInstance()->getServantDpsByID(id)));

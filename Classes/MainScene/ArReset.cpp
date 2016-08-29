@@ -75,7 +75,12 @@ void ArReset::initArResetLayer(int id)
 	arNowGJ->setString(StringUtils::format("+%.1f%%",dpsData*100).c_str());
 	dpsData += dpsUp*levelNum;
 	arNextGJ->setString(StringUtils::format("+%.1f%%", dpsData * 100).c_str());
-	arStoneNum->setString(StringUtils::format("%d", m_StoneNum).c_str());
+
+	
+	auto artifactStone = (ArtifactData::getInstance()->getLevel(m_id)-1) * 2;
+	artifactStone += pow(2, ArtifactData::getInstance()->getArNum()- 1);
+
+	arStoneNum->setString(StringUtils::format("%d", artifactStone).c_str());
 	reSetNum->setString(StringUtils::format("%d", 200).c_str());
 
 	reSet->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType Event)
@@ -84,9 +89,6 @@ void ArReset::initArResetLayer(int id)
 		{
 			ShopData::getInstance()->subShopGold(200);
 			ArtifactData::getInstance()->deleteArByID(m_id);
-			ArtifactData::getInstance()->addArtiStone(m_StoneNum);
-			ArtifactData::getInstance()->arReset(m_id);
-			m_StoneNum = 0;
 			arResetChange(this);
 		}
 	});

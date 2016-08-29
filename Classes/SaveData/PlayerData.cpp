@@ -25,6 +25,7 @@ PlayerData::PlayerData()
 	, m_latestTapMul(0)
 	, m_rareProb(10)
 	, m_goldMulBase(0)
+	, m_goldMulBox(0)
 {
 	auto hp = SqLite::getInstance()->getHpByID(m_level);
 	m_hpNow.number = hp.number;
@@ -120,7 +121,7 @@ void PlayerData::levelUp()
 
 void PlayerData::heroLevelUp()
 {
-	if (m_playerLevel < 8)
+	if (m_playerLevel < 7)
 	{
 		m_basedps = SqLite::getInstance()->getDps(m_playerLevel);
 		m_playerLevel++;
@@ -334,7 +335,6 @@ void PlayerData::servantLevelUp(int id)
 	
 	auto m_upGold = getservantLevelUpGold(id);
 	m_gold = Ruler::getInstance()->subNum(m_gold, m_upGold);
-	cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 }
 MyNum PlayerData::getservantLevelUpGold(int id)
 {

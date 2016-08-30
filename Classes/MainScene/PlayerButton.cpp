@@ -28,7 +28,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	Button* bt = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up");
 	Button* up10 = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up10");
 	Button* up100 = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up100");
-	Sprite* sp = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("head");
+	Sprite* sp = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("playerHead");
 	
 	up10->setVisible(false);
 	up100->setVisible(false);
@@ -395,7 +395,7 @@ bool PlayerButton::onTouchBegan(Touch * touch, Event* event)
 void PlayerButton::onTouchEnded(Touch * touch, Event * event)
 {
 	auto pos = this->convertTouchToNodeSpace(touch);
-	auto head = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("head");
+	auto head = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("playerHead");
 	if (head->getBoundingBox().containsPoint(pos))
 	{
 		auto playerInfo = PlayerInfo::create();

@@ -12,8 +12,9 @@ using namespace CocosDenshion;
 class BgMusic
 {
 public:
-	bool init();
+	void init();
 	static BgMusic* getInstance();
+	void setState(bool state){ m_Off_ON = state; }
 	void playBg(bool off_on);
 	void playEff();
 private:

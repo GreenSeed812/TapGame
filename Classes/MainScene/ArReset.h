@@ -13,15 +13,16 @@ public:
 	bool init();
 	void initArResetLayer(int id);
 	void setStoneNum(int num){ m_StoneNum = num; };
-	static void getListView(Node* lv){ g_lv = lv; }
-	void setNode(Node * node, int tag){ m_arBtn = node; g_tag = tag; }
+	void setWidget(Node * node){ g_widget = node; }
+	void setListView(Node * node){ g_listview = node; }
+	void setBtn(Node * node){ g_btn = node; }
 	void arResetChange(Ref*);
 	CREATE_FUNC(ArReset);
 private:
 	Node * m_node;
-	Node * m_arBtn;
-	static int g_tag;
-	static Node* g_lv;
+	static Node * g_widget;
+	static Node * g_listview;
+	static Node * g_btn;
 	Layer* m_layer;
 	int m_StoneNum;
 	int m_id;

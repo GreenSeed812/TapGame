@@ -224,7 +224,7 @@ void ArtifactData::deleteArByID(int id)
 		}
 	}
 	m_artifactStone += pow(2, m_artifactNum - 1);
-	for (std::vector<ArtiHave*>::iterator it = m_artifacts.begin(); it != m_artifacts.end();)
+	for (std::vector<ArtiHave*>::iterator it = m_artifacts.begin(); it != m_artifacts.end(); it++)
 	{
 		auto artSkill = SqLite::getInstance()->getArtifactSkillByID(id);
 		if ((*it)->m_artifactID == id)

@@ -36,6 +36,8 @@ public:
 	void deleteSprite(Node *);
 	void playMusic(Node * node);
 	void normalAtk();
+	static void setBg(bool off_on){ m_bg = off_on; }
+	static void setSou(bool off_on){ m_sou = off_on; }
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 private:
@@ -57,6 +59,8 @@ private:
 	MyNum num;
 	bool m_hitlogic;
 	int m_arCount;
+	static bool m_bg;
+	static bool m_sou;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

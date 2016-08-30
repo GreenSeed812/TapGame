@@ -3,12 +3,13 @@
 
 BgMusic*  bgm = nullptr;
 
-bool BgMusic::init()
+void BgMusic::init()
 {
 	m_count = 0;
+	m_Off_ON = true;
 	SimpleAudioEngine::getInstance()->preloadBackgroundMusic(BG_MUSIC);
 	SimpleAudioEngine::getInstance()->preloadEffect(EFFECT_MUSIC);
-	return true;
+	SimpleAudioEngine::getInstance()->setBackgroundMusicVolume((SimpleAudioEngine::getInstance()->getBackgroundMusicVolume() + 0.2f));	
 }
 
 BgMusic* BgMusic::getInstance()
@@ -25,15 +26,19 @@ void BgMusic::playBg(bool off_on)
 {
 	if (off_on)
 	{
-		SimpleAudioEngine::getInstance()->playBackgroundMusic(BG_MUSIC);		
+		SimpleAudioEngine::getInstance()->playBackgroundMusic(BG_MUSIC,true);	
 	}
 	else
 	{
+		SimpleAudioEngine::getInstance()->setEffectsVolume((SimpleAudioEngine::getInstance()->getEffectsVolume() - 1.0f));
 		SimpleAudioEngine::getInstance()->stopBackgroundMusic(BG_MUSIC);
 	}
 }
 
 void BgMusic::playEff()
 {
-	SimpleAudioEngine::getInstance()->playEffect(EFFECT_MUSIC);
+	if (m_Off_ON)
+	{
+		SimpleAudioEngine::getInstance()->playEffect(EFFECT_MUSIC);
+	}
 }

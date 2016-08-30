@@ -6,8 +6,8 @@ class ShopData
 public:
 	static ShopData* getInstance();
 	int getShopGold(){ return m_shopGold; }
-	void subShopGold(int gold){ m_shopGold -= gold; cocos2d::CCNotificationCenter::getInstance()->postNotification("arResetChange"); }
-	void addShopGold(int gold){ m_shopGold += gold; cocos2d::CCNotificationCenter::getInstance()->postNotification("arResetChange"); }
+	void subShopGold(int gold){ m_shopGold -= gold; }
+	void addShopGold(int gold){ m_shopGold += gold;  }
 private:
 	ShopData();
 	~ShopData();

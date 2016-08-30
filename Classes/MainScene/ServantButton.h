@@ -31,7 +31,7 @@ private:
 	int m_skillCount;
 	bool onTouchBegan(Touch * touch, Event* event);
 	void onTouchEnded(Touch * touch, Event * event);
-	void upLevel();
+	void upLevel(bool off_on);
 	void oneUp();
 	std::string m_skillUp;
 	std::string m_skillUnLock;

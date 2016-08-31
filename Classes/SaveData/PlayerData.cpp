@@ -88,8 +88,7 @@ bool PlayerData::init()
 	{
 		CCLOG("GetParseError %s\n", jsd.GetParseError());
 	}
-	CCLOG(json.c_str());
-	//
+	
 	if (jsd.IsObject() && jsd.HasMember("m_level")) 
 	{
 		m_level  = jsd["m_level"].GetInt();
@@ -149,6 +148,7 @@ bool PlayerData::init()
 			m_servantMul[i] = jsd[cocos2d::StringUtils::format("servantMul%d", i).c_str()].GetDouble();
 		}
 	}
+	ArtifactData::getInstance()->readUserDefault();
 	return true;
 }
 
@@ -444,11 +444,11 @@ int PlayerData::getLevelRelifeStone()
 }
 void PlayerData::saveUserData(float dt)
 {
-	rapidjson::Document document;
+	Document document;
 	document.SetObject();
-	rapidjson::Document::AllocatorType& allocator = document.GetAllocator();
-	rapidjson::Value array(rapidjson::kArrayType);
-	rapidjson::Value object(rapidjson::kObjectType);
+	Document::AllocatorType& allocator = document.GetAllocator();
+	Value array(kArrayType);
+	Value object(kObjectType);
 	document.AddMember("m_level", m_level, allocator);
 	document.AddMember("m_monsterNum", m_monsterNum, allocator);
 	document.AddMember("m_playerLevel", m_playerLevel, allocator);
@@ -487,8 +487,8 @@ void PlayerData::saveUserData(float dt)
 	{
 		auto str1 = cocos2d::StringUtils::format("lsthpNum%d", i);
 		auto str2 = cocos2d::StringUtils::format("lsthpMat%d", i);
-		document.AddMember(rapidjson::Value(str1.c_str(), allocator), m_latest.m_HpData.at(i).number, allocator);
-		document.AddMember(rapidjson::Value(str2.c_str(), allocator), m_latest.m_HpData.at(i).Mathbit, allocator);
+		document.AddMember(Value(str1.c_str(), allocator), m_latest.m_HpData.at(i).number, allocator);
+		document.AddMember(Value(str2.c_str(), allocator), m_latest.m_HpData.at(i).Mathbit, allocator);
 	}
 	for (int i = 0; i < 6; i++)
 	{
@@ -499,17 +499,15 @@ void PlayerData::saveUserData(float dt)
 	{
 		if (!m_servantLevel[i])
 			break;
-		document.AddMember(rapidjson::Value(cocos2d::StringUtils::format("servantLevel%d", i).c_str(), allocator), m_servantLevel[i], allocator);
-		document.AddMember(rapidjson::Value(cocos2d::StringUtils::format("servantBaseDpsMat%d", i).c_str(), allocator), m_servantBaseDps[i].Mathbit, allocator);
-		document.AddMember(rapidjson::Value(cocos2d::StringUtils::format("servantMul%d", i).c_str(), allocator), m_servantMul[i], allocator);
-		document.AddMember(rapidjson::Value(cocos2d::StringUtils::format("servantBaseDpsNum%d", i).c_str(), allocator), m_servantBaseDps[i].number, allocator);
+		document.AddMember(Value(cocos2d::StringUtils::format("servantLevel%d", i).c_str(), allocator), m_servantLevel[i], allocator);
+		document.AddMember(Value(cocos2d::StringUtils::format("servantBaseDpsMat%d", i).c_str(), allocator), m_servantBaseDps[i].Mathbit, allocator);
+		document.AddMember(Value(cocos2d::StringUtils::format("servantMul%d", i).c_str(), allocator), m_servantMul[i], allocator);
+		document.AddMember(Value(cocos2d::StringUtils::format("servantBaseDpsNum%d", i).c_str(), allocator), m_servantBaseDps[i].number, allocator);
 
 		
 	}
-	/*array.PushBack(object, allocator);
+	ArtifactData::getInstance()->saveUserDefault(document);
 
-	document.AddMember("array", array, allocator);
-*/
 	StringBuffer buffer;
 	rapidjson::Writer<StringBuffer> writer(buffer);
 	document.Accept(writer);

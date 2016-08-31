@@ -10,6 +10,9 @@ using namespace ui;
 
 Node* ArReset::g_lv = nullptr;
 int ArReset::g_tag = 0;
+Node * ArReset::g_widget = nullptr;
+Node * ArReset::g_listview = nullptr;
+Node * ArReset::g_btn = nullptr;
 
 bool ArReset::init()
 {
@@ -25,6 +28,7 @@ bool ArReset::init()
 	auto listener = EventListenerTouchOneByOne::create();
 	listener->setSwallowTouches(true);
 	listener->onTouchBegan = [](Touch*, Event*)->bool{return true; };
+	listener->onTouchBegan = [](Touch*, Event*)->bool{return true;};
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener,m_layer);
 
 	return true;
@@ -93,6 +97,8 @@ void ArReset::initArResetLayer(int id)
 			ShopData::getInstance()->subShopGold(200);
 			ArtifactData::getInstance()->deleteArByID(m_id);
 			m_arBtn->removeChildByTag(g_tag);
+			CCNotificationCenter::getInstance()->removeObserver(g_btn, "ArChange");
+			g_listview->removeChild(g_widget);
 			m_node->removeFromParent();
 		}
 	});

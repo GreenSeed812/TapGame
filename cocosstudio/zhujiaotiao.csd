@@ -9,7 +9,7 @@
           <AbstractNodeData Name="Layer" ActionTag="-1784766646" Tag="98" IconVisible="False" LeftMargin="1.1694" RightMargin="-1.1694" TopMargin="0.5229" BottomMargin="-0.5229" ctype="SpriteObjectData">
             <Size X="951.0000" Y="120.0000" />
             <Children>
-              <AbstractNodeData Name="head" ActionTag="649781542" Tag="99" IconVisible="False" LeftMargin="48.7087" RightMargin="807.2913" TopMargin="13.5569" BottomMargin="11.4431" ctype="SpriteObjectData">
+              <AbstractNodeData Name="playerHead" ActionTag="649781542" Tag="99" IconVisible="False" LeftMargin="48.7087" RightMargin="807.2913" TopMargin="13.5569" BottomMargin="11.4431" ctype="SpriteObjectData">
                 <Size X="95.0000" Y="95.0000" />
                 <AnchorPoint ScaleX="0.4325" ScaleY="0.4111" />
                 <Position X="89.7962" Y="50.4976" />
@@ -35,7 +35,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="text" ActionTag="1243917018" Tag="41" IconVisible="False" LeftMargin="216.2608" RightMargin="226.7392" TopMargin="34.2072" BottomMargin="36.7928" FontSize="20" LabelText="Lv 1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="text" ActionTag="1243917018" Tag="41" IconVisible="False" LeftMargin="216.2628" RightMargin="226.7372" TopMargin="34.2083" BottomMargin="36.7917" FontSize="20" LabelText="Lv 1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="43.0000" Y="24.0000" />
                     <AnchorPoint ScaleX="0.5849" ScaleY="0.5797" />
                     <Position X="241.4135" Y="50.7045" />

@@ -43,7 +43,7 @@ void ServantButton::initServantLayer(int id)
 	auto up100 = (Button*)m_layer->getChildByName("Button_1_1_0");
 	auto dps = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("dps");
 	auto gold = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("gold");
-	auto head = (Sprite*)m_layer->getChildByName("head");
+	auto head = (Sprite*)m_layer->getChildByName("serHead");
 	auto name = (Text*)m_layer->getChildByName("discribe")->getChildByName("name");
 
 	up10->setVisible(false);
@@ -64,32 +64,36 @@ void ServantButton::initServantLayer(int id)
 		if (Event == Widget::TouchEventType::ENDED)
 		{
 			oneUp();
-			upLevel();
-			coinChange(this);
+			upLevel(true);
+			//coinChange(this);
+			cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 		}
 	});
 
 	up10->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType Event){
 		if (Event == Widget::TouchEventType::ENDED)
 		{
-			for (size_t i = 0; i < 10; i++)
+			for (int i = 0; i < 10; i++)
 			{
 				oneUp();
 			}
-			upLevel();
-			coinChange(this);
+			upLevel(true);
+			//coinChange(this);
+			cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 		}
 	});
 
 	up100->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType Event){
 		if (Event == Widget::TouchEventType::ENDED)
 		{
-			for (size_t i = 0; i < 100; i++)
+			for (int i = 0; i < 100; i++)
 			{
 				oneUp();
 			}
-			upLevel();
-			coinChange(this);
+			upLevel(true);
+			//coinChange(this);
+			auto lvi = PlayerData::getInstance()->getServantLevel(m_id);
+			cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 		}
 	});
 
@@ -111,7 +115,6 @@ void ServantButton::coinChange(Ref*)
 	auto * textlv = (Text*)m_layer->getChildByName("discribe")->getChildByName("lv");
 	Sprite* skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d", m_skillCount + 1));
 	dps->setString(Ruler::getInstance()->showNum(m_baseDps));
-	gold->setString(Ruler::getInstance()->showNum(m_gold));
 	textlv->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getServantLevel(m_id)));
 	MyNum judge;
 
@@ -120,7 +123,6 @@ void ServantButton::coinChange(Ref*)
 		judge = Ruler::getInstance()->subNum(Ruler::getInstance()->multiplay(m_gold, 5 * (1 - ArtifactData::getInstance()->getSSUD())), *PlayerData::getInstance()->getGold());
 		bt->loadTextureNormal("ui/downUi/servant/anniu2.png");
 		bt->loadTexturePressed("ui/downUi/servant/anniu2.png");
-		skillSprite->setVisible(true);
 		text->setString(m_skillUnLock);
 		gold->setString(Ruler::getInstance()->showNum(Ruler::getInstance()->multiplay(m_gold, 5 * (1 - ArtifactData::getInstance()->getSSUD()))));
 	}
@@ -151,7 +153,7 @@ bool ServantButton::onTouchBegan(Touch * touch, Event* event)
 void ServantButton::onTouchEnded(Touch * touch, Event * event)
 {
 	auto pos = this->convertTouchToNodeSpace(touch);
-	auto head = (Sprite*)m_layer->getChildByName("head");
+	auto head = (Sprite*)m_layer->getChildByName("serHead");
 	if (head->getBoundingBox().containsPoint(pos))
 	{
 		auto serInfo = ServantInfo::create();
@@ -160,7 +162,7 @@ void ServantButton::onTouchEnded(Touch * touch, Event * event)
 	}
 }
 
-void ServantButton::upLevel()
+void ServantButton::upLevel(bool off_on)
 {
 	auto up10 = (Button*)m_layer->getChildByName("Button_1_1");
 	auto up100 = (Button*)m_layer->getChildByName("Button_1_1_0");
@@ -168,7 +170,7 @@ void ServantButton::upLevel()
 	MyNum judge10;
 	MyNum judge100;
 	auto levelNow = PlayerData::getInstance()->getServantLevel(m_id);
-	for (size_t i = levelNow; i < levelNow+100; i++)
+	for (size_t i = levelNow; i < (levelNow+100); i++)
 	{
 		auto pow1 = pow(i + 1, 0.7);
 		auto pow2 = pow(i + 1, 6);
@@ -176,7 +178,7 @@ void ServantButton::upLevel()
 		mul = 1 + 1 / (pow(i + 1, 0.45) - 1 / pow(i+ 1, 6.13));
 		auto gold = Ruler::getInstance()->multiplayUp(m_gold, mul);
 		upGold = Ruler::getInstance()->addNum(gold, upGold);
-		if (i == levelNow+10)
+		if (i == (levelNow+10))
 		{
 			judge10 = Ruler::getInstance()->subNum(upGold, *PlayerData::getInstance()->getGold());
 			if (Ruler::getInstance()->Zero(judge10))
@@ -193,8 +195,11 @@ void ServantButton::upLevel()
 	judge100 = Ruler::getInstance()->subNum(upGold, *PlayerData::getInstance()->getGold());
 	if (Ruler::getInstance()->Zero(judge100))
 	{
-		up100->setVisible(true);
-		m_upGold100 = upGold;
+		if (off_on)
+		{
+			up100->setVisible(true);
+			m_upGold100 = upGold;
+		}
 	}
 	else
 	{
@@ -216,8 +221,9 @@ void ServantButton::oneUp()
 			frame->addChild(newNode);
 			ListView* lv = (ListView*)g_lv;
 			lv->pushBackCustomItem(frame);
+			lv->jumpToBottom();
 		}
-
+		
 		PlayerData::getInstance()->servantLevelUp(m_id);
 		auto i = PlayerData::getInstance()->getServantLevel(m_id);
 		auto pow1 = pow(PlayerData::getInstance()->getServantLevel(m_id) + 1, 0.7);
@@ -245,6 +251,8 @@ void ServantButton::oneUp()
 	}
 	else
 	{
+		auto skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d", m_skillCount + 1));
+		skillSprite->setVisible(true);
 		auto goldNum = Ruler::getInstance()->multiplay(m_gold, 5);
 		PlayerData::getInstance()->subGold(&goldNum);
 		PlayerData::getInstance()->unlockSernantSkill(m_id, m_skillCount);

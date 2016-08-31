@@ -193,8 +193,6 @@ void PlayerData::levelUp()
 			m_latest.randNpc[1] %= 25;
 		}
 	}
-
-
 }
 
 void PlayerData::heroLevelUp()

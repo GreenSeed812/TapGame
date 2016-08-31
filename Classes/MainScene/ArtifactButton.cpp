@@ -9,6 +9,8 @@ using namespace ui;
 
 Node* ArtifactButton::g_lv = nullptr;
 Node * ArtifactButton::g_node = nullptr;
+Node * ArtifactButton::g_button = nullptr;
+Node * ArtifactButton::g_widget = nullptr;
 
 bool ArtifactButton::init()
 {
@@ -18,10 +20,10 @@ bool ArtifactButton::init()
 	}
 	m_levelUp = false;
 	m_StoneNum = 0;
-	node = CSLoader::createNode("artifactNode.csb");
-	m_layer = (Layer*)node->getChildByName("Layer");
-	this->setContentSize(node->getContentSize());
-	this->addChild(node);
+	m_node = CSLoader::createNode("artifactNode.csb");
+	m_layer = (Layer*)m_node->getChildByName("Layer");
+	this->setContentSize(m_node->getContentSize());
+	this->addChild(m_node);
 
 	return true;
 }
@@ -43,7 +45,7 @@ void ArtifactButton::initArtifactLayer()
 	}
 
 	//»ñÈ¡¿Ø¼þ
-	auto head = (Sprite*)m_layer->getChildByName("head");
+	auto head = (Sprite*)m_layer->getChildByName("arHead");
 	auto name = (Text*)m_layer->getChildByName("discribe")->getChildByName("name");
 	auto level = (Text*)m_layer->getChildByName("discribe")->getChildByName("lv");
 	auto effect = (Text*)m_layer->getChildByName("discribe")->getChildByName("effect");
@@ -87,28 +89,32 @@ void ArtifactButton::initArtifactLayer()
 
 void ArtifactButton::arChange(Ref*)
 {
-	if (node != nullptr)
+	if (m_node != nullptr)
 	{
-		auto bt = (Button*)m_layer->getChildByName("up");
-		if (m_levelUp)
+		if (m_layer)
 		{
-			auto judge = m_lhs - ArtifactData::getInstance()->getNeededArStone();
-
-			if (judge >= 0)
+			auto bt = (Button*)m_layer->getChildByName("up");
+			if (m_levelUp)
 			{
-				m_StoneNum += ArtifactData::getInstance()->getNeededArStone();
-				bt->setEnabled(true);
-				m_layer->setColor(Color3B(255, 255, 255));
+				auto judge = m_lhs - ArtifactData::getInstance()->getNeededArStone();
+
+				if (judge >= 0)
+				{
+					m_StoneNum += ArtifactData::getInstance()->getNeededArStone();
+					bt->setEnabled(true);
+					m_layer->setColor(Color3B(255, 255, 255));
+				}
+				else
+				{
+					bt->setEnabled(false);
+				}
 			}
 			else
 			{
 				bt->setEnabled(false);
 			}
 		}
-		else
-		{
-			bt->setEnabled(false);
-		}
+		
 	}
 }
 
@@ -118,18 +124,19 @@ bool ArtifactButton::onTouchBegan(Touch * touch, Event* event)
 }
 void ArtifactButton::onTouchEnded(Touch * touch, Event * event)
 {
-	if (node != nullptr)
+	if (m_node != nullptr)
 	{
-		auto pos = this->convertTouchToNodeSpace(touch);
-		auto head = (Sprite*)m_layer->getChildByName("head");
+		auto pos = convertTouchToNodeSpace(touch);
+		auto head = (Sprite*)m_layer->getChildByName("arHead");
 		if (head->getBoundingBox().containsPoint(pos))
 		{
 			auto arReset = ArReset::create();
-			arReset->setNode(g_lv, node->getTag());
+			arReset->setListView(g_lv);
+			arReset->setWidget(g_widget);
+			arReset->setBtn(g_button);
 			arReset->setStoneNum(m_StoneNum);
 			arReset->initArResetLayer(m_id);
 			g_node->addChild(arReset);
-
 		}
 	}
 }

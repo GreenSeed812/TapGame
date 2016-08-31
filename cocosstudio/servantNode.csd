@@ -9,7 +9,7 @@
           <AbstractNodeData Name="Layer" ActionTag="-1784766646" Tag="98" IconVisible="False" LeftMargin="0.0001" RightMargin="-0.0001" TopMargin="-0.3826" BottomMargin="0.3826" ctype="SpriteObjectData">
             <Size X="951.0000" Y="120.0000" />
             <Children>
-              <AbstractNodeData Name="head" ActionTag="649781542" Tag="99" IconVisible="False" LeftMargin="73.2700" RightMargin="831.7300" TopMargin="37.0000" BottomMargin="37.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="serHead" ActionTag="649781542" Tag="99" IconVisible="False" LeftMargin="73.2700" RightMargin="831.7300" TopMargin="37.0000" BottomMargin="37.0000" ctype="SpriteObjectData">
                 <Size X="46.0000" Y="46.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="96.2700" Y="60.0000" />

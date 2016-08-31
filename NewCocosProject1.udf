@@ -9,13 +9,7 @@
     </Item>
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="ArtifactLayer1.csd" />
-          <FilePathData Path="zhuansheng.csd" />
-          <FilePathData Path="zhujiaojieshao.csd" />
-          <FilePathData Path="yongbing.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="zhuansheng.csd" />
+        <ActiveDocument />
       </Value>
     </Item>
   </Properties>

@@ -25,6 +25,8 @@ USING_NS_CC_EXT;
 
 using namespace ui;
 
+bool HelloWorld::m_bg = true;
+bool HelloWorld::m_sou = true;
 
 Scene* HelloWorld::createScene()
 {
@@ -380,7 +382,6 @@ void HelloWorld::uiCallBack()
 					widget->addChild(bt);
 					ListView* lv = (ListView*)m_heroLayer->getChildByName("ListView");
 					lv->pushBackCustomItem(widget);
-
 				}
 			}
 			else
@@ -408,7 +409,6 @@ void HelloWorld::uiCallBack()
 			bt->setEnabled(false);
 			if (initDownLayer(m_servantLayer))
 			{
-
 				ListView* lv = (ListView*)m_servantLayer->getChildByName("ListView");
 				ServantButton::getListView(lv);
 				TextBMFont* dps = (TextBMFont*)m_servantLayer->getChildByName("message")->getChildByName("Dps");
@@ -475,6 +475,7 @@ void HelloWorld::uiCallBack()
 		if (type == Widget::TouchEventType::ENDED) {
 			// 注意node的生命周期的问题  
 			Button* bt = (Button*)sender;
+			settingLayer::setOff_On(m_bg, m_sou);
 			auto layer = settingLayer::create();
 			this->addChild(layer);
 		}
@@ -642,16 +643,20 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 		auto btn = (Button*)downLayer->getChildByName("getArtifact");
 		btn->addTouchEventListener([downLayer, this](Ref* sender, Widget::TouchEventType type) {
 			if (type == Widget::TouchEventType::ENDED) {
-				ArtifactButton::getRootNode(downLayer);
+				ArtifactButton::setRootNode(downLayer);
 				ListView* lv = (ListView*)m_artifactLayer->getChildByName("ListView");
 				ArtifactButton::setListView(lv);
 				auto button = ArtifactButton::create();
 				button->setTag(m_arCount);
 				button->initArtifactLayer();
 				auto widget = Widget::create();
+				widget->setName("arWidget");
 				widget->setContentSize(button->getContentSize());
 				widget->addChild(button);
+				ArtifactButton::setArButtonNode(button);
+				ArtifactButton::setWidget(widget);
 				lv->pushBackCustomItem(widget);
+				lv->jumpToBottom();
 			}
 		});
 	}

@@ -9,14 +9,14 @@
           <AbstractNodeData Name="Layer" ActionTag="1557582561" Tag="194" IconVisible="False" LeftMargin="-0.0001" RightMargin="0.0001" TopMargin="-1.9955" BottomMargin="1.9955" ctype="SpriteObjectData">
             <Size X="951.0000" Y="120.0000" />
             <Children>
-              <AbstractNodeData Name="head" ActionTag="-1731785946" Tag="196" IconVisible="False" LeftMargin="30.2700" RightMargin="788.7300" TopMargin="-3.0000" BottomMargin="-3.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="arHead" ActionTag="-1731785946" Tag="196" IconVisible="False" LeftMargin="73.2700" RightMargin="831.7300" TopMargin="37.0000" BottomMargin="37.0000" ctype="SpriteObjectData">
                 <Size X="46.0000" Y="46.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="96.2700" Y="60.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1012" Y="0.5000" />
-                <PreSize X="0.1388" Y="1.0500" />
+                <PreSize X="0.0484" Y="0.3833" />
                 <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>

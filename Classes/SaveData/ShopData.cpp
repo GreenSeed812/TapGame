@@ -1,7 +1,7 @@
 #include "ShopData.h"
 static ShopData* g_SD = nullptr;
 ShopData::ShopData()
-	:m_shopGold(0)
+	:m_shopGold(1000)
 {
 }
 

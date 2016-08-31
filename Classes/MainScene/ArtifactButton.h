@@ -11,8 +11,8 @@ public:
 	bool init();
 	void initArtifactLayer();
 	void arChange(Ref*);
-	static void getListView(Node* lv){ g_lv = lv; }
-	static void getRootNode(Node * node){ g_node = node; };
+	static void setListView(Node* lv){ g_lv = lv; }
+	static void getRootNode(Node*node){ g_node = node;};
 	CREATE_FUNC(ArtifactButton);
 
 private:

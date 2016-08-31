@@ -51,17 +51,18 @@ bool HelloWorld::init()
     }
 	{
 		MyNum num;
-		num.Mathbit = 50;
-
-		num.number = 500;
+		num.Mathbit = 1;
+		num.number = 600;
 		PlayerData::getInstance()->addGold(&num);
 
 	}
+	BgMusic::getInstance()->playBg(true);
 	m_hitlogic = true;
 	m_heroLayer = nullptr;
 	m_servantLayer = nullptr;
     m_artifactLayer = nullptr;
 	m_shopLayer = nullptr;
+	m_arCount = 0;
     rootNode = CSLoader::createNode("MainScene.csb");
 	addChild(rootNode);
 	Slider * hpSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider");
@@ -91,6 +92,8 @@ bool HelloWorld::init()
 	PlayerButton::getSkillLayer(rootNode->getChildByName("UiNode")->getChildByName("SkillLayer"));
 	PlayerButton::getRootNode(rootNode);
 	ServantButton::getRootNode(rootNode);
+	TextBMFont* waveNum = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("WaveNum");
+	waveNum->setString(StringUtils::format("%d/10", PlayerData::getInstance()->getWaveNow()));
     return true;
 }
 void HelloWorld::coinChange(Ref *ref)
@@ -225,6 +228,7 @@ void HelloWorld::createMonster()
 }
 void HelloWorld::update(float dt)
 {
+	PlayerData::getInstance()->saveUserData(dt);
 	if (m_hitlogic == true)
 	{
 		auto heroDps = PlayerData::getInstance()->getHeroDps();
@@ -276,6 +280,14 @@ void HelloWorld::update(float dt)
 				PlayerData::getInstance()->setWave(0);
 				MyState::getInstance()->setBossButtonDown(true);
 				timeNow = PlayerData::getInstance()->getMaxTime();
+				Node* bossButtonNode = (Node*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("escapeBoss");
+				if (!bossButtonNode->getChildByName("bt"))
+				{
+					bossBt = bossButton::create();
+					bossButtonNode->addChild(bossBt);
+					bossBt->setName("bt");
+
+				}
 				bossBt->onTouchEnded(nullptr, nullptr);
 			}
 			else
@@ -632,8 +644,9 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 			if (type == Widget::TouchEventType::ENDED) {
 				ArtifactButton::getRootNode(downLayer);
 				ListView* lv = (ListView*)m_artifactLayer->getChildByName("ListView");
-				ArtifactButton::getListView(lv);
+				ArtifactButton::setListView(lv);
 				auto button = ArtifactButton::create();
+				button->setTag(m_arCount);
 				button->initArtifactLayer();
 				auto widget = Widget::create();
 				widget->setContentSize(button->getContentSize());
@@ -868,7 +881,7 @@ void HelloWorld::normalAtk()
 	auto animate = Animate::create(ani);
 	auto r = random(0, 360);
 	auto rotate = RotateBy::create(0.0416f, Vec3(0, 0, r));
-	auto spawn = Spawn::create(rotate, animate, NULL);
+	auto spawn = Spawn::create(rotate, animate, CallFuncN::create(CC_CALLBACK_1(HelloWorld::playMusic, this)), NULL);
 
 	auto seq = Sequence::create(spawn, CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
 
@@ -910,9 +923,10 @@ void HelloWorld::attackeffection()
 }
 void HelloWorld::deleteSprite(Node *node)
 {
+	node->removeFromParent();	
+}
 
-	node->removeFromParent();
-	
-
-		
+void HelloWorld::playMusic(Node * node)
+{
+	BgMusic::getInstance()->playEff();
 }

@@ -34,6 +34,7 @@ public:
 	void skillEff(float);
 	void attackeffection();
 	void deleteSprite(Node *);
+	void playMusic(Node * node);
 	void normalAtk();
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
@@ -55,6 +56,7 @@ private:
 	Sprite * effectSprite;
 	MyNum num;
 	bool m_hitlogic;
+	int m_arCount;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

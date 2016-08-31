@@ -15,6 +15,8 @@ public:
 private:
 	Node* node;
 	MyNum m_gold;
+	MyNum m_upGold10;
+	MyNum m_upGold100;
 	MyNum m_baseDps;
 	MyNum m_dps;
 	static Node* g_lv;
@@ -29,6 +31,10 @@ private:
 	int m_skillCount;
 	bool onTouchBegan(Touch * touch, Event* event);
 	void onTouchEnded(Touch * touch, Event * event);
+	void upLevel();
+	void oneUp();
+	std::string m_skillUp;
+	std::string m_skillUnLock;
 };
 
 

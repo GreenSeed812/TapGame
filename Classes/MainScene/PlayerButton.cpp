@@ -1,5 +1,6 @@
 #include"MainScene/PlayerButton.h"
 #include"MainScene/PlayerInfo.h"
+#include"Relife.h"
 #include "ui/CocosGUI.h"
 #include <cocostudio/CocoStudio.h> 
 #include "SaveData/PlayerData.h"
@@ -43,6 +44,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 			{
 				upLevelCount();
 				PlayerData::getInstance()->heroLevelUp();
+				cocos2d::CCNotificationCenter::getInstance()->postNotification("TapDpsChange");
+				cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 				//PlayerData::getInstance()->subGold(&m_upGold);
 				double playerLevel = PlayerData::getInstance()->getPlayerLevel();
 				auto mul = 1 / pow(playerLevel, 0.55) - 1 / pow(playerLevel, 1.03) + 1;
@@ -60,8 +63,11 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 					double playerLevel = PlayerData::getInstance()->getPlayerLevel();
 					auto mul = 1 / pow(playerLevel, 0.55) - 1 / pow(playerLevel, 1.03) + 1;
 					m_upGold = Ruler::getInstance()->multiplayUp(m_upGold, mul);
-				}		
+				}	
+				cocos2d::CCNotificationCenter::getInstance()->postNotification("TapDpsChange");
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
+				upLevelCount();
+				//cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 			}
 		});
 		up100->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type)
@@ -75,7 +81,10 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 					auto mul = 1 / pow(playerLevel, 0.55) - 1 / pow(playerLevel, 1.03) + 1;
 					m_upGold = Ruler::getInstance()->multiplayUp(m_upGold, mul);
 				}
+				cocos2d::CCNotificationCenter::getInstance()->postNotification("TapDpsChange");
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
+				upLevelCount();
+				//cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 			}
 		});
 
@@ -197,7 +206,9 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
-
+				auto relife = Relife::create();
+				relife->initRelife();
+				g_node->addChild(relife);
 			}
 		});
 	}
@@ -226,19 +237,25 @@ void PlayerButton::coinChange(Ref* pSender)
 	}
 	if (m_type == PLAYER)
 	{
-		//下级增加dps计算，有问题
 		auto level = PlayerData::getInstance()->getPlayerLevel();
-		auto baseDps = SqLite::getInstance()->getDps(level);
-		double f = (1 + 1 / std::pow((double)level, 0.6) - 1 / pow((double)level, 1.008));
-		baseDps = Ruler::getInstance()->multiplay(baseDps, f);
-		dps->setString(StringUtils::format("+%.1lf%%", baseDps).c_str());
+		auto baseDps = PlayerData::getInstance()->getDps();
+		
+		if (level < 8)
+		{
+			baseDps = Ruler::getInstance()->subNum(SqLite::getInstance()->getDps(level), SqLite::getInstance()->getDps(level-1));
+		}
+		else
+		{
+			double f = (1 / std::pow((double)level, 0.6) - 1 / pow((double)level, 1.008));
+			baseDps = Ruler::getInstance()->multiplay(baseDps, f);
+		}
+		dps->setString(Ruler::getInstance()->showNum(baseDps));
 		
 		auto dps10 = (TextBMFont*)up10->getChildByName("needGold_1");
 		auto dps100 = (TextBMFont*)up100->getChildByName("needGold_1_0");
 		textN->setString("Player");
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getPlayerLevel()));
 		textD->setString(StringUtils::format("%d",PlayerData::getInstance()->getPlayerLevel()));
-		upLevelCount();
 	}
 	else if (m_type == SKILL1)
 	{
@@ -293,7 +310,7 @@ void PlayerButton::coinChange(Ref* pSender)
 	}
 	else if (m_type == SKILL5)
 	{
-		dps->setString(StringUtils::format("+%.1lf%%", SqLite::getInstance()->getEffPer(4)).c_str());
+		dps->setString(StringUtils::format("+%.1lf", SqLite::getInstance()->getEffPer(4)).c_str());
 		textN->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(4).c_str()));
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
 		float eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);

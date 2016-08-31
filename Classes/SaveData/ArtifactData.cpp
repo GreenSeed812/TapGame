@@ -214,7 +214,7 @@ int ArtifactData::getMaxLevel(int id)
 }
 void ArtifactData::deleteArByID(int id)
 {
-
+	
 	for (int i = 0; i < m_artifactNum; i++)
 	{
 		if (m_artifacts.at(i)->m_artifactID == id)
@@ -223,7 +223,7 @@ void ArtifactData::deleteArByID(int id)
 
 		}
 	}
-	m_artifactStone += pow(2, m_artifactNum-1);
+	m_artifactStone += pow(2, m_artifactNum - 1);
 	for (std::vector<ArtiHave*>::iterator it = m_artifacts.begin(); it != m_artifacts.end();)
 	{
 		auto artSkill = SqLite::getInstance()->getArtifactSkillByID(id);

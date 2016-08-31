@@ -1,5 +1,6 @@
 #include "ClickLayer.h"
 #include <cocostudio/CocoStudio.h>
+#include "Ui\BgMusic.h"
 #include "cocos-ext.h"
 #include "Tool/SqLite.h"
 #include "SaveData/PlayerData.h"

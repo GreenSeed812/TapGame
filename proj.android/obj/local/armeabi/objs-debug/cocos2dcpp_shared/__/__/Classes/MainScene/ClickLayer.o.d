@@ -431,6 +431,9 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/MainScene/ClickLaye
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../renderer/CCRenderer.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCBoneNode.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CSLoader.h \
+ jni/../../Classes/Ui\BgMusic.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../include/SimpleAudioEngine.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../include/Export.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/extensions/./cocos-ext.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/extensions/./ExtensionMacros.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/extensions/./GUI/CCControlExtension/CCControlExtensions.h \
@@ -1364,6 +1367,12 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../rend
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCBoneNode.h:
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CSLoader.h:
+
+jni/../../Classes/Ui\BgMusic.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../include/SimpleAudioEngine.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../include/Export.h:
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/extensions/./cocos-ext.h:
 

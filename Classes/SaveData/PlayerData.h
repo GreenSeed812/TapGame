@@ -76,7 +76,8 @@ public:
 	void openSkill(int i){ m_skillOpen[i] = true; }
 	void subHp(){ m_hpNow = Ruler::getInstance()->subNum(m_hpNow,m_basedps); }
 	void unlockSernantSkill(int servantid, int skillid);
-	void saveUserData();
+	void saveUserData(float dt);
+	bool init();
 private:
 	int m_waveNow;
 	int m_level;

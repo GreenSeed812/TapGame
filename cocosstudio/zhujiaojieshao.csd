@@ -29,7 +29,7 @@
                 <PreSize X="0.8011" Y="0.0099" />
                 <FileData Type="Normal" Path="xiaotiaotiao.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Info" ActionTag="110741711" Tag="471" IconVisible="False" LeftMargin="134.3881" RightMargin="135.6119" TopMargin="415.3845" BottomMargin="1175.6155" FontSize="36" LabelText="来自于黑暗神庙，由于感知到了艾泽拉斯大陆上即将&#xA;出现的危机，与大陆上的英雄们一起踏上了拯救世界&#xA;的旅途。" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Info" ActionTag="110741711" Tag="471" IconVisible="False" LeftMargin="134.3881" RightMargin="135.6119" TopMargin="415.3845" BottomMargin="1175.6155" FontSize="36" LabelText="来自于黑暗神庙，由于感知到了艾泽拉斯大陆上即将&#xA;出现的危机，与大陆上的英雄们一起踏上了拯救世界&#xA;的旅途。" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="831.0000" Y="129.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="549.8881" Y="1240.1155" />
@@ -58,7 +58,7 @@
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="skillInfo_1" ActionTag="917254350" Tag="497" IconVisible="False" LeftMargin="124.2342" RightMargin="126.7658" TopMargin="70.3430" BottomMargin="34.6570" FontSize="24" LabelText="一次点击伤害111.1aa的一击" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="skillInfo_1" ActionTag="917254350" Tag="497" IconVisible="False" LeftMargin="124.2342" RightMargin="126.7658" TopMargin="70.3430" BottomMargin="34.6570" IsCustomSize="True" FontSize="18" LabelText="一次点击伤害111.1aa的一击" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="300.0000" Y="24.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="274.2342" Y="46.6570" />
@@ -92,7 +92,7 @@
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="skillInfo_2" ActionTag="1853151841" Tag="500" IconVisible="False" LeftMargin="96.5543" RightMargin="106.4457" TopMargin="73.0908" BottomMargin="31.9092" FontSize="24" LabelText="在30秒内，按住每秒自动点击7次" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="skillInfo_2" ActionTag="1853151841" Tag="500" IconVisible="False" LeftMargin="96.5543" RightMargin="106.4457" TopMargin="73.0908" BottomMargin="31.9092" IsCustomSize="True" FontSize="18" LabelText="在30秒内，按住每秒自动点击7次" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="348.0000" Y="24.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="270.5543" Y="43.9092" />
@@ -115,7 +115,7 @@
                   <AbstractNodeData Name="skill3" ActionTag="596182932" Tag="458" IconVisible="False" LeftMargin="226.2669" RightMargin="106.7331" TopMargin="310.7507" BottomMargin="586.2493" LeftEage="181" RightEage="181" TopEage="42" BottomEage="42" Scale9OriginX="181" Scale9OriginY="42" Scale9Width="189" Scale9Height="45" ctype="ImageViewObjectData">
                     <Size X="551.0000" Y="129.0000" />
                     <Children>
-                      <AbstractNodeData Name="skillInfo_3" ActionTag="703468730" Tag="502" IconVisible="False" LeftMargin="116.7951" RightMargin="146.2049" TopMargin="74.7885" BottomMargin="30.2115" FontSize="24" LabelText="在30秒内，暴击几率增加x%" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="skillInfo_3" ActionTag="703468730" Tag="502" IconVisible="False" LeftMargin="116.7951" RightMargin="146.2049" TopMargin="74.7885" BottomMargin="30.2115" IsCustomSize="True" FontSize="18" LabelText="在30秒内，暴击几率增加x%" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="288.0000" Y="24.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="260.7951" Y="42.2115" />
@@ -149,14 +149,14 @@
                   <AbstractNodeData Name="skill4" ActionTag="-161514486" Tag="460" IconVisible="False" LeftMargin="224.7720" RightMargin="108.2280" TopMargin="453.4357" BottomMargin="443.5643" LeftEage="181" RightEage="181" TopEage="42" BottomEage="42" Scale9OriginX="181" Scale9OriginY="42" Scale9Width="189" Scale9Height="45" ctype="ImageViewObjectData">
                     <Size X="551.0000" Y="129.0000" />
                     <Children>
-                      <AbstractNodeData Name="skillInfo_4" ActionTag="231334820" Tag="503" IconVisible="False" LeftMargin="53.8270" RightMargin="53.1730" TopMargin="74.8508" BottomMargin="30.1492" FontSize="24" LabelText="在30秒内每秒x次点击攻击，但不产生暴击" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="444.0000" Y="24.0000" />
+                      <AbstractNodeData Name="skillInfo_4" ActionTag="231334820" Tag="503" IconVisible="False" LeftMargin="109.3270" RightMargin="108.6730" TopMargin="77.8508" BottomMargin="33.1492" FontSize="18" LabelText="在30秒内每秒x次点击攻击，但不产生暴击" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="333.0000" Y="18.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="275.8270" Y="42.1492" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="239" G="203" B="148" />
                         <PrePosition X="0.5006" Y="0.3267" />
-                        <PreSize X="0.8058" Y="0.1860" />
+                        <PreSize X="0.6044" Y="0.1395" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
@@ -183,14 +183,14 @@
                   <AbstractNodeData Name="skill5" ActionTag="60122475" Tag="462" IconVisible="False" LeftMargin="226.8311" RightMargin="106.1689" TopMargin="586.4983" BottomMargin="310.5017" LeftEage="181" RightEage="181" TopEage="42" BottomEage="42" Scale9OriginX="181" Scale9OriginY="42" Scale9Width="189" Scale9Height="45" ctype="ImageViewObjectData">
                     <Size X="551.0000" Y="129.0000" />
                     <Children>
-                      <AbstractNodeData Name="skillInfo_5" ActionTag="421772204" Tag="504" IconVisible="False" LeftMargin="114.1595" RightMargin="124.8405" TopMargin="71.2558" BottomMargin="33.7442" FontSize="24" LabelText="在30秒内，点击攻击力增加x%" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="312.0000" Y="24.0000" />
+                      <AbstractNodeData Name="skillInfo_5" ActionTag="421772204" Tag="504" IconVisible="False" LeftMargin="153.1595" RightMargin="163.8405" TopMargin="74.2558" BottomMargin="36.7442" FontSize="18" LabelText="在30秒内，点击攻击力增加x%" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="234.0000" Y="18.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="270.1595" Y="45.7442" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="239" G="203" B="148" />
                         <PrePosition X="0.4903" Y="0.3546" />
-                        <PreSize X="0.5662" Y="0.1860" />
+                        <PreSize X="0.4247" Y="0.1395" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
@@ -217,14 +217,14 @@
                   <AbstractNodeData Name="skill6" ActionTag="-662509282" Tag="464" IconVisible="False" LeftMargin="232.6982" RightMargin="100.3018" TopMargin="724.6652" BottomMargin="172.3348" LeftEage="181" RightEage="181" TopEage="42" BottomEage="42" Scale9OriginX="181" Scale9OriginY="42" Scale9Width="189" Scale9Height="45" ctype="ImageViewObjectData">
                     <Size X="551.0000" Y="129.0000" />
                     <Children>
-                      <AbstractNodeData Name="skillInfo_6" ActionTag="-679268983" Tag="505" IconVisible="False" LeftMargin="30.1465" RightMargin="40.8535" TopMargin="69.1217" BottomMargin="35.8783" FontSize="24" LabelText="在30秒内每次点击掉落x%该关卡普通掉落金币" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="480.0000" Y="24.0000" />
+                      <AbstractNodeData Name="skillInfo_6" ActionTag="-679268983" Tag="505" IconVisible="False" LeftMargin="90.1465" RightMargin="100.8535" TopMargin="72.1217" BottomMargin="38.8783" FontSize="18" LabelText="在30秒内每次点击掉落x%该关卡普通掉落金币" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="360.0000" Y="18.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="270.1465" Y="47.8783" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="239" G="203" B="148" />
                         <PrePosition X="0.4903" Y="0.3711" />
-                        <PreSize X="0.8711" Y="0.1860" />
+                        <PreSize X="0.6534" Y="0.1395" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
@@ -248,17 +248,17 @@
                     <PreSize X="0.6233" Y="0.1257" />
                     <FileData Type="Normal" Path="xiaoguok (2).png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="skill7" ActionTag="522199244" Tag="454" IconVisible="False" LeftMargin="225.7173" RightMargin="107.2827" TopMargin="869.1796" BottomMargin="27.8205" LeftEage="181" RightEage="181" TopEage="42" BottomEage="42" Scale9OriginX="181" Scale9OriginY="42" Scale9Width="189" Scale9Height="45" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="skill7" ActionTag="522199244" Tag="454" IconVisible="False" LeftMargin="225.7173" RightMargin="107.2827" TopMargin="869.1795" BottomMargin="27.8205" LeftEage="181" RightEage="181" TopEage="42" BottomEage="42" Scale9OriginX="181" Scale9OriginY="42" Scale9Width="189" Scale9Height="45" ctype="ImageViewObjectData">
                     <Size X="551.0000" Y="129.0000" />
                     <Children>
-                      <AbstractNodeData Name="skillInfo_7" ActionTag="510419184" Tag="506" IconVisible="False" LeftMargin="252.1281" RightMargin="250.8719" TopMargin="74.9441" BottomMargin="30.0559" FontSize="24" LabelText="转生" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="48.0000" Y="24.0000" />
+                      <AbstractNodeData Name="skillInfo_7" ActionTag="510419184" Tag="506" IconVisible="False" LeftMargin="258.1281" RightMargin="256.8719" TopMargin="77.9441" BottomMargin="33.0559" FontSize="18" LabelText="转生" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="36.0000" Y="18.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="276.1281" Y="42.0559" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="239" G="203" B="148" />
                         <PrePosition X="0.5011" Y="0.3260" />
-                        <PreSize X="0.0871" Y="0.1860" />
+                        <PreSize X="0.0653" Y="0.1395" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
@@ -322,7 +322,7 @@
                     <PreSize X="0.1629" Y="0.1404" />
                     <FileData Type="Normal" Path="baofengxue-jieshao.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="head5" ActionTag="2022317711" Tag="495" IconVisible="False" LeftMargin="60.2148" RightMargin="679.7852" TopMargin="584.3035" BottomMargin="297.6964" LeftEage="47" RightEage="47" TopEage="47" BottomEage="47" Scale9OriginX="47" Scale9OriginY="47" Scale9Width="50" Scale9Height="50" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="head5" ActionTag="2022317711" Tag="495" IconVisible="False" LeftMargin="60.2148" RightMargin="679.7852" TopMargin="584.3035" BottomMargin="297.6965" LeftEage="47" RightEage="47" TopEage="47" BottomEage="47" Scale9OriginX="47" Scale9OriginY="47" Scale9Width="50" Scale9Height="50" ctype="ImageViewObjectData">
                     <Size X="144.0000" Y="144.0000" />
                     <AnchorPoint ScaleX="258.0000" ScaleY="0.1466" />
                     <Position X="37212.2148" Y="318.8069" />
@@ -332,7 +332,7 @@
                     <PreSize X="0.1629" Y="0.1404" />
                     <FileData Type="Normal" Path="sx-js.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="head6" ActionTag="-537817081" Tag="492" IconVisible="False" LeftMargin="59.2734" RightMargin="680.7266" TopMargin="722.5356" BottomMargin="159.4643" LeftEage="47" RightEage="47" TopEage="47" BottomEage="47" Scale9OriginX="47" Scale9OriginY="47" Scale9Width="50" Scale9Height="50" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="head6" ActionTag="-537817081" Tag="492" IconVisible="False" LeftMargin="59.2734" RightMargin="680.7266" TopMargin="722.5357" BottomMargin="159.4643" LeftEage="47" RightEage="47" TopEage="47" BottomEage="47" Scale9OriginX="47" Scale9OriginY="47" Scale9Width="50" Scale9Height="50" ctype="ImageViewObjectData">
                     <Size X="144.0000" Y="144.0000" />
                     <AnchorPoint ScaleX="258.0000" ScaleY="0.5000" />
                     <Position X="37211.2734" Y="231.4643" />
@@ -427,7 +427,7 @@
                 <PreSize X="0.3651" Y="0.1087" />
                 <FileData Type="Normal" Path="mingchengk.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="head" ActionTag="-989082212" Tag="476" IconVisible="False" LeftMargin="247.5191" RightMargin="683.4810" TopMargin="136.3690" BottomMargin="1413.6310" LeftEage="56" RightEage="56" TopEage="56" BottomEage="56" Scale9OriginX="56" Scale9OriginY="56" Scale9Width="58" Scale9Height="58" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="head" ActionTag="-989082212" Tag="476" IconVisible="False" LeftMargin="247.5191" RightMargin="683.4809" TopMargin="136.3690" BottomMargin="1413.6310" LeftEage="56" RightEage="56" TopEage="56" BottomEage="56" Scale9OriginX="56" Scale9OriginY="56" Scale9Width="58" Scale9Height="58" ctype="ImageViewObjectData">
                 <Size X="170.0000" Y="170.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="332.5191" Y="1498.6310" />
@@ -447,7 +447,7 @@
                 <PreSize X="0.0708" Y="0.0465" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                <PressedFileData Type="Normal" Path="x (2).png" Plist="" />
                 <NormalFileData Type="Normal" Path="x (2).png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

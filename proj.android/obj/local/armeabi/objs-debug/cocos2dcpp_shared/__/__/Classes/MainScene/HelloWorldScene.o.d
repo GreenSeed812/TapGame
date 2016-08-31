@@ -509,6 +509,9 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/MainScene/HelloWorl
  jni/../../Classes/MainScene/ServantButton.h \
  jni/../../Classes/MainScene/ArtifactButton.h \
  jni/../../Classes/SaveData/State.h jni/../../Classes/Ui/settingLayer.h \
+ jni/../../Classes/Ui/BgMusic.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../include/SimpleAudioEngine.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../include/Export.h \
  jni/../../Classes/Ui/AchieveLayer.h jni/../../Classes/Ui/MissionLayer.h \
  jni/../../Classes/Ui/SignLayer.h jni/../../Classes/MainScene/SkillCD.h \
  jni/../../Classes/SaveData/MonsterState.h
@@ -1536,6 +1539,12 @@ jni/../../Classes/MainScene/ArtifactButton.h:
 jni/../../Classes/SaveData/State.h:
 
 jni/../../Classes/Ui/settingLayer.h:
+
+jni/../../Classes/Ui/BgMusic.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../include/SimpleAudioEngine.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../include/Export.h:
 
 jni/../../Classes/Ui/AchieveLayer.h:
 

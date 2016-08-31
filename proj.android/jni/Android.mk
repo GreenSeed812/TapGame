@@ -22,6 +22,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/MainScene/ServantInfo.cpp \
                    ../../Classes/MainScene/ClickLayer.cpp \
 				   ../../Classes/MainScene/SkillCD.cpp \
+				   ../../Classes/MainScene/Relife.cpp \
 				   ../../Classes/Tool/Rand.cpp \
 				   ../../Classes/Tool/Rule.cpp \
 				   ../../Classes/Tool/Split.cpp \
@@ -39,7 +40,9 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/Ui/AchieveLayer.cpp \
 				   ../../Classes/Ui/MissionLayer.cpp \
 				   ../../Classes/Ui/settingLayer.cpp \
-				   ../../Classes/Ui/SignLayer.cpp \				  
+				   ../../Classes/Ui/SignLayer.cpp \
+				   ../../Classes/Ui/BgMusic.cpp \
+				  	  
 				   
 
 

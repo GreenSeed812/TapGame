@@ -17,13 +17,13 @@
             <FileData Type="Normal" Path="diban0.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ListView" ActionTag="2109206512" Tag="66" IconVisible="False" LeftMargin="52.2954" RightMargin="53.7046" TopMargin="1321.8750" BottomMargin="217.3750" TouchEnable="True" ClipAble="True" ColorAngle="90.0000" LeftEage="330" RightEage="330" TopEage="161" BottomEage="161" Scale9OriginX="-330" Scale9OriginY="-161" Scale9Width="660" Scale9Height="322" ScrollDirectionType="0" DirectionType="Vertical" HorizontalType="Align_HorizontalCenter" ctype="ListViewObjectData">
+          <AbstractNodeData Name="ListView" ActionTag="2109206512" Tag="66" IconVisible="False" LeftMargin="56.3305" RightMargin="49.6694" TopMargin="1325.9102" BottomMargin="213.3399" TouchEnable="True" ClipAble="True" ColorAngle="90.0000" LeftEage="330" RightEage="330" TopEage="161" BottomEage="161" Scale9OriginX="-330" Scale9OriginY="-161" Scale9Width="660" Scale9Height="322" ScrollDirectionType="0" DirectionType="Vertical" HorizontalType="Align_HorizontalCenter" ctype="ListViewObjectData">
             <Size X="974.0000" Y="380.7500" />
             <AnchorPoint ScaleX="0.5003" ScaleY="0.5000" />
-            <Position X="539.5876" Y="407.7500" />
+            <Position X="543.6227" Y="403.7149" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4996" Y="0.2124" />
+            <PrePosition X="0.5034" Y="0.2103" />
             <PreSize X="0.9019" Y="0.1983" />
             <SingleColor A="255" R="150" G="150" B="255" />
             <FirstColor A="255" R="150" G="150" B="255" />
@@ -33,7 +33,7 @@
           <AbstractNodeData Name="message" ActionTag="944228562" Tag="51" IconVisible="False" LeftMargin="36.6061" RightMargin="31.3939" TopMargin="1228.1400" BottomMargin="613.8600" LeftEage="333" RightEage="333" TopEage="25" BottomEage="25" Scale9OriginX="333" Scale9OriginY="25" Scale9Width="346" Scale9Height="28" ctype="ImageViewObjectData">
             <Size X="1012.0000" Y="78.0000" />
             <Children>
-              <AbstractNodeData Name="Dps" ActionTag="907024448" Tag="72" IconVisible="False" LeftMargin="166.3232" RightMargin="572.6768" TopMargin="-4.2479" BottomMargin="5.2479" LabelText="123.45aa" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="Dps" ActionTag="907024448" Tag="72" IconVisible="False" LeftMargin="166.3256" RightMargin="572.6744" TopMargin="-4.2492" BottomMargin="5.2492" LabelText="123.45aa" ctype="TextBMFontObjectData">
                 <Size X="273.0000" Y="77.0000" />
                 <AnchorPoint ScaleX="0.4539" ScaleY="0.4106" />
                 <Position X="290.2403" Y="36.8654" />
@@ -101,6 +101,21 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
+              <AbstractNodeData Name="buy" ActionTag="-1540463028" Tag="184" IconVisible="False" LeftMargin="671.7607" RightMargin="299.2393" TopMargin="18.0243" BottomMargin="17.9757" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="4" BottomEage="4" Scale9OriginX="15" Scale9OriginY="4" Scale9Width="11" Scale9Height="34" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="41.0000" Y="42.0000" />
+                <AnchorPoint ScaleX="0.4841" ScaleY="0.5516" />
+                <Position X="691.6070" Y="41.1429" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.6834" Y="0.5275" />
+                <PreSize X="0.0405" Y="0.5385" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <PressedFileData Type="Normal" Path="jiahao.png" Plist="" />
+                <NormalFileData Type="Normal" Path="jiahao.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="542.6061" Y="652.8600" />
@@ -109,21 +124,6 @@
             <PrePosition X="0.5024" Y="0.3400" />
             <PreSize X="0.9370" Y="0.0406" />
             <FileData Type="Normal" Path="message.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="Button_2" ActionTag="-1540463028" Tag="184" IconVisible="False" LeftMargin="706.8904" RightMargin="332.1096" TopMargin="1250.2986" BottomMargin="627.7014" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="4" BottomEage="4" Scale9OriginX="15" Scale9OriginY="4" Scale9Width="11" Scale9Height="34" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="41.0000" Y="42.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="727.3904" Y="648.7014" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.6735" Y="0.3379" />
-            <PreSize X="0.0380" Y="0.0219" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
-            <NormalFileData Type="Normal" Path="jiahao.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

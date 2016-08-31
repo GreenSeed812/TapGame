@@ -4,11 +4,13 @@
 #include "MainScene/HelloWorldScene.h"
 #include "Tool/SqLite.h"
 #include "SaveData/PlayerData.h"
+#include "Ui/Statistics.h"
 using namespace cocostudio;
 using namespace cocos2d;
 using namespace ui;
-bool settingLayer::m_mus_off_on;
-bool settingLayer::m_sou_off_on;
+bool settingLayer::m_mus_off_on = true;
+bool settingLayer::m_sou_off_on = true;
+Node * settingLayer::g_node = nullptr;
 
 bool settingLayer::init()
 {
@@ -25,6 +27,7 @@ bool settingLayer::init()
 	Button* bt = (Button*)rootNode->getChildByName("esc");
 	auto musicBtn = (Button*)rootNode->getChildByName("bg")->getChildByName("music");
 	auto soundBtn = (Button*)rootNode->getChildByName("bg")->getChildByName("sound");
+	auto dataStatistics = (Button*)rootNode->getChildByName("bg")->getChildByName("data");
 
 	if (m_mus_off_on)
 	{
@@ -94,5 +97,16 @@ bool settingLayer::init()
 			HelloWorld::setSou(m_sou_off_on);
 		}
 	});
+
+	dataStatistics->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type)
+	{
+		if (type == Widget::TouchEventType::ENDED)
+		{
+			auto statistics = Statistics::create();
+			statistics->initStatistics();
+			g_node->addChild(statistics);
+		}
+	});
+
 	return true;
 }

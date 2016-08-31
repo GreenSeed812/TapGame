@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="downUiButtonLayer" Type="Layer" ID="b4cc8dc0-b8f8-426c-a186-e3307a5c0656" Version="3.10.0.0" />
+  <PropertyGroup Name="downUiButtonLayer_0" Type="Layer" ID="84310238-ac74-4bfb-8f78-787287da2790" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />

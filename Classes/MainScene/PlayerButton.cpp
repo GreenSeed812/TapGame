@@ -46,7 +46,6 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				PlayerData::getInstance()->heroLevelUp();
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("TapDpsChange");
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
-				//PlayerData::getInstance()->subGold(&m_upGold);
 				double playerLevel = PlayerData::getInstance()->getPlayerLevel();
 				auto mul = 1 / pow(playerLevel, 0.55) - 1 / pow(playerLevel, 1.03) + 1;
 				m_upGold = Ruler::getInstance()->multiplayUp(m_upGold, mul) ;

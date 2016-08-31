@@ -97,13 +97,13 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Text_3" ActionTag="-1904955400" Tag="15" IconVisible="False" LeftMargin="151.0000" RightMargin="233.0000" TopMargin="55.0000" BottomMargin="16.0000" FontSize="20" LabelText="所有攻击力" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="Text_3" ActionTag="-1904955400" Tag="15" IconVisible="False" LeftMargin="149.4593" RightMargin="234.5407" TopMargin="56.5409" BottomMargin="14.4591" FontSize="20" LabelText="所有攻击力" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="102.0000" Y="24.0000" />
                     <AnchorPoint ScaleY="0.5000" />
-                    <Position X="151.0000" Y="28.0000" />
+                    <Position X="149.4593" Y="26.4591" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="240" G="203" B="148" />
-                    <PrePosition X="0.3107" Y="0.2947" />
+                    <PrePosition X="0.3075" Y="0.2785" />
                     <PreSize X="0.2099" Y="0.2526" />
                     <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />

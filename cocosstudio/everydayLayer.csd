@@ -44,7 +44,7 @@
                 <PreSize X="0.5697" Y="0.1482" />
                 <FileData Type="Normal" Path="kuang2.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_5" ActionTag="466937423" Tag="135" IconVisible="False" LeftMargin="120.0000" RightMargin="773.0000" TopMargin="119.1926" BottomMargin="883.8074" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="TaskHead1" ActionTag="466937423" Tag="135" IconVisible="False" LeftMargin="120.0000" RightMargin="773.0000" TopMargin="119.1926" BottomMargin="883.8074" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
                 <Size X="190.0000" Y="178.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="215.0000" Y="972.8074" />
@@ -94,7 +94,7 @@
                 <PreSize X="0.5697" Y="0.1482" />
                 <FileData Type="Normal" Path="kuang2.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_5_2" ActionTag="420394853" Tag="142" IconVisible="False" LeftMargin="120.0000" RightMargin="773.0000" TopMargin="320.0740" BottomMargin="682.9260" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="TaskHead2" ActionTag="420394853" Tag="142" IconVisible="False" LeftMargin="120.0000" RightMargin="773.0000" TopMargin="320.0740" BottomMargin="682.9260" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
                 <Size X="190.0000" Y="178.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="215.0000" Y="771.9260" />
@@ -104,7 +104,7 @@
                 <PreSize X="0.1754" Y="0.1507" />
                 <FileData Type="Normal" Path="kuang1.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_5_3" ActionTag="-1256383000" Tag="143" IconVisible="False" LeftMargin="120.0000" RightMargin="773.0000" TopMargin="519.8748" BottomMargin="483.1252" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="TaskHead3" ActionTag="-1256383000" Tag="143" IconVisible="False" LeftMargin="120.0000" RightMargin="773.0000" TopMargin="519.8748" BottomMargin="483.1252" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
                 <Size X="190.0000" Y="178.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="215.0000" Y="572.1252" />
@@ -114,7 +114,7 @@
                 <PreSize X="0.1754" Y="0.1507" />
                 <FileData Type="Normal" Path="kuang1.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_5_4" ActionTag="-336265738" Tag="144" IconVisible="False" LeftMargin="120.0000" RightMargin="773.0000" TopMargin="719.4899" BottomMargin="283.5101" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="TaskHead4" ActionTag="-336265738" Tag="144" IconVisible="False" LeftMargin="120.0000" RightMargin="773.0000" TopMargin="719.4899" BottomMargin="283.5101" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
                 <Size X="190.0000" Y="178.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="215.0000" Y="372.5101" />
@@ -124,7 +124,7 @@
                 <PreSize X="0.1754" Y="0.1507" />
                 <FileData Type="Normal" Path="kuang1.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_5_5" ActionTag="1698965146" Tag="145" IconVisible="False" LeftMargin="120.0000" RightMargin="773.0000" TopMargin="929.4132" BottomMargin="73.5868" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="TaskHead5" ActionTag="1698965146" Tag="145" IconVisible="False" LeftMargin="120.0000" RightMargin="773.0000" TopMargin="929.4132" BottomMargin="73.5868" LeftEage="62" RightEage="62" TopEage="58" BottomEage="58" Scale9OriginX="62" Scale9OriginY="58" Scale9Width="66" Scale9Height="62" ctype="ImageViewObjectData">
                 <Size X="190.0000" Y="178.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="215.0000" Y="162.5868" />
@@ -184,7 +184,7 @@
                 <PreSize X="0.0905" Y="0.0381" />
                 <FileData Type="Normal" Path="jiangli.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="BitmapFontLabel_1" ActionTag="1399930753" Tag="154" IconVisible="False" LeftMargin="670.9288" RightMargin="201.0712" TopMargin="112.0197" BottomMargin="991.9803" LabelText="111.1aa" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="TaskGold1" ActionTag="1399930753" Tag="154" IconVisible="False" LeftMargin="670.9288" RightMargin="201.0712" TopMargin="112.0197" BottomMargin="991.9803" LabelText="111.1aa" ctype="TextBMFontObjectData">
                 <Size X="211.0000" Y="77.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="776.4288" Y="1030.4803" />
@@ -194,7 +194,7 @@
                 <PreSize X="0.1948" Y="0.0652" />
                 <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="BitmapFontLabel_1_1" ActionTag="-248943506" Tag="156" IconVisible="False" LeftMargin="698.6205" RightMargin="300.3795" TopMargin="720.2968" BottomMargin="383.7032" LabelText="111" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="TaskGold4" ActionTag="-248943506" Tag="156" IconVisible="False" LeftMargin="698.6205" RightMargin="300.3795" TopMargin="720.2968" BottomMargin="383.7032" LabelText="111" ctype="TextBMFontObjectData">
                 <Size X="84.0000" Y="77.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="740.6205" Y="422.2032" />
@@ -204,7 +204,7 @@
                 <PreSize X="0.0776" Y="0.0652" />
                 <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="BitmapFontLabel_1_2" ActionTag="-1279148661" Tag="157" IconVisible="False" LeftMargin="673.8528" RightMargin="198.1472" TopMargin="521.9238" BottomMargin="582.0762" LabelText="111.1aa" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="TaskGold3" ActionTag="-1279148661" Tag="157" IconVisible="False" LeftMargin="673.8528" RightMargin="198.1472" TopMargin="521.9238" BottomMargin="582.0762" LabelText="111.1aa" ctype="TextBMFontObjectData">
                 <Size X="211.0000" Y="77.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="779.3528" Y="620.5762" />
@@ -214,7 +214,7 @@
                 <PreSize X="0.1948" Y="0.0652" />
                 <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="BitmapFontLabel_1_3" ActionTag="-96614811" Tag="158" IconVisible="False" LeftMargin="671.1089" RightMargin="200.8911" TopMargin="316.8828" BottomMargin="787.1172" LabelText="111.1aa" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="TaskGold2" ActionTag="-96614811" Tag="158" IconVisible="False" LeftMargin="671.1089" RightMargin="200.8911" TopMargin="316.8828" BottomMargin="787.1172" LabelText="111.1aa" ctype="TextBMFontObjectData">
                 <Size X="211.0000" Y="77.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="776.6089" Y="825.6172" />
@@ -224,7 +224,7 @@
                 <PreSize X="0.1948" Y="0.0652" />
                 <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="BitmapFontLabel_1_1_0" ActionTag="-830377376" Tag="164" IconVisible="False" LeftMargin="697.9742" RightMargin="301.0258" TopMargin="931.0602" BottomMargin="172.9398" LabelText="111" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="TaskGold5" ActionTag="-830377376" Tag="164" IconVisible="False" LeftMargin="697.9742" RightMargin="301.0258" TopMargin="931.0602" BottomMargin="172.9398" LabelText="111" ctype="TextBMFontObjectData">
                 <Size X="84.0000" Y="77.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="739.9742" Y="211.4398" />
@@ -413,7 +413,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_2" ActionTag="-1599632545" Tag="179" IconVisible="False" LeftMargin="763.4604" RightMargin="178.5396" TopMargin="474.0682" BottomMargin="1373.9318" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="108" Scale9Height="50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_2" ActionTag="-1599632545" Tag="179" IconVisible="False" LeftMargin="763.4604" RightMargin="178.5396" TopMargin="474.0682" BottomMargin="1373.9318" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="108" Scale9Height="50" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="138.0000" Y="72.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="832.4604" Y="1409.9318" />
@@ -422,13 +422,13 @@
             <PrePosition X="0.7708" Y="0.7343" />
             <PreSize X="0.1278" Y="0.0375" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+            <DisabledFileData Type="Normal" Path="anniuhui.png" Plist="" />
+            <PressedFileData Type="Normal" Path="anniu.png" Plist="" />
             <NormalFileData Type="Normal" Path="anniu.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_2_0" ActionTag="-1214622789" Tag="180" IconVisible="False" LeftMargin="769.5167" RightMargin="172.4833" TopMargin="1286.8137" BottomMargin="561.1863" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="108" Scale9Height="50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_2_0" ActionTag="-1214622789" Tag="180" IconVisible="False" LeftMargin="769.5167" RightMargin="172.4833" TopMargin="1286.8137" BottomMargin="561.1863" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="108" Scale9Height="50" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="138.0000" Y="72.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="838.5167" Y="597.1863" />
@@ -437,13 +437,13 @@
             <PrePosition X="0.7764" Y="0.3110" />
             <PreSize X="0.1278" Y="0.0375" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+            <DisabledFileData Type="Normal" Path="anniuhui.png" Plist="" />
+            <PressedFileData Type="Normal" Path="anniu.png" Plist="" />
             <NormalFileData Type="Normal" Path="anniu.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_2_1" ActionTag="1636026011" Tag="181" IconVisible="False" LeftMargin="768.3488" RightMargin="173.6512" TopMargin="1079.0244" BottomMargin="768.9755" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="108" Scale9Height="50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_2_1" ActionTag="1636026011" Tag="181" IconVisible="False" LeftMargin="768.3488" RightMargin="173.6512" TopMargin="1079.0244" BottomMargin="768.9755" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="108" Scale9Height="50" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="138.0000" Y="72.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="837.3488" Y="804.9755" />
@@ -452,13 +452,13 @@
             <PrePosition X="0.7753" Y="0.4193" />
             <PreSize X="0.1278" Y="0.0375" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+            <DisabledFileData Type="Normal" Path="anniuhui.png" Plist="" />
+            <PressedFileData Type="Normal" Path="anniu.png" Plist="" />
             <NormalFileData Type="Normal" Path="anniu.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_2_2" ActionTag="-1538910973" Tag="182" IconVisible="False" LeftMargin="768.3278" RightMargin="173.6722" TopMargin="882.4061" BottomMargin="965.5939" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="108" Scale9Height="50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_2_2" ActionTag="-1538910973" Tag="182" IconVisible="False" LeftMargin="768.3278" RightMargin="173.6722" TopMargin="882.4061" BottomMargin="965.5939" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="108" Scale9Height="50" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="138.0000" Y="72.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="837.3278" Y="1001.5939" />
@@ -467,13 +467,13 @@
             <PrePosition X="0.7753" Y="0.5217" />
             <PreSize X="0.1278" Y="0.0375" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+            <DisabledFileData Type="Normal" Path="anniuhui.png" Plist="" />
+            <PressedFileData Type="Normal" Path="anniu.png" Plist="" />
             <NormalFileData Type="Normal" Path="anniu.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_2_3" ActionTag="857596461" Tag="183" IconVisible="False" LeftMargin="765.7634" RightMargin="176.2366" TopMargin="674.6191" BottomMargin="1173.3809" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="108" Scale9Height="50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_2_3" ActionTag="857596461" Tag="183" IconVisible="False" LeftMargin="765.7634" RightMargin="176.2366" TopMargin="674.6191" BottomMargin="1173.3809" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="108" Scale9Height="50" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="138.0000" Y="72.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="834.7634" Y="1209.3809" />
@@ -482,8 +482,8 @@
             <PrePosition X="0.7729" Y="0.6299" />
             <PreSize X="0.1278" Y="0.0375" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+            <DisabledFileData Type="Normal" Path="anniuhui.png" Plist="" />
+            <PressedFileData Type="Normal" Path="anniu.png" Plist="" />
             <NormalFileData Type="Normal" Path="anniu.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />

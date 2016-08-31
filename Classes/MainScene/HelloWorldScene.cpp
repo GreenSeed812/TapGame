@@ -56,8 +56,8 @@ bool HelloWorld::init()
     }
 	{
 		MyNum num;
-		num.Mathbit = 50;
-		num.number = 500;
+		num.Mathbit = 1;
+		num.number = 600;
 		PlayerData::getInstance()->addGold(&num);
 
 	}
@@ -99,6 +99,8 @@ bool HelloWorld::init()
 	PlayerButton::getSkillLayer(rootNode->getChildByName("UiNode")->getChildByName("SkillLayer"));
 	PlayerButton::getRootNode(rootNode);
 	ServantButton::getRootNode(rootNode);
+	TextBMFont* waveNum = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("WaveNum");
+	waveNum->setString(StringUtils::format("%d/10", PlayerData::getInstance()->getWaveNow()));
     return true;
 }
 void HelloWorld::coinChange(Ref *ref)
@@ -234,10 +236,15 @@ void HelloWorld::createMonster()
 			rootNode->getChildByName("grayDragon")->runAction(Hide::create());
 		}
 	}
+	else
+	{
+		PlayerData::getInstance()->randRareMonster();
+	}
 	
 }
 void HelloWorld::update(float dt)
 {
+	PlayerData::getInstance()->saveUserData(dt);
 	if (m_hitlogic == true)
 	{
 		auto heroDps = PlayerData::getInstance()->getHeroDps();
@@ -289,6 +296,14 @@ void HelloWorld::update(float dt)
 				PlayerData::getInstance()->setWave(0);
 				MyState::getInstance()->setBossButtonDown(true);
 				timeNow = PlayerData::getInstance()->getMaxTime();
+				Node* bossButtonNode = (Node*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("escapeBoss");
+				if (!bossButtonNode->getChildByName("bt"))
+				{
+					bossBt = bossButton::create();
+					bossButtonNode->addChild(bossBt);
+					bossBt->setName("bt");
+
+				}
 				bossBt->onTouchEnded(nullptr, nullptr);
 			}
 			else
@@ -688,7 +703,7 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 				widget->setContentSize(size);
 				widget->addChild(button);
 				ArtifactButton::setArButtonNode(button);
-				ArtifactButton::setWidget(widget);
+				button->setWidget(widget);
 				lv->pushBackCustomItem(widget);
 				lv->jumpToBottom();
 				ArtifactButton::setListView(lv);

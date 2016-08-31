@@ -94,8 +94,7 @@ void ArReset::initArResetLayer(int id)
 			ShopData::getInstance()->subShopGold(200);
 			ArtifactData::getInstance()->deleteArByID(m_id);
 			CCNotificationCenter::getInstance()->removeObserver(g_btn, "ArChange");
-			((ListView*)g_listview)->removeChild(g_widget);
-			((ListView*)g_listview)->jumpToBottom();
+			g_listview->removeChild(m_widget);
 			m_node->removeFromParent();
 		}
 	});

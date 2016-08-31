@@ -1,227 +1,239 @@
-./obj/local/armeabi/objs-debug/audioengine_static/__/AudioEngine.o: \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../AudioEngine.cpp \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/CCPlatformConfig.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\audio/include/AudioEngine.h \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\functional \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\list \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\unordered_map \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/CCPlatformMacros.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/ccConfig.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/CCPlatformDefine.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/android/CCPlatformDefine-android.h \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\android/log.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../include/Export.h \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\condition_variable \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\queue \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/CCFileUtils.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/ccTypes.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/CCGeometry.h \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\math.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/ccMacros.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCConsole.h \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\sys/select.h \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\thread \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\map \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCRef.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/CCStdC.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/android/CCStdC-android.h \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\stdlib.h \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\alloca.h \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\strings.h \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\memory.h \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cassert \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/ccRandom.h \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\random \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cstdlib \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/CCMath.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Vec2.h \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\algorithm \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/CCMathBase.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Vec2.inl \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Vec3.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Vec3.inl \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Mat4.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Vec4.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Vec4.inl \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Mat4.inl \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Quaternion.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Quaternion.inl \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/CCGL.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/android/CCGL-android.h \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\GLES2/gl2platform.h \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\KHR/khrplatform.h \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\GLES2/gl2.h \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\GLES2/gl2ext.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCValue.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCData.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/ccUtils.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\2d/CCNode.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCVector.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCProtocols.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\renderer/CCTexture2D.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCScriptSupport.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/CCCommon.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCTouch.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCEventTouch.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCEvent.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCEventKeyboard.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/CCAffineTransform.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\2d/CCComponentContainer.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCMap.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\2d/CCComponent.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../android/AudioEngine-inl.h \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\SLES/OpenSLES.h \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\SLES/OpenSLES_Platform.h \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\SLES/OpenSLES_Android.h \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\SLES/OpenSLES_AndroidConfiguration.h \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\SLES/OpenSLES_AndroidMetadata.h
+obj/local/armeabi/objs-debug/audioengine_static/__/AudioEngine.o: \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../AudioEngine.cpp \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/CCPlatformConfig.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../audio/include/AudioEngine.h \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/functional \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/list \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/unordered_map \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/CCPlatformMacros.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/ccConfig.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/CCPlatformDefine.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/android/CCPlatformDefine-android.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/log.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../audio/include/Export.h \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/condition_variable \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/queue \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/CCFileUtils.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/ccTypes.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/CCGeometry.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/ccMacros.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCConsole.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/select.h \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/thread \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/map \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCRef.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/CCStdC.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/android/CCStdC-android.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/stdlib.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/alloca.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/strings.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/memory.h \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cassert \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/ccRandom.h \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/random \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/CCMath.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Vec2.h \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/algorithm \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/CCMathBase.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Vec2.inl \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Vec2.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Vec3.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Vec3.inl \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Vec3.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Mat4.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Vec4.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Vec4.inl \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Mat4.inl \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Vec4.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Mat4.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Quaternion.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Quaternion.inl \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/CCGL.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/android/CCGL-android.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/GLES2/gl2platform.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/KHR/khrplatform.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/GLES2/gl2.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/GLES2/gl2ext.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCValue.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCData.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/ccUtils.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../2d/CCNode.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCVector.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCProtocols.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../renderer/CCTexture2D.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCScriptSupport.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/CCCommon.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCTouch.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCEventTouch.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCEvent.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCEventKeyboard.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/CCAffineTransform.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../2d/CCComponentContainer.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCMap.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../2d/CCComponent.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../android/AudioEngine-inl.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/SLES/OpenSLES.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/SLES/OpenSLES_Platform.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/SLES/OpenSLES_Android.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/SLES/OpenSLES_AndroidConfiguration.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/SLES/OpenSLES_AndroidMetadata.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/SLES/OpenSLES.h
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/CCPlatformConfig.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/CCPlatformConfig.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\audio/include/AudioEngine.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../audio/include/AudioEngine.h:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\functional:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/functional:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\list:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/list:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\unordered_map:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/unordered_map:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/CCPlatformMacros.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/CCPlatformMacros.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/ccConfig.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/ccConfig.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/CCPlatformDefine.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/CCPlatformDefine.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/android/CCPlatformDefine-android.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/android/CCPlatformDefine-android.h:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\android/log.h:
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/log.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../include/Export.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../audio/include/Export.h:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\condition_variable:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/condition_variable:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\queue:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/queue:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/CCFileUtils.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/CCFileUtils.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/ccTypes.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/ccTypes.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/CCGeometry.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/CCGeometry.h:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\math.h:
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/math.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/ccMacros.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/ccMacros.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCConsole.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCConsole.h:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\sys/select.h:
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/select.h:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\thread:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/thread:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\map:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/map:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCRef.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCRef.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/CCStdC.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/CCStdC.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/android/CCStdC-android.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/android/CCStdC-android.h:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\stdlib.h:
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/stdlib.h:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\alloca.h:
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/alloca.h:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\strings.h:
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/strings.h:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\memory.h:
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/memory.h:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cassert:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cassert:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/ccRandom.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/ccRandom.h:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\random:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/random:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cstdlib:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/CCMath.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/CCMath.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Vec2.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Vec2.h:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/algorithm:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\algorithm:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/CCMathBase.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/CCMathBase.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Vec2.inl:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Vec2.inl:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Vec2.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Vec3.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Vec3.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Vec3.inl:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Vec3.inl:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Mat4.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Vec3.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Vec4.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Mat4.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Vec4.inl:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Vec4.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Mat4.inl:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Vec4.inl:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Quaternion.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Mat4.inl:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/Quaternion.inl:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Vec4.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/CCGL.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Mat4.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/android/CCGL-android.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Quaternion.h:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\GLES2/gl2platform.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/Quaternion.inl:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\KHR/khrplatform.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/CCGL.h:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\GLES2/gl2.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/android/CCGL-android.h:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\GLES2/gl2ext.h:
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/GLES2/gl2platform.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCValue.h:
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/KHR/khrplatform.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCData.h:
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/GLES2/gl2.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/ccUtils.h:
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/GLES2/gl2ext.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\2d/CCNode.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCValue.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCVector.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCData.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCProtocols.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/ccUtils.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\renderer/CCTexture2D.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../2d/CCNode.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCScriptSupport.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCVector.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\platform/CCCommon.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCProtocols.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCTouch.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../renderer/CCTexture2D.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCEventTouch.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCScriptSupport.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCEvent.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../platform/CCCommon.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCEventKeyboard.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCTouch.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\math/CCAffineTransform.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCEventTouch.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\2d/CCComponentContainer.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCEvent.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\base/CCMap.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCEventKeyboard.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../..\2d/CCComponent.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../math/CCAffineTransform.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../android/AudioEngine-inl.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../2d/CCComponentContainer.h:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\SLES/OpenSLES.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../base/CCMap.h:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\SLES/OpenSLES_Platform.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../../2d/CCComponent.h:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\SLES/OpenSLES_Android.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../android/AudioEngine-inl.h:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\SLES/OpenSLES_AndroidConfiguration.h:
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/SLES/OpenSLES.h:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\SLES/OpenSLES_AndroidMetadata.h:
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/SLES/OpenSLES_Platform.h:
+
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/SLES/OpenSLES_Android.h:
+
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/SLES/OpenSLES_AndroidConfiguration.h:
+
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/SLES/OpenSLES_AndroidMetadata.h:
+
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/SLES/OpenSLES.h:

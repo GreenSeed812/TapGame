@@ -14,7 +14,7 @@ public:
 	static void setListView(Node* lv){ g_lv = lv; }
 	static void setRootNode(Node*node){ g_node = node;};
 	static void setArButtonNode(Node * btn){ g_button = btn; }
-	static void setWidget(Node * node){ g_widget = node; }
+	void setWidget(Node * node){ m_widget = node; }
 	CREATE_FUNC(ArtifactButton);
 
 private:
@@ -26,7 +26,7 @@ private:
 	static Node* g_lv;
 	static Node * g_node;
 	static Node * g_button;
-	static Node * g_widget;
+	Node * m_widget;
 	int m_id;
 	int m_level;
 	int m_StoneNum;//已消费的灵魂石

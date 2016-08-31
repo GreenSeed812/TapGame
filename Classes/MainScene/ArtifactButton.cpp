@@ -10,7 +10,6 @@ using namespace ui;
 Node* ArtifactButton::g_lv = nullptr;
 Node * ArtifactButton::g_node = nullptr;
 Node * ArtifactButton::g_button = nullptr;
-Node * ArtifactButton::g_widget = nullptr;
 
 bool ArtifactButton::init()
 {
@@ -132,7 +131,7 @@ void ArtifactButton::onTouchEnded(Touch * touch, Event * event)
 		{
 			auto arReset = ArReset::create();
 			arReset->setListView(g_lv);
-			arReset->setWidget(g_widget);
+			arReset->setWidget(m_widget);
 			arReset->setBtn(g_button);
 			arReset->setStoneNum(m_StoneNum);
 			arReset->initArResetLayer(m_id);

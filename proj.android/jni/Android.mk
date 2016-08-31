@@ -23,7 +23,6 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/MainScene/ClickLayer.cpp \
 				   ../../Classes/MainScene/SkillCD.cpp \
 				   ../../Classes/MainScene/Relife.cpp \
-				   ../../Classes/MainScene/GoldCoin.cpp \
 				   ../../Classes/Tool/Rand.cpp \
 				   ../../Classes/Tool/Rule.cpp \
 				   ../../Classes/Tool/Split.cpp \
@@ -35,6 +34,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/SaveData/PlayerButtonData.cpp \
 				   ../../Classes/SaveData/ArtifactData.cpp \
 				   ../../Classes/SaveData/ShopData.cpp \
+				   ../../Classes/SaveData/MonsterState.cpp \
 				   ../../Classes/Ui/bossButton.cpp \
 				   ../../Classes/LoadingScene/LoadingScene.cpp \
 				   ../../Classes/Ui/AchieveLayer.cpp \

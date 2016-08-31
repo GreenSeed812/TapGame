@@ -1,7 +1,11 @@
-#include"SaveData\PlayerData.h"
+#include"SaveData/PlayerData.h"
 #include "MonsterState.h"
 #include "ArtifactData.h"
-#include "Tool\SqLite.h"
+#include "Tool/SqLite.h"
+#include "json/document.h"
+#include "json/writer.h"
+#include "json/stringbuffer.h"
+using namespace  rapidjson;
 #include <math.h>
 #include<cocos2d.h>
 static PlayerData *p_dt = nullptr;
@@ -64,15 +68,89 @@ PlayerData::PlayerData()
 PlayerData::~PlayerData()
 {
 }
+
 PlayerData * PlayerData::getInstance()
 {
 	if (!p_dt)
 	{
 		p_dt = new PlayerData();
+		if (cocos2d::UserDefault::getInstance()->isXMLFileExist())
+			p_dt->init();
 	}
 	return p_dt;
 }
+bool PlayerData::init()
+{
+	std::string json = cocos2d::UserDefault::getInstance()->getStringForKey("UserDefault");
+	rapidjson::Document jsd;
+	jsd.Parse<0>(json.c_str());
+	if (jsd.HasParseError())  //¥Ú”°Ω‚Œˆ¥ÌŒÛ
+	{
+		CCLOG("GetParseError %s\n", jsd.GetParseError());
+	}
+	
+	if (jsd.IsObject() && jsd.HasMember("m_level")) 
+	{
+		m_level  = jsd["m_level"].GetInt();
+		m_monsterNum = jsd["m_monsterNum"].GetInt();
+		m_playerLevel = jsd["m_playerLevel"].GetInt(); 
+		m_waveNow = jsd["m_waveNow"].GetInt();
+		m_dpsMul = jsd["m_dpsMul"].GetDouble();
+		m_dpsMulBase = jsd["m_dpsMulBase"].GetDouble();
+		m_bossTime = jsd["m_bossTime"].GetDouble();
+		m_servantNum = jsd["m_servantNum"].GetInt();
+		m_servantAllMul = jsd["m_servantAllMul"].GetDouble();
+		m_maxTime = jsd["m_maxTime"].GetInt();
+		m_maxWave = jsd["m_maxWave"].GetInt();
+		m_explorePer = jsd["m_explorePer"].GetDouble();
+		m_exploreProb = jsd["m_exploreProb"].GetInt();
+		m_skillexploreProb = jsd["m_skillexploreProb"].GetInt();
+		m_bossDpsMul = jsd["m_bossDpsMul"].GetDouble();
+		m_TapDpsMul = jsd["m_TapDpsMul"].GetDouble();
+		m_latestTapMul = jsd["m_latestTapMul"].GetDouble();
+		m_rareProb = jsd["m_rareProb"].GetInt();
+		m_goldMulBase = jsd["m_goldMulBase"].GetDouble();
+		m_goldMulBox = jsd["m_goldMulBox"].GetDouble();
+		/******************************************************************************************************************************************/
+		m_hpNow.number = jsd["hpnum"].GetDouble();
+		m_hpNow.Mathbit = jsd["hpmat"].GetInt();
+		m_basedps.number = jsd["baseNum"].GetDouble();
+		m_basedps.Mathbit = jsd["baseMat"].GetInt();
+		m_basedps.number = jsd["baseNum"].GetDouble();
+		m_basedps.Mathbit = jsd["baseMat"].GetInt();
+		m_heroDpsAll.number = jsd["hdaNum"].GetDouble();
+		m_heroDpsAll.Mathbit = jsd["hdaMat"].GetInt();
+		m_latest.m_dropData.number = jsd["lstdropDataNum"].GetDouble();
+		m_latest.m_dropData.Mathbit = jsd["lstdropDataMat"].GetInt();
+		m_latest.randNpc[0] = jsd["lstrandnpc0"].GetInt();
+		m_latest.randNpc[1] = jsd["lstrandnpc1"].GetInt();
+		m_latest.randNpc[2] = jsd["lstrandnpc2"].GetInt();
+		m_latest.randNpc[3] = jsd["lstrandnpc3"].GetInt();
+		m_latest.randNpc[4] = jsd["lstrandnpc4"].GetInt();
+		for (int i = 0; i < m_latest.m_HpData.size(); i++)
+		{
+			m_latest.m_HpData.at(i).number = jsd[cocos2d::StringUtils::format("lsthpNum%d", i).c_str()].GetDouble();
+			m_latest.m_HpData.at(i).Mathbit = jsd[cocos2d::StringUtils::format("lsthpMat%d", i).c_str()].GetInt();
+		}
 
+
+		for (int i = 0; i < 6; i++)
+		{
+			m_skillLevel[i] = jsd[cocos2d::StringUtils::format("skilllevel%d", i).c_str()].GetInt();
+		}
+		for (int i = 0; i < 33; i++)
+		{
+			if (!jsd.HasMember(cocos2d::StringUtils::format("servantLevel%d", i).c_str()))
+				break;
+			m_servantLevel[i] = jsd[cocos2d::StringUtils::format("servantLevel%d", i).c_str()].GetInt();
+			m_servantBaseDps[i].Mathbit = jsd[cocos2d::StringUtils::format("servantBaseDpsMat%d", i).c_str()].GetInt();
+			m_servantBaseDps[i].number = jsd[cocos2d::StringUtils::format("servantBaseDpsNum%d", i).c_str()].GetDouble();
+			m_servantMul[i] = jsd[cocos2d::StringUtils::format("servantMul%d", i).c_str()].GetDouble();
+		}
+	}
+	ArtifactData::getInstance()->readUserDefault();
+	return true;
+}
 
 //MyNum PlayerData::getMaxHp()
 //{
@@ -183,8 +261,8 @@ MyNum PlayerData::getdefeatMonsterGold()
 			baseNum = tmp;
 		}
 	}
-	auto tmp = Ruler::getInstance()->addNumUp(m_gold, baseNum);
-	return tmp;
+	
+	return baseNum;
 }
 
 MyNum PlayerData::getDps()
@@ -266,7 +344,7 @@ float PlayerData::getSkillEFF(int i)
 	if (m_skillLevel[i] < 1)
 		return 0;
 	else
-		return m_skillData.at(i)->initEffect + (m_skillData.at(i)->effPerLevel - 1) * m_skillLevel[i];
+		return m_skillData.at(i)->initEffect + m_skillData.at(i)->effPerLevel * (m_skillLevel[i] - 1);
 }
 void PlayerData::unlockSernantSkill(int servantid, int skillid)
 {
@@ -334,7 +412,6 @@ void PlayerData::servantLevelUp(int id)
 }
 MyNum PlayerData::getservantLevelUpGold(int id)
 {
-	
 	auto m_upGold = SqLite::getInstance()->getServantGoldByID(id);
 
 	for (int i = 1; i < m_servantLevel[id]; i++)
@@ -344,7 +421,7 @@ MyNum PlayerData::getservantLevelUpGold(int id)
 		m_upGold = Ruler::getInstance()->multiplay(m_upGold, mul);
 
 	}
-	m_gold = Ruler::getInstance()->multiplay(m_gold, (1 - ArtifactData::getInstance()->getSLUP()));
+	m_upGold = Ruler::getInstance()->multiplay(m_upGold, (1 - ArtifactData::getInstance()->getSLUP()));
 	return m_upGold;
 }
 int PlayerData::getRelifeStone()
@@ -365,8 +442,81 @@ int PlayerData::getLevelRelifeStone()
 	return m_level / 50;
 
 }
-void PlayerData::saveUserData()
+void PlayerData::saveUserData(float dt)
 {
+	Document document;
+	document.SetObject();
+	Document::AllocatorType& allocator = document.GetAllocator();
+	Value array(kArrayType);
+	Value object(kObjectType);
+	document.AddMember("m_level", m_level, allocator);
+	document.AddMember("m_monsterNum", m_monsterNum, allocator);
+	document.AddMember("m_playerLevel", m_playerLevel, allocator);
+	document.AddMember("m_waveNow", m_waveNow, allocator);
+	document.AddMember("m_dpsMul", m_dpsMul, allocator);
+	document.AddMember("m_dpsMulBase", m_dpsMulBase, allocator);
+	document.AddMember("m_bossTime", m_bossTime, allocator);
+	document.AddMember("m_servantNum", m_servantNum, allocator);
+	document.AddMember("m_servantAllMul", m_servantAllMul, allocator);
+	document.AddMember("m_maxTime", m_maxTime, allocator);
+	document.AddMember("m_maxWave", m_maxWave, allocator);
+	document.AddMember("m_explorePer", m_explorePer, allocator);
+	document.AddMember("m_exploreProb", m_exploreProb, allocator);
+	document.AddMember("m_skillexploreProb", m_skillexploreProb, allocator);
+	document.AddMember("m_bossDpsMul", m_bossDpsMul, allocator);
+	document.AddMember("m_TapDpsMul", m_TapDpsMul, allocator);
+	document.AddMember("m_latestTapMul", m_latestTapMul, allocator);
+	document.AddMember("m_rareProb", m_rareProb, allocator);
+	document.AddMember("m_goldMulBase", m_goldMulBase, allocator);
+	document.AddMember("m_goldMulBox", m_goldMulBox, allocator);
+	document.AddMember("hpnum", m_hpNow.number, allocator);
+	document.AddMember("hpmat", m_hpNow.Mathbit, allocator);
+	document.AddMember("baseNum", m_basedps.number, allocator);
+	document.AddMember("baseMat", m_basedps.Mathbit, allocator);
+	document.AddMember("hdaNum", m_heroDpsAll.number, allocator);
+	document.AddMember("hdaMat", m_heroDpsAll.Mathbit, allocator);
+	document.AddMember("lstdropDataNum", m_latest.m_dropData.number, allocator);
+	document.AddMember("lstdropDataMat", m_latest.m_dropData.Mathbit, allocator);
+	document.AddMember("lstrandnpc0", m_latest.randNpc[0], allocator);
+	document.AddMember("lstrandnpc1", m_latest.randNpc[1], allocator);
+	document.AddMember("lstrandnpc2", m_latest.randNpc[2], allocator);
+	document.AddMember("lstrandnpc3", m_latest.randNpc[3], allocator);
+	document.AddMember("lstrandnpc4", m_latest.randNpc[4], allocator);
+
+	for (int i = 0; i < m_latest.m_HpData.size(); i++)
+	{
+		auto str1 = cocos2d::StringUtils::format("lsthpNum%d", i);
+		auto str2 = cocos2d::StringUtils::format("lsthpMat%d", i);
+		document.AddMember(Value(str1.c_str(), allocator), m_latest.m_HpData.at(i).number, allocator);
+		document.AddMember(Value(str2.c_str(), allocator), m_latest.m_HpData.at(i).Mathbit, allocator);
+	}
+	for (int i = 0; i < 6; i++)
+	{
+		document.AddMember(rapidjson::Value(cocos2d::StringUtils::format("skilllevel%d", i).c_str(), allocator), m_skillLevel[i], allocator);
+		
+	}
+	for (int i = 0; i < 33; i++)
+	{
+		if (!m_servantLevel[i])
+			break;
+		document.AddMember(Value(cocos2d::StringUtils::format("servantLevel%d", i).c_str(), allocator), m_servantLevel[i], allocator);
+		document.AddMember(Value(cocos2d::StringUtils::format("servantBaseDpsMat%d", i).c_str(), allocator), m_servantBaseDps[i].Mathbit, allocator);
+		document.AddMember(Value(cocos2d::StringUtils::format("servantMul%d", i).c_str(), allocator), m_servantMul[i], allocator);
+		document.AddMember(Value(cocos2d::StringUtils::format("servantBaseDpsNum%d", i).c_str(), allocator), m_servantBaseDps[i].number, allocator);
+
+		
+	}
+	ArtifactData::getInstance()->saveUserDefault(document);
+
+	StringBuffer buffer;
+	rapidjson::Writer<StringBuffer> writer(buffer);
+	document.Accept(writer);
+	auto json = buffer.GetString();
+	
+	cocos2d::UserDefault::getInstance()->setStringForKey("UserDefault", buffer.GetString());
+
+	cocos2d::UserDefault::getInstance()->flush();
+	
 }
 int PlayerData::getServantAverLevel()
 {
@@ -378,7 +528,13 @@ int PlayerData::getServantAverLevel()
 	if (m_servantNum == 0)
 	{
 		return 0;
-	}
+	}		
 	return slevel / m_servantNum;
 
+}
+void PlayerData::relife()
+{
+
+	
+	
 }

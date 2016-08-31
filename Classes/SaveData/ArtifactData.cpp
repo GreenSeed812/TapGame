@@ -12,7 +12,7 @@ ArtifactData* ArtifactData::getInstance()
 	return g_ar;
 }
 ArtifactData::ArtifactData()
- :m_artifactStone(10000000000)
+ :m_artifactStone(1400000000)
  ,m_artifactNum(0)
  , m_dpsexper(0)
  ,m_AllDpsMul(0)
@@ -313,3 +313,52 @@ int ArtifactData::getStarNum(int id)
 void ArtifactData::arReset(int id)
 {
 } 
+void ArtifactData::saveUserDefault(Document& document)
+{
+	Document::AllocatorType& allocator = document.GetAllocator();
+	document.AddMember("m_artifactStone", m_artifactStone, allocator);
+	document.AddMember("m_artifactNum", m_artifactNum, allocator); 
+	document.AddMember("m_dpsexper", m_dpsexper, allocator);
+	document.AddMember("m_AllDpsMul", m_AllDpsMul, allocator);
+	document.AddMember("m_exploreProb", m_exploreProb, allocator);
+	document.AddMember("m_explorePer", m_explorePer, allocator);
+	document.AddMember("rmGoldPer", rmGoldPer, allocator);
+	document.AddMember("tenGoldPer", tenGoldPer, allocator);
+	document.AddMember("bossGoldPer", bossGoldPer, allocator);
+	document.AddMember("bossHpS", bossHpS, allocator);
+	document.AddMember("leaveGoldPer", leaveGoldPer, allocator);
+	document.AddMember("heroLevelUpDown", heroLevelUpDown, allocator);
+	document.AddMember("bossTimeUp", bossTimeUp, allocator);
+	document.AddMember("servantLevelUpDown", servantLevelUpDown, allocator);
+	document.AddMember("WaveDown", WaveDown, allocator);
+	document.AddMember("servantUnlockDown", servantUnlockDown, allocator);
+
+		
+}
+void ArtifactData::readUserDefault()
+{
+	std::string json = cocos2d::UserDefault::getInstance()->getStringForKey("UserDefault");
+	rapidjson::Document jsd;
+	jsd.Parse<0>(json.c_str());
+	if (jsd.IsObject() && jsd.HasMember("m_artifactStone"))
+	{
+		m_artifactStone = jsd["m_artifactStone"].GetInt();
+		m_artifactNum = jsd["m_artifactNum"].GetInt();
+		m_dpsexper = jsd["m_dpsexper"].GetDouble();
+		m_AllDpsMul = jsd["m_AllDpsMul"].GetDouble();
+		m_exploreProb = jsd["m_exploreProb"].GetInt();
+		m_explorePer = jsd["m_explorePer"].GetDouble();
+		rmGoldPer = jsd["rmGoldPer"].GetDouble();
+		tenGoldPer = jsd["tenGoldPer"].GetDouble();
+		bossGoldPer = jsd["bossGoldPer"].GetDouble();
+		bossHpS = jsd["bossHpS"].GetDouble();
+		leaveGoldPer = jsd["leaveGoldPer"].GetDouble();
+		heroLevelUpDown = jsd["heroLevelUpDown"].GetDouble();
+		bossTimeUp = jsd["bossTimeUp"].GetDouble();
+		servantLevelUpDown = jsd["servantLevelUpDown"].GetDouble();
+		WaveDown = jsd["WaveDown"].GetDouble();
+		servantUnlockDown = jsd["servantUnlockDown"].GetDouble();
+		
+
+	}
+}

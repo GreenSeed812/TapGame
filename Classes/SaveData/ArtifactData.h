@@ -3,6 +3,10 @@
 
 #include<cocos2d.h>
 #include "Tool/Rule.h"
+#include "json/document.h"
+#include "json/writer.h"
+#include "json/stringbuffer.h"
+using namespace  rapidjson;
 struct ArtiHave
 {
 	int m_artifactID;
@@ -33,6 +37,8 @@ public:
 	void arStarUp();
 	void arReset(int id);
 	void deleteArByID(int id);
+	void saveUserDefault(Document& document);
+	void readUserDefault();
 public:
 	float getAllDpsMul(){ return m_AllDpsMul; }
 	float getdpsexper(){ return m_dpsexper; }

@@ -23,9 +23,8 @@ bool SignLayer::init()
 }
 
 void SignLayer::initSignLayer()
-{
-	
-	Button* bt = (Button*)rootNode->getChildByName("esc");
+{	
+	Button* bt = (Button*)rootNode->getChildByName("bg")->getChildByName("esc");
 	bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 		if (type == Widget::TouchEventType::ENDED)
 		{

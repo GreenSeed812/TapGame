@@ -483,7 +483,6 @@ void HelloWorld::uiCallBack()
 				_child->setEnabled(true);
 			}
 			bt->setEnabled(false);
-			initDownLayerSh(m_shopLayer);
 			if (initDownLayerSh(m_shopLayer))
 			{
 				auto lv = (ListView*)m_shopLayer->getChildByName("ListView");
@@ -497,9 +496,9 @@ void HelloWorld::uiCallBack()
 					widget->addChild(item);
 					lv->pushBackCustomItem(widget);
 				}
-			}	
+			}
+			itemChange(this);
 		}
-		itemChange(this);
 	});
 	settingButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {
 		if (type == Widget::TouchEventType::BEGAN)
@@ -511,7 +510,6 @@ void HelloWorld::uiCallBack()
 			Button* bt = (Button*)sender;
 			settingLayer::setOff_On(m_bg, m_sou);
 			auto layer = settingLayer::create();
-			this->addChild(layer);
 			layer->setNode(rootNode);
 			rootNode->addChild(layer);
 		}
@@ -681,17 +679,19 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 			if (type == Widget::TouchEventType::ENDED) {
 				ArtifactButton::setRootNode(downLayer);
 				ListView* lv = (ListView*)m_artifactLayer->getChildByName("ListView");
-				ArtifactButton::setListView(lv);
 				auto button = ArtifactButton::create();
 				button->setTag(m_arCount);
 				button->initArtifactLayer();
 				auto widget = Widget::create();
 				widget->setName("arWidget");
+				auto size = button->getContentSize();
+				widget->setContentSize(size);
 				widget->addChild(button);
 				ArtifactButton::setArButtonNode(button);
 				ArtifactButton::setWidget(widget);
 				lv->pushBackCustomItem(widget);
 				lv->jumpToBottom();
+				ArtifactButton::setListView(lv);
 			}
 		});
 	}
@@ -717,7 +717,8 @@ bool HelloWorld::initDownLayerSh(Node* &downLayer)
 		downLayer->setName("downLayerNow");
 		Button* escButton = (Button*)downLayer->getChildByName("message")->getChildByName("escButton");
 		escButton->addTouchEventListener([downLayer, this](Ref* sender, Widget::TouchEventType type) {
-			if (type == Widget::TouchEventType::ENDED) {
+			if (type == Widget::TouchEventType::ENDED)
+			{
 				// 注意node的生命周期的问题
 				auto opLayer = rootNode->getChildByName("UiNode")->getChildByName("OptionLayer");
 				for (auto child : opLayer->getChildren())
@@ -728,16 +729,13 @@ bool HelloWorld::initDownLayerSh(Node* &downLayer)
 				downLayer->removeFromParent();
 			}
 		});
-		});	
 		ret = true;
 	}
 	else
 	{
 		rootNode->removeChildByName("downLayerNow");
 	}
-
 	rootNode->addChild(downLayer);
-
 	return ret;
 }
 
@@ -746,12 +744,11 @@ void HelloWorld::playerSkillCallBack()
 	Node* node = rootNode->getChildByName("UiNode")->getChildByName("SkillLayer");
 	for (int i = 1; i < 7; i++)
 	{
-
 		m_skill[i - 1] = (Button*)node->getChildByName(StringUtils::format("SkillButton%d", i));
-		m_skill[i - 1]->addTouchEventListener([this, i](Ref* sender, Widget::TouchEventType type){
+		m_skill[i - 1]->addTouchEventListener([this, i](Ref* sender, Widget::TouchEventType type)
+		{
 			if (type == Widget::TouchEventType::ENDED)
 			{
-
 				auto skillKpCD = SkillCD::create();
 				skillKpCD->initkpImage(i);
 				skillKpCD->setPosition(m_skill[i - 1]->getContentSize() / 2);
@@ -769,14 +766,9 @@ void HelloWorld::playerSkillCallBack()
 
 				m_skill[i - 1]->setEnabled(false);
 				PlayerData::getInstance()->openSkill(i - 1);
-
-
 			}
 		});
-
 	}
-	
-	
 }
 
 void HelloWorld::skillCDUpdate(float dt)

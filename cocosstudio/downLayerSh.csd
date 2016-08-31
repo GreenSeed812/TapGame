@@ -65,7 +65,7 @@
                 <FileData Type="Normal" Path="dimond.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="escButton" ActionTag="-118210208" Tag="88" IconVisible="False" LeftMargin="908.3539" RightMargin="25.6461" TopMargin="-61.0798" BottomMargin="59.0798" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="48" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="escButton" ActionTag="-118210208" Tag="88" IconVisible="False" LeftMargin="908.3539" RightMargin="25.6461" TopMargin="-61.0798" BottomMargin="59.0798" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="48" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="78.0000" Y="80.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="947.3539" Y="99.0798" />

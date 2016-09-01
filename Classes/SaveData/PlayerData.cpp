@@ -223,8 +223,8 @@ MyNum PlayerData::getPlayerlvupDps()
 	}
 	else
 	{
-		m_upDps = m_upDps = SqLite::getInstance()->getDps(6);
-		for (int i = 0; i < m_playerLevel; i++)
+		m_upDps  = SqLite::getInstance()->getDps(6);
+		for (int i = 7; i <= m_playerLevel; i++)
 		{
 			double f = (1 + 1 / std::pow((double)m_playerLevel, 0.6) - 1 / pow((double)m_playerLevel, 1.008));
 			m_upDps = Ruler::getInstance()->multiplay(m_upDps, f);
@@ -237,7 +237,7 @@ MyNum PlayerData::getPlayerlvupGold()
 {
 
 	auto m_upGold = SqLite::getInstance()->getGold();
-	for (int i = 1; i < m_playerLevel; i++)
+	for (int i = 1; i <= m_playerLevel; i++)
 	{
 		auto mul = 1 / pow(i, 0.55) - 1 / pow(i, 1.03) + 1;
 		m_upGold = Ruler::getInstance()->multiplayUp(m_upGold, mul);
@@ -436,7 +436,38 @@ void PlayerData::servantLevelUp(int id)
 {
 	m_servantLevel[id]++;
 	auto m_upGold = getservantLevelUpGold(id);
+	m_servantBaseDps[id] = getservantLevelUpDps(id);
 	m_gold = Ruler::getInstance()->subNum(m_gold, m_upGold);
+}
+MyNum PlayerData::getservantToalDps(int id)
+{
+	auto servantDps = SqLite::getInstance()->getServantDpsByID(id);
+	for (int i = 0; i < m_servantLevel[id]; i++)
+	{
+		auto pow1 = pow(i + 1, 0.7);
+		auto pow2 = pow(i + 1, 6);
+		auto mul = 1 + 1 / pow1 - 1 / pow2;
+		servantDps = Ruler::getInstance()->multiplay(servantDps, mul);
+	}
+	return servantDps;
+	
+}
+MyNum PlayerData::getservantLevelUpDps(int id)
+{
+	MyNum servantLsDps;
+	servantLsDps.Mathbit = 0;
+	servantLsDps.number = 0;
+	if (m_servantLevel[id] > 0)
+		servantLsDps = SqLite::getInstance()->getServantDpsByID(id);
+	for (int i = 0; i < m_servantLevel[id]-1; i++)
+	{
+		auto pow1 = pow(i + 1, 0.7);
+		auto pow2 = pow(i + 1, 6);
+		auto mul = 1 + 1 / pow1 - 1 / pow2;
+		servantLsDps = Ruler::getInstance()->multiplay(servantLsDps, mul);
+	}
+	auto upDps = Ruler::getInstance()->subNum(getservantToalDps(id), servantLsDps);
+	return upDps;
 }
 MyNum PlayerData::getservantLevelUpGold(int id)
 {

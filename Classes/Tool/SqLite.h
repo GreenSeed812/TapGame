@@ -90,6 +90,18 @@ struct daoju
 	std::string effdis;
 	int expense;
 };
+struct Achieve
+{
+	int ID; 
+	std::string discribe;
+	MyNum Star_1;
+	MyNum Star_2;
+	MyNum Star_3;
+	MyNum Star_4;
+	MyNum Star_5;
+
+};
+
 class SqLite
 {
 public:

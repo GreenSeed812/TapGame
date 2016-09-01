@@ -48,7 +48,9 @@ public:
 	int getLevelRelifeStone();
 	MyNum getServantDps(int i);
 	int getServantLevel(int i){ return m_servantLevel[i]; }
+	MyNum getservantLevelUpDps(int id);
 	MyNum getservantLevelUpGold(int id);
+	MyNum getservantToalDps(int id);
 	int getServantNum(){ return m_servantNum; }
 	bool getSkillopen(int i){ return m_skillOpen[i]; }
 	MyNum getTapDps();

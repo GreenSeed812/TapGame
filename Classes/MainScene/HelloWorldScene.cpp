@@ -50,11 +50,17 @@ Scene* HelloWorld::createScene()
 bool HelloWorld::init()
 {
 
-	 if ( !Layer::init() )
+	if ( !Layer::init() )
     {
         return false;
     }
 
+	{
+		MyNum num;
+		num.Mathbit = 10;
+		num.number = 333;
+		PlayerData::getInstance()->addGold(&num);
+	}
 	BgMusic::getInstance()->playBg(true);
 	m_hitlogic = true;
 	m_heroLayer = nullptr;
@@ -166,8 +172,11 @@ void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const
 		if (action == "Start")
 		{
 			
-			//clickLayer->setTouchEnabled(true);
+		
 			armature->getAnimation()->play("Wait");
+			clickLayer->setTouchEnabled(true);
+
+			MyState::getInstance()->setTaped(false);
 			m_hitlogic = true;
 		}
 		
@@ -577,8 +586,9 @@ void HelloWorld::killBoss()
 	if (MyState::getInstance()->getBossButtonDown())
 	{
 		m_hitlogic = false;
+		clickLayer->setTouchEnabled(false);
 		armature->getAnimation()->play("Leave");
-		//clickLayer->setTouchEnabled(false);
+		
 		MyState::getInstance()->setBossButtonDown(false);
 	}
 	if (Ruler::getInstance()->Zero(PlayerData::getInstance()->getHpNow()))

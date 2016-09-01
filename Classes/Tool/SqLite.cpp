@@ -16,6 +16,8 @@ SqLite::SqLite()
 	readServantSkill();
 	readArtifact();
 	readArtifactSkill();
+	readDaoju();
+	readAchieve();
 }
 
 SqLite::~SqLite()
@@ -563,7 +565,7 @@ void SqLite::readDaoju()
 	auto tableresult = sqlite3_get_table(m_pDB, "select * from daoju", &dbResult, &nRow, &nColum, &errmsg);
 	if (SQLITE_OK == tableresult)
 	{
-		std::string id = "id";
+		std::string id = "ID";
 		std::string name = "name";
 		std::string effdis = "effdis";
 		std::string expense = "expense";
@@ -584,6 +586,119 @@ void SqLite::readDaoju()
 				++index;
 			}
 			m_daoju.push_back(dj);
+		}
+	}
+}
+
+void SqLite::readAchieve()
+{
+	char** dbResult;
+	int nRow;
+	int nColum;
+	char* errmsg;
+	auto tableresult = sqlite3_get_table(m_pDB, "select * from chengjiu", &dbResult, &nRow, &nColum, &errmsg);
+	if (SQLITE_OK == tableresult)
+	{
+		std::string ID = "ID";
+		std::string discribe = "discribe";
+		std::string Star_1 = "star_1";
+		std::string Star_2 = "star_2";
+		std::string Star_3 = "star_3";
+		std::string Star_4 = "star_4";
+		std::string Star_5 = "star_5";
+		auto index = nColum;
+		for (int i = 0; i < nRow; i++)
+		{
+			auto achieve = new Achieve();
+			for (int j = 0; j < nColum; j++)
+			{
+				if (ID.compare(dbResult[j]) == 0)
+					achieve->ID = atoi(dbResult[index]);
+				if (discribe.compare(dbResult[j]) == 0)
+					achieve->discribe = dbResult[index];
+				if (Star_1.compare(dbResult[j]) == 0)
+				{
+					if (achieve->ID == 2 || achieve->ID == 6)
+					{
+						list<string> list;
+						std::string tmp = dbResult[index];
+						list = Split::getInstance()->strsplit(tmp, ",");
+						achieve->Star_1.number = atof(list.front().c_str());
+						list.pop_front();
+						achieve->Star_1.Mathbit = atof(list.front().c_str());
+					}
+					else
+					{
+						achieve->Star_1.number = atoi(dbResult[index]);
+					}
+				}
+				if (Star_2.compare(dbResult[j]) == 0)
+				{
+					if (achieve->ID == 2 || achieve->ID == 6)
+					{
+						list<string> list;
+						std::string tmp = dbResult[index];
+						list = Split::getInstance()->strsplit(tmp, ",");
+						achieve->Star_2.number = atof(list.front().c_str());
+						list.pop_front();
+						achieve->Star_2.Mathbit = atof(list.front().c_str());
+					}
+					else
+					{
+						achieve->Star_2.number = atoi(dbResult[index]);
+					}
+				}
+				if (Star_3.compare(dbResult[j]) == 0)
+				{
+					if (achieve->ID == 2 || achieve->ID == 6)
+					{
+						list<string> list;
+						std::string tmp = dbResult[index];
+						list = Split::getInstance()->strsplit(tmp, ",");
+						achieve->Star_3.number = atof(list.front().c_str());
+						list.pop_front();
+						achieve->Star_3.Mathbit = atof(list.front().c_str());
+					}
+					else
+					{
+						achieve->Star_3.number = atoi(dbResult[index]);
+					}
+				}
+				if (Star_4.compare(dbResult[j]) == 0)
+				{
+					if (achieve->ID == 2 || achieve->ID == 6)
+					{
+						list<string> list;
+						std::string tmp = dbResult[index];
+						list = Split::getInstance()->strsplit(tmp, ",");
+						achieve->Star_4.number = atof(list.front().c_str());
+						list.pop_front();
+						achieve->Star_4.Mathbit = atof(list.front().c_str());
+					}
+					else
+					{
+						achieve->Star_4.number = atoi(dbResult[index]);
+					}
+				}
+				if (Star_5.compare(dbResult[j]) == 0)
+				{
+					if (achieve->ID == 2 || achieve->ID == 6)
+					{
+						list<string> list;
+						std::string tmp = dbResult[index];
+						list = Split::getInstance()->strsplit(tmp, ",");
+						achieve->Star_5.number = atof(list.front().c_str());
+						list.pop_front();
+						achieve->Star_5.Mathbit = atof(list.front().c_str());
+					}
+					else
+					{
+						achieve->Star_5.number = atoi(dbResult[index]);
+					}
+				}
+				++index;
+			}
+			m_Achieve.push_back(achieve);
 		}
 	}
 }

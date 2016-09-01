@@ -132,6 +132,7 @@ public:
 	~SqLite();
 	void readArtifact();
 	void readArtifactSkill();
+	void readAchieve();
 	void readDaoju();
 	void readMonster();
 	void readMapData();
@@ -151,6 +152,7 @@ public:
 	std::map<int, Artifact*> m_artifact;
 	std::map<int,ArtifactSkill*>m_artifactSkill;
 	std::vector<daoju*> m_daoju;
+	std::vector<Achieve*>m_Achieve;
 	float m_bossHp[5];
 	MyNum m_dropData;
 	MyNum m_baseDps[8];

@@ -105,7 +105,7 @@ int ArtifactData::addArNum()
 		}
 		if (artSkill.ar.effid == 8)
 		{
-			m_AllDpsMul;
+			m_AllDpsMul += artSkill.ar.effData;
 		}
 		if (artSkill.ar.effid == 19)
 		{
@@ -289,7 +289,7 @@ void ArtifactData::deleteArByID(int id)
 			{
 				servantUnlockDown -= artSkill.ar.effData;
 			}
-			m_AllDpsMul -= (*it)->m_artimaxLevel * (*it)->m_artiDpsUp;
+			m_AllDpsMul -= (*it)->m_artifactLevel * (*it)->m_artiDpsUp + SqLite::getInstance()->getArtifactSkillByID(id).ar.initAllDps;
 			m_artifacts.erase(it);
 			m_artifactNum--;
 			break;
@@ -365,17 +365,18 @@ void ArtifactData::readUserDefault()
 		servantLevelUpDown = jsd["servantLevelUpDown"].GetDouble();
 		WaveDown = jsd["WaveDown"].GetDouble();
 		servantUnlockDown = jsd["servantUnlockDown"].GetDouble();
-		if(jsd.HasMember("m_artifacts.at(%d)->m_artiDpsUp"))
+	
+		for (int i = 0; i < m_artifactNum; i++)
 		{
-			for (int i = 0; i < m_artifactNum; i++)
-			{
-				m_artifacts.at(i)->m_artiDpsUp = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artiDpsUp", i).c_str()].GetDouble();
-				m_artifacts.at(i)->m_artifactID = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artifactID", i).c_str()].GetInt();
-				m_artifacts.at(i)->m_artifactLevel = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artifactLevel", i).c_str()].GetInt();
-				m_artifacts.at(i)->m_artimaxLevel = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artimaxLevel", i).c_str()].GetInt();
-				m_artifacts.at(i)->m_artiDpsUp = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artiDpsUp", i).c_str()].GetDouble();
-			}
+			ArtiHave * arhave = new ArtiHave();
+			arhave->m_artiDpsUp = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artiDpsUp", i).c_str()].GetDouble();
+			arhave->m_artifactID = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artifactID", i).c_str()].GetInt();
+			arhave->m_artifactLevel = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artifactLevel", i).c_str()].GetInt();
+			arhave->m_artimaxLevel = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artimaxLevel", i).c_str()].GetInt();
+			arhave->m_artiDpsUp = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artiDpsUp", i).c_str()].GetDouble();
+			m_artifacts.push_back(arhave);
 		}
+		
 	
 
 	}

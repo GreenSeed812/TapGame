@@ -39,8 +39,8 @@ void ServantButton::initServantLayer(int id)
 	m_gold = SqLite::getInstance()->getServantGoldByID(m_id);
 
 	auto bt = (Button*)m_layer->getChildByName("up");
-	auto up10 = (Button*)m_layer->getChildByName("Button_1_1");
-	auto up100 = (Button*)m_layer->getChildByName("Button_1_1_0");
+	auto up10 = (Button*)m_layer->getChildByName("up10");
+	auto up100 = (Button*)m_layer->getChildByName("up100");
 	auto dps = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("dps");
 	auto gold = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("gold");
 	auto head = (Sprite*)m_layer->getChildByName("serHead");
@@ -112,23 +112,27 @@ void ServantButton::coinChange(Ref*)
 	Text* text = (Text*)m_layer->getChildByName("up")->getChildByName("up");
 	auto gold = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("gold");
 	auto * dps = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("dps");
+	auto up10Dps = (TextBMFont*)m_layer->getChildByName("up10")->getChildByName("dps");
+	auto up100Dps = (TextBMFont*)m_layer->getChildByName("up100")->getChildByName("dps");
+	up10Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getServantDps(m_id)));
+	up100Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getServantDps(m_id)));
 	auto * textlv = (Text*)m_layer->getChildByName("discribe")->getChildByName("lv");
 	Sprite* skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d", m_skillCount + 1));
-	dps->setString(Ruler::getInstance()->showNum(m_baseDps));
+	dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getServantDps(m_id)));
 	textlv->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getServantLevel(m_id)));
 	MyNum judge;
-
+	m_gold = PlayerData::getInstance()->getservantLevelUpGold(m_id);
 	if (!m_lock)
 	{	
-		judge = Ruler::getInstance()->subNum(Ruler::getInstance()->multiplay(m_gold, 5 * (1 - ArtifactData::getInstance()->getSSUD())), *PlayerData::getInstance()->getGold());
+		judge = Ruler::getInstance()->subNum(Ruler::getInstance()->multiplay(PlayerData::getInstance()->getservantLevelUpGold(m_id), 5 * (1 - ArtifactData::getInstance()->getSSUD())), *PlayerData::getInstance()->getGold());
 		bt->loadTextureNormal("ui/downUi/servant/anniu2.png");
 		bt->loadTexturePressed("ui/downUi/servant/anniu2.png");
 		text->setString(m_skillUnLock);
-		gold->setString(Ruler::getInstance()->showNum(Ruler::getInstance()->multiplay(m_gold, 5 * (1 - ArtifactData::getInstance()->getSSUD()))));
+		gold->setString(Ruler::getInstance()->showNum(Ruler::getInstance()->multiplay(PlayerData::getInstance()->getservantLevelUpGold(m_id), 5 * (1 - ArtifactData::getInstance()->getSSUD()))));
 	}
 	else
 	{
-		gold->setString(Ruler::getInstance()->showNum(m_gold));
+		gold->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpGold(m_id)));
 		judge = Ruler::getInstance()->subNum(PlayerData::getInstance()->getservantLevelUpGold(m_id), *PlayerData::getInstance()->getGold());
 		bt->loadTextureNormal("ui/downUi/servant/anniu1.png");
 		bt->loadTexturePressed("ui/downUi/servant/anniu1.png");
@@ -164,8 +168,8 @@ void ServantButton::onTouchEnded(Touch * touch, Event * event)
 
 void ServantButton::upLevel(bool off_on)
 {
-	auto up10 = (Button*)m_layer->getChildByName("Button_1_1");
-	auto up100 = (Button*)m_layer->getChildByName("Button_1_1_0");
+	auto up10 = (Button*)m_layer->getChildByName("up10");
+	auto up100 = (Button*)m_layer->getChildByName("up100");
 	MyNum upGold;
 	MyNum judge10;
 	MyNum judge100;
@@ -205,6 +209,9 @@ void ServantButton::upLevel(bool off_on)
 	{
 		up100->setVisible(false);
 	}
+	auto action = Sequence::create(DelayTime::create(5), CallFuncN::create(CC_CALLBACK_1(ServantButton::callbackSer, this)), nullptr);
+	up10->runAction(action);
+	up100->runAction(action);
 }
 
 void ServantButton::oneUp()
@@ -259,5 +266,19 @@ void ServantButton::oneUp()
 		m_skillCount++;
 		m_unlock = false;
 		m_lock = true;
+	}
+}
+
+void ServantButton::callbackSer(Node * node)
+{
+	auto up10 = (Button*)m_layer->getChildByName("up10");
+	auto up100 = (Button*)m_layer->getChildByName("up100");
+	if (up10->isVisible())
+	{
+		up10->setVisible(false);
+	}
+	if (up100->isVisible())
+	{
+		up100->setVisible(false);
 	}
 }

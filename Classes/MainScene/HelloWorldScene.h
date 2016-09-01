@@ -28,6 +28,7 @@ public:
 	bool initDownLayerSh(Node*&);
 	void coinChange(Ref*);
 	void ArChange(Ref*);
+	void itemChange(Ref*);
 	virtual void update(float dt);
 	void skillCDUpdate(float dt);
 	void skillKpCDUpdate(float dt);
@@ -38,6 +39,8 @@ public:
 	void normalAtk();
 	static void setBg(bool off_on){ m_bg = off_on; }
 	static void setSou(bool off_on){ m_sou = off_on; }
+	void initAr();
+	void initSer();
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 private:
@@ -52,6 +55,7 @@ private:
 	Node * m_skillButton[6];
 	bool showTime;
 	int timeNow;
+	int m_exchangeCount;
 	bossButton * bossBt;
 	Button * m_skill[6];
 	Animation* ani;

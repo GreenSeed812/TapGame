@@ -7,6 +7,7 @@
 #include "MainScene/ClickLayer.h"
 #include "SaveData/PlayerData.h"
 #include "SaveData/ArtifactData.h"
+#include "SaveData/ShopData.h"
 #include "Tool/Rule.h"
 #include "MainScene/PlayerButton.h"
 #include "MainScene/ServantButton.h"
@@ -15,9 +16,11 @@
 #include "Ui/settingLayer.h"
 #include "Ui/AchieveLayer.h"
 #include "Ui/MissionLayer.h"
+#include "Ui/ExChange.h"
 #include "Ui/SignLayer.h"
 #include "SkillCD.h"
 #include "SaveData/MonsterState.h"
+#include "Ui/ItemLayer.h"
 using namespace cocostudio;
 
 USING_NS_CC;
@@ -59,6 +62,7 @@ bool HelloWorld::init()
     m_artifactLayer = nullptr;
 	m_shopLayer = nullptr;
 	m_arCount = 0;
+	m_exchangeCount = 5;
     rootNode = CSLoader::createNode("MainScene.csb");
 	addChild(rootNode);
 	Slider * hpSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider");
@@ -78,6 +82,7 @@ bool HelloWorld::init()
 	createMonster();
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::coinChange), "CoinChange", nullptr);
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::ArChange), "ArChange", nullptr);
+	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::itemChange), "itemChange", nullptr);
 	showTime = false;
 	Slider* timeSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("timeSlider");
 	timeNow = PlayerData::getInstance()->getMaxTime();
@@ -106,6 +111,7 @@ void HelloWorld::coinChange(Ref *ref)
 		TextBMFont* gold = (TextBMFont*)m_servantLayer->getChildByName("message")->getChildByName("gold");
 		gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
 	}
+	ExChange::setCount(m_exchangeCount--);
 }
 
 void HelloWorld::ArChange(Ref*)
@@ -132,7 +138,15 @@ void HelloWorld::ArChange(Ref*)
 		}
 	}
 }
-	
+
+void HelloWorld::itemChange(Ref* ref)
+{
+	if (m_shopLayer)
+	{
+		auto money = (TextBMFont*)m_shopLayer->getChildByName("message")->getChildByName("money");
+		money->setString(StringUtils::format("%d", ShopData::getInstance()->getShopGold()).c_str());	
+	}
+}
 
 void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const std::string& action)
 {
@@ -365,6 +379,16 @@ void HelloWorld::uiCallBack()
 				disc->removeFromParent();
 				TextBMFont* dps = (TextBMFont*)m_heroLayer->getChildByName("message")->getChildByName("Dps");
 				dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getHeroDps()));
+				auto buyBtn = (TextBMFont*)m_heroLayer->getChildByName("message")->getChildByName("buy");
+				buyBtn->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
+					if (type == Widget::TouchEventType::ENDED)
+					{
+						auto exc = ExChange::create();
+						exc->initExchange();
+						exc->setNode(rootNode);
+						rootNode->addChild(exc);
+					}
+				});
 				TextBMFont* gold = (TextBMFont*)m_heroLayer->getChildByName("message")->getChildByName("gold");
 				gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
 				for (int i = 0; i < 8; i++)
@@ -409,12 +433,17 @@ void HelloWorld::uiCallBack()
 				dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getDps()));
 				TextBMFont* gold = (TextBMFont*)m_servantLayer->getChildByName("message")->getChildByName("gold");
 				gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
-				auto button = ServantButton::create();
-				button->initServantLayer(0);
-				auto widget = Widget::create();
-				widget->setContentSize(button->getContentSize());
-				widget->addChild(button);
-				lv->pushBackCustomItem(widget);
+				auto buyBtn = (TextBMFont*)m_servantLayer->getChildByName("message")->getChildByName("buy");
+				buyBtn->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
+					if (type == Widget::TouchEventType::ENDED)
+					{
+						auto exc = ExChange::create();
+						exc->initExchange();
+						exc->setNode(rootNode);
+						rootNode->addChild(exc);
+					}
+				});
+				initSer();
 			}
 			else
 			{
@@ -438,7 +467,10 @@ void HelloWorld::uiCallBack()
 				_child->setEnabled(true);
 			}
 			bt->setEnabled(false);
-			initDownLayerAr(m_artifactLayer);
+			if (initDownLayerAr(m_artifactLayer))
+			{
+				initAr();
+			}	
 			ArChange(this);
 		}
 	});
@@ -458,7 +490,21 @@ void HelloWorld::uiCallBack()
 				_child->setEnabled(true);
 			}
 			bt->setEnabled(false);
-			initDownLayerSh(m_shopLayer);
+			if (initDownLayerSh(m_shopLayer))
+			{
+				auto lv = (ListView*)m_shopLayer->getChildByName("ListView");
+				for (size_t i = 0; i < 10; i++)
+				{
+					auto widget = Widget::create();
+					auto item = ItemLayer::create();
+					item->initItemLayer(i);
+					auto size = item->getContentSize();
+					widget->setContentSize(size);
+					widget->addChild(item);
+					lv->pushBackCustomItem(widget);
+				}
+			}
+			itemChange(this);
 		}
 	});
 	settingButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {
@@ -471,7 +517,8 @@ void HelloWorld::uiCallBack()
 			Button* bt = (Button*)sender;
 			settingLayer::setOff_On(m_bg, m_sou);
 			auto layer = settingLayer::create();
-			this->addChild(layer);
+			layer->setNode(rootNode);
+			rootNode->addChild(layer);
 		}
 	});
 	achieveButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {
@@ -637,20 +684,20 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 		auto btn = (Button*)downLayer->getChildByName("getArtifact");
 		btn->addTouchEventListener([downLayer, this](Ref* sender, Widget::TouchEventType type) {
 			if (type == Widget::TouchEventType::ENDED) {
-				ArtifactButton::setRootNode(downLayer);
 				ListView* lv = (ListView*)m_artifactLayer->getChildByName("ListView");
-				ArtifactButton::setListView(lv);
+				ArtifactButton::setRootNode(m_artifactLayer);
 				auto button = ArtifactButton::create();
 				button->setTag(m_arCount);
-				button->initArtifactLayer();
+				button->initArtifactLayer(0,false);
 				auto widget = Widget::create();
 				widget->setName("arWidget");
-				widget->setContentSize(button->getContentSize());
+				auto size = button->getContentSize();
+				widget->setContentSize(size);
 				widget->addChild(button);
-				ArtifactButton::setArButtonNode(button);
-				ArtifactButton::setWidget(widget);
+				button->setWidget(widget);
 				lv->pushBackCustomItem(widget);
 				lv->jumpToBottom();
+				ArtifactButton::setListView(lv);
 			}
 		});
 	}
@@ -676,7 +723,8 @@ bool HelloWorld::initDownLayerSh(Node* &downLayer)
 		downLayer->setName("downLayerNow");
 		Button* escButton = (Button*)downLayer->getChildByName("message")->getChildByName("escButton");
 		escButton->addTouchEventListener([downLayer, this](Ref* sender, Widget::TouchEventType type) {
-			if (type == Widget::TouchEventType::ENDED) {
+			if (type == Widget::TouchEventType::ENDED)
+			{
 				// 注意node的生命周期的问题
 				auto opLayer = rootNode->getChildByName("UiNode")->getChildByName("OptionLayer");
 				for (auto child : opLayer->getChildren())
@@ -693,9 +741,7 @@ bool HelloWorld::initDownLayerSh(Node* &downLayer)
 	{
 		rootNode->removeChildByName("downLayerNow");
 	}
-
 	rootNode->addChild(downLayer);
-
 	return ret;
 }
 
@@ -704,12 +750,11 @@ void HelloWorld::playerSkillCallBack()
 	Node* node = rootNode->getChildByName("UiNode")->getChildByName("SkillLayer");
 	for (int i = 1; i < 7; i++)
 	{
-
 		m_skill[i - 1] = (Button*)node->getChildByName(StringUtils::format("SkillButton%d", i));
-		m_skill[i - 1]->addTouchEventListener([this, i](Ref* sender, Widget::TouchEventType type){
+		m_skill[i - 1]->addTouchEventListener([this, i](Ref* sender, Widget::TouchEventType type)
+		{
 			if (type == Widget::TouchEventType::ENDED)
 			{
-
 				auto skillKpCD = SkillCD::create();
 				skillKpCD->initkpImage(i);
 				skillKpCD->setPosition(m_skill[i - 1]->getContentSize() / 2);
@@ -727,14 +772,9 @@ void HelloWorld::playerSkillCallBack()
 
 				m_skill[i - 1]->setEnabled(false);
 				PlayerData::getInstance()->openSkill(i - 1);
-
-
 			}
 		});
-
 	}
-	
-	
 }
 
 void HelloWorld::skillCDUpdate(float dt)
@@ -928,4 +968,41 @@ void HelloWorld::deleteSprite(Node *node)
 void HelloWorld::playMusic(Node * node)
 {
 	BgMusic::getInstance()->playEff();
+}
+
+void HelloWorld::initSer()
+{
+	ListView* lv = (ListView*)m_servantLayer->getChildByName("ListView");
+	for (size_t i = 0; i <= PlayerData::getInstance()->getServantNum(); i++)
+	{
+		auto button = ServantButton::create();
+		button->initServantLayer(i);
+		auto widget = Widget::create();
+		widget->setContentSize(button->getContentSize());
+		widget->addChild(button);
+		lv->pushBackCustomItem(widget);
+	}		
+}
+
+void HelloWorld::initAr()
+{	
+	ListView* lv = (ListView*)m_artifactLayer->getChildByName("ListView");
+	auto num = ArtifactData::getInstance()->getArNum();
+	for (size_t i = 0; i < num; i++)
+	{
+		auto button = ArtifactButton::create();
+		button->setTag(m_arCount);
+		ArtifactData::getInstance()->getArtHaveByOrder(i);
+		button->initArtifactLayer(ArtifactData::getInstance()->getArtHaveByOrder(i)->m_artifactID,true);
+		auto widget = Widget::create();
+		widget->setName("arWidget");
+		auto size = button->getContentSize();
+		widget->setContentSize(size);
+		widget->addChild(button);
+		button->setWidget(widget);
+		lv->pushBackCustomItem(widget);
+		lv->jumpToBottom();
+		ArtifactButton::setListView(lv);
+		ArtifactButton::setRootNode(m_artifactLayer);
+	}
 }

@@ -6,5 +6,9 @@
 	<string>升级</string>
 	<key>unLock</key>
 	<string>解锁</string>
+	<key>text1</key>
+	<string>兑换次数已用尽！</string>
+	<key>text2</key>
+	<string>钻石不足！</string>
 </dict>
 </plist>

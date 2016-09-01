@@ -6,13 +6,13 @@
       <ObjectData Name="Layer" Tag="411" ctype="GameLayerObjectData">
         <Size X="1080.0000" Y="1920.0000" />
         <Children>
-          <AbstractNodeData Name="Image_1" ActionTag="-1273880150" Tag="412" IconVisible="False" LeftMargin="243.0197" RightMargin="226.9803" TopMargin="408.9854" BottomMargin="431.0146" LeftEage="201" RightEage="201" TopEage="356" BottomEage="356" Scale9OriginX="201" Scale9OriginY="356" Scale9Width="208" Scale9Height="368" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_1" ActionTag="-1273880150" Tag="412" IconVisible="False" LeftMargin="240.0193" RightMargin="229.9807" TopMargin="414.3127" BottomMargin="425.6872" LeftEage="201" RightEage="201" TopEage="356" BottomEage="356" Scale9OriginX="201" Scale9OriginY="356" Scale9Width="208" Scale9Height="368" ctype="ImageViewObjectData">
             <Size X="610.0000" Y="1080.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="548.0197" Y="971.0146" />
+            <Position X="545.0193" Y="965.6872" />
             <Scale ScaleX="1.7872" ScaleY="1.7872" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5074" Y="0.5057" />
+            <PrePosition X="0.5046" Y="0.5030" />
             <PreSize X="0.5648" Y="0.5625" />
             <FileData Type="Normal" Path="Load.png" Plist="" />
           </AbstractNodeData>
@@ -46,17 +46,17 @@
             <PreSize X="0.7000" Y="0.0521" />
             <FileData Type="Normal" Path="k1 (4).png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_4" ActionTag="-1371821802" Tag="415" IconVisible="False" LeftMargin="397.5000" RightMargin="397.5000" TopMargin="1344.5316" BottomMargin="524.4684" LeftEage="94" RightEage="94" TopEage="16" BottomEage="16" Scale9OriginX="94" Scale9OriginY="16" Scale9Width="97" Scale9Height="19" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="name" ActionTag="1066453107" Tag="485" IconVisible="False" LeftMargin="403.3098" RightMargin="391.6902" TopMargin="1341.1046" BottomMargin="527.8954" TouchEnable="True" FontSize="40" IsCustomSize="True" LabelText="" PlaceHolderText=" 输入主角名称" MaxLengthEnable="True" MaxLengthText="10" ctype="TextFieldObjectData">
             <Size X="285.0000" Y="51.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="540.0000" Y="549.9684" />
+            <Position X="545.8098" Y="553.3954" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="229" B="192" />
-            <PrePosition X="0.5000" Y="0.2864" />
+            <PrePosition X="0.5054" Y="0.2882" />
             <PreSize X="0.2639" Y="0.0266" />
-            <FileData Type="Normal" Path="srmc.png" Plist="" />
+            <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_6" ActionTag="-1658604294" Tag="417" IconVisible="False" LeftMargin="361.0000" RightMargin="361.0000" TopMargin="836.5394" BottomMargin="725.4606" LeftEage="118" RightEage="118" TopEage="118" BottomEage="118" Scale9OriginX="118" Scale9OriginY="118" Scale9Width="122" Scale9Height="122" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="head" ActionTag="-1658604294" Tag="417" IconVisible="False" LeftMargin="361.0000" RightMargin="361.0000" TopMargin="836.5394" BottomMargin="725.4606" LeftEage="118" RightEage="118" TopEage="118" BottomEage="118" Scale9OriginX="118" Scale9OriginY="118" Scale9Width="122" Scale9Height="122" ctype="ImageViewObjectData">
             <Size X="358.0000" Y="358.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="540.0000" Y="904.4606" />

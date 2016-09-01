@@ -8,10 +8,7 @@
 #include "Tool/SqLite.h"
 using namespace ui;
 
-
-Node * ArReset::g_widget = nullptr;
 Node * ArReset::g_listview = nullptr;
-Node * ArReset::g_btn = nullptr;
 
 bool ArReset::init()
 {
@@ -95,10 +92,10 @@ void ArReset::initArResetLayer(int id)
 		{
 			ShopData::getInstance()->subShopGold(200);
 			ArtifactData::getInstance()->deleteArByID(m_id);
-			
 			CCNotificationCenter::getInstance()->removeObserver(g_btn, "ArChange");
-			g_listview->removeChild(g_widget);
+			g_listview->removeChild(m_widget);
 			m_node->removeFromParent();
+			CCNotificationCenter::getInstance()->postNotification("ArChange");
 		}
 	});
 

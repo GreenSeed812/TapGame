@@ -6,7 +6,7 @@
       <ObjectData Name="downLayer" Tag="48" ctype="GameLayerObjectData">
         <Size X="1080.0000" Y="1920.0000" />
         <Children>
-          <AbstractNodeData Name="Sprite_1" ActionTag="-1608587296" Tag="61" IconVisible="False" LeftMargin="37.4700" RightMargin="40.5300" TopMargin="1307.2500" BottomMargin="204.7500" ctype="SpriteObjectData">
+          <AbstractNodeData Name="bg" ActionTag="-1608587296" Tag="61" IconVisible="False" LeftMargin="37.4700" RightMargin="40.5300" TopMargin="1307.2500" BottomMargin="204.7500" ctype="SpriteObjectData">
             <Size X="1002.0000" Y="408.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="538.4700" Y="408.7500" />
@@ -17,15 +17,15 @@
             <FileData Type="Normal" Path="diban0.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ListView" ActionTag="2109206512" Tag="66" IconVisible="False" LeftMargin="49.3000" RightMargin="56.7000" TopMargin="1320.8750" BottomMargin="218.3750" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" LeftEage="330" RightEage="330" TopEage="161" BottomEage="161" Scale9OriginX="-330" Scale9OriginY="-161" Scale9Width="660" Scale9Height="322" ScrollDirectionType="0" DirectionType="Vertical" HorizontalType="Align_HorizontalCenter" ctype="ListViewObjectData">
-            <Size X="974.0000" Y="380.7500" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="536.3000" Y="408.7500" />
+          <AbstractNodeData Name="ListView" ActionTag="895730421" Tag="270" IconVisible="False" LeftMargin="47.3806" RightMargin="52.6194" TopMargin="1322.0380" BottomMargin="217.9620" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" DirectionType="Vertical" HorizontalType="Align_HorizontalCenter" ctype="ListViewObjectData">
+            <Size X="980.0000" Y="380.0000" />
+            <AnchorPoint />
+            <Position X="47.3806" Y="217.9620" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4966" Y="0.2129" />
-            <PreSize X="0.9019" Y="0.1983" />
-            <SingleColor A="255" R="26" G="26" B="26" />
+            <PrePosition X="0.0439" Y="0.1135" />
+            <PreSize X="0.9074" Y="0.1979" />
+            <SingleColor A="255" R="150" G="150" B="255" />
             <FirstColor A="255" R="150" G="150" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
@@ -44,7 +44,7 @@
                 <FileData Type="Normal" Path="escbg.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Resource" ActionTag="-1246136152" Tag="129" IconVisible="False" LeftMargin="429.9200" RightMargin="390.0800" TopMargin="-4.6211" BottomMargin="5.6211" LabelText="99999" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="money" ActionTag="-1246136152" Tag="129" IconVisible="False" LeftMargin="429.9200" RightMargin="390.0800" TopMargin="-4.6211" BottomMargin="5.6211" LabelText="99999" ctype="TextBMFontObjectData">
                 <Size X="192.0000" Y="77.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="525.9200" Y="44.1211" />
@@ -65,7 +65,7 @@
                 <FileData Type="Normal" Path="dimond.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="escButton" ActionTag="-118210208" Tag="88" IconVisible="False" LeftMargin="908.3539" RightMargin="25.6461" TopMargin="-61.0798" BottomMargin="59.0798" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="48" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="escButton" ActionTag="-118210208" Tag="88" IconVisible="False" LeftMargin="908.3539" RightMargin="25.6461" TopMargin="-61.0798" BottomMargin="59.0798" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="48" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="78.0000" Y="80.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="947.3539" Y="99.0798" />

@@ -96,13 +96,13 @@
             <PreSize X="0.1685" Y="0.0240" />
             <FileData Type="Normal" Path="sysh.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ListView" ActionTag="-671010493" Tag="85" IconVisible="False" LeftMargin="51.1274" RightMargin="54.8726" TopMargin="1403.6646" BottomMargin="216.3355" TouchEnable="True" ClipAble="True" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" DirectionType="Vertical" HorizontalType="Align_HorizontalCenter" ctype="ListViewObjectData">
+          <AbstractNodeData Name="ListView" ActionTag="-671010493" Tag="85" IconVisible="False" LeftMargin="51.1274" RightMargin="54.8726" TopMargin="1403.6646" BottomMargin="216.3355" TouchEnable="True" ClipAble="True" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" DirectionType="Vertical" HorizontalType="Align_HorizontalCenter" ctype="ListViewObjectData">
             <Size X="974.0000" Y="300.0000" />
-            <AnchorPoint />
-            <Position X="51.1274" Y="216.3355" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="538.1274" Y="366.3355" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0473" Y="0.1127" />
+            <PrePosition X="0.4983" Y="0.1908" />
             <PreSize X="0.9019" Y="0.1563" />
             <SingleColor A="255" R="60" G="50" B="46" />
             <FirstColor A="255" R="150" G="150" B="255" />

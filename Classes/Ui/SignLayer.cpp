@@ -18,13 +18,17 @@ bool SignLayer::init()
 	touchListener->setSwallowTouches(true);
 	touchListener->onTouchBegan = CC_CALLBACK_2(SignLayer::onTouchBegan, this);
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this);
-	Button* bt = (Button*)rootNode->getChildByName("esc");
+	initSignLayer();
+	return true;
+}
+
+void SignLayer::initSignLayer()
+{	
+	Button* bt = (Button*)rootNode->getChildByName("bg")->getChildByName("esc");
 	bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 		if (type == Widget::TouchEventType::ENDED)
 		{
 			this->removeFromParent();
 		}
 	});
-
-	return true;
 }

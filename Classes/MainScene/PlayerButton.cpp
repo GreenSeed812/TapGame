@@ -38,7 +38,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	{	
 		sp->setTexture("ui/downUi/hero/heroHead0.png");
 
-		m_upGold = SqLite::getInstance()->getGold();
+		m_upGold = PlayerData::getInstance()->getPlayerlvupGold();
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
@@ -46,7 +46,6 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				PlayerData::getInstance()->heroLevelUp();
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("TapDpsChange");
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
-				//PlayerData::getInstance()->subGold(&m_upGold);
 				double playerLevel = PlayerData::getInstance()->getPlayerLevel();
 				auto mul = 1 / pow(playerLevel, 0.55) - 1 / pow(playerLevel, 1.03) + 1;
 				m_upGold = Ruler::getInstance()->multiplayUp(m_upGold, mul) ;
@@ -224,7 +223,9 @@ void PlayerButton::coinChange(Ref* pSender)
 	Button* bt = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up");
 	Button* up10 = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up10");
 	Button* up100 = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up100");
-	auto dps = (TextBMFont*)bt->getChildByName("needGold_0");
+	auto dps = (TextBMFont*)bt->getChildByName("dps");
+	auto up10Dps = (TextBMFont*)up10->getChildByName("dps");
+	auto up100Dps = (TextBMFont*)up100->getChildByName("dps");
 	
 	auto judge = Ruler::getInstance()->subNum(m_upGold, *PlayerData::getInstance()->getGold());
 	if (Ruler::getInstance()->Zero(judge))
@@ -236,23 +237,10 @@ void PlayerButton::coinChange(Ref* pSender)
 		bt->setEnabled(false);
 	}
 	if (m_type == PLAYER)
-	{
-		auto level = PlayerData::getInstance()->getPlayerLevel();
-		auto baseDps = PlayerData::getInstance()->getDps();
-		
-		if (level < 8)
-		{
-			baseDps = Ruler::getInstance()->subNum(SqLite::getInstance()->getDps(level), SqLite::getInstance()->getDps(level-1));
-		}
-		else
-		{
-			double f = (1 / std::pow((double)level, 0.6) - 1 / pow((double)level, 1.008));
-			baseDps = Ruler::getInstance()->multiplay(baseDps, f);
-		}
-		dps->setString(Ruler::getInstance()->showNum(baseDps));
-		
-		auto dps10 = (TextBMFont*)up10->getChildByName("needGold_1");
-		auto dps100 = (TextBMFont*)up100->getChildByName("needGold_1_0");
+	{		
+		dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvupDps()));
+		up10Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvupDps()));
+		up100Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvupDps()));
 		textN->setString("Player");
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getPlayerLevel()));
 		textD->setString(StringUtils::format("%d",PlayerData::getInstance()->getPlayerLevel()));
@@ -361,7 +349,7 @@ void PlayerButton::upLevelCount()
 	{
 		auto mul = 1 / pow(i, 0.55) - 1 / pow(i, 1.03) + 1;
 		auto gold = Ruler::getInstance()->multiplayUp(m_upGold, mul);
-		upGold = Ruler::getInstance()->addNum(gold, upGold);
+		upGold = PlayerData::getInstance()->getPlayerlvupGold();
 		if (i == levelNow + 10)
 		{
 			judge10 = Ruler::getInstance()->subNum(upGold, *PlayerData::getInstance()->getGold());
@@ -386,6 +374,9 @@ void PlayerButton::upLevelCount()
 	{
 		up100->setVisible(false);
 	}
+	auto action = Sequence::create(DelayTime::create(5), CallFuncN::create(CC_CALLBACK_1(PlayerButton::callback, this)), nullptr);
+	up10->runAction(action);
+	up100->runAction(action);
 }
 
 bool PlayerButton::onTouchBegan(Touch * touch, Event* event)
@@ -402,5 +393,19 @@ void PlayerButton::onTouchEnded(Touch * touch, Event * event)
 		playerInfo->initPlayerInfo();
 		g_node->addChild(playerInfo);
 
+	}
+}
+
+void PlayerButton::callback(Node * node)
+{
+	Button* up10 = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up10");
+	Button* up100 = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up100");
+	if (up10->isVisible())
+	{
+		up10->setVisible(false);
+	}
+	if (up100->isVisible())
+	{
+		up100->setVisible(false);
 	}
 }

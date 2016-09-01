@@ -5,6 +5,7 @@ class SignLayer :public cocos2d::Layer
 {
 public:
 	virtual bool init();
+	void initSignLayer();
 	bool onTouchBegan(cocos2d::Touch*, cocos2d::Event*){ return true; }
 	CREATE_FUNC(SignLayer);
 

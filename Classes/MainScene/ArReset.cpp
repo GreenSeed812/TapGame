@@ -94,6 +94,7 @@ void ArReset::initArResetLayer(int id)
 			ArtifactData::getInstance()->deleteArByID(m_id);
 			CCNotificationCenter::getInstance()->removeObserver(g_btn, "ArChange");
 			g_listview->removeChild(m_widget);
+			g_listview->visit();
 			m_node->removeFromParent();
 			CCNotificationCenter::getInstance()->postNotification("ArChange");
 		}

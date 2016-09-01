@@ -29,6 +29,7 @@ public:
 	void coinChange(Ref*);
 	void ArChange(Ref*);
 	void itemChange(Ref*);
+	void playerChange(Ref*);
 	virtual void update(float dt);
 	void skillCDUpdate(float dt);
 	void skillKpCDUpdate(float dt);

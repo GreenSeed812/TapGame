@@ -35,6 +35,18 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
+                  <AbstractNodeData Name="Text_19" ActionTag="1233581949" Tag="105" IconVisible="False" LeftMargin="171.0972" RightMargin="226.9028" TopMargin="59.2537" BottomMargin="11.7463" FontSize="20" LabelText="点击伤害:" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="88.0000" Y="24.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="215.0972" Y="23.7463" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="240" G="203" B="148" />
+                    <PrePosition X="0.4426" Y="0.2500" />
+                    <PreSize X="0.1811" Y="0.2526" />
+                    <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
                   <AbstractNodeData Name="text" ActionTag="1243917018" Tag="41" IconVisible="False" LeftMargin="216.2628" RightMargin="226.7372" TopMargin="34.2083" BottomMargin="36.7917" FontSize="20" LabelText="Lv 1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="43.0000" Y="24.0000" />
                     <AnchorPoint ScaleX="0.5849" ScaleY="0.5797" />
@@ -47,14 +59,14 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="textD" ActionTag="21379443" Tag="130" IconVisible="False" LeftMargin="198.3044" RightMargin="204.6956" TopMargin="60.6015" BottomMargin="10.3985" FontSize="20" LabelText="点击伤害" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="83.0000" Y="24.0000" />
+                  <AbstractNodeData Name="textD" ActionTag="21379443" Tag="130" IconVisible="False" LeftMargin="263.7151" RightMargin="184.2849" TopMargin="60.0319" BottomMargin="10.9681" FontSize="20" LabelText="999" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="38.0000" Y="24.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="239.8044" Y="22.3985" />
+                    <Position X="282.7151" Y="22.9681" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="240" G="203" B="148" />
-                    <PrePosition X="0.4934" Y="0.2358" />
-                    <PreSize X="0.1708" Y="0.2526" />
+                    <PrePosition X="0.5817" Y="0.2418" />
+                    <PreSize X="0.0782" Y="0.2526" />
                     <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />

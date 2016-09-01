@@ -38,8 +38,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	if (type == PLAYER)
 	{	
 		sp->setTexture("ui/downUi/hero/heroHead0.png");
-
 		m_upGold = PlayerData::getInstance()->getPlayerlvupGold();
+
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
@@ -245,7 +245,7 @@ void PlayerButton::coinChange(Ref* pSender)
 		up100Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvupDps()));
 		textN->setString("Player");
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getPlayerLevel()));
-		textD->setString(StringUtils::format("%d",PlayerData::getInstance()->getPlayerLevel()));
+		textD->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getTapDpsNoExp()));
 	}
 	else if (m_type == SKILL1)
 	{

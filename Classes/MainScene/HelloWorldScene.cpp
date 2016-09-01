@@ -84,6 +84,7 @@ bool HelloWorld::init()
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::coinChange), "CoinChange", nullptr);
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::ArChange), "ArChange", nullptr);
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::itemChange), "itemChange", nullptr);
+	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::playerChange), "playerChange", nullptr);
 	showTime = false;
 	Slider* timeSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("timeSlider");
 	timeNow = PlayerData::getInstance()->getMaxTime();
@@ -146,6 +147,15 @@ void HelloWorld::itemChange(Ref* ref)
 	{
 		auto money = (TextBMFont*)m_shopLayer->getChildByName("message")->getChildByName("money");
 		money->setString(StringUtils::format("%d", ShopData::getInstance()->getShopGold()).c_str());	
+	}
+}
+
+void HelloWorld::playerChange(Ref* ref)
+{
+	if (m_heroLayer)
+	{
+		TextBMFont* dps = (TextBMFont*)m_heroLayer->getChildByName("message")->getChildByName("Dps");
+		dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getTapDpsNoExp()));
 	}
 }
 
@@ -276,7 +286,7 @@ void HelloWorld::update(float dt)
 		if (m_heroLayer)
 		{
 			TextBMFont* dps = (TextBMFont*)m_heroLayer->getChildByName("message")->getChildByName("Dps");
-			dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getDps()).c_str());
+			dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getTapDpsNoExp()));
 		}
 		if (m_servantLayer)
 		{
@@ -358,6 +368,7 @@ void HelloWorld::uiCallBack()
 	Button* signButton = (Button*)rootNode->getChildByName("UiNode")->getChildByName("SignButton");
 	
 	playerSkillCallBack();
+
 	playerButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {
 		if (type == Widget::TouchEventType::BEGAN)
 		{
@@ -382,7 +393,7 @@ void HelloWorld::uiCallBack()
 				m_heroLayer->getChildByName("message")->addChild(sprite);
 				disc->removeFromParent();
 				TextBMFont* dps = (TextBMFont*)m_heroLayer->getChildByName("message")->getChildByName("Dps");
-				dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getHeroDps()));
+				dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getTapDpsNoExp()));
 				auto buyBtn = (TextBMFont*)m_heroLayer->getChildByName("message")->getChildByName("buy");
 				buyBtn->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 					if (type == Widget::TouchEventType::ENDED)
@@ -409,7 +420,8 @@ void HelloWorld::uiCallBack()
 			else
 			{
 			
-			}		
+			}	
+			playerChange(this);
 		}
 	});
 	servantButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {

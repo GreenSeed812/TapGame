@@ -48,7 +48,7 @@ void ServantButton::initServantLayer(int id)
 
 	up10->setVisible(false);
 	up100->setVisible(false);
-	dps->setString(Ruler::getInstance()->showNum(m_baseDps));
+	dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpDps(m_id)));
 	gold->setString(Ruler::getInstance()->showNum(m_gold));
 	head->setTexture(StringUtils::format("ui/downUi/servant/head/%d.png",id+1));
 	name->setString(SqLite::getInstance()->getServantNameByID(m_id));
@@ -118,7 +118,7 @@ void ServantButton::coinChange(Ref*)
 	up100Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getServantDps(m_id)));
 	auto * textlv = (Text*)m_layer->getChildByName("discribe")->getChildByName("lv");
 	Sprite* skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d", m_skillCount + 1));
-	dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getServantDps(m_id)));
+	dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpDps(m_id)));
 	textlv->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getServantLevel(m_id)));
 	MyNum judge;
 	m_gold = PlayerData::getInstance()->getservantLevelUpGold(m_id);

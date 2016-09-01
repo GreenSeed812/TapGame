@@ -564,7 +564,7 @@
             <PreSize X="0.5102" Y="0.0766" />
             <FileData Type="Normal" Path="kuang1 (2).png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_8_1_0_0" ActionTag="-1976570718" Tag="178" IconVisible="False" LeftMargin="437.0001" RightMargin="516.9999" TopMargin="1192.1818" BottomMargin="685.8182" LeftEage="41" RightEage="41" TopEage="13" BottomEage="13" Scale9OriginX="41" Scale9OriginY="13" Scale9Width="44" Scale9Height="16" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_8_1_0_0" ActionTag="-1976570718" Tag="178" IconVisible="False" LeftMargin="437.0001" RightMargin="516.9999" TopMargin="1192.1819" BottomMargin="685.8182" LeftEage="41" RightEage="41" TopEage="13" BottomEage="13" Scale9OriginX="41" Scale9OriginY="13" Scale9Width="44" Scale9Height="16" ctype="ImageViewObjectData">
             <Size X="126.0000" Y="42.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="500.0001" Y="706.8182" />
@@ -646,7 +646,7 @@
             <PreSize X="0.0398" Y="0.0224" />
             <FileData Type="Normal" Path="xing2.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_9_2_0_1_1_0_0" ActionTag="188590911" Tag="186" IconVisible="False" LeftMargin="287.5000" RightMargin="749.5000" TopMargin="1182.7841" BottomMargin="694.2159" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="15" Scale9Height="15" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_9_2_0_1_1_0_0" ActionTag="188590911" Tag="186" IconVisible="False" LeftMargin="287.5000" RightMargin="749.5000" TopMargin="1182.7842" BottomMargin="694.2159" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="15" Scale9Height="15" ctype="ImageViewObjectData">
             <Size X="43.0000" Y="43.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="309.0000" Y="715.7159" />
@@ -676,7 +676,7 @@
             <PreSize X="0.0778" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_6_1_0_0_0" ActionTag="1485636418" Tag="214" IconVisible="False" LeftMargin="144.5007" RightMargin="384.4993" TopMargin="1270.2644" BottomMargin="502.7355" LeftEage="181" RightEage="181" TopEage="48" BottomEage="48" Scale9OriginX="181" Scale9OriginY="48" Scale9Width="189" Scale9Height="51" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_6_1_0_0_0" ActionTag="1485636418" Tag="214" IconVisible="False" LeftMargin="144.5007" RightMargin="384.4993" TopMargin="1270.2645" BottomMargin="502.7355" LeftEage="181" RightEage="181" TopEage="48" BottomEage="48" Scale9OriginX="181" Scale9OriginY="48" Scale9Width="189" Scale9Height="51" ctype="ImageViewObjectData">
             <Size X="551.0000" Y="147.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="420.0007" Y="576.2355" />
@@ -726,7 +726,7 @@
             <PreSize X="0.0398" Y="0.0224" />
             <FileData Type="Normal" Path="xing2.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="BitmapFontLabel_2_1_0_0_0" ActionTag="2067492551" Tag="219" IconVisible="False" LeftMargin="546.5000" RightMargin="408.5000" TopMargin="1327.1010" BottomMargin="515.8990" LabelText="1/10" ctype="TextBMFontObjectData">
+          <AbstractNodeData Name="BitmapFontLabel_2_1_0_0_0" ActionTag="2067492551" Tag="219" IconVisible="False" LeftMargin="546.5000" RightMargin="408.5000" TopMargin="1327.1011" BottomMargin="515.8990" LabelText="1/10" ctype="TextBMFontObjectData">
             <Size X="125.0000" Y="77.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="609.0000" Y="554.3990" />
@@ -778,7 +778,7 @@
             <PreSize X="0.0398" Y="0.0224" />
             <FileData Type="Normal" Path="xing2.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_7_1_0_0" ActionTag="-813141387" Tag="224" IconVisible="False" LeftMargin="730.6937" RightMargin="169.3063" TopMargin="1446.0410" BottomMargin="363.9589" LeftEage="59" RightEage="59" TopEage="36" BottomEage="36" Scale9OriginX="59" Scale9OriginY="36" Scale9Width="62" Scale9Height="38" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_7_1_0_0" ActionTag="-813141387" Tag="224" IconVisible="False" LeftMargin="730.6937" RightMargin="169.3063" TopMargin="1446.0411" BottomMargin="363.9589" LeftEage="59" RightEage="59" TopEage="36" BottomEage="36" Scale9OriginX="59" Scale9OriginY="36" Scale9Width="62" Scale9Height="38" ctype="ImageViewObjectData">
             <Size X="180.0000" Y="110.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="820.6937" Y="418.9589" />
@@ -798,7 +798,7 @@
             <PreSize X="0.0778" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_6_1_0_0_0_0" ActionTag="177118855" Tag="226" IconVisible="False" LeftMargin="144.5007" RightMargin="384.4993" TopMargin="1432.0039" BottomMargin="340.9962" LeftEage="181" RightEage="181" TopEage="48" BottomEage="48" Scale9OriginX="181" Scale9OriginY="48" Scale9Width="189" Scale9Height="51" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_6_1_0_0_0_0" ActionTag="177118855" Tag="226" IconVisible="False" LeftMargin="144.5007" RightMargin="384.4993" TopMargin="1432.0038" BottomMargin="340.9962" LeftEage="181" RightEage="181" TopEage="48" BottomEage="48" Scale9OriginX="181" Scale9OriginY="48" Scale9Width="189" Scale9Height="51" ctype="ImageViewObjectData">
             <Size X="551.0000" Y="147.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="420.0007" Y="414.4962" />
@@ -868,7 +868,7 @@
             <PreSize X="0.1481" Y="0.0224" />
             <FileData Type="Normal" Path="chengjiumiaoshu.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_1_1_0_0_0_0" ActionTag="-1834033497" Tag="233" IconVisible="False" LeftMargin="391.1617" RightMargin="447.8383" TopMargin="1449.6389" BottomMargin="441.3610" FontSize="24" LabelText="AAAAAAAAAAAAAA" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_1_1_0_0_0_0" ActionTag="-1834033497" Tag="233" IconVisible="False" LeftMargin="391.1617" RightMargin="447.8383" TopMargin="1449.6390" BottomMargin="441.3610" FontSize="24" LabelText="AAAAAAAAAAAAAA" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="241.0000" Y="29.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="511.6617" Y="455.8610" />
@@ -910,7 +910,7 @@
             <PreSize X="0.1231" Y="0.0375" />
             <FileData Type="Normal" Path="chengjiu1.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="esc" ActionTag="1314717561" Tag="384" IconVisible="False" LeftMargin="942.5360" RightMargin="59.4640" TopMargin="16.2070" BottomMargin="1823.7930" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="48" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="esc" ActionTag="1314717561" Tag="384" IconVisible="False" LeftMargin="942.5360" RightMargin="59.4640" TopMargin="16.2070" BottomMargin="1823.7930" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="48" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="78.0000" Y="80.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="981.5360" Y="1863.7930" />

@@ -78,7 +78,7 @@ PlayerData * PlayerData::getInstance()
 		if (cocos2d::UserDefault::getInstance()->isXMLFileExist())
 		{
 			//remove(cocos2d::UserDefault::getInstance()->getXMLFilePath().c_str());
-			p_dt->init();
+			//p_dt->init();
 		}
 	}
 	return p_dt;
@@ -222,7 +222,6 @@ MyNum PlayerData::getPlayerlvupDps()
 	if (m_playerLevel < 7)
 	{
 		m_upDps = SqLite::getInstance()->getDps(m_playerLevel);
-		m_playerLevel++;
 	}
 	else
 	{

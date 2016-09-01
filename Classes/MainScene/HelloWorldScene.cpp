@@ -51,13 +51,7 @@ bool HelloWorld::init()
     {
         return false;
     }
-	{
-		MyNum num;
-		num.Mathbit = 1;
-		num.number = 600;
-		PlayerData::getInstance()->addGold(&num);
 
-	}
 	BgMusic::getInstance()->playBg(true);
 	m_hitlogic = true;
 	m_heroLayer = nullptr;

@@ -1,6 +1,7 @@
 #include"SaveData/PlayerData.h"
 #include "MonsterState.h"
 #include "ArtifactData.h"
+#include "AchieveData.h"
 #include "Tool/SqLite.h"
 #include "json/document.h"
 #include "json/writer.h"
@@ -148,6 +149,7 @@ bool PlayerData::init()
 			m_servantMul[i] = jsd[cocos2d::StringUtils::format("servantMul%d", i).c_str()].GetDouble();
 		}
 	}
+	AchieveData::getInstance()->readUserDefault();
 	ArtifactData::getInstance()->readUserDefault();
 	return true;
 }
@@ -507,7 +509,7 @@ void PlayerData::saveUserData(float dt)
 		
 	}
 	ArtifactData::getInstance()->saveUserDefault(document);
-
+	AchieveData::getInstance()->saveUserDefault(document);
 	StringBuffer buffer;
 	rapidjson::Writer<StringBuffer> writer(buffer);
 	document.Accept(writer);

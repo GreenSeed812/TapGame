@@ -554,3 +554,36 @@ ArtifactSkill SqLite::getArtifactSkillByID(int id)
 	}
 		
 }
+void SqLite::readDaoju()
+{
+	char** dbResult;
+	int nRow;
+	int nColum;
+	char* errmsg;
+	auto tableresult = sqlite3_get_table(m_pDB, "select * from daoju", &dbResult, &nRow, &nColum, &errmsg);
+	if (SQLITE_OK == tableresult)
+	{
+		std::string id = "id";
+		std::string name = "name";
+		std::string effdis = "effdis";
+		std::string expense = "expense";
+		auto index = nColum;
+		for (int i = 0; i < nRow; i++)
+		{
+			auto dj = new daoju();
+			for (int j = 0; j < nColum; j++)
+			{
+				if (id.compare(dbResult[j]) == 0)
+					dj->id = atoi(dbResult[index]);
+				if (name.compare(dbResult[j]) == 0)
+					dj->name = dbResult[index];
+				if (effdis.compare(dbResult[j]) == 0)
+					dj->effdis = dbResult[index];
+				if (expense.compare(dbResult[j]) == 0)
+					dj->expense = atoi(dbResult[index]);
+				++index;
+			}
+			m_daoju.push_back(dj);
+		}
+	}
+}

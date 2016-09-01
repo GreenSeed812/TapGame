@@ -39,6 +39,7 @@ public:
 	void deleteArByID(int id);
 	void saveUserDefault(Document& document);
 	void readUserDefault();
+	ArtiHave* getArtHaveByOrder(int order){ return m_artifacts.at(order); }
 public:
 	float getAllDpsMul(){ return m_AllDpsMul; }
 	float getdpsexper(){ return m_dpsexper; }

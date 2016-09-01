@@ -83,6 +83,13 @@ struct ArtifactSkill
 	Artifact ar;
 	int skillID;
 };
+struct daoju
+{
+	int id;
+	std::string name;
+	std::string effdis;
+	int expense;
+};
 class SqLite
 {
 public:
@@ -113,6 +120,7 @@ public:
 	~SqLite();
 	void readArtifact();
 	void readArtifactSkill();
+	void readDaoju();
 	void readMonster();
 	void readMapData();
 	void readSimpleData();
@@ -130,6 +138,7 @@ public:
 	std::vector<SkillEffect*>m_skillEffect;
 	std::map<int, Artifact*> m_artifact;
 	std::map<int,ArtifactSkill*>m_artifactSkill;
+	std::vector<daoju*> m_daoju;
 	float m_bossHp[5];
 	MyNum m_dropData;
 	MyNum m_baseDps[8];

@@ -78,7 +78,7 @@ PlayerData * PlayerData::getInstance()
 		if (cocos2d::UserDefault::getInstance()->isXMLFileExist())
 		{
 			//remove(cocos2d::UserDefault::getInstance()->getXMLFilePath().c_str());
-			p_dt->init();
+			//p_dt->init();
 		}
 	}
 	return p_dt;
@@ -88,7 +88,7 @@ bool PlayerData::init()
 	std::string json = cocos2d::UserDefault::getInstance()->getStringForKey("UserDefault");
 	rapidjson::Document jsd;
 	jsd.Parse<0>(json.c_str());
-	if (jsd.HasParseError())  //´òÓ¡½âÎö´íÎó
+	if (jsd.HasParseError() && jsd.IsObject())  //´òÓ¡½âÎö´íÎó
 	{
 		CCLOG("GetParseError %s\n", jsd.GetParseError());
 	}
@@ -222,7 +222,6 @@ MyNum PlayerData::getPlayerlvupDps()
 	if (m_playerLevel < 7)
 	{
 		m_upDps = SqLite::getInstance()->getDps(m_playerLevel);
-		m_playerLevel++;
 	}
 	else
 	{

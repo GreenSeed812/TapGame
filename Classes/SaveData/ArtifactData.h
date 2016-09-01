@@ -1,6 +1,6 @@
 #ifndef _ArtifactData_H_
 #define _ArtifactData_H_
-
+#include "AchieveData.h"
 #include<cocos2d.h>
 #include "Tool/Rule.h"
 #include "json/document.h"
@@ -23,6 +23,7 @@ public:
 	void subArtiStone(int i){ m_artifactStone -= i; 
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange"); }
 	void addArtiStone(int i){
+		AchieveData::getInstance()->addArStone(i);
 		m_artifactStone += i;
 		cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
 	}

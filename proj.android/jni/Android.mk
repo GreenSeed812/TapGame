@@ -42,6 +42,9 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/Ui/settingLayer.cpp \
 				   ../../Classes/Ui/SignLayer.cpp \
 				   ../../Classes/Ui/BgMusic.cpp \
+				   ../../Classes/Ui/ExChange.cpp \
+				   ../../Classes/Ui/ItemLayer.cpp \
+				   ../../Classes/Ui/Statistics.cpp \
 				  	  
 				   
 

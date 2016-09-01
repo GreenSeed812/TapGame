@@ -70,6 +70,7 @@ int ArtifactData::addArNum()
 	arthave->m_artifactLevel = 1;
 	arthave->m_artimaxLevel = 1;
 	m_artifactNum++;
+	AchieveData::getInstance()->ArMaxNum(m_artifactNum);
 	auto artSkill = SqLite::getInstance()->getArtifactSkillByID(id);
 	arthave->m_artiDpsUp = artSkill.ar.AllDpsUp;
 	m_AllDpsMul += artSkill.ar.initAllDps;
@@ -381,3 +382,4 @@ void ArtifactData::readUserDefault()
 
 	}
 }
+

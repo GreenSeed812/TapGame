@@ -702,3 +702,7 @@ void SqLite::readAchieve()
 		}
 	}
 }
+Achieve* SqLite::getAchieveByID(int id)
+{
+	return m_Achieve.at(id-1);
+}

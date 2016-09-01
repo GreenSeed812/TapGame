@@ -127,6 +127,7 @@ public:
 	std::string getServantNameByID(int i){ return m_servantData.at(i)->name; }
 	std::vector<SkillData*> getSkillData(){ return m_skillData; }
 	std::string getSkillNameByID(int i){ return m_skillData.at(i)->name; };
+	Achieve* getAchieveByID(int id);
 public:
 	SqLite();
 	~SqLite();

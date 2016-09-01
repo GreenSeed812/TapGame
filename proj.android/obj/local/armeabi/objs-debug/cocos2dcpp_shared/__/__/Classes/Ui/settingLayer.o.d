@@ -462,9 +462,12 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/Ui/settingLayer.o: 
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../renderer/CCRenderer.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCBoneNode.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CSLoader.h \
+ jni/../../Classes/MainScene/HelloWorldScene.h \
+ jni/../../Classes/MainScene/ClickLayer.h \
+ jni/../../Classes/Ui/bossButton.h jni/../../Classes/Tool/MyNum.h \
  jni/../../Classes/Tool/SqLite.h jni/../../Classes/Tool/sqlite3.h \
  jni/../../Classes/Tool/MyNum.h jni/../../Classes/SaveData/PlayerData.h \
- jni/../../Classes/Tool/Rule.h jni/../../Classes/Tool/MyNum.h
+ jni/../../Classes/Tool/Rule.h jni/../../Classes/Ui/Statistics.h
 
 jni/../../Classes/Ui/settingLayer.h:
 
@@ -1390,6 +1393,14 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-sup
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CSLoader.h:
 
+jni/../../Classes/MainScene/HelloWorldScene.h:
+
+jni/../../Classes/MainScene/ClickLayer.h:
+
+jni/../../Classes/Ui/bossButton.h:
+
+jni/../../Classes/Tool/MyNum.h:
+
 jni/../../Classes/Tool/SqLite.h:
 
 jni/../../Classes/Tool/sqlite3.h:
@@ -1400,4 +1411,4 @@ jni/../../Classes/SaveData/PlayerData.h:
 
 jni/../../Classes/Tool/Rule.h:
 
-jni/../../Classes/Tool/MyNum.h:
+jni/../../Classes/Ui/Statistics.h:

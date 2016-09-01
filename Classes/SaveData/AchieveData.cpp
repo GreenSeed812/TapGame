@@ -101,3 +101,31 @@ void AchieveData::addCoin(MyNum add)
 {
 	Ruler::getInstance()->addNum(m_coinCollect, add);
 }
+void AchieveData::skillUsed(int i)
+{
+	if (i == 0)
+	{
+		m_skill1used++;
+	}
+	else if (i == 1)
+	{
+		m_skill2used++;
+	}
+	else if (i == 2)
+	{
+		m_skill3used++;
+	}
+	else if (i == 3)
+	{
+		m_skill3used++;
+	}
+	else if (i == 4)
+	{
+		m_skill4used++;
+	}
+	else if (i == 5)
+	{
+		m_skill5used++;
+	}
+
+}

@@ -55,12 +55,7 @@ bool HelloWorld::init()
         return false;
     }
 
-	{
-		MyNum num;
-		num.Mathbit = 10;
-		num.number = 333;
-		PlayerData::getInstance()->addGold(&num);
-	}
+	
 	BgMusic::getInstance()->playBg(true);
 	m_hitlogic = true;
 	m_heroLayer = nullptr;
@@ -247,7 +242,6 @@ void HelloWorld::createMonster()
 }
 void HelloWorld::update(float dt)
 {
-	PlayerData::getInstance()->saveUserData(dt);
 	if (m_hitlogic == true)
 	{
 		auto heroDps = PlayerData::getInstance()->getHeroDps();
@@ -342,7 +336,8 @@ void HelloWorld::update(float dt)
 	{
 		skillKpCDUpdate(dt);
 	}
-	
+
+	PlayerData::getInstance()->saveUserData(dt);
 
  }
 void HelloWorld::uiInit()
@@ -779,9 +774,9 @@ void HelloWorld::playerSkillCallBack()
 
 				skillCD->setName("SkillCD");
 
-
 				m_skill[i - 1]->setEnabled(false);
 				PlayerData::getInstance()->openSkill(i - 1);
+				AchieveData::getInstance()->skillUsed(i-1);
 			}
 		});
 	}
@@ -950,6 +945,7 @@ void HelloWorld::normalAtk()
 
 	auto textSeq = Sequence::create(MoveBy::create(1, Vec2(0, 300)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
 	text->runAction(textSeq);
+	AchieveData::getInstance()->tap();
 }
 void HelloWorld::attackeffection()
 {

@@ -78,7 +78,7 @@ PlayerData * PlayerData::getInstance()
 		if (cocos2d::UserDefault::getInstance()->isXMLFileExist())
 		{
 			//remove(cocos2d::UserDefault::getInstance()->getXMLFilePath().c_str());
-			//p_dt->init();
+			p_dt->init();
 		}
 	}
 	return p_dt;
@@ -187,6 +187,7 @@ MyNum PlayerData::getHpByID(int id)
 void PlayerData::levelUp()
 {
 	m_level++;
+	AchieveData::getInstance()->maxLevel(m_level);
 	if (m_level > 4)
 	{
 		m_latest.m_HpData[m_level % 5] = Ruler::getInstance()->multiplay(m_latest.m_HpData[m_level % 5], 9.54);
@@ -213,6 +214,7 @@ void PlayerData::heroLevelUp()
 		m_basedps = Ruler::getInstance()->multiplay(m_basedps, f);
 		m_playerLevel++;
 	}
+	AchieveData::getInstance()->maxPlayerLevel(m_playerLevel);
 	auto m_upGold = getPlayerlvupGold();
 	m_gold = Ruler::getInstance()->subNum(m_gold,m_upGold);
 }
@@ -267,11 +269,18 @@ void PlayerData::defeatMonsterGold()
 	{
 		baseNum = Ruler::getInstance()->multiplay(baseNum, 10);
 	}
+	AchieveData::getInstance()->killMonster();
 	baseNum = Ruler::getInstance()->multiplay(baseNum, 1 + m_goldMulBase);
 	if (MonsterState::getInstance()->getTypeNow() == MONSTER_TYPE::RARE)
+	{
 		baseNum = Ruler::getInstance()->multiplay(baseNum, 3 * (1 + m_goldMulBox + ArtifactData::getInstance()->getrmGoldPer()));
+		AchieveData::getInstance()->killRareMonster();
+	}
 	else if (MonsterState::getInstance()->getTypeNow() == MONSTER_TYPE::BOSS)
-		baseNum = Ruler::getInstance()->multiplay(baseNum,5);
+	{
+		baseNum = Ruler::getInstance()->multiplay(baseNum, 5);
+		AchieveData::getInstance()->killBoss();
+	}
 	auto tmp = Ruler::getInstance()->addNumUp(m_gold, baseNum);
 	m_gold = tmp;
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
@@ -319,12 +328,13 @@ MyNum PlayerData::getHeroDps()
 }
 void PlayerData::addGold(MyNum* gold)
 {
-
+	AchieveData::getInstance()->addCoin(*gold);
 	m_gold = Ruler::getInstance()->addNum(m_gold, *gold); 
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 }
 void PlayerData::subGold(MyNum* gold)
 {
+	
 	m_gold = Ruler::getInstance()->subNum(m_gold, *gold); 
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 }
@@ -335,6 +345,7 @@ void PlayerData::setServantBaseDps(MyNum dps, int id)
 }
 MyNum PlayerData::getServantDps(int i)
 {
+	
 	return Ruler::getInstance()->multiplay(m_servantBaseDps[i], m_servantMul[i]);
 }
 
@@ -362,7 +373,7 @@ MyNum PlayerData::getTapDps()
 	auto explor = m_explorePer;
 	if (rand < m_exploreProb + m_skillexploreProb + ArtifactData::getInstance()->getexploreProb())
 	{
-		
+		AchieveData::getInstance()->addexploreNum();
 		num = Ruler::getInstance()->multiplay(num, m_explorePer + ArtifactData::getInstance()->getexplorePer());
 		return num;
 	}

@@ -6,6 +6,7 @@
 #include "SaveData/PlayerData.h"
 #include "Tool/SqLite.h"
 #include "Tool/Rule.h"
+#include "SaveData/AchieveData.h"
 using namespace ui;
 Node * PlayerButton::g_skillLayer = nullptr;
 Node * PlayerButton::g_node = nullptr;
@@ -208,6 +209,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				auto relife = Relife::create();
 				relife->initRelife();
 				g_node->addChild(relife);
+				AchieveData::getInstance()->relife();
 			}
 		});
 	}

@@ -39,6 +39,8 @@ public:
 	MyNum getTapDpsNoExp();
 	int getWaveNow(){ return m_waveNow; }
 	int getPlayerLevel(){ return m_playerLevel; }
+	MyNum getPlayerlvupDps();
+	MyNum getPlayerlvupGold();
 	int getRandNpc(int r);
 	int getRelifeStone();
 	int getHeroRelifeStone();

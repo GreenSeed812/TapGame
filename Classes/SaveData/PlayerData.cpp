@@ -210,14 +210,40 @@ void PlayerData::heroLevelUp()
 		m_basedps = Ruler::getInstance()->multiplay(m_basedps, f);
 		m_playerLevel++;
 	}
+	auto m_upGold = getPlayerlvupGold();
+	m_gold = Ruler::getInstance()->subNum(m_gold,m_upGold);
+}
+MyNum PlayerData::getPlayerlvupDps()
+{
+	MyNum m_upDps;
+	if (m_playerLevel < 7)
+	{
+		m_upDps = SqLite::getInstance()->getDps(m_playerLevel);
+		m_playerLevel++;
+	}
+	else
+	{
+		m_upDps = m_upDps = SqLite::getInstance()->getDps(6);
+		for (int i = 0; i < m_playerLevel; i++)
+		{
+			double f = (1 + 1 / std::pow((double)m_playerLevel, 0.6) - 1 / pow((double)m_playerLevel, 1.008));
+			m_upDps = Ruler::getInstance()->multiplay(m_upDps, f);
+		}
+
+	}
+	return m_upDps;
+}
+MyNum PlayerData::getPlayerlvupGold()
+{
+
 	auto m_upGold = SqLite::getInstance()->getGold();
 	for (int i = 1; i < m_playerLevel; i++)
 	{
 		auto mul = 1 / pow(i, 0.55) - 1 / pow(i, 1.03) + 1;
 		m_upGold = Ruler::getInstance()->multiplayUp(m_upGold, mul);
 	}
-	m_upGold = Ruler::getInstance()->multiplay(m_upGold,(1 - ArtifactData::getInstance()->getHeroLevelupDown()));
-	m_gold = Ruler::getInstance()->subNum(m_gold,m_upGold);
+	m_upGold = Ruler::getInstance()->multiplay(m_upGold, (1 - ArtifactData::getInstance()->getHeroLevelupDown()));
+	return m_upGold;
 }
 void PlayerData::defeatMonsterGold()
 {

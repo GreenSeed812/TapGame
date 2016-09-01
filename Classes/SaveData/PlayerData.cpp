@@ -75,7 +75,9 @@ PlayerData * PlayerData::getInstance()
 	{
 		p_dt = new PlayerData();
 		if (cocos2d::UserDefault::getInstance()->isXMLFileExist())
+		{
 			p_dt->init();
+		}
 	}
 	return p_dt;
 }

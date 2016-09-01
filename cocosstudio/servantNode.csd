@@ -154,16 +154,16 @@
                 <FileData Type="Normal" Path="diban.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_1_1_0" ActionTag="1334016742" Tag="481" IconVisible="False" LeftMargin="569.8487" RightMargin="259.1513" TopMargin="15.0354" BottomMargin="10.9646" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="92" Scale9Height="72" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="up100" ActionTag="1334016742" Tag="481" IconVisible="False" LeftMargin="569.8487" RightMargin="259.1513" TopMargin="15.0354" BottomMargin="10.9646" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="92" Scale9Height="72" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="122.0000" Y="94.0000" />
                 <Children>
-                  <AbstractNodeData Name="needGold_1_1_0" ActionTag="-892248010" Tag="479" IconVisible="False" LeftMargin="-63.5622" RightMargin="-25.4378" TopMargin="-13.4588" BottomMargin="30.4588" LabelText="111.1aa" ctype="TextBMFontObjectData">
+                  <AbstractNodeData Name="dps" ActionTag="-892248010" Tag="479" IconVisible="False" LeftMargin="-63.4348" RightMargin="-25.5652" TopMargin="-25.7800" BottomMargin="42.7800" LabelText="111.1aa" ctype="TextBMFontObjectData">
                     <Size X="211.0000" Y="77.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="41.9378" Y="68.9588" />
+                    <AnchorPoint ScaleX="0.4991" ScaleY="0.2576" />
+                    <Position X="41.8747" Y="62.6143" />
                     <Scale ScaleX="0.3311" ScaleY="0.3399" />
                     <CColor A="255" R="241" G="203" B="149" />
-                    <PrePosition X="0.3438" Y="0.7336" />
+                    <PrePosition X="0.3432" Y="0.6661" />
                     <PreSize X="1.7295" Y="0.8191" />
                     <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
                   </AbstractNodeData>
@@ -191,10 +191,10 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_1_1" ActionTag="-711031064" Tag="478" IconVisible="False" LeftMargin="654.9702" RightMargin="174.0298" TopMargin="14.6960" BottomMargin="11.3040" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="92" Scale9Height="72" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="up10" ActionTag="-711031064" Tag="478" IconVisible="False" LeftMargin="656.5114" RightMargin="172.4886" TopMargin="14.6960" BottomMargin="11.3040" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="92" Scale9Height="72" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="122.0000" Y="94.0000" />
                 <Children>
-                  <AbstractNodeData Name="needGold_1_1" ActionTag="343746469" Tag="476" IconVisible="False" LeftMargin="-63.3851" RightMargin="-25.6149" TopMargin="-11.4669" BottomMargin="28.4669" LabelText="111.1aa" ctype="TextBMFontObjectData">
+                  <AbstractNodeData Name="dps" ActionTag="343746469" Tag="476" IconVisible="False" LeftMargin="-63.3851" RightMargin="-25.6149" TopMargin="-11.4669" BottomMargin="28.4669" LabelText="111.1aa" ctype="TextBMFontObjectData">
                     <Size X="211.0000" Y="77.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="42.1149" Y="66.9669" />
@@ -216,10 +216,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="715.9702" Y="58.3040" />
+                <Position X="717.5114" Y="58.3040" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.7529" Y="0.4859" />
+                <PrePosition X="0.7545" Y="0.4859" />
                 <PreSize X="0.1283" Y="0.7833" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />

@@ -27,12 +27,19 @@ bool ArtifactButton::init()
 	return true;
 }
 
-void ArtifactButton::initArtifactLayer()
+void ArtifactButton::initArtifactLayer(int id,bool check)
 {
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(ArtifactButton::arChange), "ArChange", nullptr);
 	ArtifactData::getInstance()->subArtiStone(ArtifactData::getInstance()->getNeededArStone());
 	m_lhs = ArtifactData::getInstance()->getArtiStone();
-	m_id = ArtifactData::getInstance()->addArNum();
+	if (check)
+	{
+		m_id = id;
+	}
+	else
+	{
+		m_id = ArtifactData::getInstance()->addArNum();
+	}
 	m_level = ArtifactData::getInstance()->getLevel(m_id);
 	if (m_level < ArtifactData::getInstance()->getMaxLevel(m_id))
 	{

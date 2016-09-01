@@ -10,9 +10,11 @@
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
         <OpenedDocuments>
-          <FilePathData Path="downLayerSh.csd" />
+          <FilePathData Path="everydayLayer.csd" />
+          <FilePathData Path="servantNode.csd" />
+          <FilePathData Path="zhujiaotiao.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="downLayerSh.csd" />
+        <ActiveDocument Path="zhujiaotiao.csd" />
       </Value>
     </Item>
   </Properties>

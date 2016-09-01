@@ -449,12 +449,7 @@ void HelloWorld::uiCallBack()
 						rootNode->addChild(exc);
 					}
 				});
-				auto button = ServantButton::create();
-				button->initServantLayer(0);
-				auto widget = Widget::create();
-				widget->setContentSize(button->getContentSize());
-				widget->addChild(button);
-				lv->pushBackCustomItem(widget);
+				initSer();
 			}
 			else
 			{
@@ -692,11 +687,11 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 		auto btn = (Button*)downLayer->getChildByName("getArtifact");
 		btn->addTouchEventListener([downLayer, this](Ref* sender, Widget::TouchEventType type) {
 			if (type == Widget::TouchEventType::ENDED) {
-				ArtifactButton::setRootNode(downLayer);
 				ListView* lv = (ListView*)m_artifactLayer->getChildByName("ListView");
+				ArtifactButton::setRootNode(m_artifactLayer);
 				auto button = ArtifactButton::create();
 				button->setTag(m_arCount);
-				button->initArtifactLayer();
+				button->initArtifactLayer(0,false);
 				auto widget = Widget::create();
 				widget->setName("arWidget");
 				auto size = button->getContentSize();
@@ -977,4 +972,41 @@ void HelloWorld::deleteSprite(Node *node)
 void HelloWorld::playMusic(Node * node)
 {
 	BgMusic::getInstance()->playEff();
+}
+
+void HelloWorld::initSer()
+{
+	ListView* lv = (ListView*)m_servantLayer->getChildByName("ListView");
+	for (size_t i = 0; i <= PlayerData::getInstance()->getServantNum(); i++)
+	{
+		auto button = ServantButton::create();
+		button->initServantLayer(i);
+		auto widget = Widget::create();
+		widget->setContentSize(button->getContentSize());
+		widget->addChild(button);
+		lv->pushBackCustomItem(widget);
+	}		
+}
+
+void HelloWorld::initAr()
+{	
+	/*ListView* lv = (ListView*)m_artifactLayer->getChildByName("ListView");
+	auto num = ArtifactData::getInstance()->getArNum();
+	for (size_t i = 0; i <= num; i++)
+	{
+		ArtifactButton::setRootNode(m_artifactLayer);
+		auto button = ArtifactButton::create();
+		button->setTag(m_arCount);
+		button->initArtifactLayer();
+		auto widget = Widget::create();
+		widget->setName("arWidget");
+		auto size = button->getContentSize();
+		widget->setContentSize(size);
+		widget->addChild(button);
+		ArtifactButton::setArButtonNode(button);
+		button->setWidget(widget);
+		lv->pushBackCustomItem(widget);
+		lv->jumpToBottom();
+		ArtifactButton::setListView(lv);
+	}*/
 }

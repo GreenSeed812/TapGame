@@ -223,7 +223,11 @@ void PlayerButton::coinChange(Ref* pSender)
 	Button* bt = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up");
 	Button* up10 = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up10");
 	Button* up100 = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up100");
-	auto dps = (TextBMFont*)bt->getChildByName("needGold_0");
+	auto dps = (TextBMFont*)bt->getChildByName("dps");
+	auto up10Dps = (TextBMFont*)up10->getChildByName("dps");
+	auto up100Dps = (TextBMFont*)up100->getChildByName("dps");
+	//up10Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()));
+	//up100Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()));
 	
 	auto judge = Ruler::getInstance()->subNum(m_upGold, *PlayerData::getInstance()->getGold());
 	if (Ruler::getInstance()->Zero(judge))
@@ -250,8 +254,8 @@ void PlayerButton::coinChange(Ref* pSender)
 		}
 		dps->setString(Ruler::getInstance()->showNum(baseDps));
 		
-		auto dps10 = (TextBMFont*)up10->getChildByName("needGold_1");
-		auto dps100 = (TextBMFont*)up100->getChildByName("needGold_1_0");
+		auto dps10 = (TextBMFont*)up10->getChildByName("dps");
+		auto dps100 = (TextBMFont*)up100->getChildByName("dps");
 		textN->setString("Player");
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getPlayerLevel()));
 		textD->setString(StringUtils::format("%d",PlayerData::getInstance()->getPlayerLevel()));
@@ -385,6 +389,9 @@ void PlayerButton::upLevelCount()
 	{
 		up100->setVisible(false);
 	}
+	auto action = Sequence::create(DelayTime::create(5), CallFuncN::create(CC_CALLBACK_1(PlayerButton::callback, this)), nullptr);
+	up10->runAction(action);
+	up100->runAction(action);
 }
 
 bool PlayerButton::onTouchBegan(Touch * touch, Event* event)
@@ -401,5 +408,19 @@ void PlayerButton::onTouchEnded(Touch * touch, Event * event)
 		playerInfo->initPlayerInfo();
 		g_node->addChild(playerInfo);
 
+	}
+}
+
+void PlayerButton::callback(Node * node)
+{
+	Button* up10 = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up10");
+	Button* up100 = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up100");
+	if (up10->isVisible())
+	{
+		up10->setVisible(false);
+	}
+	if (up100->isVisible())
+	{
+		up100->setVisible(false);
 	}
 }

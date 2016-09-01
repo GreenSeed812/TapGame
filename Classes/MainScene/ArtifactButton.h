@@ -9,7 +9,7 @@ class ArtifactButton : public Layer
 {
 public:
 	bool init();
-	void initArtifactLayer();
+	void initArtifactLayer(int id,bool check);
 	void arChange(Ref*);
 	static void setListView(Node* lv){ g_lv = lv; }
 	static void setRootNode(Node*node){ g_node = node;};

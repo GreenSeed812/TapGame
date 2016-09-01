@@ -35,6 +35,7 @@ private:
 	void oneUp();
 	std::string m_skillUp;
 	std::string m_skillUnLock;
+	void callbackSer(Node * node);
 };
 
 

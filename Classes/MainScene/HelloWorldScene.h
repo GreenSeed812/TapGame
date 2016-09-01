@@ -39,6 +39,8 @@ public:
 	void normalAtk();
 	static void setBg(bool off_on){ m_bg = off_on; }
 	static void setSou(bool off_on){ m_sou = off_on; }
+	void initAr();
+	void initSer();
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 private:

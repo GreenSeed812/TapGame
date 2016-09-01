@@ -1,5 +1,6 @@
 #include "AchieveData.h"
 #include "cocos2d.h"
+#include "Tool/Rule.h"
 static AchieveData * g_Ac = nullptr;
 AchieveData::AchieveData()
 	:m_monsterKill(0)
@@ -89,5 +90,14 @@ void AchieveData::readUserDefault()
 		m_skill5used = jsd[m_skill5used].GetInt();
 		m_skill6used = jsd[m_skill6used].GetInt();
 		exploreNum = jsd[exploreNum].GetInt();
+		m_coinCollect.number = jsd[m_coinCollect.number].GetDouble();
+		m_coinCollect.Mathbit = jsd[m_coinCollect.Mathbit].GetInt();
+		m_maxDpsPer.number = jsd[m_maxDpsPer.number].GetDouble();
+		m_maxDpsPer.Mathbit = jsd[m_maxDpsPer.Mathbit].GetInt();
 	}
+}
+
+void AchieveData::addCoin(MyNum add)
+{
+	Ruler::getInstance()->addNum(m_coinCollect, add);
 }

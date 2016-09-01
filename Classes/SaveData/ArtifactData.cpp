@@ -332,7 +332,14 @@ void ArtifactData::saveUserDefault(Document& document)
 	document.AddMember("servantLevelUpDown", servantLevelUpDown, allocator);
 	document.AddMember("WaveDown", WaveDown, allocator);
 	document.AddMember("servantUnlockDown", servantUnlockDown, allocator);
-
+	for (int i = 0; i < m_artifacts.size(); i++)
+	{
+		document.AddMember(Value(cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artiDpsUp", i).c_str(), allocator), m_artifacts.at(i)->m_artiDpsUp, allocator);
+		document.AddMember(Value(cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artifactID", i).c_str(), allocator), m_artifacts.at(i)->m_artifactID, allocator);
+		document.AddMember(Value(cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artifactLevel", i).c_str(), allocator), m_artifacts.at(i)->m_artifactLevel, allocator);
+		document.AddMember(Value(cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artimaxLevel", i).c_str(), allocator), m_artifacts.at(i)->m_artimaxLevel, allocator);
+		document.AddMember(Value(cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artiDpsUp", i).c_str(), allocator), m_artifacts.at(i)->m_artiDpsUp, allocator);
+	}
 		
 }
 void ArtifactData::readUserDefault()
@@ -358,7 +365,14 @@ void ArtifactData::readUserDefault()
 		servantLevelUpDown = jsd["servantLevelUpDown"].GetDouble();
 		WaveDown = jsd["WaveDown"].GetDouble();
 		servantUnlockDown = jsd["servantUnlockDown"].GetDouble();
-		
+		for (int i = 0; i < m_artifactNum; i++)
+		{
+			m_artifacts.at(i)->m_artiDpsUp = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artiDpsUp", i).c_str()].GetDouble();
+			m_artifacts.at(i)->m_artifactID = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artifactID", i).c_str()].GetInt();
+			m_artifacts.at(i)->m_artifactLevel = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artifactLevel", i).c_str()].GetInt();
+			m_artifacts.at(i)->m_artimaxLevel = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artimaxLevel", i).c_str()].GetInt();
+			m_artifacts.at(i)->m_artiDpsUp = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artiDpsUp", i).c_str()].GetDouble();
+		}
 
 	}
 }

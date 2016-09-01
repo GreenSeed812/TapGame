@@ -289,7 +289,7 @@ void ArtifactData::deleteArByID(int id)
 			{
 				servantUnlockDown -= artSkill.ar.effData;
 			}
-			m_AllDpsMul -= (*it)->m_artifactLevel * (*it)->m_artiDpsUp + SqLite::getInstance()->getArtifactSkillByID(id).ar.initAllDps;
+			m_AllDpsMul -= ((*it)->m_artifactLevel-1) * (*it)->m_artiDpsUp + SqLite::getInstance()->getArtifactSkillByID(id).ar.initAllDps;
 			m_artifacts.erase(it);
 			m_artifactNum--;
 			break;

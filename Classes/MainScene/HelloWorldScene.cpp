@@ -467,7 +467,10 @@ void HelloWorld::uiCallBack()
 				_child->setEnabled(true);
 			}
 			bt->setEnabled(false);
-			initDownLayerAr(m_artifactLayer);
+			if (initDownLayerAr(m_artifactLayer))
+			{
+				initAr();
+			}	
 			ArChange(this);
 		}
 	});
@@ -691,7 +694,6 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 				auto size = button->getContentSize();
 				widget->setContentSize(size);
 				widget->addChild(button);
-				ArtifactButton::setArButtonNode(button);
 				button->setWidget(widget);
 				lv->pushBackCustomItem(widget);
 				lv->jumpToBottom();
@@ -984,23 +986,23 @@ void HelloWorld::initSer()
 
 void HelloWorld::initAr()
 {	
-	/*ListView* lv = (ListView*)m_artifactLayer->getChildByName("ListView");
+	ListView* lv = (ListView*)m_artifactLayer->getChildByName("ListView");
 	auto num = ArtifactData::getInstance()->getArNum();
-	for (size_t i = 0; i <= num; i++)
+	for (size_t i = 0; i < num; i++)
 	{
-		ArtifactButton::setRootNode(m_artifactLayer);
 		auto button = ArtifactButton::create();
 		button->setTag(m_arCount);
-		button->initArtifactLayer();
+		ArtifactData::getInstance()->getArtHaveByOrder(i);
+		button->initArtifactLayer(ArtifactData::getInstance()->getArtHaveByOrder(i)->m_artifactID,true);
 		auto widget = Widget::create();
 		widget->setName("arWidget");
 		auto size = button->getContentSize();
 		widget->setContentSize(size);
 		widget->addChild(button);
-		ArtifactButton::setArButtonNode(button);
 		button->setWidget(widget);
 		lv->pushBackCustomItem(widget);
 		lv->jumpToBottom();
 		ArtifactButton::setListView(lv);
-	}*/
+		ArtifactButton::setRootNode(m_artifactLayer);
+	}
 }

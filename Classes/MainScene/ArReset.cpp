@@ -9,7 +9,6 @@
 using namespace ui;
 
 Node * ArReset::g_listview = nullptr;
-Node * ArReset::g_btn = nullptr;
 
 bool ArReset::init()
 {
@@ -96,6 +95,7 @@ void ArReset::initArResetLayer(int id)
 			CCNotificationCenter::getInstance()->removeObserver(g_btn, "ArChange");
 			g_listview->removeChild(m_widget);
 			m_node->removeFromParent();
+			CCNotificationCenter::getInstance()->postNotification("ArChange");
 		}
 	});
 

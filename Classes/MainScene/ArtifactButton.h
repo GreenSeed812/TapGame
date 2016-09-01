@@ -13,7 +13,6 @@ public:
 	void arChange(Ref*);
 	static void setListView(Node* lv){ g_lv = lv; }
 	static void setRootNode(Node*node){ g_node = node;};
-	static void setArButtonNode(Node * btn){ g_button = btn; }
 	void setWidget(Node * node){ m_widget = node; }
 	CREATE_FUNC(ArtifactButton);
 
@@ -25,7 +24,6 @@ private:
 	Layer* m_layer;
 	static Node* g_lv;
 	static Node * g_node;
-	static Node * g_button;
 	Node * m_widget;
 	int m_id;
 	int m_level;

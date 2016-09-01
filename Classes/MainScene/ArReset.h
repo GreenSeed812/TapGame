@@ -25,7 +25,7 @@ private:
 	Node * m_node;
 	Node * m_widget;
 	static Node * g_listview;
-	static Node * g_btn;
+	Node * g_btn;
 	Layer* m_layer;
 	int m_StoneNum;
 	int m_id;

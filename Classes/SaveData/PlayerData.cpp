@@ -74,9 +74,10 @@ PlayerData * PlayerData::getInstance()
 {
 	if (!p_dt)
 	{
-		p_dt = new PlayerData();
+		p_dt = new PlayerData();	
 		if (cocos2d::UserDefault::getInstance()->isXMLFileExist())
 		{
+			//remove(cocos2d::UserDefault::getInstance()->getXMLFilePath().c_str());
 			p_dt->init();
 		}
 	}
@@ -564,7 +565,5 @@ int PlayerData::getServantAverLevel()
 }
 void PlayerData::relife()
 {
-
-	
 	
 }

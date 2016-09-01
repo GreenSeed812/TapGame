@@ -9,7 +9,6 @@ using namespace ui;
 
 Node* ArtifactButton::g_lv = nullptr;
 Node * ArtifactButton::g_node = nullptr;
-Node * ArtifactButton::g_button = nullptr;
 
 bool ArtifactButton::init()
 {
@@ -82,7 +81,7 @@ void ArtifactButton::initArtifactLayer(int id,bool check)
 		if (event == Widget::TouchEventType::ENDED)
 		{
 			ArtifactData::getInstance()->arLevelUp(m_id);
-			arChange(this);
+			cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
 		}
 		
 	});
@@ -90,7 +89,7 @@ void ArtifactButton::initArtifactLayer(int id,bool check)
 	listener->onTouchBegan = CC_CALLBACK_2(ArtifactButton::onTouchBegan, this);
 	listener->onTouchEnded = CC_CALLBACK_2(ArtifactButton::onTouchEnded, this);
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener,this);
-	arChange(this);
+	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
 }
 
 void ArtifactButton::arChange(Ref*)
@@ -139,7 +138,7 @@ void ArtifactButton::onTouchEnded(Touch * touch, Event * event)
 			auto arReset = ArReset::create();
 			arReset->setListView(g_lv);
 			arReset->setWidget(m_widget);
-			arReset->setBtn(g_button);
+			arReset->setBtn(this);
 			arReset->setStoneNum(m_StoneNum);
 			arReset->initArResetLayer(m_id);
 			g_node->addChild(arReset);

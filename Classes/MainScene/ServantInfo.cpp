@@ -60,7 +60,7 @@ void ServantInfo::initServantInfo(int id)
 	//skillHead_1->loadTexture()
 	name->setString(SqLite::getInstance()->getServantNameByID(id));
 	level->setString(StringUtils::format("Lv%d", PlayerData::getInstance()->getServantLevel(id)));
-	dps->setString(Ruler::getInstance()->showNum(SqLite::getInstance()->getServantDpsByID(id)));
+	dps->setString(Ruler::getInstance()->showNum(PlayerData ::getInstance()->getServantDps(id)));
 	serInfo->setString(SqLite::getInstance()->getServantByID(id)->discribe);
 	skillName_1->setString(SqLite::getInstance()->getServantByID(id)->skill[0].skillname);
 	skillName_2->setString(SqLite::getInstance()->getServantByID(id)->skill[1].skillname);

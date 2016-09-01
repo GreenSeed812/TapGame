@@ -74,26 +74,26 @@ void AchieveData::readUserDefault()
 	jsd.Parse<0>(json.c_str());
 	if (jsd.IsObject() && jsd.HasMember("m_monsterKill"))
 	{
-		m_monsterKill = jsd[m_monsterKill].GetInt();
-		m_maxLevel = jsd[m_maxLevel].GetInt();
-		m_ArStoneCollect = jsd[m_ArStoneCollect].GetInt();
-		m_ArMax = jsd[m_ArMax].GetInt();
-		m_bossKill = jsd[m_bossKill].GetInt();
-		m_tapNum = jsd[m_tapNum].GetInt();
-		m_relifeNum = jsd[m_relifeNum].GetInt();
-		m_maxPlayerLevelUp = jsd[m_maxPlayerLevelUp].GetInt();
-		m_killraremonster = jsd[m_killraremonster].GetInt();
-		m_skill1used = jsd[m_skill1used].GetInt();
-		m_skill2used = jsd[m_skill2used].GetInt();
-		m_skill3used = jsd[m_skill3used].GetInt();
-		m_skill4used = jsd[m_skill4used].GetInt();
-		m_skill5used = jsd[m_skill5used].GetInt();
-		m_skill6used = jsd[m_skill6used].GetInt();
-		exploreNum = jsd[exploreNum].GetInt();
-		m_coinCollect.number = jsd[m_coinCollect.number].GetDouble();
-		m_coinCollect.Mathbit = jsd[m_coinCollect.Mathbit].GetInt();
-		m_maxDpsPer.number = jsd[m_maxDpsPer.number].GetDouble();
-		m_maxDpsPer.Mathbit = jsd[m_maxDpsPer.Mathbit].GetInt();
+		m_monsterKill = jsd["m_monsterKill"].GetInt();
+		m_maxLevel = jsd["m_maxLevel"].GetInt();
+		m_ArStoneCollect = jsd["m_ArStoneCollect"].GetInt();
+		m_ArMax = jsd["m_ArMax"].GetInt();
+		m_bossKill = jsd["m_bossKill"].GetInt();
+		m_tapNum = jsd["m_tapNum"].GetInt();
+		m_relifeNum = jsd["m_relifeNum"].GetInt();
+		m_maxPlayerLevelUp = jsd["m_maxPlayerLevelUp"].GetInt();
+		m_killraremonster = jsd["m_killraremonster"].GetInt();
+		m_skill1used = jsd["m_skill1used"].GetInt();
+		m_skill2used = jsd["m_skill2used"].GetInt();
+		m_skill3used = jsd["m_skill3used"].GetInt();
+		m_skill4used = jsd["m_skill4used"].GetInt();
+		m_skill5used = jsd["m_skill5used"].GetInt();
+		m_skill6used = jsd["m_skill6used"].GetInt();
+		exploreNum = jsd["exploreNum"].GetInt();
+		m_coinCollect.number = jsd["m_coinCollect.number"].GetDouble();
+		m_coinCollect.Mathbit = jsd["m_coinCollect.Mathbit"].GetInt();
+		m_maxDpsPer.number = jsd["m_maxDpsPer.number"].GetDouble();
+		m_maxDpsPer.Mathbit = jsd["m_maxDpsPer.Mathbit"].GetInt();
 	}
 }
 

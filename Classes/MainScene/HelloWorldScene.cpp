@@ -50,11 +50,17 @@ Scene* HelloWorld::createScene()
 bool HelloWorld::init()
 {
 
-	 if ( !Layer::init() )
+	if ( !Layer::init() )
     {
         return false;
     }
 
+	{
+		MyNum num;
+		num.Mathbit = 10;
+		num.number = 333;
+		PlayerData::getInstance()->addGold(&num);
+	}
 	BgMusic::getInstance()->playBg(true);
 	m_hitlogic = true;
 	m_heroLayer = nullptr;

@@ -456,19 +456,16 @@ MyNum PlayerData::getservantToalDps(int id)
 }
 MyNum PlayerData::getservantLevelUpDps(int id)
 {
-	MyNum servantLsDps;
-	servantLsDps.Mathbit = 0;
-	servantLsDps.number = 0;
-	if (m_servantLevel[id] > 0)
-		servantLsDps = SqLite::getInstance()->getServantDpsByID(id);
-	for (int i = 0; i < m_servantLevel[id]-1; i++)
+	
+	auto servantLsDps = SqLite::getInstance()->getServantDpsByID(id);
+	for (int i = 0; i <= m_servantLevel[id]; i++)
 	{
 		auto pow1 = pow(i + 1, 0.7);
 		auto pow2 = pow(i + 1, 6);
 		auto mul = 1 + 1 / pow1 - 1 / pow2;
 		servantLsDps = Ruler::getInstance()->multiplay(servantLsDps, mul);
 	}
-	auto upDps = Ruler::getInstance()->subNum(getservantToalDps(id), servantLsDps);
+	auto upDps = Ruler::getInstance()->subNum(servantLsDps, getservantToalDps(id));
 	return upDps;
 }
 MyNum PlayerData::getservantLevelUpGold(int id)

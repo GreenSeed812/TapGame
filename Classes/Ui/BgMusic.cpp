@@ -10,6 +10,7 @@ void BgMusic::init()
 	SimpleAudioEngine::getInstance()->preloadBackgroundMusic(BG_MUSIC);
 	SimpleAudioEngine::getInstance()->preloadEffect(EFFECT_MUSIC);
 	SimpleAudioEngine::getInstance()->setBackgroundMusicVolume((SimpleAudioEngine::getInstance()->getBackgroundMusicVolume() + 0.2f));	
+	SimpleAudioEngine::getInstance()->setEffectsVolume((SimpleAudioEngine::getInstance()->getEffectsVolume() - 0.5f));
 }
 
 BgMusic* BgMusic::getInstance()
@@ -30,7 +31,6 @@ void BgMusic::playBg(bool off_on)
 	}
 	else
 	{
-		SimpleAudioEngine::getInstance()->setEffectsVolume((SimpleAudioEngine::getInstance()->getEffectsVolume() - 1.0f));
 		SimpleAudioEngine::getInstance()->stopBackgroundMusic(BG_MUSIC);
 	}
 }

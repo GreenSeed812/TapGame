@@ -1,4 +1,5 @@
 #include "AchieveLayer.h"
+#include "AchieveItem.h"
 #include "ui/CocosGUI.h"
 #include <cocostudio/CocoStudio.h> 
 #include "Tool/SqLite.h"
@@ -6,6 +7,9 @@
 using namespace cocostudio;
 using namespace cocos2d;
 using namespace ui;
+
+int AchieveLayer::g_money = 0;
+
 bool AchieveLayer::init()
 {
 	if (!Layer::init())
@@ -26,50 +30,30 @@ bool AchieveLayer::init()
 			this->removeFromParent();
 		}
 	});
-
+	initAchieveLayer();
 	return true;
 }
 
 void AchieveLayer::initAchieveLayer()
 {
-	for (size_t i = 0; i < 7; i++)
-	{
+	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(AchieveLayer::achieveChange), "AchieveChange", nullptr);
 
+	auto allStone = (TextBMFont*)m_rootNode->getChildByName("allStone");
+	allStone->setString(StringUtils::format("%d", 0).c_str());
+	auto listview = (ListView*)m_bg->getChildByName("ListView");
+	for (size_t i = 1; i < 24; i++)
+	{
+		auto item = AchieveItem::create();
+		item->initAchieveItem(i);
+		auto widget = Widget::create();
+		widget->setContentSize(item->getContentSize());
+		widget->addChild(item);
+		listview->pushBackCustomItem(widget);
 	}
 }
 
-void AchieveLayer::setStar(int id, int num, const std::string& fileName)
+void AchieveLayer::achieveChange(Ref* ref)
 {
-	auto star = (ImageView*)m_bg->getChildByName(StringUtils::format("bgAchieve%d", id).c_str())->getChildByName(StringUtils::format("star%d", num).c_str());
-	star->loadTexture(fileName);
-}
-
-void AchieveLayer::setMoney(int id,int num)
-{
-	auto money = (TextBMFont*)m_bg->getChildByName(StringUtils::format("bgAchieve%d", id).c_str())->getChildByName("money");
-	money->setString(StringUtils::format("%d", num).c_str());
-}
-
-void AchieveLayer::setText(int id)
-{
-	auto text = (Text*)m_bg->getChildByName(StringUtils::format("bgAchieve%d", id).c_str())->getChildByName("Text");
-	auto info = "";
-	text->setString(info);
-}
-
-void AchieveLayer::setNum(int id)
-{
-	auto num = (TextBMFont*)m_bg->getChildByName(StringUtils::format("bgAchieve%d", id).c_str())->getChildByName("Text");
-	auto text = "";
-	num->setString(text);
-}
-
-void AchieveLayer::setBtn(int id, bool state, const std::string& fileName)
-{
-	auto btn = (Button*)m_bg->getChildByName(StringUtils::format("bgAchieve%d", id).c_str())->getChildByName("btn");
-	btn->setVisible(state);
-	if (sizeof(fileName)>= 0)
-	{
-		btn->loadTextureDisabled(fileName);
-	}
+	auto allStone = (TextBMFont*)m_rootNode->getChildByName("allStone");
+	allStone->setString(StringUtils::format("%d", g_money).c_str());
 }

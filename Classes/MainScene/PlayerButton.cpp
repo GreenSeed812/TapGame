@@ -346,12 +346,13 @@ void PlayerButton::upLevelCount()
 	MyNum upGold;
 	MyNum judge10;
 	MyNum judge100;
+
 	auto levelNow = PlayerData::getInstance()->getPlayerLevel();
 	for (size_t i = levelNow; i < (levelNow + 100); i++)
 	{
 		auto mul = 1 / pow(i, 0.55) - 1 / pow(i, 1.03) + 1;
 		auto gold = Ruler::getInstance()->multiplayUp(m_upGold, mul);
-		upGold = PlayerData::getInstance()->getPlayerlvupGold();
+		upGold = Ruler::getInstance()->addNum(upGold, gold);
 		if (i == levelNow + 10)
 		{
 			judge10 = Ruler::getInstance()->subNum(upGold, *PlayerData::getInstance()->getGold());
@@ -377,8 +378,14 @@ void PlayerButton::upLevelCount()
 		up100->setVisible(false);
 	}
 	auto action = Sequence::create(DelayTime::create(5), CallFuncN::create(CC_CALLBACK_1(PlayerButton::callback, this)), nullptr);
-	up10->runAction(action);
-	up100->runAction(action);
+	if (up10->isVisible())
+	{
+		up10->runAction(action);
+		if (up100->isVisible())
+		{
+			up100->runAction(action);
+		}
+	}	
 }
 
 bool PlayerButton::onTouchBegan(Touch * touch, Event* event)
@@ -405,9 +412,9 @@ void PlayerButton::callback(Node * node)
 	if (up10->isVisible())
 	{
 		up10->setVisible(false);
-	}
-	if (up100->isVisible())
-	{
-		up100->setVisible(false);
-	}
+		if (up100->isVisible())
+		{
+			up100->setVisible(false);
+		}
+	}	
 }

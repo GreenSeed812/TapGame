@@ -24,25 +24,11 @@ public:
 	void killRareMonster(){ m_killraremonster++; }
 	void addexploreNum(){ exploreNum++; }
 	void skillUsed(int i);
+	int getStarNumByID(int id){ return starNum[id-1]; }
+	void setStarNumByID(int id, int num){ starNum[id-1] = num; }
 public:
-	int get1(){ return m_monsterKill; }
-	MyNum get2(){ return m_coinCollect; }
-	int get3(){ return m_maxLevel; }
-	int get4(){ return m_ArStoneCollect; }
-	int get5(){ return m_ArMax; }
-	MyNum get6(){ return m_maxDpsPer; }
-	int get7(){ return m_bossKill; }
-	int get8(){ return m_tapNum; }
-	int get9(){ return m_relifeNum; }
-	int get10(){ return m_maxPlayerLevelUp; }
-	int get11(){ return m_killraremonster; }
-	int get12(){ return m_skill1used; }
-	int get13(){ return m_skill2used; }
-	int get14(){ return m_skill3used; }
-	int get15(){ return m_skill4used; }
-	int get16(){ return m_skill5used; }
-	int get17(){ return m_skill6used; }
-	int get18(){ return exploreNum; }
+	MyNum getMyNumByID(int id);
+	int getNumByID(int id);
 private:
 	AchieveData();
 	~AchieveData();
@@ -64,6 +50,7 @@ private:
 	int m_skill5used;
 	int m_skill6used;
 	int exploreNum;
+	int starNum[23];
 };
 
 

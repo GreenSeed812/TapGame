@@ -12,9 +12,8 @@
         <OpenedDocuments>
           <FilePathData Path="everydayLayer.csd" />
           <FilePathData Path="singLayer.csd" />
-          <FilePathData Path="achieveLayer.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="achieveLayer.csd" />
+        <ActiveDocument Path="everydayLayer.csd" />
       </Value>
     </Item>
   </Properties>

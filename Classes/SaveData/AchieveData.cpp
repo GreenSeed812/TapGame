@@ -20,7 +20,10 @@ AchieveData::AchieveData()
 	, m_skill6used(0)
 	, exploreNum(0)
 {
-	
+	for (size_t i = 0; i < 23; i++)
+	{
+		starNum[i] = 0;
+	}
 		
 	m_coinCollect.number = 0;
 	m_maxDpsPer.Mathbit = 0;
@@ -128,4 +131,54 @@ void AchieveData::skillUsed(int i)
 		m_skill5used++;
 	}
 
+}
+
+int AchieveData::getNumByID(int id)
+{
+	switch (id)
+	{
+	case 1:
+		return m_monsterKill;
+	case 3:
+		return m_maxLevel;
+	case 4:
+		return m_ArStoneCollect;
+	case 5:
+		return m_ArMax;
+	case 7:
+		return m_bossKill;
+	case 8:
+		return m_tapNum;
+	case 9:
+		return m_relifeNum;
+	case 10:
+		return m_maxPlayerLevelUp;
+	case 11:
+		return m_killraremonster;
+	case 12:
+		return m_skill1used;
+	case 13:
+		return m_skill2used;
+	case 14:
+		return m_skill3used;
+	case 15:
+		return m_skill4used;
+	case 16:
+		return m_skill5used;
+	case 17:
+		return m_skill6used;
+	case 18:
+		return exploreNum;
+	}
+}
+
+MyNum AchieveData::getMyNumByID(int id)
+{
+	switch (id)
+	{
+	case 2:
+		return m_coinCollect;
+	case 6:
+		return m_maxDpsPer;
+	}
 }

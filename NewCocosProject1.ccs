@@ -247,6 +247,7 @@
         <Image Name="zuanshi.png" />
         <Image Name="zuanshida.png" />
         <Image Name="zz.png" />
+        <Project Name="AchieveItem.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

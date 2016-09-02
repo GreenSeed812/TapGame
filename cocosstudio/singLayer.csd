@@ -337,13 +337,13 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="btnSeven" ActionTag="2079568964" Tag="215" IconVisible="False" LeftMargin="374.3680" RightMargin="377.6320" TopMargin="1028.0352" BottomMargin="726.9648" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="298" Scale9Height="143" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="btnSeven" ActionTag="2079568964" Tag="215" IconVisible="False" LeftMargin="374.3682" RightMargin="377.6318" TopMargin="1030.2655" BottomMargin="724.7345" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="298" Scale9Height="143" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="328.0000" Y="165.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="538.3680" Y="809.4648" />
+            <Position X="538.3682" Y="807.2345" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4985" Y="0.4216" />
+            <PrePosition X="0.4985" Y="0.4204" />
             <PreSize X="0.3037" Y="0.0859" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Normal" Path="yiqiandao0.png" Plist="" />

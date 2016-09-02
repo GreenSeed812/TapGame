@@ -18,6 +18,7 @@ private:
 	int m_money;
 	int m_starNum;
 	bool m_starUp;
+	bool m_starUped;
 	bool m_click;
 	MyNum m_countMax;
 	static Node * g_node;

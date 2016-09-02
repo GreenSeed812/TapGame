@@ -21,15 +21,15 @@ bool AchieveItem::init()
 	}
 	m_money = 5;
 	m_starUp = false;
+	m_starUped = false;
 	m_click = false;
 	m_node = CSLoader::createNode("AchieveItem.csb");
 	auto btn = (Button*)m_node->getChildByName("bgAchieve")->getChildByName("btn");
-	btn->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type)
+	btn->addTouchEventListener([this,btn](Ref* sender, Widget::TouchEventType type)
 	{
 		AchieveLayer::setMoney(m_money);
 		ShopData::getInstance()->addShopGold(m_money);
 		m_click = false;
-		AchieveData::getInstance()->setStarNumByID(m_id, m_starNum);
 		initAchieveItem(m_id);
 	});
 	this->setContentSize(m_node->getContentSize());
@@ -41,6 +41,10 @@ void AchieveItem::initAchieveItem(int id)
 {
 	m_id = id;
 	m_starNum = AchieveData::getInstance()->getStarNumByID(m_id);
+	if (m_starNum != 0)
+	{
+		m_starUped = true;
+	}
 	auto btn = (Button*)m_node->getChildByName("bgAchieve")->getChildByName("btn");
 	auto text = (Text*)m_node->getChildByName("bgAchieve")->getChildByName("Text");
 	auto num = (TextBMFont*)m_node->getChildByName("bgAchieve")->getChildByName("num");
@@ -115,9 +119,11 @@ void AchieveItem::initAchieveItem(int id)
 	for (size_t i = 0; i < m_starNum; i++)
 	{
 		auto star = (ImageView*)m_node->getChildByName("bgAchieve")->getChildByName(StringUtils::format("star%d", m_starNum).c_str());
-		if (m_starUp)
+		if (m_starUp || m_starUped)
 		{
 			star->loadTexture("xing1.png");
+			AchieveData::getInstance()->setStarNumByID(m_id, m_starNum);
+			m_starUped = true;
 		}
 		else
 		{

@@ -1,626 +1,530 @@
-obj/local/armeabi/objs-debug/cocos2dx_internal_static/physics3d/CCPhysics3DConstraint.o: \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DConstraint.cpp \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3D.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccConfig.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformConfig.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/CCMath.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec2.h \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/algorithm \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/CCMathBase.h \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/memory \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformMacros.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformDefine.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCPlatformDefine-android.h \
- D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/log.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec2.inl \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec2.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec3.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec3.inl \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec3.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Mat4.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccMacros.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCConsole.h \
- D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/select.h \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/thread \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/map \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/mutex \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCRef.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCStdC.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCStdC-android.h \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cassert \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccRandom.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec4.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec4.inl \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Mat4.inl \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec4.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Mat4.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Quaternion.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Quaternion.inl \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysicsSprite3D.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./3d/CCSprite3D.h \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/unordered_map \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCVector.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccTypes.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/CCGeometry.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCGL.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCGL-android.h \
- D:/android/ndk/platforms/android-18/arch-arm/usr/include/GLES2/gl2platform.h \
- D:/android/ndk/platforms/android-18/arch-arm/usr/include/KHR/khrplatform.h \
- D:/android/ndk/platforms/android-18/arch-arm/usr/include/GLES2/gl2.h \
- D:/android/ndk/platforms/android-18/arch-arm/usr/include/GLES2/gl2ext.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCProtocols.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCTexture2D.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./2d/CCNode.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCScriptSupport.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCCommon.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCTouch.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEventTouch.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEvent.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEventKeyboard.h \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/list \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/CCAffineTransform.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./2d/CCComponentContainer.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCMap.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./2d/CCComponent.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCMeshCommand.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCRenderCommand.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCGLProgram.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCRenderState.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCGLProgramState.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./3d/CCSkeleton3D.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./3d/CCBundle3DData.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./3d/CCAABB.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./3d/CCMeshVertexIndexData.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCVertexIndexData.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCVertexIndexBuffer.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DObject.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DComponent.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DWorld.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DDebugDrawer.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCCustomCommand.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btIDebugDraw.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btVector3.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btScalar.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btMinMax.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btAlignedAllocator.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btTransform.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btMatrix3x3.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btQuaternion.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btQuadWord.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DConstraint.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btTransform.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btVector3.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btQuaternion.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/btBulletCollisionCommon.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btCollisionWorld.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btCollisionObject.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btMotionState.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btAlignedAllocator.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btAlignedObjectArray.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btCollisionDispatcher.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btDispatcher.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btScalar.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//NarrowPhaseCollision/btPersistentManifold.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//NarrowPhaseCollision/btManifoldPoint.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btTransformUtil.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btManifoldResult.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//NarrowPhaseCollision/btDiscreteCollisionDetectorInterface.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btCollisionObjectWrapper.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btCollisionObject.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btBroadphaseProxy.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btCollisionCreateFunc.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btOverlappingPairCache.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btBroadphaseInterface.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btBroadphaseProxy.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btOverlappingPairCallback.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btBoxShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btPolyhedralConvexShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btMatrix3x3.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btConvexInternalShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btConvexShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btCollisionShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btCollisionMargin.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btAabbUtil2.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btMinMax.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btSphereShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btCapsuleShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btCylinderShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btBoxShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btConeShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btStaticPlaneShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btConcaveShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btTriangleCallback.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btConvexHullShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btTriangleMesh.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btTriangleIndexVertexArray.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btStridingMeshInterface.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btConvexTriangleMeshShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btBvhTriangleMeshShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btTriangleMeshShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btOptimizedBvh.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btQuantizedBvh.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btTriangleInfoMap.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btHashMap.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btAlignedObjectArray.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btSerializer.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btHashMap.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btScaledBvhTriangleMeshShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btTriangleMeshShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btTriangleIndexVertexArray.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btCompoundShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btTetrahedronShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btEmptyShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btMultiSphereShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btUniformScalingShape.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btSphereSphereCollisionAlgorithm.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btActivatingCollisionAlgorithm.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btCollisionAlgorithm.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btCollisionCreateFunc.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btDefaultCollisionConfiguration.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btCollisionConfiguration.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btCollisionDispatcher.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btSimpleBroadphase.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btOverlappingPairCache.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btAxisSweep3.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btDbvtBroadphase.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btDbvt.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btMultiSapBroadphase.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btDbvtBroadphase.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btDefaultMotionState.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btMotionState.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btQuickprof.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/btBulletDynamicsCommon.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/btBulletCollisionCommon.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/Dynamics/btDynamicsWorld.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btContactSolverInfo.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/Dynamics/btSimpleDynamicsWorld.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/Dynamics/btRigidBody.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btJacobianEntry.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btTypedConstraint.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btSolverConstraint.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btSolverBody.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btHingeConstraint.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btConeTwistConstraint.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btSliderConstraint.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btUniversalConstraint.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btHinge2Constraint.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btGearConstraint.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btTypedConstraint.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btFixedConstraint.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btSolverBody.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btSolverConstraint.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//NarrowPhaseCollision/btManifoldPoint.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btConstraintSolver.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/Vehicle/btRaycastVehicle.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/Vehicle/btVehicleRaycaster.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/Vehicle/btWheelInfo.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/Dynamics/btActionInterface.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/Dynamics/btRigidBody.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision/CollisionDispatch/btGhostObject.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision/CollisionDispatch/btCollisionObject.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btOverlappingPairCallback.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision/CollisionDispatch/btCollisionWorld.h
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3D.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccConfig.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformConfig.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/CCMath.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec2.h:
+./obj/local/armeabi/objs-debug/cocos2dx_internal_static/physics3d/CCPhysics3DConstraint.o: \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DConstraint.cpp \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3D.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccConfig.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformConfig.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/CCMath.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec2.h \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\algorithm \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/CCMathBase.h \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\memory \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformMacros.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformDefine.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/android/CCPlatformDefine-android.h \
+  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\android/log.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec2.inl \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec3.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec3.inl \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Mat4.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccMacros.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCConsole.h \
+  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\sys/select.h \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\thread \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\map \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\mutex \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCRef.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCStdC.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/android/CCStdC-android.h \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cassert \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccRandom.h \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cstdlib \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec4.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec4.inl \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Mat4.inl \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Quaternion.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Quaternion.inl \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysicsSprite3D.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\3d/CCSprite3D.h \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\unordered_map \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCVector.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccTypes.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/CCGeometry.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCGL.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/android/CCGL-android.h \
+  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\GLES2/gl2platform.h \
+  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\KHR/khrplatform.h \
+  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\GLES2/gl2.h \
+  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\GLES2/gl2ext.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCProtocols.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCTexture2D.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\2d/CCNode.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCScriptSupport.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCCommon.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCTouch.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEventTouch.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEvent.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEventKeyboard.h \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\list \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/CCAffineTransform.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\2d/CCComponentContainer.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCMap.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\2d/CCComponent.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCMeshCommand.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCRenderCommand.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCGLProgram.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCRenderState.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCGLProgramState.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\3d/CCSkeleton3D.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\3d/CCBundle3DData.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\3d/CCAABB.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\3d/CCMeshVertexIndexData.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCVertexIndexData.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCVertexIndexBuffer.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DObject.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DComponent.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DWorld.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DDebugDrawer.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCCustomCommand.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btIDebugDraw.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btVector3.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btScalar.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btMinMax.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btAlignedAllocator.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btTransform.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btMatrix3x3.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btQuaternion.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btQuadWord.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DConstraint.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/btBulletCollisionCommon.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btCollisionWorld.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btCollisionObject.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btMotionState.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btAlignedObjectArray.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btCollisionDispatcher.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btDispatcher.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//NarrowPhaseCollision/btPersistentManifold.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//NarrowPhaseCollision/btManifoldPoint.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btTransformUtil.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btManifoldResult.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//NarrowPhaseCollision/btDiscreteCollisionDetectorInterface.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btCollisionObjectWrapper.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btBroadphaseProxy.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btCollisionCreateFunc.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btOverlappingPairCache.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btBroadphaseInterface.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btOverlappingPairCallback.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btBoxShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btPolyhedralConvexShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btConvexInternalShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btConvexShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btCollisionShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btCollisionMargin.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btAabbUtil2.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btSphereShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btCapsuleShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btCylinderShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btConeShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btStaticPlaneShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btConcaveShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btTriangleCallback.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btConvexHullShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btTriangleMesh.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btTriangleIndexVertexArray.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btStridingMeshInterface.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btConvexTriangleMeshShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btBvhTriangleMeshShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btTriangleMeshShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btOptimizedBvh.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btQuantizedBvh.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btTriangleInfoMap.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btHashMap.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btSerializer.h \
+  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\memory.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btScaledBvhTriangleMeshShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btCompoundShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btTetrahedronShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btEmptyShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btMultiSphereShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btUniformScalingShape.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btSphereSphereCollisionAlgorithm.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btActivatingCollisionAlgorithm.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btCollisionAlgorithm.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btDefaultCollisionConfiguration.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btCollisionConfiguration.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btSimpleBroadphase.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btAxisSweep3.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btDbvtBroadphase.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btDbvt.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btMultiSapBroadphase.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btDefaultMotionState.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btQuickprof.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/btBulletDynamicsCommon.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/Dynamics/btDynamicsWorld.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btContactSolverInfo.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/Dynamics/btSimpleDynamicsWorld.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/Dynamics/btRigidBody.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btJacobianEntry.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btTypedConstraint.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btSolverConstraint.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btSolverBody.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btHingeConstraint.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btConeTwistConstraint.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btSliderConstraint.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btUniversalConstraint.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btHinge2Constraint.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btGearConstraint.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btFixedConstraint.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btConstraintSolver.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/Vehicle/btRaycastVehicle.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/Vehicle/btVehicleRaycaster.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/Vehicle/btWheelInfo.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/Dynamics/btActionInterface.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision/CollisionDispatch/btGhostObject.h
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/algorithm:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3D.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/CCMathBase.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccConfig.h:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/memory:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformConfig.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformMacros.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/CCMath.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformDefine.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec2.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCPlatformDefine-android.h:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\algorithm:
 
-D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/log.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/CCMathBase.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec2.inl:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\memory:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec2.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformMacros.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec3.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformDefine.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec3.inl:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/android/CCPlatformDefine-android.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec3.h:
+D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\android/log.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Mat4.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec2.inl:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccMacros.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec3.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCConsole.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec3.inl:
 
-D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/select.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Mat4.h:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/thread:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccMacros.h:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/map:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCConsole.h:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/mutex:
+D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\sys/select.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCRef.h:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\thread:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCStdC.h:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\map:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCStdC-android.h:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\mutex:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cassert:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCRef.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccRandom.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCStdC.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec4.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/android/CCStdC-android.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec4.inl:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cassert:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Mat4.inl:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccRandom.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec4.h:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cstdlib:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Mat4.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec4.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Quaternion.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec4.inl:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Quaternion.inl:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Mat4.inl:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Quaternion.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysicsSprite3D.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Quaternion.inl:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./3d/CCSprite3D.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DShape.h:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/unordered_map:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysicsSprite3D.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCVector.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\3d/CCSprite3D.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccTypes.h:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\unordered_map:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/CCGeometry.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCVector.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCGL.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccTypes.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCGL-android.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/CCGeometry.h:
 
-D:/android/ndk/platforms/android-18/arch-arm/usr/include/GLES2/gl2platform.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCGL.h:
 
-D:/android/ndk/platforms/android-18/arch-arm/usr/include/KHR/khrplatform.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/android/CCGL-android.h:
 
-D:/android/ndk/platforms/android-18/arch-arm/usr/include/GLES2/gl2.h:
+D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\GLES2/gl2platform.h:
 
-D:/android/ndk/platforms/android-18/arch-arm/usr/include/GLES2/gl2ext.h:
+D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\KHR/khrplatform.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCProtocols.h:
+D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\GLES2/gl2.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCTexture2D.h:
+D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\GLES2/gl2ext.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./2d/CCNode.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCProtocols.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCScriptSupport.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCTexture2D.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCCommon.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\2d/CCNode.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCTouch.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCScriptSupport.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEventTouch.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCCommon.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEvent.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCTouch.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEventKeyboard.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEventTouch.h:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/list:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEvent.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/CCAffineTransform.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEventKeyboard.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./2d/CCComponentContainer.h:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\list:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCMap.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/CCAffineTransform.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./2d/CCComponent.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\2d/CCComponentContainer.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCMeshCommand.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCMap.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCRenderCommand.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\2d/CCComponent.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCGLProgram.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCMeshCommand.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCRenderState.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCRenderCommand.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCGLProgramState.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCGLProgram.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./3d/CCSkeleton3D.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCRenderState.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./3d/CCBundle3DData.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCGLProgramState.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./3d/CCAABB.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\3d/CCSkeleton3D.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./3d/CCMeshVertexIndexData.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\3d/CCBundle3DData.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCVertexIndexData.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\3d/CCAABB.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCVertexIndexBuffer.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\3d/CCMeshVertexIndexData.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DObject.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCVertexIndexData.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DComponent.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCVertexIndexBuffer.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DWorld.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DObject.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DDebugDrawer.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DComponent.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCCustomCommand.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DWorld.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btIDebugDraw.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DDebugDrawer.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btVector3.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCCustomCommand.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btScalar.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btIDebugDraw.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btMinMax.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btVector3.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btAlignedAllocator.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btScalar.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btTransform.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btMinMax.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btMatrix3x3.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btAlignedAllocator.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btQuaternion.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btTransform.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btQuadWord.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btMatrix3x3.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DConstraint.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btQuaternion.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btTransform.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btQuadWord.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btVector3.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./physics3d/CCPhysics3DConstraint.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btQuaternion.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/btBulletCollisionCommon.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/btBulletCollisionCommon.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btCollisionWorld.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btCollisionWorld.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btCollisionObject.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btCollisionObject.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btMotionState.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btMotionState.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btAlignedObjectArray.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btAlignedAllocator.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btCollisionDispatcher.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btAlignedObjectArray.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btDispatcher.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btCollisionDispatcher.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//NarrowPhaseCollision/btPersistentManifold.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btDispatcher.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//NarrowPhaseCollision/btManifoldPoint.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btScalar.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btTransformUtil.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//NarrowPhaseCollision/btPersistentManifold.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btManifoldResult.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//NarrowPhaseCollision/btManifoldPoint.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//NarrowPhaseCollision/btDiscreteCollisionDetectorInterface.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btTransformUtil.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btCollisionObjectWrapper.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btManifoldResult.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btBroadphaseProxy.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//NarrowPhaseCollision/btDiscreteCollisionDetectorInterface.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btCollisionCreateFunc.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btCollisionObjectWrapper.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btOverlappingPairCache.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btCollisionObject.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btBroadphaseInterface.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btBroadphaseProxy.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btOverlappingPairCallback.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btCollisionCreateFunc.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btBoxShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btOverlappingPairCache.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btPolyhedralConvexShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btBroadphaseInterface.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btConvexInternalShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btBroadphaseProxy.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btConvexShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btOverlappingPairCallback.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btCollisionShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btBoxShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btCollisionMargin.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btPolyhedralConvexShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btAabbUtil2.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btMatrix3x3.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btSphereShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btConvexInternalShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btCapsuleShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btConvexShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btCylinderShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btCollisionShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btConeShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btCollisionMargin.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btStaticPlaneShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btAabbUtil2.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btConcaveShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btMinMax.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btTriangleCallback.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btSphereShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btConvexHullShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btCapsuleShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btTriangleMesh.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btCylinderShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btTriangleIndexVertexArray.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btBoxShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btStridingMeshInterface.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btConeShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btConvexTriangleMeshShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btStaticPlaneShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btBvhTriangleMeshShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btConcaveShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btTriangleMeshShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btTriangleCallback.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btOptimizedBvh.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btConvexHullShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btQuantizedBvh.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btTriangleMesh.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btTriangleInfoMap.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btTriangleIndexVertexArray.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btHashMap.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btStridingMeshInterface.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btSerializer.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btConvexTriangleMeshShape.h:
+D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\memory.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btBvhTriangleMeshShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btScaledBvhTriangleMeshShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btTriangleMeshShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btCompoundShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btOptimizedBvh.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btTetrahedronShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btQuantizedBvh.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btEmptyShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btTriangleInfoMap.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btMultiSphereShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btHashMap.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionShapes/btUniformScalingShape.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btAlignedObjectArray.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btSphereSphereCollisionAlgorithm.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btSerializer.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btActivatingCollisionAlgorithm.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btHashMap.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btCollisionAlgorithm.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btScaledBvhTriangleMeshShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btDefaultCollisionConfiguration.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btTriangleMeshShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//CollisionDispatch/btCollisionConfiguration.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btTriangleIndexVertexArray.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btSimpleBroadphase.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btCompoundShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btAxisSweep3.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btTetrahedronShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btDbvtBroadphase.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btEmptyShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btDbvt.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btMultiSphereShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision//BroadphaseCollision/btMultiSapBroadphase.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionShapes/btUniformScalingShape.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btDefaultMotionState.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btSphereSphereCollisionAlgorithm.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/LinearMath/btQuickprof.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btActivatingCollisionAlgorithm.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/btBulletDynamicsCommon.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btCollisionAlgorithm.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btCollisionCreateFunc.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/Dynamics/btDynamicsWorld.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btDefaultCollisionConfiguration.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btContactSolverInfo.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btCollisionConfiguration.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/Dynamics/btSimpleDynamicsWorld.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//CollisionDispatch/btCollisionDispatcher.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/Dynamics/btRigidBody.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btSimpleBroadphase.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btOverlappingPairCache.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btJacobianEntry.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btAxisSweep3.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btTypedConstraint.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btDbvtBroadphase.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btSolverConstraint.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btDbvt.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btSolverBody.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btMultiSapBroadphase.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btHingeConstraint.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btDbvtBroadphase.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btConeTwistConstraint.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btDefaultMotionState.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btMotionState.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btSliderConstraint.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/LinearMath/btQuickprof.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/btBulletDynamicsCommon.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btUniversalConstraint.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/btBulletCollisionCommon.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btHinge2Constraint.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btGearConstraint.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/Dynamics/btDynamicsWorld.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btFixedConstraint.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btContactSolverInfo.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/Dynamics/btSimpleDynamicsWorld.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/ConstraintSolver/btConstraintSolver.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/Dynamics/btRigidBody.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/Vehicle/btRaycastVehicle.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/Vehicle/btVehicleRaycaster.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btJacobianEntry.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/Vehicle/btWheelInfo.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btTypedConstraint.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletDynamics/Dynamics/btActionInterface.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btSolverConstraint.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btSolverBody.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btHingeConstraint.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btConeTwistConstraint.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btSliderConstraint.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btUniversalConstraint.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btHinge2Constraint.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btGearConstraint.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btTypedConstraint.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btFixedConstraint.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btSolverBody.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btSolverConstraint.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//NarrowPhaseCollision/btManifoldPoint.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/ConstraintSolver/btConstraintSolver.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/Vehicle/btRaycastVehicle.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/Vehicle/btVehicleRaycaster.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/Vehicle/btWheelInfo.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/Dynamics/btActionInterface.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletDynamics/Dynamics/btRigidBody.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision/CollisionDispatch/btGhostObject.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision/CollisionDispatch/btCollisionObject.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision//BroadphaseCollision/btOverlappingPairCallback.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/bullet/BulletCollision/CollisionDispatch/btCollisionWorld.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external\bullet/BulletCollision/CollisionDispatch/btGhostObject.h:

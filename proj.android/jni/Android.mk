@@ -33,11 +33,13 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/SaveData/PlayerData.cpp \
 				   ../../Classes/SaveData/PlayerButtonData.cpp \
 				   ../../Classes/SaveData/ArtifactData.cpp \
+				   ../../Classes/SaveData/AchieveData.cpp \
 				   ../../Classes/SaveData/ShopData.cpp \
 				   ../../Classes/SaveData/MonsterState.cpp \
 				   ../../Classes/Ui/bossButton.cpp \
 				   ../../Classes/LoadingScene/LoadingScene.cpp \
 				   ../../Classes/Ui/AchieveLayer.cpp \
+				   ../../Classes/Ui/AchieveItem.cpp \
 				   ../../Classes/Ui/MissionLayer.cpp \
 				   ../../Classes/Ui/settingLayer.cpp \
 				   ../../Classes/Ui/SignLayer.cpp \

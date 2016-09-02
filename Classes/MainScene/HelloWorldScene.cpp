@@ -55,7 +55,7 @@ bool HelloWorld::init()
         return false;
     }
 
-	
+
 	BgMusic::getInstance()->playBg(true);
 	m_hitlogic = true;
 	m_heroLayer = nullptr;
@@ -264,6 +264,7 @@ void HelloWorld::update(float dt)
 		TextBMFont* tpdps = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("TotalDps")->getChildByName("TotalDps");
 		tpdps->setString(Ruler::getInstance()->showNum(tpDps));
 		skillEff(dt);
+		shopItemEff(dt);
 		static float t_now = 0;
 		t_now += dt;
 		if (t_now > 1 / 10.0f && MyState::getInstance()->getTaped())
@@ -1023,4 +1024,8 @@ void HelloWorld::initAr()
 		ArtifactButton::setListView(lv);
 		ArtifactButton::setRootNode(m_artifactLayer);
 	}
+}
+void HelloWorld::shopItemEff(float dt) 
+{
+	
 }

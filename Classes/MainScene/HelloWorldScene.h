@@ -38,6 +38,7 @@ public:
 	void deleteSprite(Node *);
 	void playMusic(Node * node);
 	void normalAtk();
+	void shopItemEff(float);
 	static void setBg(bool off_on){ m_bg = off_on; }
 	static void setSou(bool off_on){ m_sou = off_on; }
 	void initAr();

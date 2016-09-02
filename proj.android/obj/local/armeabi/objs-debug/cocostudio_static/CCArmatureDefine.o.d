@@ -1,5 +1,5 @@
-obj/local/armeabi/objs-debug/cocostudio_static/CCArmatureDefine.o: \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/CCArmatureDefine.cpp \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCArmatureDefine.h
+./obj/local/armeabi/objs-debug/cocostudio_static/CCArmatureDefine.o: \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/CCArmatureDefine.cpp \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/..\cocostudio/CCArmatureDefine.h
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCArmatureDefine.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/..\cocostudio/CCArmatureDefine.h:

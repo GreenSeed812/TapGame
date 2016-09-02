@@ -43,7 +43,7 @@ ArtifactData::~ArtifactData()
 }
 int ArtifactData::getNeededArStone()
 {
-	int a = pow(2.8f, m_artifactNum);
+	int a = pow(2.0f, m_artifactNum);
 	return a;
 }
 int ArtifactData::addArNum()

@@ -163,7 +163,7 @@ int ArtifactData::addArNum()
 
 void ArtifactData::arLevelUp(int id)
 {
-	for (int i = 8; i < m_artifactNum; i++)
+	for (int i = 0; i < m_artifactNum; i++)
 	{
 		if (m_artifacts.at(i)->m_artifactID == id)
 		{
@@ -176,8 +176,8 @@ void ArtifactData::arLevelUp(int id)
 }
 void ArtifactData::arStarUp()
 {
-	auto id = cocos2d::random(8, m_artifactNum);
-	for (size_t i = 8; i < m_artifactNum; i++)
+	auto id = cocos2d::random(0, m_artifactNum);
+	for (size_t i = 0; i < m_artifactNum; i++)
 	{
 		if (m_artifacts.at(i)->m_artifactID == id)
 		{
@@ -188,7 +188,7 @@ void ArtifactData::arStarUp()
 }
 int ArtifactData::getLevel(int id)
 {
-	for (int i = 8; i < m_artifactNum; i++)
+	for (int i = 0; i < m_artifactNum; i++)
 	{
 		
 		if (m_artifacts.at(i)->m_artifactID == id)
@@ -250,7 +250,7 @@ void ArtifactData::deleteArByID(int id)
 			{
 				rmGoldPer -= artSkill.ar.effData;
 			}
-			if (artSkill.ar.effid == 28)
+			if (artSkill.ar.effid == 20)
 			{
 				tenGoldPer -= artSkill.ar.effData;
 			}

@@ -43,7 +43,7 @@ ArtifactData::~ArtifactData()
 }
 int ArtifactData::getNeededArStone()
 {
-	int a = pow(2.0f, m_artifactNum);
+	int a = pow(2.8f, m_artifactNum);
 	return a;
 }
 int ArtifactData::addArNum()
@@ -55,7 +55,7 @@ int ArtifactData::addArNum()
 	{
 		id = cocos2d::random(1, 29);
 		loop = false;
-		for (int i = 0; i < m_artifactNum; i++)
+		for (int i = 8; i < m_artifactNum; i++)
 		{
 			if (m_artifacts.at(i)->m_artifactID == id)
 			{
@@ -163,7 +163,7 @@ int ArtifactData::addArNum()
 
 void ArtifactData::arLevelUp(int id)
 {
-	for (int i = 0; i < m_artifactNum; i++)
+	for (int i = 8; i < m_artifactNum; i++)
 	{
 		if (m_artifacts.at(i)->m_artifactID == id)
 		{
@@ -176,8 +176,8 @@ void ArtifactData::arLevelUp(int id)
 }
 void ArtifactData::arStarUp()
 {
-	auto id = cocos2d::random(0, m_artifactNum);
-	for (size_t i = 0; i < m_artifactNum; i++)
+	auto id = cocos2d::random(8, m_artifactNum);
+	for (size_t i = 8; i < m_artifactNum; i++)
 	{
 		if (m_artifacts.at(i)->m_artifactID == id)
 		{
@@ -188,7 +188,7 @@ void ArtifactData::arStarUp()
 }
 int ArtifactData::getLevel(int id)
 {
-	for (int i = 0; i < m_artifactNum; i++)
+	for (int i = 8; i < m_artifactNum; i++)
 	{
 		
 		if (m_artifacts.at(i)->m_artifactID == id)
@@ -250,7 +250,7 @@ void ArtifactData::deleteArByID(int id)
 			{
 				rmGoldPer -= artSkill.ar.effData;
 			}
-			if (artSkill.ar.effid == 20)
+			if (artSkill.ar.effid == 28)
 			{
 				tenGoldPer -= artSkill.ar.effData;
 			}
@@ -333,21 +333,273 @@ void ArtifactData::saveUserDefault(Document& document)
 	document.AddMember("servantLevelUpDown", servantLevelUpDown, allocator);
 	document.AddMember("WaveDown", WaveDown, allocator);
 	document.AddMember("servantUnlockDown", servantUnlockDown, allocator);
-	for (int i = 0; i < m_artifacts.size(); i++)
+	
+	if (m_artifacts.size() > 0)
 	{
-		document.AddMember(Value(cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artiDpsUp", i).c_str(), allocator), m_artifacts.at(i)->m_artiDpsUp, allocator);
-		document.AddMember(Value(cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artifactID", i).c_str(), allocator), m_artifacts.at(i)->m_artifactID, allocator);
-		document.AddMember(Value(cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artifactLevel", i).c_str(), allocator), m_artifacts.at(i)->m_artifactLevel, allocator);
-		document.AddMember(Value(cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artimaxLevel", i).c_str(), allocator), m_artifacts.at(i)->m_artimaxLevel, allocator);
-		document.AddMember(Value(cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artiDpsUp", i).c_str(), allocator), m_artifacts.at(i)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(0)->m_artiDpsUp", m_artifacts.at(0)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(0)->m_artifactID", m_artifacts.at(0)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(0)->m_artifactLevel", m_artifacts.at(0)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(0)->m_artimaxLevel", m_artifacts.at(0)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(0)->m_artiDpsUp", m_artifacts.at(0)->m_artiDpsUp, allocator);
+
 	}
-		
+	if (m_artifacts.size() > 1)
+	{
+		document.AddMember("m_artifacts.at(1)->m_artiDpsUp", m_artifacts.at(1)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(1)->m_artifactID", m_artifacts.at(1)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(1)->m_artifactLevel", m_artifacts.at(1)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(1)->m_artimaxLevel", m_artifacts.at(1)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(1)->m_artiDpsUp", m_artifacts.at(1)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 2)
+	{
+		document.AddMember("m_artifacts.at(2)->m_artiDpsUp", m_artifacts.at(2)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(2)->m_artifactID", m_artifacts.at(2)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(2)->m_artifactLevel", m_artifacts.at(2)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(2)->m_artimaxLevel", m_artifacts.at(2)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(2)->m_artiDpsUp", m_artifacts.at(2)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 3)
+	{
+		document.AddMember("m_artifacts.at(3)->m_artiDpsUp", m_artifacts.at(3)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(3)->m_artifactID", m_artifacts.at(3)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(3)->m_artifactLevel", m_artifacts.at(3)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(3)->m_artimaxLevel", m_artifacts.at(3)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(3)->m_artiDpsUp", m_artifacts.at(3)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 4)
+	{
+		document.AddMember("m_artifacts.at(4)->m_artiDpsUp", m_artifacts.at(4)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(4)->m_artifactID", m_artifacts.at(4)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(4)->m_artifactLevel", m_artifacts.at(4)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(4)->m_artimaxLevel", m_artifacts.at(4)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(4)->m_artiDpsUp", m_artifacts.at(4)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 5)
+	{
+		document.AddMember("m_artifacts.at(5)->m_artiDpsUp", m_artifacts.at(5)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(5)->m_artifactID", m_artifacts.at(5)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(5)->m_artifactLevel", m_artifacts.at(5)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(5)->m_artimaxLevel", m_artifacts.at(5)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(5)->m_artiDpsUp", m_artifacts.at(5)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 6)
+	{
+		document.AddMember("m_artifacts.at(6)->m_artiDpsUp", m_artifacts.at(6)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(6)->m_artifactID", m_artifacts.at(6)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(6)->m_artifactLevel", m_artifacts.at(6)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(6)->m_artimaxLevel", m_artifacts.at(6)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(6)->m_artiDpsUp", m_artifacts.at(6)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 7)
+	{
+		document.AddMember("m_artifacts.at(7)->m_artiDpsUp", m_artifacts.at(7)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(7)->m_artifactID", m_artifacts.at(7)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(7)->m_artifactLevel", m_artifacts.at(7)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(7)->m_artimaxLevel", m_artifacts.at(7)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(7)->m_artiDpsUp", m_artifacts.at(7)->m_artiDpsUp, allocator);
+	}
+	if (m_artifacts.size() > 8)
+	{
+		document.AddMember("m_artifacts.at(8)->m_artiDpsUp", m_artifacts.at(8)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(8)->m_artifactID", m_artifacts.at(8)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(8)->m_artifactLevel", m_artifacts.at(8)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(8)->m_artimaxLevel", m_artifacts.at(8)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(8)->m_artiDpsUp", m_artifacts.at(8)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 9)
+	{
+		document.AddMember("m_artifacts.at(9)->m_artiDpsUp", m_artifacts.at(9)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(9)->m_artifactID", m_artifacts.at(9)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(9)->m_artifactLevel", m_artifacts.at(9)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(9)->m_artimaxLevel", m_artifacts.at(9)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(9)->m_artiDpsUp", m_artifacts.at(9)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 10)
+	{
+		document.AddMember("m_artifacts.at(10)->m_artiDpsUp", m_artifacts.at(10)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(10)->m_artifactID", m_artifacts.at(10)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(10)->m_artifactLevel", m_artifacts.at(10)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(10)->m_artimaxLevel", m_artifacts.at(10)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(10)->m_artiDpsUp", m_artifacts.at(10)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 11)
+	{
+		document.AddMember("m_artifacts.at(11)->m_artiDpsUp", m_artifacts.at(11)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(11)->m_artifactID", m_artifacts.at(11)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(11)->m_artifactLevel", m_artifacts.at(11)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(11)->m_artimaxLevel", m_artifacts.at(11)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(11)->m_artiDpsUp", m_artifacts.at(11)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 12)
+	{
+		document.AddMember("m_artifacts.at(12)->m_artiDpsUp", m_artifacts.at(12)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(12)->m_artifactID", m_artifacts.at(12)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(12)->m_artifactLevel", m_artifacts.at(12)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(12)->m_artimaxLevel", m_artifacts.at(12)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(12)->m_artiDpsUp", m_artifacts.at(12)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 13)
+	{
+		document.AddMember("m_artifacts.at(13)->m_artiDpsUp", m_artifacts.at(13)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(13)->m_artifactID", m_artifacts.at(13)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(13)->m_artifactLevel", m_artifacts.at(13)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(13)->m_artimaxLevel", m_artifacts.at(13)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(13)->m_artiDpsUp", m_artifacts.at(13)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 14)
+	{
+		document.AddMember("m_artifacts.at(14)->m_artiDpsUp", m_artifacts.at(14)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(14)->m_artifactID", m_artifacts.at(14)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(14)->m_artifactLevel", m_artifacts.at(14)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(14)->m_artimaxLevel", m_artifacts.at(14)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(14)->m_artiDpsUp", m_artifacts.at(14)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 15)
+	{
+		document.AddMember("m_artifacts.at(15)->m_artiDpsUp", m_artifacts.at(15)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(15)->m_artifactID", m_artifacts.at(15)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(15)->m_artifactLevel", m_artifacts.at(15)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(15)->m_artimaxLevel", m_artifacts.at(15)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(15)->m_artiDpsUp", m_artifacts.at(15)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 16)
+	{
+		document.AddMember("m_artifacts.at(16)->m_artiDpsUp", m_artifacts.at(16)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(16)->m_artifactID", m_artifacts.at(16)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(16)->m_artifactLevel", m_artifacts.at(16)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(16)->m_artimaxLevel", m_artifacts.at(16)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(16)->m_artiDpsUp", m_artifacts.at(16)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 17)
+	{
+		document.AddMember("m_artifacts.at(17)->m_artiDpsUp", m_artifacts.at(17)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(17)->m_artifactID", m_artifacts.at(17)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(17)->m_artifactLevel", m_artifacts.at(17)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(17)->m_artimaxLevel", m_artifacts.at(17)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(17)->m_artiDpsUp", m_artifacts.at(17)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 18)
+	{
+		document.AddMember("m_artifacts.at(18)->m_artiDpsUp", m_artifacts.at(18)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(18)->m_artifactID", m_artifacts.at(18)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(18)->m_artifactLevel", m_artifacts.at(18)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(18)->m_artimaxLevel", m_artifacts.at(18)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(18)->m_artiDpsUp", m_artifacts.at(18)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 19)
+	{
+		document.AddMember("m_artifacts.at(19)->m_artiDpsUp", m_artifacts.at(19)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(19)->m_artifactID", m_artifacts.at(19)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(19)->m_artifactLevel", m_artifacts.at(19)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(19)->m_artimaxLevel", m_artifacts.at(19)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(19)->m_artiDpsUp", m_artifacts.at(19)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 20)
+	{
+		document.AddMember("m_artifacts.at(20)->m_artiDpsUp", m_artifacts.at(20)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(20)->m_artifactID", m_artifacts.at(20)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(20)->m_artifactLevel", m_artifacts.at(20)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(20)->m_artimaxLevel", m_artifacts.at(20)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(20)->m_artiDpsUp", m_artifacts.at(20)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 21)
+	{
+		document.AddMember("m_artifacts.at(21)->m_artiDpsUp", m_artifacts.at(21)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(21)->m_artifactID", m_artifacts.at(21)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(21)->m_artifactLevel", m_artifacts.at(21)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(21)->m_artimaxLevel", m_artifacts.at(21)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(21)->m_artiDpsUp", m_artifacts.at(21)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 22)
+	{
+		document.AddMember("m_artifacts.at(22)->m_artiDpsUp", m_artifacts.at(22)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(22)->m_artifactID", m_artifacts.at(22)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(22)->m_artifactLevel", m_artifacts.at(22)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(22)->m_artimaxLevel", m_artifacts.at(22)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(22)->m_artiDpsUp", m_artifacts.at(22)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 23)
+	{
+		document.AddMember("m_artifacts.at(23)->m_artiDpsUp", m_artifacts.at(23)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(23)->m_artifactID", m_artifacts.at(23)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(23)->m_artifactLevel", m_artifacts.at(23)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(23)->m_artimaxLevel", m_artifacts.at(23)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(23)->m_artiDpsUp", m_artifacts.at(23)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 24)
+	{
+		document.AddMember("m_artifacts.at(24)->m_artiDpsUp", m_artifacts.at(24)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(24)->m_artifactID", m_artifacts.at(24)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(24)->m_artifactLevel", m_artifacts.at(24)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(24)->m_artimaxLevel", m_artifacts.at(24)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(24)->m_artiDpsUp", m_artifacts.at(24)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 25)
+	{
+		document.AddMember("m_artifacts.at(25)->m_artiDpsUp", m_artifacts.at(25)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(25)->m_artifactID", m_artifacts.at(25)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(25)->m_artifactLevel", m_artifacts.at(25)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(25)->m_artimaxLevel", m_artifacts.at(25)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(25)->m_artiDpsUp", m_artifacts.at(25)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 26)
+	{
+		document.AddMember("m_artifacts.at(26)->m_artiDpsUp", m_artifacts.at(26)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(26)->m_artifactID", m_artifacts.at(26)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(26)->m_artifactLevel", m_artifacts.at(26)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(26)->m_artimaxLevel", m_artifacts.at(26)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(26)->m_artiDpsUp", m_artifacts.at(26)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 27)
+	{
+		document.AddMember("m_artifacts.at(27)->m_artiDpsUp", m_artifacts.at(27)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(27)->m_artifactID", m_artifacts.at(27)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(27)->m_artifactLevel", m_artifacts.at(27)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(27)->m_artimaxLevel", m_artifacts.at(27)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(27)->m_artiDpsUp", m_artifacts.at(27)->m_artiDpsUp, allocator);
+
+	}
+	if (m_artifacts.size() > 28)
+	{
+		document.AddMember("m_artifacts.at(28)->m_artiDpsUp", m_artifacts.at(28)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(28)->m_artifactID", m_artifacts.at(28)->m_artifactID, allocator);
+		document.AddMember("m_artifacts.at(28)->m_artifactLevel", m_artifacts.at(28)->m_artifactLevel, allocator);
+		document.AddMember("m_artifacts.at(28)->m_artimaxLevel", m_artifacts.at(28)->m_artimaxLevel, allocator);
+		document.AddMember("m_artifacts.at(28)->m_artiDpsUp", m_artifacts.at(28)->m_artiDpsUp, allocator);
+
+	}
 }
 void ArtifactData::readUserDefault()
 {
 	std::string json = cocos2d::UserDefault::getInstance()->getStringForKey("UserDefault");
 	rapidjson::Document jsd;
-	jsd.Parse<0>(json.c_str());
+	jsd.Parse<8>(json.c_str());
 	if (jsd.IsObject() && jsd.HasMember("m_artifactStone"))
 	{
 		m_artifactStone = jsd["m_artifactStone"].GetInt();
@@ -374,7 +626,6 @@ void ArtifactData::readUserDefault()
 			arhave->m_artifactID = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artifactID", i).c_str()].GetInt();
 			arhave->m_artifactLevel = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artifactLevel", i).c_str()].GetInt();
 			arhave->m_artimaxLevel = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artimaxLevel", i).c_str()].GetInt();
-			arhave->m_artiDpsUp = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artiDpsUp", i).c_str()].GetDouble();
 			m_artifacts.push_back(arhave);
 		}
 		

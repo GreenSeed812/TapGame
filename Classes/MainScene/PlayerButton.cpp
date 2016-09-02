@@ -213,7 +213,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 			}
 		});
 	}
-	coinChange(this);
+	cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 }
 
 void PlayerButton::coinChange(Ref* pSender)

@@ -75,9 +75,10 @@ PlayerData * PlayerData::getInstance()
 	if (!p_dt)
 	{
 		p_dt = new PlayerData();	
-		if (cocos2d::UserDefault::getInstance()->isXMLFileExist())
+		//remove(cocos2d::UserDefault::getInstance()->getXMLFilePath().c_str());
+		if (cocos2d::UserDefault::getInstance()->getBoolForKey("isSaved"))
 		{
-			//remove(cocos2d::UserDefault::getInstance()->getXMLFilePath().c_str());
+			
 			p_dt->init();
 		}
 	}
@@ -95,6 +96,8 @@ bool PlayerData::init()
 	
 	if (jsd.IsObject() && jsd.HasMember("m_level")) 
 	{
+		m_gold.number = jsd["m_gold.number"].GetDouble();
+		m_gold.Mathbit = jsd["m_gold.Mathbit"].GetInt();
 		m_level  = jsd["m_level"].GetInt();
 		m_monsterNum = jsd["m_monsterNum"].GetInt();
 		m_playerLevel = jsd["m_playerLevel"].GetInt(); 
@@ -254,8 +257,10 @@ void PlayerData::defeatMonsterGold()
 	MyNum baseNum;
 	baseNum.number = 1;
 	baseNum.Mathbit = 0;
-	if (m_level < 2)
+	if (m_level == 0)
 		;
+	else if (m_level == 1)
+		baseNum.number = 2;
 	else
 	{
 		for (int i = 2; i <= m_level + 1; i++)
@@ -290,8 +295,11 @@ MyNum PlayerData::getdefeatMonsterGold()
 	MyNum baseNum;
 	baseNum.number = 1;
 	baseNum.Mathbit = 0;
-	if (m_level < 2)
+	
+	if (m_level == 0)
 		;
+	else if (m_level == 1)
+		baseNum.number = 2;
 	else
 	{
 		for (int i = 2; i <= m_level + 1; i++)
@@ -469,6 +477,8 @@ MyNum PlayerData::getservantLevelUpDps(int id)
 {
 	
 	auto servantLsDps = SqLite::getInstance()->getServantDpsByID(id);
+	if (m_servantLevel[id] == 0)
+		return servantLsDps;
 	for (int i = 0; i <= m_servantLevel[id]; i++)
 	{
 		auto pow1 = pow(i + 1, 0.7);
@@ -518,6 +528,8 @@ void PlayerData::saveUserData(float dt)
 	Document::AllocatorType& allocator = document.GetAllocator();
 	Value array(kArrayType);
 	Value object(kObjectType);
+	document.AddMember("m_gold.number", m_gold.number, allocator); 
+	document.AddMember("m_gold.Mathbit", m_gold.Mathbit, allocator);
 	document.AddMember("m_level", m_level, allocator);
 	document.AddMember("m_monsterNum", m_monsterNum, allocator);
 	document.AddMember("m_playerLevel", m_playerLevel, allocator);
@@ -552,29 +564,163 @@ void PlayerData::saveUserData(float dt)
 	document.AddMember("lstrandnpc3", m_latest.randNpc[3], allocator);
 	document.AddMember("lstrandnpc4", m_latest.randNpc[4], allocator);
 
-	for (int i = 0; i < m_latest.m_HpData.size(); i++)
-	{
-		auto str1 = cocos2d::StringUtils::format("lsthpNum%d", i);
-		auto str2 = cocos2d::StringUtils::format("lsthpMat%d", i);
-		document.AddMember(Value(str1.c_str(), allocator), m_latest.m_HpData.at(i).number, allocator);
-		document.AddMember(Value(str2.c_str(), allocator), m_latest.m_HpData.at(i).Mathbit, allocator);
-	}
-	for (int i = 0; i < 6; i++)
-	{
-		document.AddMember(rapidjson::Value(cocos2d::StringUtils::format("skilllevel%d", i).c_str(), allocator), m_skillLevel[i], allocator);
-		
-	}
-	for (int i = 0; i < 33; i++)
-	{
-		if (!m_servantLevel[i])
-			break;
-		document.AddMember(Value(cocos2d::StringUtils::format("servantLevel%d", i).c_str(), allocator), m_servantLevel[i], allocator);
-		document.AddMember(Value(cocos2d::StringUtils::format("servantBaseDpsMat%d", i).c_str(), allocator), m_servantBaseDps[i].Mathbit, allocator);
-		document.AddMember(Value(cocos2d::StringUtils::format("servantMul%d", i).c_str(), allocator), m_servantMul[i], allocator);
-		document.AddMember(Value(cocos2d::StringUtils::format("servantBaseDpsNum%d", i).c_str(), allocator), m_servantBaseDps[i].number, allocator);
+
+	document.AddMember("lsthpNum0", m_latest.m_HpData.at(0).number, allocator);
+	document.AddMember("lsthpNum1", m_latest.m_HpData.at(1).number, allocator);
+	document.AddMember("lsthpNum2", m_latest.m_HpData.at(2).number, allocator);
+	document.AddMember("lsthpNum3", m_latest.m_HpData.at(3).number, allocator);
+	document.AddMember("lsthpNum4", m_latest.m_HpData.at(4).number, allocator);
+	document.AddMember("lsthpMat0", m_latest.m_HpData.at(0).Mathbit, allocator);
+	document.AddMember("lsthpMat1", m_latest.m_HpData.at(1).Mathbit, allocator);
+	document.AddMember("lsthpMat2", m_latest.m_HpData.at(2).Mathbit, allocator);
+	document.AddMember("lsthpMat3", m_latest.m_HpData.at(3).Mathbit, allocator);
+	document.AddMember("lsthpMat4", m_latest.m_HpData.at(4).Mathbit, allocator);
+
+	
+	document.AddMember("skilllevel0", m_skillLevel[0], allocator);
+	document.AddMember("skilllevel1", m_skillLevel[1], allocator);
+	document.AddMember("skilllevel2", m_skillLevel[2], allocator);
+	document.AddMember("skilllevel3", m_skillLevel[3], allocator);
+	document.AddMember("skilllevel4", m_skillLevel[4], allocator);
+	document.AddMember("skilllevel5", m_skillLevel[5], allocator);
+
+	
+	
+	document.AddMember("servantLevel0", m_servantLevel[0], allocator);
+	document.AddMember("servantBaseDpsMat0", m_servantBaseDps[0].Mathbit, allocator);
+	document.AddMember("servantMul0",  m_servantMul[0], allocator);
+	document.AddMember("servantBaseDpsNum0", m_servantBaseDps[0].number, allocator);
+	document.AddMember("servantLevel1", m_servantLevel[1], allocator);
+	document.AddMember("servantBaseDpsMat1", m_servantBaseDps[1].Mathbit, allocator);
+	document.AddMember("servantMul1", m_servantMul[1], allocator);
+	document.AddMember("servantBaseDpsNum1", m_servantBaseDps[1].number, allocator);
+	document.AddMember("servantLevel2", m_servantLevel[2], allocator);
+	document.AddMember("servantBaseDpsMat2", m_servantBaseDps[2].Mathbit, allocator);
+	document.AddMember("servantMul2", m_servantMul[2], allocator);
+	document.AddMember("servantBaseDpsNum2", m_servantBaseDps[2].number, allocator);
+	document.AddMember("servantLevel3", m_servantLevel[3], allocator);
+	document.AddMember("servantBaseDpsMat3", m_servantBaseDps[3].Mathbit, allocator);
+	document.AddMember("servantMul3", m_servantMul[3], allocator);
+	document.AddMember("servantBaseDpsNum3", m_servantBaseDps[3].number, allocator);
+	document.AddMember("servantLevel4", m_servantLevel[4], allocator);
+	document.AddMember("servantBaseDpsMat4", m_servantBaseDps[4].Mathbit, allocator);
+	document.AddMember("servantMul4", m_servantMul[4], allocator);
+	document.AddMember("servantBaseDpsNum4", m_servantBaseDps[4].number, allocator);
+	document.AddMember("servantLevel5", m_servantLevel[5], allocator);
+	document.AddMember("servantBaseDpsMat5", m_servantBaseDps[5].Mathbit, allocator);
+	document.AddMember("servantMul5", m_servantMul[5], allocator);
+	document.AddMember("servantBaseDpsNum5", m_servantBaseDps[5].number, allocator);
+	document.AddMember("servantLevel6", m_servantLevel[6], allocator);
+	document.AddMember("servantBaseDpsMat6", m_servantBaseDps[6].Mathbit, allocator);
+	document.AddMember("servantMul6", m_servantMul[6], allocator);
+	document.AddMember("servantBaseDpsNum6", m_servantBaseDps[6].number, allocator);
+	document.AddMember("servantLevel7", m_servantLevel[7], allocator);
+	document.AddMember("servantBaseDpsMat7", m_servantBaseDps[7].Mathbit, allocator);
+	document.AddMember("servantMul7", m_servantMul[7], allocator);
+	document.AddMember("servantBaseDpsNum7", m_servantBaseDps[7].number, allocator);
+	document.AddMember("servantLevel8", m_servantLevel[8], allocator);
+	document.AddMember("servantBaseDpsMat8", m_servantBaseDps[8].Mathbit, allocator);
+	document.AddMember("servantMul8", m_servantMul[8], allocator);
+	document.AddMember("servantBaseDpsNum8", m_servantBaseDps[8].number, allocator);
+	document.AddMember("servantLevel9", m_servantLevel[9], allocator);
+	document.AddMember("servantBaseDpsMat9", m_servantBaseDps[9].Mathbit, allocator);
+	document.AddMember("servantMul9", m_servantMul[9], allocator);
+	document.AddMember("servantBaseDpsNum9", m_servantBaseDps[9].number, allocator);
+	document.AddMember("servantLevel10", m_servantLevel[10], allocator);
+	document.AddMember("servantBaseDpsMat10", m_servantBaseDps[10].Mathbit, allocator);
+	document.AddMember("servantMul10", m_servantMul[10], allocator);
+	document.AddMember("servantBaseDpsNum10", m_servantBaseDps[10].number, allocator);
+	document.AddMember("servantLevel11", m_servantLevel[11], allocator);
+	document.AddMember("servantBaseDpsMat11", m_servantBaseDps[11].Mathbit, allocator);
+	document.AddMember("servantMul11", m_servantMul[11], allocator);
+	document.AddMember("servantBaseDpsNum11", m_servantBaseDps[11].number, allocator);
+	document.AddMember("servantLevel12", m_servantLevel[12], allocator);
+	document.AddMember("servantBaseDpsMat12", m_servantBaseDps[12].Mathbit, allocator);
+	document.AddMember("servantMul12", m_servantMul[12], allocator);
+	document.AddMember("servantBaseDpsNum12", m_servantBaseDps[12].number, allocator);
+	document.AddMember("servantLevel13", m_servantLevel[13], allocator);
+	document.AddMember("servantBaseDpsMat13", m_servantBaseDps[13].Mathbit, allocator);
+	document.AddMember("servantMul13", m_servantMul[13], allocator);
+	document.AddMember("servantBaseDpsNum13", m_servantBaseDps[13].number, allocator);
+	document.AddMember("servantLevel14", m_servantLevel[14], allocator);
+	document.AddMember("servantBaseDpsMat14", m_servantBaseDps[14].Mathbit, allocator);
+	document.AddMember("servantMul14", m_servantMul[14], allocator);
+	document.AddMember("servantBaseDpsNum14", m_servantBaseDps[14].number, allocator);
+	document.AddMember("servantLevel15", m_servantLevel[15], allocator);
+	document.AddMember("servantBaseDpsMat15", m_servantBaseDps[15].Mathbit, allocator);
+	document.AddMember("servantMul15", m_servantMul[15], allocator);
+	document.AddMember("servantBaseDpsNum15", m_servantBaseDps[15].number, allocator);
+	document.AddMember("servantLevel16", m_servantLevel[16], allocator);
+	document.AddMember("servantBaseDpsMat16", m_servantBaseDps[16].Mathbit, allocator);
+	document.AddMember("servantMul16", m_servantMul[16], allocator);
+	document.AddMember("servantBaseDpsNum16", m_servantBaseDps[16].number, allocator);
+	document.AddMember("servantLevel17", m_servantLevel[17], allocator);
+	document.AddMember("servantBaseDpsMat17", m_servantBaseDps[17].Mathbit, allocator);
+	document.AddMember("servantMul17", m_servantMul[17], allocator);
+	document.AddMember("servantBaseDpsNum17", m_servantBaseDps[17].number, allocator);
+	document.AddMember("servantLevel18", m_servantLevel[18], allocator);
+	document.AddMember("servantBaseDpsMat18", m_servantBaseDps[18].Mathbit, allocator);
+	document.AddMember("servantMul18", m_servantMul[18], allocator);
+	document.AddMember("servantBaseDpsNum18", m_servantBaseDps[18].number, allocator);
+	document.AddMember("servantLevel19", m_servantLevel[19], allocator);
+	document.AddMember("servantBaseDpsMat19", m_servantBaseDps[19].Mathbit, allocator);
+	document.AddMember("servantMul19", m_servantMul[19], allocator);
+	document.AddMember("servantBaseDpsNum19", m_servantBaseDps[19].number, allocator);
+	document.AddMember("servantLevel20", m_servantLevel[20], allocator);
+	document.AddMember("servantBaseDpsMat20", m_servantBaseDps[20].Mathbit, allocator);
+	document.AddMember("servantMul20", m_servantMul[20], allocator);
+	document.AddMember("servantBaseDpsNum20", m_servantBaseDps[20].number, allocator);
+	document.AddMember("servantLevel21", m_servantLevel[21], allocator);
+	document.AddMember("servantBaseDpsMat21", m_servantBaseDps[21].Mathbit, allocator);
+	document.AddMember("servantMul21", m_servantMul[21], allocator);
+	document.AddMember("servantBaseDpsNum21", m_servantBaseDps[21].number, allocator);
+	document.AddMember("servantLevel22", m_servantLevel[22], allocator);
+	document.AddMember("servantBaseDpsMat22", m_servantBaseDps[22].Mathbit, allocator);
+	document.AddMember("servantMul22", m_servantMul[22], allocator);
+	document.AddMember("servantBaseDpsNum22", m_servantBaseDps[22].number, allocator);
+	document.AddMember("servantLevel23", m_servantLevel[23], allocator);
+	document.AddMember("servantBaseDpsMat23", m_servantBaseDps[23].Mathbit, allocator);
+	document.AddMember("servantMul23", m_servantMul[23], allocator);
+	document.AddMember("servantBaseDpsNum23", m_servantBaseDps[23].number, allocator);
+	document.AddMember("servantLevel24", m_servantLevel[24], allocator);
+	document.AddMember("servantBaseDpsMat24", m_servantBaseDps[24].Mathbit, allocator);
+	document.AddMember("servantMul24", m_servantMul[24], allocator);
+	document.AddMember("servantBaseDpsNum24", m_servantBaseDps[24].number, allocator);
+	document.AddMember("servantLevel25", m_servantLevel[25], allocator);
+	document.AddMember("servantBaseDpsMat25", m_servantBaseDps[25].Mathbit, allocator);
+	document.AddMember("servantMul25", m_servantMul[25], allocator);
+	document.AddMember("servantBaseDpsNum25", m_servantBaseDps[25].number, allocator);
+	document.AddMember("servantLevel26", m_servantLevel[26], allocator);
+	document.AddMember("servantBaseDpsMat26", m_servantBaseDps[26].Mathbit, allocator);
+	document.AddMember("servantMul26", m_servantMul[26], allocator);
+	document.AddMember("servantBaseDpsNum26", m_servantBaseDps[26].number, allocator);
+	document.AddMember("servantLevel27", m_servantLevel[27], allocator);
+	document.AddMember("servantBaseDpsMat27", m_servantBaseDps[27].Mathbit, allocator);
+	document.AddMember("servantMul27", m_servantMul[27], allocator);
+	document.AddMember("servantBaseDpsNum27", m_servantBaseDps[27].number, allocator);
+	document.AddMember("servantLevel28", m_servantLevel[28], allocator);
+	document.AddMember("servantBaseDpsMat28", m_servantBaseDps[28].Mathbit, allocator);
+	document.AddMember("servantMul28", m_servantMul[28], allocator);
+	document.AddMember("servantBaseDpsNum28", m_servantBaseDps[28].number, allocator);
+	document.AddMember("servantLevel29", m_servantLevel[29], allocator);
+	document.AddMember("servantBaseDpsMat29", m_servantBaseDps[29].Mathbit, allocator);
+	document.AddMember("servantMul29", m_servantMul[29], allocator);
+	document.AddMember("servantBaseDpsNum29", m_servantBaseDps[29].number, allocator);
+	document.AddMember("servantLevel30", m_servantLevel[30], allocator);
+	document.AddMember("servantBaseDpsMat30", m_servantBaseDps[30].Mathbit, allocator);
+	document.AddMember("servantMul30", m_servantMul[30], allocator);
+	document.AddMember("servantBaseDpsNum30", m_servantBaseDps[30].number, allocator);
+	document.AddMember("servantLevel31", m_servantLevel[31], allocator);
+	document.AddMember("servantBaseDpsMat31", m_servantBaseDps[31].Mathbit, allocator);
+	document.AddMember("servantMul31", m_servantMul[31], allocator);
+	document.AddMember("servantBaseDpsNum31", m_servantBaseDps[31].number, allocator);
+	document.AddMember("servantLevel32", m_servantLevel[32], allocator);
+	document.AddMember("servantBaseDpsMat32", m_servantBaseDps[32].Mathbit, allocator);
+	document.AddMember("servantMul32", m_servantMul[32], allocator);
+	document.AddMember("servantBaseDpsNum32", m_servantBaseDps[32].number, allocator);
 
 		
-	}
+	
 	ArtifactData::getInstance()->saveUserDefault(document);
 	AchieveData::getInstance()->saveUserDefault(document);
 	StringBuffer buffer;
@@ -583,7 +729,7 @@ void PlayerData::saveUserData(float dt)
 	auto json = buffer.GetString();
 	
 	cocos2d::UserDefault::getInstance()->setStringForKey("UserDefault", buffer.GetString());
-
+	cocos2d::UserDefault::getInstance()->setBoolForKey("isSaved", true);
 	cocos2d::UserDefault::getInstance()->flush();
 	
 }

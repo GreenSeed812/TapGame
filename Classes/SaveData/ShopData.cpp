@@ -7,6 +7,7 @@ ShopData::ShopData()
 
 ShopData::~ShopData()
 {
+
 }
 
 ShopData* ShopData::getInstance()

@@ -62,6 +62,81 @@ void ShopData::buyItemByID(int i)
 	}
 	else if (i == 6)
 	{
+		m_keepGodPowerS = true;
+	}
+	else if (i == 7)
+	{
+		m_refreshS = true;
+	}
+	else if (i == 8)
+	{
+
+	}
+	else if (i == 9)
+	{
+
+	}
+	else if (i == 10)
+	{
+		m_relifeS = true;
+	}
+	else if (i == 11)
+	{
+		m_whosyourdaddyS = true;
+	}
+	else if (i == 12)
+	{
 		
+	}
+}
+bool ShopData::getItemBeUsedById(int id)
+{
+	if (id == 1)
+	{
+		return m_haichaoS;
+	}
+	else if (id == 2)
+	{
+		return m_shandianS;
+	}
+	else if (id == 3)
+	{
+		return m_huosheS;
+	}
+	else if (id == 4)
+	{
+		return m_fengnuS;
+	}
+	else if (id == 5)
+	{
+		return m_bankS;
+	}
+	else if (id == 6)
+	{
+		return m_keepGodPowerS;
+	}
+	else if (id == 7)
+	{
+		return m_refreshS;
+	}
+	else if (id == 8)
+	{
+
+	}
+	else if (id == 9)
+	{
+
+	}
+	else if (id == 10)
+	{
+		return m_relifeS;
+	}
+	else if (id == 11)
+	{
+		return m_whosyourdaddyS;
+	}
+	else if (id == 12)
+	{
+	
 	}
 }

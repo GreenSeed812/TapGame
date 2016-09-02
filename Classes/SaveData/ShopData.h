@@ -10,16 +10,7 @@ public:
 	int getShopGold(){ return m_shopGold; }
 	void subShopGold(int gold){ m_shopGold -= gold; }
 	void addShopGold(int gold){ m_shopGold += gold; }
-	bool getHaichaoS(){ return m_haichaoS; }
-	bool getShandianS(){ return m_shandianS; }
-	bool getHuosheS(){ return m_huosheS; }
-	bool getFengnuS(){ return m_fengnuS; }
-	bool getjianchiS(){ return m_jianchiS; }
-	bool getshuaxinS(){ return m_shuaxinS; }
-	bool getmiaoshaS(){ return m_miaoshaS; }
-	bool getcangbaohaiwanS(){ return m_cangbaohaiwanS; }
-	bool getxingyunS(){ return m_xingyunS; }
-	bool getkuangluanS(){ return m_kuangluanS; }
+	bool getItemBeUsedById(int id);
 private:
 	ShopData();
 	~ShopData();
@@ -28,12 +19,12 @@ private:
 	bool m_huosheS;
 	bool m_fengnuS;
 	bool m_bankS;
-	bool m_jianchiS;
-	bool m_shuaxinS;
-	bool m_miaoshaS;
-	bool m_cangbaohaiwanS;
-	bool m_xingyunS;
+	bool m_keepGodPowerS;
+	bool m_refreshS;
+	bool m_whosyourdaddyS;
+	bool m_luckyCoinS;
 	bool m_kuangluanS;
+	bool m_relifeS;
 	int m_shopGold;
 	int m_haiChao;
 	int m_shandian;

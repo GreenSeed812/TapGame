@@ -75,10 +75,11 @@ PlayerData * PlayerData::getInstance()
 	if (!p_dt)
 	{
 		p_dt = new PlayerData();	
+		//remove(cocos2d::UserDefault::getInstance()->getXMLFilePath().c_str());
 		if (cocos2d::UserDefault::getInstance()->getBoolForKey("isSaved"))
 		{
 			//remove(cocos2d::UserDefault::getInstance()->getXMLFilePath().c_str());
-			//p_dt->init();
+			p_dt->init();
 		}
 	}
 	return p_dt;

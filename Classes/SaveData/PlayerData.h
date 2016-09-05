@@ -52,6 +52,7 @@ public:
 	MyNum getservantLevelUpGold(int id);
 	MyNum getservantToalDps(int id);
 	int getServantNum(){ return m_servantNum; }
+	int getServantSkillNum(int id){ return m_servantSkill[id]; }
 	bool getSkillopen(int i){ return m_skillOpen[i]; }
 	MyNum getTapDps();
 	int getMaxTime(){ return m_maxTime; }
@@ -110,6 +111,7 @@ private:
 	int m_servantLevel[33];
 	MyNum m_servantBaseDps[33];
 	float m_servantMul[33];
+	int m_servantSkill[33];
 	float m_servantAllMul;
 	float m_servantTapDps;
 	bool m_skillOpen[6];

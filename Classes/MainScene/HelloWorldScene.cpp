@@ -1022,5 +1022,35 @@ void HelloWorld::initAr()
 }
 void HelloWorld::shopItemEff(float dt) 
 {
-	
+	if (ShopData::getInstance()->getItemBeUsedById(0))
+	{
+	}
+	else if(ShopData::getInstance()->getItemBeUsedById(1))
+	{
+	}
+	else if (ShopData::getInstance()->getItemBeUsedById(2))
+	{
+	}
+	else if (ShopData::getInstance()->getItemBeUsedById(3))
+	{
+	}
+	else if (ShopData::getInstance()->getItemBeUsedById(4))
+	{
+	}
+	else if (ShopData::getInstance()->getItemBeUsedById(5))
+	{
+
+	}
+	else if (ShopData::getInstance()->getItemBeUsedById(6))
+	{
+	}
+	else if (ShopData::getInstance()->getItemBeUsedById(7))
+	{
+	}
+	else if (ShopData::getInstance()->getItemBeUsedById(8))
+	{
+	}
+	else if (ShopData::getInstance()->getItemBeUsedById(9))
+	{
+	}
 }

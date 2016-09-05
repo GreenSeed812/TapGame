@@ -33,28 +33,7 @@ bool ClickLayer::init()
 
 bool ClickLayer::onTouchBegan(Touch *touch, Event*)
 {
-	/*{
-		static int t_time = 0;
-
-		struct timeval tv;
-		gettimeofday(&tv, nullptr);
-
-
-		int t_now;
-		tv.tv_sec = tv.tv_sec & 65535;
-		t_now = tv.tv_sec * 1000 + tv.tv_usec / 1000;
-
-		if (t_now - t_time > 1000 / m_clickPerSecond)
-		{
-			Node* monsterNode = (Node*)this->getParent()->getChildByName("MonsterNode");
-			Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
-			normalAtk();
-			armature->getAnimation()->play("Hurt", -1, 0);
-			t_time = t_now;
-			
-		}
 	
-	}*/
 	auto point = touch->getLocation();
 	
 	if (point.y >= 607)

@@ -447,7 +447,7 @@ void HelloWorld::uiCallBack()
 				ListView* lv = (ListView*)m_servantLayer->getChildByName("ListView");
 				ServantButton::getListView(lv);
 				TextBMFont* dps = (TextBMFont*)m_servantLayer->getChildByName("message")->getChildByName("Dps");
-				dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getDps()));
+				dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getHeroDps()));
 				TextBMFont* gold = (TextBMFont*)m_servantLayer->getChildByName("message")->getChildByName("gold");
 				gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
 				auto buyBtn = (TextBMFont*)m_servantLayer->getChildByName("message")->getChildByName("buy");
@@ -462,11 +462,6 @@ void HelloWorld::uiCallBack()
 				});
 				initSer();
 			}
-			else
-			{
-				
-			}
-			
 		}
 	});
 	artifactButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {

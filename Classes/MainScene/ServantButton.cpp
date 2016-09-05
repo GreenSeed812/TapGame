@@ -30,8 +30,6 @@ void ServantButton::initServantLayer(int id)
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(ServantButton::coinChange), "CoinChange", nullptr);
 	
 	m_id = id;
-	m_baseDps = SqLite::getInstance()->getServantDpsByID(m_id);
-	m_gold = SqLite::getInstance()->getServantGoldByID(m_id);
 
 	auto bt = (Button*)m_layer->getChildByName("up");
 	auto up10 = (Button*)m_layer->getChildByName("up10");
@@ -44,7 +42,7 @@ void ServantButton::initServantLayer(int id)
 	up10->setVisible(false);
 	up100->setVisible(false);
 	dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpDps(m_id)));
-	gold->setString(Ruler::getInstance()->showNum(m_gold));
+	gold->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpGold(m_id)));
 	head->setTexture(StringUtils::format("ui/downUi/servant/head/%d.png",id+1));
 	name->setString(SqLite::getInstance()->getServantNameByID(m_id));
 
@@ -59,7 +57,7 @@ void ServantButton::initServantLayer(int id)
 		if (Event == Widget::TouchEventType::ENDED)
 		{
 			oneUp();
-			upLevel(true);
+			upLevel();
 			cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 		}
 	});
@@ -71,7 +69,7 @@ void ServantButton::initServantLayer(int id)
 			{
 				oneUp();
 			}
-			upLevel(true);
+			upLevel();
 			cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 		}
 	});
@@ -83,7 +81,7 @@ void ServantButton::initServantLayer(int id)
 			{
 				oneUp();
 			}
-			upLevel(true);
+			upLevel();
 			cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 		}
 	});
@@ -107,13 +105,14 @@ void ServantButton::coinChange(Ref*)
 	auto up100Dps = (TextBMFont*)m_layer->getChildByName("up100")->getChildByName("dps");
 	auto * textlv = (Text*)m_layer->getChildByName("discribe")->getChildByName("lv");
 	
+	gold->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpGold(m_id)));
 	dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpDps(m_id)));
 	up10Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getServantDps(m_id)));
 	up100Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getServantDps(m_id)));
 	textlv->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getServantLevel(m_id)));
 
-	MyNum judge;
-	m_gold = PlayerData::getInstance()->getservantLevelUpGold(m_id);
+	auto golds = PlayerData::getInstance()->getGold();
+	auto judge = Ruler::getInstance()->subNum(PlayerData::getInstance()->getservantLevelUpGold(m_id),*golds);
 
 	if (Ruler::getInstance()->Zero(judge))
 	{
@@ -157,15 +156,6 @@ void ServantButton::oneUp()
 	}
 
 	PlayerData::getInstance()->servantLevelUp(m_id);
-	auto i = PlayerData::getInstance()->getServantLevel(m_id);
-	auto pow1 = pow(PlayerData::getInstance()->getServantLevel(m_id) + 1, 0.7);
-	auto pow2 = pow(PlayerData::getInstance()->getServantLevel(m_id) + 1, 6);
-	auto mul = 1 + 1 / pow1 - 1 / pow2;
-
-	PlayerData::getInstance()->setServantBaseDps(m_baseDps, m_id);
-	m_baseDps = Ruler::getInstance()->multiplay(m_baseDps, mul);
-	mul = 1 + 1 / (pow(PlayerData::getInstance()->getServantLevel(m_id) + 1, 0.45) - 1 / pow(PlayerData::getInstance()->getServantLevel(m_id) + 1, 6.13));
-	m_gold = Ruler::getInstance()->multiplay(m_gold, mul);
 
 	/*auto skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d", m_skillCount + 1));
 	skillSprite->setVisible(true);
@@ -175,47 +165,20 @@ void ServantButton::oneUp()
 
 }
 
-void ServantButton::upLevel(bool off_on)
+void ServantButton::upLevel()
 {
-	MyNum upGold;
-	MyNum judge10;
-	MyNum judge100;
 	auto up10 = (Button*)m_layer->getChildByName("up10");
 	auto up100 = (Button*)m_layer->getChildByName("up100");
-	auto levelNow = PlayerData::getInstance()->getServantLevel(m_id);
 
-	for (size_t i = levelNow; i < (levelNow+100); i++)
+	auto gold = PlayerData::getInstance()->getGold();
+	auto judge10 = Ruler::getInstance()->subNum(PlayerData::getInstance()->getservantLevelUp10Gold(m_id),*gold);
+	auto judge100 = Ruler::getInstance()->subNum(PlayerData::getInstance()->getservantLevelUp100Gold(m_id),*gold);
+
+	if (Ruler::getInstance()->Zero(judge10))
 	{
-		auto pow1 = pow(i + 1, 0.7);
-		auto pow2 = pow(i + 1, 6);
-		auto mul = 1 + 1 / pow1 - 1 / pow2;
-		mul = 1 + 1 / (pow(i + 1, 0.45) - 1 / pow(i+ 1, 6.13));
-		auto gold = Ruler::getInstance()->multiplayUp(m_gold, mul);
-		upGold = Ruler::getInstance()->addNum(gold, upGold);
-		if (i == (levelNow+10))
-		{
-			judge10 = Ruler::getInstance()->subNum(upGold, *PlayerData::getInstance()->getGold());
-			if (Ruler::getInstance()->Zero(judge10))
-			{
-				up10->setVisible(true);
-				m_upGold10 = upGold;
-			}
-			else
-			{
-				up10->setVisible(false);
-			}
-		}
+		up10->setVisible(true);
 	}
-	judge100 = Ruler::getInstance()->subNum(upGold, *PlayerData::getInstance()->getGold());
 	if (Ruler::getInstance()->Zero(judge100))
-	{
-		if (off_on)
-		{
-			up100->setVisible(true);
-			m_upGold100 = upGold;
-		}
-	}
-	else
 	{
 		up100->setVisible(false);
 	}

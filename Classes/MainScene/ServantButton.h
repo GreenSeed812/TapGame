@@ -17,11 +17,6 @@ public:
 	void coinChange(Ref*);
 private:
 	Node* node;
-	MyNum m_gold;
-	MyNum m_upGold10;
-	MyNum m_upGold100;
-	MyNum m_baseDps;
-	MyNum m_dps;
 	int m_skillcount;
 	static Node* g_lv;
 	static Node * g_node;
@@ -31,7 +26,7 @@ private:
 	Layer* m_layer;
 	bool onTouchBegan(Touch * touch, Event* event);
 	void onTouchEnded(Touch * touch, Event * event);
-	void upLevel(bool off_on);
+	void upLevel();
 	void oneUp();
 	void unLockSkill();
 	void callbackSer(Node * node);

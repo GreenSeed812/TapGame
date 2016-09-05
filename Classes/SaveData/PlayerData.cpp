@@ -58,6 +58,7 @@ PlayerData::PlayerData()
 		m_servantBaseDps[i].Mathbit = 0; 
 		m_servantBaseDps[i].number = 0;
 		m_servantMul[i] = 1;
+		m_servantSkill[i] = 0;
 	}
 	for (int i = 0; i < 6; i++)
 	{
@@ -398,6 +399,7 @@ float PlayerData::getSkillEFF(int i)
 void PlayerData::unlockSernantSkill(int servantid, int skillid)
 {
 	auto servant = SqLite::getInstance()->getServantByID(servantid);
+	m_servantSkill[servantid]++;
 	if (servant->skill[skillid].skillID == 1)
 	{
 		m_servantAllMul += servant->skill[skillid].effect;

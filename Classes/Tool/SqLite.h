@@ -101,7 +101,19 @@ struct Achieve
 	MyNum Star_5;
 
 };
-
+struct Sign
+{
+	int ID;
+	std::string rewordStr;
+	int rewordNum;
+};
+struct Quest
+{
+	int ID;
+	std::string MissionName;
+	std::string MissionDis;
+	int reward;
+};
 class SqLite
 {
 public:
@@ -122,6 +134,7 @@ public:
 	std::string getSkillEffDis(int i);
 	double getEff(int i){ return m_skillData.at(i)->initEffect; }
 	double getEffPer(int i){ return m_skillData.at(i)->effPerLevel; }
+	Quest * getQuestById(int id){ return m_quest.at(id-1); }
 	MyNum getServantDpsByID(int i){ return m_servantData.at(i)->dps; }
 	MyNum getServantGoldByID(int i){ return m_servantData.at(i)->gold; }
 	std::string getServantNameByID(int i){ return m_servantData.at(i)->name; }
@@ -137,6 +150,8 @@ public:
 	void readDaoju();
 	void readMonster();
 	void readMapData();
+	void readQuest();
+	void readSignData();
 	void readSimpleData();
 	void readSkillData();
 	void readServant();
@@ -154,12 +169,13 @@ public:
 	std::map<int,ArtifactSkill*>m_artifactSkill;
 	std::vector<daoju*> m_daoju;
 	std::vector<Achieve*>m_Achieve;
+	std::vector<Quest*> m_quest;
+	std::vector<Sign*> m_sign;
 	float m_bossHp[5];
 	MyNum m_dropData;
 	MyNum m_baseDps[8];
 	MyNum m_gold;
 	std::vector<int> m_servantUnlock;
-	
 };
 
 

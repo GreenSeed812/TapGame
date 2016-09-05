@@ -253,6 +253,36 @@ MyNum PlayerData::getPlayerlvupGold()
 	m_upGold = Ruler::getInstance()->multiplay(m_upGold, (1 - ArtifactData::getInstance()->getHeroLevelupDown()));
 	return m_upGold;
 }
+MyNum PlayerData::getPlayerlvup10Gold()
+{
+	MyNum m_up10Gold;
+	m_up10Gold.number = 0;
+	m_up10Gold.Mathbit = 0;
+	auto m_upGold = getPlayerlvup10Gold();
+	for (int i = 1; i <= 10; i++)
+	{
+		m_up10Gold = Ruler::getInstance()->addNum(m_upGold, m_up10Gold);
+		auto mul = 1 / pow(i, 0.55) - 1 / pow(i, 1.03) + 1;
+		m_upGold = Ruler::getInstance()->multiplayUp(m_upGold, mul);
+	}
+	m_up10Gold = Ruler::getInstance()->addNum(m_upGold, m_up10Gold);
+	return m_up10Gold;
+}
+MyNum PlayerData::getPlayerlvup100Gold()
+{
+	MyNum m_up100Gold;
+	m_up100Gold.number = 0;
+	m_up100Gold.Mathbit = 0;
+	auto m_upGold = getPlayerlvup100Gold();
+	for (int i = 1; i <= 100; i++)
+	{
+		m_up100Gold = Ruler::getInstance()->addNum(m_upGold, m_up100Gold);
+		auto mul = 1 / pow(i, 0.55) - 1 / pow(i, 1.03) + 1;
+		m_upGold = Ruler::getInstance()->multiplayUp(m_upGold, mul);
+	}
+	m_up100Gold = Ruler::getInstance()->addNum(m_upGold, m_up100Gold);
+	return m_up100Gold;
+}
 void PlayerData::defeatMonsterGold()
 {
 	MyNum baseNum;
@@ -288,6 +318,7 @@ void PlayerData::defeatMonsterGold()
 		AchieveData::getInstance()->killBoss();
 	}
 	auto tmp = Ruler::getInstance()->addNumUp(m_gold, baseNum);
+	AchieveData::getInstance()->addCoin(baseNum);
 	m_gold = tmp;
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 }
@@ -504,6 +535,37 @@ MyNum PlayerData::getservantLevelUpGold(int id)
 	}
 	m_upGold = Ruler::getInstance()->multiplay(m_upGold, (1 - ArtifactData::getInstance()->getSLUP()));
 	return m_upGold;
+}
+MyNum PlayerData::getservantLevelUp10Gold(int id)
+{
+	MyNum m_up10Gold;
+	m_up10Gold.number = 0;
+	m_up10Gold.Mathbit = 0;
+	auto m_upGold = getservantLevelUpGold(id);
+	for (size_t i = 1; i <= 10; i++)
+	{
+		m_up10Gold = Ruler::getInstance()->addNum(m_up10Gold, m_upGold);
+		auto mul = 1 + 1 / (pow(i + 1, 0.45) - 1 / pow(i + 1, 6.13));
+		m_upGold = Ruler::getInstance()->multiplay(m_upGold, mul);
+	}
+	m_up10Gold = Ruler::getInstance()->addNum(m_up10Gold, m_upGold);
+	return m_up10Gold;
+}
+
+MyNum PlayerData::getservantLevelUp100Gold(int id)
+{
+	MyNum m_up100Gold;
+	m_up100Gold.number = 0;
+	m_up100Gold.Mathbit = 0;
+	auto m_upGold = getservantLevelUpGold(id);
+	for (size_t i = 1; i <= 100; i++)
+	{
+		m_up100Gold = Ruler::getInstance()->addNum(m_up100Gold, m_upGold);
+		auto mul = 1 + 1 / (pow(i + 1, 0.45) - 1 / pow(i + 1, 6.13));
+		m_upGold = Ruler::getInstance()->multiplay(m_upGold, mul);
+	}
+	m_up100Gold = Ruler::getInstance()->addNum(m_up100Gold, m_upGold);
+	return m_up100Gold;
 }
 int PlayerData::getRelifeStone()
 {
@@ -751,5 +813,6 @@ int PlayerData::getServantAverLevel()
 }
 void PlayerData::relife()
 {
-	
+	delete p_dt;
+	p_dt = new PlayerData();
 }

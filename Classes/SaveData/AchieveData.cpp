@@ -68,7 +68,29 @@ void AchieveData::saveUserDefault(Document& document)
 	document.AddMember("m_coinCollect.Mathbit", m_coinCollect.Mathbit, allocator);
 	document.AddMember("m_maxDpsPer.number", m_maxDpsPer.number, allocator);
 	document.AddMember("m_maxDpsPer.Mathbit", m_maxDpsPer.Mathbit, allocator);
-
+	document.AddMember("starNum[0]", starNum[0], allocator);
+	document.AddMember("starNum[1]", starNum[1], allocator);
+	document.AddMember("starNum[2]", starNum[2], allocator);
+	document.AddMember("starNum[3]", starNum[3], allocator);
+	document.AddMember("starNum[4]", starNum[4], allocator);
+	document.AddMember("starNum[5]", starNum[5], allocator);
+	document.AddMember("starNum[6]", starNum[6], allocator);
+	document.AddMember("starNum[7]", starNum[7], allocator);
+	document.AddMember("starNum[8]", starNum[8], allocator);
+	document.AddMember("starNum[9]", starNum[9], allocator);
+	document.AddMember("starNum[10]", starNum[10], allocator);
+	document.AddMember("starNum[11]", starNum[11], allocator);
+	document.AddMember("starNum[12]", starNum[12], allocator);
+	document.AddMember("starNum[13]", starNum[13], allocator);
+	document.AddMember("starNum[14]", starNum[14], allocator);
+	document.AddMember("starNum[15]", starNum[15], allocator);
+	document.AddMember("starNum[16]", starNum[16], allocator);
+	document.AddMember("starNum[17]", starNum[17], allocator);
+	document.AddMember("starNum[18]", starNum[18], allocator);
+	document.AddMember("starNum[19]", starNum[19], allocator);
+	document.AddMember("starNum[20]", starNum[20], allocator);
+	document.AddMember("starNum[21]", starNum[21], allocator);
+	document.AddMember("starNum[22]", starNum[22], allocator);
 }
 void AchieveData::readUserDefault()
 {
@@ -97,12 +119,35 @@ void AchieveData::readUserDefault()
 		m_coinCollect.Mathbit = jsd["m_coinCollect.Mathbit"].GetInt();
 		m_maxDpsPer.number = jsd["m_maxDpsPer.number"].GetDouble();
 		m_maxDpsPer.Mathbit = jsd["m_maxDpsPer.Mathbit"].GetInt();
+		starNum[0] = jsd["starNum[0]"].GetInt();
+		starNum[1] = jsd["starNum[1]"].GetInt();
+		starNum[2] = jsd["starNum[2]"].GetInt();
+		starNum[3] = jsd["starNum[3]"].GetInt();
+		starNum[4] = jsd["starNum[4]"].GetInt();
+		starNum[5] = jsd["starNum[5]"].GetInt();
+		starNum[6] = jsd["starNum[6]"].GetInt();
+		starNum[7] = jsd["starNum[7]"].GetInt();
+		starNum[8] = jsd["starNum[8]"].GetInt();
+		starNum[9] = jsd["starNum[9]"].GetInt();
+		starNum[10] = jsd["starNum[10]"].GetInt();
+		starNum[11] = jsd["starNum[11]"].GetInt();
+		starNum[12] = jsd["starNum[12]"].GetInt();
+		starNum[13] = jsd["starNum[13]"].GetInt();
+		starNum[14] = jsd["starNum[14]"].GetInt();
+		starNum[15] = jsd["starNum[15]"].GetInt();
+		starNum[16] = jsd["starNum[16]"].GetInt();
+		starNum[17] = jsd["starNum[17]"].GetInt();
+		starNum[18] = jsd["starNum[18]"].GetInt();
+		starNum[19] = jsd["starNum[19]"].GetInt();
+		starNum[20] = jsd["starNum[20]"].GetInt();
+		starNum[21] = jsd["starNum[21]"].GetInt();
+		starNum[22] = jsd["starNum[22]"].GetInt();
 	}
 }
 
 void AchieveData::addCoin(MyNum add)
 {
-	Ruler::getInstance()->addNum(m_coinCollect, add);
+	m_coinCollect = Ruler::getInstance()->addNum(m_coinCollect, add);
 }
 void AchieveData::skillUsed(int i)
 {

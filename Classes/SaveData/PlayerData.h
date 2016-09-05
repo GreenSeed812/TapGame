@@ -41,6 +41,8 @@ public:
 	int getPlayerLevel(){ return m_playerLevel; }
 	MyNum getPlayerlvupDps();
 	MyNum getPlayerlvupGold();
+	MyNum getPlayerlvup10Gold();
+	MyNum getPlayerlvup100Gold();
 	int getRandNpc(int r);
 	int getRelifeStone();
 	int getHeroRelifeStone();
@@ -50,6 +52,8 @@ public:
 	int getServantLevel(int i){ return m_servantLevel[i]; }
 	MyNum getservantLevelUpDps(int id);
 	MyNum getservantLevelUpGold(int id);
+	MyNum getservantLevelUp10Gold(int id);
+	MyNum getservantLevelUp100Gold(int id);
 	MyNum getservantToalDps(int id);
 	int getServantNum(){ return m_servantNum; }
 	int getServantSkillNum(int id){ return m_servantSkill[id]; }

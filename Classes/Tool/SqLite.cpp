@@ -18,6 +18,7 @@ SqLite::SqLite()
 	readArtifactSkill();
 	readDaoju();
 	readAchieve();
+	readQuest();
 }
 
 SqLite::~SqLite()
@@ -702,7 +703,73 @@ void SqLite::readAchieve()
 		}
 	}
 }
+void SqLite::readQuest()
+{
+	char** dbResult;
+	int nRow;
+	int nColum;
+	char* errmsg;
+	auto tableresult = sqlite3_get_table(m_pDB, "select * from renwu", &dbResult, &nRow, &nColum, &errmsg);
+	if (SQLITE_OK == tableresult)
+	{
+		std::string ID = "ID";
+		std::string MissionName = "MissionName";
+		std::string MissionDis = "MissionDis";
+		std::string reward = "reward";
+		auto index = nColum;
+		for (int i = 0; i < nRow; i++)
+		{
+			auto quest = new Quest();
+			for (int j = 0; j < nColum; j++)
+			{
+				if (ID.compare(dbResult[j]) == 0)
+					quest->ID = atoi(dbResult[index]);
+				if (MissionName.compare(dbResult[j]) == 0)
+					quest->MissionName = dbResult[index];
+				if (MissionDis.compare(dbResult[j]) == 0)
+					quest->MissionDis = dbResult[index];
+				if (reward.compare(dbResult[j]) == 0)
+					quest->reward = atoi(dbResult[index]);
+				++index;
+			}
+			m_quest.push_back(quest);
+		}
+	}
+}
 Achieve* SqLite::getAchieveByID(int id)
 {
 	return m_Achieve.at(id-1);
+}
+void SqLite::readSignData()
+{
+	char** dbResult;
+	int nRow;
+	int nColum;
+	char* errmsg;
+	auto tableresult = sqlite3_get_table(m_pDB, "select * from qiandao", &dbResult, &nRow, &nColum, &errmsg);
+	if (SQLITE_OK == tableresult)
+	{
+		std::string ID = "ID";
+		std::string MissionName = "MissionName";
+		std::string MissionDis = "MissionDis";
+		std::string reward = "reward";
+		auto index = nColum;
+		for (int i = 0; i < nRow; i++)
+		{
+			auto quest = new Quest();
+			for (int j = 0; j < nColum; j++)
+			{
+				if (ID.compare(dbResult[j]) == 0)
+					quest->ID = atoi(dbResult[index]);
+				if (MissionName.compare(dbResult[j]) == 0)
+					quest->MissionName = dbResult[index];
+				if (MissionDis.compare(dbResult[j]) == 0)
+					quest->MissionDis = dbResult[index];
+				if (reward.compare(dbResult[j]) == 0)
+					quest->reward = atoi(dbResult[index]);
+				++index;
+			}
+			m_quest.push_back(quest);
+		}
+	}
 }

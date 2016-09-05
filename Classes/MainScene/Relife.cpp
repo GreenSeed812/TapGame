@@ -62,7 +62,8 @@ void Relife::initRelife()
 	{
 		if (Event == Widget::TouchEventType::ENDED)
 		{
-			
+			AchieveData::getInstance()->relife();
+			PlayerData::getInstance()->relife();
 		}
 	});
 }

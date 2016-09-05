@@ -490,7 +490,15 @@ void PlayerData::servantLevelUp(int id)
 {
 	m_servantLevel[id]++;
 	auto m_upGold = getservantLevelUpGold(id);
-	m_servantBaseDps[id] = getservantLevelUpDps(id);
+	auto servantLsDps = SqLite::getInstance()->getServantDpsByID(id);
+	for (int i = 0; i <= m_servantLevel[id]; i++)
+	{
+		auto pow1 = pow(i + 1, 0.7);
+		auto pow2 = pow(i + 1, 6);
+		auto mul = 1 + 1 / pow1 - 1 / pow2;
+		servantLsDps = Ruler::getInstance()->multiplay(servantLsDps, mul);
+	}
+	m_servantBaseDps[id] = servantLsDps;
 	m_gold = Ruler::getInstance()->subNum(m_gold, m_upGold);
 }
 MyNum PlayerData::getservantToalDps(int id)
@@ -815,4 +823,5 @@ void PlayerData::relife()
 {
 	delete p_dt;
 	p_dt = new PlayerData();
+	ArtifactData::getInstance()->addArtiStone(getRelifeStone());
 }

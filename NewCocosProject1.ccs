@@ -12,6 +12,7 @@
         <Image Name="50 (2).png" />
         <Image Name="8.png" />
         <Image Name="800.png" />
+        <Project Name="AchieveItem.csd" Type="Layer" />
         <Project Name="achieveLayer.csd" Type="Layer" />
         <Image Name="achive.png" />
         <Image Name="anniu (2).png" />
@@ -247,7 +248,6 @@
         <Image Name="zuanshi.png" />
         <Image Name="zuanshida.png" />
         <Image Name="zz.png" />
-        <Project Name="AchieveItem.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

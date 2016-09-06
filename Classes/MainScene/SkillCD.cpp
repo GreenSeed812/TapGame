@@ -12,11 +12,7 @@ bool SkillCD::init()
 	{
 		return false;
 	}
-	
-	
-	
 	m_percentNow = 100;
-	
 	return true;
 }
 

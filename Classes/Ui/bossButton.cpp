@@ -46,7 +46,7 @@ void bossButton::onTouchEnded(Touch *touch, Event*)
 	if (i == 1)
 	{
 		m_sprite->setTexture("ui/bossButton.png");
-		PlayerData::getInstance()->setWave(11);
+		PlayerData::getInstance()->setWave(PlayerData::getInstance()->getMaxWave());
 		MyState::getInstance()->setBossButtonDown(true);
 		//PlayerData::getInstance()->setHpNow(zero);
 	}

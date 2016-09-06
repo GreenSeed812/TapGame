@@ -55,7 +55,7 @@ bool HelloWorld::init()
     {
         return false;
     }
-
+	
 
 	BgMusic::getInstance()->playBg(true);
 	m_hitlogic = true;
@@ -98,6 +98,7 @@ bool HelloWorld::init()
 	ServantButton::getRootNode(rootNode);
 	TextBMFont* waveNum = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("WaveNum");
 	waveNum->setString(StringUtils::format("%d/10", PlayerData::getInstance()->getWaveNow()));
+	bossBt = nullptr;
     return true;
 }
 void HelloWorld::coinChange(Ref *ref)
@@ -169,7 +170,6 @@ void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const
 		{	
 			armature->getAnimation()->play("Wait");
 			clickLayer->setTouchEnabled(true);
-
 			MyState::getInstance()->setTaped(false);
 			m_hitlogic = true;
 		}
@@ -221,6 +221,7 @@ void HelloWorld::createMonster()
 	armature->setScale(1.5f);
 	if (PlayerData::getInstance()->getWaveNow() == PlayerData::getInstance()->getMaxWave())
 	{
+		
 		PlayerData::getInstance()->resetTime();
 		armature->setScale(2.0f);
 		timeNow = PlayerData::getInstance()->getMaxTime() * 1000;
@@ -231,8 +232,22 @@ void HelloWorld::createMonster()
 		rootNode->getChildByName("dragon")->runAction(Show::create());
 		rootNode->getChildByName("grayDragon")->runAction(Hide::create());
 	}
-	else if (PlayerData::getInstance()->getWaveNow()<=1)
+	else if (PlayerData::getInstance()->getWaveNow() <= 1)
 	{
+		if (PlayerData::getInstance()->getWaveNow() == 0)
+		{
+			Node* bossButtonNode = (Node*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("escapeBoss");
+			TextBMFont* waveNum = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("WaveNum");
+			waveNum->runAction(Hide::create());
+			if (!bossButtonNode->getChildByName("bt"))
+			{
+				bossBt = bossButton::create();
+				bossButtonNode->addChild(bossBt);
+				bossBt->setName("bt");
+				bossBt->onTouchEnded(nullptr, nullptr);
+
+			}
+		}
 		PlayerData::getInstance()->randRareMonster();
 		timeSlider->runAction(Hide::create());
 		rootNode->getChildByName("dragon")->runAction(Hide::create());
@@ -248,6 +263,14 @@ void HelloWorld::createMonster()
 	else
 	{
 		PlayerData::getInstance()->randRareMonster();
+		if (MonsterState::getInstance()->getTypeNow() == MONSTER_TYPE::RARE)
+		{
+			rootNode->getChildByName("grayDragon")->runAction(Show::create());
+		}
+		else
+		{
+			rootNode->getChildByName("grayDragon")->runAction(Hide::create());
+		}
 	}
 	
 }
@@ -349,7 +372,7 @@ void HelloWorld::update(float dt)
 		skillKpCDUpdate(dt);
 	}
 
-	PlayerData::getInstance()->saveUserData(dt);
+	PlayerData::getInstance()->saveUserData();
 
  }
 void HelloWorld::uiInit()
@@ -628,12 +651,12 @@ void HelloWorld::killBoss()
 			waveNum->setString(StringUtils::format("%d/10", PlayerData::getInstance()->getWaveNow()));
 			waveNum->runAction(Show::create());
 		}
-		//clickLayer->setTouchEnabled(false);
 		auto hpnow = PlayerData::getInstance()->getHpNow();
 		armature->getAnimation()->play("Leave");
 		
 
 	}
+	
 }
 
 bool HelloWorld::initDownLayer(Node* &downLayer)

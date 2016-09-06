@@ -13,13 +13,14 @@
 #include "MainScene/ServantButton.h"
 #include "MainScene/ArtifactButton.h"
 #include "SaveData/State.h"
+#include "SaveData/MonsterState.h"
 #include "Ui/settingLayer.h"
 #include "Ui/AchieveLayer.h"
 #include "Ui/MissionLayer.h"
 #include "Ui/ExChange.h"
 #include "Ui/SignLayer.h"
 #include "SkillCD.h"
-#include "SaveData/MonsterState.h"
+#include "Animation.h"
 #include "Ui/ItemLayer.h"
 using namespace cocostudio;
 
@@ -165,9 +166,7 @@ void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const
 	if (type == MovementEventType::LOOP_COMPLETE || type == MovementEventType::COMPLETE)
 	{
 		if (action == "Start")
-		{
-			
-		
+		{	
 			armature->getAnimation()->play("Wait");
 			clickLayer->setTouchEnabled(true);
 
@@ -176,8 +175,7 @@ void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const
 		}
 		
 		if (action == "Leave")
-		{
-			
+		{		
 			armature->removeFromParent();
 			createMonster();
 		}
@@ -190,7 +188,10 @@ void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const
 	//	killBoss();
 	}
 		
-	
+	if (PlayerData::getInstance()->getServantNum() > 0)
+	{
+		MyAnimation::getInstance()->runHarmer(true,rootNode);
+	}
 	return;
 }
 void HelloWorld::createMonster()
@@ -957,10 +958,6 @@ void HelloWorld::normalAtk()
 }
 void HelloWorld::attackeffection()
 {
-
-
-	auto cache = SpriteFrameCache::getInstance();
-
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("effection/normalAttack.plist");
 	ani = Animation::create();
 	for (int i = 0; i < 9; i++)
@@ -969,10 +966,7 @@ void HelloWorld::attackeffection()
 	}
 	ani->setDelayPerUnit(0.0416f);
 	
-
-
 	ani->retain();
-
 }
 void HelloWorld::deleteSprite(Node *node)
 {

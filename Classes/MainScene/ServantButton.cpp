@@ -30,6 +30,15 @@ void ServantButton::initServantLayer(int id)
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(ServantButton::coinChange), "CoinChange", nullptr);
 	
 	m_id = id;
+	m_state = false;
+	m_clickState = false;
+	m_skillcount = PlayerData::getInstance()->getServantSkillNum(m_id);
+
+	for (size_t i = 0; i <= m_skillcount; i++)
+	{
+		Sprite* skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d",i + 1));
+		skillSprite->setVisible(true);
+	}
 
 	auto bt = (Button*)m_layer->getChildByName("up");
 	auto up10 = (Button*)m_layer->getChildByName("up10");
@@ -56,7 +65,14 @@ void ServantButton::initServantLayer(int id)
 	bt->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType Event){
 		if (Event == Widget::TouchEventType::ENDED)
 		{
-			oneUp();
+			if (m_state)
+			{			
+				unLockSkill();
+			}
+			else
+			{
+				oneUp();			
+			}	
 			upLevel();
 			cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 		}
@@ -122,6 +138,7 @@ void ServantButton::coinChange(Ref*)
 	{
 		bt->setEnabled(false);
 	}
+	lockState();
 }
 
 bool ServantButton::onTouchBegan(Touch * touch, Event* event)
@@ -156,13 +173,6 @@ void ServantButton::oneUp()
 	}
 
 	PlayerData::getInstance()->servantLevelUp(m_id);
-
-	/*auto skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d", m_skillCount + 1));
-	skillSprite->setVisible(true);
-	auto goldNum = Ruler::getInstance()->multiplay(m_gold, 5);
-	PlayerData::getInstance()->subGold(&goldNum);
-	PlayerData::getInstance()->unlockSernantSkill(m_id, m_skillCount);*/
-
 }
 
 void ServantButton::upLevel()
@@ -180,7 +190,7 @@ void ServantButton::upLevel()
 	}
 	if (Ruler::getInstance()->Zero(judge100))
 	{
-		up100->setVisible(false);
+		up100->setVisible(true);
 	}
 
 	auto action = Sequence::create(DelayTime::create(5), CallFuncN::create(CC_CALLBACK_1(ServantButton::callbackSer, this)), nullptr);
@@ -202,12 +212,42 @@ void ServantButton::callbackSer(Node * node)
 	}
 }
 
-void ServantButton::unLockSkill()
+void ServantButton::lockState()
 {
 	Button* bt = (Button*)m_layer->getChildByName("up");
 	Text* text = (Text*)m_layer->getChildByName("up")->getChildByName("up");
-	Sprite* skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d", m_skillcount + 1));
+	auto level = PlayerData::getInstance()->getServantLevel(m_id);
+
+	auto goldText = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("gold");
+	auto strings = FileUtils::getInstance()->getValueMapFromFile("fonts/skillState.xml");
+	auto gold = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getservantLevelUpGold(m_id), 5);
+	auto judge = Ruler::getInstance()->Zero(Ruler::getInstance()->subNum(gold, *PlayerData::getInstance()->getGold()));
+
+	if (level >= SqLite::getInstance()->m_servantUnlock.at(PlayerData::getInstance()->getServantSkillNum(m_id)) && judge)
+	{
+		m_state = true;
+		text->setString(strings["unLock"].asString());
+		goldText->setString(Ruler::getInstance()->showNum(gold));
+		bt->loadTextureNormal("ui/downUi/servant/anniu2.png");
+		bt->loadTexturePressed("ui/downUi/servant/anniu2.png");		
+	}
+}
+
+void ServantButton::unLockSkill()
+{
+	auto bt = (Button*)m_layer->getChildByName("up");
+	auto text = (Text*)m_layer->getChildByName("up")->getChildByName("up");
+	auto goldText = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("gold");	
+	auto strings = FileUtils::getInstance()->getValueMapFromFile("fonts/skillState.xml");
+	Sprite* skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d", PlayerData::getInstance()->getServantSkillNum(m_id) + 1));
+
+	text->setString(strings["upLevel"].asString());
 	bt->loadTextureNormal("ui/downUi/servant/anniu1.png");
 	bt->loadTexturePressed("ui/downUi/servant/anniu1.png");
-	text->setString(m_skills.at(m_skillcount)->getText());
+	PlayerData::getInstance()->unlockSernantSkill(m_id, PlayerData::getInstance()->getServantSkillNum(m_id));
+	goldText->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpGold(m_id)));	
+
+	skillSprite->setVisible(true);
+	m_state = false;
+	m_clickState = false;
 }

@@ -2,6 +2,7 @@
 #include "MonsterState.h"
 #include "ArtifactData.h"
 #include "AchieveData.h"
+#include "State.h"
 #include "Tool/SqLite.h"
 #include "json/document.h"
 #include "json/writer.h"
@@ -36,6 +37,9 @@ PlayerData::PlayerData()
 	m_hpNow.number = hp.number;
 	m_hpNow.Mathbit = hp.Mathbit;
 	
+	m_gold.number = 10;
+	m_gold.Mathbit = 1;
+
 	m_basedps.number = 1;
 	m_basedps.Mathbit = 0;
 
@@ -79,7 +83,7 @@ PlayerData * PlayerData::getInstance()
 		//remove(cocos2d::UserDefault::getInstance()->getXMLFilePath().c_str());
 		if (cocos2d::UserDefault::getInstance()->getBoolForKey("isSaved"))
 		{
-			//p_dt->init();
+			p_dt->init();
 		}
 	}
 	return p_dt;
@@ -153,10 +157,14 @@ bool PlayerData::init()
 			m_servantBaseDps[i].Mathbit = jsd[cocos2d::StringUtils::format("servantBaseDpsMat%d", i).c_str()].GetInt();
 			m_servantBaseDps[i].number = jsd[cocos2d::StringUtils::format("servantBaseDpsNum%d", i).c_str()].GetDouble();
 			m_servantMul[i] = jsd[cocos2d::StringUtils::format("servantMul%d", i).c_str()].GetDouble();
+			m_servantSkill[i] = jsd[cocos2d::StringUtils::format("m_servantSkill%d", i).c_str()].GetInt(); 
 		}
+
 	}
 	AchieveData::getInstance()->readUserDefault();
 	ArtifactData::getInstance()->readUserDefault();
+	MyState::getInstance()->readUserDefault();
+	
 	return true;
 }
 
@@ -194,32 +202,47 @@ void PlayerData::levelUp()
 	if (m_level > 4)
 	{
 		m_latest.m_HpData[m_level % 5] = Ruler::getInstance()->multiplay(m_latest.m_HpData[m_level % 5], 9.54);
+		/*m_latest.randNpc[4] = m_latest.randNpc[3];
+		m_latest.randNpc[3] = m_latest.randNpc[2];
+		m_latest.randNpc[2] = m_latest.randNpc[1];*/
 		if (m_level % 5 == 0)
 		{
 			m_latest.randNpc[0] += 5;
 			m_latest.randNpc[0] %= 25;
 			m_latest.randNpc[1] += 5;
 			m_latest.randNpc[1] %= 25;
+			int tmp1 = m_latest.randNpc[0];
+			int tmp2 = m_latest.randNpc[1];
+			m_latest.randNpc[0] = m_latest.randNpc[2]; 
+			m_latest.randNpc[1] = m_latest.randNpc[3]; 
+			m_latest.randNpc[2] = m_latest.randNpc[4] ;
+			m_latest.randNpc[3] = tmp1;
+			m_latest.randNpc[4] = tmp2;
+		
 		}
 	}
 }
 
 void PlayerData::heroLevelUp()
 {
-	if (m_playerLevel < 7)
+	MyNum updps;
+	if (m_playerLevel < 6)
 	{
-		m_basedps = SqLite::getInstance()->getDps(m_playerLevel);
+		m_basedps = Ruler::getInstance()->addNum(m_basedps,SqLite::getInstance()->getDps(m_playerLevel));
 		m_playerLevel++;
 	}
 	else
 	{
-		double f = (1 + 1 / std::pow((double)m_playerLevel, 0.6) - 1 / pow((double)m_playerLevel, 1.008));
-		m_basedps = Ruler::getInstance()->multiplay(m_basedps, f);
+		updps = getPlayerlvupDps();
+		
+		
 		m_playerLevel++;
 	}
+	m_basedps = Ruler::getInstance()->addNum(m_basedps, updps);
 	AchieveData::getInstance()->maxPlayerLevel(m_playerLevel);
 	auto m_upGold = getPlayerlvupGold();
 	m_gold = Ruler::getInstance()->subNum(m_gold,m_upGold);
+	
 }
 MyNum PlayerData::getPlayerlvupDps()
 {
@@ -490,7 +513,7 @@ void PlayerData::servantLevelUp(int id)
 	m_servantLevel[id]++;
 	auto m_upGold = getservantLevelUpGold(id);
 	auto servantLsDps = SqLite::getInstance()->getServantDpsByID(id);
-	for (int i = 0; i <= m_servantLevel[id]; i++)
+	for (int i = 0; i < m_servantLevel[id]; i++)
 	{
 		auto pow1 = pow(i + 1, 0.7);
 		auto pow2 = pow(i + 1, 6);
@@ -499,6 +522,7 @@ void PlayerData::servantLevelUp(int id)
 	}
 	m_servantBaseDps[id] = servantLsDps;
 	m_gold = Ruler::getInstance()->subNum(m_gold, m_upGold);
+
 }
 MyNum PlayerData::getservantToalDps(int id)
 {
@@ -533,7 +557,7 @@ MyNum PlayerData::getservantLevelUpGold(int id)
 {
 	auto m_upGold = SqLite::getInstance()->getServantGoldByID(id);
 
-	for (int i = 1; i < m_servantLevel[id]; i++)
+	for (int i = 1; i <= m_servantLevel[id]; i++)
 	{
 
 		auto mul = 1 + 1 / (pow(i + 1, 0.45) - 1 / pow(i + 1, 6.13));
@@ -592,7 +616,7 @@ int PlayerData::getLevelRelifeStone()
 	return m_level / 50;
 
 }
-void PlayerData::saveUserData(float dt)
+void PlayerData::saveUserData()
 {
 	Document document;
 	document.SetObject();
@@ -789,11 +813,44 @@ void PlayerData::saveUserData(float dt)
 	document.AddMember("servantBaseDpsMat32", m_servantBaseDps[32].Mathbit, allocator);
 	document.AddMember("servantMul32", m_servantMul[32], allocator);
 	document.AddMember("servantBaseDpsNum32", m_servantBaseDps[32].number, allocator);
+	document.AddMember("m_servantSkill0", m_servantSkill[0], allocator);
+	document.AddMember("m_servantSkill1", m_servantSkill[1], allocator);
+	document.AddMember("m_servantSkill2", m_servantSkill[2], allocator);
+	document.AddMember("m_servantSkill3", m_servantSkill[3], allocator);
+	document.AddMember("m_servantSkill4", m_servantSkill[4], allocator);
+	document.AddMember("m_servantSkill5", m_servantSkill[5], allocator);
+	document.AddMember("m_servantSkill6", m_servantSkill[6], allocator);
+	document.AddMember("m_servantSkill7", m_servantSkill[7], allocator);
+	document.AddMember("m_servantSkill8", m_servantSkill[8], allocator);
+	document.AddMember("m_servantSkill9", m_servantSkill[9], allocator);
+	document.AddMember("m_servantSkill10", m_servantSkill[10], allocator);
+	document.AddMember("m_servantSkill11", m_servantSkill[11], allocator);
+	document.AddMember("m_servantSkill12", m_servantSkill[12], allocator);
+	document.AddMember("m_servantSkill13", m_servantSkill[13], allocator);
+	document.AddMember("m_servantSkill14", m_servantSkill[14], allocator);
+	document.AddMember("m_servantSkill15", m_servantSkill[15], allocator);
+	document.AddMember("m_servantSkill16", m_servantSkill[16], allocator);
+	document.AddMember("m_servantSkill17", m_servantSkill[17], allocator);
+	document.AddMember("m_servantSkill18", m_servantSkill[18], allocator);
+	document.AddMember("m_servantSkill19", m_servantSkill[19], allocator);
+	document.AddMember("m_servantSkill20", m_servantSkill[20], allocator);
+	document.AddMember("m_servantSkill21", m_servantSkill[21], allocator);
+	document.AddMember("m_servantSkill22", m_servantSkill[22], allocator);
+	document.AddMember("m_servantSkill23", m_servantSkill[23], allocator);
+	document.AddMember("m_servantSkill24", m_servantSkill[24], allocator);
+	document.AddMember("m_servantSkill25", m_servantSkill[25], allocator);
+	document.AddMember("m_servantSkill26", m_servantSkill[26], allocator);
+	document.AddMember("m_servantSkill27", m_servantSkill[27], allocator);
+	document.AddMember("m_servantSkill28", m_servantSkill[28], allocator);
+	document.AddMember("m_servantSkill29", m_servantSkill[29], allocator);
+	document.AddMember("m_servantSkill30", m_servantSkill[30], allocator);
+	document.AddMember("m_servantSkill31", m_servantSkill[31], allocator);
+	document.AddMember("m_servantSkill32", m_servantSkill[32], allocator);
 
-		
 	
 	ArtifactData::getInstance()->saveUserDefault(document);
 	AchieveData::getInstance()->saveUserDefault(document);
+	MyState::getInstance()->saveUserDefault(document);
 	StringBuffer buffer;
 	rapidjson::Writer<StringBuffer> writer(buffer);
 	document.Accept(writer);
@@ -823,4 +880,18 @@ void PlayerData::relife()
 	delete p_dt;
 	p_dt = new PlayerData();
 	ArtifactData::getInstance()->addArtiStone(getRelifeStone());
+}
+MyNum PlayerData::getServantUnlockGold(int id,int skillid)
+{
+	auto m_upGold = SqLite::getInstance()->getServantGoldByID(id);
+
+	for (int i = 1; i <= SqLite::getInstance()->m_servantUnlock.at(id - 1); i++)
+	{
+
+		auto mul = 1 + 1 / (pow(i + 1, 0.45) - 1 / pow(i + 1, 6.13));
+		m_upGold = Ruler::getInstance()->multiplay(m_upGold, mul);
+
+	}
+	m_upGold = Ruler::getInstance()->multiplay(m_upGold, (1 - ArtifactData::getInstance()->getSSUD()));
+	return m_upGold;
 }

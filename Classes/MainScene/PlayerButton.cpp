@@ -209,7 +209,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				auto relife = Relife::create();
 				relife->initRelife();
 				g_node->addChild(relife);
-				AchieveData::getInstance()->relife();
+				
 			}
 		});
 	}

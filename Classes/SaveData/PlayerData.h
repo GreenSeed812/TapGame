@@ -57,6 +57,7 @@ public:
 	MyNum getservantToalDps(int id);
 	int getServantNum(){ return m_servantNum; }
 	int getServantSkillNum(int id){ return m_servantSkill[id]; }
+	MyNum getServantUnlockGold(int,int);
 	bool getSkillopen(int i){ return m_skillOpen[i]; }
 	MyNum getTapDps();
 	int getMaxTime(){ return m_maxTime; }
@@ -74,18 +75,18 @@ public:
 	void setServantBaseDps(MyNum dps, int id);
 	void setSkillexploreProb(int prob){ m_skillexploreProb = prob; }
 	void setSkillTap(float t){ m_skillTap = t; }
-	void setWave(int wave){ m_waveNow = wave; }
+	void setWave(int wave){ m_waveNow = wave;  }
 	void skillLevelUp(int i){ m_skillLevel[i-1]++; }
 	void subexplorPer(int per){ m_explorePer -= per; }
 	void subexploreProb(int prob){ m_exploreProb -= prob; }
 	void subGold(MyNum* gold);
 	void subHp(MyNum dps){ m_hpNow = Ruler::getInstance()->subNum(m_hpNow,dps); }
-	void waveUp(){ 	m_waveNow++;}
+	void waveUp(){ m_waveNow++; }
 	void closeSkill(int i){ m_skillOpen[i] = false; }
 	void openSkill(int i){ m_skillOpen[i] = true; }
 	void subHp(){ m_hpNow = Ruler::getInstance()->subNum(m_hpNow,m_basedps); }
 	void unlockSernantSkill(int servantid, int skillid);
-	void saveUserData(float dt);
+	void saveUserData();
 	bool init();
 private:
 	int m_waveNow;

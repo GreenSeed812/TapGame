@@ -14,7 +14,7 @@ public:
 	void setNode(Node * node){ g_node = node; }
 	void exChange(Ref*);
 	void callback(Node * node);
-	static void setCount(int count){ g_countNow = count; }
+	static void setCount(int count){ g_countNow = count; };
 	CREATE_FUNC(ExChange);
 private:
 	Node * m_rootNode;

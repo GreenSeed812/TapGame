@@ -3,6 +3,7 @@
 #include <cocostudio/CocoStudio.h> 
 #include "SaveData/PlayerData.h"
 #include "SaveData/ShopData.h"
+#include "MainScene/HelloWorldScene.h"
 #include "Tool/SqLite.h"
 #include "Tool/Rule.h"
 using namespace ui;
@@ -53,6 +54,7 @@ void ExChange::initExchange()
 			{
 				if (g_countNow>0)
 				{
+					HelloWorld::changeCount(true);
 					g_countNow--;
 					ShopData::getInstance()->subShopGold(m_money);
 					PlayerData::getInstance()->addGold(&m_gold);

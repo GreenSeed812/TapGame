@@ -2,6 +2,7 @@
 #include "ui/CocosGUI.h"
 #include <cocostudio/CocoStudio.h> 
 #include "SaveData/PlayerData.h"
+#include "SaveData/ShopData.h"
 #include "Tool/SqLite.h"
 #include "Tool/Rule.h"
 using namespace ui;
@@ -23,10 +24,11 @@ bool ItemLayer::init()
 void ItemLayer::initItemLayer(int id)
 {
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(ItemLayer::itemChange), "itemChange", nullptr);
-	auto head = (Sprite*)m_layer->getChildByName("head");
+
 	auto name = (Text*)m_layer->getChildByName("infoBg")->getChildByName("name");
 	auto info = (Text*)m_layer->getChildByName("infoBg")->getChildByName("info");
 	auto money = (Text*)m_layer->getChildByName("infoBg")->getChildByName("moneyNum");
+	auto time = (Text*)m_layer->getChildByName("time");
 	auto up = (Button*)m_layer->getChildByName("up");
 
 	//head->setTexture("");

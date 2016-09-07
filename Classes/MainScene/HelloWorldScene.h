@@ -41,8 +41,10 @@ public:
 	void shopItemEff(float);
 	static void setBg(bool off_on){ m_bg = off_on; }
 	static void setSou(bool off_on){ m_sou = off_on; }
+	static void changeCount(bool state){ m_coutChange = state; }
 	void initAr();
 	void initSer();
+	void runAni();
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 private:
@@ -67,6 +69,7 @@ private:
 	int m_arCount;
 	static bool m_bg;
 	static bool m_sou;
+	static bool m_coutChange;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

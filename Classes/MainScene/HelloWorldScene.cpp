@@ -31,6 +31,7 @@ using namespace ui;
 
 bool HelloWorld::m_bg = true;
 bool HelloWorld::m_sou = true;
+bool HelloWorld::m_coutChange = false;
 
 Scene* HelloWorld::createScene()
 {
@@ -115,7 +116,12 @@ void HelloWorld::coinChange(Ref *ref)
 		TextBMFont* gold = (TextBMFont*)m_servantLayer->getChildByName("message")->getChildByName("gold");
 		gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
 	}
-	ExChange::setCount(m_exchangeCount--);
+	if (m_coutChange)
+	{
+		m_exchangeCount--;
+		m_coutChange = false;
+	}
+	ExChange::setCount(m_exchangeCount);
 }
 
 void HelloWorld::ArChange(Ref*)
@@ -186,11 +192,6 @@ void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const
 	{
 		Slider* hpSlider = (Slider*)rootNode->getChildByName("HpSlider");
 	//	killBoss();
-	}
-		
-	if (PlayerData::getInstance()->getServantNum() > 0)
-	{
-		MyAnimation::getInstance()->runHarmer(true,rootNode);
 	}
 	return;
 }
@@ -373,7 +374,7 @@ void HelloWorld::update(float dt)
 	}
 
 	PlayerData::getInstance()->saveUserData();
-
+	runAni();
  }
 void HelloWorld::uiInit()
 {
@@ -1069,5 +1070,24 @@ void HelloWorld::shopItemEff(float dt)
 	}
 	else if (ShopData::getInstance()->getItemBeUsedById(9))
 	{
+	}
+}
+
+void HelloWorld::runAni()
+{
+
+	if (PlayerData::getInstance()->getServantNum() > 0)
+	{
+		if (!rootNode->getChildByName("Harmer"))
+		{
+			MyAnimation::getInstance()->runHarmer(true, rootNode);
+		}
+	}
+	if (PlayerData::getInstance()->getServantNum() >= 5)
+	{
+		if (!rootNode->getChildByName("aoshu"))
+		{
+			MyAnimation::getInstance()->runAoshu(true, rootNode);
+		}
 	}
 }

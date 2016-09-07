@@ -86,7 +86,7 @@ PlayerData * PlayerData::getInstance()
 		//remove(cocos2d::UserDefault::getInstance()->getXMLFilePath().c_str());
 		if (cocos2d::UserDefault::getInstance()->getBoolForKey("isSaved"))
 		{
-			p_dt->init();
+			//p_dt->init();
 		}
 	}
 	return p_dt;
@@ -888,7 +888,7 @@ MyNum PlayerData::getServantUnlockGold(int id,int skillid)
 {
 	auto m_upGold = SqLite::getInstance()->getServantGoldByID(id);
 
-	for (int i = 1; i <= SqLite::getInstance()->m_servantUnlock.at(id - 1); i++)
+	for (int i = 1; i <= SqLite::getInstance()->m_servantUnlock.at(skillid - 1); i++)
 	{
 
 		auto mul = 1 + 1 / (pow(i + 1, 0.45) - 1 / pow(i + 1, 6.13));
@@ -896,5 +896,6 @@ MyNum PlayerData::getServantUnlockGold(int id,int skillid)
 
 	}
 	m_upGold = Ruler::getInstance()->multiplay(m_upGold, (1 - ArtifactData::getInstance()->getSSUD()));
+	m_upGold = Ruler::getInstance()->multiplay(m_upGold, 5);
 	return m_upGold;
 }

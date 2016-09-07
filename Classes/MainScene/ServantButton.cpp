@@ -216,20 +216,28 @@ void ServantButton::lockState()
 {
 	Button* bt = (Button*)m_layer->getChildByName("up");
 	Text* text = (Text*)m_layer->getChildByName("up")->getChildByName("up");
+	auto * dps = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("dps");
 	auto level = PlayerData::getInstance()->getServantLevel(m_id);
 
 	auto goldText = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("gold");
 	auto strings = FileUtils::getInstance()->getValueMapFromFile("fonts/skillState.xml");
-	auto gold = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getservantLevelUpGold(m_id), 5);
-	auto judge = Ruler::getInstance()->Zero(Ruler::getInstance()->subNum(gold, *PlayerData::getInstance()->getGold()));
 
-	if (level >= SqLite::getInstance()->m_servantUnlock.at(PlayerData::getInstance()->getServantSkillNum(m_id)) && judge)
+	if (level >= SqLite::getInstance()->m_servantUnlock.at(PlayerData::getInstance()->getServantSkillNum(m_id)))
 	{
-		m_state = true;
-		text->setString(strings["unLock"].asString());
-		goldText->setString(Ruler::getInstance()->showNum(gold));
-		bt->loadTextureNormal("ui/downUi/servant/anniu2.png");
-		bt->loadTexturePressed("ui/downUi/servant/anniu2.png");		
+		auto gold = PlayerData::getInstance()->getServantUnlockGold(m_id, PlayerData::getInstance()->getServantSkillNum(m_id) + 1);
+		auto judge = Ruler::getInstance()->Zero(Ruler::getInstance()->subNum(gold, *PlayerData::getInstance()->getGold()));
+		if (judge)
+		{
+			m_state = true;
+			text->setString(strings["unLock"].asString());
+			goldText->setString(Ruler::getInstance()->showNum(gold));
+			bt->loadTextureNormal("ui/downUi/servant/anniu2.png");
+			bt->loadTexturePressed("ui/downUi/servant/anniu2.png");
+		}
+		else
+		{
+			bt->setEnabled(false);
+		}
 	}
 }
 
@@ -237,7 +245,6 @@ void ServantButton::unLockSkill()
 {
 	auto bt = (Button*)m_layer->getChildByName("up");
 	auto text = (Text*)m_layer->getChildByName("up")->getChildByName("up");
-	auto goldText = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("gold");	
 	auto strings = FileUtils::getInstance()->getValueMapFromFile("fonts/skillState.xml");
 	Sprite* skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d", PlayerData::getInstance()->getServantSkillNum(m_id) + 1));
 
@@ -245,7 +252,6 @@ void ServantButton::unLockSkill()
 	bt->loadTextureNormal("ui/downUi/servant/anniu1.png");
 	bt->loadTexturePressed("ui/downUi/servant/anniu1.png");
 	PlayerData::getInstance()->unlockSernantSkill(m_id, PlayerData::getInstance()->getServantSkillNum(m_id));
-	goldText->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpGold(m_id)));	
 
 	skillSprite->setVisible(true);
 	m_state = false;

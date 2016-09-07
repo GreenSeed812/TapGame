@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>1_00000.png</key>
+            <key>harmer_0.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1018},{1,1}}</string>
@@ -17,7 +17,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00001.png</key>
+            <key>harmer_1.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1018},{1,1}}</string>
@@ -30,7 +30,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00002.png</key>
+            <key>harmer_2.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1018},{1,1}}</string>
@@ -43,7 +43,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00003.png</key>
+            <key>harmer_3.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1018},{1,1}}</string>
@@ -56,7 +56,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00004.png</key>
+            <key>harmer_4.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1018},{1,1}}</string>
@@ -69,7 +69,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00005.png</key>
+            <key>harmer_5.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{516,458},{80,80}}</string>
@@ -82,7 +82,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00006.png</key>
+            <key>harmer_6.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{516,366},{90,90}}</string>
@@ -95,7 +95,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00007.png</key>
+            <key>harmer_7.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{516,260},{104,104}}</string>
@@ -108,7 +108,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00008.png</key>
+            <key>harmer_8.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{506,140},{118,118}}</string>
@@ -121,7 +121,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00009.png</key>
+            <key>harmer_9.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{506,2},{136,136}}</string>
@@ -134,7 +134,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00010.png</key>
+            <key>harmer_10.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{178,842},{154,154}}</string>
@@ -147,7 +147,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00011.png</key>
+            <key>harmer_11.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,842},{174,174}}</string>
@@ -160,7 +160,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00012.png</key>
+            <key>harmer_12.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{334,826},{194,194}}</string>
@@ -173,7 +173,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00013.png</key>
+            <key>harmer_13.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{290,2},{214,214}}</string>
@@ -186,7 +186,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00014.png</key>
+            <key>harmer_14.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{282,290},{232,234}}</string>
@@ -199,7 +199,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00015.png</key>
+            <key>harmer_15.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{270,572},{250,252}}</string>
@@ -212,7 +212,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00016.png</key>
+            <key>harmer_16.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,572},{266,268}}</string>
@@ -225,7 +225,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00017.png</key>
+            <key>harmer_17.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,290},{278,280}}</string>
@@ -238,7 +238,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00018.png</key>
+            <key>harmer_18.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,2},{286,286}}</string>
@@ -251,7 +251,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00019.png</key>
+            <key>harmer_19.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1018},{1,1}}</string>
@@ -264,7 +264,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00020.png</key>
+            <key>harmer_20.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1018},{1,1}}</string>
@@ -277,7 +277,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00021.png</key>
+            <key>harmer_21.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1018},{1,1}}</string>
@@ -290,7 +290,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00022.png</key>
+            <key>harmer_22.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1018},{1,1}}</string>
@@ -303,7 +303,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00023.png</key>
+            <key>harmer_23.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1018},{1,1}}</string>
@@ -316,7 +316,7 @@
                 <key>sourceSize</key>
                 <string>{640,480}</string>
             </dict>
-            <key>1_00024.png</key>
+            <key>harmer_24.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1018},{1,1}}</string>
@@ -335,13 +335,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>锤击.png</string>
+            <string>Harmer.png</string>
             <key>size</key>
             <string>{1024,1024}</string>
             <key>smartupdate</key>
             <string>$TexturePacker:SmartUpdate:5a95b2e15651c8b926e3e5f67128515e$</string>
             <key>textureFileName</key>
-            <string>锤击.png</string>
+            <string>Harmer.png</string>
         </dict>
     </dict>
 </plist>

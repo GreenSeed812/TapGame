@@ -46,6 +46,9 @@ PlayerData::PlayerData()
 	m_heroDpsAll.number = 1;
 	m_heroDpsAll.Mathbit = 0;
 
+	m_gold.number = 1;
+	m_gold.Mathbit = 30;
+
 	m_latest.m_dropData = SqLite::getInstance()->getDropData();
 	m_latest.m_HpData = SqLite::getInstance()->getHpData();
 	for (int i = 0; i < 5; i++)

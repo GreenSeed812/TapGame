@@ -115,6 +115,7 @@ void HelloWorld::coinChange(Ref *ref)
 		gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
 	}
 	ExChange::setCount(m_exchangeCount--);
+	PlayerData::getInstance()->saveUserData();
 }
 
 void HelloWorld::ArChange(Ref*)
@@ -302,6 +303,11 @@ void HelloWorld::update(float dt)
 				auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(5) * (1 + ArtifactData::getInstance()->getskilleffUp(6)));
 				PlayerData::getInstance()->addGold(&num1);
 			}
+			if (ShopData::getInstance()->getItemBeUsedById(1))
+			{
+				auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 0.3);
+				PlayerData::getInstance()->addGold(&num1);
+			}
 			armature->getAnimation()->play("Hurt", -1, 0);
 			t_now = 0;
 			MyState::getInstance()->setTaped(false);
@@ -370,8 +376,8 @@ void HelloWorld::update(float dt)
 	{
 		skillKpCDUpdate(dt);
 	}
-
-	PlayerData::getInstance()->saveUserData();
+	
+	//PlayerData::getInstance()->saveUserData();
 
  }
 void HelloWorld::uiInit()
@@ -903,6 +909,11 @@ void HelloWorld::skillEff(float dt)
 					auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(5) * (1 + ArtifactData::getInstance()->getskilleffUp(6)));
 					PlayerData::getInstance()->addGold(&num1);
 				}
+				if (ShopData::getInstance()->getItemBeUsedById(1))
+				{
+					auto num2 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 0.3);
+					PlayerData::getInstance()->addGold(&num2);
+				}
 			}
 		}
 		if (PlayerData::getInstance()->getSkillopen(2))
@@ -959,7 +970,7 @@ void HelloWorld::normalAtk()
 	auto spawn = Spawn::create(rotate, animate, CallFuncN::create(CC_CALLBACK_1(HelloWorld::playMusic, this)), NULL);
 
 	auto seq = Sequence::create(spawn, CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
-
+	
 	effectSprite->runAction(seq);
 
 	TextBMFont* text = (TextBMFont*)CSLoader::createNode("DmgNum.csb")->getChildByName("Text");
@@ -1045,27 +1056,56 @@ void HelloWorld::initAr()
 }
 void HelloWorld::shopItemEff(float dt) 
 {
-	if (ShopData::getInstance()->getItemBeUsedById(0))
+	if (ShopData::getInstance()->getItemBeUsedById(1))
 	{
+		static float t_time = 0;
+		t_time += dt;
+		if (t_time >= 10)
+		{
+			ShopData::getInstance()->stopItemById(1);
+			
+		}
 	}
-	else if(ShopData::getInstance()->getItemBeUsedById(1))
+	else if(ShopData::getInstance()->getItemBeUsedById(2))
 	{
-	}
-	else if (ShopData::getInstance()->getItemBeUsedById(2))
-	{
+		static float t_time = 0;
+		t_time += dt;
+		ShopData::getInstance()->setexploreProb(0.2);
+		if (t_time >= 15)
+		{
+			ShopData::getInstance()->stopItemById(2);
+			ShopData::getInstance()->setexploreProb(0);
+		}
 	}
 	else if (ShopData::getInstance()->getItemBeUsedById(3))
 	{
+		static float t_time = 0;
+		t_time += dt;
+		ShopData::getInstance()->settapPer(2);
+		if (t_time >= 10)
+		{
+			ShopData::getInstance()->stopItemById(3);
+			ShopData::getInstance()->settapPer(0);
+		}
 	}
 	else if (ShopData::getInstance()->getItemBeUsedById(4))
 	{
+		static float t_time = 0;
+		t_time += dt;
+		auto tpdmgPerS = PlayerData::getInstance()->getTapDpsNoExp();
+		auto tpPerframe = Ruler::getInstance()->multiplay(tpdmgPerS, 10 * dt);
+		PlayerData::getInstance()->subHp(tpPerframe);
+		if (t_time >= 10)
+		{
+			ShopData::getInstance()->stopItemById(4);
+		}
 	}
 	else if (ShopData::getInstance()->getItemBeUsedById(5))
 	{
-
 	}
 	else if (ShopData::getInstance()->getItemBeUsedById(6))
 	{
+
 	}
 	else if (ShopData::getInstance()->getItemBeUsedById(7))
 	{
@@ -1074,6 +1114,15 @@ void HelloWorld::shopItemEff(float dt)
 	{
 	}
 	else if (ShopData::getInstance()->getItemBeUsedById(9))
+	{
+	}
+	else if (ShopData::getInstance()->getItemBeUsedById(10))
+	{
+	}
+	else if (ShopData::getInstance()->getItemBeUsedById(11))
+	{
+	}
+	else if (ShopData::getInstance()->getItemBeUsedById(12))
 	{
 	}
 }

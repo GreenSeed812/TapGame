@@ -86,7 +86,16 @@ void ShopData::buyItemByID(int i)
 	}
 	else if (i == 12)
 	{
+		m_treasurebayS = true;
 		
+	}
+	else if (i == 13)
+	{
+		m_luckyCoinS = true;
+	}
+	else if (i == 14)
+	{
+		m_kuangluanS = true;
 	}
 }
 bool ShopData::getItemBeUsedById(int id)
@@ -137,6 +146,75 @@ bool ShopData::getItemBeUsedById(int id)
 	}
 	else if (id == 12)
 	{
-	
+		return m_treasurebayS ;
+
+	}
+	else if (id == 13)
+	{
+		return m_luckyCoinS;
+	}
+	else if (id == 14)
+	{
+		return m_kuangluanS;
+	}
+
+}
+void ShopData::stopItemById(int i)
+{
+	if (i == 1)
+	{
+		m_haichaoS = false;
+	}
+	else if (i == 2)
+	{
+		m_shandianS = false;
+	}
+	else if (i == 3)
+	{
+		m_huoshe = false;
+	}
+	else if (i == 4)
+	{
+		m_fengnu = false;
+	}
+	else if (i == 5)
+	{
+		m_bankS = false;
+	}
+	else if (i == 6)
+	{
+		m_keepGodPowerS = false;
+	}
+	else if (i == 7)
+	{
+		m_refreshS = false;
+	}
+	else if (i == 8)
+	{
+
+	}
+	else if (i == 9)
+	{
+
+	}
+	else if (i == 10)
+	{
+		m_relifeS = false;
+	}
+	else if (i == 11)
+	{
+		m_whosyourdaddyS = false;
+	}
+	else if (i == 12)
+	{
+		m_treasurebayS = false;
+	}
+	else if (i == 13)
+	{
+		m_luckyCoinS = false;
+	}
+	else if (i == 14)
+	{
+		m_kuangluanS = false;
 	}
 }

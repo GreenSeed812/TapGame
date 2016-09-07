@@ -192,8 +192,9 @@ MyNum Ruler::subNum(MyNum num1, MyNum num2)
 		num.number = num1.number - num2.number / scale;
 		
 	}
-	if (num.number < 1 && num.Mathbit > 0)
+	while (num.number < 1 && num.Mathbit > 0)
 	{
+		
 		num.Mathbit--;
 		num.number *= 1000;
 	}
@@ -204,7 +205,7 @@ MyNum Ruler::subNum(MyNum num1, MyNum num2)
 MyNum Ruler::multiplay(MyNum num, double scale)
 {
 	MyNum newNum ;
-	while (scale > 1000)
+	while (scale >= 1000)
 	{
 		newNum.Mathbit++;
 		scale /= 1000;

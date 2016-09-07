@@ -69,6 +69,8 @@ PlayerData::PlayerData()
 		m_skillOpen[i] = false;
 	}
 	m_skillData = SqLite::getInstance()->getSkillData();
+
+	
 }
 
 PlayerData::~PlayerData()

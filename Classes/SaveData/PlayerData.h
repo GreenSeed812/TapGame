@@ -75,7 +75,7 @@ public:
 	void setServantBaseDps(MyNum dps, int id);
 	void setSkillexploreProb(int prob){ m_skillexploreProb = prob; }
 	void setSkillTap(float t){ m_skillTap = t; }
-	void setWave(int wave){ m_waveNow = wave;  }
+	void setWave(int wave){ m_waveNow = wave; }
 	void skillLevelUp(int i){ m_skillLevel[i-1]++; }
 	void subexplorPer(int per){ m_explorePer -= per; }
 	void subexploreProb(int prob){ m_exploreProb -= prob; }

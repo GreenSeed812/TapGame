@@ -218,3 +218,11 @@ void ShopData::stopItemById(int i)
 		m_kuangluanS = false;
 	}
 }
+void ShopData::subShopGold(int gold)
+{
+	m_shopGold -= gold; 
+}
+void ShopData::addShopGold(int gold)
+{
+	m_shopGold += gold; 
+}

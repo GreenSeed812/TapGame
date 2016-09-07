@@ -9,8 +9,8 @@ public:
 	void buyItemByID(int);
 	int getShopGold(){ return m_shopGold; }
 	void stopItemById(int i);
-	void subShopGold(int gold){ m_shopGold -= gold; }
-	void addShopGold(int gold){ m_shopGold += gold; }
+	void subShopGold(int gold);
+	void addShopGold(int gold);
 	bool getItemBeUsedById(int id);
 	float getexploreProb(float prob){ return m_exploreProb; }
 	float gettapPer(){ return m_tapPer; }

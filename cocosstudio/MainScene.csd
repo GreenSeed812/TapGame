@@ -6,15 +6,16 @@
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
         <Size X="1080.0000" Y="1920.0000" />
         <Children>
-          <AbstractNodeData Name="mainBG" ActionTag="1146368906" Tag="39" IconVisible="False" LeftMargin="229.1295" RightMargin="210.8705" TopMargin="258.7356" BottomMargin="921.2644" LeftEage="82" RightEage="82" TopEage="82" BottomEage="82" Scale9OriginX="82" Scale9OriginY="82" Scale9Width="476" Scale9Height="576" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="mainBG" ActionTag="-1514120660" Tag="54" IconVisible="False" LeftMargin="216.8100" RightMargin="223.1900" TopMargin="258.7400" BottomMargin="921.2600" ctype="SpriteObjectData">
             <Size X="640.0000" Y="740.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="549.1295" Y="1291.2644" />
-            <Scale ScaleX="1.6441" ScaleY="1.6239" />
+            <Position X="536.8100" Y="1291.2600" />
+            <Scale ScaleX="1.6441" ScaleY="1.6289" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5085" Y="0.6725" />
+            <PrePosition X="0.4970" Y="0.6725" />
             <PreSize X="0.5926" Y="0.3854" />
             <FileData Type="Normal" Path="1.png" Plist="" />
+            <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="MonsterNode" ActionTag="1028649609" Tag="8" IconVisible="True" LeftMargin="544.2488" RightMargin="535.7512" TopMargin="813.7487" BottomMargin="1106.2513" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
@@ -84,7 +85,7 @@
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <DisabledFileData Type="Normal" Path="mission.png" Plist="" />
                 <PressedFileData Type="Normal" Path="mission.png" Plist="" />
                 <NormalFileData Type="Normal" Path="mission.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
@@ -215,10 +216,10 @@
                 <FileData Type="Normal" Path="gongqiao (1).png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="frame1" ActionTag="-625926874" Tag="30" IconVisible="False" LeftMargin="1.8083" RightMargin="-1071.8083" TopMargin="-1918.8490" BottomMargin="199.8490" ctype="SpriteObjectData">
+              <AbstractNodeData Name="frame1" ActionTag="-625926874" Tag="30" IconVisible="False" LeftMargin="1.8100" RightMargin="-1071.8101" TopMargin="-1918.8490" BottomMargin="199.8490" ctype="SpriteObjectData">
                 <Size X="1070.0000" Y="1719.0000" />
                 <AnchorPoint ScaleX="0.5000" />
-                <Position X="536.8083" Y="199.8490" />
+                <Position X="536.8100" Y="199.8490" />
                 <Scale ScaleX="1.0154" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />

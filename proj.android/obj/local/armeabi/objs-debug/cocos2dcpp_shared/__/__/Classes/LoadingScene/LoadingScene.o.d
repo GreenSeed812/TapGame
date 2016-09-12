@@ -506,6 +506,12 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/LoadingScene/Loadin
  jni/../../Classes/Ui/bossButton.h \
  jni/../../Classes/MainScene/PlayerButton.h \
  jni/../../Classes/SaveData/State.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/writer.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/dtoa.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/itoa.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/itoa.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h \
  jni/../../Classes/MainScene\ServantButton.h \
  jni/../../Classes/MainScene/HelloWorldScene.h \
  jni/../../Classes/Tool\SpecManager.h jni/../../Classes/Tool\SqLite.h \
@@ -1526,6 +1532,18 @@ jni/../../Classes/Ui/bossButton.h:
 jni/../../Classes/MainScene/PlayerButton.h:
 
 jni/../../Classes/SaveData/State.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/writer.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/dtoa.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/itoa.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/itoa.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h:
 
 jni/../../Classes/MainScene\ServantButton.h:
 

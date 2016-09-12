@@ -32,6 +32,7 @@ using namespace ui;
 bool HelloWorld::m_bg = true;
 bool HelloWorld::m_sou = true;
 bool HelloWorld::m_coutChange = false;
+int HelloWorld::m_dayCount = 0;
 
 Scene* HelloWorld::createScene()
 {
@@ -66,6 +67,7 @@ bool HelloWorld::init()
 	m_shopLayer = nullptr;
 	m_arCount = 0;
 	m_exchangeCount = 5;
+	m_dayCount = 0;
     rootNode = CSLoader::createNode("MainScene.csb");
 	addChild(rootNode);
 	Slider * hpSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider");
@@ -116,12 +118,16 @@ void HelloWorld::coinChange(Ref *ref)
 		TextBMFont* gold = (TextBMFont*)m_servantLayer->getChildByName("message")->getChildByName("gold");
 		gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
 	}
+
 	if (m_coutChange)
 	{
 		m_exchangeCount--;
 		m_coutChange = false;
 	}
 	ExChange::setCount(m_exchangeCount);
+
+	//PlayerData::getInstance()->saveUserData();
+
 }
 
 void HelloWorld::ArChange(Ref*)
@@ -304,6 +310,11 @@ void HelloWorld::update(float dt)
 				auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(5) * (1 + ArtifactData::getInstance()->getskilleffUp(6)));
 				PlayerData::getInstance()->addGold(&num1);
 			}
+			if (ShopData::getInstance()->getItemBeUsedById(1))
+			{
+				auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 0.3);
+				PlayerData::getInstance()->addGold(&num1);
+			}
 			armature->getAnimation()->play("Hurt", -1, 0);
 			t_now = 0;
 			MyState::getInstance()->setTaped(false);
@@ -373,8 +384,9 @@ void HelloWorld::update(float dt)
 		skillKpCDUpdate(dt);
 	}
 
-	PlayerData::getInstance()->saveUserData();
-	runAni();
+	//PlayerData::getInstance()->saveUserData();
+	//runAni();
+
  }
 void HelloWorld::uiInit()
 {
@@ -530,15 +542,18 @@ void HelloWorld::uiCallBack()
 			if (initDownLayerSh(m_shopLayer))
 			{
 				auto lv = (ListView*)m_shopLayer->getChildByName("ListView");
-				for (size_t i = 0; i < 10; i++)
+				for (size_t i = 0; i < 14; i++)
 				{
-					auto widget = Widget::create();
-					auto item = ItemLayer::create();
-					item->initItemLayer(i);
-					auto size = item->getContentSize();
-					widget->setContentSize(size);
-					widget->addChild(item);
-					lv->pushBackCustomItem(widget);
+					if (i != 4 && i != 7 && i != 8)
+					{
+						auto widget = Widget::create();
+						auto item = ItemLayer::create();
+						item->initItemLayer(i);
+						auto size = item->getContentSize();
+						widget->setContentSize(size);
+						widget->addChild(item);
+						lv->pushBackCustomItem(widget);
+					}
 				}
 			}
 			itemChange(this);
@@ -641,6 +656,7 @@ void HelloWorld::killBoss()
 		{
 			PlayerData::getInstance()->resetWave();
 			PlayerData::getInstance()->levelUp();
+			mapChange();
 			TextBMFont* textLast = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("level");
 			textLast->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel()-1));
 			TextBMFont* textNow = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("level_1");
@@ -659,7 +675,32 @@ void HelloWorld::killBoss()
 	}
 	
 }
-
+void HelloWorld::mapChange()
+{
+	if (PlayerData::getInstance()->getLevel() % 5 == 0)
+	{
+		auto mapNum = PlayerData::getInstance()->getLevel() / 5;
+		auto map = SqLite::getInstance()->getMapDataByID(mapNum % 8);
+		Sprite* spr = (Sprite*)rootNode->getChildByName("mainBG");
+		spr->setTexture(StringUtils::format("map/bg/%s", map->bg.c_str()));
+		Sprite* mapNow = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapNow");
+		mapNow->setTexture(StringUtils::format("map/icon/%s", map->mapIcon.c_str()));
+	}
+	if ((PlayerData::getInstance()->getLevel() + 1) % 5 == 0)
+	{
+		auto mapNum = (PlayerData::getInstance()->getLevel() + 1) / 5;
+		auto map = SqLite::getInstance()->getMapDataByID(mapNum % 8);
+		Sprite* spr = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherR");
+		spr->setTexture(StringUtils::format("map/icon/%s", map->mapIcon.c_str()));
+	}
+	if ((PlayerData::getInstance()->getLevel() - 1) % 5 == 0)
+	{
+		auto mapNum = (PlayerData::getInstance()->getLevel() - 1) / 5;
+		auto map = SqLite::getInstance()->getMapDataByID(mapNum % 8);
+		Sprite* spr = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherL");
+		spr->setTexture(StringUtils::format("map/icon/%s", map->mapIcon.c_str()));
+	}
+}
 bool HelloWorld::initDownLayer(Node* &downLayer)
 {
 	bool ret = false;
@@ -905,6 +946,11 @@ void HelloWorld::skillEff(float dt)
 					auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(5) * (1 + ArtifactData::getInstance()->getskilleffUp(6)));
 					PlayerData::getInstance()->addGold(&num1);
 				}
+				if (ShopData::getInstance()->getItemBeUsedById(1))
+				{
+					auto num2 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 0.3);
+					PlayerData::getInstance()->addGold(&num2);
+				}
 			}
 		}
 		if (PlayerData::getInstance()->getSkillopen(2))
@@ -961,7 +1007,7 @@ void HelloWorld::normalAtk()
 	auto spawn = Spawn::create(rotate, animate, CallFuncN::create(CC_CALLBACK_1(HelloWorld::playMusic, this)), NULL);
 
 	auto seq = Sequence::create(spawn, CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
-
+	
 	effectSprite->runAction(seq);
 
 	TextBMFont* text = (TextBMFont*)CSLoader::createNode("DmgNum.csb")->getChildByName("Text");
@@ -1040,27 +1086,56 @@ void HelloWorld::initAr()
 }
 void HelloWorld::shopItemEff(float dt) 
 {
-	if (ShopData::getInstance()->getItemBeUsedById(0))
+	if (ShopData::getInstance()->getItemBeUsedById(1))
 	{
+		static float t_time = 0;
+		t_time += dt;
+		if (t_time >= 10)
+		{
+			ShopData::getInstance()->stopItemById(1);
+			
+		}
 	}
-	else if(ShopData::getInstance()->getItemBeUsedById(1))
+	else if(ShopData::getInstance()->getItemBeUsedById(2))
 	{
-	}
-	else if (ShopData::getInstance()->getItemBeUsedById(2))
-	{
+		static float t_time = 0;
+		t_time += dt;
+		ShopData::getInstance()->setexploreProb(0.2);
+		if (t_time >= 15)
+		{
+			ShopData::getInstance()->stopItemById(2);
+			ShopData::getInstance()->setexploreProb(0);
+		}
 	}
 	else if (ShopData::getInstance()->getItemBeUsedById(3))
 	{
+		static float t_time = 0;
+		t_time += dt;
+		ShopData::getInstance()->settapPer(2);
+		if (t_time >= 10)
+		{
+			ShopData::getInstance()->stopItemById(3);
+			ShopData::getInstance()->settapPer(0);
+		}
 	}
 	else if (ShopData::getInstance()->getItemBeUsedById(4))
 	{
+		static float t_time = 0;
+		t_time += dt;
+		auto tpdmgPerS = PlayerData::getInstance()->getTapDpsNoExp();
+		auto tpPerframe = Ruler::getInstance()->multiplay(tpdmgPerS, 10 * dt);
+		PlayerData::getInstance()->subHp(tpPerframe);
+		if (t_time >= 10)
+		{
+			ShopData::getInstance()->stopItemById(4);
+		}
 	}
 	else if (ShopData::getInstance()->getItemBeUsedById(5))
 	{
-
 	}
 	else if (ShopData::getInstance()->getItemBeUsedById(6))
 	{
+
 	}
 	else if (ShopData::getInstance()->getItemBeUsedById(7))
 	{
@@ -1071,23 +1146,31 @@ void HelloWorld::shopItemEff(float dt)
 	else if (ShopData::getInstance()->getItemBeUsedById(9))
 	{
 	}
-}
-
-void HelloWorld::runAni()
-{
-
-	if (PlayerData::getInstance()->getServantNum() > 0)
+	else if (ShopData::getInstance()->getItemBeUsedById(10))
 	{
-		if (!rootNode->getChildByName("Harmer"))
-		{
-			MyAnimation::getInstance()->runHarmer(true, rootNode);
-		}
 	}
-	if (PlayerData::getInstance()->getServantNum() >= 5)
+	else if (ShopData::getInstance()->getItemBeUsedById(11))
 	{
-		if (!rootNode->getChildByName("aoshu"))
-		{
-			MyAnimation::getInstance()->runAoshu(true, rootNode);
-		}
+	}
+	else if (ShopData::getInstance()->getItemBeUsedById(12))
+	{
 	}
 }
+
+//void HelloWorld::runAni()
+//{
+//
+//	if (PlayerData::getInstance()->getServantNum() > 0)
+//	{
+//		if (!rootNode->getChildByName("Harmer"))
+//		{
+//			MyAnimation::getInstance()->runHarmer(true, rootNode);
+//		}
+//	}
+//	if (PlayerData::getInstance()->getServantNum() >= 5)
+//	{
+//		if (!rootNode->getChildByName("aoshu"))
+//		{
+//			MyAnimation::getInstance()->runAoshu(true, rootNode);
+//		}
+//}

@@ -42,14 +42,8 @@ struct Servant
 struct MapData
 {
 	int ID;
-	float bossHp;
-	std::string name;
-	std::string bgMusic;
 	std::string mapIcon;
-	std::string bg;
-	
-
-	
+	std::string bg;	
 };
 struct SkillData
 {
@@ -89,6 +83,8 @@ struct daoju
 	std::string name;
 	std::string effdis;
 	int expense;
+	float time;
+	bool type;
 };
 struct Achieve
 {
@@ -135,9 +131,10 @@ public:
 	double getEff(int i){ return m_skillData.at(i)->initEffect; }
 	double getEffPer(int i){ return m_skillData.at(i)->effPerLevel; }
 	daoju * getItemByID(int id){ return m_daoju.at(id); }
-	Quest * getQuestById(int id){ return m_quest.at(id-1); }
+	Quest * getQuestById(int id){ return m_quest.at(id); }
 	MyNum getServantDpsByID(int i){ return m_servantData.at(i)->dps; }
 	MyNum getServantGoldByID(int i){ return m_servantData.at(i)->gold; }
+	MapData* getMapDataByID(int i){ return m_mapData.at(i); }
 	std::string getServantNameByID(int i){ return m_servantData.at(i)->name; }
 	std::vector<SkillData*> getSkillData(){ return m_skillData; }
 	std::string getSkillNameByID(int i){ return m_skillData.at(i)->name; };
@@ -160,7 +157,7 @@ public:
 	sqlite3 *m_pDB; 
 	std::vector<MonsterData*> m_monsterData;
 	std::vector<Servant*> m_servantData;
-	std::vector<MapData> m_mapData;
+	std::vector<MapData*> m_mapData;
 	std::vector<MyNum> m_HpData;
 	std::map<MyNum,int> m_monsterDataMap;
 	std::map<SkillData*, int> m_skillDataMap;

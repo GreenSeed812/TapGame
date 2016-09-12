@@ -42,9 +42,12 @@ public:
 	static void setBg(bool off_on){ m_bg = off_on; }
 	static void setSou(bool off_on){ m_sou = off_on; }
 	static void changeCount(bool state){ m_coutChange = state; }
+	static void dayChange(){ m_dayCount++; };
+	static int getDay(){ return m_dayCount; }
 	void initAr();
 	void initSer();
 	void runAni();
+	void mapChange();
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 private:
@@ -70,6 +73,7 @@ private:
 	static bool m_bg;
 	static bool m_sou;
 	static bool m_coutChange;
+	static int m_dayCount;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

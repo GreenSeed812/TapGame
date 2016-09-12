@@ -81,17 +81,17 @@
                 <PreSize X="0.2287" Y="0.2857" />
                 <FileData Type="Normal" Path="chengjiujindu.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="num" ActionTag="-526378148" Tag="231" IconVisible="False" LeftMargin="293.9674" RightMargin="103.0326" TopMargin="60.5273" BottomMargin="9.4727" LabelText="9999" ctype="TextBMFontObjectData">
-                <Size X="154.0000" Y="77.0000" />
+              <AbstractNodeData Name="num" ActionTag="-526378148" Tag="231" IconVisible="False" LeftMargin="408.9674" RightMargin="103.0326" TopMargin="60.5273" BottomMargin="9.4727" LabelText="0" ctype="TextBMFontObjectData">
+                <Size X="39.0000" Y="77.0000" />
                 <AnchorPoint ScaleX="1.0000" ScaleY="0.5000" />
                 <Position X="447.9674" Y="47.9727" />
                 <Scale ScaleX="0.4000" ScaleY="0.4000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8130" Y="0.3263" />
-                <PreSize X="0.2795" Y="0.5238" />
+                <PreSize X="0.0708" Y="0.5238" />
                 <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="num_0" ActionTag="414910722" Tag="237" IconVisible="False" LeftMargin="442.3992" RightMargin="79.6008" TopMargin="61.4191" BottomMargin="8.5809" LabelText="/" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="num_0" ActionTag="414910722" Tag="237" IconVisible="False" LeftMargin="442.3993" RightMargin="79.6007" TopMargin="61.4204" BottomMargin="8.5796" LabelText="/" ctype="TextBMFontObjectData">
                 <Size X="29.0000" Y="77.0000" />
                 <AnchorPoint ScaleX="0.3688" ScaleY="0.5280" />
                 <Position X="453.0945" Y="49.2356" />
@@ -101,14 +101,14 @@
                 <PreSize X="0.0526" Y="0.5238" />
                 <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="numMax" ActionTag="1720276213" Tag="236" IconVisible="False" LeftMargin="461.9446" RightMargin="-64.9446" TopMargin="60.4984" BottomMargin="9.5016" LabelText="9999" ctype="TextBMFontObjectData">
-                <Size X="154.0000" Y="77.0000" />
+              <AbstractNodeData Name="numMax" ActionTag="1720276213" Tag="236" IconVisible="False" LeftMargin="461.9446" RightMargin="50.0554" TopMargin="60.4984" BottomMargin="9.5016" LabelText="0" ctype="TextBMFontObjectData">
+                <Size X="39.0000" Y="77.0000" />
                 <AnchorPoint ScaleY="0.5000" />
                 <Position X="461.9446" Y="48.0016" />
                 <Scale ScaleX="0.4000" ScaleY="0.4000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8384" Y="0.3265" />
-                <PreSize X="0.2795" Y="0.5238" />
+                <PreSize X="0.0708" Y="0.5238" />
                 <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="info" ActionTag="-1842741695" Tag="232" IconVisible="False" LeftMargin="58.3173" RightMargin="332.6827" TopMargin="18.3445" BottomMargin="85.6555" LeftEage="52" RightEage="52" TopEage="14" BottomEage="14" Scale9OriginX="52" Scale9OriginY="14" Scale9Width="56" Scale9Height="15" ctype="ImageViewObjectData">

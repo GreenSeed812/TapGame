@@ -75,7 +75,7 @@ public:
 	void setServantBaseDps(MyNum dps, int id);
 	void setSkillexploreProb(int prob){ m_skillexploreProb = prob; }
 	void setSkillTap(float t){ m_skillTap = t; }
-	void setWave(int wave){ m_waveNow = wave;  }
+	void setWave(int wave){ m_waveNow = wave; }
 	void skillLevelUp(int i){ m_skillLevel[i-1]++; }
 	void subexplorPer(int per){ m_explorePer -= per; }
 	void subexploreProb(int prob){ m_exploreProb -= prob; }
@@ -88,6 +88,10 @@ public:
 	void unlockSernantSkill(int servantid, int skillid);
 	void saveUserData();
 	bool init();
+	void setLeaveTime(int time){ m_leaveTime = time; }
+	int getLeaveTime(){ return m_leaveTime; }
+	std::string getName(){ return m_name; }
+	void setName(std::string name){ m_name = name; }
 private:
 	int m_waveNow;
 	int m_level;
@@ -128,5 +132,7 @@ private:
 	float m_latestTapMul;
 	int m_diamond;
 	int m_artifactStar[29];
+	int m_leaveTime;
+	std::string m_name;
 };
 #endif

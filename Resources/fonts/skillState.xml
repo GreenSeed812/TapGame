@@ -10,5 +10,17 @@
 	<string>兑换次数已用尽！</string>
 	<key>text2</key>
 	<string>钻石不足！</string>
+	<key>buy</key>
+	<string>购买</string>
+	<key>use</key>
+	<string>使用</string>
+	<key>A</key>
+	<string>海潮</string>
+	<key>B</key>
+	<string>闪电</string>
+	<key>C</key>
+	<string>火舌</string>
+	<key>D</key>
+	<string>风怒</string>
 </dict>
 </plist>

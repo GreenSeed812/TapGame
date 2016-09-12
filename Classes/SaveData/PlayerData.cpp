@@ -37,17 +37,14 @@ PlayerData::PlayerData()
 	m_hpNow.number = hp.number;
 	m_hpNow.Mathbit = hp.Mathbit;
 	
-	m_gold.number = 10;
-	m_gold.Mathbit = 1;
+	m_gold.number = 100;
+	m_gold.Mathbit = 5;
 
 	m_basedps.number = 1;
 	m_basedps.Mathbit = 0;
 
 	m_heroDpsAll.number = 1;
 	m_heroDpsAll.Mathbit = 0;
-
-	m_gold.number = 1;
-	m_gold.Mathbit = 30;
 
 	m_latest.m_dropData = SqLite::getInstance()->getDropData();
 	m_latest.m_HpData = SqLite::getInstance()->getHpData();
@@ -72,6 +69,8 @@ PlayerData::PlayerData()
 		m_skillOpen[i] = false;
 	}
 	m_skillData = SqLite::getInstance()->getSkillData();
+
+	
 }
 
 PlayerData::~PlayerData()

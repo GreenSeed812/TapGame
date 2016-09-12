@@ -648,8 +648,7 @@ void HelloWorld::killBoss()
 			{
 				bossBt = bossButton::create();
 				bossButtonNode->addChild(bossBt);
-				bossBt->setName("bt");
-				
+				bossBt->setName("bt");			
 			}
 				
 		}
@@ -674,8 +673,6 @@ void HelloWorld::killBoss()
 		}
 		auto hpnow = PlayerData::getInstance()->getHpNow();
 		armature->getAnimation()->play("Leave");
-		
-
 	}
 	
 }
@@ -1135,7 +1132,17 @@ void HelloWorld::shopItemEff(float dt)
 	{
 	}
 }
-
+void HelloWorld::dayChange()
+{
+	if (m_dayCount < 13 && m_dayCount >= 0)
+	{
+		m_dayCount++;
+	}
+	else
+	{
+		m_dayCount = 0;
+	}
+}
 //void HelloWorld::runAni()
 //{
 //

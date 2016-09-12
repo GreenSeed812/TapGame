@@ -42,7 +42,7 @@ public:
 	static void setBg(bool off_on){ m_bg = off_on; }
 	static void setSou(bool off_on){ m_sou = off_on; }
 	static void changeCount(bool state){ m_coutChange = state; }
-	static void dayChange(){ m_dayCount++; };
+	static void dayChange();
 	static int getDay(){ return m_dayCount; }
 	void initAr();
 	void initSer();

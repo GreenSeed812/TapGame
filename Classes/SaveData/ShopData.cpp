@@ -258,3 +258,13 @@ int ShopData::getCount(int id)
 		return m_fengnu;
 	}
 }
+
+void ShopData::subShopGold(int gold)
+{
+	m_shopGold -= gold; 
+}
+void ShopData::addShopGold(int gold)
+{
+	m_shopGold += gold; 
+}
+

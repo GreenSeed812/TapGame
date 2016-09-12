@@ -58,6 +58,7 @@ void SignLayer::initSignLayer()
 				if (type == Widget::TouchEventType::ENDED)
 				{
 					if (m_receive1)
+					if (m_day == 0 || m_day == 7)
 					{
 						auto gold =Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(),100);
 						PlayerData::getInstance()->addGold(&gold);
@@ -74,6 +75,7 @@ void SignLayer::initSignLayer()
 				if (type == Widget::TouchEventType::ENDED)
 				{
 					if (m_receive2)
+					if (m_day == 1 || m_day == 8)
 					{
 						if (m_day<7)
 						{
@@ -99,9 +101,13 @@ void SignLayer::initSignLayer()
 					{
 						ShopData::getInstance()->addShopGold(10);
 						m_receive3 = false;
-						btn->setEnabled(false);
-						m_day++;
-						HelloWorld::dayChange();
+						if (m_day == 2 || m_day == 9)
+						{
+							ShopData::getInstance()->addShopGold(10);
+							btn->setEnabled(false);
+							m_day++;
+							HelloWorld::dayChange();
+						}
 					}
 				}
 			});
@@ -115,9 +121,14 @@ void SignLayer::initSignLayer()
 						auto gold = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 1000);
 						PlayerData::getInstance()->addGold(&gold);
 						m_receive4 = false;
-						btn->setEnabled(false);
-						m_day++;
-						HelloWorld::dayChange();
+						if (m_day == 3 || m_day == 10)
+						{
+							auto gold = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 1000);
+							PlayerData::getInstance()->addGold(&gold);
+							btn->setEnabled(false);
+							m_day++;
+							HelloWorld::dayChange();
+						}
 					}
 				}
 			});
@@ -127,6 +138,7 @@ void SignLayer::initSignLayer()
 				if (type == Widget::TouchEventType::ENDED)
 				{
 					if (m_receive5)
+					if (m_day == 4 || m_day == 11)
 					{
 						if (m_day<7)
 						{
@@ -141,6 +153,7 @@ void SignLayer::initSignLayer()
 						m_day++;
 						HelloWorld::dayChange();
 					}
+
 				}
 			});
 			break;
@@ -152,9 +165,13 @@ void SignLayer::initSignLayer()
 					{
 						ShopData::getInstance()->addShopGold(50);
 						m_receive6 = false;
-						btn->setEnabled(false);
-						m_day++;
-						HelloWorld::dayChange();
+						if (m_day == 5 || m_day == 12)
+						{
+							ShopData::getInstance()->addShopGold(50);
+							btn->setEnabled(false);
+							m_day++;
+							HelloWorld::dayChange();
+						}
 					}
 				}
 			});
@@ -167,9 +184,13 @@ void SignLayer::initSignLayer()
 					{
 						ArtifactData::getInstance()->addArtiStone(1);
 						m_receive7 = false;
-						btn->setEnabled(false);
-						m_day++;
-						HelloWorld::dayChange();
+						if (m_day == 6 || m_day == 13)
+						{
+							ArtifactData::getInstance()->addArtiStone(1);
+							btn->setEnabled(false);
+							m_day++;
+							HelloWorld::dayChange();
+						}
 					}
 				}
 			});
@@ -180,8 +201,36 @@ void SignLayer::initSignLayer()
 }
 
 void SignLayer::signChange(Ref*ref)
-{
-	m_day = HelloWorld::getDay();
+{	
+	/*if (m_day > 0 && m_day != 7 || m_day > 7)
+	{
+
+	}
+	if (m_day > 1 && m_day != 8 || m_day > 8)
+	{
+
+	}
+	if (m_day > 2 && m_day != 9 || m_day > 9)
+	{
+
+	}
+	if (m_day > 3 && m_day != 10 || m_day > 10)
+	{
+
+	}
+	if (m_day > 4 && m_day != 11 || m_day > 11)
+	{
+
+	}
+	if (m_day > 5 && m_day != 12 || m_day > 12)
+	{
+
+	}
+	if (m_day > 6 && m_day != 13 || m_day > 13)
+	{
+
+	}
+
 	for (size_t i = 0; i < 7; i++)
 	{
 		auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (i + 1)).c_str());
@@ -193,11 +242,11 @@ void SignLayer::signChange(Ref*ref)
 			auto gold = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 100);
 			text->setString(Ruler::getInstance()->showNum(gold));
 		}	
-			break;
+		break;
 		case 1:
 		{
 			auto texts = (Text *)rootNode->getChildByName(StringUtils::format("day%d", (i + 1)).c_str());
-			if (m_day<7)
+			if (m_day < 7)
 			{
 				texts->setString(m_strings["A"].asString());
 			}
@@ -208,7 +257,7 @@ void SignLayer::signChange(Ref*ref)
 		}			
 			break;
 		case 2:
-			text->setString(StringUtils::format("%d",10).c_str());
+			text->setString(StringUtils::format("%d", 10).c_str());
 			break;
 		case 3:
 		{
@@ -219,7 +268,7 @@ void SignLayer::signChange(Ref*ref)
 		case 4:
 		{
 			auto texts = (Text *)rootNode->getChildByName(StringUtils::format("day%d", (i + 1)).c_str());
-			if (m_day<7)
+			if (m_day < 7)
 			{
 				texts->setString(m_strings["B"].asString());
 			}
@@ -233,6 +282,7 @@ void SignLayer::signChange(Ref*ref)
 			text->setString(StringUtils::format("%d", 50).c_str());
 			break;
 		case 6:
+		{
 			text->setString(StringUtils::format("%d", 1).c_str());
 			text->setVisible(false);
 			break;
@@ -271,4 +321,5 @@ void SignLayer::signChange(Ref*ref)
 		}
 	}
 	((Button*)rootNode->getChildByName("btn7"))->setVisible(false);
+			break;*/
 }

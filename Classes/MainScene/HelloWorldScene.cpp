@@ -14,6 +14,7 @@
 #include "MainScene/ArtifactButton.h"
 #include "SaveData/State.h"
 #include "SaveData/MonsterState.h"
+#include "SaveData/OffLineGold.h"
 #include "Ui/settingLayer.h"
 #include "Ui/AchieveLayer.h"
 #include "Ui/MissionLayer.h"
@@ -58,7 +59,7 @@ bool HelloWorld::init()
         return false;
     }
 	
-
+	
 	BgMusic::getInstance()->playBg(true);
 	m_hitlogic = true;
 	m_heroLayer = nullptr;
@@ -69,6 +70,10 @@ bool HelloWorld::init()
 	m_exchangeCount = 5;
 	m_dayCount = 0;
     rootNode = CSLoader::createNode("MainScene.csb");
+	if (!mapInit())
+	{
+		return false;
+	}
 	addChild(rootNode);
 	Slider * hpSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider");
 	hpSlider->setTouchEnabled(false);
@@ -102,6 +107,7 @@ bool HelloWorld::init()
 	TextBMFont* waveNum = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("WaveNum");
 	waveNum->setString(StringUtils::format("%d/10", PlayerData::getInstance()->getWaveNow()));
 	bossBt = nullptr;
+//	OffLineGold::getInstance()->getMillSecond();
     return true;
 }
 void HelloWorld::coinChange(Ref *ref)
@@ -130,27 +136,30 @@ void HelloWorld::coinChange(Ref *ref)
 
 }
 
-void HelloWorld::ArChange(Ref*)
+void HelloWorld::ArChange(Ref* ref)
 {
-	TextBMFont* dps = (TextBMFont*)m_artifactLayer->getChildByName("message")->getChildByName("Dps");
-	auto dpsAll = ArtifactData::getInstance()->getAllDpsMul();
-	dps->setString(StringUtils::format("+%.1f%%", dpsAll * 100).c_str());
-	if (m_artifactLayer)
-	{	
-		auto btn = (Button*)m_artifactLayer->getChildByName("getArtifact");
-		auto arStoneNum = ArtifactData::getInstance()->getArtiStone();
-		auto needStoneNum = ArtifactData::getInstance()->getNeededArStone();
-		TextBMFont* arStone = (TextBMFont*)m_artifactLayer->getChildByName("message")->getChildByName("Resource");
-		arStone->setString(StringUtils::format("%d", arStoneNum).c_str());
-		TextBMFont* subStone = (TextBMFont*)btn->getChildByName("SubAr");
-		subStone->setString(StringUtils::format("%d", needStoneNum).c_str());
-		if ((arStoneNum - needStoneNum) >= 0)
-		{		
-			btn->setEnabled(true);
-		}
-		else
+	if (ref)
+	{
+		TextBMFont* dps = (TextBMFont*)m_artifactLayer->getChildByName("message")->getChildByName("Dps");
+		auto dpsAll = ArtifactData::getInstance()->getAllDpsMul();
+		dps->setString(StringUtils::format("+%.1f%%", dpsAll * 100).c_str());
+		if (m_artifactLayer)
 		{
-			btn->setEnabled(false);
+			auto btn = (Button*)m_artifactLayer->getChildByName("getArtifact");
+			auto arStoneNum = ArtifactData::getInstance()->getArtiStone();
+			auto needStoneNum = ArtifactData::getInstance()->getNeededArStone();
+			TextBMFont* arStone = (TextBMFont*)m_artifactLayer->getChildByName("message")->getChildByName("Resource");
+			arStone->setString(StringUtils::format("%d", arStoneNum).c_str());
+			TextBMFont* subStone = (TextBMFont*)btn->getChildByName("SubAr");
+			subStone->setString(StringUtils::format("%d", needStoneNum).c_str());
+			if ((arStoneNum - needStoneNum) >= 0)
+			{
+				btn->setEnabled(true);
+			}
+			else
+			{
+				btn->setEnabled(false);
+			}
 		}
 	}
 }
@@ -643,8 +652,7 @@ void HelloWorld::killBoss()
 			{
 				bossBt = bossButton::create();
 				bossButtonNode->addChild(bossBt);
-				bossBt->setName("bt");
-				
+				bossBt->setName("bt");			
 			}
 				
 		}
@@ -670,8 +678,6 @@ void HelloWorld::killBoss()
 		}
 		auto hpnow = PlayerData::getInstance()->getHpNow();
 		armature->getAnimation()->play("Leave");
-		
-
 	}
 	
 }
@@ -685,6 +691,8 @@ void HelloWorld::mapChange()
 		spr->setTexture(StringUtils::format("map/bg/%s", map->bg.c_str()));
 		Sprite* mapNow = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapNow");
 		mapNow->setTexture(StringUtils::format("map/icon/%s", map->mapIcon.c_str()));
+		Sprite* mapL = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherL");
+		mapL->runAction(Show::create());
 	}
 	if ((PlayerData::getInstance()->getLevel() + 1) % 5 == 0)
 	{
@@ -692,13 +700,16 @@ void HelloWorld::mapChange()
 		auto map = SqLite::getInstance()->getMapDataByID(mapNum % 8);
 		Sprite* spr = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherR");
 		spr->setTexture(StringUtils::format("map/icon/%s", map->mapIcon.c_str()));
+		Sprite* mapL = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherL");
+		mapL->runAction(Show::create());
 	}
 	if ((PlayerData::getInstance()->getLevel() - 1) % 5 == 0)
 	{
 		auto mapNum = (PlayerData::getInstance()->getLevel() - 1) / 5;
-		auto map = SqLite::getInstance()->getMapDataByID(mapNum % 8);
-		Sprite* spr = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherL");
-		spr->setTexture(StringUtils::format("map/icon/%s", map->mapIcon.c_str()));
+		auto map = SqLite::getInstance()->getMapDataByID(mapNum % 8); 
+		Sprite* mapL = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherL");
+		mapL->setTexture(StringUtils::format("map/icon/%s", map->mapIcon.c_str()));
+		mapL->runAction(Show::create());
 	}
 }
 bool HelloWorld::initDownLayer(Node* &downLayer)
@@ -1156,7 +1167,17 @@ void HelloWorld::shopItemEff(float dt)
 	{
 	}
 }
-
+void HelloWorld::dayChange()
+{
+	if (m_dayCount < 13 && m_dayCount >= 0)
+	{
+		m_dayCount++;
+	}
+	else
+	{
+		m_dayCount = 0;
+	}
+}
 //void HelloWorld::runAni()
 //{
 //
@@ -1174,3 +1195,59 @@ void HelloWorld::shopItemEff(float dt)
 //			MyAnimation::getInstance()->runAoshu(true, rootNode);
 //		}
 //}
+bool HelloWorld::mapInit()
+{
+	if (PlayerData::getInstance()->getLevel() == 0)
+	{
+		Sprite* mapL = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherL");
+		mapL->runAction(Hide::create());
+	}
+	else if (PlayerData::getInstance()->getLevel() % 5 == 0)
+	{
+		auto mapNum = PlayerData::getInstance()->getLevel() / 5;
+		auto map = SqLite::getInstance()->getMapDataByID(mapNum % 8);
+		Sprite* bg = (Sprite*)rootNode->getChildByName("mainBG");
+		bg->setTexture(StringUtils::format("map/bg/%s", map->bg.c_str()));
+		Sprite* mapN = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapNow");
+		mapN->setTexture(StringUtils::format("map/icon/%s", map->mapIcon.c_str()));
+		Sprite* mapR = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherR");
+		mapR->setTexture(StringUtils::format("map/icon/%s", map->mapIcon.c_str()));
+		Sprite* mapL = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherL");
+		auto mapNow = SqLite::getInstance()->getMapDataByID((mapNum - 1) % 8);
+		mapL->setTexture(StringUtils::format("map/icon/%s", mapNow->mapIcon.c_str()));
+		mapL->runAction(Show::create());
+	}
+	else if ((PlayerData::getInstance()->getLevel() + 1) % 5 == 0)
+	{
+		auto mapNum = (PlayerData::getInstance()->getLevel() + 1) / 5;
+		auto map = SqLite::getInstance()->getMapDataByID(mapNum  % 8 );
+		Sprite* spr = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherR");
+		spr->setTexture(StringUtils::format("map/icon/%s", map->mapIcon.c_str()));
+		auto mapNow = SqLite::getInstance()->getMapDataByID((mapNum-1) % 8);
+		Sprite* bg = (Sprite*)rootNode->getChildByName("mainBG");
+		bg->setTexture(StringUtils::format("map/bg/%s", mapNow->bg.c_str()));
+		Sprite* mapL = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherL");
+		mapL->setTexture(StringUtils::format("map/icon/%s", mapNow->mapIcon.c_str()));
+		Sprite* mapN = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapNow");
+		mapN->setTexture(StringUtils::format("map/icon/%s", mapNow->mapIcon.c_str()));
+		mapL->runAction(Show::create());
+
+	}
+	/*if ((PlayerData::getInstance()->getLevel() - 1) % 5 == 0)*/
+	else
+	{
+		auto mapNum = (PlayerData::getInstance()->getLevel() - 1) / 5;
+		auto map = SqLite::getInstance()->getMapDataByID(mapNum % 8);
+		Sprite* spr = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherL");
+		spr->setTexture(StringUtils::format("map/icon/%s", map->mapIcon.c_str()));
+		Sprite* bg = (Sprite*)rootNode->getChildByName("mainBG");
+		bg->setTexture(StringUtils::format("map/bg/%s", map->bg.c_str()));
+		Sprite* mapR = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherR");
+		mapR->setTexture(StringUtils::format("map/icon/%s", map->mapIcon.c_str()));
+		Sprite* mapNow = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapNow");
+		mapNow->setTexture(StringUtils::format("map/icon/%s", map->mapIcon.c_str()));
+		Sprite* mapL = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherL");
+		mapL->runAction(Show::create());
+	}
+	return true;
+}

@@ -1,41 +1,41 @@
-obj/local/armeabi/objs-debug/cocos2dx_internal_static/base/CCEventListenerCustom.o: \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEventListenerCustom.cpp \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEventListenerCustom.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEventListener.h \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/functional \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/memory \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformMacros.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccConfig.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformConfig.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformDefine.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCPlatformDefine-android.h \
- D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/log.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCRef.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEventCustom.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEvent.h
+./obj/local/armeabi/objs-debug/cocos2dx_internal_static/base/CCEventListenerCustom.o: \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./base/CCEventListenerCustom.cpp \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEventListenerCustom.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEventListener.h \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\functional \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\memory \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformMacros.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccConfig.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformConfig.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformDefine.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/android/CCPlatformDefine-android.h \
+  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\android/log.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCRef.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEventCustom.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEvent.h
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEventListenerCustom.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEventListenerCustom.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEventListener.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEventListener.h:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/functional:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\functional:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/memory:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\memory:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformMacros.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformMacros.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccConfig.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccConfig.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformConfig.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformConfig.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformDefine.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformDefine.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCPlatformDefine-android.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/android/CCPlatformDefine-android.h:
 
-D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/log.h:
+D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\android/log.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCRef.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCRef.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEventCustom.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEventCustom.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEvent.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEvent.h:

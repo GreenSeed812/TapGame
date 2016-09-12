@@ -216,10 +216,10 @@
                 <FileData Type="Normal" Path="gongqiao (1).png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="frame1" ActionTag="-625926874" Tag="30" IconVisible="False" LeftMargin="1.8100" RightMargin="-1071.8101" TopMargin="-1918.8490" BottomMargin="199.8490" ctype="SpriteObjectData">
+              <AbstractNodeData Name="frame1" ActionTag="-625926874" Tag="30" IconVisible="False" LeftMargin="-0.9789" RightMargin="-1069.0211" TopMargin="-1918.8490" BottomMargin="199.8490" ctype="SpriteObjectData">
                 <Size X="1070.0000" Y="1719.0000" />
                 <AnchorPoint ScaleX="0.5000" />
-                <Position X="536.8100" Y="199.8490" />
+                <Position X="534.0211" Y="199.8490" />
                 <Scale ScaleX="1.0154" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />

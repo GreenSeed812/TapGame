@@ -236,6 +236,7 @@ void ServantButton::lockState()
 		}
 		else
 		{
+			goldText->setString(Ruler::getInstance()->showNum(gold));
 			bt->setEnabled(false);
 		}
 	}

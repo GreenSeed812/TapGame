@@ -350,11 +350,9 @@ void PlayerButton::upLevelCount()
 	auto levelNow = PlayerData::getInstance()->getPlayerLevel();
 	for (size_t i = levelNow; i < (levelNow + 100); i++)
 	{
-		auto mul = 1 / pow(i, 0.55) - 1 / pow(i, 1.03) + 1;
-		auto gold = Ruler::getInstance()->multiplayUp(m_upGold, mul);
-		upGold = Ruler::getInstance()->addNum(upGold, gold);
 		if (i == levelNow + 10)
 		{
+			upGold = PlayerData::getInstance()->getPlayerlvup10Gold();
 			judge10 = Ruler::getInstance()->subNum(upGold, *PlayerData::getInstance()->getGold());
 			if (Ruler::getInstance()->Zero(judge10))
 			{
@@ -367,6 +365,7 @@ void PlayerButton::upLevelCount()
 			}
 		}
 	}
+	upGold = PlayerData::getInstance()->getPlayerlvup100Gold();
 	judge100 = Ruler::getInstance()->subNum(upGold, *PlayerData::getInstance()->getGold());
 	if (Ruler::getInstance()->Zero(judge100))
 	{

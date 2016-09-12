@@ -41,7 +41,9 @@ public:
 	int getPlayerLevel(){ return m_playerLevel; }
 	MyNum getPlayerlvupDps();
 	MyNum getPlayerlvupGold();
+	MyNum getPlayerlvup10Dps();
 	MyNum getPlayerlvup10Gold();
+	MyNum getPlayerlvup100Dps();
 	MyNum getPlayerlvup100Gold();
 	int getRandNpc(int r);
 	int getRelifeStone();

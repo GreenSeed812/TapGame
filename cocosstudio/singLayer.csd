@@ -6,7 +6,7 @@
       <ObjectData Name="Layer" Tag="126" ctype="GameLayerObjectData">
         <Size X="1080.0000" Y="1920.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="-2099951068" Tag="184" IconVisible="False" LeftMargin="-0.1286" RightMargin="-2.8713" TopMargin="289.9248" BottomMargin="692.0752" LeftEage="357" RightEage="357" TopEage="389" BottomEage="389" Scale9OriginX="357" Scale9OriginY="389" Scale9Width="369" Scale9Height="160" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="bg" ActionTag="-2099951068" Tag="184" IconVisible="False" LeftMargin="1.0483" RightMargin="-4.0483" TopMargin="289.9249" BottomMargin="692.0751" LeftEage="357" RightEage="357" TopEage="389" BottomEage="389" Scale9OriginX="357" Scale9OriginY="389" Scale9Width="369" Scale9Height="160" ctype="ImageViewObjectData">
             <Size X="1083.0000" Y="938.0000" />
             <Children>
               <AbstractNodeData Name="title" ActionTag="1222861925" Tag="185" IconVisible="False" LeftMargin="456.7107" RightMargin="433.2893" TopMargin="18.4579" BottomMargin="863.5421" LeftEage="63" RightEage="63" TopEage="18" BottomEage="18" Scale9OriginX="63" Scale9OriginY="18" Scale9Width="67" Scale9Height="20" ctype="ImageViewObjectData">
@@ -56,10 +56,10 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="541.3714" Y="1161.0752" />
+            <Position X="542.5483" Y="1161.0751" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5013" Y="0.6047" />
+            <PrePosition X="0.5024" Y="0.6047" />
             <PreSize X="1.0028" Y="0.4885" />
             <FileData Type="Normal" Path="shezhibeijing.png" Plist="" />
           </AbstractNodeData>
@@ -350,7 +350,11 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
+<<<<<<< HEAD
           <AbstractNodeData Name="Image_18" ActionTag="653512011" VisibleForFrame="False" Tag="216" IconVisible="False" LeftMargin="461.9800" RightMargin="462.0200" TopMargin="1006.9860" BottomMargin="857.0140" LeftEage="51" RightEage="51" TopEage="18" BottomEage="18" Scale9OriginX="51" Scale9OriginY="18" Scale9Width="54" Scale9Height="20" ctype="ImageViewObjectData">
+=======
+          <AbstractNodeData Name="Image_18" ActionTag="653512011" Tag="216" IconVisible="False" LeftMargin="461.9800" RightMargin="462.0200" TopMargin="1006.9860" BottomMargin="857.0140" LeftEage="51" RightEage="51" TopEage="18" BottomEage="18" Scale9OriginX="51" Scale9OriginY="18" Scale9Width="54" Scale9Height="20" ctype="ImageViewObjectData">
+>>>>>>> d34ca8ce3ec7bc27face01b5de9576a91fc1058e
             <Size X="156.0000" Y="56.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="539.9800" Y="885.0140" />
@@ -370,7 +374,11 @@
             <PreSize X="0.0463" Y="0.0271" />
             <FileData Type="Normal" Path="linghunshi.png" Plist="" />
           </AbstractNodeData>
+<<<<<<< HEAD
           <AbstractNodeData Name="day7" ActionTag="1461597979" VisibleForFrame="False" Tag="218" IconVisible="False" LeftMargin="517.1875" RightMargin="490.8125" TopMargin="1045.3984" BottomMargin="797.6016" LabelText="X1" ctype="TextBMFontObjectData">
+=======
+          <AbstractNodeData Name="day7" ActionTag="1461597979" Tag="218" IconVisible="False" LeftMargin="517.1875" RightMargin="490.8125" TopMargin="1045.3984" BottomMargin="797.6016" LabelText="X1" ctype="TextBMFontObjectData">
+>>>>>>> d34ca8ce3ec7bc27face01b5de9576a91fc1058e
             <Size X="72.0000" Y="77.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="553.1875" Y="836.1016" />

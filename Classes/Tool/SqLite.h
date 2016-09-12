@@ -89,6 +89,8 @@ struct daoju
 	std::string name;
 	std::string effdis;
 	int expense;
+	float time;
+	bool type;
 };
 struct Achieve
 {
@@ -135,7 +137,7 @@ public:
 	double getEff(int i){ return m_skillData.at(i)->initEffect; }
 	double getEffPer(int i){ return m_skillData.at(i)->effPerLevel; }
 	daoju * getItemByID(int id){ return m_daoju.at(id); }
-	Quest * getQuestById(int id){ return m_quest.at(id-1); }
+	Quest * getQuestById(int id){ return m_quest.at(id); }
 	MyNum getServantDpsByID(int i){ return m_servantData.at(i)->dps; }
 	MyNum getServantGoldByID(int i){ return m_servantData.at(i)->gold; }
 	std::string getServantNameByID(int i){ return m_servantData.at(i)->name; }

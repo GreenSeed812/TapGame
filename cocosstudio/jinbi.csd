@@ -156,7 +156,7 @@
             <PreSize X="0.0454" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="countMax" ActionTag="-855488866" Tag="240" IconVisible="False" LeftMargin="674.4084" RightMargin="330.5916" TopMargin="1072.6503" BottomMargin="770.3497" LabelText="X/" ctype="TextBMFontObjectData">
+          <AbstractNodeData Name="countMax" ActionTag="-855488866" Tag="240" IconVisible="False" LeftMargin="674.4084" RightMargin="330.5916" TopMargin="1072.6504" BottomMargin="770.3497" LabelText="X/" ctype="TextBMFontObjectData">
             <Size X="75.0000" Y="77.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="711.9084" Y="808.8497" />
@@ -166,13 +166,13 @@
             <PreSize X="0.0694" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="text" ActionTag="352132752" VisibleForFrame="False" Tag="432" IconVisible="False" LeftMargin="432.6553" RightMargin="435.3447" TopMargin="878.4138" BottomMargin="983.5861" FontSize="48" LabelText="钻石不足！" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="text" ActionTag="352132752" VisibleForFrame="False" Tag="432" IconVisible="False" LeftMargin="432.6553" RightMargin="435.3447" TopMargin="607.5470" BottomMargin="1254.4530" FontSize="48" LabelText="钻石不足！" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="212.0000" Y="58.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="538.6553" Y="1012.5861" />
+            <Position X="538.6553" Y="1283.4530" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="245" G="210" B="159" />
-            <PrePosition X="0.4988" Y="0.5274" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4988" Y="0.6685" />
             <PreSize X="0.1963" Y="0.0302" />
             <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />

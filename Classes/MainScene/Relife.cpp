@@ -64,6 +64,8 @@ void Relife::initRelife()
 		{
 			AchieveData::getInstance()->relife();
 			PlayerData::getInstance()->relife();
+			m_node->removeFromParent();
+			cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 		}
 	});
 }

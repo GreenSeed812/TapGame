@@ -296,174 +296,174 @@
             <PreSize X="0.8167" Y="0.0089" />
             <FileData Type="Normal" Path="xiaotiaotiao.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="playerLv" ActionTag="313258684" Tag="1179" IconVisible="False" LeftMargin="771.1776" RightMargin="154.8224" TopMargin="238.0530" BottomMargin="1604.9470" LabelText="9999" ctype="TextBMFontObjectData">
-            <Size X="154.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="848.1776" Y="1643.4470" />
+          <AbstractNodeData Name="playerLv" ActionTag="313258684" Tag="1181" IconVisible="False" LeftMargin="795.3017" RightMargin="245.6983" TopMargin="238.0530" BottomMargin="1604.9470" LabelText="0" ctype="TextBMFontObjectData">
+            <Size X="39.0000" Y="77.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="795.3017" Y="1643.4470" />
             <Scale ScaleX="0.6867" ScaleY="0.6867" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7853" Y="0.8560" />
-            <PreSize X="0.1426" Y="0.0401" />
+            <PrePosition X="0.7364" Y="0.8560" />
+            <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ServantLv" ActionTag="1985279397" Tag="1182" IconVisible="False" LeftMargin="772.9999" RightMargin="153.0001" TopMargin="293.7045" BottomMargin="1549.2955" LabelText="9999" ctype="TextBMFontObjectData">
-            <Size X="154.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="849.9999" Y="1587.7955" />
+          <AbstractNodeData Name="ServantLv" ActionTag="1985279397" Tag="1182" IconVisible="False" LeftMargin="797.1240" RightMargin="243.8760" TopMargin="293.7045" BottomMargin="1549.2955" LabelText="0" ctype="TextBMFontObjectData">
+            <Size X="39.0000" Y="77.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="797.1240" Y="1587.7955" />
             <Scale ScaleX="0.6867" ScaleY="0.6867" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7870" Y="0.8270" />
-            <PreSize X="0.1426" Y="0.0401" />
+            <PrePosition X="0.7381" Y="0.8270" />
+            <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="gold" ActionTag="478324483" Tag="1183" IconVisible="False" LeftMargin="772.9999" RightMargin="153.0001" TopMargin="348.4141" BottomMargin="1494.5859" LabelText="9999" ctype="TextBMFontObjectData">
-            <Size X="154.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="849.9999" Y="1533.0859" />
+          <AbstractNodeData Name="gold" ActionTag="478324483" Tag="1183" IconVisible="False" LeftMargin="797.1240" RightMargin="243.8760" TopMargin="348.4141" BottomMargin="1494.5859" LabelText="0" ctype="TextBMFontObjectData">
+            <Size X="39.0000" Y="77.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="797.1240" Y="1533.0859" />
             <Scale ScaleX="0.6867" ScaleY="0.6867" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7870" Y="0.7985" />
-            <PreSize X="0.1426" Y="0.0401" />
+            <PrePosition X="0.7381" Y="0.7985" />
+            <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Crit" ActionTag="52459770" Tag="1184" IconVisible="False" LeftMargin="772.9999" RightMargin="153.0001" TopMargin="406.1211" BottomMargin="1436.8789" LabelText="9999" ctype="TextBMFontObjectData">
-            <Size X="154.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="849.9999" Y="1475.3789" />
+          <AbstractNodeData Name="Crit" ActionTag="52459770" Tag="1184" IconVisible="False" LeftMargin="797.1240" RightMargin="243.8760" TopMargin="406.1211" BottomMargin="1436.8789" LabelText="0" ctype="TextBMFontObjectData">
+            <Size X="39.0000" Y="77.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="797.1240" Y="1475.3789" />
             <Scale ScaleX="0.6867" ScaleY="0.6867" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7870" Y="0.7684" />
-            <PreSize X="0.1426" Y="0.0401" />
+            <PrePosition X="0.7381" Y="0.7684" />
+            <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="critHurt" ActionTag="1406195441" Tag="1185" IconVisible="False" LeftMargin="772.9999" RightMargin="153.0001" TopMargin="461.4236" BottomMargin="1381.5764" LabelText="9999" ctype="TextBMFontObjectData">
-            <Size X="154.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="849.9999" Y="1420.0764" />
+          <AbstractNodeData Name="critHurt" ActionTag="1406195441" Tag="1185" IconVisible="False" LeftMargin="797.1240" RightMargin="243.8760" TopMargin="461.4236" BottomMargin="1381.5764" LabelText="0" ctype="TextBMFontObjectData">
+            <Size X="39.0000" Y="77.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="797.1240" Y="1420.0764" />
             <Scale ScaleX="0.6867" ScaleY="0.6867" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7870" Y="0.7396" />
-            <PreSize X="0.1426" Y="0.0401" />
+            <PrePosition X="0.7381" Y="0.7396" />
+            <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="relifeTime" ActionTag="-1031203380" Tag="1186" IconVisible="False" LeftMargin="772.9999" RightMargin="153.0001" TopMargin="517.6842" BottomMargin="1325.3158" LabelText="9999" ctype="TextBMFontObjectData">
-            <Size X="154.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="849.9999" Y="1363.8158" />
+          <AbstractNodeData Name="relifeTime" ActionTag="-1031203380" Tag="1186" IconVisible="False" LeftMargin="797.1240" RightMargin="243.8760" TopMargin="517.6842" BottomMargin="1325.3158" LabelText="0" ctype="TextBMFontObjectData">
+            <Size X="39.0000" Y="77.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="797.1240" Y="1363.8158" />
             <Scale ScaleX="0.6867" ScaleY="0.6867" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7870" Y="0.7103" />
-            <PreSize X="0.1426" Y="0.0401" />
+            <PrePosition X="0.7381" Y="0.7103" />
+            <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="playerLvZ" ActionTag="1651589274" Tag="1187" IconVisible="False" LeftMargin="773.0007" RightMargin="152.9993" TopMargin="886.0980" BottomMargin="956.9020" LabelText="9999" ctype="TextBMFontObjectData">
-            <Size X="154.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="850.0007" Y="995.4020" />
+          <AbstractNodeData Name="playerLvZ" ActionTag="1651589274" Tag="1187" IconVisible="False" LeftMargin="797.1248" RightMargin="243.8752" TopMargin="886.0980" BottomMargin="956.9020" LabelText="0" ctype="TextBMFontObjectData">
+            <Size X="39.0000" Y="77.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="797.1248" Y="995.4020" />
             <Scale ScaleX="0.6867" ScaleY="0.6867" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7870" Y="0.5184" />
-            <PreSize X="0.1426" Y="0.0401" />
+            <PrePosition X="0.7381" Y="0.5184" />
+            <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="goldZ" ActionTag="367307313" Tag="1188" IconVisible="False" LeftMargin="773.0007" RightMargin="152.9993" TopMargin="935.4413" BottomMargin="907.5587" LabelText="9999" ctype="TextBMFontObjectData">
-            <Size X="154.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="850.0007" Y="946.0587" />
+          <AbstractNodeData Name="goldZ" ActionTag="367307313" Tag="1188" IconVisible="False" LeftMargin="797.1248" RightMargin="243.8752" TopMargin="935.4413" BottomMargin="907.5587" LabelText="0" ctype="TextBMFontObjectData">
+            <Size X="39.0000" Y="77.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="797.1248" Y="946.0587" />
             <Scale ScaleX="0.6867" ScaleY="0.6867" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7870" Y="0.4927" />
-            <PreSize X="0.1426" Y="0.0401" />
+            <PrePosition X="0.7381" Y="0.4927" />
+            <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="clickNum" ActionTag="-1352527840" Tag="1189" IconVisible="False" LeftMargin="773.0007" RightMargin="152.9993" TopMargin="990.9675" BottomMargin="852.0325" LabelText="9999" ctype="TextBMFontObjectData">
-            <Size X="154.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="850.0007" Y="890.5325" />
+          <AbstractNodeData Name="clickNum" ActionTag="-1352527840" Tag="1189" IconVisible="False" LeftMargin="797.1248" RightMargin="243.8752" TopMargin="990.9675" BottomMargin="852.0325" LabelText="0" ctype="TextBMFontObjectData">
+            <Size X="39.0000" Y="77.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="797.1248" Y="890.5325" />
             <Scale ScaleX="0.6867" ScaleY="0.6867" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7870" Y="0.4638" />
-            <PreSize X="0.1426" Y="0.0401" />
+            <PrePosition X="0.7381" Y="0.4638" />
+            <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="monsterNum" ActionTag="-723653174" Tag="1190" IconVisible="False" LeftMargin="773.0007" RightMargin="152.9993" TopMargin="1044.6152" BottomMargin="798.3848" LabelText="9999" ctype="TextBMFontObjectData">
-            <Size X="154.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="850.0007" Y="836.8848" />
+          <AbstractNodeData Name="monsterNum" ActionTag="-723653174" Tag="1190" IconVisible="False" LeftMargin="797.1248" RightMargin="243.8752" TopMargin="1044.6152" BottomMargin="798.3848" LabelText="0" ctype="TextBMFontObjectData">
+            <Size X="39.0000" Y="77.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="797.1248" Y="836.8848" />
             <Scale ScaleX="0.6867" ScaleY="0.6867" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7870" Y="0.4359" />
-            <PreSize X="0.1426" Y="0.0401" />
+            <PrePosition X="0.7381" Y="0.4359" />
+            <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="monsterRareNum" ActionTag="-857767594" Tag="1191" IconVisible="False" LeftMargin="773.0007" RightMargin="152.9993" TopMargin="1098.2644" BottomMargin="744.7356" LabelText="9999" ctype="TextBMFontObjectData">
-            <Size X="154.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="850.0007" Y="783.2356" />
+          <AbstractNodeData Name="monsterRareNum" ActionTag="-857767594" Tag="1191" IconVisible="False" LeftMargin="797.1248" RightMargin="243.8752" TopMargin="1098.2644" BottomMargin="744.7356" LabelText="0" ctype="TextBMFontObjectData">
+            <Size X="39.0000" Y="77.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="797.1248" Y="783.2356" />
             <Scale ScaleX="0.6867" ScaleY="0.6867" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7870" Y="0.4079" />
-            <PreSize X="0.1426" Y="0.0401" />
+            <PrePosition X="0.7381" Y="0.4079" />
+            <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="boosNum" ActionTag="-1992833139" Tag="1192" IconVisible="False" LeftMargin="773.0007" RightMargin="152.9993" TopMargin="1157.7808" BottomMargin="685.2192" LabelText="9999" ctype="TextBMFontObjectData">
-            <Size X="154.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="850.0007" Y="723.7192" />
+          <AbstractNodeData Name="boosNum" ActionTag="-1992833139" Tag="1192" RotationSkewX="-1.0695" RotationSkewY="-1.0695" IconVisible="False" LeftMargin="797.1248" RightMargin="243.8752" TopMargin="1157.7808" BottomMargin="685.2192" LabelText="0" ctype="TextBMFontObjectData">
+            <Size X="39.0000" Y="77.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="797.1248" Y="723.7192" />
             <Scale ScaleX="0.6867" ScaleY="0.6867" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7870" Y="0.3769" />
-            <PreSize X="0.1426" Y="0.0401" />
+            <PrePosition X="0.7381" Y="0.3769" />
+            <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="critNum" ActionTag="943912849" Tag="1193" IconVisible="False" LeftMargin="773.0007" RightMargin="152.9993" TopMargin="1211.6848" BottomMargin="631.3151" LabelText="9999" ctype="TextBMFontObjectData">
-            <Size X="154.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="850.0007" Y="669.8151" />
+          <AbstractNodeData Name="critNum" ActionTag="943912849" Tag="1193" IconVisible="False" LeftMargin="797.1248" RightMargin="243.8752" TopMargin="1211.6848" BottomMargin="631.3151" LabelText="0" ctype="TextBMFontObjectData">
+            <Size X="39.0000" Y="77.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="797.1248" Y="669.8151" />
             <Scale ScaleX="0.6867" ScaleY="0.6867" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7870" Y="0.3489" />
-            <PreSize X="0.1426" Y="0.0401" />
+            <PrePosition X="0.7381" Y="0.3489" />
+            <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="maxLv" ActionTag="1521668854" Tag="1194" IconVisible="False" LeftMargin="773.0007" RightMargin="152.9993" TopMargin="1270.1504" BottomMargin="572.8496" LabelText="9999" ctype="TextBMFontObjectData">
-            <Size X="154.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="850.0007" Y="611.3496" />
+          <AbstractNodeData Name="maxLv" ActionTag="1521668854" Tag="1194" IconVisible="False" LeftMargin="797.1249" RightMargin="243.8751" TopMargin="1273.0017" BottomMargin="569.9984" LabelText="0" ctype="TextBMFontObjectData">
+            <Size X="39.0000" Y="77.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="797.1249" Y="608.4984" />
             <Scale ScaleX="0.6867" ScaleY="0.6867" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7870" Y="0.3184" />
-            <PreSize X="0.1426" Y="0.0401" />
+            <PrePosition X="0.7381" Y="0.3169" />
+            <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="relifeNum" ActionTag="1501698155" Tag="1195" IconVisible="False" LeftMargin="773.0007" RightMargin="152.9993" TopMargin="1323.4929" BottomMargin="519.5070" LabelText="9999" ctype="TextBMFontObjectData">
-            <Size X="154.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="850.0007" Y="558.0070" />
+          <AbstractNodeData Name="relifeNum" ActionTag="1501698155" Tag="1195" IconVisible="False" LeftMargin="797.1249" RightMargin="243.8751" TopMargin="1326.3442" BottomMargin="516.6558" LabelText="0" ctype="TextBMFontObjectData">
+            <Size X="39.0000" Y="77.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="797.1249" Y="555.1558" />
             <Scale ScaleX="0.6867" ScaleY="0.6867" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7870" Y="0.2906" />
-            <PreSize X="0.1426" Y="0.0401" />
+            <PrePosition X="0.7381" Y="0.2891" />
+            <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="playDays" ActionTag="-1846577854" Tag="1196" IconVisible="False" LeftMargin="773.0007" RightMargin="152.9993" TopMargin="1378.0824" BottomMargin="464.9176" LabelText="9999" ctype="TextBMFontObjectData">
-            <Size X="154.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="850.0007" Y="503.4176" />
+          <AbstractNodeData Name="playDays" ActionTag="-1846577854" Tag="1196" IconVisible="False" LeftMargin="797.1249" RightMargin="243.8751" TopMargin="1380.9336" BottomMargin="462.0663" LabelText="0" ctype="TextBMFontObjectData">
+            <Size X="39.0000" Y="77.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="797.1249" Y="500.5663" />
             <Scale ScaleX="0.6867" ScaleY="0.6867" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7870" Y="0.2622" />
-            <PreSize X="0.1426" Y="0.0401" />
+            <PrePosition X="0.7381" Y="0.2607" />
+            <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="maxSerNum" ActionTag="-329943446" Tag="1197" IconVisible="False" LeftMargin="773.0007" RightMargin="152.9993" TopMargin="1428.7311" BottomMargin="414.2689" LabelText="9999" ctype="TextBMFontObjectData">
-            <Size X="154.0000" Y="77.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="850.0007" Y="452.7689" />
+          <AbstractNodeData Name="maxSerNum" ActionTag="-329943446" Tag="1197" IconVisible="False" LeftMargin="797.1248" RightMargin="243.8752" TopMargin="1428.7311" BottomMargin="414.2689" LabelText="0" ctype="TextBMFontObjectData">
+            <Size X="39.0000" Y="77.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="797.1248" Y="452.7689" />
             <Scale ScaleX="0.6867" ScaleY="0.6867" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7870" Y="0.2358" />
-            <PreSize X="0.1426" Y="0.0401" />
+            <PrePosition X="0.7381" Y="0.2358" />
+            <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="esc" ActionTag="1496403351" Tag="177" IconVisible="False" LeftMargin="912.9245" RightMargin="89.0755" TopMargin="13.5544" BottomMargin="1826.4456" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="4" BottomEage="4" Scale9OriginX="15" Scale9OriginY="4" Scale9Width="48" Scale9Height="72" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">

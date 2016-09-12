@@ -37,17 +37,14 @@ PlayerData::PlayerData()
 	m_hpNow.number = hp.number;
 	m_hpNow.Mathbit = hp.Mathbit;
 	
-	m_gold.number = 10;
-	m_gold.Mathbit = 1;
+	m_gold.number = 1000;
+	m_gold.Mathbit = 0;
 
 	m_basedps.number = 1;
 	m_basedps.Mathbit = 0;
 
 	m_heroDpsAll.number = 1;
 	m_heroDpsAll.Mathbit = 0;
-
-	m_gold.number = 1;
-	m_gold.Mathbit = 30;
 
 	m_latest.m_dropData = SqLite::getInstance()->getDropData();
 	m_latest.m_HpData = SqLite::getInstance()->getHpData();
@@ -72,6 +69,8 @@ PlayerData::PlayerData()
 		m_skillOpen[i] = false;
 	}
 	m_skillData = SqLite::getInstance()->getSkillData();
+
+	
 }
 
 PlayerData::~PlayerData()
@@ -257,7 +256,7 @@ MyNum PlayerData::getPlayerlvupDps()
 	else
 	{
 		m_upDps  = SqLite::getInstance()->getDps(6);
-		for (int i = 7; i <= m_playerLevel; i++)
+		for (int i = 7; i < m_playerLevel; i++)
 		{
 			double f = (1 + 1 / std::pow((double)m_playerLevel, 0.6) - 1 / pow((double)m_playerLevel, 1.008));
 			m_upDps = Ruler::getInstance()->multiplay(m_upDps, f);
@@ -283,7 +282,7 @@ MyNum PlayerData::getPlayerlvup10Gold()
 	MyNum m_up10Gold;
 	m_up10Gold.number = 0;
 	m_up10Gold.Mathbit = 0;
-	auto m_upGold = getPlayerlvup10Gold();
+	auto m_upGold = getPlayerlvupGold();
 	for (int i = 1; i <= 10; i++)
 	{
 		m_up10Gold = Ruler::getInstance()->addNum(m_upGold, m_up10Gold);
@@ -298,7 +297,7 @@ MyNum PlayerData::getPlayerlvup100Gold()
 	MyNum m_up100Gold;
 	m_up100Gold.number = 0;
 	m_up100Gold.Mathbit = 0;
-	auto m_upGold = getPlayerlvup100Gold();
+	auto m_upGold = getPlayerlvupGold();
 	for (int i = 1; i <= 100; i++)
 	{
 		m_up100Gold = Ruler::getInstance()->addNum(m_upGold, m_up100Gold);
@@ -849,7 +848,6 @@ void PlayerData::saveUserData()
 	document.AddMember("m_servantSkill30", m_servantSkill[30], allocator);
 	document.AddMember("m_servantSkill31", m_servantSkill[31], allocator);
 	document.AddMember("m_servantSkill32", m_servantSkill[32], allocator);
-
 	
 	ArtifactData::getInstance()->saveUserDefault(document);
 	AchieveData::getInstance()->saveUserDefault(document);
@@ -890,10 +888,8 @@ MyNum PlayerData::getServantUnlockGold(int id,int skillid)
 
 	for (int i = 1; i <= SqLite::getInstance()->m_servantUnlock.at(skillid - 1); i++)
 	{
-
 		auto mul = 1 + 1 / (pow(i + 1, 0.45) - 1 / pow(i + 1, 6.13));
 		m_upGold = Ruler::getInstance()->multiplay(m_upGold, mul);
-
 	}
 	m_upGold = Ruler::getInstance()->multiplay(m_upGold, (1 - ArtifactData::getInstance()->getSSUD()));
 	m_upGold = Ruler::getInstance()->multiplay(m_upGold, 5);

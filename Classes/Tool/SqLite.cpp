@@ -570,6 +570,8 @@ void SqLite::readDaoju()
 		std::string name = "name";
 		std::string effdis = "effdis";
 		std::string expense = "expense";
+		std::string time = "time";
+		std::string type = "type";
 		auto index = nColum;
 		for (int i = 0; i < nRow; i++)
 		{
@@ -584,6 +586,10 @@ void SqLite::readDaoju()
 					dj->effdis = dbResult[index];
 				if (expense.compare(dbResult[j]) == 0)
 					dj->expense = atoi(dbResult[index]);
+				if (time.compare(dbResult[j]) == 0)
+					dj->time = atof(dbResult[index]);
+				if (type.compare(dbResult[j]) == 0)
+					dj->type = atoi(dbResult[index]);
 				++index;
 			}
 			m_daoju.push_back(dj);

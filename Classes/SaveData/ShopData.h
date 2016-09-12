@@ -1,6 +1,7 @@
 #ifndef _ShopData_H_
 #define _ShopData_H_
 #include<cocos2d.h>
+using namespace cocos2d;
 class ShopData
 {
 public:
@@ -8,9 +9,16 @@ public:
 	void useItemByID(int);
 	void buyItemByID(int);
 	int getShopGold(){ return m_shopGold; }
+	void stopItemById(int i);
 	void subShopGold(int gold){ m_shopGold -= gold; }
 	void addShopGold(int gold){ m_shopGold += gold; }
 	bool getItemBeUsedById(int id);
+	float getexploreProb(float prob){ return m_exploreProb; }
+	float gettapPer(){ return m_tapPer; }
+	void setexploreProb(float prob){ m_exploreProb = prob; }
+	void settapPer(float per){ m_tapPer = per; }
+	int getCount(int id);
+	
 private:
 	ShopData();
 	~ShopData();
@@ -22,6 +30,7 @@ private:
 	bool m_keepGodPowerS;
 	bool m_refreshS;
 	bool m_whosyourdaddyS;
+	bool m_treasurebayS;
 	bool m_luckyCoinS;
 	bool m_kuangluanS;
 	bool m_relifeS;
@@ -30,7 +39,8 @@ private:
 	int m_shandian;
 	int m_huoshe;
 	int m_fengnu;
-
+	float m_exploreProb;
+	float m_tapPer;
 };
 
 

@@ -65,6 +65,7 @@ private:
 	int m_artifactStone;
 	int m_artifactNum;
 	int m_star;
+	int m_fiveStar;
 	float m_AllDpsMul;
 	std::vector<ArtiHave*> m_artifacts;
 	float m_dpsexper;

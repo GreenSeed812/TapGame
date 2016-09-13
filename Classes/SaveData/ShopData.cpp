@@ -1,23 +1,8 @@
 #include "ShopData.h"
+#include "Tool/SqLite.h"
 static ShopData* g_SD = nullptr;
 ShopData::ShopData()
-	:m_shopGold(0)
-	, m_haiChao(0)
-	, m_shandian(0)
-	, m_huoshe(0)
-	, m_fengnu(0)
-	,m_haichaoS(false)
-	,m_shandianS(false)
-	,m_huosheS(false)
-	,m_fengnuS(false)
-	,m_bankS(false)
-	,m_keepGodPowerS(false)
-	,m_refreshS(false)
-	,m_whosyourdaddyS(false)
-	,m_treasurebayS(false)
-	,m_luckyCoinS(false)
-	,m_kuangluanS(false)
-	,m_relifeS(false)
+:m_shopGold(9999)
 {
 }
 
@@ -31,232 +16,53 @@ ShopData* ShopData::getInstance()
 	if (!g_SD)
 	{
 		g_SD = new ShopData();
+		g_SD->init();
 	}
 	return g_SD;
 }
+void ShopData::init()
+{
+	for (int i = 0; i < 13; i++)
+	{
+		m_items[i] = new ItemData();
+		m_items[i]->ID = i;
+		m_items[i]->isUsing = false;
+		m_items[i]->itemNum = 0;
+		m_items[i]->leftTime = SqLite::getInstance()->getItemByID(i)->time;
+		
+	}
+}
 void ShopData::useItemByID(int id)
 {
-	switch (id+1)
+	if (id < 4)
 	{
-	case 1:
-		m_haiChao--;
-		m_haichaoS = true;
-		break;
-	case 2:
-		m_shandian--;
-		m_shandianS = true;
-		break;
-	case 3:
-		m_huoshe--;
-		m_huosheS = true;
-		break;
-	case 4:
-		m_fengnu--;
-		m_fengnuS = true;
-		break;
+		m_items[id]->isUsing = true;
 	}
 }
 void ShopData::buyItemByID(int id)
 {
-	id += 1;
-	if (id == 1)
+	if (id < 4)
 	{
-		m_haiChao++;
-		m_haichaoS = false;
+		m_items[id]->itemNum++;
 	}
-	else if (id == 2)
+	else
 	{
-		m_shandian++;
-		m_shandianS = false;
+		m_items[id]->isUsing = true;
 	}
-	else if (id == 3)
-	{
-		m_huoshe++;
-		m_huosheS = false;
-	}
-	else if (id == 4)
-	{
-		m_fengnu++;
-		m_fengnuS = false;
-	}
-	else if (id == 5)
-	{
-		m_bankS = true;
-	}
-	else if (id == 6)
-	{
-		m_keepGodPowerS = true;
-	}
-	else if (id == 7)
-	{
-		m_refreshS = true;
-	}
-	else if (id == 8)
-	{
-		return;
-	}
-	else if (id == 9)
-	{
-		return;
-	}
-	else if (id == 10)
-	{
-		m_relifeS = true;
-	}
-	else if (id == 11)
-	{
-		m_whosyourdaddyS = true;
-	}
-	else if (id == 12)
-	{
-		m_treasurebayS = true;
-		
-	}
-	else if (id == 13)
-	{
-		m_luckyCoinS = true;
-	}
-	else if (id == 14)
-	{
-		m_kuangluanS = true;
-	}
+
 }
 bool ShopData::getItemBeUsedById(int id)
 {
-	id += 1;
-	if (id == 1)
-	{
-		return m_haichaoS;
-	}
-	else if (id == 2)
-	{
-		return m_shandianS;
-	}
-	else if (id == 3)
-	{
-		return m_huosheS;
-	}
-	else if (id == 4)
-	{
-		return m_fengnuS;
-	}
-	else if (id == 5)
-	{
-		return m_bankS;
-	}
-	else if (id == 6)
-	{
-		return m_keepGodPowerS;
-	}
-	else if (id == 7)
-	{
-		return m_refreshS;
-	}
-	else if (id == 8)
-	{
-		return 0;
-	}
-	else if (id == 9)
-	{
-		return 0;
-	}
-	else if (id == 10)
-	{
-		return m_relifeS;
-	}
-	else if (id == 11)
-	{
-		return m_whosyourdaddyS;
-	}
-	else if (id == 12)
-	{
-		return m_treasurebayS ;
-
-	}
-	else if (id == 13)
-	{
-		return m_luckyCoinS;
-	}
-	else if (id == 14)
-	{
-		return m_kuangluanS;
-	}
-
+	return m_items[id]->isUsing;
 }
 void ShopData::stopItemById(int id)
 {
-	id += 1;
-	if (id == 1)
-	{
-		m_haichaoS = false;
-	}
-	else if (id == 2)
-	{
-		m_shandianS = false;
-	}
-	else if (id == 3)
-	{
-		m_huosheS = false;
-	}
-	else if (id == 4)
-	{
-		m_fengnuS = false;
-	}
-	else if (id == 5)
-	{
-		m_bankS = false;
-	}
-	else if (id == 6)
-	{
-		m_keepGodPowerS = false;
-	}
-	else if (id == 7)
-	{
-		m_refreshS = false;
-	}
-	else if (id == 8)
-	{
-
-	}
-	else if (id == 9)
-	{
-
-	}
-	else if (id == 10)
-	{
-		m_relifeS = false;
-	}
-	else if (id == 11)
-	{
-		m_whosyourdaddyS = false;
-	}
-	else if (id == 12)
-	{
-		m_treasurebayS = false;
-	}
-	else if (id == 13)
-	{
-		m_luckyCoinS = false;
-	}
-	else if (id == 14)
-	{
-		m_kuangluanS = false;
-	}
+	m_items[id]->isUsing = false;
 }
 
 int ShopData::getCount(int id)
 {
-	switch (id+1)
-	{
-	case 1:
-		return m_haiChao;
-	case 2:
-		return m_shandian;
-	case 3:
-		return m_huoshe;
-	case 4:
-		return m_fengnu;
-	}
+	return m_items[id]->leftTime;
 }
 
 void ShopData::subShopGold(int gold)

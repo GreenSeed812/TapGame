@@ -28,6 +28,7 @@ MyAnimation* MyAnimation::getInstance()
 	if (m_animation == nullptr)
 	{
 		m_animation = new MyAnimation();
+		m_animation->initXiangyunani();
 	}
 	return m_animation;
 }
@@ -63,4 +64,26 @@ MyAnimation* MyAnimation::getInstance()
 void MyAnimation::setPos()
 {
 
+}
+void MyAnimation::initXiangyunani()
+{
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("SpecialEffect/xiangyun.plist");
+	m_xiangyunani = Animation::create();
+	for (int i = 0; i < 40; i++)
+	{
+		auto str = StringUtils::format("xiangyun%02d.png", i);
+		m_xiangyunani->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(StringUtils::format("xiangyun%02d.png", i)));
+	}
+	m_xiangyunani->setDelayPerUnit(0.0416f);
+
+	m_xiangyunani->retain();
+}
+Animate* MyAnimation::getAnimate()
+{
+	return Animate::create(m_xiangyunani);
+}
+
+Animation * MyAnimation::getxiangyunAni()
+{
+	return m_xiangyunani;
 }

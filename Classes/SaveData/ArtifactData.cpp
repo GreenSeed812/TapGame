@@ -1,6 +1,7 @@
 #include "ArtifactData.h"
 #include "math.h"
 #include "Tool/SqLite.h"
+#include "PlayerData.h"
 #include <cocos2d.h>
 static ArtifactData* g_ar = nullptr;
 ArtifactData* ArtifactData::getInstance()
@@ -29,6 +30,7 @@ ArtifactData::ArtifactData()
  ,servantLevelUpDown(0)
  ,WaveDown(0) 
  ,servantUnlockDown(0)
+ , m_fiveStar(0)
 {
 	for (int i = 0; i < 6; i++)
 	{
@@ -153,8 +155,7 @@ int ArtifactData::addArNum()
 			servantUnlockDown += artSkill.ar.effData;
 		}
 	}
-	
-
+	PlayerData::getInstance()->saveUserData();	
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
 	return id;
 
@@ -176,15 +177,22 @@ void ArtifactData::arLevelUp(int id)
 }
 void ArtifactData::arStarUp()
 {
-	auto id = cocos2d::random(0, m_artifactNum);
-	for (size_t i = 0; i < m_artifactNum; i++)
+	auto id = cocos2d::random(0, m_artifactNum - m_fiveStar);
+
+	for (std::vector<ArtiHave*>::iterator it = m_artifacts.begin();it!= m_artifacts.end() ;it++)
 	{
-		if (m_artifacts.at(i)->m_artifactID == id)
+		if ((*it)->m_artifactID == id)
 		{
-			m_artifacts.at(i)->m_artifactStar++;
+			(*it)->m_artifactStar++;
+			if ((*it)->m_artifactStar == 5)
+			{
+				remove(m_artifacts.begin(),m_artifacts.end(),*it);
+				m_fiveStar++;
+			}
 			break;
 		}
 	}
+	
 }
 int ArtifactData::getLevel(int id)
 {
@@ -296,6 +304,7 @@ void ArtifactData::deleteArByID(int id)
 			break;
 		}
 	}
+	PlayerData::getInstance()->saveUserData();
 }
 
 int ArtifactData::getStarNum(int id)

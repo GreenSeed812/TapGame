@@ -86,7 +86,7 @@ public:
 	void waveUp(){ m_waveNow++; }
 	void closeSkill(int i){ m_skillOpen[i] = false; }
 	void openSkill(int i){ m_skillOpen[i] = true; }
-	void subHp(){ m_hpNow = Ruler::getInstance()->subNum(m_hpNow,m_basedps); }
+	//void subHp(){ m_hpNow = Ruler::getInstance()->subNum(m_hpNow,m_basedps); }
 	void unlockSernantSkill(int servantid, int skillid);
 	void saveUserData();
 	bool init();

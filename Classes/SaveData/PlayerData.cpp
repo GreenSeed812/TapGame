@@ -2,6 +2,7 @@
 #include "MonsterState.h"
 #include "ArtifactData.h"
 #include "AchieveData.h"
+#include "ShopData.h"
 #include "State.h"
 #include "Tool/SqLite.h"
 #include "json/document.h"
@@ -12,10 +13,10 @@ using namespace  rapidjson;
 #include<cocos2d.h>
 static PlayerData *p_dt = nullptr;
 PlayerData::PlayerData()
-	: m_level(0)
+	: m_level(4)
 	, m_monsterNum(1)
 	, m_playerLevel(1)
-	, m_waveNow(1)
+	, m_waveNow(10)
 	, m_dpsMul(0)
 	, m_dpsMulBase(1)
 	, m_bossTime(30)
@@ -163,6 +164,7 @@ bool PlayerData::init()
 		}
 
 	}
+	m_leaveTime = jsd["m_leaveTime"].GetInt();
 	AchieveData::getInstance()->readUserDefault();
 	ArtifactData::getInstance()->readUserDefault();
 	MyState::getInstance()->readUserDefault();
@@ -341,6 +343,8 @@ void PlayerData::defeatMonsterGold()
 		baseNum = Ruler::getInstance()->multiplay(baseNum, 5);
 		AchieveData::getInstance()->killBoss();
 	}
+	if (ShopData::getInstance()->getItemBeUsedById(10))
+		baseNum = Ruler::getInstance()->multiplay(baseNum, 1.5);
 	auto tmp = Ruler::getInstance()->addNumUp(m_gold, baseNum);
 	AchieveData::getInstance()->addCoin(baseNum);
 	m_gold = tmp;
@@ -438,11 +442,22 @@ MyNum PlayerData::getTapDps()
 	if (rand < m_exploreProb + m_skillexploreProb + ArtifactData::getInstance()->getexploreProb())
 	{
 		AchieveData::getInstance()->addexploreNum();
-		num = Ruler::getInstance()->multiplay(num, m_explorePer + ArtifactData::getInstance()->getexplorePer());
+		if (ShopData::getInstance()->getItemBeUsedById(1))
+		{
+			num = Ruler::getInstance()->multiplay(num, m_explorePer + SqLite::getInstance()->getItemByID(1)->eff + ArtifactData::getInstance()->getexplorePer());
+		}
+		else
+			num = Ruler::getInstance()->multiplay(num, m_explorePer + ArtifactData::getInstance()->getexplorePer());
+		if (ShopData::getInstance()->getItemBeUsedById(2))
+			num = Ruler::getInstance()->multiplay(num, 2);
 		return num;
 	}
 	else
+	{
+		if (ShopData::getInstance()->getItemBeUsedById(2))
+			num = Ruler::getInstance()->multiplay(num, 2);
 		return num;
+	}
 }
 float PlayerData::getSkillEFF(int i)
 {
@@ -623,8 +638,8 @@ void PlayerData::saveUserData()
 	Document document;
 	document.SetObject();
 	Document::AllocatorType& allocator = document.GetAllocator();
-	Value array(kArrayType);
-	Value object(kObjectType);
+	rapidjson::Value array(kArrayType);
+	rapidjson::Value object(kObjectType);
 	document.AddMember("m_gold.number", m_gold.number, allocator); 
 	document.AddMember("m_gold.Mathbit", m_gold.Mathbit, allocator);
 	document.AddMember("m_level", m_level, allocator);
@@ -848,7 +863,7 @@ void PlayerData::saveUserData()
 	document.AddMember("m_servantSkill30", m_servantSkill[30], allocator);
 	document.AddMember("m_servantSkill31", m_servantSkill[31], allocator);
 	document.AddMember("m_servantSkill32", m_servantSkill[32], allocator);
-	
+	document.AddMember("m_leaveTime", m_leaveTime, allocator);
 	ArtifactData::getInstance()->saveUserDefault(document);
 	AchieveData::getInstance()->saveUserDefault(document);
 	MyState::getInstance()->saveUserDefault(document);
@@ -880,6 +895,11 @@ void PlayerData::relife()
 {
 	delete p_dt;
 	p_dt = new PlayerData();
+	if (ShopData::getInstance()->getItemBeUsedById(8))
+	{
+		ArtifactData::getInstance()->addArtiStone(getRelifeStone() * 2);
+		ShopData::getInstance()->stopItemById(8);
+	}
 	ArtifactData::getInstance()->addArtiStone(getRelifeStone());
 }
 MyNum PlayerData::getServantUnlockGold(int id,int skillid)

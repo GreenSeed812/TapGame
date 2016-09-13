@@ -84,6 +84,7 @@ struct daoju
 	std::string effdis;
 	int expense;
 	float time;
+	float eff;
 	bool type;
 };
 struct Achieve

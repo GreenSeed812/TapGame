@@ -88,7 +88,7 @@
             <PreSize X="0.1444" Y="0.0292" />
             <FileData Type="Normal" Path="diyitian.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="gold" ActionTag="-1794479248" Tag="190" IconVisible="False" LeftMargin="161.5956" RightMargin="871.4044" TopMargin="634.6501" BottomMargin="1231.3499" LeftEage="15" RightEage="15" TopEage="17" BottomEage="17" Scale9OriginX="15" Scale9OriginY="17" Scale9Width="17" Scale9Height="20" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="img1" ActionTag="-1794479248" Tag="190" IconVisible="False" LeftMargin="161.5956" RightMargin="871.4044" TopMargin="634.6501" BottomMargin="1231.3499" LeftEage="15" RightEage="15" TopEage="17" BottomEage="17" Scale9OriginX="15" Scale9OriginY="17" Scale9Width="17" Scale9Height="20" ctype="ImageViewObjectData">
             <Size X="47.0000" Y="54.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="185.0956" Y="1258.3499" />
@@ -233,7 +233,7 @@
             <PreSize X="0.1444" Y="0.0292" />
             <FileData Type="Normal" Path="diliutian.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_5_0" ActionTag="1924659305" Tag="203" IconVisible="False" LeftMargin="160.5105" RightMargin="872.4895" TopMargin="864.3372" BottomMargin="1001.6628" LeftEage="15" RightEage="15" TopEage="17" BottomEage="17" Scale9OriginX="15" Scale9OriginY="17" Scale9Width="17" Scale9Height="20" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="img4" ActionTag="1924659305" Tag="203" IconVisible="False" LeftMargin="160.5105" RightMargin="872.4895" TopMargin="864.3372" BottomMargin="1001.6628" LeftEage="15" RightEage="15" TopEage="17" BottomEage="17" Scale9OriginX="15" Scale9OriginY="17" Scale9Width="17" Scale9Height="20" ctype="ImageViewObjectData">
             <Size X="47.0000" Y="54.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="184.0105" Y="1028.6628" />
@@ -253,7 +253,7 @@
             <PreSize X="0.1954" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_13" ActionTag="-2049410905" Tag="205" IconVisible="False" LeftMargin="728.1616" RightMargin="296.8384" TopMargin="636.7218" BottomMargin="1222.2782" LeftEage="18" RightEage="18" TopEage="20" BottomEage="20" Scale9OriginX="18" Scale9OriginY="20" Scale9Width="19" Scale9Height="21" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="img3" ActionTag="-2049410905" Tag="205" IconVisible="False" LeftMargin="728.1616" RightMargin="296.8384" TopMargin="636.7218" BottomMargin="1222.2782" LeftEage="18" RightEage="18" TopEage="20" BottomEage="20" Scale9OriginX="18" Scale9OriginY="20" Scale9Width="19" Scale9Height="21" ctype="ImageViewObjectData">
             <Size X="55.0000" Y="61.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="755.6616" Y="1252.7782" />
@@ -263,7 +263,7 @@
             <PreSize X="0.0509" Y="0.0318" />
             <FileData Type="Normal" Path="zuanshi (2).png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_13_0" ActionTag="524441231" Tag="206" IconVisible="False" LeftMargin="727.5612" RightMargin="297.4388" TopMargin="872.3093" BottomMargin="986.6906" LeftEage="18" RightEage="18" TopEage="20" BottomEage="20" Scale9OriginX="18" Scale9OriginY="20" Scale9Width="19" Scale9Height="21" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="img6" ActionTag="524441231" Tag="206" IconVisible="False" LeftMargin="727.5612" RightMargin="297.4388" TopMargin="872.3093" BottomMargin="986.6906" LeftEage="18" RightEage="18" TopEage="20" BottomEage="20" Scale9OriginX="18" Scale9OriginY="20" Scale9Width="19" Scale9Height="21" ctype="ImageViewObjectData">
             <Size X="55.0000" Y="61.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="755.0612" Y="1017.1906" />
@@ -293,7 +293,7 @@
             <PreSize X="0.1130" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_15" ActionTag="-1377052882" Tag="209" IconVisible="False" LeftMargin="531.0551" RightMargin="472.9449" TopMargin="640.1328" BottomMargin="1239.8672" LeftEage="25" RightEage="25" TopEage="13" BottomEage="13" Scale9OriginX="25" Scale9OriginY="13" Scale9Width="26" Scale9Height="14" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="img2" ActionTag="-1377052882" Tag="209" IconVisible="False" LeftMargin="531.0551" RightMargin="472.9449" TopMargin="640.1328" BottomMargin="1239.8672" LeftEage="25" RightEage="25" TopEage="13" BottomEage="13" Scale9OriginX="25" Scale9OriginY="13" Scale9Width="26" Scale9Height="14" ctype="ImageViewObjectData">
             <Size X="76.0000" Y="40.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="569.0551" Y="1259.8672" />
@@ -303,7 +303,7 @@
             <PreSize X="0.0704" Y="0.0208" />
             <FileData Type="Normal" Path="tuteng.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_15_0" ActionTag="1794313054" Tag="210" IconVisible="False" LeftMargin="529.4967" RightMargin="474.5033" TopMargin="876.6667" BottomMargin="1003.3333" LeftEage="25" RightEage="25" TopEage="13" BottomEage="13" Scale9OriginX="25" Scale9OriginY="13" Scale9Width="26" Scale9Height="14" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="img5" ActionTag="1794313054" Tag="210" IconVisible="False" LeftMargin="529.4967" RightMargin="474.5033" TopMargin="876.6667" BottomMargin="1003.3333" LeftEage="25" RightEage="25" TopEage="13" BottomEage="13" Scale9OriginX="25" Scale9OriginY="13" Scale9Width="26" Scale9Height="14" ctype="ImageViewObjectData">
             <Size X="76.0000" Y="40.0000" />
             <AnchorPoint ScaleX="0.3842" ScaleY="0.3292" />
             <Position X="558.6959" Y="1016.5013" />
@@ -360,7 +360,7 @@
             <PreSize X="0.1444" Y="0.0292" />
             <FileData Type="Normal" Path="diqitian.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_19" ActionTag="1874664151" Tag="217" IconVisible="False" LeftMargin="460.8050" RightMargin="569.1950" TopMargin="1062.7915" BottomMargin="805.2085" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="18" Scale9Height="18" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="img7" ActionTag="1874664151" Tag="217" IconVisible="False" LeftMargin="460.8050" RightMargin="569.1950" TopMargin="1062.7915" BottomMargin="805.2085" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="18" Scale9Height="18" ctype="ImageViewObjectData">
             <Size X="50.0000" Y="52.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="485.8050" Y="831.2085" />

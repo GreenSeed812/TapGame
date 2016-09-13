@@ -88,7 +88,7 @@ public:
 	void unlockSernantSkill(int servantid, int skillid);
 	void saveUserData();
 	bool init();
-	void setLeaveTime(int time){ m_leaveTime = time; }
+	void setLeaveTime(int time){ m_leaveTime = time; };
 	int getLeaveTime(){ return m_leaveTime; }
 	std::string getName(){ return m_name; }
 	void setName(std::string name){ m_name = name; }

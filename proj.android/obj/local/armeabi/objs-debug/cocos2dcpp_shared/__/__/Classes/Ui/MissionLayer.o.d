@@ -247,6 +247,7 @@
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCNotificationCenter.h \
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCSet.h \
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCDeprecated.h \
+  jni/../../Classes\Ui/TaskItem.h \
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/3d/..\ui/CocosGUI.h \
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/3d/..\ui/UIWidget.h \
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/3d/..\ui/UILayoutParameter.h \
@@ -842,6 +843,8 @@ E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCNotific
 E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCSet.h:
 
 E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCDeprecated.h:
+
+jni/../../Classes\Ui/TaskItem.h:
 
 E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/3d/..\ui/CocosGUI.h:
 

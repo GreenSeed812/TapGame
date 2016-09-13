@@ -181,6 +181,7 @@
         <Image Name="szjdj-zjm.png" />
         <Image Name="szjdz-js.png" />
         <Image Name="tapDps.png" />
+        <Project Name="TaskItem.csd" Type="Layer" />
         <Image Name="tianshukuang.png" />
         <Image Name="time.png" />
         <Image Name="touxiangk.png" />

@@ -682,7 +682,6 @@ void PlayerData::saveUserData()
 	document.AddMember("skilllevel5", m_skillLevel[5], allocator);
 
 	
-	
 	document.AddMember("servantLevel0", m_servantLevel[0], allocator);
 	document.AddMember("servantBaseDpsMat0", m_servantBaseDps[0].Mathbit, allocator);
 	document.AddMember("servantMul0",  m_servantMul[0], allocator);

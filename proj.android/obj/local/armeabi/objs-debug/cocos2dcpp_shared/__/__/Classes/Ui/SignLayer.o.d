@@ -348,7 +348,8 @@
   jni/../../Classes\MainScene/ClickLayer.h \
   jni/../../Classes\Ui/bossButton.h jni/../../Classes\Tool/MyNum.h \
   jni/../../Classes\Tool/SqLite.h jni/../../Classes\Tool/sqlite3.h \
-  jni/../../Classes\Tool/Rule.h jni/../../Classes\SaveData/PlayerData.h \
+  jni/../../Classes\Tool/Rule.h jni/../../Classes\Tool/TimeTool.h \
+  jni/../../Classes\SaveData/PlayerData.h \
   jni/../../Classes\SaveData/ShopData.h \
   jni/../../Classes\SaveData/ArtifactData.h \
   jni/../../Classes\SaveData/AchieveData.h \
@@ -1060,6 +1061,8 @@ jni/../../Classes\Tool/SqLite.h:
 jni/../../Classes\Tool/sqlite3.h:
 
 jni/../../Classes\Tool/Rule.h:
+
+jni/../../Classes\Tool/TimeTool.h:
 
 jni/../../Classes\SaveData/PlayerData.h:
 

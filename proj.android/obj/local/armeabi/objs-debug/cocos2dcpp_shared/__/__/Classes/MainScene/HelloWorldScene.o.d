@@ -387,11 +387,13 @@
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/itoa.h \
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/stringbuffer.h \
   jni/../../Classes\SaveData/ShopData.h \
+  jni/../../Classes\Tool/TimeTool.h \
   jni/../../Classes\MainScene/PlayerButton.h \
   jni/../../Classes\MainScene/ServantButton.h \
   jni/../../Classes\MainScene/ArtifactButton.h \
   jni/../../Classes\SaveData/State.h \
   jni/../../Classes\SaveData/MonsterState.h \
+  jni/../../Classes\SaveData/OffLineGold.h \
   jni/../../Classes\Ui/settingLayer.h jni/../../Classes\ui/BgMusic.h \
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../include\SimpleAudioEngine.h \
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/audio/android/../include/Export.h \
@@ -1178,6 +1180,8 @@ E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/str
 
 jni/../../Classes\SaveData/ShopData.h:
 
+jni/../../Classes\Tool/TimeTool.h:
+
 jni/../../Classes\MainScene/PlayerButton.h:
 
 jni/../../Classes\MainScene/ServantButton.h:
@@ -1187,6 +1191,8 @@ jni/../../Classes\MainScene/ArtifactButton.h:
 jni/../../Classes\SaveData/State.h:
 
 jni/../../Classes\SaveData/MonsterState.h:
+
+jni/../../Classes\SaveData/OffLineGold.h:
 
 jni/../../Classes\Ui/settingLayer.h:
 

@@ -1,7 +1,8 @@
 #ifndef _SignLayer_H_
 #define _SignLayer_H_
 #include <cocos2d.h>
-using namespace cocos2d;
+USING_NS_CC;
+
 class SignLayer :public cocos2d::Layer
 {
 public:
@@ -13,7 +14,10 @@ public:
 private:
 	cocos2d::Node* rootNode;
 	int m_day;
+	tm * m_time;
+	bool m_state;
 	void signChange(Ref*);
+	void stateChange();
 	cocos2d::ValueMap m_strings;
 };
 

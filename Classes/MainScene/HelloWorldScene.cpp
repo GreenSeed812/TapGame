@@ -9,6 +9,7 @@
 #include "SaveData/ArtifactData.h"
 #include "SaveData/ShopData.h"
 #include "Tool/Rule.h"
+#include "Tool/TimeTool.h"
 #include "MainScene/PlayerButton.h"
 #include "MainScene/ServantButton.h"
 #include "MainScene/ArtifactButton.h"
@@ -34,6 +35,8 @@ bool HelloWorld::m_bg = true;
 bool HelloWorld::m_sou = true;
 bool HelloWorld::m_coutChange = false;
 int HelloWorld::m_dayCount = 0;
+int HelloWorld::m_signCount = 0;
+tm* HelloWorld::m_time = TimeTool::getInstance()->getcurrTime();
 
 Scene* HelloWorld::createScene()
 {
@@ -558,6 +561,7 @@ void HelloWorld::uiCallBack()
 						widget->setContentSize(size);
 						widget->addChild(item);
 						lv->pushBackCustomItem(widget);
+						cocos2d::CCNotificationCenter::getInstance()->postNotification("itemChange");
 					}
 				}
 			}
@@ -753,6 +757,7 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 				lv->pushBackCustomItem(widget);
 				lv->jumpToBottom();
 				ArtifactButton::setListView(lv);
+				ArChange(this);
 			}
 		});
 	}
@@ -1132,15 +1137,21 @@ void HelloWorld::shopItemEff(float dt)
 	{
 	}
 }
+
 void HelloWorld::dayChange()
 {
-	if (m_dayCount < 13 && m_dayCount >= 0)
+	if (m_dayCount >=6)
 	{
-		m_dayCount++;
+		m_signCount++;
+		m_dayCount = 0;	
 	}
 	else
+	{	
+		m_dayCount++;
+	}
+	if (m_signCount > 1)
 	{
-		m_dayCount = 0;
+		m_signCount = 0;
 	}
 }
 //void HelloWorld::runAni()

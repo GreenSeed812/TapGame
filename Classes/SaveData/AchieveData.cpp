@@ -165,15 +165,15 @@ void AchieveData::skillUsed(int i)
 	}
 	else if (i == 3)
 	{
-		m_skill3used++;
+		m_skill4used++;
 	}
 	else if (i == 4)
 	{
-		m_skill4used++;
+		m_skill5used++;
 	}
 	else if (i == 5)
 	{
-		m_skill5used++;
+		m_skill6used++;
 	}
 
 }

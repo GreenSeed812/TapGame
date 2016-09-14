@@ -13,7 +13,8 @@ public:
 	MyNum multiplayUp(MyNum num, double scale);
 	MyNum addNumUp(MyNum , MyNum );
 	MyNum addNumS(MyNum, MyNum);
-	int devid(MyNum,MyNum);
+	MyNum multiplay(MyNum num1, MyNum num2);
+	MyNum devide(MyNum,MyNum);
 	bool Zero(MyNum num){ if (num.Mathbit <= 0 && num.number <= 0) return true; else return false; }
 private:
 	int Ary;									// ½øÖÆ(final)

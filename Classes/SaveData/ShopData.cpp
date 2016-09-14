@@ -36,6 +36,7 @@ void ShopData::useItemByID(int id)
 {
 	if (id < 4)
 	{
+		getItemDataById(id)->leftTime = SqLite::getInstance()->getItemByID(id)->time;
 		m_items[id]->isUsing = true;
 	}
 }
@@ -47,6 +48,7 @@ void ShopData::buyItemByID(int id)
 	}
 	else
 	{
+		getItemDataById(id)->leftTime = SqLite::getInstance()->getItemByID(id)->time;
 		m_items[id]->isUsing = true;
 	}
 
@@ -62,7 +64,7 @@ void ShopData::stopItemById(int id)
 
 int ShopData::getCount(int id)
 {
-	return m_items[id]->leftTime;
+	return m_items[id]->itemNum;
 }
 
 void ShopData::subShopGold(int gold)
@@ -74,3 +76,7 @@ void ShopData::addShopGold(int gold)
 	m_shopGold += gold; 
 }
 
+ItemData * ShopData::getItemDataById(int id)
+{
+	return m_items[id];
+}

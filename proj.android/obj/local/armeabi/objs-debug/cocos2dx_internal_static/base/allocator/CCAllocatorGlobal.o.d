@@ -1,35 +1,35 @@
-./obj/local/armeabi/objs-debug/cocos2dx_internal_static/base/allocator/CCAllocatorGlobal.o: \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./base/allocator/CCAllocatorGlobal.cpp \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/allocator/CCAllocatorGlobal.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/allocator/CCAllocatorMacros.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccConfig.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformConfig.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformMacros.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformDefine.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/android/CCPlatformDefine-android.h \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\android/log.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/allocator/CCAllocatorStrategyDefault.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/allocator/CCAllocatorBase.h \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\string
+obj/local/armeabi/objs-debug/cocos2dx_internal_static/base/allocator/CCAllocatorGlobal.o: \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/allocator/CCAllocatorGlobal.cpp \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/allocator/CCAllocatorGlobal.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/allocator/CCAllocatorMacros.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccConfig.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformConfig.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformMacros.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformDefine.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCPlatformDefine-android.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/log.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/allocator/CCAllocatorStrategyDefault.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/allocator/CCAllocatorBase.h \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/string
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/allocator/CCAllocatorGlobal.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/allocator/CCAllocatorGlobal.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/allocator/CCAllocatorMacros.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/allocator/CCAllocatorMacros.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccConfig.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccConfig.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformConfig.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformConfig.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformMacros.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformMacros.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformDefine.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformDefine.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/android/CCPlatformDefine-android.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCPlatformDefine-android.h:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\android/log.h:
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/log.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/allocator/CCAllocatorStrategyDefault.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/allocator/CCAllocatorStrategyDefault.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/allocator/CCAllocatorBase.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/allocator/CCAllocatorBase.h:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\string:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/string:

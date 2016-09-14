@@ -13,17 +13,17 @@ using namespace  rapidjson;
 #include<cocos2d.h>
 static PlayerData *p_dt = nullptr;
 PlayerData::PlayerData()
-	: m_level(4)
+	: m_level(1)
 	, m_monsterNum(1)
 	, m_playerLevel(1)
-	, m_waveNow(10)
+	, m_waveNow(1)
 	, m_dpsMul(0)
 	, m_dpsMulBase(1)
 	, m_bossTime(30)
 	, m_servantNum(0)
 	, m_servantAllMul(1)
 	, m_maxTime(30000)
-	, m_maxWave(11)
+	, m_maxWave(2)
 	, m_explorePer(1.5)
 	, m_exploreProb(2)
 	, m_skillexploreProb(0)
@@ -39,7 +39,7 @@ PlayerData::PlayerData()
 	m_hpNow.Mathbit = hp.Mathbit;
 	
 	m_gold.number = 1000;
-	m_gold.Mathbit = 0;
+	m_gold.Mathbit = 30;
 
 	m_basedps.number = 1;
 	m_basedps.Mathbit = 0;
@@ -71,7 +71,13 @@ PlayerData::PlayerData()
 	}
 	m_skillData = SqLite::getInstance()->getSkillData();
 
-	
+	//m_latest.randNpc[0] = 21;
+	//m_latest.randNpc[1] = 22;
+	//m_latest.randNpc[2] = 23;
+	//m_latest.randNpc[3] = 24;
+	//m_latest.randNpc[4] = 25;
+
+
 }
 
 PlayerData::~PlayerData()
@@ -215,6 +221,10 @@ void PlayerData::levelUp()
 			m_latest.randNpc[0] %= 25;
 			m_latest.randNpc[1] += 5;
 			m_latest.randNpc[1] %= 25;
+			if (!m_latest.randNpc[0])
+				m_latest.randNpc[0]++;
+			if (!m_latest.randNpc[1])
+				m_latest.randNpc[1]++;
 			int tmp1 = m_latest.randNpc[0];
 			int tmp2 = m_latest.randNpc[1];
 			m_latest.randNpc[0] = m_latest.randNpc[2]; 

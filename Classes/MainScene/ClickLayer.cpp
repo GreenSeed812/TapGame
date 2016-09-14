@@ -20,7 +20,7 @@ bool ClickLayer::init()
 	}
 
 	touchListener = EventListenerTouchOneByOne::create();
-	touchListener->setSwallowTouches(false);
+	touchListener->setSwallowTouches(true);
 	touchListener->onTouchBegan = CC_CALLBACK_2(ClickLayer::onTouchBegan, this);
 	touchListener->onTouchEnded = CC_CALLBACK_2(ClickLayer::onTouchEnded, this);
 	touchListener->onTouchCancelled = CC_CALLBACK_2(ClickLayer::onTouchCanceled, this);

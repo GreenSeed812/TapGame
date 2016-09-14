@@ -226,26 +226,20 @@ void SqLite::readMapData()
 	if (SQLITE_OK == tableresult)
 	{
 		std::string id = "ID";
-		std::string name = "name";
-		std::string music = "bgMusic";
 		std::string mapIcon = "mapIcon";
 		std::string bg = "bg";
 		auto index = nColum;
 		for (int i = 0; i < nRow; i++)
 		{
-			auto map = MapData();
+			auto map = new MapData();
 			for (int j = 0; j < nColum; j++)
 			{
 				if (id.compare(dbResult[j]) == 0)
-					map.ID = atoi(dbResult[index]);
-				if (name.compare(dbResult[j]) == 0)
-					map.name = dbResult[index];
-				if (music.compare(dbResult[j]) == 0)
-					map.bgMusic = dbResult[index];
+					map->ID = atoi(dbResult[index]);
 				if (mapIcon.compare(dbResult[j]) == 0)
-					map.mapIcon = dbResult[index];
+					map->mapIcon = dbResult[index];
 				if (bg.compare(dbResult[j]) == 0)
-					map.bg = dbResult[index];
+					map->bg = dbResult[index];
 				++index;
 			}
 			m_mapData.push_back(map);
@@ -572,6 +566,7 @@ void SqLite::readDaoju()
 		std::string expense = "expense";
 		std::string time = "time";
 		std::string type = "type";
+		std::string eff = "eff";
 		auto index = nColum;
 		for (int i = 0; i < nRow; i++)
 		{
@@ -590,6 +585,8 @@ void SqLite::readDaoju()
 					dj->time = atof(dbResult[index]);
 				if (type.compare(dbResult[j]) == 0)
 					dj->type = atoi(dbResult[index]);
+				if (eff.compare(dbResult[j]) == 0)
+					dj->eff = atof(dbResult[index]);
 				++index;
 			}
 			m_daoju.push_back(dj);

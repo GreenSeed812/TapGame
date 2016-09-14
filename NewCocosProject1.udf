@@ -28,9 +28,15 @@
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
         <OpenedDocuments>
+<<<<<<< HEAD
           <FilePathData Path="zhujiaotiao.csd" />
         </OpenedDocuments>
         <ActiveDocument Path="zhujiaotiao.csd" />
+=======
+          <FilePathData Path="MainScene.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="MainScene.csd" />
+>>>>>>> 1916f3dd2ede1ed9a151817e6c363c361dad13d1
       </Value>
     </Item>
   </Properties>

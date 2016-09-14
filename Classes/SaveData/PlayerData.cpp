@@ -2,6 +2,7 @@
 #include "MonsterState.h"
 #include "ArtifactData.h"
 #include "AchieveData.h"
+#include "ShopData.h"
 #include "State.h"
 #include "Tool/SqLite.h"
 #include "json/document.h"
@@ -12,10 +13,10 @@ using namespace  rapidjson;
 #include<cocos2d.h>
 static PlayerData *p_dt = nullptr;
 PlayerData::PlayerData()
-	: m_level(0)
+	: m_level(4)
 	, m_monsterNum(1)
 	, m_playerLevel(1)
-	, m_waveNow(1)
+	, m_waveNow(10)
 	, m_dpsMul(0)
 	, m_dpsMulBase(1)
 	, m_bossTime(30)
@@ -33,7 +34,7 @@ PlayerData::PlayerData()
 	, m_goldMulBase(0)
 	, m_goldMulBox(0)
 {
-	auto hp = SqLite::getInstance()->getHpByID(m_level);
+	auto hp = SqLite::getInstance()->getHpByID(m_level%5);
 	m_hpNow.number = hp.number;
 	m_hpNow.Mathbit = hp.Mathbit;
 	
@@ -163,6 +164,7 @@ bool PlayerData::init()
 		}
 
 	}
+	m_leaveTime = jsd["m_leaveTime"].GetInt();
 	AchieveData::getInstance()->readUserDefault();
 	ArtifactData::getInstance()->readUserDefault();
 	MyState::getInstance()->readUserDefault();
@@ -228,6 +230,7 @@ void PlayerData::levelUp()
 void PlayerData::heroLevelUp()
 {
 	MyNum updps;
+	auto m_upGold = getPlayerlvupGold();
 	if (m_playerLevel < 6)
 	{
 		m_basedps = Ruler::getInstance()->addNum(m_basedps,SqLite::getInstance()->getDps(m_playerLevel));
@@ -242,7 +245,6 @@ void PlayerData::heroLevelUp()
 	}
 	m_basedps = Ruler::getInstance()->addNum(m_basedps, updps);
 	AchieveData::getInstance()->maxPlayerLevel(m_playerLevel);
-	auto m_upGold = getPlayerlvupGold();
 	m_gold = Ruler::getInstance()->subNum(m_gold,m_upGold);
 	
 }
@@ -341,6 +343,8 @@ void PlayerData::defeatMonsterGold()
 		baseNum = Ruler::getInstance()->multiplay(baseNum, 5);
 		AchieveData::getInstance()->killBoss();
 	}
+	if (ShopData::getInstance()->getItemBeUsedById(10))
+		baseNum = Ruler::getInstance()->multiplay(baseNum, 1.5);
 	auto tmp = Ruler::getInstance()->addNumUp(m_gold, baseNum);
 	AchieveData::getInstance()->addCoin(baseNum);
 	m_gold = tmp;
@@ -438,11 +442,22 @@ MyNum PlayerData::getTapDps()
 	if (rand < m_exploreProb + m_skillexploreProb + ArtifactData::getInstance()->getexploreProb())
 	{
 		AchieveData::getInstance()->addexploreNum();
-		num = Ruler::getInstance()->multiplay(num, m_explorePer + ArtifactData::getInstance()->getexplorePer());
+		if (ShopData::getInstance()->getItemBeUsedById(1))
+		{
+			num = Ruler::getInstance()->multiplay(num, m_explorePer + SqLite::getInstance()->getItemByID(1)->eff + ArtifactData::getInstance()->getexplorePer());
+		}
+		else
+			num = Ruler::getInstance()->multiplay(num, m_explorePer + ArtifactData::getInstance()->getexplorePer());
+		if (ShopData::getInstance()->getItemBeUsedById(2))
+			num = Ruler::getInstance()->multiplay(num, 2);
 		return num;
 	}
 	else
+	{
+		if (ShopData::getInstance()->getItemBeUsedById(2))
+			num = Ruler::getInstance()->multiplay(num, 2);
 		return num;
+	}
 }
 float PlayerData::getSkillEFF(int i)
 {
@@ -512,17 +527,17 @@ void PlayerData::resetMaxWave()
 }
 void PlayerData::servantLevelUp(int id)
 {
-	m_servantLevel[id]++;
 	auto m_upGold = getservantLevelUpGold(id);
+	m_servantLevel[id]++;
 	auto servantLsDps = SqLite::getInstance()->getServantDpsByID(id);
-	for (int i = 0; i < m_servantLevel[id]; i++)
+	for (int i = 1; i < m_servantLevel[id]; i++)
 	{
 		auto pow1 = pow(i + 1, 0.7);
 		auto pow2 = pow(i + 1, 6);
 		auto mul = 1 + 1 / pow1 - 1 / pow2;
 		servantLsDps = Ruler::getInstance()->multiplay(servantLsDps, mul);
 	}
-	m_servantBaseDps[id] = servantLsDps;
+	m_servantBaseDps[id] = Ruler::getInstance()->addNum(servantLsDps, m_servantBaseDps[id]);
 	m_gold = Ruler::getInstance()->subNum(m_gold, m_upGold);
 
 }
@@ -551,9 +566,9 @@ MyNum PlayerData::getservantLevelUpDps(int id)
 		auto pow2 = pow(i + 1, 6);
 		auto mul = 1 + 1 / pow1 - 1 / pow2;
 		servantLsDps = Ruler::getInstance()->multiplay(servantLsDps, mul);
-	}
-	auto upDps = Ruler::getInstance()->subNum(servantLsDps, getservantToalDps(id));
-	return upDps;
+	}/*
+	auto upDps = Ruler::getInstance()->subNum(servantLsDps, getservantToalDps(id));*/
+	return servantLsDps;
 }
 MyNum PlayerData::getservantLevelUpGold(int id)
 {
@@ -623,8 +638,8 @@ void PlayerData::saveUserData()
 	Document document;
 	document.SetObject();
 	Document::AllocatorType& allocator = document.GetAllocator();
-	Value array(kArrayType);
-	Value object(kObjectType);
+	rapidjson::Value array(kArrayType);
+	rapidjson::Value object(kObjectType);
 	document.AddMember("m_gold.number", m_gold.number, allocator); 
 	document.AddMember("m_gold.Mathbit", m_gold.Mathbit, allocator);
 	document.AddMember("m_level", m_level, allocator);
@@ -847,7 +862,7 @@ void PlayerData::saveUserData()
 	document.AddMember("m_servantSkill30", m_servantSkill[30], allocator);
 	document.AddMember("m_servantSkill31", m_servantSkill[31], allocator);
 	document.AddMember("m_servantSkill32", m_servantSkill[32], allocator);
-	
+	document.AddMember("m_leaveTime", m_leaveTime, allocator);
 	ArtifactData::getInstance()->saveUserDefault(document);
 	AchieveData::getInstance()->saveUserDefault(document);
 	MyState::getInstance()->saveUserDefault(document);
@@ -879,6 +894,11 @@ void PlayerData::relife()
 {
 	delete p_dt;
 	p_dt = new PlayerData();
+	if (ShopData::getInstance()->getItemBeUsedById(8))
+	{
+		ArtifactData::getInstance()->addArtiStone(getRelifeStone() * 2);
+		ShopData::getInstance()->stopItemById(8);
+	}
 	ArtifactData::getInstance()->addArtiStone(getRelifeStone());
 }
 MyNum PlayerData::getServantUnlockGold(int id,int skillid)
@@ -893,4 +913,24 @@ MyNum PlayerData::getServantUnlockGold(int id,int skillid)
 	m_upGold = Ruler::getInstance()->multiplay(m_upGold, (1 - ArtifactData::getInstance()->getSSUD()));
 	m_upGold = Ruler::getInstance()->multiplay(m_upGold, 5);
 	return m_upGold;
+}
+MyNum PlayerData::getPlayerlvup10Dps()
+{
+	auto m_upDps = SqLite::getInstance()->getDps(6);
+	for (int i = 7; i < m_playerLevel + 10; i++)
+	{
+		double f = (1 + 1 / std::pow((double)m_playerLevel, 0.6) - 1 / pow((double)m_playerLevel, 1.008));
+		m_upDps = Ruler::getInstance()->multiplay(m_upDps, f);
+	}
+	return m_upDps;
+}
+MyNum PlayerData::getPlayerlvup100Dps()
+{
+	auto m_upDps = SqLite::getInstance()->getDps(6);
+	for (int i = 7; i < m_playerLevel + 100; i++)
+	{
+		double f = (1 + 1 / std::pow((double)m_playerLevel, 0.6) - 1 / pow((double)m_playerLevel, 1.008));
+		m_upDps = Ruler::getInstance()->multiplay(m_upDps, f);
+	}
+	return m_upDps;
 }

@@ -350,7 +350,11 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
+<<<<<<< HEAD
+          <AbstractNodeData Name="Image_18" ActionTag="653512011" VisibleForFrame="False" Tag="216" IconVisible="False" LeftMargin="461.9800" RightMargin="462.0200" TopMargin="1006.9860" BottomMargin="857.0140" LeftEage="51" RightEage="51" TopEage="18" BottomEage="18" Scale9OriginX="51" Scale9OriginY="18" Scale9Width="54" Scale9Height="20" ctype="ImageViewObjectData">
+=======
           <AbstractNodeData Name="Image_18" ActionTag="653512011" Tag="216" IconVisible="False" LeftMargin="461.9800" RightMargin="462.0200" TopMargin="1006.9860" BottomMargin="857.0140" LeftEage="51" RightEage="51" TopEage="18" BottomEage="18" Scale9OriginX="51" Scale9OriginY="18" Scale9Width="54" Scale9Height="20" ctype="ImageViewObjectData">
+>>>>>>> d34ca8ce3ec7bc27face01b5de9576a91fc1058e
             <Size X="156.0000" Y="56.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="539.9800" Y="885.0140" />
@@ -360,7 +364,11 @@
             <PreSize X="0.1444" Y="0.0292" />
             <FileData Type="Normal" Path="diqitian.png" Plist="" />
           </AbstractNodeData>
+<<<<<<< HEAD
           <AbstractNodeData Name="img7" ActionTag="1874664151" Tag="217" IconVisible="False" LeftMargin="460.8050" RightMargin="569.1950" TopMargin="1062.7915" BottomMargin="805.2085" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="18" Scale9Height="18" ctype="ImageViewObjectData">
+=======
+          <AbstractNodeData Name="Image_19" ActionTag="1874664151" VisibleForFrame="False" Tag="217" IconVisible="False" LeftMargin="460.8050" RightMargin="569.1950" TopMargin="1062.7915" BottomMargin="805.2085" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="18" Scale9Height="18" ctype="ImageViewObjectData">
+>>>>>>> 1916f3dd2ede1ed9a151817e6c363c361dad13d1
             <Size X="50.0000" Y="52.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="485.8050" Y="831.2085" />
@@ -370,7 +378,11 @@
             <PreSize X="0.0463" Y="0.0271" />
             <FileData Type="Normal" Path="linghunshi.png" Plist="" />
           </AbstractNodeData>
+<<<<<<< HEAD
+          <AbstractNodeData Name="day7" ActionTag="1461597979" VisibleForFrame="False" Tag="218" IconVisible="False" LeftMargin="517.1875" RightMargin="490.8125" TopMargin="1045.3984" BottomMargin="797.6016" LabelText="X1" ctype="TextBMFontObjectData">
+=======
           <AbstractNodeData Name="day7" ActionTag="1461597979" Tag="218" IconVisible="False" LeftMargin="517.1875" RightMargin="490.8125" TopMargin="1045.3984" BottomMargin="797.6016" LabelText="X1" ctype="TextBMFontObjectData">
+>>>>>>> d34ca8ce3ec7bc27face01b5de9576a91fc1058e
             <Size X="72.0000" Y="77.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="553.1875" Y="836.1016" />

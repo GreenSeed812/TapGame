@@ -1,4 +1,4 @@
-#include "SignLayer.h"
+#include "Ui/SignLayer.h"
 #include "ui/CocosGUI.h"
 #include <cocostudio/CocoStudio.h> 
 #include <MainScene/HelloWorldScene.h>
@@ -18,6 +18,7 @@ bool SignLayer::init()
 	{
 		return false;
 	}
+
 	m_state = true;
 	m_day = HelloWorld::getDay();
 	rootNode = CSLoader::createNode("singLayer.csb");
@@ -65,7 +66,7 @@ void SignLayer::initSignLayer()
 							num->setString(StringUtils::format("%d", 1).c_str());
 							auto img = (ImageView *)rootNode->getChildByName("img1");
 							img->setVisible(false);
-						}					
+						}
 					}
 				}
 			});
@@ -90,7 +91,7 @@ void SignLayer::initSignLayer()
 							btn->setEnabled(false);
 							m_state = false;
 							signChange(this);
-						}						
+						}	
 					}
 				}
 			});
@@ -127,7 +128,7 @@ void SignLayer::initSignLayer()
 							HelloWorld::dayChange();
 							m_state = false;
 							signChange(this);
-						}					
+						}
 					}
 				}
 			});
@@ -154,6 +155,7 @@ void SignLayer::initSignLayer()
 							signChange(this);
 						}						
 					}
+
 				}
 			});
 			break;
@@ -215,6 +217,7 @@ void SignLayer::signChange(Ref*ref)
 			auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (i + 1)).c_str());
 			auto text = (TextBMFont *)rootNode->getChildByName(StringUtils::format("day%d", (i + 1)).c_str());
 			auto img = (ImageView *)rootNode->getChildByName(StringUtils::format("img%d", (i + 1)).c_str());
+
 			switch (i)
 			{
 			case 0:
@@ -312,7 +315,6 @@ void SignLayer::signChange(Ref*ref)
 			}
 		}
 	}
-	
 }
 
 void SignLayer::stateChange()
@@ -338,4 +340,5 @@ void SignLayer::stateChange()
 	{
 		m_state = true;
 	}
+	((Button*)rootNode->getChildByName("btn7"))->setVisible(false);
 }

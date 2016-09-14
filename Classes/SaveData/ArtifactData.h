@@ -21,11 +21,12 @@ class ArtifactData
 public:
 	static ArtifactData* getInstance();
 	void subArtiStone(int i){ m_artifactStone -= i; 
-	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange"); }
+	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArtiChange");
+	}
 	void addArtiStone(int i){
 		AchieveData::getInstance()->addArStone(i);
 		m_artifactStone += i;
-		cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
+		cocos2d::CCNotificationCenter::getInstance()->postNotification("ArtiChange");
 	}
 	int getArtiStone(){ return m_artifactStone; }
 	int getArNum(){ return m_artifactNum; }
@@ -65,6 +66,7 @@ private:
 	int m_artifactStone;
 	int m_artifactNum;
 	int m_star;
+	int m_fiveStar;
 	float m_AllDpsMul;
 	std::vector<ArtiHave*> m_artifacts;
 	float m_dpsexper;

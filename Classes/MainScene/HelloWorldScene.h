@@ -31,12 +31,14 @@ public:
 	void itemChange(Ref*);
 	void playerChange(Ref*);
 	virtual void update(float dt);
+	void showSiTime(int id,float dt);
 	void skillCDUpdate(float dt);
 	void skillKpCDUpdate(float dt);
 	void skillEff(float);
 	void attackeffection();
 	void deleteSprite(Node *);
 	void playMusic(Node * node);
+	void gameContinue(Node*);
 	void normalAtk();
 	void shopItemEff(float);
 	static void setBg(bool off_on){ m_bg = off_on; }
@@ -49,6 +51,9 @@ public:
 	void initAr();
 	void initSer();
 	void runAni();
+	void mapChange();
+	bool mapInit();
+	void bgChange(Node*);
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 private:
@@ -70,6 +75,7 @@ private:
 	Sprite * effectSprite;
 	MyNum num;
 	bool m_hitlogic;
+	bool m_gamelogic;
 	int m_arCount;
 	static bool m_bg;
 	static bool m_sou;

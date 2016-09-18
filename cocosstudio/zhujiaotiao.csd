@@ -9,16 +9,20 @@
           <AbstractNodeData Name="Layer" ActionTag="-1784766646" Tag="98" IconVisible="False" LeftMargin="1.1694" RightMargin="-1.1694" TopMargin="0.5229" BottomMargin="-0.5229" ctype="SpriteObjectData">
             <Size X="951.0000" Y="120.0000" />
             <Children>
-              <AbstractNodeData Name="playerHead" ActionTag="649781542" Tag="99" IconVisible="False" LeftMargin="48.7087" RightMargin="807.2913" TopMargin="13.5569" BottomMargin="11.4431" ctype="SpriteObjectData">
+              <AbstractNodeData Name="playerHead" ActionTag="1361277246" Tag="20" IconVisible="False" LeftMargin="50.6255" RightMargin="805.3745" TopMargin="13.7452" BottomMargin="11.2548" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="65" Scale9Height="73" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="95.0000" Y="95.0000" />
-                <AnchorPoint ScaleX="0.4325" ScaleY="0.4111" />
-                <Position X="89.7962" Y="50.4976" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="98.1255" Y="58.7548" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0944" Y="0.4208" />
+                <PrePosition X="0.1032" Y="0.4896" />
                 <PreSize X="0.0999" Y="0.7917" />
-                <FileData Type="Normal" Path="tx.png" Plist="" />
-                <BlendFunc Src="1" Dst="771" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <PressedFileData Type="Normal" Path="tx.png" Plist="" />
+                <NormalFileData Type="Normal" Path="tx.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
               <AbstractNodeData Name="discribe" ActionTag="282911540" Tag="100" IconVisible="False" LeftMargin="207.9959" RightMargin="257.0041" TopMargin="16.9888" BottomMargin="8.0112" ctype="SpriteObjectData">
                 <Size X="486.0000" Y="95.0000" />

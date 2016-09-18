@@ -21,11 +21,12 @@ class ArtifactData
 public:
 	static ArtifactData* getInstance();
 	void subArtiStone(int i){ m_artifactStone -= i; 
-	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange"); }
+	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArtiChange");
+	}
 	void addArtiStone(int i){
 		AchieveData::getInstance()->addArStone(i);
 		m_artifactStone += i;
-		cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
+		cocos2d::CCNotificationCenter::getInstance()->postNotification("ArtiChange");
 	}
 	int getArtiStone(){ return m_artifactStone; }
 	int getArNum(){ return m_artifactNum; }

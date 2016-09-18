@@ -50,7 +50,7 @@ void ArtifactButton::initArtifactLayer(int id,bool check)
 	}
 
 	//»ñÈ¡¿Ø¼þ
-	auto head = (Sprite*)m_layer->getChildByName("arHead");
+	auto head = (Button*)m_layer->getChildByName("arHead");
 	auto name = (Text*)m_layer->getChildByName("discribe")->getChildByName("name");
 	auto level = (Text*)m_layer->getChildByName("discribe")->getChildByName("lv");
 	auto effect = (Text*)m_layer->getChildByName("discribe")->getChildByName("effect");
@@ -58,7 +58,8 @@ void ArtifactButton::initArtifactLayer(int id,bool check)
 	auto LevelUp = (Button*)m_layer->getChildByName("up");
 	auto arStone = (TextBMFont*)LevelUp->getChildByName("linghunshi");
 
-	head->setTexture(StringUtils::format("ui/downUi/artifact/%d.png", m_id));
+	head->loadTextureNormal(StringUtils::format("ui/downUi/artifact/%d.png", m_id));
+	head->loadTexturePressed(StringUtils::format("ui/downUi/artifact/%d.png", m_id));
 	name->setString(SqLite::getInstance()->getArtifactSkillByID(m_id).ar.NAME);
 	level->setString(StringUtils::format("Lv%d",ArtifactData::getInstance()->getLevel(m_id)).c_str());
 	auto effid = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.effid;
@@ -85,10 +86,19 @@ void ArtifactButton::initArtifactLayer(int id,bool check)
 		}
 		
 	});
-	auto listener = EventListenerTouchOneByOne::create();
-	listener->onTouchBegan = CC_CALLBACK_2(ArtifactButton::onTouchBegan, this);
-	listener->onTouchEnded = CC_CALLBACK_2(ArtifactButton::onTouchEnded, this);
-	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener,this);
+	head->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType event)
+	{
+		if (event == Widget::TouchEventType::ENDED)
+		{
+			auto arReset = ArReset::create();
+			arReset->setListView(g_lv);
+			arReset->setWidget(m_widget);
+			arReset->setBtn(this);
+			arReset->setStoneNum(m_StoneNum);
+			arReset->initArResetLayer(m_id);
+			g_node->addChild(arReset);
+		}
+	});
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
 }
 
@@ -123,25 +133,3 @@ void ArtifactButton::arChange(Ref*)
 	}
 }
 
-bool ArtifactButton::onTouchBegan(Touch * touch, Event* event)
-{
-	return true;
-}
-void ArtifactButton::onTouchEnded(Touch * touch, Event * event)
-{
-	if (m_node != nullptr)
-	{
-		auto pos = convertTouchToNodeSpace(touch);
-		auto head = (Sprite*)m_layer->getChildByName("arHead");
-		if (head->getBoundingBox().containsPoint(pos))
-		{
-			auto arReset = ArReset::create();
-			arReset->setListView(g_lv);
-			arReset->setWidget(m_widget);
-			arReset->setBtn(this);
-			arReset->setStoneNum(m_StoneNum);
-			arReset->initArResetLayer(m_id);
-			g_node->addChild(arReset);
-		}
-	}
-}

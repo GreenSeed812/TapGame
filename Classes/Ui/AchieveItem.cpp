@@ -20,6 +20,7 @@ bool AchieveItem::init()
 		return false;
 	}
 	m_money = 5;
+	m_allMoney = 0;
 	m_starUp = false;
 	m_starUped = false;
 	m_click = false;
@@ -27,10 +28,17 @@ bool AchieveItem::init()
 	auto btn = (Button*)m_node->getChildByName("bgAchieve")->getChildByName("btn");
 	btn->addTouchEventListener([this,btn](Ref* sender, Widget::TouchEventType type)
 	{
-		AchieveLayer::setMoney(m_money);
-		ShopData::getInstance()->addShopGold(m_money);
-		m_click = false;
-		initAchieveItem(m_id);
+		if (type == Widget::TouchEventType::ENDED)
+		{
+			m_starUped = true;
+			ShopData::getInstance()->addShopGold(m_money);
+			m_allMoney += m_money;
+			AchieveLayer::setMoney(m_allMoney);
+			auto star = (ImageView*)m_node->getChildByName("bgAchieve")->getChildByName(StringUtils::format("star%d",m_starNum+1).c_str());
+			star->loadTexture("xing1.png");
+			initAchieveItem(m_id);			
+			CCNotificationCenter::getInstance()->postNotification("AchieveChange");
+		}
 	});
 	this->setContentSize(m_node->getContentSize());
 	this->addChild(m_node);
@@ -40,16 +48,13 @@ bool AchieveItem::init()
 void AchieveItem::initAchieveItem(int id)
 {
 	m_id = id;
-	m_starNum = AchieveData::getInstance()->getStarNumByID(m_id);
-	if (m_starNum != 0)
-	{
-		m_starUped = true;
-	}
 	auto btn = (Button*)m_node->getChildByName("bgAchieve")->getChildByName("btn");
 	auto text = (Text*)m_node->getChildByName("bgAchieve")->getChildByName("Text");
 	auto num = (TextBMFont*)m_node->getChildByName("bgAchieve")->getChildByName("num");
 	auto numMax = (TextBMFont*)m_node->getChildByName("bgAchieve")->getChildByName("numMax");
 	auto money = (TextBMFont*)m_node->getChildByName("bgAchieve")->getChildByName("btn")->getChildByName("money");
+	
+	m_starNum = AchieveData::getInstance()->getStarNumByID(m_id);
 
 	switch (m_starNum)
 	{
@@ -88,8 +93,28 @@ void AchieveItem::initAchieveItem(int id)
 		if (Ruler::getInstance()->Zero(Ruler::getInstance()->subNum(m_countMax, AchieveData::getInstance()->getMyNumByID(m_id))))
 		{
 			m_starUp = true;
-			m_click = true;
-			m_starNum++;
+			if (m_starNum >= 4)
+			{
+				m_click = false;
+			}
+			else
+			{
+				m_click = true;
+			}			
+			if (m_starUped)
+			{
+				m_starUped = false;
+				m_starNum++;
+				AchieveData::getInstance()->setStarNumByID(m_id, m_starNum);
+				if (m_starNum >= 5)
+				{
+					m_starNum = 4;
+				}
+			}		
+		}
+		else
+		{
+			m_click = false;
 		}
 	case 19:
 	case 20:
@@ -102,8 +127,29 @@ void AchieveItem::initAchieveItem(int id)
 		if ((m_countMax.number - AchieveData::getInstance()->getNumByID(m_id)) <= 0)
 		{
 			m_starUp = true;
-			m_click = true;
-			m_starNum++;
+			if (m_starNum >= 4)
+			{
+				m_click = false;
+			}
+			else
+			{
+				m_click = true;
+			}
+			
+			if (m_starUped)
+			{
+				m_starNum++;
+				m_starUped = false;
+				AchieveData::getInstance()->setStarNumByID(m_id, m_starNum);
+				if (m_starNum >= 5)
+				{
+					m_starNum = 4;
+				}
+			}
+		}
+		else
+		{
+			m_click = false;
 		}
 	}
 
@@ -118,19 +164,12 @@ void AchieveItem::initAchieveItem(int id)
 
 	for (size_t i = 0; i < m_starNum; i++)
 	{
-		auto star = (ImageView*)m_node->getChildByName("bgAchieve")->getChildByName(StringUtils::format("star%d", m_starNum).c_str());
-		if (m_starUp || m_starUped)
-		{
-			star->loadTexture("xing1.png");
-			AchieveData::getInstance()->setStarNumByID(m_id, m_starNum);
-			m_starUped = true;
-		}
-		else
-		{
-			star->loadTexture("xing2.png");
-		}
+		auto star = (ImageView*)m_node->getChildByName("bgAchieve")->getChildByName(StringUtils::format("star%d", i+1).c_str());
+		star->loadTexture("xing1.png");
 	}
-	m_starUp = false;
+
 	money->setString(StringUtils::format("%d", m_money).c_str());
 	text->setString(SqLite::getInstance()->getAchieveByID(m_id)->discribe);
+	m_starUp = false;
+
 }

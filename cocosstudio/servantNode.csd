@@ -9,16 +9,20 @@
           <AbstractNodeData Name="Layer" ActionTag="-1784766646" Tag="98" IconVisible="False" LeftMargin="0.0001" RightMargin="-0.0001" TopMargin="-0.3826" BottomMargin="0.3826" ctype="SpriteObjectData">
             <Size X="951.0000" Y="120.0000" />
             <Children>
-              <AbstractNodeData Name="serHead" ActionTag="649781542" Tag="99" IconVisible="False" LeftMargin="73.2700" RightMargin="831.7300" TopMargin="37.0000" BottomMargin="37.0000" ctype="SpriteObjectData">
-                <Size X="46.0000" Y="46.0000" />
+              <AbstractNodeData Name="serHead" ActionTag="1717918450" Tag="105" IconVisible="False" LeftMargin="52.9371" RightMargin="803.0629" TopMargin="15.2370" BottomMargin="9.7630" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="65" Scale9Height="73" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="95.0000" Y="95.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="96.2700" Y="60.0000" />
+                <Position X="100.4371" Y="57.2630" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1012" Y="0.5000" />
-                <PreSize X="0.0484" Y="0.3833" />
-                <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
-                <BlendFunc Src="1" Dst="771" />
+                <PrePosition X="0.1056" Y="0.4772" />
+                <PreSize X="0.0999" Y="0.7917" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                <NormalFileData Type="Normal" Path="tx.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
               <AbstractNodeData Name="discribe" ActionTag="282911540" Tag="100" IconVisible="False" LeftMargin="193.6900" RightMargin="271.3100" TopMargin="14.4900" BottomMargin="10.5100" ctype="SpriteObjectData">
                 <Size X="486.0000" Y="95.0000" />
@@ -157,7 +161,7 @@
               <AbstractNodeData Name="up100" ActionTag="1334016742" Tag="481" IconVisible="False" LeftMargin="569.8487" RightMargin="259.1513" TopMargin="15.0354" BottomMargin="10.9646" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="92" Scale9Height="72" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="122.0000" Y="94.0000" />
                 <Children>
-                  <AbstractNodeData Name="dps" ActionTag="-892248010" Tag="479" IconVisible="False" LeftMargin="-63.4348" RightMargin="-25.5652" TopMargin="-25.7800" BottomMargin="42.7800" LabelText="111.1aa" ctype="TextBMFontObjectData">
+                  <AbstractNodeData Name="dps" ActionTag="-892248010" Tag="479" IconVisible="False" LeftMargin="-63.4354" RightMargin="-25.5646" TopMargin="-25.7791" BottomMargin="42.7791" LabelText="111.1aa" ctype="TextBMFontObjectData">
                     <Size X="211.0000" Y="77.0000" />
                     <AnchorPoint ScaleX="0.4991" ScaleY="0.2576" />
                     <Position X="41.8747" Y="62.6143" />

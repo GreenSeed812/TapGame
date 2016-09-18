@@ -16,6 +16,7 @@ public:
 private:
 	int m_id;
 	int m_money;
+	int m_allMoney;
 	int m_starNum;
 	bool m_starUp;
 	bool m_starUped;

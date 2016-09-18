@@ -11,7 +11,6 @@ public:
 private:
 	cocos2d::Node* rootNode;
 	void initMission();
-	void missionChange(Ref*);
 	bool m_suc;
 
 };

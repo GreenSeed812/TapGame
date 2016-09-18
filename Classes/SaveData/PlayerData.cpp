@@ -5,6 +5,7 @@
 #include "ShopData.h"
 #include "State.h"
 #include "Tool/SqLite.h"
+#include "Tool/TimeTool.h"
 #include "json/document.h"
 #include "json/writer.h"
 #include "json/stringbuffer.h"
@@ -35,6 +36,7 @@ PlayerData::PlayerData()
 	, m_goldMulBase(0)
 	, m_goldMulBox(0)
 	, m_relife(false)
+	, m_leaveTime(0)
 {
 	auto hp = SqLite::getInstance()->getHpByID(m_level%5);
 	m_hpNow.number = hp.number;
@@ -579,8 +581,8 @@ MyNum PlayerData::getservantLevelUpDps(int id)
 		auto pow2 = pow(i + 1, 6);
 		auto mul = 1 + 1 / pow1 - 1 / pow2;
 		servantLsDps = Ruler::getInstance()->multiplay(servantLsDps, mul);
-	}/*
-	auto upDps = Ruler::getInstance()->subNum(servantLsDps, getservantToalDps(id));*/
+	}
+	//auto upDps = Ruler::getInstance()->subNum(servantLsDps, getservantToalDps(id));
 	return servantLsDps;
 }
 MyNum PlayerData::getservantLevelUpGold(int id)
@@ -644,10 +646,10 @@ int PlayerData::getServantRelifeStone()
 int PlayerData::getLevelRelifeStone()
 {
 	return m_level / 50;
-
 }
 void PlayerData::saveUserData()
 {
+	m_leaveTime = TimeTool::getInstance()->getTime();
 	Document document;
 	document.SetObject();
 	Document::AllocatorType& allocator = document.GetAllocator();
@@ -709,7 +711,6 @@ void PlayerData::saveUserData()
 	document.AddMember("skilllevel4", m_skillLevel[4], allocator);
 	document.AddMember("skilllevel5", m_skillLevel[5], allocator);
 
-	
 	
 	document.AddMember("servantLevel0", m_servantLevel[0], allocator);
 	document.AddMember("servantBaseDpsMat0", m_servantBaseDps[0].Mathbit, allocator);

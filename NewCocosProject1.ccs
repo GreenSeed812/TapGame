@@ -82,7 +82,6 @@
         <Image Name="gongqiao (2).png" />
         <Image Name="gongqiao (6).png" />
         <Image Name="head.png" />
-        <Image Name="head1.png" />
         <Image Name="HelloWorld.png" />
         <Image Name="hpSlider.png" />
         <Image Name="hpSliderDemo.png" />
@@ -148,7 +147,6 @@
         <Image Name="mingchengk.png" />
         <Image Name="mingchengkuang_ar.png" />
         <Image Name="mission.png" />
-        <Image Name="mission1.png" />
         <Image Name="mm1.png" />
         <ExportJsonFile Name="monster_01.ExportJson" />
         <Image Name="monster_010.png" />
@@ -182,6 +180,7 @@
         <Image Name="szjdj-zjm.png" />
         <Image Name="szjdz-js.png" />
         <Image Name="tapDps.png" />
+        <Project Name="TaskItem.csd" Type="Layer" />
         <Image Name="tianshukuang.png" />
         <Image Name="time.png" />
         <Image Name="touxiangk.png" />

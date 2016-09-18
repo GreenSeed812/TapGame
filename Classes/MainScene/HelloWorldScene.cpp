@@ -9,12 +9,13 @@
 #include "SaveData/ArtifactData.h"
 #include "SaveData/ShopData.h"
 #include "Tool/Rule.h"
+#include "Tool/TimeTool.h"
 #include "MainScene/PlayerButton.h"
 #include "MainScene/ServantButton.h"
 #include "MainScene/ArtifactButton.h"
 #include "SaveData/State.h"
 #include "SaveData/MonsterState.h"
-#include "SaveData/OffLineGold.h"
+#include "SaveData/LeaveGold.h"
 #include "Ui/settingLayer.h"
 #include "Ui/AchieveLayer.h"
 #include "Ui/MissionLayer.h"
@@ -35,6 +36,8 @@ bool HelloWorld::m_bg = true;
 bool HelloWorld::m_sou = true;
 bool HelloWorld::m_coutChange = false;
 int HelloWorld::m_dayCount = 0;
+int HelloWorld::m_signCount = 0;
+tm* HelloWorld::m_time = TimeTool::getInstance()->getcurrTime();
 
 Scene* HelloWorld::createScene()
 {
@@ -59,8 +62,8 @@ bool HelloWorld::init()
     {
         return false;
     }
-	
-	
+
+	auto leaveGold = new LeaveGold();
 	BgMusic::getInstance()->playBg(true);
 	m_hitlogic = true;
 	m_heroLayer = nullptr;
@@ -85,6 +88,20 @@ bool HelloWorld::init()
 	TextBMFont* textNext = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("level_0");
 	textNext->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel() + 1));
 	
+	auto leaveBtn = (Button*)rootNode->getChildByName("leave");
+	if (leaveGold->getGolds().number != 0)
+	{
+		leaveBtn->setVisible(true);
+	}
+	leaveBtn->addTouchEventListener([this, leaveGold,leaveBtn](Ref* sender, Widget::TouchEventType type){
+		if (type == Widget::TouchEventType::ENDED)
+		{
+			PlayerData::getInstance()->addGold(&(leaveGold->getGolds()));
+			delete leaveGold;
+			leaveBtn->setVisible(false);
+		}
+	});
+
 	clickLayer = ClickLayer::create();
 	clickLayer->setZOrder(-1);
 	rootNode->addChild(clickLayer);
@@ -92,7 +109,7 @@ bool HelloWorld::init()
 	uiCallBack();
 	createMonster();
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::coinChange), "CoinChange", nullptr);
-	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::ArChange), "ArChange", nullptr);
+	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::ArChange), "ArtiChange", nullptr);
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::itemChange), "itemChange", nullptr);
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::playerChange), "playerChange", nullptr);
 	showTime = false;
@@ -109,7 +126,6 @@ bool HelloWorld::init()
 	waveNum->setString(StringUtils::format("%d/%d", PlayerData::getInstance()->getWaveNow(), PlayerData::getInstance()->getMaxWave() - 1));
 	bossBt = nullptr;
 	m_gamelogic = true;
-//	OffLineGold::getInstance()->getMillSecond();
     return true;
 }
 void HelloWorld::coinChange(Ref *ref)
@@ -141,8 +157,8 @@ void HelloWorld::coinChange(Ref *ref)
 
 void HelloWorld::ArChange(Ref* ref)
 {
-	if (ref)
-	{
+	//if (ref)
+	//{
 		TextBMFont* dps = (TextBMFont*)m_artifactLayer->getChildByName("message")->getChildByName("Dps");
 		auto dpsAll = ArtifactData::getInstance()->getAllDpsMul();
 		dps->setString(StringUtils::format("+%.1f%%", dpsAll * 100).c_str());
@@ -164,7 +180,7 @@ void HelloWorld::ArChange(Ref* ref)
 				btn->setEnabled(false);
 			}
 		}
-	}
+	//}
 }
 
 void HelloWorld::itemChange(Ref* ref)
@@ -575,6 +591,7 @@ void HelloWorld::uiCallBack()
 						widget->setContentSize(size);
 						widget->addChild(item);
 						lv->pushBackCustomItem(widget);
+						cocos2d::CCNotificationCenter::getInstance()->postNotification("itemChange");
 					//}
 				}
 			}
@@ -817,6 +834,7 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 				lv->pushBackCustomItem(widget);
 				lv->jumpToBottom();
 				ArtifactButton::setListView(lv);
+				ArChange(this);
 			}
 		});
 	}
@@ -1293,15 +1311,21 @@ void HelloWorld::shopItemCDUpDate(float dt)
 	}
 	
 }
+
 void HelloWorld::dayChange()
 {
-	if (m_dayCount < 13 && m_dayCount >= 0)
+	if (m_dayCount >=6)
 	{
-		m_dayCount++;
+		m_signCount++;
+		m_dayCount = 0;	
 	}
 	else
+	{	
+		m_dayCount++;
+	}
+	if (m_signCount > 1)
 	{
-		m_dayCount = 0;
+		m_signCount = 0;
 	}
 }
 //void HelloWorld::runAni()
@@ -1405,9 +1429,8 @@ void HelloWorld::showSiTime(int id, float dt)
 void HelloWorld::relife()
 {
 	mapInit();
-	
+
 	PlayerData::getInstance()->relifeEnd();
-	CCNotificationCenter::destroyInstance();
 	auto scene = HelloWorld::createScene();
 	Director::getInstance()->replaceScene(scene);
 }

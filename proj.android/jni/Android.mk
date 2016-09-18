@@ -29,6 +29,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/Tool/SqLite.cpp \
 				   ../../Classes/Tool/SpecManager.cpp \
 				   ../../Classes/Tool/sqlite3.c \
+				   ../../Classes/Tool/TimeTool.cpp \
 				   ../../Classes/SaveData/State.cpp \
 				   ../../Classes/SaveData/PlayerData.cpp \
 				   ../../Classes/SaveData/PlayerButtonData.cpp \
@@ -42,6 +43,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/Ui/AchieveLayer.cpp \
 				   ../../Classes/Ui/AchieveItem.cpp \
 				   ../../Classes/Ui/MissionLayer.cpp \
+				   ../../Classes/Ui/TaskItem.cpp \
 				   ../../Classes/Ui/settingLayer.cpp \
 				   ../../Classes/Ui/SignLayer.cpp \
 				   ../../Classes/Ui/BgMusic.cpp \

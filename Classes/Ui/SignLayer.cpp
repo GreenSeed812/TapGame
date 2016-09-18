@@ -1,15 +1,17 @@
-#include "SignLayer.h"
+#include "Ui/SignLayer.h"
 #include "ui/CocosGUI.h"
 #include <cocostudio/CocoStudio.h> 
 #include <MainScene/HelloWorldScene.h>
 #include "Tool/SqLite.h"
 #include "Tool/Rule.h"
+#include "Tool/TimeTool.h"
 #include "SaveData/PlayerData.h"
 #include "SaveData/ShopData.h"
 #include "SaveData/ArtifactData.h"
 using namespace cocostudio;
 using namespace cocos2d;
 using namespace ui;
+USING_NS_CC;
 bool SignLayer::init()
 {
 	if (!Layer::init())
@@ -17,13 +19,7 @@ bool SignLayer::init()
 		return false;
 	}
 
-	m_receive1 = false;
-	m_receive2 = false;
-	m_receive3 = false;
-	m_receive4 = false;
-	m_receive5 = false;
-	m_receive6 = false;
-	m_receive7 = false;
+	m_state = true;
 	m_day = HelloWorld::getDay();
 	rootNode = CSLoader::createNode("singLayer.csb");
 	this->addChild(rootNode);
@@ -57,15 +53,20 @@ void SignLayer::initSignLayer()
 			btn->addTouchEventListener([this, btn](Ref* sender, Widget::TouchEventType type){
 				if (type == Widget::TouchEventType::ENDED)
 				{
-					if (m_receive1)
-					if (m_day == 0 || m_day == 7)
+					if (m_day == 0)
 					{
-						auto gold =Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(),100);
-						PlayerData::getInstance()->addGold(&gold);
-						HelloWorld::dayChange();
-						m_day++;
-						m_receive1 = false;
-						btn->setEnabled(false);
+						if (m_state)
+						{
+							auto gold = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 100);
+							PlayerData::getInstance()->addGold(&gold);
+							HelloWorld::dayChange();
+							btn->setEnabled(false);
+							m_state = false;
+							auto num = (TextBMFont*)rootNode->getChildByName("bg")->getChildByName("dayNum");
+							num->setString(StringUtils::format("%d", 1).c_str());
+							auto img = (ImageView *)rootNode->getChildByName("img1");
+							img->setVisible(false);
+						}
 					}
 				}
 			});
@@ -74,21 +75,23 @@ void SignLayer::initSignLayer()
 			btn->addTouchEventListener([this,btn](Ref* sender, Widget::TouchEventType type){
 				if (type == Widget::TouchEventType::ENDED)
 				{
-					if (m_receive2)
-					if (m_day == 1 || m_day == 8)
+					if (m_day == 1)
 					{
-						if (m_day<7)
+						if (m_state)
 						{
-							ShopData::getInstance()->buyItemByID(0);
-						}
-						else
-						{
-							ShopData::getInstance()->buyItemByID(2);
+							if (m_day<7)
+							{
+								ShopData::getInstance()->buyItemByID(0);
+							}
+							else
+							{
+								ShopData::getInstance()->buyItemByID(2);
+							}
+							HelloWorld::dayChange();
+							btn->setEnabled(false);
+							m_state = false;
+							signChange(this);
 						}	
-						m_day++;
-						HelloWorld::dayChange();
-						m_receive2 = false;
-						btn->setEnabled(false);
 					}
 				}
 			});
@@ -97,17 +100,16 @@ void SignLayer::initSignLayer()
 			btn->addTouchEventListener([this,btn](Ref* sender, Widget::TouchEventType type){
 				if (type == Widget::TouchEventType::ENDED)
 				{
-					if (m_receive3)
+					if (m_day == 2)
 					{
-						ShopData::getInstance()->addShopGold(10);
-						m_receive3 = false;
-						if (m_day == 2 || m_day == 9)
+						if (m_state)
 						{
 							ShopData::getInstance()->addShopGold(10);
 							btn->setEnabled(false);
-							m_day++;
 							HelloWorld::dayChange();
-						}
+							m_state = false;
+							signChange(this);
+						}					
 					}
 				}
 			});
@@ -116,18 +118,16 @@ void SignLayer::initSignLayer()
 			btn->addTouchEventListener([this,btn](Ref* sender, Widget::TouchEventType type){
 				if (type == Widget::TouchEventType::ENDED)
 				{
-					if (m_receive4)
+					if (m_day == 3)
 					{
-						auto gold = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 1000);
-						PlayerData::getInstance()->addGold(&gold);
-						m_receive4 = false;
-						if (m_day == 3 || m_day == 10)
+						if (m_state)
 						{
 							auto gold = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 1000);
 							PlayerData::getInstance()->addGold(&gold);
 							btn->setEnabled(false);
-							m_day++;
 							HelloWorld::dayChange();
+							m_state = false;
+							signChange(this);
 						}
 					}
 				}
@@ -137,21 +137,23 @@ void SignLayer::initSignLayer()
 			btn->addTouchEventListener([this,btn](Ref* sender, Widget::TouchEventType type){
 				if (type == Widget::TouchEventType::ENDED)
 				{
-					if (m_receive5)
-					if (m_day == 4 || m_day == 11)
+					if (m_day == 4)
 					{
-						if (m_day<7)
+						if (m_state)
 						{
-							ShopData::getInstance()->buyItemByID(1);
-						}
-						else
-						{
-							ShopData::getInstance()->buyItemByID(3);
-						}
-						m_receive5 = false;
-						btn->setEnabled(false);
-						m_day++;
-						HelloWorld::dayChange();
+							if (m_day<7)
+							{
+								ShopData::getInstance()->buyItemByID(1);
+							}
+							else
+							{
+								ShopData::getInstance()->buyItemByID(3);
+							}
+							btn->setEnabled(false);
+							HelloWorld::dayChange();
+							m_state = false;
+							signChange(this);
+						}						
 					}
 
 				}
@@ -161,17 +163,16 @@ void SignLayer::initSignLayer()
 			btn->addTouchEventListener([this,btn](Ref* sender, Widget::TouchEventType type){
 				if (type == Widget::TouchEventType::ENDED)
 				{
-					if (m_receive6)
+					if (m_day == 5)
 					{
-						ShopData::getInstance()->addShopGold(50);
-						m_receive6 = false;
-						if (m_day == 5 || m_day == 12)
+						if (m_state)
 						{
 							ShopData::getInstance()->addShopGold(50);
 							btn->setEnabled(false);
-							m_day++;
 							HelloWorld::dayChange();
-						}
+							m_state = false;
+							signChange(this);
+						}					
 					}
 				}
 			});
@@ -180,17 +181,19 @@ void SignLayer::initSignLayer()
 			btn->addTouchEventListener([this,btn](Ref* sender, Widget::TouchEventType type){
 				if (type == Widget::TouchEventType::ENDED)
 				{
-					if (m_receive7)
+					if (m_day == 6)
 					{
-						ArtifactData::getInstance()->addArtiStone(1);
-						m_receive7 = false;
-						if (m_day == 6 || m_day == 13)
+						if (m_state)
 						{
 							ArtifactData::getInstance()->addArtiStone(1);
 							btn->setEnabled(false);
-							m_day++;
 							HelloWorld::dayChange();
-						}
+							m_state = false;
+							auto num = (TextBMFont*)rootNode->getChildByName("bg")->getChildByName("dayNum");
+							num->setString(StringUtils::format("%d",7).c_str());
+							auto img = (ImageView *)rootNode->getChildByName("img7");
+							img->setVisible(false);
+						}					
 					}
 				}
 			});
@@ -202,124 +205,140 @@ void SignLayer::initSignLayer()
 
 void SignLayer::signChange(Ref*ref)
 {	
-	/*if (m_day > 0 && m_day != 7 || m_day > 7)
+	if (ref)
 	{
-
-	}
-	if (m_day > 1 && m_day != 8 || m_day > 8)
-	{
-
-	}
-	if (m_day > 2 && m_day != 9 || m_day > 9)
-	{
-
-	}
-	if (m_day > 3 && m_day != 10 || m_day > 10)
-	{
-
-	}
-	if (m_day > 4 && m_day != 11 || m_day > 11)
-	{
-
-	}
-	if (m_day > 5 && m_day != 12 || m_day > 12)
-	{
-
-	}
-	if (m_day > 6 && m_day != 13 || m_day > 13)
-	{
-
-	}
-
-	for (size_t i = 0; i < 7; i++)
-	{
-		auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (i + 1)).c_str());
-		auto text = (TextBMFont *)rootNode->getChildByName(StringUtils::format("day%d", (i + 1)).c_str());
-		switch (i)
+		m_day = HelloWorld::getDay();
+		m_time = HelloWorld::getTime();
+		auto num = (TextBMFont*)rootNode->getChildByName("bg")->getChildByName("dayNum");
+		num->setString(StringUtils::format("%d", m_day));
+		//stateChange();
+		for (size_t i = 0; i < 7; i++)
 		{
-		case 0:
-		{
-			auto gold = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 100);
-			text->setString(Ruler::getInstance()->showNum(gold));
-		}	
-		break;
-		case 1:
-		{
-			auto texts = (Text *)rootNode->getChildByName(StringUtils::format("day%d", (i + 1)).c_str());
-			if (m_day < 7)
+			auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (i + 1)).c_str());
+			auto text = (TextBMFont *)rootNode->getChildByName(StringUtils::format("day%d", (i + 1)).c_str());
+			auto img = (ImageView *)rootNode->getChildByName(StringUtils::format("img%d", (i + 1)).c_str());
+
+			switch (i)
 			{
-				texts->setString(m_strings["A"].asString());
-			}
-			else
+			case 0:
 			{
-				texts->setString(m_strings["C"].asString());
+				auto gold = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 100);
+				text->setString(Ruler::getInstance()->showNum(gold));
+				if (m_day > 0)
+				{
+					btn->setEnabled(false);
+					img->setVisible(false);
+				}
 			}
-		}			
 			break;
-		case 2:
-			text->setString(StringUtils::format("%d", 10).c_str());
-			break;
-		case 3:
-		{
-			auto gold = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 1000);
-			text->setString(Ruler::getInstance()->showNum(gold));
-		}	
-			break;
-		case 4:
-		{
-			auto texts = (Text *)rootNode->getChildByName(StringUtils::format("day%d", (i + 1)).c_str());
-			if (m_day < 7)
+			case 1:
 			{
-				texts->setString(m_strings["B"].asString());
+				auto texts = (Text *)rootNode->getChildByName(StringUtils::format("day%d", (i + 1)).c_str());
+				if (HelloWorld::getSignCount() == 0)
+				{
+					texts->setString(m_strings["A"].asString());
+				}
+				else if (HelloWorld::getSignCount() == 1)
+				{
+					texts->setString(m_strings["C"].asString());
+				}
+				if (m_day > 1)
+				{
+					btn->setEnabled(false);
+					img->setVisible(false);
+				}
 			}
-			else
+			break;
+			case 2:
+				text->setString(StringUtils::format("%d", 10).c_str());
+				if (m_day > 2)
+				{
+					btn->setEnabled(false);
+					img->setVisible(false);
+				}
+				break;
+			case 3:
 			{
-				texts->setString(m_strings["D"].asString());
+				auto gold = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 1000);
+				text->setString(Ruler::getInstance()->showNum(gold));
+				if (m_day > 3)
+				{
+					btn->setEnabled(false);
+					img->setVisible(false);
+				}
 			}
-		}			
 			break;
-		case 5:
-			text->setString(StringUtils::format("%d", 50).c_str());
+			case 4:
+			{
+				auto texts = (Text *)rootNode->getChildByName(StringUtils::format("day%d", (i + 1)).c_str());
+				if (HelloWorld::getSignCount() == 0)
+				{
+					texts->setString(m_strings["B"].asString());
+				}
+				else if (HelloWorld::getSignCount() == 1)
+				{
+					texts->setString(m_strings["D"].asString());
+				}
+				if (m_day > 4)
+				{
+					btn->setEnabled(false);
+					img->setVisible(false);
+				}
+			}
 			break;
-		case 6:
-		{
-			text->setString(StringUtils::format("%d", 1).c_str());
-			text->setVisible(false);
-			break;
+			case 5:
+				text->setString(StringUtils::format("%d", 50).c_str());
+				if (m_day > 5)
+				{
+					btn->setEnabled(false);
+					img->setVisible(false);
+				}
+				break;
+			case 6:
+				text->setString(StringUtils::format("%d", 1).c_str());
+				if (m_day > 6)
+				{
+					btn->setEnabled(false);
+					img->setVisible(false);
+				}
+				break;
+			}
 		}
-		switch (m_day)
+		if (m_day == 0)
 		{
-		case 0:
-		case 7:
-			m_receive1 = true;
-			break;
-		case 1:
-		case 8:
-			((Button*)rootNode->getChildByName("btn1"))->setEnabled(false);
-			m_receive2 = true;
-			break;
-		case 2:
-		case 9:
-			m_receive3 = true;
-			break;
-		case 3:
-		case 10:
-			m_receive4 = true;
-			break;
-		case 4:
-		case 11:
-			m_receive5 = true;
-			break;
-		case 5:
-		case 12:
-			m_receive6 = true;
-			break;
-		case 6:
-		case 13:
-			m_receive7 = true;
-			break;
+			for (size_t i = 0; i < 7; i++)
+			{
+				auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (i + 1)).c_str());
+				auto img = (ImageView *)rootNode->getChildByName(StringUtils::format("img%d", (i + 1)).c_str());
+				btn->setEnabled(true);
+				img->setVisible(true);
+			}
 		}
+	}
+}
+
+void SignLayer::stateChange()
+{
+	auto dayNum = HelloWorld::getDay();
+	auto time = TimeTool::getInstance()->getcurrTime();
+	auto year = time->tm_year;
+	auto mon = time->tm_mon;
+	auto day = time->tm_mday;
+	
+	if (m_time->tm_year == year && m_time->tm_mon == mon && m_time->tm_mday == day)
+	{
+		if (m_day == 0)
+		{
+			m_state = true;
+		}
+		else
+		{
+			m_state = false;
+		}	
+	}
+	else
+	{
+		m_state = true;
 	}
 	((Button*)rootNode->getChildByName("btn7"))->setVisible(false);
-			break;*/
 }

@@ -6,6 +6,7 @@
 #include "SaveData/ArtifactData.h"
 #include "SaveData/ShopData.h"
 #include "Tool/SqLite.h"
+#include "MainScene/HelloWorldScene.h"
 using namespace ui;
 
 Node * ArReset::g_listview = nullptr;
@@ -91,12 +92,12 @@ void ArReset::initArResetLayer(int id)
 		if (Event == Widget::TouchEventType::ENDED)
 		{
 			ShopData::getInstance()->subShopGold(200);
-			ArtifactData::getInstance()->deleteArByID(m_id);
+			ArtifactData::getInstance()->deleteArByID(m_id);	
+			cocos2d::CCNotificationCenter::getInstance()->postNotification("ArtiChange");
 			CCNotificationCenter::getInstance()->removeObserver(g_btn, "ArChange");
 			g_listview->removeChild(m_widget);
 			g_listview->visit();
 			m_node->removeFromParent();
-			CCNotificationCenter::getInstance()->postNotification("ArChange");
 		}
 	});
 

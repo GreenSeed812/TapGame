@@ -46,6 +46,8 @@ public:
 	static void changeCount(bool state){ m_coutChange = state; }
 	static void dayChange();
 	static int getDay(){ return m_dayCount; }
+	static int getSignCount(){ return m_signCount; }
+	static tm* getTime(){ return m_time; }
 	void initAr();
 	void initSer();
 	void runAni();
@@ -81,6 +83,8 @@ private:
 	static bool m_sou;
 	static bool m_coutChange;
 	static int m_dayCount;
+	static int m_signCount;
+	static tm* m_time;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

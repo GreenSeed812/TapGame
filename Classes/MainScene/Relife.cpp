@@ -62,10 +62,10 @@ void Relife::initRelife()
 	{
 		if (Event == Widget::TouchEventType::ENDED)
 		{
+
+			CCNotificationCenter::destroyInstance();
 			AchieveData::getInstance()->relife();
 			PlayerData::getInstance()->relife();
-			m_node->removeFromParent();
-			cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 		}
 	});
 }

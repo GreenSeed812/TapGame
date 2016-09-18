@@ -23,8 +23,6 @@ private:
 	bool m_state;
 	static Node* g_lv;
 	static Node * g_node;
-	bool onTouchBegan(Touch * touch, Event* event);
-	void onTouchEnded(Touch * touch, Event * event);
 	void oneUp();
 	void upLevel();
 	void lockState();

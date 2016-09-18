@@ -11,17 +11,18 @@ LeaveGold::LeaveGold()
 		auto dps = PlayerData::getInstance()->getHeroDps();
 		auto gold = PlayerData::getInstance()->getdefeatMonsterGold(); 
 		auto hp = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getHpNow(), 2);
-		MyNum golds;
 		if (num >= 72000)
-		{
-			Ruler::getInstance()->multiplay(gold, 72000);
-			
+		{		
+			m_golds = Ruler::getInstance()->multiplay(Ruler::getInstance()->multiplay(gold, 72000), hp);
 		}
 		else
 		{
-			Ruler::getInstance()->multiplay(gold, num);
+			m_golds = Ruler::getInstance()->multiplay(Ruler::getInstance()->multiplay(gold, num), hp);
 		}
-		PlayerData::getInstance()->addGold(&golds);
 	}
-	
+}
+
+LeaveGold::~LeaveGold()
+{
+
 }

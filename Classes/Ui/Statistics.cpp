@@ -25,6 +25,18 @@ void Statistics::initStatistics()
 {
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(Statistics::statisticsChange), "StatisticsChange", nullptr);
 
+	auto escBtn = (Button*)m_rootNode->getChildByName("esc");
+
+	escBtn->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
+		if (type == Widget::TouchEventType::ENDED)
+		{
+			m_rootNode->removeFromParent();
+		}
+	});
+}
+
+void Statistics::statisticsChange(Ref* ref)
+{
 	auto playerLv = (TextBMFont*)m_rootNode->getChildByName("playerLv");
 	auto servantLv = (TextBMFont*)m_rootNode->getChildByName("ServantLv");
 	auto gold = (TextBMFont*)m_rootNode->getChildByName("gold");
@@ -42,20 +54,9 @@ void Statistics::initStatistics()
 	auto relifeNum = (TextBMFont*)m_rootNode->getChildByName("relifeNum");
 	auto playDays = (TextBMFont*)m_rootNode->getChildByName("playDays");
 	auto maxSerNum = (TextBMFont*)m_rootNode->getChildByName("maxSerNum");
-	auto escBtn = (Button*)m_rootNode->getChildByName("esc");
 
-	playerLv->setString(StringUtils::format("%d",PlayerData::getInstance()->getPlayerLevel()).c_str());
-	servantLv->setString(StringUtils::format("%d",PlayerData::getInstance()->getServantAverLevel()).c_str());
-
-	escBtn->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
-		if (type == Widget::TouchEventType::ENDED)
-		{
-			m_rootNode->removeFromParent();
-		}
-	});
-}
-
-void Statistics::statisticsChange(Ref* ref)
-{
-
+	playerLv->setString(StringUtils::format("%d", PlayerData::getInstance()->getPlayerLevel()).c_str());
+	servantLv->setString(StringUtils::format("%d", PlayerData::getInstance()->getServantAverLevel()).c_str());
+	gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
+	crit->setString("");
 }

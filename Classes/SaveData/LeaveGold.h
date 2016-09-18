@@ -14,8 +14,9 @@ class LeaveGold
 public:
 	LeaveGold();
 	~LeaveGold();
+	MyNum getGolds(){ return m_golds; }
 private:
-	
+	MyNum m_golds;
 };
 
 #endif

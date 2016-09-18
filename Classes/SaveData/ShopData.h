@@ -21,6 +21,7 @@ public:
 	void addShopGold(int gold);
 	bool getItemBeUsedById(int id);
 	int getCount(int id);
+	ItemData * getItemDataById(int id);
 private:
 	void init();
 	ShopData();

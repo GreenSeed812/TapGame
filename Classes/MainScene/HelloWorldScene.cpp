@@ -15,7 +15,7 @@
 #include "MainScene/ArtifactButton.h"
 #include "SaveData/State.h"
 #include "SaveData/MonsterState.h"
-#include "SaveData/OffLineGold.h"
+#include "SaveData/LeaveGold.h"
 #include "Ui/settingLayer.h"
 #include "Ui/AchieveLayer.h"
 #include "Ui/MissionLayer.h"
@@ -61,15 +61,8 @@ bool HelloWorld::init()
     {
         return false;
     }
-	
-	//log("%d",TimeTool::getInstance()->getTime());
-	//log("YEAR:%d",TimeTool::getInstance()->getcurrTime()->tm_year+1900);
-	//log("MON:%d", TimeTool::getInstance()->getcurrTime()->tm_mon+1);
-	//log("DAY:%d", TimeTool::getInstance()->getcurrTime()->tm_mday);
-	//log("HOUR:%d", TimeTool::getInstance()->getcurrTime()->tm_hour);
-	//log("MIN:%d", TimeTool::getInstance()->getcurrTime()->tm_min+1);
-	//log("SEC:%d", TimeTool::getInstance()->getcurrTime()->tm_sec+1);
 
+	auto leaveGold = new LeaveGold();
 	BgMusic::getInstance()->playBg(true);
 	m_hitlogic = true;
 	m_heroLayer = nullptr;
@@ -94,6 +87,20 @@ bool HelloWorld::init()
 	TextBMFont* textNext = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("level_0");
 	textNext->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel() + 1));
 	
+	auto leaveBtn = (Button*)rootNode->getChildByName("leave");
+	if (leaveGold->getGolds().number != 0)
+	{
+		leaveBtn->setVisible(true);
+	}
+	leaveBtn->addTouchEventListener([this, leaveGold,leaveBtn](Ref* sender, Widget::TouchEventType type){
+		if (type == Widget::TouchEventType::ENDED)
+		{
+			PlayerData::getInstance()->addGold(&(leaveGold->getGolds()));
+			delete leaveGold;
+			leaveBtn->setVisible(false);
+		}
+	});
+
 	clickLayer = ClickLayer::create();
 	clickLayer->setZOrder(-1);
 	rootNode->addChild(clickLayer);
@@ -118,7 +125,6 @@ bool HelloWorld::init()
 	waveNum->setString(StringUtils::format("%d/%d", PlayerData::getInstance()->getWaveNow(), PlayerData::getInstance()->getMaxWave() - 1));
 	bossBt = nullptr;
 	m_gamelogic = true;
-//	OffLineGold::getInstance()->getMillSecond();
     return true;
 }
 void HelloWorld::coinChange(Ref *ref)
@@ -404,6 +410,7 @@ void HelloWorld::update(float dt)
 		else
 		{
 			skillKpCDUpdate(dt);
+			shopItemCDUpDate(dt);
 		}
 	}
 	
@@ -705,11 +712,12 @@ void HelloWorld::mapChange()
 		auto waveN = PlayerData::getInstance()->getWaveNow();
 		m_gamelogic = false;
 		auto effect = Sprite::create();
+		/*effect->setZOrder(100);*/
 		auto animate = MyAnimation::getInstance()->getAnimate();
 		effect->setScale(3.6);
 		effect->setAnchorPoint(Vec2(0, 0));
 		auto seq = Sequence::create(animate, CallFuncN::create(CC_CALLBACK_1(HelloWorld::bgChange, this)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)),CallFuncN::create(CC_CALLBACK_1(HelloWorld::gameContinue,this)), NULL);
-		rootNode->addChild(effect);
+		this->addChild(effect);
 		effect->runAction(seq);
 	}
 	if ((PlayerData::getInstance()->getLevel() + 1) % 5 == 0)
@@ -724,7 +732,7 @@ void HelloWorld::mapChange()
 	if ((PlayerData::getInstance()->getLevel() - 1) % 5 == 0)
 	{
 		auto mapNum = (PlayerData::getInstance()->getLevel() - 1) / 5;
-		auto map = SqLite::getInstance()->getMapDataByID(mapNum % 8); 
+		auto map = SqLite::getInstance()->getMapDataByID(mapNum % 10); 
 		Sprite* mapL = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherL");
 		mapL->setTexture(StringUtils::format("map/icon/%s", map->mapIcon.c_str()));
 		mapL->runAction(Show::create());
@@ -1133,68 +1141,65 @@ void HelloWorld::shopItemEff(float dt)
 	static float t_now;
 	if (ShopData::getInstance()->getItemBeUsedById(0))
 	{
-		static float t_time = SqLite::getInstance()->getItemByID(0)->time;
-		if (t_time / 1 != (t_time - dt) / 1)
+		
+		if (ShopData::getInstance()->getItemDataById(0)->leftTime / 1 != (ShopData::getInstance()->getItemDataById(0)->leftTime - dt) / 1)
 		{
-			showSiTime(0,t_time-dt);
+			showSiTime(0, ShopData::getInstance()->getItemDataById(0)->leftTime - dt);
 		}
-		t_time -= dt;
-		if (t_time <= 0)
+		ShopData::getInstance()->getItemDataById(0)->leftTime -= dt;
+		if (ShopData::getInstance()->getItemDataById(0)->leftTime <= 0)
 		{
-			ShopData::getInstance()->stopItemById(1);
-			t_time = SqLite::getInstance()->getItemByID(0)->time;
+			ShopData::getInstance()->stopItemById(0);
+			ShopData::getInstance()->getItemDataById(0)->leftTime = 0;
 		}
 	}
 	if(ShopData::getInstance()->getItemBeUsedById(1))
 	{
-		static float t_time = SqLite::getInstance()->getItemByID(1)->time;
-		if (t_time / 1 != (t_time - dt) / 1)
+		if (ShopData::getInstance()->getItemDataById(1)->leftTime / 1 != (ShopData::getInstance()->getItemDataById(1)->leftTime - dt) / 1)
 		{
-			showSiTime(1, t_time - dt);
+			showSiTime(1, ShopData::getInstance()->getItemDataById(1)->leftTime - dt);
 		}
-		t_time -= dt;
-		if (t_time <= 0)
+		ShopData::getInstance()->getItemDataById(1)->leftTime -= dt;
+		if (ShopData::getInstance()->getItemDataById(1)->leftTime <= 0)
 		{
 			ShopData::getInstance()->stopItemById(1);
-			t_time = SqLite::getInstance()->getItemByID(0)->time;
+			ShopData::getInstance()->getItemDataById(1)->leftTime = 0;
 		}
 	}
 	if (ShopData::getInstance()->getItemBeUsedById(2))
 	{
-		static float t_time = SqLite::getInstance()->getItemByID(2)->time;
-		if (t_time / 1 != (t_time - dt) / 1)
+		if (ShopData::getInstance()->getItemDataById(2)->leftTime / 1 != (ShopData::getInstance()->getItemDataById(2)->leftTime - dt) / 1)
 		{
-			showSiTime(2, t_time - dt);
+			showSiTime(2, ShopData::getInstance()->getItemDataById(2)->leftTime - dt);
 		}
-		t_time -= dt;
-		if (t_time <= 0)
+		ShopData::getInstance()->getItemDataById(2)->leftTime -= dt;
+		if (ShopData::getInstance()->getItemDataById(2)->leftTime <= 0)
 		{
 			ShopData::getInstance()->stopItemById(2);
+			ShopData::getInstance()->getItemDataById(2)->leftTime = 0;
 		}
 	}
 	if (ShopData::getInstance()->getItemBeUsedById(3))
 	{
-		static float t_time = SqLite::getInstance()->getItemByID(3)->time;
-		if (t_time / 1 != (t_time - dt) / 1)
+		if (ShopData::getInstance()->getItemDataById(3)->leftTime / 1 != (ShopData::getInstance()->getItemDataById(3)->leftTime - dt) / 1)
 		{
-			showSiTime(3, t_time - dt);
+			showSiTime(3, ShopData::getInstance()->getItemDataById(3)->leftTime - dt);
 		}
-		t_time -= dt;
+		ShopData::getInstance()->getItemDataById(3)->leftTime -= dt;
 		PlayerData::getInstance()->subHp(Ruler::getInstance()->multiplay(PlayerData::getInstance()->getTapDpsNoExp(),10 * dt));
-		if (t_time <= 0)
+		if (ShopData::getInstance()->getItemDataById(3)->leftTime <= 0)
 		{
 			ShopData::getInstance()->stopItemById(3);
-			t_time = SqLite::getInstance()->getItemByID(3)->time;
+			ShopData::getInstance()->getItemDataById(3)->leftTime = SqLite::getInstance()->getItemByID(3)->time;
 		}
 	}
 	if (MyState::getInstance()->getKTap() && ShopData::getInstance()->getItemBeUsedById(4))
 	{
-		static float t_time = SqLite::getInstance()->getItemByID(4)->time;
-		if (t_time / 1 != (t_time - dt) / 1)
+		if (ShopData::getInstance()->getItemDataById(4)->leftTime / 1 != (ShopData::getInstance()->getItemDataById(4)->leftTime - dt) / 1)
 		{
-			showSiTime(4, t_time - dt);
+			showSiTime(4, ShopData::getInstance()->getItemDataById(4)->leftTime - dt);
 		}
-		t_time -= dt;
+		ShopData::getInstance()->getItemDataById(4)->leftTime -= dt;
 		t_now += dt;
 		if (t_now > 1 / 30.0f)
 		{
@@ -1216,10 +1221,10 @@ void HelloWorld::shopItemEff(float dt)
 				PlayerData::getInstance()->addGold(&num2);
 			}
 		}
-		if (t_time <= 0)
+		if (ShopData::getInstance()->getItemDataById(4)->leftTime <= 0)
 		{
 			ShopData::getInstance()->stopItemById(4);
-			t_time = SqLite::getInstance()->getItemByID(4)->time;
+			ShopData::getInstance()->getItemDataById(4)->leftTime = 0;
 		}
 	}
 	if (ShopData::getInstance()->getItemBeUsedById(5))
@@ -1254,27 +1259,51 @@ void HelloWorld::shopItemEff(float dt)
 	}
 	if (ShopData::getInstance()->getItemBeUsedById(10))
 	{
-		static float t_time = SqLite::getInstance()->getItemByID(10)->time;
-		t_time -= dt;
-		if (t_time / 1 != (t_time - dt) / 1)
+		ShopData::getInstance()->getItemDataById(10)->leftTime -= dt;
+		if (ShopData::getInstance()->getItemDataById(10)->leftTime / 1 != (ShopData::getInstance()->getItemDataById(10)->leftTime - dt) / 1)
 		{
-			showSiTime(10, t_time - dt);
+			showSiTime(10, ShopData::getInstance()->getItemDataById(10)->leftTime - dt);
 		}
-		if (t_time <= 0)
+		if (ShopData::getInstance()->getItemDataById(10)->leftTime <= 0)
 			ShopData::getInstance()->stopItemById(10);
 	}
 	if (ShopData::getInstance()->getItemBeUsedById(12))
 	{
-		static float t_time = SqLite::getInstance()->getItemByID(12)->time;
-		t_time -= dt;
-		if (t_time / 1 != (t_time - dt) / 1)
+		ShopData::getInstance()->getItemDataById(12)->leftTime -= dt;
+		if (ShopData::getInstance()->getItemDataById(12)->leftTime / 1 != (ShopData::getInstance()->getItemDataById(12)->leftTime - dt) / 1)
 		{
-			showSiTime(10, t_time - dt);
+			showSiTime(10, ShopData::getInstance()->getItemDataById(12)->leftTime - dt);
 		}
 		PlayerData::getInstance()->subHp(Ruler::getInstance()->multiplay(PlayerData::getInstance()->getTapDps(),10*dt));
-		if (t_time <= 0)
+		if (ShopData::getInstance()->getItemDataById(12)->leftTime <= 0)
+		{
 			ShopData::getInstance()->stopItemById(12);
+			ShopData::getInstance()->getItemDataById(12)->leftTime = 0;
+		}
+			
 	}
+}
+void HelloWorld::shopItemCDUpDate(float dt)
+{
+	for (int i = 0; i < 13; i++)
+	{
+		if (ShopData::getInstance()->getItemBeUsedById(i))
+		{
+			
+			ShopData::getInstance()->getItemDataById(i)->leftTime -= dt;
+			if (ShopData::getInstance()->getItemDataById(i)->leftTime / 1 != (ShopData::getInstance()->getItemDataById(i)->leftTime - dt) / 1)
+			{
+				showSiTime(10, ShopData::getInstance()->getItemDataById(i)->leftTime - dt);
+			}
+			if (ShopData::getInstance()->getItemDataById(i)->leftTime <= 0)
+			{
+				ShopData::getInstance()->stopItemById(i);
+			}
+		}
+		
+		
+	}
+	
 }
 
 void HelloWorld::dayChange()
@@ -1320,7 +1349,7 @@ bool HelloWorld::mapInit()
 	else if (PlayerData::getInstance()->getLevel() % 5 == 0)
 	{
 		auto mapNum = PlayerData::getInstance()->getLevel() / 5;
-		auto map = SqLite::getInstance()->getMapDataByID(mapNum % 8);
+		auto map = SqLite::getInstance()->getMapDataByID(mapNum % 10);
 		Sprite* bg = (Sprite*)rootNode->getChildByName("mainBG");
 		bg->setTexture(StringUtils::format("map/bg/%s", map->bg.c_str()));
 		Sprite* mapN = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapNow");
@@ -1328,17 +1357,17 @@ bool HelloWorld::mapInit()
 		Sprite* mapR = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherR");
 		mapR->setTexture(StringUtils::format("map/icon/%s", map->mapIcon.c_str()));
 		Sprite* mapL = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherL");
-		auto mapNow = SqLite::getInstance()->getMapDataByID((mapNum - 1) % 8);
+		auto mapNow = SqLite::getInstance()->getMapDataByID((mapNum - 1) % 10);
 		mapL->setTexture(StringUtils::format("map/icon/%s", mapNow->mapIcon.c_str()));
 		mapL->runAction(Show::create());
 	}
 	else if ((PlayerData::getInstance()->getLevel() + 1) % 5 == 0)
 	{
 		auto mapNum = (PlayerData::getInstance()->getLevel() + 1) / 5;
-		auto map = SqLite::getInstance()->getMapDataByID(mapNum  % 8 );
+		auto map = SqLite::getInstance()->getMapDataByID(mapNum  % 10 );
 		Sprite* spr = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherR");
 		spr->setTexture(StringUtils::format("map/icon/%s", map->mapIcon.c_str()));
-		auto mapNow = SqLite::getInstance()->getMapDataByID((mapNum-1) % 8);
+		auto mapNow = SqLite::getInstance()->getMapDataByID((mapNum-1) % 10);
 		Sprite* bg = (Sprite*)rootNode->getChildByName("mainBG");
 		bg->setTexture(StringUtils::format("map/bg/%s", mapNow->bg.c_str()));
 		Sprite* mapL = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherL");
@@ -1352,7 +1381,7 @@ bool HelloWorld::mapInit()
 	else
 	{
 		auto mapNum = (PlayerData::getInstance()->getLevel() - 1) / 5;
-		auto map = SqLite::getInstance()->getMapDataByID(mapNum % 8);
+		auto map = SqLite::getInstance()->getMapDataByID(mapNum % 10);
 		Sprite* spr = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherL");
 		spr->setTexture(StringUtils::format("map/icon/%s", map->mapIcon.c_str()));
 		Sprite* bg = (Sprite*)rootNode->getChildByName("mainBG");

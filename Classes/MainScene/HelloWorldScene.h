@@ -54,6 +54,7 @@ public:
 	void mapChange();
 	bool mapInit();
 	void bgChange(Node*);
+	void shopItemCDUpDate(float dt);
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 private:

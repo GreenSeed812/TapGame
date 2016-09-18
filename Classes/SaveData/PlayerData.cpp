@@ -14,7 +14,7 @@ using namespace  rapidjson;
 #include<cocos2d.h>
 static PlayerData *p_dt = nullptr;
 PlayerData::PlayerData()
-	: m_level(1)
+	: m_level(0)
 	, m_monsterNum(1)
 	, m_playerLevel(1)
 	, m_waveNow(1)
@@ -24,7 +24,7 @@ PlayerData::PlayerData()
 	, m_servantNum(0)
 	, m_servantAllMul(1)
 	, m_maxTime(30000)
-	, m_maxWave(2)
+	, m_maxWave(11)
 	, m_explorePer(1.5)
 	, m_exploreProb(2)
 	, m_skillexploreProb(0)
@@ -904,14 +904,15 @@ int PlayerData::getServantAverLevel()
 }
 void PlayerData::relife()
 {
-	delete p_dt;
-	p_dt = new PlayerData();
 	if (ShopData::getInstance()->getItemBeUsedById(8))
 	{
 		ArtifactData::getInstance()->addArtiStone(getRelifeStone() * 2);
 		ShopData::getInstance()->stopItemById(8);
 	}
 	ArtifactData::getInstance()->addArtiStone(getRelifeStone());
+	delete p_dt;
+	p_dt = new PlayerData();
+	
 }
 MyNum PlayerData::getServantUnlockGold(int id,int skillid)
 {

@@ -50,6 +50,10 @@ std::string Ruler::showNum(MyNum num)
 	}
 	
 	std::string s;
+	if (num.number < 0)
+	{
+		num.number = -num.number;
+	}
 	s = StringUtils::format("%.1lf", num.number);
 	//sprintf_s(s, "%lf", num->number);
 	if (num.Mathbit == 0)
@@ -168,7 +172,7 @@ MyNum Ruler::subNum(MyNum num1, MyNum num2)
 	}
 	else if (num1.Mathbit == num2.Mathbit)
 	{
-		if (num1.number < num2.number)
+		if (num1.number <= num2.number)
 			num.number = 0;
 		else
 		{
@@ -198,7 +202,6 @@ MyNum Ruler::subNum(MyNum num1, MyNum num2)
 		num.Mathbit--;
 		num.number *= 1000;
 	}
-	
 	return num;
 }
 
@@ -239,17 +242,28 @@ MyNum Ruler::multiplayUp(MyNum num, double scale)
 	return retNum;
 }
 
-int Ruler::devid(MyNum dividend, MyNum divisor)
+MyNum Ruler::devide(MyNum dividend, MyNum divisor)
 {
-	auto num = new MyNum();
-	
-	num->Mathbit = dividend.Mathbit - divisor.Mathbit;
-	auto scale = 1;
-	for (size_t i = 0; i < num->Mathbit; i++)
+	MyNum num;
+	num.Mathbit = dividend.Mathbit - divisor.Mathbit;
+	num.number = dividend.number / divisor.number;
+	while (num.number < 0.1)
 	{
-		scale *= 1000;
+		num.number = num.number * 1000;
+		num.Mathbit--;
 	}
-	double res;
-	res = dividend.number * scale / divisor.number;
-	return res;
+	return num;
+}
+
+MyNum Ruler::multiplay(MyNum num1, MyNum num2)
+{
+	MyNum num;
+	num.Mathbit = num1.Mathbit + num2.Mathbit;
+	num.number = num1.number * num2.number;
+	if (num.number >= 1000)
+	{
+		num.number = num.number / 1000;
+		num.Mathbit++;
+	}
+	return num;
 }

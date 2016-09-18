@@ -114,6 +114,7 @@ bool HelloWorld::init()
 }
 void HelloWorld::coinChange(Ref *ref)
 {
+	
 	TextBMFont* gold = (TextBMFont*)rootNode->getChildByName("goldNum");
 	gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
 	if (m_heroLayer)
@@ -296,6 +297,10 @@ void HelloWorld::update(float dt)
 {
 	if (m_gamelogic == true)
 	{
+		if (PlayerData::getInstance()->getRelife())
+		{
+			relife();
+		}
 		if (m_hitlogic == true)
 		{
 			auto heroDps = PlayerData::getInstance()->getHeroDps();
@@ -1219,13 +1224,12 @@ void HelloWorld::shopItemEff(float dt)
 				m_skill[i - 1]->getChildByName("SkillCD")->removeFromParent();
 			if(m_skill[i - 1]->getChildByName("SkillKpCD"))
 				m_skill[i - 1]->getChildByName("SkillKpCD")->removeFromParent();
-			
+			m_skill[i - 1]->setEnabled(true);
 		}
 		ShopData::getInstance()->stopItemById(5);
 	}
 	if (ShopData::getInstance()->getItemBeUsedById(6))
 	{
-
 		ShopData::getInstance()->stopItemById(6);
 	}
 	if (ShopData::getInstance()->getItemBeUsedById(7))
@@ -1319,12 +1323,13 @@ void HelloWorld::dayChange()
 //}
 bool HelloWorld::mapInit()
 {
-	if (PlayerData::getInstance()->getLevel() == 0)
+	/*if (PlayerData::getInstance()->getLevel() == 0)
 	{
 		Sprite* mapL = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherL");
 		mapL->runAction(Hide::create());
-	}
-	else if (PlayerData::getInstance()->getLevel() % 5 == 0)
+		
+	}*/
+	if (PlayerData::getInstance()->getLevel() % 5 == 0)
 	{
 		auto mapNum = PlayerData::getInstance()->getLevel() / 5;
 		auto map = SqLite::getInstance()->getMapDataByID(mapNum % 10);
@@ -1335,9 +1340,23 @@ bool HelloWorld::mapInit()
 		Sprite* mapR = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherR");
 		mapR->setTexture(StringUtils::format("map/icon/%s", map->mapIcon.c_str()));
 		Sprite* mapL = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherL");
-		auto mapNow = SqLite::getInstance()->getMapDataByID((mapNum - 1) % 10);
-		mapL->setTexture(StringUtils::format("map/icon/%s", mapNow->mapIcon.c_str()));
-		mapL->runAction(Show::create());
+		if (PlayerData::getInstance()->getLevel() == 0)
+		{
+			mapL->runAction(Hide::create());
+			TextBMFont* textLast = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("level");
+			textLast->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel() - 1));
+			TextBMFont* textNow = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("level_1");
+			textNow->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel()));
+			TextBMFont* textNext = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("level_0");
+			textNext->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel() + 1));
+		}
+		else
+		{
+			auto mapNow = SqLite::getInstance()->getMapDataByID((mapNum - 1) % 10);
+			mapL->setTexture(StringUtils::format("map/icon/%s", mapNow->mapIcon.c_str()));
+			mapL->runAction(Show::create());
+		}
+		
 	}
 	else if ((PlayerData::getInstance()->getLevel() + 1) % 5 == 0)
 	{
@@ -1355,7 +1374,6 @@ bool HelloWorld::mapInit()
 		mapL->runAction(Show::create());
 
 	}
-	/*if ((PlayerData::getInstance()->getLevel() - 1) % 5 == 0)*/
 	else
 	{
 		auto mapNum = (PlayerData::getInstance()->getLevel() - 1) / 5;
@@ -1382,4 +1400,14 @@ void HelloWorld::gameContinue(Node*)
 void HelloWorld::showSiTime(int id, float dt)
 {
 	//显示倒计时，时间为dt
+}
+
+void HelloWorld::relife()
+{
+	mapInit();
+	
+	PlayerData::getInstance()->relifeEnd();
+	CCNotificationCenter::destroyInstance();
+	auto scene = HelloWorld::createScene();
+	Director::getInstance()->replaceScene(scene);
 }

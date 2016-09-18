@@ -525,7 +525,8 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/MainScene/HelloWorl
  jni/../../Classes/Ui/AchieveLayer.h jni/../../Classes/Ui/MissionLayer.h \
  jni/../../Classes/Ui/ExChange.h jni/../../Classes/Ui/SignLayer.h \
  jni/../../Classes/MainScene/SkillCD.h jni/../../Classes/Animation.h \
- jni/../../Classes/Ui/ItemLayer.h
+ jni/../../Classes/Ui/ItemLayer.h \
+ jni/../../Classes/SaveData/MissionData.h
 
 jni/../../Classes/MainScene/HelloWorldScene.h:
 
@@ -1590,3 +1591,5 @@ jni/../../Classes/MainScene/SkillCD.h:
 jni/../../Classes/Animation.h:
 
 jni/../../Classes/Ui/ItemLayer.h:
+
+jni/../../Classes/SaveData/MissionData.h:

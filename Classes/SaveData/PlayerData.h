@@ -94,6 +94,8 @@ public:
 	int getLeaveTime(){ return m_leaveTime; }
 	std::string getName(){ return m_name; }
 	void setName(std::string name){ m_name = name; }
+	bool getRelife(){ return m_relife; }
+	void relifeEnd(){ m_relife = false; }
 private:
 	int m_waveNow;
 	int m_level;
@@ -135,6 +137,7 @@ private:
 	int m_diamond;
 	int m_artifactStar[29];
 	int m_leaveTime;
+	bool m_relife;
 	std::string m_name;
 };
 #endif

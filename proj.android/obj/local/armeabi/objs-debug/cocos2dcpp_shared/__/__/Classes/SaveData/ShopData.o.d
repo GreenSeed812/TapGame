@@ -349,7 +349,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/SaveData/ShopData.o
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCString.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCDeprecated.h \
  jni/../../Classes/Tool/SqLite.h jni/../../Classes/Tool/sqlite3.h \
- jni/../../Classes/Tool/MyNum.h
+ jni/../../Classes/Tool/MyNum.h jni/../../Classes/SaveData/MissionData.h
 
 jni/../../Classes/SaveData/ShopData.h:
 
@@ -1052,3 +1052,5 @@ jni/../../Classes/Tool/SqLite.h:
 jni/../../Classes/Tool/sqlite3.h:
 
 jni/../../Classes/Tool/MyNum.h:
+
+jni/../../Classes/SaveData/MissionData.h:

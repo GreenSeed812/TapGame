@@ -34,6 +34,7 @@ PlayerData::PlayerData()
 	, m_rareProb(10)
 	, m_goldMulBase(0)
 	, m_goldMulBox(0)
+	, m_relife(false)
 {
 	auto hp = SqLite::getInstance()->getHpByID(m_level%5);
 	m_hpNow.number = hp.number;
@@ -913,6 +914,7 @@ void PlayerData::relife()
 	ArtifactData::getInstance()->addArtiStone(getRelifeStone());
 	delete p_dt;
 	p_dt = new PlayerData();
+	m_relife = true;
 	
 }
 MyNum PlayerData::getServantUnlockGold(int id,int skillid)

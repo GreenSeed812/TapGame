@@ -45,14 +45,15 @@ void ServantButton::initServantLayer(int id)
 	auto up100 = (Button*)m_layer->getChildByName("up100");
 	auto dps = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("dps");
 	auto gold = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("gold");
-	auto head = (Sprite*)m_layer->getChildByName("serHead");
+	auto head = (Button*)m_layer->getChildByName("serHead");
 	auto name = (Text*)m_layer->getChildByName("discribe")->getChildByName("name");
 
 	up10->setVisible(false);
 	up100->setVisible(false);
 	dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpDps(m_id)));
 	gold->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpGold(m_id)));
-	head->setTexture(StringUtils::format("ui/downUi/servant/head/%d.png",id+1));
+	head->loadTextureNormal(StringUtils::format("ui/downUi/servant/head/%d.png",id+1));
+	head->loadTexturePressed(StringUtils::format("ui/downUi/servant/head/%d.png", id + 1));
 	name->setString(SqLite::getInstance()->getServantNameByID(m_id));
 
 	for (int skillNum = 1; skillNum < 8; skillNum++)
@@ -102,10 +103,14 @@ void ServantButton::initServantLayer(int id)
 		}
 	});
 
-	auto listener = EventListenerTouchOneByOne::create();
-	listener->onTouchBegan = CC_CALLBACK_2(ServantButton::onTouchBegan, this);
-	listener->onTouchEnded = CC_CALLBACK_2(ServantButton::onTouchEnded, this);
-	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
+	head->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType Event){
+		if (Event == Widget::TouchEventType::ENDED)
+		{
+			auto serInfo = ServantInfo::create();
+			serInfo->initServantInfo(m_id);
+			g_node->addChild(serInfo);
+		}
+	});
 
 	coinChange(this);
 }
@@ -139,22 +144,6 @@ void ServantButton::coinChange(Ref*)
 		bt->setEnabled(false);
 	}
 	lockState();
-}
-
-bool ServantButton::onTouchBegan(Touch * touch, Event* event)
-{
-	return true;
-}
-void ServantButton::onTouchEnded(Touch * touch, Event * event)
-{
-	auto pos = this->convertTouchToNodeSpace(touch);
-	auto head = (Sprite*)m_layer->getChildByName("serHead");
-	if (head->getBoundingBox().containsPoint(pos))
-	{
-		auto serInfo = ServantInfo::create();
-		serInfo->initServantInfo(m_id);
-		g_node->addChild(serInfo);
-	}
 }
 
 void ServantButton::oneUp()

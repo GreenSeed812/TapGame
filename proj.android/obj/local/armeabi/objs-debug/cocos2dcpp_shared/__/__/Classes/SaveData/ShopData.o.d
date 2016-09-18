@@ -246,7 +246,9 @@
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCInteger.h \
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCNotificationCenter.h \
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCSet.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCDeprecated.h
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCDeprecated.h \
+  jni/../../Classes\Tool/SqLite.h jni/../../Classes\Tool/sqlite3.h \
+  jni/../../Classes\Tool/MyNum.h
 
 jni/../../Classes/SaveData/ShopData.h:
 
@@ -741,3 +743,9 @@ E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCNotific
 E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCSet.h:
 
 E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCDeprecated.h:
+
+jni/../../Classes\Tool/SqLite.h:
+
+jni/../../Classes\Tool/sqlite3.h:
+
+jni/../../Classes\Tool/MyNum.h:

@@ -355,7 +355,10 @@
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/dtoa.h \
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/itoa.h \
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/stringbuffer.h \
-  jni/../../Classes\SaveData/ShopData.h
+  jni/../../Classes\SaveData/ShopData.h \
+  jni/../../Classes\MainScene/HelloWorldScene.h \
+  jni/../../Classes\MainScene/ClickLayer.h \
+  jni/../../Classes\Ui/bossButton.h
 
 jni/../../Classes\MainScene/ArReset.h:
 
@@ -1072,3 +1075,9 @@ E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/int
 E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/stringbuffer.h:
 
 jni/../../Classes\SaveData/ShopData.h:
+
+jni/../../Classes\MainScene/HelloWorldScene.h:
+
+jni/../../Classes\MainScene/ClickLayer.h:
+
+jni/../../Classes\Ui/bossButton.h:

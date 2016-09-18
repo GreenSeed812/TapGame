@@ -29,8 +29,6 @@ private:
 	int m_level;
 	int m_StoneNum;//已消费的灵魂石
 	bool m_levelUp;
-	bool onTouchBegan(Touch *, Event*);
-	void onTouchEnded(Touch *, Event *);
 
 };
 

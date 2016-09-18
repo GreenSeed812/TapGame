@@ -29,7 +29,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	Button* bt = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up");
 	Button* up10 = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up10");
 	Button* up100 = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up100");
-	Sprite* sp = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("playerHead");
+	auto head = (Button*)playerLayer->getChildByName("Layer")->getChildByName("playerHead");
 	
 	up10->setVisible(false);
 	up100->setVisible(false);
@@ -37,7 +37,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	m_type = type;
 	if (type == PLAYER)
 	{	
-		sp->setTexture("ui/downUi/hero/heroHead0.png");
+		head->loadTextureNormal("ui/downUi/hero/heroHead0.png");
+		head->loadTexturePressed("ui/downUi/hero/heroHead0.png");
 		m_upGold = PlayerData::getInstance()->getPlayerlvupGold();
 
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
@@ -88,15 +89,21 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 			}
 		});
 
-		auto listener = EventListenerTouchOneByOne::create();
-		listener->onTouchBegan = CC_CALLBACK_2(PlayerButton::onTouchBegan, this);
-		listener->onTouchEnded = CC_CALLBACK_2(PlayerButton::onTouchEnded, this);
-		Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
+		head->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type)
+		{
+			if (type == Widget::TouchEventType::ENDED)
+			{
+				auto playerInfo = PlayerInfo::create();
+				playerInfo->initPlayerInfo();
+				g_node->addChild(playerInfo);
+			}
+		});
 	}
 	else if (type == SKILL1)
 	{
 
-		sp->setTexture("ui/downUi/hero/heroHead1.png");
+		head->loadTextureNormal("ui/downUi/hero/heroHead1.png");
+		head->loadTexturePressed("ui/downUi/hero/heroHead1.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(1);
 		
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
@@ -114,7 +121,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	else if (type == SKILL2)
 	{
 
-		sp->setTexture("ui/downUi/hero/heroHead2.png");
+		head->loadTextureNormal("ui/downUi/hero/heroHead2.png");
+		head->loadTexturePressed("ui/downUi/hero/heroHead2.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(2);
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
@@ -131,7 +139,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	else if (type == SKILL3)
 	{
 
-		sp->setTexture("ui/downUi/hero/heroHead3.png");
+		head->loadTextureNormal("ui/downUi/hero/heroHead3.png");
+		head->loadTexturePressed("ui/downUi/hero/heroHead3.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(3);
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
@@ -148,7 +157,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	else if (type == SKILL4)
 	{
 
-		sp->setTexture("ui/downUi/hero/heroHead4.png");
+		head->loadTextureNormal("ui/downUi/hero/heroHead4.png");
+		head->loadTexturePressed("ui/downUi/hero/heroHead4.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(4);
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
@@ -165,7 +175,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	else if (type == SKILL5)
 	{
 
-		sp->setTexture("ui/downUi/hero/heroHead5.png");
+		head->loadTextureNormal("ui/downUi/hero/heroHead5.png");
+		head->loadTexturePressed("ui/downUi/hero/heroHead5.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(5);
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
@@ -182,7 +193,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	else if (type == SKILL6)
 	{
 
-		sp->setTexture("ui/downUi/hero/heroHead6.png");
+		head->loadTextureNormal("ui/downUi/hero/heroHead6.png");
+		head->loadTexturePressed("ui/downUi/hero/heroHead6.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(6);
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
@@ -199,7 +211,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	else if (type == RELIFE)
 	{
 
-		sp->setTexture("ui/downUi/hero/heroHead7.png");
+		head->loadTextureNormal("ui/downUi/hero/heroHead7.png");
+		head->loadTexturePressed("ui/downUi/hero/heroHead7.png");
 		bt->setEnabled("false");
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
@@ -406,23 +419,6 @@ void PlayerButton::upLevelCount()
 			up100->runAction(action);
 		}
 	}	
-}
-
-bool PlayerButton::onTouchBegan(Touch * touch, Event* event)
-{
-	return true;
-}
-void PlayerButton::onTouchEnded(Touch * touch, Event * event)
-{
-	auto pos = this->convertTouchToNodeSpace(touch);
-	auto head = (Sprite*)playerLayer->getChildByName("Layer")->getChildByName("playerHead");
-	if (head->getBoundingBox().containsPoint(pos))
-	{
-		auto playerInfo = PlayerInfo::create();
-		playerInfo->initPlayerInfo();
-		g_node->addChild(playerInfo);
-
-	}
 }
 
 void PlayerButton::callback(Node * node)

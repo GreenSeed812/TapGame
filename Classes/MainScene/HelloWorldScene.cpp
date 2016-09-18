@@ -62,7 +62,14 @@ bool HelloWorld::init()
         return false;
     }
 	
-	
+	//log("%d",TimeTool::getInstance()->getTime());
+	//log("YEAR:%d",TimeTool::getInstance()->getcurrTime()->tm_year+1900);
+	//log("MON:%d", TimeTool::getInstance()->getcurrTime()->tm_mon+1);
+	//log("DAY:%d", TimeTool::getInstance()->getcurrTime()->tm_mday);
+	//log("HOUR:%d", TimeTool::getInstance()->getcurrTime()->tm_hour);
+	//log("MIN:%d", TimeTool::getInstance()->getcurrTime()->tm_min+1);
+	//log("SEC:%d", TimeTool::getInstance()->getcurrTime()->tm_sec+1);
+
 	BgMusic::getInstance()->playBg(true);
 	m_hitlogic = true;
 	m_heroLayer = nullptr;
@@ -108,7 +115,7 @@ bool HelloWorld::init()
 	PlayerButton::getRootNode(rootNode);
 	ServantButton::getRootNode(rootNode);
 	TextBMFont* waveNum = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("WaveNum");
-	waveNum->setString(StringUtils::format("%d/10", PlayerData::getInstance()->getWaveNow()));
+	waveNum->setString(StringUtils::format("%d/%d", PlayerData::getInstance()->getWaveNow(), PlayerData::getInstance()->getMaxWave() - 1));
 	bossBt = nullptr;
 	m_gamelogic = true;
 //	OffLineGold::getInstance()->getMillSecond();
@@ -345,7 +352,7 @@ void HelloWorld::update(float dt)
 				TextBMFont* dps = (TextBMFont*)m_servantLayer->getChildByName("message")->getChildByName("Dps");
 				dps->setString(Ruler::getInstance()->showNum(heroDps));
 			}
-			if (PlayerData::getInstance()->getWaveNow() == 11)
+			if (PlayerData::getInstance()->getWaveNow() == PlayerData::getInstance()->getMaxWave())
 			{
 				Slider* timeSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("timeSlider");
 
@@ -407,6 +414,7 @@ void HelloWorld::update(float dt)
  }
 void HelloWorld::uiInit()
 {
+
 	Slider* timeSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("timeSlider");
 	timeSlider->runAction(Hide::create());
 	
@@ -644,11 +652,11 @@ void HelloWorld::killBoss()
 	{
 		m_hitlogic = false;
 		PlayerData::getInstance()->defeatMonsterGold();
-		if (PlayerData::getInstance()->getWaveNow() < 10 && PlayerData::getInstance()->getWaveNow() != 0)
+		if (PlayerData::getInstance()->getWaveNow() < PlayerData::getInstance()->getMaxWave() - 1 && PlayerData::getInstance()->getWaveNow() != 0)
 		{
 			PlayerData::getInstance()->waveUp();
 			
-			waveNum->setString(StringUtils::format("%d/10", PlayerData::getInstance()->getWaveNow()));
+			waveNum->setString(StringUtils::format("%d/%d", PlayerData::getInstance()->getWaveNow(),PlayerData::getInstance()->getMaxWave() - 1));
 		}
 		else if (PlayerData::getInstance()->getWaveNow() == PlayerData::getInstance()->getMaxWave()-1)
 		{
@@ -682,7 +690,7 @@ void HelloWorld::killBoss()
 			textNext->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel()+1));
 			Node* bossButtonNode = (Node*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("escapeBoss");
 			bossButtonNode->removeChildByName("bt");
-			waveNum->setString(StringUtils::format("%d/10", PlayerData::getInstance()->getWaveNow()));
+			waveNum->setString(StringUtils::format("%d/%d", PlayerData::getInstance()->getWaveNow(), PlayerData::getInstance()->getMaxWave() - 1));
 			waveNum->runAction(Show::create());
 		}
 		auto hpnow = PlayerData::getInstance()->getHpNow();
@@ -707,7 +715,7 @@ void HelloWorld::mapChange()
 	if ((PlayerData::getInstance()->getLevel() + 1) % 5 == 0)
 	{
 		auto mapNum = (PlayerData::getInstance()->getLevel() + 1) / 5;
-		auto map = SqLite::getInstance()->getMapDataByID(mapNum % 8);
+		auto map = SqLite::getInstance()->getMapDataByID(mapNum % 10);
 		Sprite* spr = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherR");
 		spr->setTexture(StringUtils::format("map/icon/%s", map->mapIcon.c_str()));
 		Sprite* mapL = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherL");
@@ -791,6 +799,7 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 					_child->setEnabled(true);
 				}
 				downLayer->removeFromParent();
+				
 			}
 		});
 		ret = true;
@@ -821,7 +830,6 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 	}
 
 	rootNode->addChild(downLayer);
-	
 	return ret;
 }
 
@@ -1187,6 +1195,7 @@ void HelloWorld::shopItemEff(float dt)
 			showSiTime(4, t_time - dt);
 		}
 		t_time -= dt;
+		t_now += dt;
 		if (t_now > 1 / 30.0f)
 		{
 			Node* monsterNode = rootNode->getChildByName("MonsterNode");
@@ -1217,8 +1226,10 @@ void HelloWorld::shopItemEff(float dt)
 	{
 		for (int i = 1; i < 7; i++)
 		{
-			m_skill[i - 1]->getChildByName("SkillCD")->removeFromParent();
-			m_skill[i - 1]->getChildByName("SkillKpCD")->removeFromParent();
+			if(m_skill[i - 1]->getChildByName("SkillCD"))
+				m_skill[i - 1]->getChildByName("SkillCD")->removeFromParent();
+			if(m_skill[i - 1]->getChildByName("SkillKpCD"))
+				m_skill[i - 1]->getChildByName("SkillKpCD")->removeFromParent();
 			
 		}
 		ShopData::getInstance()->stopItemById(5);

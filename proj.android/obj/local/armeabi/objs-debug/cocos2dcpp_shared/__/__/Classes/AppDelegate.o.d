@@ -349,7 +349,8 @@
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/3d/..\editor-support/cocostudio/CocosStudioExtension.h \
   jni/../../Classes\Tool/MyNum.h jni/../../Classes/Tool\SqLite.h \
   jni/../../Classes\Tool/sqlite3.h \
-  jni/../../Classes/LoadingScene\LoadingScene.h
+  jni/../../Classes/LoadingScene\LoadingScene.h \
+  jni/../../Classes/Animation.h
 
 jni/../../Classes/AppDelegate.h:
 
@@ -1054,3 +1055,5 @@ jni/../../Classes/Tool\SqLite.h:
 jni/../../Classes\Tool/sqlite3.h:
 
 jni/../../Classes/LoadingScene\LoadingScene.h:
+
+jni/../../Classes/Animation.h:

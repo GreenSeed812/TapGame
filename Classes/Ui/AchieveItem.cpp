@@ -20,6 +20,7 @@ bool AchieveItem::init()
 		return false;
 	}
 	m_money = 5;
+	m_allMoney = 0;
 	m_starUp = false;
 	m_starUped = false;
 	m_click = false;
@@ -27,10 +28,15 @@ bool AchieveItem::init()
 	auto btn = (Button*)m_node->getChildByName("bgAchieve")->getChildByName("btn");
 	btn->addTouchEventListener([this,btn](Ref* sender, Widget::TouchEventType type)
 	{
-		AchieveLayer::setMoney(m_money);
-		ShopData::getInstance()->addShopGold(m_money);
-		m_click = false;
-		initAchieveItem(m_id);
+		if (type == Widget::TouchEventType::ENDED)
+		{
+			ShopData::getInstance()->addShopGold(m_money);
+			m_allMoney += m_money;
+			AchieveLayer::setMoney(m_allMoney);
+			m_click = false;
+			initAchieveItem(m_id);
+			CCNotificationCenter::getInstance()->postNotification("AchieveChange");
+		}
 	});
 	this->setContentSize(m_node->getContentSize());
 	this->addChild(m_node);
@@ -90,6 +96,10 @@ void AchieveItem::initAchieveItem(int id)
 			m_starUp = true;
 			m_click = true;
 			m_starNum++;
+			if (m_starNum >= 6)
+			{
+				m_starNum = 5;
+			}
 		}
 	case 19:
 	case 20:
@@ -104,6 +114,10 @@ void AchieveItem::initAchieveItem(int id)
 			m_starUp = true;
 			m_click = true;
 			m_starNum++;
+			if (m_starNum >= 6)
+			{
+				m_starNum = 5;
+			}
 		}
 	}
 

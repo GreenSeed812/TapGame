@@ -11,7 +11,7 @@ public:
 	static TimeTool* getInstance();
 	tm* getcurrTime();
 	int getTime();
-	void setTime(int time);
+	tm* calTime(int time);
 	static TimeTool * time_tool;
 	static tm* g_time;
 private:

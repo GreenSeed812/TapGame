@@ -57,9 +57,10 @@ int TimeTool::getTime()
 
 }
 
-void TimeTool::setTime(int time)
+tm* TimeTool::calTime(int time)
 {
 	time_t timep;
 	timep = (time_t)time;
-	g_time = localtime(&timep);
+	auto times = localtime(&timep);
+	return times;
 }

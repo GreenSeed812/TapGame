@@ -142,10 +142,20 @@ void TaskItem::stateChange()
 		}
 		break;
 	case 5:
+	{
+		auto hour = time->tm_hour + 1;
+		log("%d", hour);
+		if (hour >= 9 && hour <= 12)
+		{
+			m_state = true;
+		}
+	}
+	break;
 	case 6:
 	{	
 		auto hour = time->tm_hour + 1;
-		if (hour >= 9 && hour <= 12 || hour >= 18 && hour <= 21)
+		log("%d",hour);
+		if (hour >= 18 && hour <= 21)
 		{
 			m_state = true;
 		}

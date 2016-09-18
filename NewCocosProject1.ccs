@@ -82,7 +82,6 @@
         <Image Name="gongqiao (2).png" />
         <Image Name="gongqiao (6).png" />
         <Image Name="head.png" />
-        <Image Name="head1.png" />
         <Image Name="HelloWorld.png" />
         <Image Name="hpSlider.png" />
         <Image Name="hpSliderDemo.png" />
@@ -148,7 +147,6 @@
         <Image Name="mingchengk.png" />
         <Image Name="mingchengkuang_ar.png" />
         <Image Name="mission.png" />
-        <Image Name="mission1.png" />
         <Image Name="mm1.png" />
         <ExportJsonFile Name="monster_01.ExportJson" />
         <Image Name="monster_010.png" />
@@ -168,7 +166,6 @@
         <Image Name="shitou.png" />
         <Project Name="shujutongji.csd" Type="Layer" />
         <Image Name="sign.png" />
-        <Project Name="singLayer.csd" Type="Layer" />
         <Image Name="sjtj.png" />
         <Image Name="SkillButton.png" />
         <Image Name="skillLayer.png" />

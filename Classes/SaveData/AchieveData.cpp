@@ -1,4 +1,5 @@
 #include "AchieveData.h"
+#include "MissionData.h"
 #include "cocos2d.h"
 #include "Tool/Rule.h"
 static AchieveData * g_Ac = nullptr;
@@ -226,4 +227,9 @@ MyNum AchieveData::getMyNumByID(int id)
 	case 6:
 		return m_maxDpsPer;
 	}
+}
+void AchieveData::tap()
+{
+	m_tapNum++;
+	MissionData::getInstance()->addMissionTimesById(4);
 }

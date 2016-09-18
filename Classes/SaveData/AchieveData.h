@@ -18,7 +18,7 @@ public:
 	void addArStone(int add){ m_ArStoneCollect += add; }
 	void ArMaxNum(int num){ if (num > m_ArMax) m_ArMax = num; }
 	void killBoss(){ m_bossKill++; }
-	void tap(){ m_tapNum++; }
+	void tap();
 	void relife(){ m_relifeNum++; }
 	void maxPlayerLevel(int plevel){ if (plevel > m_maxPlayerLevelUp)m_maxPlayerLevelUp = plevel; }
 	void killRareMonster(){ m_killraremonster++; }
@@ -26,6 +26,8 @@ public:
 	void skillUsed(int i);
 	int getStarNumByID(int id){ return starNum[id-1]; }
 	void setStarNumByID(int id, int num){ starNum[id-1] = num; }
+	int getTotalReword(){ return m_totalrewords; }
+	void addTotalReword(int add){ m_totalrewords += add; }
 public:
 	MyNum getMyNumByID(int id);
 	int getNumByID(int id);
@@ -51,6 +53,7 @@ private:
 	int m_skill6used;
 	int exploreNum;
 	int starNum[23];
+	int m_totalrewords;
 };
 
 

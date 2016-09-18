@@ -8,6 +8,7 @@
 #include "json/document.h"
 #include "json/writer.h"
 #include "json/stringbuffer.h"
+#include "MissionData.h"
 using namespace  rapidjson;
 #include <math.h>
 #include<cocos2d.h>
@@ -256,6 +257,7 @@ void PlayerData::heroLevelUp()
 	m_basedps = Ruler::getInstance()->addNum(m_basedps, updps);
 	AchieveData::getInstance()->maxPlayerLevel(m_playerLevel);
 	m_gold = Ruler::getInstance()->subNum(m_gold,m_upGold);
+	MissionData::getInstance()->addMissionTimesById(7);
 	
 }
 MyNum PlayerData::getPlayerlvupDps()

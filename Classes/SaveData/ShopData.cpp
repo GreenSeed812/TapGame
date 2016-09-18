@@ -1,5 +1,6 @@
 #include "ShopData.h"
 #include "Tool/SqLite.h"
+#include "MissionData.h"
 static ShopData* g_SD = nullptr;
 ShopData::ShopData()
 :m_shopGold(9999)
@@ -48,6 +49,10 @@ void ShopData::buyItemByID(int id)
 	}
 	else
 	{
+		if (id == 5)
+		{
+			MissionData::getInstance()->addMissionTimesById(5);
+		}
 		getItemDataById(id)->leftTime = SqLite::getInstance()->getItemByID(id)->time;
 		m_items[id]->isUsing = true;
 	}

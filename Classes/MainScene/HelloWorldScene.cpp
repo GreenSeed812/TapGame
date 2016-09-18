@@ -23,6 +23,7 @@
 #include "SkillCD.h"
 #include "Animation.h"
 #include "Ui/ItemLayer.h"
+#include "SaveData/MissionData.h"
 using namespace cocostudio;
 
 USING_NS_CC;
@@ -725,7 +726,7 @@ void HelloWorld::bgChange(Node* node)
 {
 	auto waveN = PlayerData::getInstance()->getWaveNow();
 	auto mapNum = PlayerData::getInstance()->getLevel() / 5;
-	auto map = SqLite::getInstance()->getMapDataByID(mapNum % 8);
+	auto map = SqLite::getInstance()->getMapDataByID(mapNum % 10);
 	Sprite* spr = (Sprite*)rootNode->getChildByName("mainBG");
 	spr->setTexture(StringUtils::format("map/bg/%s", map->bg.c_str()));
 	Sprite* mapNow = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapNow");
@@ -867,6 +868,7 @@ void HelloWorld::playerSkillCallBack()
 		{
 			if (type == Widget::TouchEventType::ENDED)
 			{
+				MissionData::getInstance()->addMissionTimesById(8);
 				auto skillKpCD = SkillCD::create();
 				skillKpCD->initkpImage(i);
 				skillKpCD->setPosition(m_skill[i - 1]->getContentSize() / 2);

@@ -53,6 +53,8 @@ public:
 	MyNum getServantDps(int i);
 	int getServantLevel(int i){ return m_servantLevel[i]; }
 	MyNum getservantLevelUpDps(int id);
+	MyNum getservantLevelUp10Dps(int id);
+	MyNum getservantLevelUp100Dps(int id);
 	MyNum getservantLevelUpGold(int id);
 	MyNum getservantLevelUp10Gold(int id);
 	MyNum getservantLevelUp100Gold(int id);

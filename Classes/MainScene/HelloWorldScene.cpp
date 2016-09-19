@@ -96,7 +96,8 @@ bool HelloWorld::init()
 	leaveBtn->addTouchEventListener([this, leaveGold,leaveBtn](Ref* sender, Widget::TouchEventType type){
 		if (type == Widget::TouchEventType::ENDED)
 		{
-			PlayerData::getInstance()->addGold(&(leaveGold->getGolds()));
+			auto leveG = leaveGold->getGolds();
+			PlayerData::getInstance()->addGold(&leveG);
 			delete leaveGold;
 			leaveBtn->setVisible(false);
 		}
@@ -719,7 +720,7 @@ void HelloWorld::mapChange()
 		m_gamelogic = false;
 		auto effect = Sprite::create();
 		/*effect->setZOrder(100);*/
-		auto animate = MyAnimation::getInstance()->getAnimate();
+		auto animate = MyAnimation::getInstance()->getAnimate_xy();
 		effect->setScale(3.6);
 		effect->setAnchorPoint(Vec2(0, 0));
 		auto seq = Sequence::create(animate, CallFuncN::create(CC_CALLBACK_1(HelloWorld::bgChange, this)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)),CallFuncN::create(CC_CALLBACK_1(HelloWorld::gameContinue,this)), NULL);
@@ -909,6 +910,75 @@ void HelloWorld::playerSkillCallBack()
 				m_skill[i - 1]->setEnabled(false);
 				PlayerData::getInstance()->openSkill(i - 1);
 				AchieveData::getInstance()->skillUsed(i-1);
+				if (i == 2)
+				{
+					m_kssjEffect = Sprite::create();
+					m_kssjEffect->setScale(4.0f);
+					m_kssjEffect->setColor(Color3B(0, 0, 0));
+					auto animate = MyAnimation::getInstance()->getAnimate_kssj();
+					auto kptime = PlayerData::getInstance()->getKeepTime(i);
+					kptime *=(1 + ArtifactData::getInstance()->getskillTimeA(i));
+					auto t1 = animate->getAnimation()->getDelayPerUnit();
+					auto t2 = animate->getAnimation()->getTotalDelayUnits();
+					auto num = kptime / (t1*t2);
+					auto seq = Sequence::create(Repeat::create(animate, kptime / (t1*t2)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+					rootNode->getChildByName("normalAtk")->addChild(m_kssjEffect);
+					m_kssjEffect->runAction(seq);
+					MyAnimation::getInstance()->setKSSJplaying(true);
+				}
+				if (i == 3)
+				{
+					auto effect = Sprite::create();
+					auto animate = MyAnimation::getInstance()->getAnimate_szj();
+					auto seq = Sequence::create(animate, CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+					rootNode->getChildByName("normalAtk")->addChild(effect);
+					effect->runAction(seq);
+				}
+				if (i == 4)
+				{
+					auto effect = Sprite::create();
+					effect->setScale(4.0f);
+					auto animate = MyAnimation::getInstance()->getAnimate_bfx();
+					auto kptime = PlayerData::getInstance()->getKeepTime(i);
+					kptime *= (1 + ArtifactData::getInstance()->getskillTimeA(i));
+					auto t1 = animate->getAnimation()->getDelayPerUnit();
+					auto t2 = animate->getAnimation()->getTotalDelayUnits();
+					auto num = kptime / (t1*t2);
+					auto seq = Sequence::create(Repeat::create(animate, kptime / (t1*t2)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+					rootNode->getChildByName("normalAtk")->addChild(effect);
+					effect->runAction(seq);
+				}
+				if (i == 5)
+				{
+					auto effectSx = Sprite::create();
+					auto animateSx = MyAnimation::getInstance()->getAnimate_sx();
+					auto seqSx = Sequence::create(animateSx, CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+					//rootNode->getChildByName("normalAtk")
+					rootNode->getChildByName("normalAtk")->addChild(effectSx);
+					effectSx->runAction(RepeatForever::create(seqSx));
+					auto effetsxk = Sprite::create();
+					effetsxk->setScale(2.0f);
+					effetsxk->setPosition(0,100);
+					auto animateSxk = MyAnimation::getInstance()->getAnimate_sxk();
+					auto kptime = PlayerData::getInstance()->getKeepTime(i);
+					kptime *= (1 + ArtifactData::getInstance()->getskillTimeA(i));
+					auto t1 = animateSxk->getAnimation()->getDelayPerUnit();
+					auto t2 = animateSxk->getAnimation()->getTotalDelayUnits();
+					auto num = kptime / (t1*t2);
+					auto seqSxk = Sequence::create(Repeat::create(animateSxk, kptime / (t1*t2)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+					rootNode->getChildByName("normalAtk")->addChild(effetsxk);
+					effetsxk->runAction(seqSxk);
+
+				}
+				if (i == 6)
+				{
+					auto effect = Sprite::create();
+					effect->setScale(3.5f);
+					auto animate = MyAnimation::getInstance()->getAnimate_tq();
+					auto seq = Sequence::create(animate, CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+					rootNode->getChildByName("normalAtk")->addChild(effect);
+					effect->runAction(seq);
+				}
 			}
 		});
 	}
@@ -982,40 +1052,61 @@ void HelloWorld::skillEff(float dt)
 		t_now += dt;
 		if (PlayerData::getInstance()->getSkillopen(0))
 		{
-
-
-			PlayerData::getInstance()->subHp(Ruler::getInstance()->multiplay(PlayerData::getInstance()->getTapDps(), PlayerData::getInstance()->getSkillEFF(0) * (1 + ArtifactData::getInstance()->getskilleffUp(1))));
-			
+			m_hitlogic = false;
+			auto effect = Sprite::create();
+			effect->setScale(3.0);
+			effect->setPosition(Vec2(-200, 0));
+			auto animate = MyAnimation::getInstance()->getAnimate_zs();
+			auto seq = Sequence::create(animate, CallFuncN::create(CC_CALLBACK_1(HelloWorld::skilleff1, this)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+			rootNode->getChildByName("normalAtk")->addChild(effect);
+			effect->runAction(seq);
+						
 		}
-		if (MyState::getInstance()->getKTap() && PlayerData::getInstance()->getSkillopen(1))
+		if ( PlayerData::getInstance()->getSkillopen(1))
 		{
-		
-			if (t_now > 1 / 7.0f)
+			
+			if (MyState::getInstance()->getKTap())
 			{
-				Node* monsterNode = rootNode->getChildByName("MonsterNode");
-				Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
-				num = PlayerData::getInstance()->getTapDps();
-				PlayerData::getInstance()->subHp(num);
-				normalAtk();
-				armature->getAnimation()->play("Hurt", -1, 0);
-				t_now = 0;
-				if (PlayerData::getInstance()->getSkillopen(5))
+				if (!MyAnimation::getInstance()->getKSSJplaying())
 				{
-					auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(5) * (1 + ArtifactData::getInstance()->getskilleffUp(6)));
-					PlayerData::getInstance()->addGold(&num1);
+					m_kssjEffect->runAction(Show::create());
+					MyAnimation::getInstance()->setKSSJplaying(true);
 				}
-				if (ShopData::getInstance()->getItemBeUsedById(1))
+				if (t_now > 1 / 7.0f)
 				{
-					auto num2 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 0.3);
-					PlayerData::getInstance()->addGold(&num2);
+					Node* monsterNode = rootNode->getChildByName("MonsterNode");
+					Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
+					num = PlayerData::getInstance()->getTapDps();
+					PlayerData::getInstance()->subHp(num);
+					normalAtk();
+					armature->getAnimation()->play("Hurt", -1, 0);
+					t_now = 0;
+					if (PlayerData::getInstance()->getSkillopen(5))
+					{
+						auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(5) * (1 + ArtifactData::getInstance()->getskilleffUp(6)));
+						PlayerData::getInstance()->addGold(&num1);
+					}
+					if (ShopData::getInstance()->getItemBeUsedById(1))
+					{
+						auto num2 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 0.3);
+						PlayerData::getInstance()->addGold(&num2);
+					}
 				}
 			}
+			else
+			{
+				if (MyAnimation::getInstance()->getKSSJplaying())
+				{
+					m_kssjEffect->runAction(Hide::create());
+					MyAnimation::getInstance()->setKSSJplaying(false);
+				}
+			
+			}
+			
 		}
 		if (PlayerData::getInstance()->getSkillopen(2))
 		{
 			PlayerData::getInstance()->setSkillexploreProb(PlayerData::getInstance()->getSkillEFF(2) *(1 + ArtifactData::getInstance()->getskilleffUp(3)));
-		
-		
 		}
 		if (PlayerData::getInstance()->getSkillopen(3))
 		{
@@ -1424,6 +1515,7 @@ void HelloWorld::gameContinue(Node*)
 void HelloWorld::showSiTime(int id, float dt)
 {
 	//显示倒计时，时间为dt
+
 }
 
 void HelloWorld::relife()
@@ -1433,4 +1525,13 @@ void HelloWorld::relife()
 	PlayerData::getInstance()->relifeEnd();
 	auto scene = HelloWorld::createScene();
 	Director::getInstance()->replaceScene(scene);
+}
+void HelloWorld::skilleff1(Ref*)
+{
+	PlayerData::getInstance()->subHp(Ruler::getInstance()->multiplay(PlayerData::getInstance()->getTapDps(), PlayerData::getInstance()->getSkillEFF(0) * (1 + ArtifactData::getInstance()->getskilleffUp(1))));
+	m_hitlogic = true;
+}
+void HelloWorld::skilleff2(Ref*)
+{
+	
 }

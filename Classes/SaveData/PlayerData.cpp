@@ -585,6 +585,38 @@ MyNum PlayerData::getservantLevelUpDps(int id)
 	//auto upDps = Ruler::getInstance()->subNum(servantLsDps, getservantToalDps(id));
 	return servantLsDps;
 }
+MyNum PlayerData::getservantLevelUp10Dps(int id)
+{
+	MyNum upDps;
+	upDps.Mathbit = 0;
+	upDps.number = 0;
+	auto servantLsDps = SqLite::getInstance()->getServantDpsByID(id);
+	for (int i = m_servantLevel[id]; i < m_servantLevel[id]+10; i++)
+	{
+		upDps = Ruler::getInstance()->addNum(upDps, servantLsDps);
+		auto pow1 = pow(i + 1, 0.7);
+		auto pow2 = pow(i + 1, 6);
+		auto mul = 1 + 1 / pow1 - 1 / pow2;
+		servantLsDps = Ruler::getInstance()->multiplay(servantLsDps, mul);
+	}
+	return upDps;
+}
+MyNum PlayerData::getservantLevelUp100Dps(int id)
+{
+	MyNum upDps;
+	upDps.Mathbit = 0;
+	upDps.number = 0;
+	auto servantLsDps = SqLite::getInstance()->getServantDpsByID(id);
+	for (int i = m_servantLevel[id]; i < m_servantLevel[id] + 100; i++)
+	{
+		upDps = Ruler::getInstance()->addNum(upDps, servantLsDps);
+		auto pow1 = pow(i + 1, 0.7);
+		auto pow2 = pow(i + 1, 6);
+		auto mul = 1 + 1 / pow1 - 1 / pow2;
+		servantLsDps = Ruler::getInstance()->multiplay(servantLsDps, mul);
+	}
+	return upDps;
+}
 MyNum PlayerData::getservantLevelUpGold(int id)
 {
 	auto m_upGold = SqLite::getInstance()->getServantGoldByID(id);
@@ -632,6 +664,12 @@ MyNum PlayerData::getservantLevelUp100Gold(int id)
 }
 int PlayerData::getRelifeStone()
 {
+	if (ShopData::getInstance()->getItemBeUsedById(8))
+	{
+		return (getHeroRelifeStone() + getServantRelifeStone() + getLevelRelifeStone()) * 2;
+		
+	}
+	else
 	return getHeroRelifeStone() + getServantRelifeStone() + getLevelRelifeStone();
 }
 int PlayerData::getHeroRelifeStone()
@@ -907,12 +945,8 @@ int PlayerData::getServantAverLevel()
 }
 void PlayerData::relife()
 {
-	if (ShopData::getInstance()->getItemBeUsedById(8))
-	{
-		ArtifactData::getInstance()->addArtiStone(getRelifeStone() * 2);
-		ShopData::getInstance()->stopItemById(8);
-	}
 	ArtifactData::getInstance()->addArtiStone(getRelifeStone());
+	ShopData::getInstance()->stopItemById(8);
 	delete p_dt;
 	p_dt = new PlayerData();
 	m_relife = true;

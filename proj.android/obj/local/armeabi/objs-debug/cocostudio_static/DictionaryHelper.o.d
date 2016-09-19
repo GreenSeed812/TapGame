@@ -1,89 +1,95 @@
-./obj/local/armeabi/objs-debug/cocostudio_static/DictionaryHelper.o: \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/DictionaryHelper.cpp \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformMacros.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccConfig.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformConfig.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformDefine.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/android/CCPlatformDefine-android.h \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\android/log.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/..\cocostudio/DictionaryHelper.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/document.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/reader.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/rapidjson.h \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cstdlib \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cstring \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\inttypes.h \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cassert \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/allocators.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/encodings.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/meta.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/stack.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/strtod.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/ieee754.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/biginteger.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/diyfp.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/pow10.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/error/error.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/strfunc.h \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\new \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\iterator \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\utility \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/..\cocostudio/CocosStudioExport.h
+obj/local/armeabi/objs-debug/cocostudio_static/DictionaryHelper.o: \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/DictionaryHelper.cpp \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformMacros.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccConfig.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformConfig.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformDefine.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCPlatformDefine-android.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/log.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/DictionaryHelper.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/document.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/reader.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/rapidjson.h \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstdlib \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstring \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/inttypes.h \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cassert \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/allocators.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/encodings.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/meta.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/../rapidjson.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/stack.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/strtod.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/ieee754.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/biginteger.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/diyfp.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/pow10.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/error/error.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/error/../rapidjson.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/strfunc.h \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/new \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/iterator \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/utility \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocosStudioExport.h
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformMacros.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformMacros.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccConfig.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccConfig.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformConfig.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformConfig.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformDefine.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformDefine.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/android/CCPlatformDefine-android.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCPlatformDefine-android.h:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\android/log.h:
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/log.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/..\cocostudio/DictionaryHelper.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/DictionaryHelper.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/document.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/document.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/reader.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/reader.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/rapidjson.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/rapidjson.h:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cstdlib:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstdlib:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cstring:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstring:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\inttypes.h:
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/inttypes.h:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cassert:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cassert:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/allocators.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/allocators.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/encodings.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/encodings.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/meta.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/meta.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/stack.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/../rapidjson.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/strtod.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/stack.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/ieee754.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/strtod.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/biginteger.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/ieee754.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/diyfp.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/biginteger.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/pow10.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/diyfp.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/error/error.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/pow10.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/strfunc.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/error/error.h:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\new:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/error/../rapidjson.h:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\iterator:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/strfunc.h:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\utility:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/new:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/..\cocostudio/CocosStudioExport.h:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/iterator:
+
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/utility:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocosStudioExport.h:

@@ -35,6 +35,8 @@ public:
 	void skillCDUpdate(float dt);
 	void skillKpCDUpdate(float dt);
 	void skillEff(float);
+	void skilleff1(Ref*);
+	void skilleff2(Ref*);
 	void attackeffection();
 	void deleteSprite(Node *);
 	void playMusic(Node * node);
@@ -85,6 +87,7 @@ private:
 	static int m_dayCount;
 	static int m_signCount;
 	static tm* m_time;
+	Sprite* m_kssjEffect;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

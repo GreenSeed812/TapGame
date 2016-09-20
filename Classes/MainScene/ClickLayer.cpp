@@ -6,6 +6,7 @@
 #include "SaveData/PlayerData.h"
 #include "ui/CocosGUI.h"
 #include "SaveData/State.h"
+#include "Animation.h"
 #include <time.h>
 USING_NS_CC_EXT;
 USING_NS_CC;
@@ -39,6 +40,11 @@ bool ClickLayer::onTouchBegan(Touch *touch, Event*)
 	if (point.y >= 607)
 	{
 
+		m_armature = Armature::create("Effect_atk_hunter");
+		m_armature->getAnimation()->playByIndex(0, -1, 0);
+		m_armature->setPosition(point);
+		m_armature->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(ClickLayer::deleteArmature));
+		this->getParent()->addChild(m_armature);
 		MyState::getInstance()->setTaped(true);
 		MyState::getInstance()->setKTap(true);
 		return true;
@@ -54,4 +60,11 @@ void ClickLayer::onTouchEnded(Touch *touch, Event*)
 }
 void ClickLayer::onTouchCanceled(Touch *touch, Event*)
 {
+}
+void ClickLayer::deleteArmature(Armature * armature, MovementEventType type, const std::string& action)
+{
+	if (type == MovementEventType::LOOP_COMPLETE || type == MovementEventType::COMPLETE)
+	{
+		m_armature->removeFromParent();
+	}
 }

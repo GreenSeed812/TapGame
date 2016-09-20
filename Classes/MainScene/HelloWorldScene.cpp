@@ -127,6 +127,7 @@ bool HelloWorld::init()
 	waveNum->setString(StringUtils::format("%d/%d", PlayerData::getInstance()->getWaveNow(), PlayerData::getInstance()->getMaxWave() - 1));
 	bossBt = nullptr;
 	m_gamelogic = true;
+	
     return true;
 }
 void HelloWorld::coinChange(Ref *ref)
@@ -928,11 +929,12 @@ void HelloWorld::playerSkillCallBack()
 				}
 				if (i == 3)
 				{
-					auto effect = Sprite::create();
-					auto animate = MyAnimation::getInstance()->getAnimate_szj();
-					auto seq = Sequence::create(animate, CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
-					rootNode->getChildByName("normalAtk")->addChild(effect);
-					effect->runAction(seq);
+					
+					auto armT = Armature::create("Effect_strike_hunter");
+					armT->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(HelloWorld::deleteArmature));
+					armT->getAnimation()->playByIndex(0,-1,0);
+					rootNode->getChildByName("normalAtk")->addChild(armT);
+
 				}
 				if (i == 4)
 				{
@@ -1052,14 +1054,12 @@ void HelloWorld::skillEff(float dt)
 		t_now += dt;
 		if (PlayerData::getInstance()->getSkillopen(0))
 		{
-			m_hitlogic = false;
-			auto effect = Sprite::create();
-			effect->setScale(3.0);
-			effect->setPosition(Vec2(-200, 0));
-			auto animate = MyAnimation::getInstance()->getAnimate_zs();
-			auto seq = Sequence::create(animate, CallFuncN::create(CC_CALLBACK_1(HelloWorld::skilleff1, this)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
-			rootNode->getChildByName("normalAtk")->addChild(effect);
-			effect->runAction(seq);
+			
+			auto armT = Armature::create("Effect_strike_warrior");
+			armT->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(HelloWorld::skilleff1));
+			armT->getAnimation()->playByIndex(0, -1, 0);
+			armT->setScale(3.0f);
+			rootNode->getChildByName("normalAtk")->addChild(armT);
 						
 		}
 		if ( PlayerData::getInstance()->getSkillopen(1))
@@ -1348,11 +1348,15 @@ void HelloWorld::shopItemEff(float dt)
 	}
 	if (ShopData::getInstance()->getItemBeUsedById(9))
 	{
-		MyNum num;
-		num.Mathbit = 0;
-		num.number = 0;
-		PlayerData::getInstance()->setHpNow(num);
+		
+		auto armT = Armature::create("Effect_strike_magister");
+		armT->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(HelloWorld::itemEff9));
+		armT->getAnimation()->playByIndex(0, -1, 0);
+		armT->setScale(3.0);
+		rootNode->getChildByName("normalAtk")->addChild(armT);
 		ShopData::getInstance()->stopItemById(9);
+
+		
 	}
 	if (ShopData::getInstance()->getItemBeUsedById(10))
 	{
@@ -1366,6 +1370,18 @@ void HelloWorld::shopItemEff(float dt)
 	}
 	if (ShopData::getInstance()->getItemBeUsedById(12))
 	{
+		if (!MyAnimation::getInstance()->getKLGJplaying())
+		{
+			m_klgjEffect = Sprite::create();
+			m_klgjEffect->setScale(3.0);
+			m_klgjEffect->setColor(Color3B(255, 0, 0));
+			auto animate = MyAnimation::getInstance()->getAnimate_kl();
+			//m_klgjEffect->setAnchorPoint(Vec2(0, 0));
+			//auto seq = Sequence::create(animate, CallFuncN::create(CC_CALLBACK_1(HelloWorld::bgChange, this)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::gameContinue, this)), NULL);
+			rootNode->getChildByName("normalAtk")->addChild(m_klgjEffect);
+			m_klgjEffect->runAction(RepeatForever::create(animate));
+			MyAnimation::getInstance()->setKLGJplaying(true);
+		}
 		ShopData::getInstance()->getItemDataById(12)->leftTime -= dt;
 		if (ShopData::getInstance()->getItemDataById(12)->leftTime / 1 != (ShopData::getInstance()->getItemDataById(12)->leftTime - dt) / 1)
 		{
@@ -1376,7 +1392,10 @@ void HelloWorld::shopItemEff(float dt)
 		{
 			ShopData::getInstance()->stopItemById(12);
 			ShopData::getInstance()->getItemDataById(12)->leftTime = 0;
+			MyAnimation::getInstance()->setKLGJplaying(false);
+			m_klgjEffect->removeFromParent();
 		}
+		
 			
 	}
 }
@@ -1526,12 +1545,36 @@ void HelloWorld::relife()
 	auto scene = HelloWorld::createScene();
 	Director::getInstance()->replaceScene(scene);
 }
-void HelloWorld::skilleff1(Ref*)
+void HelloWorld::skilleff1(Armature * armature, MovementEventType type, const std::string& action)
 {
-	PlayerData::getInstance()->subHp(Ruler::getInstance()->multiplay(PlayerData::getInstance()->getTapDps(), PlayerData::getInstance()->getSkillEFF(0) * (1 + ArtifactData::getInstance()->getskilleffUp(1))));
-	m_hitlogic = true;
+	if (type == MovementEventType::LOOP_COMPLETE || type == MovementEventType::COMPLETE)
+	{
+		armature->removeFromParent();
+		PlayerData::getInstance()->subHp(Ruler::getInstance()->multiplay(PlayerData::getInstance()->getTapDps(), PlayerData::getInstance()->getSkillEFF(0) * (1 + ArtifactData::getInstance()->getskilleffUp(1))));
+		m_hitlogic = true;
+	}
+	
 }
 void HelloWorld::skilleff2(Ref*)
 {
 	
+}
+void HelloWorld::deleteArmature(Armature * armature, MovementEventType type, const std::string& action)
+{
+	if (type == MovementEventType::LOOP_COMPLETE || type == MovementEventType::COMPLETE)
+	{
+		armature->removeFromParent();
+		
+	}
+}
+void HelloWorld::itemEff9(Armature * armature, MovementEventType type, const std::string& action)
+{
+	if (type == MovementEventType::LOOP_COMPLETE || type == MovementEventType::COMPLETE)
+	{
+		MyNum num;
+		num.Mathbit = 0;
+		num.number = 0;
+		armature->removeFromParent();
+		PlayerData::getInstance()->setHpNow(num);
+	}
 }

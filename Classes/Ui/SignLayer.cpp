@@ -46,7 +46,7 @@ void SignLayer::initSignLayer()
 
 	for (size_t i = 0; i < 7; i++)
 	{
-		auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d",(i+1)).c_str());
+		auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (i + 1)).c_str());
 		switch (i)
 		{
 		case 0:
@@ -64,8 +64,6 @@ void SignLayer::initSignLayer()
 							m_state = false;
 							auto num = (TextBMFont*)rootNode->getChildByName("bg")->getChildByName("dayNum");
 							num->setString(StringUtils::format("%d", 1).c_str());
-							auto img = (ImageView *)rootNode->getChildByName("img1");
-							img->setVisible(false);
 						}
 					}
 				}
@@ -191,8 +189,6 @@ void SignLayer::initSignLayer()
 							m_state = false;
 							auto num = (TextBMFont*)rootNode->getChildByName("bg")->getChildByName("dayNum");
 							num->setString(StringUtils::format("%d",7).c_str());
-							auto img = (ImageView *)rootNode->getChildByName("img7");
-							img->setVisible(false);
 						}					
 					}
 				}
@@ -211,95 +207,86 @@ void SignLayer::signChange(Ref*ref)
 		m_time = HelloWorld::getTime();
 		auto num = (TextBMFont*)rootNode->getChildByName("bg")->getChildByName("dayNum");
 		num->setString(StringUtils::format("%d", m_day));
-		//stateChange();
+		stateChange();
 		for (size_t i = 0; i < 7; i++)
 		{
 			auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (i + 1)).c_str());
-			auto text = (TextBMFont *)rootNode->getChildByName(StringUtils::format("day%d", (i + 1)).c_str());
-			auto img = (ImageView *)rootNode->getChildByName(StringUtils::format("img%d", (i + 1)).c_str());
+			auto text = (TextBMFont *)rootNode->getChildByName("bg")->getChildByName(StringUtils::format("day%d", (i + 1)).c_str());
 
 			switch (i)
 			{
 			case 0:
 			{
-				auto gold = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 100);
-				text->setString(Ruler::getInstance()->showNum(gold));
 				if (m_day > 0)
 				{
 					btn->setEnabled(false);
-					img->setVisible(false);
 				}
 			}
 			break;
 			case 1:
 			{
-				auto texts = (Text *)rootNode->getChildByName(StringUtils::format("day%d", (i + 1)).c_str());
 				if (HelloWorld::getSignCount() == 0)
 				{
-					texts->setString(m_strings["A"].asString());
+					btn->loadTextureNormal("sign/sign1.png");
+					btn->loadTexturePressed("sign/sign1.png");
+					btn->loadTextureDisabled("sign/signed1.png");
 				}
 				else if (HelloWorld::getSignCount() == 1)
 				{
-					texts->setString(m_strings["C"].asString());
+					btn->loadTextureNormal("sign/sign3.png");
+					btn->loadTexturePressed("sign/sign3.png");
+					btn->loadTextureDisabled("sign/signed3.png");
 				}
 				if (m_day > 1)
 				{
 					btn->setEnabled(false);
-					img->setVisible(false);
 				}
 			}
 			break;
 			case 2:
-				text->setString(StringUtils::format("%d", 10).c_str());
 				if (m_day > 2)
 				{
 					btn->setEnabled(false);
-					img->setVisible(false);
 				}
 				break;
 			case 3:
 			{
-				auto gold = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 1000);
-				text->setString(Ruler::getInstance()->showNum(gold));
 				if (m_day > 3)
 				{
 					btn->setEnabled(false);
-					img->setVisible(false);
 				}
 			}
 			break;
 			case 4:
 			{
-				auto texts = (Text *)rootNode->getChildByName(StringUtils::format("day%d", (i + 1)).c_str());
 				if (HelloWorld::getSignCount() == 0)
 				{
-					texts->setString(m_strings["B"].asString());
+					btn->loadTextureNormal("sign/sign2.png");
+					btn->loadTexturePressed("sign/sign2.png");
+					btn->loadTextureDisabled("sign/signed2.png");
 				}
 				else if (HelloWorld::getSignCount() == 1)
 				{
-					texts->setString(m_strings["D"].asString());
+					btn->loadTextureNormal("sign/sign4.png");
+					btn->loadTexturePressed("sign/sign4.png");
+					btn->loadTextureDisabled("sign/signed4.png");
 				}
 				if (m_day > 4)
 				{
 					btn->setEnabled(false);
-					img->setVisible(false);
 				}
 			}
 			break;
 			case 5:
-				text->setString(StringUtils::format("%d", 50).c_str());
 				if (m_day > 5)
 				{
 					btn->setEnabled(false);
-					img->setVisible(false);
 				}
 				break;
 			case 6:
-				text->setString(StringUtils::format("%d", 1).c_str());
 				if (m_day > 6)
 				{
 					btn->setEnabled(false);
-					img->setVisible(false);
 				}
 				break;
 			}
@@ -309,9 +296,7 @@ void SignLayer::signChange(Ref*ref)
 			for (size_t i = 0; i < 7; i++)
 			{
 				auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (i + 1)).c_str());
-				auto img = (ImageView *)rootNode->getChildByName(StringUtils::format("img%d", (i + 1)).c_str());
 				btn->setEnabled(true);
-				img->setVisible(true);
 			}
 		}
 	}
@@ -340,5 +325,4 @@ void SignLayer::stateChange()
 	{
 		m_state = true;
 	}
-	((Button*)rootNode->getChildByName("btn7"))->setVisible(false);
 }

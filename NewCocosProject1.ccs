@@ -3,6 +3,111 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
+        <Folder Name="ui">
+          <Folder Name="chengjiu">
+            <Image Name="k1.png" />
+            <Image Name="k2.png" />
+            <Image Name="k3.png" />
+            <Image Name="xx.png" />
+          </Folder>
+          <Folder Name="dj">
+            <Image Name="jiahao.png" />
+            <Image Name="k1.png" />
+            <Image Name="k2.png" />
+            <Image Name="k3.png" />
+            <Image Name="k4.png" />
+            <Image Name="txk.png" />
+            <Image Name="x.png" />
+            <Image Name="zs.png" />
+          </Folder>
+          <Folder Name="jinbiduihuan">
+            <Image Name="bjdb.png" />
+            <Image Name="dhdb.png" />
+            <Image Name="duk.png" />
+          </Folder>
+          <Folder Name="js">
+            <Image Name="k3.png" />
+            <Image Name="k4.png" />
+            <Image Name="txk.png" />
+          </Folder>
+          <Folder Name="jsjs">
+            <Image Name="bjdb.png" />
+            <Image Name="db.png" />
+            <Image Name="g.png" />
+            <Image Name="jsk.png" />
+            <Image Name="mck.png" />
+            <Image Name="TX.png" />
+            <Image Name="zsdb.png" />
+          </Folder>
+          <Folder Name="mrrw">
+            <Image Name="msdb.png" />
+          </Folder>
+          <Folder Name="qd">
+            <Image Name="qd.png" />
+            <Image Name="qdbaoshi.png" />
+            <Image Name="qdbaoshi0.png" />
+            <Image Name="qdjinbi.png" />
+            <Image Name="qdjinbi0.png" />
+            <Image Name="qdpingzi1.png" />
+            <Image Name="qdpingzi11.png" />
+            <Image Name="qdpingzi2.png" />
+            <Image Name="qdpingzi22.png" />
+            <Image Name="qdpingzi4.png" />
+            <Image Name="qdzuanshi.png" />
+            <Image Name="qdzuanshi0.png" />
+            <Image Name="zsdb.png" />
+          </Folder>
+          <Folder Name="sq">
+            <Image Name="bsk.png" />
+            <Image Name="k1.png" />
+            <Image Name="k2.png" />
+            <Image Name="k3.png" />
+            <Image Name="k4.png" />
+            <Image Name="sqt.png" />
+            <Image Name="txk.png" />
+            <Image Name="x.png" />
+          </Folder>
+          <Folder Name="sqjs">
+            <Image Name="db.png" />
+            <Image Name="k1.png" />
+            <Image Name="k2.png" />
+            <Image Name="k3.png" />
+            <Image Name="k4.png" />
+            <Image Name="k5.png" />
+            <Image Name="lhsk.png" />
+            <Image Name="txk.png" />
+            <Image Name="x.png" />
+            <Image Name="xx.png" />
+          </Folder>
+          <Folder Name="sz">
+            <Image Name="szk.png" />
+          </Folder>
+          <Folder Name="yb">
+            <Image Name="jiahao.png" />
+            <Image Name="k1.png" />
+            <Image Name="k2.png" />
+            <Image Name="k3.png" />
+            <Image Name="k4.png" />
+            <Image Name="qb.png" />
+            <Image Name="txk.png" />
+            <Image Name="x.png" />
+          </Folder>
+          <Folder Name="ybjs">
+            <Image Name="5.png" />
+            <Image Name="bjdb.png" />
+            <Image Name="db.png" />
+            <Image Name="g.png" />
+            <Image Name="hk.png" />
+            <Image Name="jsk.png" />
+            <Image Name="mck.png" />
+            <Image Name="txk.png" />
+            <Image Name="x.png" />
+            <Image Name="zsdb.png" />
+          </Folder>
+          <Folder Name="zjm">
+            <Image Name="jiantou.png" />
+          </Folder>
+        </Folder>
         <Image Name="1.png" />
         <Image Name="10.png" />
         <Image Name="100 (2).png" />
@@ -15,6 +120,7 @@
         <Project Name="AchieveItem.csd" Type="Layer" />
         <Project Name="achieveLayer.csd" Type="Layer" />
         <Image Name="achive.png" />
+        <Image Name="an1.png" />
         <Image Name="anniu (2).png" />
         <Image Name="anniu (4).png" />
         <Image Name="anniu (5).png" />
@@ -32,7 +138,11 @@
         <Image Name="baofengxue-zjm.png" />
         <Image Name="beijing (2).png" />
         <Image Name="bg.jpg" />
+        <Image Name="bjb.png" />
+        <Image Name="bjdb.png" />
         <Image Name="bossButton.png" />
+        <Image Name="bsk.png" />
+        <Image Name="btdb.png" />
         <Image Name="buttonLayer.png" />
         <Image Name="cchengjiudakuang.png" />
         <Image Name="chengjiu1.png" />
@@ -44,10 +154,14 @@
         <Image Name="chengjiulingqu2.png" />
         <Image Name="chengjiumiaoshu.png" />
         <Image Name="chongzhukehuode_ar.png" />
+        <Image Name="cjdb.png" />
         <Project Name="configLayer.csd" Type="Layer" />
         <Image Name="cs-js.png" />
         <Image Name="cxsh.png" />
         <Image Name="dadiban.png" />
+        <Image Name="daoj.png" />
+        <Image Name="daoju.png" />
+        <Image Name="db.png" />
         <Project Name="denglu.csd" Type="Layer" />
         <Image Name="diban.png" />
         <Image Name="diban0.png" />
@@ -62,6 +176,9 @@
         <Image Name="diyitian.png" />
         <Image Name="dj.png" />
         <Image Name="dj0.png" />
+        <Image Name="dl.png" />
+        <Image Name="dlan.png" />
+        <Image Name="dltx.png" />
         <Project Name="DmgNum.csd" Type="Node" />
         <Project Name="downLayer.csd" Type="Layer" />
         <Project Name="downLayerAr.csd" Type="Layer" />
@@ -77,6 +194,7 @@
         <Fnt Name="font.fnt" />
         <TTF Name="font.ttf" />
         <Image Name="frame.png" />
+        <Image Name="g.png" />
         <Image Name="gold.png" />
         <Image Name="gongqiao (1).png" />
         <Image Name="gongqiao (2).png" />
@@ -92,6 +210,7 @@
         <Image Name="jiangli.png" />
         <Image Name="jiantou_ar.png" />
         <Image Name="jiaoselv (2).png" />
+        <Image Name="jieshaok (2).png" />
         <Image Name="jieshaok.png" />
         <Image Name="jinbi (2).png" />
         <Project Name="jinbi.csd" Type="Layer" />
@@ -110,14 +229,20 @@
         <Image Name="jinlong.png" />
         <Image Name="js.png" />
         <Image Name="js0.png" />
+        <Image Name="jsdb.png" />
         <Image Name="jsjs.png" />
         <Image Name="k1 (2).png" />
         <Image Name="k1 (4).png" />
+        <Image Name="k1.png" />
         <Image Name="k1_ar.png" />
         <Image Name="k2 (2).png" />
+        <Image Name="k2.png" />
         <Image Name="k2_ar.png" />
+        <Image Name="k3.png" />
         <Image Name="k3_ar.png" />
+        <Image Name="k4.png" />
         <Image Name="k4_ar.png" />
+        <Image Name="k5.png" />
         <Image Name="k5_ar.png" />
         <Image Name="keepDps .png" />
         <Image Name="kssj.png" />
@@ -130,12 +255,15 @@
         <Image Name="kuang2.png" />
         <Image Name="lan.png" />
         <Image Name="layer.png" />
+        <Image Name="leijichengjiujiangli.png" />
         <Image Name="lhs.png" />
         <Image Name="lhs_ar.png" />
+        <Image Name="lhsk.png" />
         <Image Name="linghunshi.png" />
         <Image Name="Load.png" />
         <Image Name="lv (3).png" />
         <Image Name="lv.png" />
+        <Image Name="lxsy.png" />
         <Image Name="mainBG.jpg" />
         <Project Name="MainScene.csd" Type="Scene" />
         <Image Name="mapLayer.png" />
@@ -151,13 +279,17 @@
         <ExportJsonFile Name="monster_01.ExportJson" />
         <Image Name="monster_010.png" />
         <Image Name="ms.png" />
+        <Image Name="msdb.png" />
         <Image Name="OptionButton.png" />
         <Image Name="optionFrame.png" />
         <Image Name="optionLayer.png" />
+        <Image Name="qr.png" />
         <Image Name="queren.png" />
         <Image Name="renwu.png" />
+        <Image Name="sc.png" />
         <Project Name="servantNode.csd" Type="Layer" />
         <Image Name="setting.png" />
+        <Project Name="shangchengjiemian .csd" Type="Layer" />
         <Image Name="shengjikuang.png" />
         <Image Name="shengqikuang.png" />
         <Image Name="shenqichongzhu_ar.png" />
@@ -166,17 +298,20 @@
         <Image Name="shitou.png" />
         <Project Name="shujutongji.csd" Type="Layer" />
         <Image Name="sign.png" />
+        <Project Name="singLayer.csd" Type="Layer" />
         <Image Name="sjtj.png" />
         <Image Name="SkillButton.png" />
         <Image Name="skillLayer.png" />
         <Image Name="sq.png" />
         <Image Name="sq0.png" />
         <Image Name="srmc.png" />
+        <Image Name="srzjmc.png" />
         <Image Name="sx.png" />
         <Image Name="sx-js.png" />
         <Image Name="sx-zjm.png" />
         <Image Name="sysh.png" />
         <Image Name="sz.png" />
+        <Image Name="szdb.png" />
         <Image Name="szjdj-zjm.png" />
         <Image Name="szjdz-js.png" />
         <Image Name="tapDps.png" />
@@ -193,6 +328,7 @@
         <Image Name="tuteng.png" />
         <Image Name="tx.png" />
         <Image Name="tx-d.png" />
+        <Image Name="txk.png" />
         <Image Name="upButton.png" />
         <Image Name="weiqiandao.png" />
         <Image Name="weiqiandao0.png" />
@@ -220,6 +356,7 @@
         <Image Name="yinyue0.png" />
         <Image Name="yiqiandao0.png" />
         <Image Name="yiquandao.png" />
+        <Image Name="yld.jpg" />
         <Project Name="yongbing.csd" Type="Layer" />
         <TTF Name="youyuan.ttf" />
         <Image Name="zgdj_ar.png" />
@@ -242,9 +379,11 @@
         <Project Name="zhujiaotiao.csd" Type="Layer" />
         <Image Name="zjtx.png" />
         <Image Name="zs_ar.png" />
+        <Image Name="zsdb.png" />
         <Image Name="zsdj.png" />
         <Image Name="zsdj-js.png" />
         <Image Name="zsdj-zjn.png" />
+        <Image Name="zstx.png" />
         <Image Name="zuanshi (2).png" />
         <Image Name="zuanshi.png" />
         <Image Name="zuanshida.png" />

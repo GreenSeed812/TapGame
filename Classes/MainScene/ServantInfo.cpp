@@ -34,48 +34,29 @@ void ServantInfo::initServantInfo(int id)
 	auto level = (TextBMFont*)m_layer->getChildByName("serInfo")->getChildByName("lv");
 	auto dps = (TextBMFont*)m_layer->getChildByName("serInfo")->getChildByName("dps");
 	auto serInfo = (Text*)m_layer->getChildByName("infoText");
-	auto skillHead_1 = (ImageView*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillHead_1");
-	auto skillHead_2 = (ImageView*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillHead_2");
-	auto skillHead_3 = (ImageView*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillHead_3");
-	auto skillHead_4 = (ImageView*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillHead_4");
-	auto skillHead_5 = (ImageView*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillHead_5");
-	auto skillHead_6 = (ImageView*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillHead_6");
-	auto skillHead_7 = (ImageView*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillHead_7");
-	auto skillName_1 = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillBg_1")->getChildByName("skillName_1");
-	auto skillName_2 = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillBg_2")->getChildByName("skillName_2");
-	auto skillName_3 = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillBg_3")->getChildByName("skillName_3");
-	auto skillName_4 = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillBg_4")->getChildByName("skillName_4");
-	auto skillName_5 = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillBg_5")->getChildByName("skillName_5");
-	auto skillName_6 = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillBg_6")->getChildByName("skillName_6");
-	auto skillName_7 = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillBg_7")->getChildByName("skillName_7");
-	auto skillInfo_1 = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillBg_1")->getChildByName("skillInfo_1");
-	auto skillInfo_2 = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillBg_2")->getChildByName("skillInfo_2");
-	auto skillInfo_3 = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillBg_3")->getChildByName("skillInfo_3");
-	auto skillInfo_4 = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillBg_4")->getChildByName("skillInfo_4");
-	auto skillInfo_5 = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillBg_5")->getChildByName("skillInfo_5");
-	auto skillInfo_6 = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillBg_6")->getChildByName("skillInfo_6");
-	auto skillInfo_7 = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName("skillBg_7")->getChildByName("skillInfo_7");
+	
+	for (size_t i = 0; i < 7; i++)
+	{	
+		auto skillName = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName(StringUtils::format("skillBg_%d", i + 1).c_str())->getChildByName(StringUtils::format("skillName_%d", i + 1).c_str());
+		auto skillInfo = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName(StringUtils::format("skillBg_%d", i + 1).c_str())->getChildByName(StringUtils::format("skillInfo_%d", i + 1).c_str());
+		skillName->setString(SqLite::getInstance()->getServantByID(id)->skill[i].skillname);
+		skillInfo->setString(SqLite::getInstance()->getSkillEffDis(SqLite::getInstance()->getServantByID(id)->skill[i].skillID));
+		for (size_t j = 0; j < PlayerData::getInstance()->getServantSkillNum(id); j++)
+		{
+			auto skillHead = (ImageView*)m_layer->getChildByName("skillInfoBg")->getChildByName(StringUtils::format("skillHead_%d", j + 1).c_str());
+			auto lv = (ImageView*)m_layer->getChildByName("skillInfoBg")->getChildByName(StringUtils::format("skillHead_%d", j + 1).c_str())->getChildByName("lv");
+			auto num = (ImageView*)m_layer->getChildByName("skillInfoBg")->getChildByName(StringUtils::format("skillHead_%d", j + 1).c_str())->getChildByName("num");
+			lv->setVisible(false);
+			num->setVisible(false);
+			skillHead->loadTexture(StringUtils::format("ui/downUi/servant/skill/%d/%d.png", i+1, j+1).c_str());
+		}	
+	}
 
 	head->setTexture(StringUtils::format("ui/downUi/servant/head/%d.png", id + 1));
-	//skillHead_1->loadTexture()
 	name->setString(SqLite::getInstance()->getServantNameByID(id));
 	level->setString(StringUtils::format("Lv%d", PlayerData::getInstance()->getServantLevel(id)));
 	dps->setString(Ruler::getInstance()->showNum(PlayerData ::getInstance()->getServantDps(id)));
 	serInfo->setString(SqLite::getInstance()->getServantByID(id)->discribe);
-	skillName_1->setString(SqLite::getInstance()->getServantByID(id)->skill[0].skillname);
-	skillName_2->setString(SqLite::getInstance()->getServantByID(id)->skill[1].skillname);
-	skillName_3->setString(SqLite::getInstance()->getServantByID(id)->skill[2].skillname);
-	skillName_4->setString(SqLite::getInstance()->getServantByID(id)->skill[3].skillname);
-	skillName_5->setString(SqLite::getInstance()->getServantByID(id)->skill[4].skillname);
-	skillName_6->setString(SqLite::getInstance()->getServantByID(id)->skill[5].skillname);
-	skillName_7->setString(SqLite::getInstance()->getServantByID(id)->skill[6].skillname);
-	skillInfo_1->setString(SqLite::getInstance()->getSkillEffDis(SqLite::getInstance()->getServantByID(id)->skill[0].skillID));
-	skillInfo_2->setString(SqLite::getInstance()->getSkillEffDis(SqLite::getInstance()->getServantByID(id)->skill[1].skillID));
-	skillInfo_3->setString(SqLite::getInstance()->getSkillEffDis(SqLite::getInstance()->getServantByID(id)->skill[2].skillID));
-	skillInfo_4->setString(SqLite::getInstance()->getSkillEffDis(SqLite::getInstance()->getServantByID(id)->skill[3].skillID));
-	skillInfo_5->setString(SqLite::getInstance()->getSkillEffDis(SqLite::getInstance()->getServantByID(id)->skill[4].skillID));
-	skillInfo_6->setString(SqLite::getInstance()->getSkillEffDis(SqLite::getInstance()->getServantByID(id)->skill[5].skillID));
-	skillInfo_7->setString(SqLite::getInstance()->getSkillEffDis(SqLite::getInstance()->getServantByID(id)->skill[6].skillID));
 	
 	escBtn->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType Event)
 	{

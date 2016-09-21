@@ -41,6 +41,7 @@ bool ClickLayer::onTouchBegan(Touch *touch, Event*)
 
 		MyState::getInstance()->setTaped(true);
 		MyState::getInstance()->setKTap(true);
+		BgMusic::getInstance()->playEff();
 		return true;
 	}
 	else

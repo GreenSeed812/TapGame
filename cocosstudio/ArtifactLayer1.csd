@@ -6,36 +6,36 @@
       <ObjectData Name="Layer" Tag="70" ctype="GameLayerObjectData">
         <Size X="1070.0000" Y="1719.0000" />
         <Children>
-          <AbstractNodeData Name="layer" ActionTag="-763526515" Tag="71" IconVisible="False" LeftMargin="33.8370" RightMargin="39.1631" TopMargin="371.8268" BottomMargin="364.1732" ctype="SpriteObjectData">
-            <Size X="997.0000" Y="983.0000" />
+          <AbstractNodeData Name="layer" ActionTag="-763526515" Tag="71" IconVisible="False" LeftMargin="24.8370" RightMargin="30.1631" TopMargin="359.8268" BottomMargin="352.1732" ctype="SpriteObjectData">
+            <Size X="1015.0000" Y="1007.0000" />
             <Children>
-              <AbstractNodeData Name="head" ActionTag="118015050" Tag="72" IconVisible="False" LeftMargin="155.1134" RightMargin="697.8866" TopMargin="78.1350" BottomMargin="761.8650" ctype="SpriteObjectData">
+              <AbstractNodeData Name="head" ActionTag="118015050" Tag="72" IconVisible="False" LeftMargin="155.1134" RightMargin="715.8866" TopMargin="102.1350" BottomMargin="761.8650" ctype="SpriteObjectData">
                 <Size X="144.0000" Y="143.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="227.1134" Y="833.3650" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2278" Y="0.8478" />
-                <PreSize X="0.1444" Y="0.1455" />
-                <FileData Type="Normal" Path="touxiangkuang_ar.png" Plist="" />
+                <PrePosition X="0.2238" Y="0.8276" />
+                <PreSize X="0.1419" Y="0.1420" />
+                <FileData Type="Normal" Path="ui/sqjs/txk.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="esc" ActionTag="-2066241530" Tag="73" IconVisible="False" LeftMargin="862.8999" RightMargin="38.1001" TopMargin="35.5552" BottomMargin="850.4448" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="66" Scale9Height="75" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="esc" ActionTag="-2066241530" Tag="73" IconVisible="False" LeftMargin="897.0609" RightMargin="21.9391" TopMargin="33.5284" BottomMargin="876.4716" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="66" Scale9Height="75" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="96.0000" Y="97.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="910.8999" Y="898.9448" />
+                <Position X="945.0609" Y="924.9716" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9136" Y="0.9145" />
-                <PreSize X="0.0963" Y="0.0987" />
+                <PrePosition X="0.9311" Y="0.9185" />
+                <PreSize X="0.0946" Y="0.0963" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Normal" Path="x_ar.png" Plist="" />
-                <PressedFileData Type="Normal" Path="x_ar.png" Plist="" />
-                <NormalFileData Type="Normal" Path="x_ar.png" Plist="" />
+                <DisabledFileData Type="Normal" Path="x.png" Plist="" />
+                <PressedFileData Type="Normal" Path="x.png" Plist="" />
+                <NormalFileData Type="Normal" Path="ui/sqjs/x.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="arName" ActionTag="27077519" Tag="74" IconVisible="False" LeftMargin="395.0592" RightMargin="188.9408" TopMargin="89.7947" BottomMargin="767.2053" ctype="SpriteObjectData">
+              <AbstractNodeData Name="arName" ActionTag="27077519" Tag="74" IconVisible="False" LeftMargin="393.4329" RightMargin="208.5671" TopMargin="113.7944" BottomMargin="767.2056" ctype="SpriteObjectData">
                 <Size X="413.0000" Y="126.0000" />
                 <Children>
                   <AbstractNodeData Name="name" ActionTag="321427257" Tag="145" IconVisible="False" LeftMargin="149.0791" RightMargin="164.9209" TopMargin="39.2899" BottomMargin="57.7101" FontSize="24" LabelText="神器名称" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -52,172 +52,172 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="601.5592" Y="830.2053" />
+                <Position X="599.9329" Y="830.2056" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.6034" Y="0.8446" />
-                <PreSize X="0.4142" Y="0.1282" />
-                <FileData Type="Normal" Path="mingchengkuang_ar.png" Plist="" />
+                <PrePosition X="0.5911" Y="0.8244" />
+                <PreSize X="0.4069" Y="0.1251" />
+                <FileData Type="Normal" Path="ui/sqjs/k1.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="starBg" ActionTag="1996745824" Tag="75" IconVisible="False" LeftMargin="172.3796" RightMargin="200.6204" TopMargin="236.3801" BottomMargin="583.6199" ctype="SpriteObjectData">
+              <AbstractNodeData Name="starBg" ActionTag="1996745824" Tag="75" IconVisible="False" LeftMargin="-51.6204" RightMargin="-5.3796" TopMargin="124.8801" BottomMargin="448.1199" ctype="SpriteObjectData">
                 <Size X="624.0000" Y="163.0000" />
                 <Children>
-                  <AbstractNodeData Name="Sprite_12" ActionTag="834736032" Tag="100" IconVisible="False" LeftMargin="54.3458" RightMargin="413.6542" TopMargin="25.7881" BottomMargin="92.2119" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Sprite_12" ActionTag="834736032" Tag="100" IconVisible="False" LeftMargin="54.3458" RightMargin="861.6542" TopMargin="296.7881" BottomMargin="92.2119" ctype="SpriteObjectData">
                     <Size X="156.0000" Y="45.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="132.3458" Y="114.7119" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.2121" Y="0.7038" />
-                    <PreSize X="0.2500" Y="0.2761" />
+                    <PrePosition X="0.1235" Y="0.2643" />
+                    <PreSize X="0.1455" Y="0.1037" />
                     <FileData Type="Normal" Path="dqxs_ar.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Sprite_13" ActionTag="72689321" Tag="101" IconVisible="False" LeftMargin="51.8483" RightMargin="413.1517" TopMargin="80.6555" BottomMargin="37.3445" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Sprite_13" ActionTag="72689321" Tag="101" IconVisible="False" LeftMargin="51.8483" RightMargin="861.1517" TopMargin="351.6555" BottomMargin="37.3445" ctype="SpriteObjectData">
                     <Size X="159.0000" Y="45.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="131.3483" Y="59.8445" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.2105" Y="0.3671" />
-                    <PreSize X="0.2548" Y="0.2761" />
+                    <PrePosition X="0.1225" Y="0.1379" />
+                    <PreSize X="0.1483" Y="0.1037" />
                     <FileData Type="Normal" Path="zgdj_ar.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Sprite_15" ActionTag="-2034218757" Tag="103" IconVisible="False" LeftMargin="238.3241" RightMargin="331.6759" TopMargin="20.9629" BottomMargin="90.0371" ctype="SpriteObjectData">
-                    <Size X="54.0000" Y="52.0000" />
+                  <AbstractNodeData Name="Sprite_15" ActionTag="-2034218757" Tag="103" IconVisible="False" LeftMargin="240.8241" RightMargin="782.1759" TopMargin="293.4629" BottomMargin="91.5371" ctype="SpriteObjectData">
+                    <Size X="49.0000" Y="49.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="265.3241" Y="116.0371" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4252" Y="0.7119" />
-                    <PreSize X="0.0865" Y="0.3190" />
-                    <FileData Type="Normal" Path="xingxing_ar.png" Plist="" />
+                    <PrePosition X="0.2475" Y="0.2674" />
+                    <PreSize X="0.0457" Y="0.1129" />
+                    <FileData Type="Normal" Path="ui/sqjs/xx.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="star2" ActionTag="2114050336" Tag="104" IconVisible="False" LeftMargin="431.7964" RightMargin="138.2036" TopMargin="23.2947" BottomMargin="87.7053" ctype="SpriteObjectData">
-                    <Size X="54.0000" Y="52.0000" />
+                  <AbstractNodeData Name="star2" ActionTag="2114050336" Tag="104" IconVisible="False" LeftMargin="434.2964" RightMargin="588.7036" TopMargin="295.7947" BottomMargin="89.2053" ctype="SpriteObjectData">
+                    <Size X="49.0000" Y="49.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="458.7964" Y="113.7053" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.7353" Y="0.6976" />
-                    <PreSize X="0.0865" Y="0.3190" />
-                    <FileData Type="Normal" Path="xingxing_ar.png" Plist="" />
+                    <PrePosition X="0.4280" Y="0.2620" />
+                    <PreSize X="0.0457" Y="0.1129" />
+                    <FileData Type="Normal" Path="ui/sqjs/xx.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Sprite_17" ActionTag="-230929499" Tag="105" IconVisible="False" LeftMargin="296.9645" RightMargin="302.0355" TopMargin="39.8247" BottomMargin="95.1753" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Sprite_17" ActionTag="-230929499" Tag="105" IconVisible="False" LeftMargin="296.9645" RightMargin="750.0355" TopMargin="310.8247" BottomMargin="95.1753" ctype="SpriteObjectData">
                     <Size X="25.0000" Y="28.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="309.4645" Y="109.1753" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4959" Y="0.6698" />
-                    <PreSize X="0.0401" Y="0.1718" />
+                    <PrePosition X="0.2887" Y="0.2516" />
+                    <PreSize X="0.0233" Y="0.0645" />
                     <FileData Type="Normal" Path="xx_ar.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Sprite_18" ActionTag="-2072432853" Tag="106" IconVisible="False" LeftMargin="492.4905" RightMargin="106.5095" TopMargin="42.0651" BottomMargin="92.9349" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Sprite_18" ActionTag="-2072432853" Tag="106" IconVisible="False" LeftMargin="492.4905" RightMargin="554.5095" TopMargin="313.0651" BottomMargin="92.9349" ctype="SpriteObjectData">
                     <Size X="25.0000" Y="28.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="504.9905" Y="106.9349" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.8093" Y="0.6560" />
-                    <PreSize X="0.0401" Y="0.1718" />
+                    <PrePosition X="0.4711" Y="0.2464" />
+                    <PreSize X="0.0233" Y="0.0645" />
                     <FileData Type="Normal" Path="xx_ar.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="starLvNow" ActionTag="1228821585" Tag="146" IconVisible="False" LeftMargin="333.0001" RightMargin="274.9999" TopMargin="25.5000" BottomMargin="94.5000" FontSize="36" LabelText="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="starLvNow" ActionTag="1228821585" Tag="146" IconVisible="False" LeftMargin="333.0001" RightMargin="722.9999" TopMargin="296.5000" BottomMargin="94.5000" FontSize="36" LabelText="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="16.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="341.0001" Y="116.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="240" G="203" B="148" />
-                    <PrePosition X="0.5465" Y="0.7117" />
-                    <PreSize X="0.0256" Y="0.2638" />
+                    <PrePosition X="0.3181" Y="0.2673" />
+                    <PreSize X="0.0149" Y="0.0991" />
                     <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Sprite_8" ActionTag="-540163071" Tag="747" IconVisible="False" LeftMargin="361.6636" RightMargin="227.3364" TopMargin="35.3664" BottomMargin="90.6336" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Sprite_8" ActionTag="-540163071" Tag="747" IconVisible="False" LeftMargin="361.6636" RightMargin="675.3364" TopMargin="306.3664" BottomMargin="90.6336" ctype="SpriteObjectData">
                     <Size X="35.0000" Y="37.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="379.1636" Y="109.1336" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6076" Y="0.6695" />
-                    <PreSize X="0.0561" Y="0.2270" />
+                    <PrePosition X="0.3537" Y="0.2515" />
+                    <PreSize X="0.0326" Y="0.0853" />
                     <FileData Type="Normal" Path="jiantou_ar.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Sprite_9" ActionTag="171442071" Tag="748" IconVisible="False" LeftMargin="384.7857" RightMargin="204.2143" TopMargin="35.3667" BottomMargin="90.6333" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Sprite_9" ActionTag="171442071" Tag="748" IconVisible="False" LeftMargin="384.7857" RightMargin="652.2143" TopMargin="306.3667" BottomMargin="90.6333" ctype="SpriteObjectData">
                     <Size X="35.0000" Y="37.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="402.2857" Y="109.1333" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6447" Y="0.6695" />
-                    <PreSize X="0.0561" Y="0.2270" />
+                    <PrePosition X="0.3753" Y="0.2515" />
+                    <PreSize X="0.0326" Y="0.0853" />
                     <FileData Type="Normal" Path="jiantou_ar.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="starNext" ActionTag="802251136" Tag="151" IconVisible="False" LeftMargin="533.1163" RightMargin="67.8837" TopMargin="27.0186" BottomMargin="92.9814" FontSize="36" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="starNext" ActionTag="802251136" Tag="151" IconVisible="False" LeftMargin="533.1163" RightMargin="515.8837" TopMargin="298.0186" BottomMargin="92.9814" FontSize="36" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="23.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="544.6163" Y="114.4814" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="240" G="203" B="148" />
-                    <PrePosition X="0.8728" Y="0.7023" />
-                    <PreSize X="0.0369" Y="0.2638" />
+                    <PrePosition X="0.5080" Y="0.2638" />
+                    <PreSize X="0.0215" Y="0.0991" />
                     <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="LvNext" ActionTag="575773660" Tag="147" IconVisible="False" LeftMargin="451.5000" RightMargin="149.5000" TopMargin="82.5000" BottomMargin="37.5000" FontSize="36" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="LvNext" ActionTag="575773660" Tag="147" IconVisible="False" LeftMargin="451.5000" RightMargin="597.5000" TopMargin="353.5000" BottomMargin="37.5000" FontSize="36" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="23.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="463.0000" Y="59.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="240" G="203" B="148" />
-                    <PrePosition X="0.7420" Y="0.3620" />
-                    <PreSize X="0.0369" Y="0.2638" />
+                    <PrePosition X="0.4319" Y="0.1359" />
+                    <PreSize X="0.0215" Y="0.0991" />
                     <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="LvNow" ActionTag="1606631108" Tag="750" IconVisible="False" LeftMargin="297.9275" RightMargin="310.0725" TopMargin="81.6443" BottomMargin="38.3557" FontSize="36" LabelText="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="LvNow" ActionTag="1606631108" Tag="750" IconVisible="False" LeftMargin="297.9272" RightMargin="758.0728" TopMargin="352.6424" BottomMargin="38.3576" FontSize="36" LabelText="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="16.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.8569" ScaleY="0.3200" />
                     <Position X="311.6376" Y="52.1176" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="240" G="203" B="148" />
-                    <PrePosition X="0.4994" Y="0.3197" />
-                    <PreSize X="0.0256" Y="0.2638" />
+                    <PrePosition X="0.2907" Y="0.1201" />
+                    <PreSize X="0.0149" Y="0.0991" />
                     <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Sprite_11" ActionTag="794069699" Tag="753" IconVisible="False" LeftMargin="359.5712" RightMargin="229.4288" TopMargin="89.3181" BottomMargin="36.6819" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Sprite_11" ActionTag="794069699" Tag="753" IconVisible="False" LeftMargin="359.5712" RightMargin="677.4288" TopMargin="360.3181" BottomMargin="36.6819" ctype="SpriteObjectData">
                     <Size X="35.0000" Y="37.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="377.0712" Y="55.1819" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6043" Y="0.3385" />
-                    <PreSize X="0.0561" Y="0.2270" />
+                    <PrePosition X="0.3517" Y="0.1271" />
+                    <PreSize X="0.0326" Y="0.0853" />
                     <FileData Type="Normal" Path="jiantou_ar.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Sprite_14" ActionTag="-1836736828" Tag="754" RotationSkewX="-0.1853" RotationSkewY="-0.1853" IconVisible="False" LeftMargin="383.8611" RightMargin="205.1389" TopMargin="89.9810" BottomMargin="36.0190" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Sprite_14" ActionTag="-1836736828" Tag="754" RotationSkewX="-0.1853" RotationSkewY="-0.1853" IconVisible="False" LeftMargin="383.8611" RightMargin="653.1389" TopMargin="360.9810" BottomMargin="36.0190" ctype="SpriteObjectData">
                     <Size X="35.0000" Y="37.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="401.3611" Y="54.5190" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6432" Y="0.3345" />
-                    <PreSize X="0.0561" Y="0.2270" />
+                    <PrePosition X="0.3744" Y="0.1256" />
+                    <PreSize X="0.0326" Y="0.0853" />
                     <FileData Type="Normal" Path="jiantou_ar.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -226,12 +226,12 @@
                 <Position X="484.3796" Y="665.1199" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4858" Y="0.6766" />
-                <PreSize X="0.6259" Y="0.1658" />
-                <FileData Type="Normal" Path="k2_ar.png" Plist="" />
+                <PrePosition X="0.4772" Y="0.6605" />
+                <PreSize X="1.0562" Y="0.4310" />
+                <FileData Type="Normal" Path="ui/sqjs/k2.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="lvBg" ActionTag="2011586148" Tag="76" IconVisible="False" LeftMargin="163.8998" RightMargin="196.1002" TopMargin="419.5213" BottomMargin="184.4787" ctype="SpriteObjectData">
+              <AbstractNodeData Name="lvBg" ActionTag="2011586148" Tag="76" IconVisible="False" LeftMargin="163.8998" RightMargin="214.1002" TopMargin="443.5213" BottomMargin="184.4787" ctype="SpriteObjectData">
                 <Size X="637.0000" Y="379.0000" />
                 <Children>
                   <AbstractNodeData Name="lvNextbg" ActionTag="407165601" Tag="761" IconVisible="False" LeftMargin="71.4214" RightMargin="409.5786" TopMargin="175.3686" BottomMargin="113.6314" ctype="SpriteObjectData">
@@ -256,7 +256,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.2346" Y="0.4186" />
                     <PreSize X="0.2449" Y="0.2375" />
-                    <FileData Type="Normal" Path="k3_ar.png" Plist="" />
+                    <FileData Type="Normal" Path="ui/sqjs/k4.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="lvNowbg" ActionTag="-1571442358" Tag="755" IconVisible="False" LeftMargin="74.8057" RightMargin="406.1943" TopMargin="33.8977" BottomMargin="255.1023" ctype="SpriteObjectData">
@@ -281,10 +281,10 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.2399" Y="0.7918" />
                     <PreSize X="0.2449" Y="0.2375" />
-                    <FileData Type="Normal" Path="k3_ar.png" Plist="" />
+                    <FileData Type="Normal" Path="ui/sqjs/k4.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="jiNeng1" ActionTag="337419924" Tag="758" IconVisible="False" LeftMargin="254.1567" RightMargin="71.8433" TopMargin="68.4497" BottomMargin="198.5503" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="jiNeng1" ActionTag="337419924" Tag="758" IconVisible="False" LeftMargin="252.5303" RightMargin="73.4697" TopMargin="68.4497" BottomMargin="198.5503" ctype="SpriteObjectData">
                     <Size X="311.0000" Y="112.0000" />
                     <Children>
                       <AbstractNodeData Name="Text_6" ActionTag="-645559744" Tag="148" IconVisible="False" LeftMargin="19.1265" RightMargin="209.8735" TopMargin="60.7646" BottomMargin="32.2354" FontSize="16" LabelText="所有攻击力" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -325,12 +325,12 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="409.6567" Y="254.5503" />
+                    <Position X="408.0303" Y="254.5503" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6431" Y="0.6716" />
+                    <PrePosition X="0.6405" Y="0.6716" />
                     <PreSize X="0.4882" Y="0.2955" />
-                    <FileData Type="Normal" Path="k4_ar.png" Plist="" />
+                    <FileData Type="Normal" Path="ui/sqjs/k5.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="jiNeng2" ActionTag="1158360287" Tag="764" IconVisible="False" LeftMargin="252.8055" RightMargin="73.1945" TopMargin="217.2927" BottomMargin="49.7073" ctype="SpriteObjectData">
@@ -360,7 +360,7 @@
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Text_6_0" ActionTag="-1072387091" Tag="149" IconVisible="False" LeftMargin="22.9467" RightMargin="206.0533" TopMargin="59.2072" BottomMargin="33.7928" FontSize="16" LabelText="所有攻击力" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="Text_6_0" ActionTag="-1072387091" Tag="149" IconVisible="False" LeftMargin="22.9493" RightMargin="206.0507" TopMargin="59.2064" BottomMargin="33.7936" FontSize="16" LabelText="所有攻击力" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="82.0000" Y="19.0000" />
                         <AnchorPoint ScaleX="0.4971" ScaleY="0.4727" />
                         <Position X="63.7115" Y="42.7749" />
@@ -379,7 +379,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.6410" Y="0.2789" />
                     <PreSize X="0.4882" Y="0.2955" />
-                    <FileData Type="Normal" Path="k4_ar.png" Plist="" />
+                    <FileData Type="Normal" Path="ui/sqjs/k5.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -387,12 +387,12 @@
                 <Position X="482.3998" Y="373.9787" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4839" Y="0.3804" />
-                <PreSize X="0.6389" Y="0.3856" />
-                <FileData Type="Normal" Path="k1_ar.png" Plist="" />
+                <PrePosition X="0.4753" Y="0.3714" />
+                <PreSize X="0.6276" Y="0.3764" />
+                <FileData Type="Normal" Path="ui/sqjs/k3.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="lshNum" ActionTag="1842632200" Tag="77" IconVisible="False" LeftMargin="168.5079" RightMargin="590.4921" TopMargin="816.1810" BottomMargin="40.8190" ctype="SpriteObjectData">
+              <AbstractNodeData Name="lshNum" ActionTag="1842632200" Tag="77" IconVisible="False" LeftMargin="168.5079" RightMargin="608.4921" TopMargin="840.1810" BottomMargin="40.8190" ctype="SpriteObjectData">
                 <Size X="238.0000" Y="126.0000" />
                 <Children>
                   <AbstractNodeData Name="Sprite_24" ActionTag="1708713123" Tag="767" IconVisible="False" LeftMargin="23.6875" RightMargin="29.3125" TopMargin="19.2070" BottomMargin="25.7930" ctype="SpriteObjectData">
@@ -434,12 +434,12 @@
                 <Position X="287.5079" Y="103.8190" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2884" Y="0.1056" />
-                <PreSize X="0.2387" Y="0.1282" />
-                <FileData Type="Normal" Path="k5_ar.png" Plist="" />
+                <PrePosition X="0.2833" Y="0.1031" />
+                <PreSize X="0.2345" Y="0.1251" />
+                <FileData Type="Normal" Path="ui/sqjs/lhsk.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="reset" ActionTag="1334743615" Tag="150" IconVisible="False" LeftMargin="551.9492" RightMargin="205.0508" TopMargin="817.3064" BottomMargin="34.6936" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="210" Scale9Height="109" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="reset" ActionTag="1334743615" Tag="150" IconVisible="False" LeftMargin="551.9492" RightMargin="223.0508" TopMargin="841.3064" BottomMargin="34.6936" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="210" Scale9Height="109" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="240.0000" Y="131.0000" />
                 <Children>
                   <AbstractNodeData Name="Sprite_26" ActionTag="1303410431" Tag="770" IconVisible="False" LeftMargin="45.6455" RightMargin="151.3545" TopMargin="25.9600" BottomMargin="58.0400" ctype="SpriteObjectData">
@@ -492,8 +492,8 @@
                 <Position X="671.9492" Y="100.1936" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.6740" Y="0.1019" />
-                <PreSize X="0.2407" Y="0.1333" />
+                <PrePosition X="0.6620" Y="0.0995" />
+                <PreSize X="0.2365" Y="0.1301" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Normal" Path="anniuhui.png" Plist="" />
                 <PressedFileData Type="Normal" Path="anniu_ar.png" Plist="" />
@@ -507,8 +507,8 @@
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4975" Y="0.4978" />
-            <PreSize X="0.9318" Y="0.5718" />
-            <FileData Type="Normal" Path="kuang_ar.png" Plist="" />
+            <PreSize X="0.9486" Y="0.5858" />
+            <FileData Type="Normal" Path="ui/sqjs/db.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

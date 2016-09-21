@@ -29,7 +29,6 @@ bool ArtifactButton::init()
 void ArtifactButton::initArtifactLayer(int id,bool check)
 {
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(ArtifactButton::arChange), "ArChange", nullptr);
-	ArtifactData::getInstance()->subArtiStone(ArtifactData::getInstance()->getNeededArStone());
 	m_lhs = ArtifactData::getInstance()->getArtiStone();
 	if (check)
 	{

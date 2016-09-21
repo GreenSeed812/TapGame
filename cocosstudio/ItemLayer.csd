@@ -31,10 +31,10 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4800" Y="0.4790" />
                 <PreSize X="0.5110" Y="0.7917" />
-                <FileData Type="Normal" Path="diban.png" Plist="" />
+                <FileData Type="Normal" Path="ui/dj/k4.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="up" ActionTag="183972082" Tag="440" IconVisible="False" LeftMargin="767.4885" RightMargin="45.5114" TopMargin="37.3640" BottomMargin="10.6360" TouchEnable="True" FontSize="24" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="108" Scale9Height="50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="up" ActionTag="183972082" Tag="440" IconVisible="False" LeftMargin="767.4886" RightMargin="45.5114" TopMargin="37.3640" BottomMargin="10.6360" TouchEnable="True" FontSize="24" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="108" Scale9Height="50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="138.0000" Y="72.0000" />
                 <Children>
                   <AbstractNodeData Name="moneyNum" ActionTag="-456286858" Tag="443" IconVisible="False" LeftMargin="57.9493" RightMargin="25.0507" TopMargin="22.6228" BottomMargin="25.3772" FontSize="20" LabelText="-111a" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -86,19 +86,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="name" ActionTag="-1521151868" Tag="441" IconVisible="False" LeftMargin="70.9946" RightMargin="813.0054" TopMargin="42.7101" BottomMargin="48.2899" FontSize="24" LabelText="Name" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="67.0000" Y="29.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="104.4946" Y="62.7899" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="240" G="203" B="148" />
-                <PrePosition X="0.1099" Y="0.5232" />
-                <PreSize X="0.0705" Y="0.2417" />
-                <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="timeText" ActionTag="-1995745867" Tag="9" IconVisible="False" LeftMargin="793.7185" RightMargin="107.2815" TopMargin="10.7009" BottomMargin="85.2991" FontSize="20" LabelText="剩余：" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="timeText" ActionTag="-1995745867" Tag="9" IconVisible="False" LeftMargin="793.7197" RightMargin="107.2803" TopMargin="10.7020" BottomMargin="85.2980" FontSize="20" LabelText="剩余：" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="50.0000" Y="24.0000" />
                 <AnchorPoint ScaleX="0.5735" ScaleY="0.5219" />
                 <Position X="822.3947" Y="97.8236" />
@@ -122,6 +110,17 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
+              <AbstractNodeData Name="Sprite_1" ActionTag="-1929511456" Tag="84" IconVisible="False" LeftMargin="56.0389" RightMargin="804.9611" TopMargin="14.9799" BottomMargin="15.0201" ctype="SpriteObjectData">
+                <Size X="90.0000" Y="90.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="101.0389" Y="60.0201" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1062" Y="0.5002" />
+                <PreSize X="0.0946" Y="0.7500" />
+                <FileData Type="Normal" Path="daoj.png" Plist="" />
+                <BlendFunc Src="1" Dst="771" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="474.5526" Y="60.4090" />
@@ -129,7 +128,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4990" Y="0.5034" />
             <PreSize X="1.0000" Y="1.0000" />
-            <FileData Type="Normal" Path="dadiban.png" Plist="" />
+            <FileData Type="Normal" Path="ui/dj/k3.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

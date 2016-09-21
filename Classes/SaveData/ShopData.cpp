@@ -1,6 +1,7 @@
 #include "ShopData.h"
 #include "Tool/SqLite.h"
 #include "MissionData.h"
+#include "Ui/ItemLayer.h"
 static ShopData* g_SD = nullptr;
 ShopData::ShopData()
 :m_shopGold(9999)
@@ -30,7 +31,7 @@ void ShopData::init()
 		m_items[i]->isUsing = false;
 		m_items[i]->itemNum = 0;
 		m_items[i]->leftTime = SqLite::getInstance()->getItemByID(i)->time;
-		
+		m_num[i] = m_items[i]->leftTime;
 	}
 }
 void ShopData::useItemByID(int id)
@@ -65,6 +66,7 @@ bool ShopData::getItemBeUsedById(int id)
 void ShopData::stopItemById(int id)
 {
 	m_items[id]->isUsing = false;
+	CCNotificationCenter::getInstance()->postNotification("itemChange");
 }
 
 int ShopData::getCount(int id)
@@ -84,4 +86,26 @@ void ShopData::addShopGold(int gold)
 ItemData * ShopData::getItemDataById(int id)
 {
 	return m_items[id];
+}
+
+void ShopData::setNum(int id){
+	if (m_items[id]->isUsing)
+	{	
+		if ((m_num[id] / 60) < 1)
+		{
+			m_num[id]--;
+		}
+		else if ((m_num[id] / 60) >= 1 && (m_num[id] / 60) < 60)
+		{
+			m_num[id]-=60;
+		}
+		if ((m_num[id] / 60) >= 60)
+		{
+			m_num[id] -= 3600;
+		}
+	}
+	else
+	{
+		m_num[id] = m_items[id]->leftTime;
+	}
 }

@@ -20,16 +20,14 @@ AchieveData::AchieveData()
 	, m_skill5used(0)
 	, m_skill6used(0)
 	, exploreNum(0)
+	, m_totalrewords(0)
 {
 	for (size_t i = 0; i < 23; i++)
 	{
 		starNum[i] = 0;
-	}
-		
+	}		
 	m_coinCollect.number = 0;
 	m_maxDpsPer.Mathbit = 0;
-
-
 }
 
 AchieveData::~AchieveData()

@@ -15,8 +15,8 @@ private:
 	Node * m_layer;
 	float m_time;
 	int m_id;
-	void timeCalculate();
 	void btnChange();
+	void timeCalculate();
 };
 
 #endif

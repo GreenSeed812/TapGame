@@ -13,7 +13,7 @@ bool ItemLayer::init()
 	{
 		return false;
 	}
-
+	m_time = 0;
 	m_rootNode = CSLoader::createNode("ItemLayer.csb");
 	m_layer = m_rootNode->getChildByName("bg");
 	this->setContentSize(m_rootNode->getContentSize());
@@ -25,15 +25,13 @@ void ItemLayer::initItemLayer(int id)
 {
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(ItemLayer::itemChange), "itemChange", nullptr);
 	m_id = id;
-	auto name = (Text*)m_layer->getChildByName("name");
 	auto info = (Text*)m_layer->getChildByName("infoBg")->getChildByName("info");
 	auto money = (Text*)m_layer->getChildByName("up")->getChildByName("moneyNum");
 	auto time = (Text*)m_layer->getChildByName("time");
 	auto up = (Button*)m_layer->getChildByName("up");
 
-	name->setString(SqLite::getInstance()->getItemByID(m_id)->name);
 	info->setString(SqLite::getInstance()->getItemByID(m_id)->effdis);
-	money->setString(StringUtils::format("-%d", SqLite::getInstance()->getItemByID(m_id)->expense).c_str());
+	money->setString(StringUtils::format("%d", SqLite::getInstance()->getItemByID(m_id)->expense).c_str());
 	if (SqLite::getInstance()->getItemByID(m_id)->type)
 	{
 		time->setString(StringUtils::format("%dS", 0));		
@@ -47,26 +45,23 @@ void ItemLayer::initItemLayer(int id)
 	{
 		if (type == Widget::TouchEventType::ENDED)
 		{
-			switch (m_id)
+			if (m_id < 4)
 			{
-			case 0:
-			case 1:
-			case 2:
-			case 3:
 				if (ShopData::getInstance()->getCount(m_id)>0)
 				{
 					ShopData::getInstance()->useItemByID(m_id);
+					log("%d", m_id);
 				}
 				else
 				{
 					ShopData::getInstance()->buyItemByID(m_id);
 					ShopData::getInstance()->subShopGold(SqLite::getInstance()->getItemByID(m_id)->expense);
 				}
-				break;
-			default:
+			}
+			else
+			{
 				ShopData::getInstance()->buyItemByID(m_id);
 				ShopData::getInstance()->subShopGold(SqLite::getInstance()->getItemByID(m_id)->expense);
-				break;
 			}
 			CCNotificationCenter::getInstance()->postNotification("itemChange");
 		}
@@ -76,17 +71,14 @@ void ItemLayer::initItemLayer(int id)
 
 void ItemLayer::itemChange(Ref * ref)
 {
-	auto name = (Text*)m_layer->getChildByName("name");
 	auto info = (Text*)m_layer->getChildByName("infoBg")->getChildByName("info");
 	auto money = (Text*)m_layer->getChildByName("up")->getChildByName("moneyNum");
 
-	name->setString(SqLite::getInstance()->getItemByID(m_id)->name);
 	info->setString(SqLite::getInstance()->getItemByID(m_id)->effdis);
-	money->setString(StringUtils::format("-%d", SqLite::getInstance()->getItemByID(m_id)->expense).c_str());
+	money->setString(StringUtils::format("%d", SqLite::getInstance()->getItemByID(m_id)->expense).c_str());
 
 	btnChange();
 	timeCalculate();
-
 }
 
 void ItemLayer::timeCalculate()
@@ -97,28 +89,27 @@ void ItemLayer::timeCalculate()
 	{
 		if (ShopData::getInstance()->getItemBeUsedById(m_id))
 		{
-			m_time = SqLite::getInstance()->getItemByID(m_id)->time;
-			if ((m_time / 60) < 1)
+			ShopData::getInstance()->setNum(m_id);
+			m_time = ShopData::getInstance()->getItemDataById(m_id)->leftTime;
+			if (m_time < 60)
 			{
-				time->setString(StringUtils::format("%ds", (int)m_time).c_str());
+				time->setString(StringUtils::format("%.0fs", m_time).c_str());
 			}
 			else if ((m_time / 60) >= 1 && (m_time / 60) < 60)
 			{
 				m_time /= 60;
-				time->setString(StringUtils::format("%dm", (int)m_time).c_str());
+				time->setString(StringUtils::format("%.0fm", m_time).c_str());
 			}
 			if ((m_time / 60) >= 60)
 			{
 				m_time /= 3600;
-				time->setString(StringUtils::format("%dh", (int)m_time).c_str());
-			}
-			
+				time->setString(StringUtils::format("%.0fh", m_time).c_str());
+			}	
 		}
 		else
 		{
 			time->setString(StringUtils::format("%ds", 0).c_str());
-		}
-		
+		}	
 	}
 	else
 	{
@@ -134,7 +125,22 @@ void ItemLayer::btnChange()
 
 	if (ShopData::getInstance()->getItemBeUsedById(m_id))
 	{
-		up->setEnabled(false);
+		if (SqLite::getInstance()->getItemByID(m_id)->type)
+		{
+			up->setEnabled(false);
+		}
+		else
+		{
+			auto judge = ShopData::getInstance()->getShopGold() - SqLite::getInstance()->getItemByID(m_id)->expense;
+			if (judge >= 0)
+			{
+				up->setEnabled(true);
+			}
+			else
+			{
+				up->setEnabled(false);
+			}
+		}
 		money->setVisible(true);
 		up->getChildByName("money")->setVisible(true);
 		up->getChildByName("text")->setVisible(false);
@@ -142,12 +148,13 @@ void ItemLayer::btnChange()
 	else
 	{
 		auto judge = ShopData::getInstance()->getShopGold() - SqLite::getInstance()->getItemByID(m_id)->expense;
-		if (judge >= 0)
+		if (judge >= 0 && m_time == 0)
 		{
 			up->setEnabled(true);
 			if (m_id < 4)
 			{
-				if (ShopData::getInstance()->getCount(m_id)>0)
+				auto count = ShopData::getInstance()->getCount(m_id);
+				if (count > 0)
 				{
 					money->setVisible(false);
 					up->getChildByName("money")->setVisible(false);

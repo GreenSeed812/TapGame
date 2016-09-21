@@ -68,7 +68,6 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("TapDpsChange");
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 				upLevelCount();
-				//cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 			}
 		});
 		up100->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type)
@@ -85,7 +84,6 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("TapDpsChange");
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 				upLevelCount();
-				//cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 			}
 		});
 
@@ -255,8 +253,8 @@ void PlayerButton::coinChange(Ref* pSender)
 	{		
 		textDps->setVisible(true);
 		dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvupDps()));
-		up10Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvupDps()));
-		up100Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvupDps()));
+		up10Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvup10Dps()));
+		up100Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvup100Dps()));
 		textN->setString("Player");
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getPlayerLevel()));
 		textD->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getTapDpsNoExp()));

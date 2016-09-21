@@ -3,6 +3,7 @@
 #include <cocostudio/CocoStudio.h> 
 #include "SaveData/PlayerData.h"
 #include "SaveData/ShopData.h"
+#include "SaveData/MissionData.h"
 #include "MainScene/HelloWorldScene.h"
 #include "Tool/SqLite.h"
 #include "Tool/Rule.h"
@@ -19,8 +20,7 @@ bool ExChange::init()
 	}
 	m_countMax = 5;
 	m_money = 100;
-	m_gold.number = 10000;
-	m_gold.Mathbit = 0;
+	m_gold = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(),100);
 	m_rootNode = CSLoader::createNode("jinbi.csb");
 	this->setContentSize(m_rootNode->getContentSize());
 	this->addChild(m_rootNode);
@@ -44,8 +44,8 @@ void ExChange::initExchange()
 
 	money->setString(StringUtils::format("%d",m_money).c_str());
 	gold->setString(Ruler::getInstance()->showNum(m_gold));
-	countMax->setString(StringUtils::format("%d",m_countMax).c_str());
-	count->setString(StringUtils::format("/%d",g_countNow).c_str());
+	countMax->setString(StringUtils::format("/%d",m_countMax).c_str());
+	count->setString(StringUtils::format("%d",g_countNow).c_str());
 
 	exchange->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 		if (type == Widget::TouchEventType::ENDED)
@@ -78,6 +78,7 @@ void ExChange::initExchange()
 				auto action = Sequence::create(DelayTime::create(2), CallFuncN::create(CC_CALLBACK_1(ExChange::callback, this)), nullptr);
 				text->runAction(action);
 			}
+			MissionData::getInstance()->addMissionTimesById(3);
 			exChange(this);
 		}
 	});
@@ -96,7 +97,7 @@ void ExChange::exChange(Ref * ref)
 		auto gold = (TextBMFont*)m_rootNode->getChildByName("gold");
 		auto count = (TextBMFont*)m_rootNode->getChildByName("count");
 		gold->setString(Ruler::getInstance()->showNum(m_gold));
-		count->setString(StringUtils::format("/%d", g_countNow).c_str());	
+		count->setString(StringUtils::format("%d", g_countNow).c_str());	
 }
 
 void ExChange::callback(Node *node)

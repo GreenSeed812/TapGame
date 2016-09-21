@@ -13,9 +13,9 @@ public:
 private:
 	Node * m_rootNode;
 	int m_id;
-	int m_skillCount;
-	int m_levelUpCount;
 	bool m_state;
+	bool m_clicked;
+	ValueMap m_strings;
 	void taskChange(Ref*);
 	void stateChange();
 };

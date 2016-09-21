@@ -109,8 +109,6 @@ bool HelloWorld::init()
 	uiCallBack();
 	createMonster();
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::coinChange), "CoinChange", nullptr);
-	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::ArChange), "ArtiChange", nullptr);
-	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::itemChange), "itemChange", nullptr);
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::playerChange), "playerChange", nullptr);
 	showTime = false;
 	Slider* timeSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("timeSlider");
@@ -326,8 +324,6 @@ void HelloWorld::update(float dt)
 			TextBMFont* tdps = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("TapDps")->getChildByName("heroDps");
 			tdps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getDps()).c_str());
 			auto tpDps = Ruler::getInstance()->addNum(heroDps, PlayerData::getInstance()->getDps());
-			TextBMFont* tpdps = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("TotalDps")->getChildByName("TotalDps");
-			tpdps->setString(Ruler::getInstance()->showNum(tpDps));
 			skillEff(dt);
 			shopItemEff(dt);
 			static float t_now = 0;
@@ -571,8 +567,7 @@ void HelloWorld::uiCallBack()
 			Button* bt = (Button*)sender;
 			auto opLayer = rootNode->getChildByName("UiNode")->getChildByName("OptionLayer");
 			for (auto child : opLayer->getChildren())
-			{
-				
+			{		
 				Button* _child = (Button*)child;
 				_child->setEnabled(true);
 			}
@@ -580,19 +575,19 @@ void HelloWorld::uiCallBack()
 			if (initDownLayerSh(m_shopLayer))
 			{
 				auto lv = (ListView*)m_shopLayer->getChildByName("ListView");
+				lv->setName("shop");
 				for (size_t i = 0; i < 13; i++)
 				{
-					/*if (i != 4 && i != 7 && i != 8)
-					{*/
 						auto widget = Widget::create();
+						widget->setName(StringUtils::format("shopWidget%d", i).c_str());
 						auto item = ItemLayer::create();
+						item->setName(StringUtils::format("shopItem%d",i).c_str());
 						item->initItemLayer(i);
 						auto size = item->getContentSize();
 						widget->setContentSize(size);
 						widget->addChild(item);
 						lv->pushBackCustomItem(widget);
 						cocos2d::CCNotificationCenter::getInstance()->postNotification("itemChange");
-					//}
 				}
 			}
 			itemChange(this);
@@ -823,6 +818,7 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 				ListView* lv = (ListView*)m_artifactLayer->getChildByName("ListView");
 				ArtifactButton::setRootNode(m_artifactLayer);
 				auto button = ArtifactButton::create();
+				ArtifactData::getInstance()->subArtiStone(ArtifactData::getInstance()->getNeededArStone());
 				button->setTag(m_arCount);
 				button->initArtifactLayer(0,false);
 				auto widget = Widget::create();
@@ -842,7 +838,7 @@ bool HelloWorld::initDownLayerAr(Node* &downLayer)
 	{
 		rootNode->removeChildByName("downLayerNow");
 	}
-
+	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::ArChange), "ArtiChange", nullptr);
 	rootNode->addChild(downLayer);
 	return ret;
 }
@@ -877,6 +873,7 @@ bool HelloWorld::initDownLayerSh(Node* &downLayer)
 	{
 		rootNode->removeChildByName("downLayerNow");
 	}
+	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::itemChange), "itemChange", nullptr);
 	rootNode->addChild(downLayer);
 	return ret;
 }
@@ -1062,7 +1059,7 @@ void HelloWorld::normalAtk()
 	auto animate = Animate::create(ani);
 	auto r = random(0, 360);
 	auto rotate = RotateBy::create(0.0416f, Vec3(0, 0, r));
-	auto spawn = Spawn::create(rotate, animate, CallFuncN::create(CC_CALLBACK_1(HelloWorld::playMusic, this)), NULL);
+	auto spawn = Spawn::create(rotate, animate, NULL);
 
 	auto seq = Sequence::create(spawn, CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
 	
@@ -1147,8 +1144,7 @@ void HelloWorld::shopItemEff(float dt)
 {
 	static float t_now;
 	if (ShopData::getInstance()->getItemBeUsedById(0))
-	{
-		
+	{		
 		if (ShopData::getInstance()->getItemDataById(0)->leftTime / 1 != (ShopData::getInstance()->getItemDataById(0)->leftTime - dt) / 1)
 		{
 			showSiTime(0, ShopData::getInstance()->getItemDataById(0)->leftTime - dt);
@@ -1200,33 +1196,40 @@ void HelloWorld::shopItemEff(float dt)
 			ShopData::getInstance()->getItemDataById(3)->leftTime = SqLite::getInstance()->getItemByID(3)->time;
 		}
 	}
-	if (MyState::getInstance()->getKTap() && ShopData::getInstance()->getItemBeUsedById(4))
+	if (ShopData::getInstance()->getItemBeUsedById(4))
 	{
 		if (ShopData::getInstance()->getItemDataById(4)->leftTime / 1 != (ShopData::getInstance()->getItemDataById(4)->leftTime - dt) / 1)
 		{
+
 			showSiTime(4, ShopData::getInstance()->getItemDataById(4)->leftTime - dt);
+			ShopData::getInstance()->getItemDataById(4)->leftTime -= dt;
+			log("%f", ShopData::getInstance()->getItemDataById(4)->leftTime);
 		}
-		ShopData::getInstance()->getItemDataById(4)->leftTime -= dt;
-		t_now += dt;
-		if (t_now > 1 / 30.0f)
-		{
-			Node* monsterNode = rootNode->getChildByName("MonsterNode");
-			Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
-			num = PlayerData::getInstance()->getTapDps();
-			PlayerData::getInstance()->subHp(num);
-			normalAtk();
-			armature->getAnimation()->play("Hurt", -1, 0);
-			t_now = 0;
-			if (PlayerData::getInstance()->getSkillopen(5))
+		if (MyState::getInstance()->getKTap())
+		{		
+			
+			t_now += dt;
+			if (t_now > 1 / 30.0f)
 			{
-				auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(5) * (1 + ArtifactData::getInstance()->getskilleffUp(6)));
-				PlayerData::getInstance()->addGold(&num1);
+				Node* monsterNode = rootNode->getChildByName("MonsterNode");
+				Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
+				num = PlayerData::getInstance()->getTapDps();
+				PlayerData::getInstance()->subHp(num);
+				normalAtk();
+				armature->getAnimation()->play("Hurt", -1, 0);
+				t_now = 0;
+				if (PlayerData::getInstance()->getSkillopen(5))
+				{
+					auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(5) * (1 + ArtifactData::getInstance()->getskilleffUp(6)));
+					PlayerData::getInstance()->addGold(&num1);
+				}
+				if (ShopData::getInstance()->getItemBeUsedById(1))
+				{
+					auto num2 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 0.3);
+					PlayerData::getInstance()->addGold(&num2);
+				}
 			}
-			if (ShopData::getInstance()->getItemBeUsedById(1))
-			{
-				auto num2 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 0.3);
-				PlayerData::getInstance()->addGold(&num2);
-			}
+			
 		}
 		if (ShopData::getInstance()->getItemDataById(4)->leftTime <= 0)
 		{
@@ -1285,9 +1288,9 @@ void HelloWorld::shopItemEff(float dt)
 		{
 			ShopData::getInstance()->stopItemById(12);
 			ShopData::getInstance()->getItemDataById(12)->leftTime = 0;
-		}
-			
+		}	
 	}
+
 }
 void HelloWorld::shopItemCDUpDate(float dt)
 {
@@ -1396,7 +1399,6 @@ bool HelloWorld::mapInit()
 		Sprite* mapN = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapNow");
 		mapN->setTexture(StringUtils::format("map/icon/%s", mapNow->mapIcon.c_str()));
 		mapL->runAction(Show::create());
-
 	}
 	else
 	{
@@ -1423,7 +1425,10 @@ void HelloWorld::gameContinue(Node*)
 }
 void HelloWorld::showSiTime(int id, float dt)
 {
-	//显示倒计时，时间为dt
+	if (dt < ShopData::getInstance()->getNum(id))
+	{
+		CCNotificationCenter::getInstance()->postNotification("itemChange");
+	}	
 }
 
 void HelloWorld::relife()

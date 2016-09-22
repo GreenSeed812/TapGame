@@ -1,7 +1,11 @@
 #ifndef _ShopData_H_
 #define _ShopData_H_
+#include "json/document.h"
+#include "json/writer.h"
+#include "json/stringbuffer.h"
 #include<cocos2d.h>
 using namespace cocos2d;
+using namespace  rapidjson;
 struct ItemData
 {
 	bool isUsing;
@@ -24,6 +28,8 @@ public:
 	int getNum(int id){ return m_num[id]; };
 	void setNum(int id);
 	ItemData * getItemDataById(int id);
+	void readUserData();
+	void saveUserData(Document& document);
 private:
 	void init();
 	ShopData();

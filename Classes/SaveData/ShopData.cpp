@@ -88,14 +88,14 @@ ItemData * ShopData::getItemDataById(int id)
 
 void ShopData::setNum(int id){
 	if (m_items[id]->isUsing)
-	{	
+	{
 		if (m_num[id] < 60)
 		{
 			m_num[id]--;
 		}
 		else if ((m_num[id] / 60) >= 1 && (m_num[id] / 60) < 60)
 		{
-			m_num[id]-=60;
+			m_num[id] -= 60;
 		}
 		if ((m_num[id] / 60) >= 60)
 		{
@@ -106,4 +106,15 @@ void ShopData::setNum(int id){
 	{
 		m_num[id] = m_items[id]->leftTime;
 	}
+}
+void ShopData::saveUserData(Document& document)
+{
+	
+	document.SetObject();
+	Document::AllocatorType& allocator = document.GetAllocator();
+	rapidjson::Value array(kArrayType);
+	rapidjson::Value object(kObjectType);
+	document.AddMember("m_shopGold",m_shopGold,allocator);
+	document.AddMember(StringRef(StringUtils::format("%d", 1).c_str()), m_items[1]->leftTime,allocator);
+	
 }

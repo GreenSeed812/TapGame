@@ -55,7 +55,7 @@ void ArReset::initArResetLayer(int id)
 	auto reSetNum = (Text*)m_layer->getChildByName("reset")->getChildByName("num");
 
 	//ÉèÖÃ¿Ø¼þ
-	head->setTexture(StringUtils::format("ui/downUi/artifact/%d.png",id));
+	head->setTexture(StringUtils::format("ui/downUi/artifact/big/%d.png",id));
 	name->setString(SqLite::getInstance()->getArtifactSkillByID(id).ar.NAME);
 	auto starNum = ArtifactData::getInstance()->getStarNum(id);
 	starLvNow->setString(StringUtils::format("%d", starNum).c_str());

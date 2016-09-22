@@ -37,6 +37,8 @@ PlayerData::PlayerData()
 	, m_goldMulBox(0)
 	, m_relife(false)
 	, m_leaveTime(0)
+	, m_skillTap(0)
+	, m_name("")
 {
 	auto hp = SqLite::getInstance()->getHpByID(m_level%5);
 	m_hpNow.number = hp.number;
@@ -151,6 +153,7 @@ bool PlayerData::init()
 		m_latest.randNpc[2] = jsd["lstrandnpc2"].GetInt();
 		m_latest.randNpc[3] = jsd["lstrandnpc3"].GetInt();
 		m_latest.randNpc[4] = jsd["lstrandnpc4"].GetInt();
+		m_skillTap = jsd["m_skillTap"].GetDouble();
 		for (int i = 0; i < m_latest.m_HpData.size(); i++)
 		{
 			m_latest.m_HpData.at(i).number = jsd[cocos2d::StringUtils::format("lsthpNum%d", i).c_str()].GetDouble();
@@ -444,9 +447,9 @@ MyNum PlayerData::getTapDps()
 {
 	MyNum num;
 	if(MonsterState::getInstance()->getTypeNow() == MONSTER_TYPE::BOSS)
-		num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul + ArtifactData::getInstance()->getdpsexper() + ArtifactData::getInstance()->getAllDpsMul() + m_bossDpsMul);
+		num = Ruler::getInstance()->multiplay(m_basedps,m_skillTap + m_TapDpsMul + m_servantAllMul + ArtifactData::getInstance()->getdpsexper() + ArtifactData::getInstance()->getAllDpsMul() + m_bossDpsMul);
 	else
-		num = Ruler::getInstance()->multiplay(m_basedps, m_TapDpsMul + m_servantAllMul + ArtifactData::getInstance()->getdpsexper() + ArtifactData::getInstance()->getAllDpsMul());
+		num = Ruler::getInstance()->multiplay(m_basedps,m_skillTap + m_TapDpsMul + m_servantAllMul + ArtifactData::getInstance()->getdpsexper() + ArtifactData::getInstance()->getAllDpsMul());
 	
 	auto t = Ruler::getInstance()->addNum(num,getHeroDps());
 	auto num1 = Ruler::getInstance()->multiplay(t,m_latestTapMul);
@@ -585,6 +588,38 @@ MyNum PlayerData::getservantLevelUpDps(int id)
 	//auto upDps = Ruler::getInstance()->subNum(servantLsDps, getservantToalDps(id));
 	return servantLsDps;
 }
+MyNum PlayerData::getservantLevelUp10Dps(int id)
+{
+	MyNum upDps;
+	upDps.Mathbit = 0;
+	upDps.number = 0;
+	auto servantLsDps = SqLite::getInstance()->getServantDpsByID(id);
+	for (int i = m_servantLevel[id]; i < m_servantLevel[id]+10; i++)
+	{
+		upDps = Ruler::getInstance()->addNum(upDps, servantLsDps);
+		auto pow1 = pow(i + 1, 0.7);
+		auto pow2 = pow(i + 1, 6);
+		auto mul = 1 + 1 / pow1 - 1 / pow2;
+		servantLsDps = Ruler::getInstance()->multiplay(servantLsDps, mul);
+	}
+	return upDps;
+}
+MyNum PlayerData::getservantLevelUp100Dps(int id)
+{
+	MyNum upDps;
+	upDps.Mathbit = 0;
+	upDps.number = 0;
+	auto servantLsDps = SqLite::getInstance()->getServantDpsByID(id);
+	for (int i = m_servantLevel[id]; i < m_servantLevel[id] + 100; i++)
+	{
+		upDps = Ruler::getInstance()->addNum(upDps, servantLsDps);
+		auto pow1 = pow(i + 1, 0.7);
+		auto pow2 = pow(i + 1, 6);
+		auto mul = 1 + 1 / pow1 - 1 / pow2;
+		servantLsDps = Ruler::getInstance()->multiplay(servantLsDps, mul);
+	}
+	return upDps;
+}
 MyNum PlayerData::getservantLevelUpGold(int id)
 {
 	auto m_upGold = SqLite::getInstance()->getServantGoldByID(id);
@@ -632,6 +667,12 @@ MyNum PlayerData::getservantLevelUp100Gold(int id)
 }
 int PlayerData::getRelifeStone()
 {
+	if (ShopData::getInstance()->getItemBeUsedById(8))
+	{
+		return (getHeroRelifeStone() + getServantRelifeStone() + getLevelRelifeStone()) * 2;
+		
+	}
+	else
 	return getHeroRelifeStone() + getServantRelifeStone() + getLevelRelifeStone();
 }
 int PlayerData::getHeroRelifeStone()
@@ -878,6 +919,7 @@ void PlayerData::saveUserData()
 	document.AddMember("m_servantSkill31", m_servantSkill[31], allocator);
 	document.AddMember("m_servantSkill32", m_servantSkill[32], allocator);
 	document.AddMember("m_leaveTime", m_leaveTime, allocator);
+	document.AddMember("m_skillTap", m_skillTap, allocator);
 	ArtifactData::getInstance()->saveUserDefault(document);
 	AchieveData::getInstance()->saveUserDefault(document);
 	MyState::getInstance()->saveUserDefault(document);
@@ -907,12 +949,8 @@ int PlayerData::getServantAverLevel()
 }
 void PlayerData::relife()
 {
-	if (ShopData::getInstance()->getItemBeUsedById(8))
-	{
-		ArtifactData::getInstance()->addArtiStone(getRelifeStone() * 2);
-		ShopData::getInstance()->stopItemById(8);
-	}
 	ArtifactData::getInstance()->addArtiStone(getRelifeStone());
+	ShopData::getInstance()->stopItemById(8);
 	delete p_dt;
 	p_dt = new PlayerData();
 	m_relife = true;

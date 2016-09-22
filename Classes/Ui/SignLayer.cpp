@@ -77,18 +77,19 @@ void SignLayer::initSignLayer()
 					{
 						if (m_state)
 						{
-							if (m_day<7)
+							if (HelloWorld::getSignCount() == 0)
 							{
-								ShopData::getInstance()->buyItemByID(0);
+								ShopData::getInstance()->getItemDataById(0)->itemNum++;
 							}
 							else
 							{
-								ShopData::getInstance()->buyItemByID(2);
+								ShopData::getInstance()->getItemDataById(2)->itemNum++;
 							}
 							HelloWorld::dayChange();
 							btn->setEnabled(false);
 							m_state = false;
 							signChange(this);
+							CCNotificationCenter::getInstance()->postNotification("itemChange");
 						}	
 					}
 				}
@@ -139,18 +140,19 @@ void SignLayer::initSignLayer()
 					{
 						if (m_state)
 						{
-							if (m_day<7)
+							if (HelloWorld::getSignCount() == 0)
 							{
-								ShopData::getInstance()->buyItemByID(1);
+								ShopData::getInstance()->getItemDataById(1)->itemNum++;
 							}
 							else
 							{
-								ShopData::getInstance()->buyItemByID(3);
+								ShopData::getInstance()->getItemDataById(3)->itemNum++;
 							}
 							btn->setEnabled(false);
 							HelloWorld::dayChange();
 							m_state = false;
 							signChange(this);
+							CCNotificationCenter::getInstance()->postNotification("itemChange");
 						}						
 					}
 

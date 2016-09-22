@@ -96,7 +96,8 @@ bool HelloWorld::init()
 	leaveBtn->addTouchEventListener([this, leaveGold,leaveBtn](Ref* sender, Widget::TouchEventType type){
 		if (type == Widget::TouchEventType::ENDED)
 		{
-			PlayerData::getInstance()->addGold(&(leaveGold->getGolds()));
+			auto leveG = leaveGold->getGolds();
+			PlayerData::getInstance()->addGold(&leveG);
 			delete leaveGold;
 			leaveBtn->setVisible(false);
 		}
@@ -124,6 +125,7 @@ bool HelloWorld::init()
 	waveNum->setString(StringUtils::format("%d/%d", PlayerData::getInstance()->getWaveNow(), PlayerData::getInstance()->getMaxWave() - 1));
 	bossBt = nullptr;
 	m_gamelogic = true;
+	
     return true;
 }
 void HelloWorld::coinChange(Ref *ref)
@@ -714,7 +716,7 @@ void HelloWorld::mapChange()
 		m_gamelogic = false;
 		auto effect = Sprite::create();
 		/*effect->setZOrder(100);*/
-		auto animate = MyAnimation::getInstance()->getAnimate();
+		auto animate = MyAnimation::getInstance()->getAnimate_xy();
 		effect->setScale(3.6);
 		effect->setAnchorPoint(Vec2(0, 0));
 		auto seq = Sequence::create(animate, CallFuncN::create(CC_CALLBACK_1(HelloWorld::bgChange, this)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)),CallFuncN::create(CC_CALLBACK_1(HelloWorld::gameContinue,this)), NULL);
@@ -906,6 +908,76 @@ void HelloWorld::playerSkillCallBack()
 				m_skill[i - 1]->setEnabled(false);
 				PlayerData::getInstance()->openSkill(i - 1);
 				AchieveData::getInstance()->skillUsed(i-1);
+				if (i == 2)
+				{
+					m_kssjEffect = Sprite::create();
+					m_kssjEffect->setScale(4.0f);
+					m_kssjEffect->setColor(Color3B(0, 0, 0));
+					auto animate = MyAnimation::getInstance()->getAnimate_kssj();
+					auto kptime = PlayerData::getInstance()->getKeepTime(i);
+					kptime *=(1 + ArtifactData::getInstance()->getskillTimeA(i));
+					auto t1 = animate->getAnimation()->getDelayPerUnit();
+					auto t2 = animate->getAnimation()->getTotalDelayUnits();
+					auto num = kptime / (t1*t2);
+					auto seq = Sequence::create(Repeat::create(animate, kptime / (t1*t2)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+					rootNode->getChildByName("normalAtk")->addChild(m_kssjEffect);
+					m_kssjEffect->runAction(seq);
+					MyAnimation::getInstance()->setKSSJplaying(true);
+				}
+				if (i == 3)
+				{
+					
+					auto armT = Armature::create("Effect_strike_hunter");
+					armT->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(HelloWorld::deleteArmature));
+					armT->getAnimation()->playByIndex(0,-1,0);
+					rootNode->getChildByName("normalAtk")->addChild(armT);
+
+				}
+				if (i == 4)
+				{
+					auto effect = Sprite::create();
+					effect->setScale(4.0f);
+					auto animate = MyAnimation::getInstance()->getAnimate_bfx();
+					auto kptime = PlayerData::getInstance()->getKeepTime(i);
+					kptime *= (1 + ArtifactData::getInstance()->getskillTimeA(i));
+					auto t1 = animate->getAnimation()->getDelayPerUnit();
+					auto t2 = animate->getAnimation()->getTotalDelayUnits();
+					auto num = kptime / (t1*t2);
+					auto seq = Sequence::create(Repeat::create(animate, kptime / (t1*t2)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+					rootNode->getChildByName("normalAtk")->addChild(effect);
+					effect->runAction(seq);
+				}
+				if (i == 5)
+				{
+					auto effectSx = Sprite::create();
+					auto animateSx = MyAnimation::getInstance()->getAnimate_sx();
+					auto seqSx = Sequence::create(animateSx, CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+					//rootNode->getChildByName("normalAtk")
+					rootNode->getChildByName("normalAtk")->addChild(effectSx);
+					effectSx->runAction(RepeatForever::create(seqSx));
+					auto effetsxk = Sprite::create();
+					effetsxk->setScale(2.0f);
+					effetsxk->setPosition(0,100);
+					auto animateSxk = MyAnimation::getInstance()->getAnimate_sxk();
+					auto kptime = PlayerData::getInstance()->getKeepTime(i);
+					kptime *= (1 + ArtifactData::getInstance()->getskillTimeA(i));
+					auto t1 = animateSxk->getAnimation()->getDelayPerUnit();
+					auto t2 = animateSxk->getAnimation()->getTotalDelayUnits();
+					auto num = kptime / (t1*t2);
+					auto seqSxk = Sequence::create(Repeat::create(animateSxk, kptime / (t1*t2)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+					rootNode->getChildByName("normalAtk")->addChild(effetsxk);
+					effetsxk->runAction(seqSxk);
+
+				}
+				if (i == 6)
+				{
+					auto effect = Sprite::create();
+					effect->setScale(3.5f);
+					auto animate = MyAnimation::getInstance()->getAnimate_tq();
+					auto seq = Sequence::create(animate, CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+					rootNode->getChildByName("normalAtk")->addChild(effect);
+					effect->runAction(seq);
+				}
 			}
 		});
 	}
@@ -979,40 +1051,59 @@ void HelloWorld::skillEff(float dt)
 		t_now += dt;
 		if (PlayerData::getInstance()->getSkillopen(0))
 		{
-
-
-			PlayerData::getInstance()->subHp(Ruler::getInstance()->multiplay(PlayerData::getInstance()->getTapDps(), PlayerData::getInstance()->getSkillEFF(0) * (1 + ArtifactData::getInstance()->getskilleffUp(1))));
 			
+			auto armT = Armature::create("Effect_strike_warrior");
+			armT->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(HelloWorld::skilleff1));
+			armT->getAnimation()->playByIndex(0, -1, 0);
+			armT->setScale(3.0f);
+			rootNode->getChildByName("normalAtk")->addChild(armT);
+						
 		}
-		if (MyState::getInstance()->getKTap() && PlayerData::getInstance()->getSkillopen(1))
+		if ( PlayerData::getInstance()->getSkillopen(1))
 		{
-		
-			if (t_now > 1 / 7.0f)
+			
+			if (MyState::getInstance()->getKTap())
 			{
-				Node* monsterNode = rootNode->getChildByName("MonsterNode");
-				Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
-				num = PlayerData::getInstance()->getTapDps();
-				PlayerData::getInstance()->subHp(num);
-				normalAtk();
-				armature->getAnimation()->play("Hurt", -1, 0);
-				t_now = 0;
-				if (PlayerData::getInstance()->getSkillopen(5))
+				if (!MyAnimation::getInstance()->getKSSJplaying())
 				{
-					auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(5) * (1 + ArtifactData::getInstance()->getskilleffUp(6)));
-					PlayerData::getInstance()->addGold(&num1);
+					m_kssjEffect->runAction(Show::create());
+					MyAnimation::getInstance()->setKSSJplaying(true);
 				}
-				if (ShopData::getInstance()->getItemBeUsedById(1))
+				if (t_now > 1 / 7.0f)
 				{
-					auto num2 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 0.3);
-					PlayerData::getInstance()->addGold(&num2);
+					Node* monsterNode = rootNode->getChildByName("MonsterNode");
+					Armature* armature = (Armature*)monsterNode->getChildByName("MonsterArmature");
+					num = PlayerData::getInstance()->getTapDps();
+					PlayerData::getInstance()->subHp(num);
+					normalAtk();
+					armature->getAnimation()->play("Hurt", -1, 0);
+					t_now = 0;
+					if (PlayerData::getInstance()->getSkillopen(5))
+					{
+						auto num1 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), PlayerData::getInstance()->getSkillEFF(5) * (1 + ArtifactData::getInstance()->getskilleffUp(6)));
+						PlayerData::getInstance()->addGold(&num1);
+					}
+					if (ShopData::getInstance()->getItemBeUsedById(1))
+					{
+						auto num2 = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 0.3);
+						PlayerData::getInstance()->addGold(&num2);
+					}
 				}
 			}
+			else
+			{
+				if (MyAnimation::getInstance()->getKSSJplaying())
+				{
+					m_kssjEffect->runAction(Hide::create());
+					MyAnimation::getInstance()->setKSSJplaying(false);
+				}
+			
+			}
+			
 		}
 		if (PlayerData::getInstance()->getSkillopen(2))
 		{
 			PlayerData::getInstance()->setSkillexploreProb(PlayerData::getInstance()->getSkillEFF(2) *(1 + ArtifactData::getInstance()->getskilleffUp(3)));
-		
-		
 		}
 		if (PlayerData::getInstance()->getSkillopen(3))
 		{
@@ -1193,7 +1284,7 @@ void HelloWorld::shopItemEff(float dt)
 		if (ShopData::getInstance()->getItemDataById(3)->leftTime <= 0)
 		{
 			ShopData::getInstance()->stopItemById(3);
-			ShopData::getInstance()->getItemDataById(3)->leftTime = SqLite::getInstance()->getItemByID(3)->time;
+			ShopData::getInstance()->getItemDataById(3)->leftTime = 0;
 		}
 	}
 	if (ShopData::getInstance()->getItemBeUsedById(4))
@@ -1203,7 +1294,6 @@ void HelloWorld::shopItemEff(float dt)
 
 			showSiTime(4, ShopData::getInstance()->getItemDataById(4)->leftTime - dt);
 			ShopData::getInstance()->getItemDataById(4)->leftTime -= dt;
-			log("%f", ShopData::getInstance()->getItemDataById(4)->leftTime);
 		}
 		if (MyState::getInstance()->getKTap())
 		{		
@@ -1259,11 +1349,12 @@ void HelloWorld::shopItemEff(float dt)
 		ShopData::getInstance()->stopItemById(7);
 	}
 	if (ShopData::getInstance()->getItemBeUsedById(9))
-	{
-		MyNum num;
-		num.Mathbit = 0;
-		num.number = 0;
-		PlayerData::getInstance()->setHpNow(num);
+	{	
+		auto armT = Armature::create("Effect_strike_magister");
+		armT->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(HelloWorld::itemEff9));
+		armT->getAnimation()->playByIndex(0, -1, 0);
+		armT->setScale(3.0);
+		rootNode->getChildByName("normalAtk")->addChild(armT);
 		ShopData::getInstance()->stopItemById(9);
 	}
 	if (ShopData::getInstance()->getItemBeUsedById(10))
@@ -1274,10 +1365,24 @@ void HelloWorld::shopItemEff(float dt)
 			showSiTime(10, ShopData::getInstance()->getItemDataById(10)->leftTime - dt);
 		}
 		if (ShopData::getInstance()->getItemDataById(10)->leftTime <= 0)
+		{
 			ShopData::getInstance()->stopItemById(10);
+		}
 	}
 	if (ShopData::getInstance()->getItemBeUsedById(12))
 	{
+		if (!MyAnimation::getInstance()->getKLGJplaying())
+		{
+			m_klgjEffect = Sprite::create();
+			m_klgjEffect->setScale(3.0);
+			m_klgjEffect->setColor(Color3B(255, 0, 0));
+			auto animate = MyAnimation::getInstance()->getAnimate_kl();
+			//m_klgjEffect->setAnchorPoint(Vec2(0, 0));
+			//auto seq = Sequence::create(animate, CallFuncN::create(CC_CALLBACK_1(HelloWorld::bgChange, this)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::gameContinue, this)), NULL);
+			rootNode->getChildByName("normalAtk")->addChild(m_klgjEffect);
+			m_klgjEffect->runAction(RepeatForever::create(animate));
+			MyAnimation::getInstance()->setKLGJplaying(true);
+		}
 		ShopData::getInstance()->getItemDataById(12)->leftTime -= dt;
 		if (ShopData::getInstance()->getItemDataById(12)->leftTime / 1 != (ShopData::getInstance()->getItemDataById(12)->leftTime - dt) / 1)
 		{
@@ -1288,9 +1393,11 @@ void HelloWorld::shopItemEff(float dt)
 		{
 			ShopData::getInstance()->stopItemById(12);
 			ShopData::getInstance()->getItemDataById(12)->leftTime = 0;
+			MyAnimation::getInstance()->setKLGJplaying(false);
+			m_klgjEffect->removeFromParent();
 		}	
+		
 	}
-
 }
 void HelloWorld::shopItemCDUpDate(float dt)
 {
@@ -1428,7 +1535,7 @@ void HelloWorld::showSiTime(int id, float dt)
 	if (dt < ShopData::getInstance()->getNum(id))
 	{
 		CCNotificationCenter::getInstance()->postNotification("itemChange");
-	}	
+	}
 }
 
 void HelloWorld::relife()
@@ -1438,4 +1545,37 @@ void HelloWorld::relife()
 	PlayerData::getInstance()->relifeEnd();
 	auto scene = HelloWorld::createScene();
 	Director::getInstance()->replaceScene(scene);
+}
+void HelloWorld::skilleff1(Armature * armature, MovementEventType type, const std::string& action)
+{
+	if (type == MovementEventType::LOOP_COMPLETE || type == MovementEventType::COMPLETE)
+	{
+		armature->removeFromParent();
+		PlayerData::getInstance()->subHp(Ruler::getInstance()->multiplay(PlayerData::getInstance()->getTapDps(), PlayerData::getInstance()->getSkillEFF(0) * (1 + ArtifactData::getInstance()->getskilleffUp(1))));
+		m_hitlogic = true;
+	}
+	
+}
+void HelloWorld::skilleff2(Ref*)
+{
+	
+}
+void HelloWorld::deleteArmature(Armature * armature, MovementEventType type, const std::string& action)
+{
+	if (type == MovementEventType::LOOP_COMPLETE || type == MovementEventType::COMPLETE)
+	{
+		armature->removeFromParent();
+		
+	}
+}
+void HelloWorld::itemEff9(Armature * armature, MovementEventType type, const std::string& action)
+{
+	if (type == MovementEventType::LOOP_COMPLETE || type == MovementEventType::COMPLETE)
+	{
+		MyNum num;
+		num.Mathbit = 0;
+		num.number = 0;
+		armature->removeFromParent();
+		PlayerData::getInstance()->setHpNow(num);
+	}
 }

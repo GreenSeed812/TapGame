@@ -1,19 +1,20 @@
+#include <cocostudio/CocoStudio.h>
+#include "AppDelegate.h"
+#include "cocos-ext.h"
 #include "LoadingScene.h"
+#include "Animation.h"
 #include "ui/CocosGUI.h"
 #include "Tool/Rule.h"
 #include "Tool/SqLite.h"
-#include <cocostudio/CocoStudio.h>
-#include "cocos-ext.h"
-#include "MainScene/ClickLayer.h"
-#include "SaveData/PlayerData.h"
 #include "Tool/Rule.h"
-#include "Ui/bossButton.h"
-#include "MainScene/PlayerButton.h"
+#include "Tool/SpecManager.h"
+#include "SaveData/PlayerData.h"
 #include "SaveData/State.h"
-#include "MainScene\ServantButton.h"
-
+#include "Ui/bossButton.h"
+#include "MainScene/ClickLayer.h"
+#include "MainScene/PlayerButton.h"
+#include "MainScene/ServantButton.h"
 #include "MainScene/HelloWorldScene.h"
-#include "Tool\SpecManager.h"
 using namespace cocostudio;
 
 USING_NS_CC;
@@ -41,35 +42,96 @@ bool LoadingScene::init()
 	{
 		return false;
 	}
-	//auto bg = Sprite::create("Loading.png");
-	auto rootNode = CSLoader::createNode("MainScene.csb");
-	//bg->setPosition(540,960);
-	this->addChild(rootNode);
+	m_rootNode = CSLoader::createNode("denglu.csb");
 
-	scheduleOnce(CC_SCHEDULE_SELECTOR(LoadingScene::end), 1);
+	auto head = (ImageView*)m_rootNode->getChildByName("head");
+	auto nameBg = (ImageView*)m_rootNode->getChildByName("nameBg");
+	auto name = (TextField*)nameBg->getChildByName("name");
+	auto btn = (Button*)m_rootNode->getChildByName("btn");
+	auto img = (ImageView*)btn->getChildByName("img");
+	auto load = (TextBMFont*)m_rootNode->getChildByName("loadText");
 
+	head->setVisible(false);
+	nameBg->setVisible(false);
+	name->setVisible(false);
+	img->setVisible(false);
+	btn->setVisible(false);
+	load->setVisible(true);
+	this->addChild(m_rootNode);
+	scheduleOnce(CC_SCHEDULE_SELECTOR(LoadingScene::end),0);
 	return true;
+}
+
+void LoadingScene::initLoading()
+{
+	
+	auto head = (ImageView*)m_rootNode->getChildByName("head");
+	auto nameBg = (ImageView*)m_rootNode->getChildByName("nameBg");
+	auto name = (TextField*)nameBg->getChildByName("name");
+	auto btn = (Button*)m_rootNode->getChildByName("btn");
+	auto img = (ImageView*)btn->getChildByName("img");
+	auto load = (TextBMFont*)m_rootNode->getChildByName("loadText");
+
+	load->setVisible(true);
+	auto scene = HelloWorld::createScene();
+	scene->retain();
+	if (PlayerData::getInstance()->getName() == "")
+	{
+		
+		head->setVisible(true);
+		nameBg->setVisible(true);
+		name->setVisible(true);
+		img->setVisible(true);
+		btn->setVisible(true);
+		load->setVisible(false);
+
+		name->setMaxLengthEnabled(true);
+		name->setMaxLength(10);
+		name->addEventListener([this, name, scene](Ref* sender, TextField::EventType type)
+		{
+			switch (type)
+			{
+			case ui::TextField::EventType::ATTACH_WITH_IME:
+			{
+				
+			}
+				break;
+			case ui::TextField::EventType::DELETE_BACKWARD:
+			{
+
+			}
+				break;
+			case ui::TextField::EventType::DETACH_WITH_IME:
+			{
+
+			}
+				break;
+			case ui::TextField::EventType::INSERT_TEXT:
+			{
+
+			}
+				break;
+			}
+		});
+		
+		btn->addTouchEventListener([this, name, scene](Ref* sender, Widget::TouchEventType type){
+			if (type == Widget::TouchEventType::ENDED)
+			{
+				PlayerData::getInstance()->setName(name->getStringValue());
+				Director::getInstance()->replaceScene(scene);
+			}
+		});
+	}
+	else
+	{
+		Director::getInstance()->replaceScene(scene);
+	}
 }
 
 void LoadingScene::end(float ref)
 {
-	
-	auto bg = Sprite::create("mainBG.jpg");
+	MyAnimation::getInstance();
+	PlayerData::getInstance();
 	SqLite::getInstance();
-	bg->setAnchorPoint(Vec2(0, 0));
-	this->addChild(bg);
-
-	auto  sqldb = SpecManager::shared()->loadFromDB();
-
-	{
-		auto l = Label::create(StringUtils::format("abcde %d %s", SpecManager::shared()->dramaSpecs->size(), sqldb.c_str()), "", 40);
-		l->setPosition(200, 200);
-		this->addChild(l);
-	}
-
-
-	SqLite::getInstance()->getHpByID(0);
-	//PlayerData::getInstance();
-	//HelloWorld::createScene();
-	//Director::getInstance()->replaceScene(HelloWorld::createScene());
+	initLoading();
 }

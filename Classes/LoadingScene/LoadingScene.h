@@ -9,9 +9,10 @@ public:
 
 	virtual bool init();
 	CREATE_FUNC(LoadingScene);
-	void end(float);
 private:
-
+	Node * m_rootNode;
+	void initLoading();
+	void end(float);
 };
 
 

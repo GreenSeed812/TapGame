@@ -13,13 +13,6 @@ public:
 
 private:
 	cocos2d::Node* rootNode;
-	bool m_receive1;
-	bool m_receive2;
-	bool m_receive3;
-	bool m_receive4;
-	bool m_receive5;
-	bool m_receive6;
-	bool m_receive7;
 	int m_day;
 	tm * m_time;
 	bool m_state;

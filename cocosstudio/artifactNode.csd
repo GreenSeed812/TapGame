@@ -9,16 +9,31 @@
           <AbstractNodeData Name="Layer" ActionTag="1557582561" Tag="194" IconVisible="False" LeftMargin="-0.0001" RightMargin="0.0001" TopMargin="-1.9955" BottomMargin="1.9955" ctype="SpriteObjectData">
             <Size X="951.0000" Y="120.0000" />
             <Children>
-              <AbstractNodeData Name="arHead" ActionTag="-1731785946" Tag="196" IconVisible="False" LeftMargin="47.6868" RightMargin="808.3132" TopMargin="14.6669" BottomMargin="10.3331" ctype="SpriteObjectData">
+              <AbstractNodeData Name="bg" ActionTag="-338984278" Tag="58" IconVisible="False" LeftMargin="46.0273" RightMargin="809.9727" TopMargin="14.1803" BottomMargin="10.8197" ctype="SpriteObjectData">
                 <Size X="95.0000" Y="95.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="95.1868" Y="57.8331" />
+                <Position X="93.5273" Y="58.3197" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1001" Y="0.4819" />
+                <PrePosition X="0.0983" Y="0.4860" />
                 <PreSize X="0.0484" Y="0.3833" />
                 <FileData Type="Normal" Path="ui/sq/txk.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="arHead" ActionTag="-1316373824" Tag="57" IconVisible="False" LeftMargin="45.4465" RightMargin="810.5535" TopMargin="12.5352" BottomMargin="12.4648" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="65" Scale9Height="73" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="95.0000" Y="95.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="92.9465" Y="59.9648" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.0977" Y="0.4997" />
+                <PreSize X="0.0999" Y="0.7917" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <PressedFileData Type="Normal" Path="ui/sq/txk.png" Plist="" />
+                <NormalFileData Type="Normal" Path="ui/sq/txk.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
               <AbstractNodeData Name="up" ActionTag="-1819123928" Tag="198" IconVisible="False" LeftMargin="736.8990" RightMargin="44.1010" TopMargin="10.9976" BottomMargin="11.0024" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="76" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="170.0000" Y="98.0000" />

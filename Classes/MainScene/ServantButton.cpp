@@ -210,7 +210,6 @@ void ServantButton::lockState()
 
 	auto goldText = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("gold");
 	auto strings = FileUtils::getInstance()->getValueMapFromFile("fonts/skillState.xml");
-
 	if (level >= SqLite::getInstance()->m_servantUnlock.at(PlayerData::getInstance()->getServantSkillNum(m_id)))
 	{
 		auto gold = PlayerData::getInstance()->getServantUnlockGold(m_id, PlayerData::getInstance()->getServantSkillNum(m_id) + 1);

@@ -4,7 +4,7 @@
 #include "Ui/ItemLayer.h"
 static ShopData* g_SD = nullptr;
 ShopData::ShopData()
-:m_shopGold(9999)
+:m_shopGold(10000)
 {
 }
 
@@ -36,11 +36,9 @@ void ShopData::init()
 }
 void ShopData::useItemByID(int id)
 {
-	if (id < 4)
-	{
-		getItemDataById(id)->leftTime = SqLite::getInstance()->getItemByID(id)->time;
-		m_items[id]->isUsing = true;
-	}
+	getItemDataById(id)->leftTime = SqLite::getInstance()->getItemByID(id)->time;
+	m_items[id]->isUsing = true;
+	m_items[id]->itemNum--;
 }
 void ShopData::buyItemByID(int id)
 {
@@ -91,7 +89,7 @@ ItemData * ShopData::getItemDataById(int id)
 void ShopData::setNum(int id){
 	if (m_items[id]->isUsing)
 	{	
-		if ((m_num[id] / 60) < 1)
+		if (m_num[id] < 60)
 		{
 			m_num[id]--;
 		}

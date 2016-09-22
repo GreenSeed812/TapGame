@@ -9,6 +9,7 @@ public:
 	bool init();
 	void initItemLayer(int id);
 	void itemChange(Ref*);
+	void setTime();
 	CREATE_FUNC(ItemLayer);
 private:
 	Node * m_rootNode;

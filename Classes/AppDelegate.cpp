@@ -43,14 +43,13 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0f / 60);
 
     FileUtils::getInstance()->addSearchPath("res");
-	MyAnimation::getInstance();
+	/*MyAnimation::getInstance();*/
     // create a scene. it's an autorelease object
-	auto scene = HelloWorld::createScene();
-    //auto scene1 = LoadingScene::createScene();
+	//auto scene = HelloWorld::createScene();
+	//director->runWithScene(scene);
+    auto scene = LoadingScene::createScene();
+	director->runWithScene(scene);
 
-    // run
-    director->runWithScene(scene);
-	
     return true;
 }
 

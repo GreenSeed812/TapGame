@@ -17,7 +17,7 @@
             <FileData Type="Normal" Path="ui/sq/k2.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="message" ActionTag="944228562" Tag="51" IconVisible="False" LeftMargin="3.3209" RightMargin="1.6792" TopMargin="1189.4961" BottomMargin="604.5040" LeftEage="333" RightEage="333" TopEage="25" BottomEage="25" Scale9OriginX="333" Scale9OriginY="25" Scale9Width="409" Scale9Height="76" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="message" ActionTag="944228562" Tag="51" IconVisible="False" LeftMargin="3.3209" RightMargin="1.6791" TopMargin="1189.4960" BottomMargin="604.5040" LeftEage="333" RightEage="333" TopEage="25" BottomEage="25" Scale9OriginX="333" Scale9OriginY="25" Scale9Width="409" Scale9Height="76" ctype="ImageViewObjectData">
             <Size X="1075.0000" Y="126.0000" />
             <Children>
               <AbstractNodeData Name="Resource" ActionTag="1513824446" Tag="126" IconVisible="False" LeftMargin="802.6633" RightMargin="130.3367" TopMargin="53.3843" BottomMargin="-4.3843" LabelText="11111" ctype="TextBMFontObjectData">
@@ -112,13 +112,13 @@
                 <FileData Type="Normal" Path="lhs_ar.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="SubAr" ActionTag="1950687714" Tag="228" IconVisible="False" LeftMargin="470.9467" RightMargin="107.0533" TopMargin="-3.0233" BottomMargin="11.0233" LabelText="1" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="SubAr" ActionTag="1950687714" Tag="228" IconVisible="False" LeftMargin="476.1467" RightMargin="101.8533" TopMargin="-3.0233" BottomMargin="11.0233" LabelText="1" ctype="TextBMFontObjectData">
                 <Size X="26.0000" Y="77.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="483.9467" Y="49.5233" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position X="476.1467" Y="49.5233" />
                 <Scale ScaleX="0.6000" ScaleY="0.6000" />
                 <CColor A="255" R="90" G="54" B="0" />
-                <PrePosition X="0.8012" Y="0.5826" />
+                <PrePosition X="0.7883" Y="0.5826" />
                 <PreSize X="0.0430" Y="0.9059" />
                 <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
               </AbstractNodeData>

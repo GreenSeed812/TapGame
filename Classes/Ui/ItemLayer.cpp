@@ -50,7 +50,6 @@ void ItemLayer::initItemLayer(int id)
 				if (ShopData::getInstance()->getCount(m_id)>0)
 				{
 					ShopData::getInstance()->useItemByID(m_id);
-					log("%d", m_id);
 				}
 				else
 				{
@@ -77,8 +76,8 @@ void ItemLayer::itemChange(Ref * ref)
 	info->setString(SqLite::getInstance()->getItemByID(m_id)->effdis);
 	money->setString(StringUtils::format("%d", SqLite::getInstance()->getItemByID(m_id)->expense).c_str());
 
-	btnChange();
 	timeCalculate();
+	btnChange();
 }
 
 void ItemLayer::timeCalculate()
@@ -87,10 +86,10 @@ void ItemLayer::timeCalculate()
 	auto timeText = (Text*)m_layer->getChildByName("timeText");
 	if (SqLite::getInstance()->getItemByID(m_id)->type)
 	{
-		if (ShopData::getInstance()->getItemBeUsedById(m_id))
+		if (ShopData::getInstance()->getItemDataById(m_id)->isUsing)
 		{
 			ShopData::getInstance()->setNum(m_id);
-			m_time = ShopData::getInstance()->getItemDataById(m_id)->leftTime;
+			setTime();
 			if (m_time < 60)
 			{
 				time->setString(StringUtils::format("%.0fs", m_time).c_str());
@@ -122,8 +121,7 @@ void ItemLayer::btnChange()
 {
 	auto up = (Button*)m_layer->getChildByName("up");
 	auto money = (Text*)up->getChildByName("moneyNum");
-
-	if (ShopData::getInstance()->getItemBeUsedById(m_id))
+	if (ShopData::getInstance()->getItemDataById(m_id)->isUsing)
 	{
 		if (SqLite::getInstance()->getItemByID(m_id)->type)
 		{
@@ -148,7 +146,7 @@ void ItemLayer::btnChange()
 	else
 	{
 		auto judge = ShopData::getInstance()->getShopGold() - SqLite::getInstance()->getItemByID(m_id)->expense;
-		if (judge >= 0 && m_time == 0)
+		if (judge >= 0 && !ShopData::getInstance()->getItemBeUsedById(m_id))
 		{
 			up->setEnabled(true);
 			if (m_id < 4)
@@ -173,4 +171,9 @@ void ItemLayer::btnChange()
 			up->setEnabled(false);
 		}
 	}
+}
+
+void ItemLayer::setTime()
+{
+	m_time = ShopData::getInstance()->getItemDataById(m_id)->leftTime;
 }

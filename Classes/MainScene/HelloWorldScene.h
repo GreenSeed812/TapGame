@@ -29,14 +29,18 @@ public:
 	void coinChange(Ref*);
 	void ArChange(Ref*);
 	void itemChange(Ref*);
+	void itemEff9(Armature * armature, MovementEventType type, const std::string& action);
 	void playerChange(Ref*);
 	virtual void update(float dt);
 	void showSiTime(int id,float dt);
 	void skillCDUpdate(float dt);
 	void skillKpCDUpdate(float dt);
 	void skillEff(float);
+	void skilleff1(Armature * armature, MovementEventType type, const std::string& action);
+	void skilleff2(Ref*);
 	void attackeffection();
 	void deleteSprite(Node *);
+	void deleteArmature(Armature * armature, MovementEventType type, const std::string& action);
 	void playMusic(Node * node);
 	void gameContinue(Node*);
 	void normalAtk();
@@ -85,6 +89,9 @@ private:
 	static int m_dayCount;
 	static int m_signCount;
 	static tm* m_time;
+	Sprite* m_kssjEffect;
+	Sprite* m_klgjEffect;
+	
 };
 
 #endif // __HELLOWORLD_SCENE_H__

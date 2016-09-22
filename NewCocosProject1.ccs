@@ -194,6 +194,8 @@
         <Fnt Name="font.fnt" />
         <TTF Name="font.ttf" />
         <Image Name="frame.png" />
+        <TTF Name="FZDH.ttf" />
+        <TTF Name="FZXH.ttf" />
         <Image Name="g.png" />
         <Image Name="gold.png" />
         <Image Name="gongqiao (1).png" />

@@ -85,3 +85,15 @@ ItemData * ShopData::getItemDataById(int id)
 {
 	return m_items[id];
 }
+void ShopData::saveUserData(Document& document)
+{
+	
+	document.SetObject();
+	Document::AllocatorType& allocator = document.GetAllocator();
+	rapidjson::Value array(kArrayType);
+	rapidjson::Value object(kObjectType);
+	document.AddMember("m_shopGold",m_shopGold,allocator);
+	document.AddMember(StringRef(StringUtils::format("%d", 1).c_str()), m_items[1]->leftTime,allocator);
+	
+	
+}

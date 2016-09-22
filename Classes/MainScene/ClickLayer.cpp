@@ -26,12 +26,18 @@ bool ClickLayer::init()
 	touchListener->onTouchEnded = CC_CALLBACK_2(ClickLayer::onTouchEnded, this);
 	touchListener->onTouchCancelled = CC_CALLBACK_2(ClickLayer::onTouchCanceled, this);
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this);
+	m_armature = Armature::create("Effect_atk_hunter");
+	m_armature->retain();
+	scheduleOnce(SEL_SCHEDULE(&ClickLayer::updateOnce), 0);
 	
 
 	return true;
 }
 
-
+void ClickLayer::updateOnce(float dt)
+{
+	this->getParent()->addChild(m_armature);
+}
 bool ClickLayer::onTouchBegan(Touch *touch, Event*)
 {
 	
@@ -40,13 +46,12 @@ bool ClickLayer::onTouchBegan(Touch *touch, Event*)
 	if (point.y >= 607)
 	{
 
-		m_armature = Armature::create("Effect_atk_hunter");
 		m_armature->getAnimation()->playByIndex(0, -1, 0);
 		m_armature->setPosition(point);
-		m_armature->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(ClickLayer::deleteArmature));
-		this->getParent()->addChild(m_armature);
+		
 		MyState::getInstance()->setTaped(true);
 		MyState::getInstance()->setKTap(true);
+		BgMusic::getInstance()->playEff();
 		return true;
 	}
 	else
@@ -60,11 +65,4 @@ void ClickLayer::onTouchEnded(Touch *touch, Event*)
 }
 void ClickLayer::onTouchCanceled(Touch *touch, Event*)
 {
-}
-void ClickLayer::deleteArmature(Armature * armature, MovementEventType type, const std::string& action)
-{
-	if (type == MovementEventType::LOOP_COMPLETE || type == MovementEventType::COMPLETE)
-	{
-		m_armature->removeFromParent();
-	}
 }

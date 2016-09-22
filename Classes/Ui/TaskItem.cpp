@@ -10,6 +10,7 @@
 #include "SaveData/ShopData.h"
 #include "SaveData/AchieveData.h"
 #include "SaveData/ArtifactData.h"
+#include "SaveData/MissionData.h"
 USING_NS_CC;
 using namespace cocostudio;
 using namespace ui;
@@ -20,10 +21,9 @@ bool TaskItem::init()
 	{
 		return false;
 	}
-
-	m_skillCount = 0;
-	m_levelUpCount = 0;
 	m_state = false;
+	m_clicked = true;
+	m_strings = FileUtils::getInstance()->getValueMapFromFile("fonts/taskState.xml");
 	m_rootNode = CSLoader::createNode("TaskItem.csb");
 	this->setContentSize(m_rootNode->getContentSize());
 	this->addChild(m_rootNode);
@@ -45,6 +45,9 @@ void TaskItem::initTaskItem(int id)
 			{
 				ShopData::getInstance()->addShopGold(SqLite::getInstance()->getQuestById(m_id)->reward);
 				m_state = false;
+				m_clicked = false;
+				MissionData::getInstance()->setMissionTimesById(m_id, -100000000);
+				taskChange(this);
 			}
 		});
 		break;
@@ -58,6 +61,9 @@ void TaskItem::initTaskItem(int id)
 				auto num = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), SqLite::getInstance()->getQuestById(m_id)->reward);
 				PlayerData::getInstance()->addGold(&num);
 				m_state = false;
+				m_clicked = false;
+				MissionData::getInstance()->setMissionTimesById(m_id, -100000000);
+				taskChange(this);
 			}
 		});
 		break;
@@ -67,6 +73,9 @@ void TaskItem::initTaskItem(int id)
 			{
 				ArtifactData::getInstance()->addArtiStone(SqLite::getInstance()->getQuestById(m_id)->reward);
 				m_state = false;
+				m_clicked = false;
+				MissionData::getInstance()->setMissionTimesById(m_id, -100000000);
+				taskChange(this);
 			}
 		});	
 	}
@@ -75,13 +84,12 @@ void TaskItem::initTaskItem(int id)
 
 void TaskItem::taskChange(Ref* ref)
 {
-	auto head = (ImageView*)m_rootNode->getChildByName("head");
 	auto name = (Text*)m_rootNode->getChildByName("name");
 	auto info = (Text*)m_rootNode->getChildByName("info");
+	auto text = (Text*)m_rootNode->getChildByName("submit");
 	auto gold = (TextBMFont*)m_rootNode->getChildByName("gold");
 	auto img = (ImageView*)m_rootNode->getChildByName("img");
 
-	//head->loadTexture("");
 	name->setString(SqLite::getInstance()->getQuestById(m_id)->MissionName);
 	info->setString(SqLite::getInstance()->getQuestById(m_id)->MissionDis);
 	switch (m_id)
@@ -111,7 +119,20 @@ void TaskItem::taskChange(Ref* ref)
 	}
 	stateChange();
 	auto btn = (Button*)m_rootNode->getChildByName("btn");
-	btn->setEnabled(m_state);
+	if (m_state)
+	{
+		btn->setEnabled(true);
+		text->setString(m_strings["click"].asString());
+	}
+	else
+	{
+		btn->setEnabled(false);
+		text->setString(m_strings["no"].asString());
+	}
+	if (!m_clicked)
+	{
+		text->setString(m_strings["clicked"].asString());
+	}
 }
 
 void TaskItem::stateChange()
@@ -122,61 +143,103 @@ void TaskItem::stateChange()
 	if (!(HelloWorld::getTime()->tm_year == year && HelloWorld::getTime()->tm_yday == day))
 	{
 		m_state = true;
-		m_skillCount = 0;
-		m_levelUpCount = PlayerData::getInstance()->getPlayerLevel();
+		m_clicked = true;
+		MissionData::getInstance()->reset();
+	}
+
+	if (MissionData::getInstance()->getMissionTimesById(m_id) < 0)
+	{
+		m_state = false;
+		m_clicked = false;
 	}
 	switch (m_id)
 	{
 	case 0:
+		if (MissionData::getInstance()->getMissionTimesById(0) != 0)
+		{
+			if (m_clicked)
+			{
+				m_state = true;
+			}	
+		}
 		break;
 	case 1:
+		if (MissionData::getInstance()->getMissionTimesById(1) != 0)
+		{
+			if (m_clicked)
+			{
+				m_state = true;
+			}
+		}
 		break;
 	case 2:
+		if (MissionData::getInstance()->getMissionTimesById(2) >= 6)
+		{
+			if (m_clicked)
+			{
+				m_state = true;
+			}
+		}
 		break;
 	case 3:
+		if (MissionData::getInstance()->getMissionTimesById(3) >= 2)
+		{
+			if (m_clicked)
+			{
+				m_state = true;
+			}
+		}
 		break;
 	case 4:
-		if (AchieveData::getInstance()->getNumByID(8) == 800)
+		if (MissionData::getInstance()->getMissionTimesById(4) >= 800)
 		{
-			m_state = true;
+			if (m_clicked)
+			{
+				m_state = true;
+			}
 		}
 		break;
 	case 5:
 	{
-		auto hour = time->tm_hour + 1;
-		log("%d", hour);
+		auto hour = time->tm_hour;
 		if (hour >= 9 && hour <= 12)
 		{
-			m_state = true;
+			if (m_clicked)
+			{
+				m_state = true;
+			}
 		}
 	}
 	break;
 	case 6:
 	{	
-		auto hour = time->tm_hour + 1;
-		log("%d",hour);
+		auto hour = time->tm_hour;
 		if (hour >= 18 && hour <= 21)
 		{
-			m_state = true;
+			if (m_clicked)
+			{
+				m_state = true;
+			}
 		}
 	}		
 		break;
 	case 7:
-		m_levelUpCount -= AchieveData::getInstance()->getNumByID(10);
-		if (m_levelUpCount >= 20)
+		if (MissionData::getInstance()->getMissionTimesById(7) >= 20)
 		{
-			m_state = true;
+			if (m_clicked)
+			{
+				m_state = true;
+			}
 		}
 		break;
 	case 8:
 	{
-		for (size_t i = 12; i < 18; i++)
+		if (MissionData::getInstance()->getMissionTimesById(8) >= 10)
 		{
-			m_skillCount += AchieveData::getInstance()->getNumByID(i);
-		}
-		if (m_skillCount >= 10)
-		{
-			m_state = true;
+			if (m_clicked)
+			{
+				m_state = true;
+			}
 		}
 	}	
 		break;

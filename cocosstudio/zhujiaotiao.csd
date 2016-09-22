@@ -9,69 +9,69 @@
           <AbstractNodeData Name="Layer" ActionTag="-1784766646" Tag="98" IconVisible="False" LeftMargin="1.1694" RightMargin="-1.1694" TopMargin="0.5229" BottomMargin="-0.5229" ctype="SpriteObjectData">
             <Size X="951.0000" Y="120.0000" />
             <Children>
-              <AbstractNodeData Name="playerHead" ActionTag="1361277246" Tag="20" IconVisible="False" LeftMargin="50.6255" RightMargin="805.3745" TopMargin="13.7452" BottomMargin="11.2548" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="65" Scale9Height="73" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="playerHead" ActionTag="-2066949622" Tag="345" IconVisible="False" LeftMargin="53.8224" RightMargin="802.1776" TopMargin="14.6421" BottomMargin="10.3579" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="65" Scale9Height="73" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="95.0000" Y="95.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="98.1255" Y="58.7548" />
+                <Position X="101.3224" Y="57.8579" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1032" Y="0.4896" />
+                <PrePosition X="0.1065" Y="0.4821" />
                 <PreSize X="0.0999" Y="0.7917" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Normal" Path="tx.png" Plist="" />
-                <NormalFileData Type="Normal" Path="tx.png" Plist="" />
+                <PressedFileData Type="Normal" Path="ui/js/txk.png" Plist="" />
+                <NormalFileData Type="Normal" Path="ui/js/txk.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
               <AbstractNodeData Name="discribe" ActionTag="282911540" Tag="100" IconVisible="False" LeftMargin="207.9959" RightMargin="257.0041" TopMargin="16.9888" BottomMargin="8.0112" ctype="SpriteObjectData">
                 <Size X="486.0000" Y="95.0000" />
                 <Children>
-                  <AbstractNodeData Name="textN" ActionTag="918116034" Tag="40" IconVisible="False" LeftMargin="196.5001" RightMargin="206.4999" TopMargin="6.9997" BottomMargin="64.0003" FontSize="20" LabelText="主角名称" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="83.0000" Y="24.0000" />
+                  <AbstractNodeData Name="textN" ActionTag="918116034" Tag="40" IconVisible="False" LeftMargin="105.5002" RightMargin="233.4998" TopMargin="4.4997" BottomMargin="49.5003" FontSize="36" LabelText="主角名称" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="147.0000" Y="41.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="238.0001" Y="76.0003" />
+                    <Position X="179.0002" Y="70.0003" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="239" G="203" B="148" />
-                    <PrePosition X="0.4897" Y="0.8000" />
-                    <PreSize X="0.1708" Y="0.2526" />
-                    <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                    <PrePosition X="0.3683" Y="0.7368" />
+                    <PreSize X="0.3025" Y="0.4316" />
+                    <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Text_19" ActionTag="1233581949" Tag="105" IconVisible="False" LeftMargin="171.0972" RightMargin="226.9028" TopMargin="59.2537" BottomMargin="11.7463" FontSize="20" LabelText="点击伤害:" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="88.0000" Y="24.0000" />
+                  <AbstractNodeData Name="Text_19" ActionTag="1233581949" Tag="105" IconVisible="False" LeftMargin="114.5972" RightMargin="216.4028" TopMargin="50.7537" BottomMargin="3.2463" FontSize="36" LabelText="点击伤害:" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="155.0000" Y="41.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="215.0972" Y="23.7463" />
+                    <Position X="192.0972" Y="23.7463" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="240" G="203" B="148" />
-                    <PrePosition X="0.4426" Y="0.2500" />
-                    <PreSize X="0.1811" Y="0.2526" />
-                    <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                    <PrePosition X="0.3953" Y="0.2500" />
+                    <PreSize X="0.3189" Y="0.4316" />
+                    <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="text" ActionTag="1243917018" Tag="41" IconVisible="False" LeftMargin="216.2628" RightMargin="226.7372" TopMargin="34.2083" BottomMargin="36.7917" FontSize="20" LabelText="Lv 1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="43.0000" Y="24.0000" />
-                    <AnchorPoint ScaleX="0.5849" ScaleY="0.5797" />
-                    <Position X="241.4135" Y="50.7045" />
+                  <AbstractNodeData Name="text" ActionTag="1243917018" Tag="41" IconVisible="False" LeftMargin="310.7629" RightMargin="107.2371" TopMargin="3.7083" BottomMargin="50.2917" FontSize="36" LabelText="Lv 1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="68.0000" Y="41.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="344.7629" Y="70.7917" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="239" G="203" B="148" />
-                    <PrePosition X="0.4967" Y="0.5337" />
-                    <PreSize X="0.0885" Y="0.2526" />
-                    <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                    <PrePosition X="0.7094" Y="0.7452" />
+                    <PreSize X="0.1399" Y="0.4316" />
+                    <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="textD" ActionTag="21379443" Tag="130" IconVisible="False" LeftMargin="263.7151" RightMargin="184.2849" TopMargin="60.0319" BottomMargin="10.9681" FontSize="20" LabelText="999" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="38.0000" Y="24.0000" />
+                  <AbstractNodeData Name="textD" ActionTag="21379443" Tag="130" IconVisible="False" LeftMargin="301.2151" RightMargin="121.7849" TopMargin="52.5319" BottomMargin="1.4681" FontSize="36" LabelText="999" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="63.0000" Y="41.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="282.7151" Y="22.9681" />
+                    <Position X="332.7151" Y="21.9681" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="240" G="203" B="148" />
-                    <PrePosition X="0.5817" Y="0.2418" />
-                    <PreSize X="0.0782" Y="0.2526" />
-                    <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                    <PrePosition X="0.6846" Y="0.2312" />
+                    <PreSize X="0.1296" Y="0.4316" />
+                    <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -82,10 +82,10 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4742" Y="0.4626" />
                 <PreSize X="0.5110" Y="0.7917" />
-                <FileData Type="Normal" Path="diban.png" Plist="" />
+                <FileData Type="Normal" Path="ui/js/k4.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="up100" ActionTag="1404531659" Tag="465" IconVisible="False" LeftMargin="567.9420" RightMargin="261.0580" TopMargin="16.8601" BottomMargin="9.1399" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="92" Scale9Height="72" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="up100" ActionTag="1404531659" VisibleForFrame="False" Tag="465" IconVisible="False" LeftMargin="567.9420" RightMargin="261.0580" TopMargin="16.8601" BottomMargin="9.1399" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="92" Scale9Height="72" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="122.0000" Y="94.0000" />
                 <Children>
                   <AbstractNodeData Name="needGold_0_0" ActionTag="-1986171298" Tag="469" IconVisible="False" LeftMargin="-27.9881" RightMargin="2.9881" TopMargin="26.1889" BottomMargin="-9.1889" LabelText="+100" ctype="TextBMFontObjectData">
@@ -122,7 +122,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="up10" ActionTag="-1196393871" Tag="464" IconVisible="False" LeftMargin="654.6836" RightMargin="174.3164" TopMargin="17.0155" BottomMargin="8.9845" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="92" Scale9Height="72" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="up10" ActionTag="-1196393871" VisibleForFrame="False" Tag="464" IconVisible="False" LeftMargin="654.6836" RightMargin="174.3164" TopMargin="17.0155" BottomMargin="8.9845" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="92" Scale9Height="72" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="122.0000" Y="94.0000" />
                 <Children>
                   <AbstractNodeData Name="dps" ActionTag="95320360" Tag="471" IconVisible="False" LeftMargin="-61.8156" RightMargin="-27.1844" TopMargin="-8.6242" BottomMargin="25.6242" LabelText="111.1aa" ctype="TextBMFontObjectData">
@@ -203,7 +203,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5012" Y="0.4956" />
             <PreSize X="1.0000" Y="1.0000" />
-            <FileData Type="Normal" Path="dadiban.png" Plist="" />
+            <FileData Type="Normal" Path="ui/js/k3.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="Text_3" ActionTag="1574335424" Tag="135" IconVisible="False" LeftMargin="809.0700" RightMargin="98.9300" TopMargin="55.0652" BottomMargin="40.9348" FontSize="20" LabelText="升级" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">

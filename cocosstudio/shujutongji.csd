@@ -426,7 +426,7 @@
             <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="maxLv" ActionTag="1521668854" Tag="1194" IconVisible="False" LeftMargin="797.1249" RightMargin="243.8751" TopMargin="1273.0017" BottomMargin="569.9984" LabelText="0" ctype="TextBMFontObjectData">
+          <AbstractNodeData Name="maxLv" ActionTag="1521668854" Tag="1194" IconVisible="False" LeftMargin="797.1249" RightMargin="243.8751" TopMargin="1273.0016" BottomMargin="569.9984" LabelText="0" ctype="TextBMFontObjectData">
             <Size X="39.0000" Y="77.0000" />
             <AnchorPoint ScaleY="0.5000" />
             <Position X="797.1249" Y="608.4984" />
@@ -446,7 +446,7 @@
             <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="playDays" ActionTag="-1846577854" Tag="1196" IconVisible="False" LeftMargin="797.1249" RightMargin="243.8751" TopMargin="1380.9336" BottomMargin="462.0663" LabelText="0" ctype="TextBMFontObjectData">
+          <AbstractNodeData Name="playDays" ActionTag="-1846577854" Tag="1196" IconVisible="False" LeftMargin="797.1249" RightMargin="243.8751" TopMargin="1380.9337" BottomMargin="462.0663" LabelText="0" ctype="TextBMFontObjectData">
             <Size X="39.0000" Y="77.0000" />
             <AnchorPoint ScaleY="0.5000" />
             <Position X="797.1249" Y="500.5663" />
@@ -466,7 +466,7 @@
             <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="esc" ActionTag="1496403351" Tag="177" IconVisible="False" LeftMargin="912.9245" RightMargin="89.0755" TopMargin="13.5544" BottomMargin="1826.4456" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="4" BottomEage="4" Scale9OriginX="15" Scale9OriginY="4" Scale9Width="48" Scale9Height="72" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="esc" ActionTag="1496403351" Tag="177" IconVisible="False" LeftMargin="912.9245" RightMargin="89.0755" TopMargin="13.5544" BottomMargin="1826.4456" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="4" BottomEage="4" Scale9OriginX="15" Scale9OriginY="4" Scale9Width="66" Scale9Height="89" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="78.0000" Y="80.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="951.9245" Y="1866.4456" />

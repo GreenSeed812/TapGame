@@ -1,26 +1,26 @@
 <GameFile>
-  <PropertyGroup Name="downUiButtonLayer_0" Type="Layer" ID="84310238-ac74-4bfb-8f78-787287da2790" Version="3.10.0.0" />
+  <PropertyGroup Name="downUiButtonLayer" Type="Layer" ID="84310238-ac74-4bfb-8f78-787287da2790" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
       <ObjectData Name="Layer" Tag="97" ctype="GameLayerObjectData">
         <Size X="951.0000" Y="120.0000" />
         <Children>
-          <AbstractNodeData Name="Layer" ActionTag="-1784766646" Tag="98" IconVisible="False" LeftMargin="1.1688" RightMargin="-1.1688" TopMargin="1.1886" BottomMargin="-1.1886" ctype="SpriteObjectData">
+          <AbstractNodeData Name="Layer" ActionTag="-1784766646" Tag="98" IconVisible="False" LeftMargin="453.6688" RightMargin="451.3312" TopMargin="38.1886" BottomMargin="35.8114" ctype="SpriteObjectData">
             <Size X="951.0000" Y="120.0000" />
             <Children>
-              <AbstractNodeData Name="head" ActionTag="649781542" Tag="99" IconVisible="False" LeftMargin="68.9029" RightMargin="836.0971" TopMargin="38.4141" BottomMargin="35.5859" ctype="SpriteObjectData">
-                <Size X="46.0000" Y="46.0000" />
+              <AbstractNodeData Name="head" ActionTag="649781542" Tag="99" IconVisible="False" LeftMargin="68.9029" RightMargin="-68.9029" TopMargin="-35.5859" BottomMargin="35.5859" ctype="SpriteObjectData">
+                <Size X="95.0000" Y="95.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="91.9029" Y="58.5859" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0966" Y="0.4882" />
-                <PreSize X="0.0484" Y="0.3833" />
-                <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+                <PrePosition X="1.9979" Y="1.2736" />
+                <PreSize X="1.0000" Y="1.0000" />
+                <FileData Type="Normal" Path="ui/dj/txk.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="discribe" ActionTag="282911540" Tag="100" IconVisible="False" LeftMargin="207.9962" RightMargin="257.0038" TopMargin="16.9888" BottomMargin="8.0112" ctype="SpriteObjectData">
+              <AbstractNodeData Name="discribe" ActionTag="282911540" Tag="100" IconVisible="False" LeftMargin="207.9962" RightMargin="-647.9962" TopMargin="-57.0112" BottomMargin="8.0112" ctype="SpriteObjectData">
                 <Size X="486.0000" Y="95.0000" />
                 <Children>
                   <AbstractNodeData Name="textN" ActionTag="918116034" Tag="40" IconVisible="False" LeftMargin="207.0001" RightMargin="216.9999" TopMargin="6.9997" BottomMargin="64.0003" FontSize="20" LabelText="暴风雪" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -63,12 +63,12 @@
                 <Position X="450.9962" Y="55.5112" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4742" Y="0.4626" />
-                <PreSize X="0.5110" Y="0.7917" />
-                <FileData Type="Normal" Path="diban.png" Plist="" />
+                <PrePosition X="9.8043" Y="1.2068" />
+                <PreSize X="10.5652" Y="2.0652" />
+                <FileData Type="Normal" Path="ui/dj/k4.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="up" ActionTag="-20608098" Tag="26" IconVisible="False" LeftMargin="739.7349" RightMargin="41.2651" TopMargin="12.9630" BottomMargin="9.0370" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="76" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="up" ActionTag="-20608098" Tag="26" IconVisible="False" LeftMargin="739.7349" RightMargin="-863.7349" TopMargin="-61.0370" BottomMargin="9.0370" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="140" Scale9Height="76" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="170.0000" Y="98.0000" />
                 <Children>
                   <AbstractNodeData Name="needGold" ActionTag="-590024287" Tag="132" IconVisible="False" LeftMargin="2.3485" RightMargin="-43.3485" TopMargin="26.8165" BottomMargin="-5.8165" LabelText="111.1aa" ctype="TextBMFontObjectData">
@@ -96,8 +96,8 @@
                 <Position X="824.7349" Y="58.0370" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8672" Y="0.4836" />
-                <PreSize X="0.1788" Y="0.8167" />
+                <PrePosition X="17.9290" Y="1.2617" />
+                <PreSize X="3.6957" Y="2.1304" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Normal" Path="anniuhui.png" Plist="" />
                 <PressedFileData Type="Normal" Path="tubiao.png" Plist="" />
@@ -111,8 +111,8 @@
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5012" Y="0.4901" />
-            <PreSize X="1.0000" Y="1.0000" />
-            <FileData Type="Normal" Path="dadiban.png" Plist="" />
+            <PreSize X="0.0484" Y="0.3833" />
+            <FileData Type="Normal" Path="ui/dj/k3.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="Text_3" ActionTag="1574335424" Tag="135" IconVisible="False" LeftMargin="802.1151" RightMargin="105.8849" TopMargin="22.5427" BottomMargin="73.4573" FontSize="20" LabelText="升级" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">

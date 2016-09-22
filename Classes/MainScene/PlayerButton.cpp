@@ -68,7 +68,6 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("TapDpsChange");
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 				upLevelCount();
-				//cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 			}
 		});
 		up100->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type)
@@ -85,7 +84,6 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("TapDpsChange");
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 				upLevelCount();
-				//cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 			}
 		});
 
@@ -255,8 +253,8 @@ void PlayerButton::coinChange(Ref* pSender)
 	{		
 		textDps->setVisible(true);
 		dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvupDps()));
-		up10Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvupDps()));
-		up100Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvupDps()));
+		up10Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvup10Dps()));
+		up100Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvup100Dps()));
 		textN->setString("Player");
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getPlayerLevel()));
 		textD->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getTapDpsNoExp()));
@@ -271,6 +269,7 @@ void PlayerButton::coinChange(Ref* pSender)
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
 		auto y = textD->getPositionY();
 		textD->setPosition(Vec2(x, y));
+		textD->setFontSize(30);
 		if (PlayerData::getInstance()->getPlayerLevel() < 50)
 		{
 			bt->setEnabled(false);
@@ -286,6 +285,7 @@ void PlayerButton::coinChange(Ref* pSender)
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
 		auto y = textD->getPositionY();
 		textD->setPosition(Vec2(x, y));
+		textD->setFontSize(30);
 		if (PlayerData::getInstance()->getPlayerLevel() < 100)
 		{
 			bt->setEnabled(false);
@@ -297,11 +297,12 @@ void PlayerButton::coinChange(Ref* pSender)
 		textN->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(2).c_str()));
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
 		float eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
-		int _eff = eff * 100;
+		int _eff = eff;
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), _eff));
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
 		auto y = textD->getPositionY();
 		textD->setPosition(Vec2(x, y));
+		textD->setFontSize(30);
 		if (PlayerData::getInstance()->getPlayerLevel() < 200)
 		{
 			bt->setEnabled(false);
@@ -318,6 +319,7 @@ void PlayerButton::coinChange(Ref* pSender)
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
 		auto y = textD->getPositionY();
 		textD->setPosition(Vec2(x, y));
+		textD->setFontSize(30);
 		if (PlayerData::getInstance()->getPlayerLevel() < 300)
 		{
 			bt->setEnabled(false);
@@ -334,6 +336,7 @@ void PlayerButton::coinChange(Ref* pSender)
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
 		auto y = textD->getPositionY();
 		textD->setPosition(Vec2(x, y));
+		textD->setFontSize(30);
 		if (PlayerData::getInstance()->getPlayerLevel() < 400)
 		{
 			bt->setEnabled(false);
@@ -350,6 +353,7 @@ void PlayerButton::coinChange(Ref* pSender)
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
 		auto y = textD->getPositionY();
 		textD->setPosition(Vec2(x, y));
+		textD->setFontSize(30);
 		if (PlayerData::getInstance()->getPlayerLevel() < 500)
 		{
 			bt->setEnabled(false);
@@ -364,6 +368,7 @@ void PlayerButton::coinChange(Ref* pSender)
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
 		auto y = textD->getPositionY();
 		textD->setPosition(Vec2(x, y));
+		textD->setFontSize(30);
 		if (PlayerData::getInstance()->getPlayerLevel() < 600)
 		{
 			bt->setEnabled(false);

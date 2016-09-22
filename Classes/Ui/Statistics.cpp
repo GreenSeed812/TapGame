@@ -3,6 +3,7 @@
 #include "ui/CocosGUI.h"
 #include <cocostudio/CocoStudio.h> 
 #include "SaveData/PlayerData.h"
+#include "SaveData/ArtifactData.h"
 #include "Tool/SqLite.h"
 #include "Tool/Rule.h"
 using namespace ui;
@@ -33,6 +34,7 @@ void Statistics::initStatistics()
 			m_rootNode->removeFromParent();
 		}
 	});
+	statisticsChange(this);
 }
 
 void Statistics::statisticsChange(Ref* ref)
@@ -57,6 +59,19 @@ void Statistics::statisticsChange(Ref* ref)
 
 	playerLv->setString(StringUtils::format("%d", PlayerData::getInstance()->getPlayerLevel()).c_str());
 	servantLv->setString(StringUtils::format("%d", PlayerData::getInstance()->getServantAverLevel()).c_str());
-	gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
-	crit->setString("");
+	gold->setString(StringUtils::format("%d%%", ArtifactData::getInstance()->getrmGoldPer() * 100).c_str());
+	crit->setString(StringUtils::format("%d", 0).c_str());
+	critHurt->setString(StringUtils::format("%d", 0).c_str());
+	relifeTime->setString(StringUtils::format("%d", 0).c_str());
+	playerLvZ->setString(StringUtils::format("%d", 0).c_str());
+	goldZ->setString(StringUtils::format("%d", 0).c_str());
+	clickNum->setString(StringUtils::format("%d", 0).c_str());
+	monsterNum->setString(StringUtils::format("%d", 0).c_str());
+	monsterRareNum->setString(StringUtils::format("%d", 0).c_str());
+	boosNum->setString(StringUtils::format("%d", 0).c_str());
+	critNum->setString(StringUtils::format("%d", 0).c_str());
+	maxLv->setString(StringUtils::format("%d", 0).c_str());
+	relifeNum->setString(StringUtils::format("%d", 0).c_str());
+	playDays->setString(StringUtils::format("%d", 0).c_str());
+	maxSerNum->setString(StringUtils::format("%d", 0).c_str());
 }

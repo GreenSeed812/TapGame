@@ -16,7 +16,6 @@ public:
 private:
 	int m_id;
 	int m_money;
-	int m_allMoney;
 	int m_starNum;
 	bool m_starUp;
 	bool m_starUped;
@@ -24,5 +23,6 @@ private:
 	MyNum m_countMax;
 	static Node * g_node;
 	Node * m_node;
+	void stateChange();
 };
 #endif

@@ -38,6 +38,7 @@ PlayerData::PlayerData()
 	, m_relife(false)
 	, m_leaveTime(0)
 	, m_skillTap(0)
+	, m_name("")
 {
 	auto hp = SqLite::getInstance()->getHpByID(m_level%5);
 	m_hpNow.number = hp.number;

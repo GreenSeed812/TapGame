@@ -60,7 +60,6 @@ public:
 	void bgChange(Node*);
 	void relife();
 	void shopItemCDUpDate(float dt);
-    // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 private:
 	Node* rootNode;

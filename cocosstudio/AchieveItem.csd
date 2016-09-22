@@ -21,13 +21,13 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="star1" ActionTag="1127604443" Tag="225" IconVisible="False" LeftMargin="54.7401" RightMargin="453.2599" TopMargin="80.8222" BottomMargin="23.1778" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="15" Scale9Height="15" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="star1" ActionTag="1127604443" Tag="225" IconVisible="False" LeftMargin="54.7380" RightMargin="453.2620" TopMargin="80.8235" BottomMargin="23.1765" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="15" Scale9Height="15" ctype="ImageViewObjectData">
                 <Size X="43.0000" Y="43.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="76.2401" Y="44.6778" />
+                <AnchorPoint ScaleX="0.5421" ScaleY="0.4959" />
+                <Position X="78.0483" Y="44.5002" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1384" Y="0.3039" />
+                <PrePosition X="0.1416" Y="0.3027" />
                 <PreSize X="0.0780" Y="0.2925" />
                 <FileData Type="Normal" Path="xing2.png" Plist="" />
               </AbstractNodeData>
@@ -121,7 +121,7 @@
                 <PreSize X="0.2904" Y="0.2925" />
                 <FileData Type="Normal" Path="chengjiumiaoshu.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="btn" ActionTag="-962115674" ZOrder="6" Tag="233" IconVisible="False" LeftMargin="634.6224" RightMargin="-263.6224" TopMargin="17.1344" BottomMargin="19.8656" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="150" Scale9Height="88" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="btn" ActionTag="-962115674" ZOrder="6" Tag="233" IconVisible="False" LeftMargin="634.6224" RightMargin="-263.6224" TopMargin="17.1344" BottomMargin="19.8656" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="150" Scale9Height="88" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="180.0000" Y="110.0000" />
                 <Children>
                   <AbstractNodeData Name="money" ActionTag="-448566967" Tag="234" IconVisible="False" LeftMargin="34.1547" RightMargin="61.8453" TopMargin="-9.8134" BottomMargin="42.8134" LabelText="111" ctype="TextBMFontObjectData">
@@ -155,7 +155,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.3387" Y="0.4602" />
             <PreSize X="0.6560" Y="1.0000" />
-            <FileData Type="Normal" Path="kuang1 (2).png" Plist="" />
+            <FileData Type="Normal" Path="ui/chengjiu/k3.png" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

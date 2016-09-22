@@ -2,6 +2,7 @@
 static MissionData* g_md;
 MissionData::MissionData()
 {
+	reset();
 }
 
 MissionData::~MissionData()

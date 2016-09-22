@@ -25,6 +25,8 @@ public:
 	void addShopGold(int gold);
 	bool getItemBeUsedById(int id);
 	int getCount(int id);
+	int getNum(int id){ return m_num[id]; };
+	void setNum(int id);
 	ItemData * getItemDataById(int id);
 	void readUserData();
 	void saveUserData(Document& document);
@@ -33,24 +35,10 @@ private:
 	ShopData();
 	~ShopData();
 	int m_shopGold;
+	int m_num[13];
 	ItemData* m_items[13];
 };
 
 
 #endif
 
-
-//海潮图腾
-//闪电图腾
-//火舌图腾
-//风怒图腾
-//地精银行押运事故
-//坚持神力
-//技能刷新
-//进阶佣兵
-//神器升星
-//转生礼包
-//死从天降
-//藏宝海湾的宝箱
-//幸运硬币
-//狂乱攻击

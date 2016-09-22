@@ -9,14 +9,15 @@ public:
 	bool init();
 	void initItemLayer(int id);
 	void itemChange(Ref*);
+	void setTime();
 	CREATE_FUNC(ItemLayer);
 private:
 	Node * m_rootNode;
 	Node * m_layer;
 	float m_time;
 	int m_id;
-	void timeCalculate();
 	void btnChange();
+	void timeCalculate();
 };
 
 #endif

@@ -15,7 +15,7 @@ public:
 	CREATE_FUNC(ClickLayer);
 	EventListenerTouchOneByOne *touchListener;
 	void setTouchEnabled(bool boolean){ touchListener->setEnabled(boolean); }
-	
+	void updateOnce(float dt);
 private:
 	int m_clickPerSecond;
 	Armature* m_armature;

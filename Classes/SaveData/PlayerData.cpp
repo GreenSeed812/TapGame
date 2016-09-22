@@ -180,7 +180,7 @@ bool PlayerData::init()
 	AchieveData::getInstance()->readUserDefault();
 	ArtifactData::getInstance()->readUserDefault();
 	MyState::getInstance()->readUserDefault();
-	
+	ShopData::getInstance()->readUserData();
 	return true;
 }
 
@@ -922,6 +922,7 @@ void PlayerData::saveUserData()
 	ArtifactData::getInstance()->saveUserDefault(document);
 	AchieveData::getInstance()->saveUserDefault(document);
 	MyState::getInstance()->saveUserDefault(document);
+	ShopData::getInstance()->saveUserData(document);
 	StringBuffer buffer;
 	rapidjson::Writer<StringBuffer> writer(buffer);
 	document.Accept(writer);

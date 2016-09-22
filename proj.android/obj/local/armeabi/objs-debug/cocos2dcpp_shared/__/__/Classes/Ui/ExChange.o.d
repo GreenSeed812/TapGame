@@ -462,6 +462,12 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/Ui/ExChange.o: \
  jni/../../Classes/SaveData/PlayerData.h jni/../../Classes/Tool/Rule.h \
  jni/../../Classes/Tool/SqLite.h jni/../../Classes/Tool/sqlite3.h \
  jni/../../Classes/Tool/MyNum.h jni/../../Classes/SaveData/ShopData.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/writer.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/dtoa.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/itoa.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/itoa.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h \
  jni/../../Classes/MainScene/HelloWorldScene.h \
  jni/../../Classes/MainScene/ClickLayer.h \
  jni/../../Classes/Ui/bossButton.h
@@ -1397,6 +1403,18 @@ jni/../../Classes/Tool/sqlite3.h:
 jni/../../Classes/Tool/MyNum.h:
 
 jni/../../Classes/SaveData/ShopData.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/writer.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/dtoa.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/itoa.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/itoa.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h:
 
 jni/../../Classes/MainScene/HelloWorldScene.h:
 

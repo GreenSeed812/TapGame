@@ -346,7 +346,90 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/Animation.o: \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCNotificationCenter.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCSet.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCString.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCDeprecated.h
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCDeprecated.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocoStudio.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCActionFrame.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocosStudioExport.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCActionFrameEasing.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCActionManagerEx.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCActionObject.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCActionNode.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/DictionaryHelper.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/document.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/reader.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/rapidjson.h \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstring \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/allocators.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/encodings.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/meta.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/../rapidjson.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/stack.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/strtod.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/ieee754.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/biginteger.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/diyfp.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/pow10.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/error/error.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/error/../rapidjson.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/strfunc.h \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/iterator \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCArmature.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCArmatureDefine.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCBone.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCDatas.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../2d/CCTweenFunction.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCTween.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCProcessBase.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCDecorativeDisplay.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCDisplayFactory.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCColliderDetector.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCDisplayManager.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCBatchNode.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCArmatureAnimation.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCSpriteFrameCacheHelper.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCArmatureDataManager.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCSkin.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCDataReaderHelper.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/DictionaryHelper.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCTransformHelp.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCUtilMath.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCComBase.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../base/ObjectFactory.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocoLoader.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCComAttribute.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCComBase.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCComAudio.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCComController.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCInputDelegate.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCComRender.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCSGUIReader.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/UILayout.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/UIWidget.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../2d/CCProtectedNode.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/UILayoutParameter.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/GUIExport.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/GUIDefine.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/WidgetReader/WidgetReaderProtocol.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCSSceneReader.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/TriggerBase.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/TriggerObj.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocoStudio.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/TriggerMng.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCActionTimelineCache.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCTimelineMacro.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCFrame.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCTimeLine.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCFrame.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCActionTimeline.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCTimeLine.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCActionTimelineNode.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCActionTimeline.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCBoneNode.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCSkinNode.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCSkeletonNode.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../renderer/CCRenderer.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCBoneNode.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CSLoader.h
 
 jni/../../Classes/Animation.h:
 
@@ -1043,3 +1126,169 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../depr
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCString.h:
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCDeprecated.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocoStudio.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCActionFrame.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocosStudioExport.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCActionFrameEasing.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCActionManagerEx.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCActionObject.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCActionNode.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/DictionaryHelper.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/document.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/reader.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/rapidjson.h:
+
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstring:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/allocators.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/encodings.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/meta.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/../rapidjson.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/stack.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/strtod.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/ieee754.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/biginteger.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/diyfp.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/pow10.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/error/error.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/error/../rapidjson.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/strfunc.h:
+
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/iterator:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCArmature.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCArmatureDefine.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCBone.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCDatas.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../2d/CCTweenFunction.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCTween.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCProcessBase.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCDecorativeDisplay.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCDisplayFactory.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCColliderDetector.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCDisplayManager.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCBatchNode.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCArmatureAnimation.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCSpriteFrameCacheHelper.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCArmatureDataManager.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCSkin.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCDataReaderHelper.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/DictionaryHelper.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCTransformHelp.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCUtilMath.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCComBase.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../base/ObjectFactory.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocoLoader.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCComAttribute.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCComBase.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCComAudio.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCComController.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCInputDelegate.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCComRender.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCSGUIReader.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/UILayout.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/UIWidget.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../2d/CCProtectedNode.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/UILayoutParameter.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/GUIExport.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/GUIDefine.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/WidgetReader/WidgetReaderProtocol.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCSSceneReader.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/TriggerBase.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/TriggerObj.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocoStudio.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/TriggerMng.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCActionTimelineCache.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCTimelineMacro.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCFrame.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCTimeLine.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCFrame.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCActionTimeline.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCTimeLine.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCActionTimelineNode.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCActionTimeline.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCBoneNode.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCSkinNode.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCSkeletonNode.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../renderer/CCRenderer.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCBoneNode.h:
+
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CSLoader.h:

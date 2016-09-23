@@ -77,13 +77,6 @@ PlayerData::PlayerData()
 	}
 	m_skillData = SqLite::getInstance()->getSkillData();
 
-	//m_latest.randNpc[0] = 21;
-	//m_latest.randNpc[1] = 22;
-	//m_latest.randNpc[2] = 23;
-	//m_latest.randNpc[3] = 24;
-	//m_latest.randNpc[4] = 25;
-
-
 }
 
 PlayerData::~PlayerData()
@@ -95,7 +88,6 @@ PlayerData * PlayerData::getInstance()
 	if (!p_dt)
 	{
 		p_dt = new PlayerData();	
-		//remove(cocos2d::UserDefault::getInstance()->getXMLFilePath().c_str());
 		if (cocos2d::UserDefault::getInstance()->getBoolForKey("isSaved"))
 		{
 			p_dt->init();
@@ -487,7 +479,10 @@ float PlayerData::getSkillEFF(int i)
 void PlayerData::unlockSernantSkill(int servantid, int skillid)
 {
 	auto servant = SqLite::getInstance()->getServantByID(servantid);
-	m_servantSkill[servantid]++;
+	if (m_servantSkill[servantid] < 7)
+	{
+		m_servantSkill[servantid]++;
+	}
 	if (servant->skill[skillid].skillID == 1)
 	{
 		m_servantAllMul += servant->skill[skillid].effect;
@@ -959,8 +954,11 @@ void PlayerData::relife()
 MyNum PlayerData::getServantUnlockGold(int id,int skillid)
 {
 	auto m_upGold = SqLite::getInstance()->getServantGoldByID(id);
-
-	for (int i = 1; i <= SqLite::getInstance()->m_servantUnlock.at(skillid - 1); i++)
+	if (skillid >= 7)
+	{
+		skillid = 6;
+	}
+	for (int i = 1; i <= SqLite::getInstance()->m_servantUnlock.at(skillid); i++)
 	{
 		auto mul = 1 + 1 / (pow(i + 1, 0.45) - 1 / pow(i + 1, 6.13));
 		m_upGold = Ruler::getInstance()->multiplay(m_upGold, mul);

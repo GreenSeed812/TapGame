@@ -42,18 +42,18 @@ bool LoadingScene::init()
 	{
 		return false;
 	}
+
+	//remove(cocos2d::UserDefault::getInstance()->getXMLFilePath().c_str());
 	m_rootNode = CSLoader::createNode("denglu.csb");
 
 	auto head = (ImageView*)m_rootNode->getChildByName("head");
 	auto nameBg = (ImageView*)m_rootNode->getChildByName("nameBg");
-	auto name = (TextField*)nameBg->getChildByName("name");
 	auto btn = (Button*)m_rootNode->getChildByName("btn");
 	auto img = (ImageView*)btn->getChildByName("img");
 	auto load = (TextBMFont*)m_rootNode->getChildByName("loadText");
 
 	head->setVisible(false);
 	nameBg->setVisible(false);
-	name->setVisible(false);
 	img->setVisible(false);
 	btn->setVisible(false);
 	load->setVisible(true);
@@ -67,63 +67,59 @@ void LoadingScene::initLoading()
 	
 	auto head = (ImageView*)m_rootNode->getChildByName("head");
 	auto nameBg = (ImageView*)m_rootNode->getChildByName("nameBg");
-	auto name = (TextField*)nameBg->getChildByName("name");
 	auto btn = (Button*)m_rootNode->getChildByName("btn");
 	auto img = (ImageView*)btn->getChildByName("img");
 	auto load = (TextBMFont*)m_rootNode->getChildByName("loadText");
 
 	load->setVisible(true);
-	auto scene = HelloWorld::createScene();
-	scene->retain();
-	if (PlayerData::getInstance()->getName() == "")
+	
+	if (!cocos2d::UserDefault::getInstance()->getBoolForKey("isSaved"))
 	{
-		
 		head->setVisible(true);
 		nameBg->setVisible(true);
-		name->setVisible(true);
 		img->setVisible(true);
 		btn->setVisible(true);
 		load->setVisible(false);
 
-		name->setMaxLengthEnabled(true);
-		name->setMaxLength(10);
-		name->addEventListener([this, name, scene](Ref* sender, TextField::EventType type)
-		{
-			switch (type)
-			{
-			case ui::TextField::EventType::ATTACH_WITH_IME:
-			{
-				
-			}
-				break;
-			case ui::TextField::EventType::DELETE_BACKWARD:
-			{
-
-			}
-				break;
-			case ui::TextField::EventType::DETACH_WITH_IME:
-			{
-
-			}
-				break;
-			case ui::TextField::EventType::INSERT_TEXT:
-			{
-
-			}
-				break;
-			}
-		});
+		auto editBoxSize = Size(nameBg->getContentSize()*0.8);
+		auto name = cocos2d::extension::EditBox::create(editBoxSize, cocos2d::extension::Scale9Sprite::create("Edit.png"));
+		name->setPosition(Vec2(nameBg->getContentSize().width / 2, nameBg->getContentSize().height / 2 - 13));
+		name->setReturnType(cocos2d::extension::EditBox::KeyboardReturnType::DONE);
+		name->setFontName("Paint Boy");
+		name->setFontSize(36);
+		name->setFontColor(Color3B::WHITE);
+		name->setMaxLength(6);
+		name->setInputFlag(cocos2d::extension::EditBox::InputFlag::SENSITIVE);
+		name->setInputMode(cocos2d::extension::EditBox::InputMode::SINGLE_LINE);
+		name->setDelegate(this);
+		
+		nameBg->addChild(name);
+		auto scene = HelloWorld::createScene();
+		scene->retain();
 		
 		btn->addTouchEventListener([this, name, scene](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
-				PlayerData::getInstance()->setName(name->getStringValue());
-				Director::getInstance()->replaceScene(scene);
+				std::string str = name->getText();
+				if (str.compare("") !=0)
+				{
+					PlayerData::getInstance()->setName(name->getText());
+					Director::getInstance()->replaceScene(scene);
+				}
+				else
+				{
+					auto text = (Text*)m_rootNode->getChildByName("no");
+					text->setVisible(true);
+					auto action = Sequence::create(DelayTime::create(2), CallFuncN::create(CC_CALLBACK_1(LoadingScene::callback, this)), nullptr);
+					text->runAction(action);
+				}
 			}
 		});
 	}
 	else
 	{
+		auto scene = HelloWorld::createScene();
+		scene->retain();
 		Director::getInstance()->replaceScene(scene);
 	}
 }
@@ -134,4 +130,10 @@ void LoadingScene::end(float ref)
 	PlayerData::getInstance();
 	SqLite::getInstance();
 	initLoading();
+}
+
+void LoadingScene::callback(Node *node)
+{
+	auto text = (Text*)m_rootNode->getChildByName("no");
+	text->setVisible(false);
 }

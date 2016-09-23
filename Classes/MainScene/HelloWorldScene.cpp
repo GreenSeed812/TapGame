@@ -157,30 +157,27 @@ void HelloWorld::coinChange(Ref *ref)
 
 void HelloWorld::ArChange(Ref* ref)
 {
-	//if (ref)
-	//{
-		TextBMFont* dps = (TextBMFont*)m_artifactLayer->getChildByName("message")->getChildByName("Dps");
-		auto dpsAll = ArtifactData::getInstance()->getAllDpsMul();
-		dps->setString(StringUtils::format("+%.1f%%", dpsAll * 100).c_str());
-		if (m_artifactLayer)
+	TextBMFont* dps = (TextBMFont*)m_artifactLayer->getChildByName("message")->getChildByName("Dps");
+	auto dpsAll = ArtifactData::getInstance()->getAllDpsMul();
+	dps->setString(StringUtils::format("+%.1f%%", dpsAll * 100).c_str());
+	if (m_artifactLayer)
+	{
+		auto btn = (Button*)m_artifactLayer->getChildByName("getArtifact");
+		auto arStoneNum = ArtifactData::getInstance()->getArtiStone();
+		auto needStoneNum = ArtifactData::getInstance()->getNeededArStone();
+		TextBMFont* arStone = (TextBMFont*)m_artifactLayer->getChildByName("message")->getChildByName("Resource");
+		arStone->setString(StringUtils::format("%d", arStoneNum).c_str());
+		TextBMFont* subStone = (TextBMFont*)btn->getChildByName("SubAr");
+		subStone->setString(StringUtils::format("%d", needStoneNum).c_str());
+		if ((arStoneNum - needStoneNum) >= 0)
 		{
-			auto btn = (Button*)m_artifactLayer->getChildByName("getArtifact");
-			auto arStoneNum = ArtifactData::getInstance()->getArtiStone();
-			auto needStoneNum = ArtifactData::getInstance()->getNeededArStone();
-			TextBMFont* arStone = (TextBMFont*)m_artifactLayer->getChildByName("message")->getChildByName("Resource");
-			arStone->setString(StringUtils::format("%d", arStoneNum).c_str());
-			TextBMFont* subStone = (TextBMFont*)btn->getChildByName("SubAr");
-			subStone->setString(StringUtils::format("%d", needStoneNum).c_str());
-			if ((arStoneNum - needStoneNum) >= 0)
-			{
-				btn->setEnabled(true);
-			}
-			else
-			{
-				btn->setEnabled(false);
-			}
+			btn->setEnabled(true);
 		}
-	//}
+		else
+		{
+			btn->setEnabled(false);
+		}
+	}
 }
 
 void HelloWorld::itemChange(Ref* ref)

@@ -110,7 +110,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Sprite_1" ActionTag="-1929511456" Tag="84" IconVisible="False" LeftMargin="56.0389" RightMargin="804.9611" TopMargin="14.9799" BottomMargin="15.0201" ctype="SpriteObjectData">
+              <AbstractNodeData Name="head" ActionTag="-1929511456" Tag="84" IconVisible="False" LeftMargin="56.0389" RightMargin="804.9611" TopMargin="14.9799" BottomMargin="15.0201" ctype="SpriteObjectData">
                 <Size X="90.0000" Y="90.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="101.0389" Y="60.0201" />

@@ -32,13 +32,6 @@ void ServantButton::initServantLayer(int id)
 	m_id = id;
 	m_state = false;
 	m_clickState = false;
-	m_skillcount = PlayerData::getInstance()->getServantSkillNum(m_id);
-
-	for (size_t i = 0; i <= m_skillcount; i++)
-	{
-		Sprite* skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d",i + 1));
-		skillSprite->setVisible(true);
-	}
 
 	auto bt = (Button*)m_layer->getChildByName("up");
 	auto up10 = (Button*)m_layer->getChildByName("up10");
@@ -111,6 +104,18 @@ void ServantButton::initServantLayer(int id)
 			g_node->addChild(serInfo);
 		}
 	});
+
+	auto skillNum = PlayerData::getInstance()->getServantSkillNum(m_id);
+	log("%d-------%d", m_id, skillNum);
+	if (skillNum >= 7)
+	{
+		skillNum = 7;
+	}
+	for (size_t i = 0; i < skillNum; i++)
+	{
+		auto skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d", i + 1));
+		skillSprite->setVisible(true);
+	}
 
 	coinChange(this);
 }
@@ -210,9 +215,14 @@ void ServantButton::lockState()
 
 	auto goldText = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("gold");
 	auto strings = FileUtils::getInstance()->getValueMapFromFile("fonts/skillState.xml");
-	if (level >= SqLite::getInstance()->m_servantUnlock.at(PlayerData::getInstance()->getServantSkillNum(m_id)))
+	auto skillNum = PlayerData::getInstance()->getServantSkillNum(m_id);
+	if (skillNum >= 7)
 	{
-		auto gold = PlayerData::getInstance()->getServantUnlockGold(m_id, PlayerData::getInstance()->getServantSkillNum(m_id) + 1);
+		skillNum = 6;
+	}
+	if (level >= SqLite::getInstance()->m_servantUnlock.at(skillNum) && PlayerData::getInstance()->getServantSkillNum(m_id)<7)
+	{
+		auto gold = PlayerData::getInstance()->getServantUnlockGold(m_id, PlayerData::getInstance()->getServantSkillNum(m_id));
 		auto judge = Ruler::getInstance()->Zero(Ruler::getInstance()->subNum(gold, *PlayerData::getInstance()->getGold()));
 		if (judge)
 		{
@@ -235,7 +245,8 @@ void ServantButton::unLockSkill()
 	auto bt = (Button*)m_layer->getChildByName("up");
 	auto text = (Text*)m_layer->getChildByName("up")->getChildByName("up");
 	auto strings = FileUtils::getInstance()->getValueMapFromFile("fonts/skillState.xml");
-	Sprite* skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d", PlayerData::getInstance()->getServantSkillNum(m_id) + 1));
+	auto skillNum = PlayerData::getInstance()->getServantSkillNum(m_id);
+	Sprite* skillSprite = (Sprite*)m_layer->getChildByName("discribe")->getChildByName(StringUtils::format("skill%d",skillNum+1 ));
 
 	text->setString(strings["upLevel"].asString());
 	bt->loadTextureNormal("ui/downUi/servant/anniu1.png");

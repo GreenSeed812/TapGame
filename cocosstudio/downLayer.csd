@@ -90,17 +90,17 @@
                 <FileData Type="Normal" Path="cxsh.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="escButton" ActionTag="-118210208" Tag="88" IconVisible="False" LeftMargin="966.4436" RightMargin="30.5564" TopMargin="-0.4415" BottomMargin="46.4415" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="48" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="escButton" ActionTag="-118210208" Tag="88" IconVisible="False" LeftMargin="963.4440" RightMargin="33.5560" TopMargin="0.5583" BottomMargin="45.4417" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="48" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="78.0000" Y="80.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1005.4436" Y="86.4415" />
-                <Scale ScaleX="1.0000" ScaleY="0.9152" />
+                <Position X="1002.4440" Y="85.4417" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9353" Y="0.6860" />
+                <PrePosition X="0.9325" Y="0.6781" />
                 <PreSize X="0.0726" Y="0.6349" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                <PressedFileData Type="Normal" Path="ui/yb/x.png" Plist="" />
                 <NormalFileData Type="Normal" Path="ui/yb/x.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

@@ -22,13 +22,13 @@
               <AbstractNodeData Name="headBg" ActionTag="1188061614" Tag="413" IconVisible="False" LeftMargin="164.6057" RightMargin="729.3943" TopMargin="61.5652" BottomMargin="1417.4348" LeftEage="56" RightEage="56" TopEage="56" BottomEage="56" Scale9OriginX="56" Scale9OriginY="56" Scale9Width="68" Scale9Height="68" ctype="ImageViewObjectData">
                 <Size X="180.0000" Y="180.0000" />
                 <Children>
-                  <AbstractNodeData Name="head" ActionTag="-1432006225" Tag="292" IconVisible="False" LeftMargin="61.3907" RightMargin="72.6093" TopMargin="65.4591" BottomMargin="68.5409" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="head" ActionTag="-1432006225" Tag="292" IconVisible="False" LeftMargin="70.3906" RightMargin="63.6094" TopMargin="65.4591" BottomMargin="68.5409" ctype="SpriteObjectData">
                     <Size X="46.0000" Y="46.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="84.3907" Y="91.5409" />
+                    <Position X="93.3906" Y="91.5409" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4688" Y="0.5086" />
+                    <PrePosition X="0.5188" Y="0.5086" />
                     <PreSize X="0.2556" Y="0.2556" />
                     <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
@@ -55,14 +55,14 @@
                     <PreSize X="0.5721" Y="0.4118" />
                     <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="name" ActionTag="1973561639" Tag="379" IconVisible="False" LeftMargin="20.5082" RightMargin="-2.5082" TopMargin="10.5811" BottomMargin="128.4189" FontSize="48" LabelText="名称（级别名称）" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="384.0000" Y="48.0000" />
-                    <AnchorPoint ScaleX="0.4611" ScaleY="0.8821" />
-                    <Position X="197.5706" Y="170.7597" />
+                  <AbstractNodeData Name="name" ActionTag="1973561639" Tag="379" IconVisible="False" LeftMargin="41.5082" RightMargin="40.4918" TopMargin="14.5810" BottomMargin="132.4190" FontSize="40" LabelText="名称（级别名称）" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="320.0000" Y="40.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="201.5082" Y="152.4190" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="239" G="203" B="148" />
-                    <PrePosition X="0.4915" Y="0.9132" />
-                    <PreSize X="0.9552" Y="0.2567" />
+                    <PrePosition X="0.5013" Y="0.8151" />
+                    <PreSize X="0.7960" Y="0.2139" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -176,7 +176,7 @@
                     <PreSize X="0.5756" Y="0.1174" />
                     <FileData Type="Normal" Path="ui/ybjs/jsk.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="skillHead_6" ActionTag="-127544826" Tag="419" IconVisible="False" LeftMargin="116.1861" RightMargin="764.8138" TopMargin="805.1511" BottomMargin="156.8490" LeftEage="47" RightEage="47" TopEage="45" BottomEage="45" Scale9OriginX="47" Scale9OriginY="45" Scale9Width="50" Scale9Height="47" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="skillHead_6" ActionTag="-127544826" Tag="419" IconVisible="False" LeftMargin="116.1861" RightMargin="764.8139" TopMargin="805.1510" BottomMargin="156.8490" LeftEage="47" RightEage="47" TopEage="45" BottomEage="45" Scale9OriginX="47" Scale9OriginY="45" Scale9Width="50" Scale9Height="47" ctype="ImageViewObjectData">
                     <Size X="144.0000" Y="137.0000" />
                     <Children>
                       <AbstractNodeData Name="lv" ActionTag="1571697105" Tag="232" IconVisible="False" LeftMargin="40.3485" RightMargin="41.6515" TopMargin="21.4614" BottomMargin="73.5386" LeftEage="20" RightEage="20" TopEage="13" BottomEage="13" Scale9OriginX="20" Scale9OriginY="13" Scale9Width="22" Scale9Height="16" ctype="ImageViewObjectData">

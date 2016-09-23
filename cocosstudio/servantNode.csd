@@ -9,13 +9,24 @@
           <AbstractNodeData Name="Layer" ActionTag="-1784766646" Tag="98" IconVisible="False" LeftMargin="0.0001" RightMargin="-0.0001" TopMargin="-0.3826" BottomMargin="0.3826" ctype="SpriteObjectData">
             <Size X="951.0000" Y="120.0000" />
             <Children>
-              <AbstractNodeData Name="serHead" ActionTag="-1385635842" Tag="517" IconVisible="False" LeftMargin="54.0775" RightMargin="801.9225" TopMargin="14.4554" BottomMargin="10.5446" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="65" Scale9Height="73" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="headbg" ActionTag="-643261396" Tag="78" IconVisible="False" LeftMargin="54.9076" RightMargin="801.0924" TopMargin="13.9808" BottomMargin="11.0192" ctype="SpriteObjectData">
                 <Size X="95.0000" Y="95.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="101.5775" Y="58.0446" />
+                <Position X="102.4076" Y="58.5192" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1068" Y="0.4837" />
+                <PrePosition X="0.1077" Y="0.4877" />
+                <PreSize X="0.0484" Y="0.3833" />
+                <FileData Type="Normal" Path="ui/yb/txk.png" Plist="" />
+                <BlendFunc Src="1" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="serHead" ActionTag="-1385635842" Tag="517" IconVisible="False" LeftMargin="55.0612" RightMargin="800.9388" TopMargin="13.7870" BottomMargin="11.2130" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="65" Scale9Height="73" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="95.0000" Y="95.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="102.5612" Y="58.7130" />
+                <Scale ScaleX="0.9000" ScaleY="0.9000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1078" Y="0.4893" />
                 <PreSize X="0.0999" Y="0.7917" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />

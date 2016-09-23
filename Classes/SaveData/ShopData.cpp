@@ -1,6 +1,7 @@
 #include "ShopData.h"
 #include "Tool/SqLite.h"
 #include "MissionData.h"
+#include "SaveData/ArtifactData.h"
 #include "Ui/ItemLayer.h"
 static ShopData* g_SD = nullptr;
 ShopData::ShopData()
@@ -51,6 +52,10 @@ void ShopData::buyItemByID(int id)
 		if (id == 5)
 		{
 			MissionData::getInstance()->addMissionTimesById(5);
+		}
+		if (id == 7)
+		{
+			ArtifactData::getInstance()->arStarUp();
 		}
 		getItemDataById(id)->leftTime = SqLite::getInstance()->getItemByID(id)->time;
 		m_items[id]->isUsing = true;

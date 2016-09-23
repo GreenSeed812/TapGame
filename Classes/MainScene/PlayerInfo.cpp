@@ -44,7 +44,7 @@ void PlayerInfo::initPlayerInfo()
 
 	}
 
-	name->setString(StringUtils::format("Player"));
+	name->setString(PlayerData::getInstance()->getName());
 	level->setString(StringUtils::format("Lv%d", PlayerData::getInstance()->getPlayerLevel()));
 	dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getTapDpsNoExp()));
 
@@ -56,26 +56,26 @@ void PlayerInfo::initPlayerInfo()
 		}
 	});
 
-	for (size_t i = 0; i < 7; i++)
-	{
-		auto lv = (ImageView*)m_node->getChildByName(StringUtils::format("lv%d", i + 1).c_str());
-		auto lvNum = (ImageView*)m_node->getChildByName(StringUtils::format("lvNum%d", i + 1).c_str());
-		auto headBg = (ImageView*)m_node->getChildByName(StringUtils::format("headBg%d", i + 1).c_str());
-		auto head = (ImageView*)m_layer->getChildByName("skillBg")->getChildByName(StringUtils::format("head%d", i + 1).c_str());
-		if (PlayerData::getInstance()->getSkillLevel(i) >= 1)
-		{	
-			lv->setVisible(false);
-			lvNum->setVisible(false);
-			headBg->setVisible(false);
-			head->setVisible(true);
-		}
-		else
-		{
-			lv->setVisible(true);
-			lvNum->setVisible(true);
-			headBg->setVisible(true);
-			head->setVisible(false);
-		}
-	}
+	//for (size_t i = 0; i < 7; i++)
+	//{
+	//	auto lv = (ImageView*)m_node->getChildByName(StringUtils::format("lv%d", i + 1).c_str());
+	//	auto lvNum = (ImageView*)m_node->getChildByName(StringUtils::format("lvNum%d", i + 1).c_str());
+	//	auto headBg = (ImageView*)m_node->getChildByName(StringUtils::format("headBg%d", i + 1).c_str());
+	//	auto head = (ImageView*)m_layer->getChildByName("skillBg")->getChildByName(StringUtils::format("head%d", i + 1).c_str());
+	//	if (PlayerData::getInstance()->getSkillLevel(i) >= 1)
+	//	{	
+	//		lv->setVisible(false);
+	//		lvNum->setVisible(false);
+	//		headBg->setVisible(false);
+	//		head->setVisible(true);
+	//	}
+	//	else
+	//	{
+	//		lv->setVisible(true);
+	//		lvNum->setVisible(true);
+	//		headBg->setVisible(true);
+	//		head->setVisible(false);
+	//	}
+	//}
 }
 

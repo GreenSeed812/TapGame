@@ -31,6 +31,16 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	Button* up100 = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up100");
 	auto head = (Button*)playerLayer->getChildByName("Layer")->getChildByName("playerHead");
 	
+	head->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type)
+	{
+		if (type == Widget::TouchEventType::ENDED)
+		{
+			auto playerInfo = PlayerInfo::create();
+			playerInfo->initPlayerInfo();
+			g_node->addChild(playerInfo);
+		}
+	});
+
 	up10->setVisible(false);
 	up100->setVisible(false);
 
@@ -84,16 +94,6 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("TapDpsChange");
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 				upLevelCount();
-			}
-		});
-
-		head->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type)
-		{
-			if (type == Widget::TouchEventType::ENDED)
-			{
-				auto playerInfo = PlayerInfo::create();
-				playerInfo->initPlayerInfo();
-				g_node->addChild(playerInfo);
 			}
 		});
 	}
@@ -255,7 +255,7 @@ void PlayerButton::coinChange(Ref* pSender)
 		dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvupDps()));
 		up10Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvup10Dps()));
 		up100Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvup100Dps()));
-		textN->setString("Player");
+		textN->setString(PlayerData::getInstance()->getName());
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getPlayerLevel()));
 		textD->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getTapDpsNoExp()));
 	}

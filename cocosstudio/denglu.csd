@@ -6,7 +6,7 @@
       <ObjectData Name="Layer" Tag="411" ctype="GameLayerObjectData">
         <Size X="1080.0000" Y="1920.0000" />
         <Children>
-          <AbstractNodeData Name="Image_1" ActionTag="-1273880150" Tag="412" IconVisible="False" LeftMargin="0.0192" RightMargin="-0.0192" TopMargin="-2.6870" BottomMargin="2.6870" LeftEage="201" RightEage="201" TopEage="356" BottomEage="356" Scale9OriginX="201" Scale9OriginY="356" Scale9Width="678" Scale9Height="1208" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_1" ActionTag="-1273880150" Tag="412" IconVisible="False" LeftMargin="0.0192" RightMargin="-0.0193" TopMargin="-2.6870" BottomMargin="2.6870" LeftEage="201" RightEage="201" TopEage="356" BottomEage="356" Scale9OriginX="201" Scale9OriginY="356" Scale9Width="678" Scale9Height="1208" ctype="ImageViewObjectData">
             <Size X="1080.0000" Y="1920.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="540.0192" Y="962.6870" />
@@ -16,25 +16,13 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="yld.jpg" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="nameBg" ActionTag="638300879" Tag="416" IconVisible="False" LeftMargin="208.0000" RightMargin="208.0000" TopMargin="1275.4332" BottomMargin="445.5668" LeftEage="249" RightEage="249" TopEage="33" BottomEage="33" Scale9OriginX="249" Scale9OriginY="33" Scale9Width="166" Scale9Height="133" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="nameBg" ActionTag="638300879" Tag="416" IconVisible="False" LeftMargin="190.4237" RightMargin="225.5763" TopMargin="1169.9747" BottomMargin="551.0253" LeftEage="249" RightEage="249" TopEage="33" BottomEage="33" Scale9OriginX="249" Scale9OriginY="33" Scale9Width="166" Scale9Height="133" ctype="ImageViewObjectData">
             <Size X="664.0000" Y="199.0000" />
-            <Children>
-              <AbstractNodeData Name="name" ActionTag="1066453107" Tag="485" IconVisible="False" LeftMargin="190.8157" RightMargin="188.1843" TopMargin="96.1773" BottomMargin="51.8227" TouchEnable="True" FontSize="36" IsCustomSize="True" LabelText="" PlaceHolderText=" 输入主角名称" MaxLengthEnable="True" MaxLengthText="10" ctype="TextFieldObjectData">
-                <Size X="285.0000" Y="51.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="333.3157" Y="77.3227" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="229" B="192" />
-                <PrePosition X="0.5020" Y="0.3886" />
-                <PreSize X="0.4292" Y="0.2563" />
-                <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
-              </AbstractNodeData>
-            </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="540.0000" Y="545.0668" />
+            <Position X="522.4237" Y="650.5253" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.2839" />
+            <PrePosition X="0.4837" Y="0.3388" />
             <PreSize X="0.6148" Y="0.1036" />
             <FileData Type="Normal" Path="dl.png" Plist="" />
           </AbstractNodeData>
@@ -82,6 +70,18 @@
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
             <PressedFileData Type="Normal" Path="dlan.png" Plist="" />
             <NormalFileData Type="Normal" Path="dlan.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="no" ActionTag="1911665665" VisibleForFrame="False" Tag="9" IconVisible="False" LeftMargin="308.7882" RightMargin="311.2118" TopMargin="1389.2263" BottomMargin="444.7737" FontSize="72" LabelText="请输入角色名！" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="460.0000" Y="86.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="538.7882" Y="487.7737" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4989" Y="0.2540" />
+            <PreSize X="0.4259" Y="0.0448" />
+            <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

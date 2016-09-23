@@ -48,11 +48,11 @@ void ServantInfo::initServantInfo(int id)
 			auto num = (ImageView*)m_layer->getChildByName("skillInfoBg")->getChildByName(StringUtils::format("skillHead_%d", j + 1).c_str())->getChildByName("num");
 			lv->setVisible(false);
 			num->setVisible(false);
-			skillHead->loadTexture(StringUtils::format("ui/downUi/servant/skill/%d/%d.png", i+1, j+1).c_str());
+			skillHead->loadTexture(StringUtils::format("ui/downUi/servant/skillBig/%d/%d.png", id + 1, j + 1).c_str());
 		}	
 	}
 
-	head->setTexture(StringUtils::format("ui/downUi/servant/head/%d.png", id + 1));
+	head->setTexture(StringUtils::format("ui/downUi/servant/head/big/%d.png", id + 1));
 	name->setString(SqLite::getInstance()->getServantNameByID(id));
 	level->setString(StringUtils::format("Lv%d", PlayerData::getInstance()->getServantLevel(id)));
 	dps->setString(Ruler::getInstance()->showNum(PlayerData ::getInstance()->getServantDps(id)));

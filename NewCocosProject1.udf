@@ -9,10 +9,7 @@
     </Item>
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="denglu.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="denglu.csd" />
+        <ActiveDocument />
       </Value>
     </Item>
   </Properties>

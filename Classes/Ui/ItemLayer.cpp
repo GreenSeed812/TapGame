@@ -29,6 +29,11 @@ void ItemLayer::initItemLayer(int id)
 	auto money = (Text*)m_layer->getChildByName("up")->getChildByName("moneyNum");
 	auto time = (Text*)m_layer->getChildByName("time");
 	auto up = (Button*)m_layer->getChildByName("up");
+	auto head = (Sprite*)m_layer->getChildByName("head");
+	if (m_id < 4)
+	{
+		head->setTexture(StringUtils::format("item/%d.png",m_id+1).c_str());
+	}
 
 	info->setString(SqLite::getInstance()->getItemByID(m_id)->effdis);
 	money->setString(StringUtils::format("%d", SqLite::getInstance()->getItemByID(m_id)->expense).c_str());

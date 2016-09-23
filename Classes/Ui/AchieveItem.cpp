@@ -57,41 +57,39 @@ void AchieveItem::initAchieveItem(int id)
 {
 	m_id = id;
 	auto text = (Text*)m_node->getChildByName("bgAchieve")->getChildByName("Text");
-	auto numMax = (TextBMFont*)m_node->getChildByName("bgAchieve")->getChildByName("numMax");
+	auto num = (TextBMFont*)m_node->getChildByName("bgAchieve")->getChildByName("num");
 	auto money = (TextBMFont*)m_node->getChildByName("bgAchieve")->getChildByName("btn")->getChildByName("money");
-	
 	m_starNum = AchieveData::getInstance()->getStarNumByID(m_id);
-	switch (m_starNum)
+	if (m_starNum < 5)
 	{
-	case 0:
-		m_money = 5;
-		m_countMax = SqLite::getInstance()->getAchieveByID(m_id)->Star_1;
-		numMax->setString(Ruler::getInstance()->showNum(m_countMax));
-		break;
-	case 1:
-		m_money = 10;
-		m_countMax = SqLite::getInstance()->getAchieveByID(m_id)->Star_2;
-		numMax->setString(Ruler::getInstance()->showNum(m_countMax));
-		break;
-	case 2:
-		m_money = 15;
-		m_countMax = SqLite::getInstance()->getAchieveByID(m_id)->Star_3;
-		numMax->setString(Ruler::getInstance()->showNum(m_countMax));
-		break;
-	case 3:
-		m_money = 30;
-		m_countMax = SqLite::getInstance()->getAchieveByID(m_id)->Star_4;
-		numMax->setString(Ruler::getInstance()->showNum(m_countMax));
-		break;
-	case 4:
-		m_money = 50;
-		m_countMax = SqLite::getInstance()->getAchieveByID(m_id)->Star_5;
-		numMax->setString(Ruler::getInstance()->showNum(m_countMax));
-		break;
-	case 5:
-		break;
+		switch (m_starNum)
+		{
+		case 0:
+			m_money = 5;
+			m_countMax = SqLite::getInstance()->getAchieveByID(m_id)->Star_1;
+			break;
+		case 1:
+			m_money = 10;
+			m_countMax = SqLite::getInstance()->getAchieveByID(m_id)->Star_2;
+			break;
+		case 2:
+			m_money = 15;
+			m_countMax = SqLite::getInstance()->getAchieveByID(m_id)->Star_3;
+			break;
+		case 3:
+			m_money = 30;
+			m_countMax = SqLite::getInstance()->getAchieveByID(m_id)->Star_4;
+			break;
+		case 4:
+			m_money = 50;
+			m_countMax = SqLite::getInstance()->getAchieveByID(m_id)->Star_5;
+			break;
+		}
 	}
-
+	else
+	{
+		m_countMax = SqLite::getInstance()->getAchieveByID(m_id)->Star_5;
+	}
 	stateChange();	
 
 	for (size_t i = 0; i < m_starNum; i++)
@@ -100,6 +98,8 @@ void AchieveItem::initAchieveItem(int id)
 		star->loadTexture("xing1.png");
 	}
 
+	auto numMax = Ruler::getInstance()->showNum(m_countMax);
+	num->setString(StringUtils::format("%d/%s", 0, numMax.c_str()).c_str());
 	money->setString(StringUtils::format("%d", m_money).c_str());
 	text->setString(SqLite::getInstance()->getAchieveByID(m_id)->discribe);
 	m_starUp = false;
@@ -108,13 +108,17 @@ void AchieveItem::initAchieveItem(int id)
 
 void AchieveItem::stateChange()
 {
-	auto num = (TextBMFont*)m_node->getChildByName("bgAchieve")->getChildByName("num");
 	auto btn = (Button*)m_node->getChildByName("bgAchieve")->getChildByName("btn");
+	auto num = (TextBMFont*)m_node->getChildByName("bgAchieve")->getChildByName("num");
+	auto numMax = Ruler::getInstance()->showNum(m_countMax);
+	std::string numCount;
 	switch (m_id)
 	{
 	case 2:
 	case 6:
-		num->setString(Ruler::getInstance()->showNum(AchieveData::getInstance()->getMyNumByID(m_id)));
+	{
+		auto count = AchieveData::getInstance()->getMyNumByID(m_id);
+		numCount = Ruler::getInstance()->showNum(count);
 		if (Ruler::getInstance()->Zero(Ruler::getInstance()->subNum(m_countMax, AchieveData::getInstance()->getMyNumByID(m_id))))
 		{
 			m_starUp = true;
@@ -132,14 +136,18 @@ void AchieveItem::stateChange()
 		{
 			m_click = false;
 		}
+	}
+		break;
 	case 19:
 	case 20:
 	case 21:
 	case 22:
 	case 23:
+		numCount = StringUtils::format("%d", 0).c_str();
 		break;
 	default:
-		num->setString(StringUtils::format("%d", AchieveData::getInstance()->getNumByID(m_id)).c_str());
+	{
+		numCount = StringUtils::format("%d", AchieveData::getInstance()->getNumByID(m_id)).c_str();
 		if ((m_countMax.number - AchieveData::getInstance()->getNumByID(m_id)) <= 0)
 		{
 			m_starUp = true;
@@ -158,6 +166,8 @@ void AchieveItem::stateChange()
 			m_click = false;
 		}
 	}
+		break;
+	}
 
 	if (m_click)
 	{
@@ -174,4 +184,6 @@ void AchieveItem::stateChange()
 			money->setVisible(false);
 		}
 	}
+
+	num->setString(StringUtils::format("%s/%s", numCount.c_str(), numMax.c_str()).c_str());
 }

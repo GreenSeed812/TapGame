@@ -17,7 +17,7 @@ public:
 	void addexploreProb(int prob){ m_exploreProb += prob; }
 	void addArNum();
 	void addGold(MyNum* gold);
-	void addServantNum(){ m_servantNum++; }
+	void addServantNum(){m_servantNum++;}
 	int getArtiStone(){ return 1000; }
 	void defeatMonsterGold();
 	static PlayerData * getInstance();

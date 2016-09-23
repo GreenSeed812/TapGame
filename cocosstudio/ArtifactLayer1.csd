@@ -4,9 +4,9 @@
     <Content>
       <Animation Duration="0" Speed="1.0000" />
       <ObjectData Name="Layer" Tag="70" ctype="GameLayerObjectData">
-        <Size X="1070.0000" Y="1719.0000" />
+        <Size X="1080.0000" Y="1920.0000" />
         <Children>
-          <AbstractNodeData Name="layer" ActionTag="-763526515" Tag="71" IconVisible="False" LeftMargin="24.8370" RightMargin="30.1631" TopMargin="359.8268" BottomMargin="352.1732" ctype="SpriteObjectData">
+          <AbstractNodeData Name="layer" ActionTag="-763526515" Tag="71" IconVisible="False" LeftMargin="24.8348" RightMargin="40.1652" TopMargin="297.8346" BottomMargin="615.1654" ctype="SpriteObjectData">
             <Size X="1015.0000" Y="1007.0000" />
             <Children>
               <AbstractNodeData Name="bgs" ActionTag="-1909258832" Tag="59" IconVisible="False" LeftMargin="155.4746" RightMargin="715.5254" TopMargin="104.4404" BottomMargin="759.5596" ctype="SpriteObjectData">
@@ -16,7 +16,7 @@
                 <Scale ScaleX="1.3300" ScaleY="1.3300" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2241" Y="0.8253" />
-                <PreSize X="0.0936" Y="0.0943" />
+                <PreSize X="0.1419" Y="0.1420" />
                 <FileData Type="Normal" Path="ui/sqjs/txk.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -514,11 +514,11 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="532.3370" Y="855.6732" />
+            <Position X="532.3348" Y="1118.6654" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4975" Y="0.4978" />
-            <PreSize X="0.9486" Y="0.5858" />
+            <PrePosition X="0.4929" Y="0.5826" />
+            <PreSize X="0.9398" Y="0.5245" />
             <FileData Type="Normal" Path="ui/sqjs/db.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>

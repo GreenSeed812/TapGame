@@ -6,7 +6,7 @@
       <ObjectData Name="Layer" Tag="409" ctype="GameLayerObjectData">
         <Size X="1080.0000" Y="1920.0000" />
         <Children>
-          <AbstractNodeData Name="LayerBg" ActionTag="23090072" Tag="473" IconVisible="False" LeftMargin="2.0792" RightMargin="3.9209" TopMargin="51.1763" BottomMargin="209.8237" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="1044" Scale9Height="1629" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="LayerBg" ActionTag="23090072" Tag="473" IconVisible="False" LeftMargin="2.0791" RightMargin="3.9209" TopMargin="63.1759" BottomMargin="197.8241" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="1044" Scale9Height="1629" ctype="ImageViewObjectData">
             <Size X="1074.0000" Y="1659.0000" />
             <Children>
               <AbstractNodeData Name="Image_14" ActionTag="867508667" Tag="506" IconVisible="False" LeftMargin="-5.9072" RightMargin="-11.0928" TopMargin="-60.3054" BottomMargin="1609.3054" LeftEage="360" RightEage="360" TopEage="36" BottomEage="36" Scale9OriginX="360" Scale9OriginY="36" Scale9Width="371" Scale9Height="38" ctype="ImageViewObjectData">
@@ -51,7 +51,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="skillBg" ActionTag="-203083503" Tag="468" IconVisible="False" LeftMargin="58.5060" RightMargin="-9.5060" TopMargin="506.6735" BottomMargin="53.3265" LeftEage="291" RightEage="291" TopEage="338" BottomEage="338" Scale9OriginX="291" Scale9OriginY="338" Scale9Width="443" Scale9Height="423" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="skillBg" ActionTag="-203083503" Tag="468" IconVisible="False" LeftMargin="58.5060" RightMargin="-9.5060" TopMargin="506.6736" BottomMargin="53.3265" LeftEage="291" RightEage="291" TopEage="338" BottomEage="338" Scale9OriginX="291" Scale9OriginY="338" Scale9Width="443" Scale9Height="423" ctype="ImageViewObjectData">
                 <Size X="1025.0000" Y="1099.0000" />
                 <Children>
                   <AbstractNodeData Name="skill1" ActionTag="-56917534" Tag="466" IconVisible="False" LeftMargin="297.9314" RightMargin="162.0686" TopMargin="103.5529" BottomMargin="866.4471" LeftEage="181" RightEage="181" TopEage="42" BottomEage="42" Scale9OriginX="181" Scale9OriginY="42" Scale9Width="203" Scale9Height="45" ctype="ImageViewObjectData">
@@ -437,15 +437,15 @@
                 <PreSize X="0.3743" Y="0.1127" />
                 <FileData Type="Normal" Path="ui/jsjs/mck.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="head" ActionTag="-989082212" Tag="476" IconVisible="False" LeftMargin="180.7120" RightMargin="713.2880" TopMargin="81.7511" BottomMargin="1397.2489" LeftEage="56" RightEage="56" TopEage="56" BottomEage="56" Scale9OriginX="56" Scale9OriginY="56" Scale9Width="68" Scale9Height="68" ctype="ImageViewObjectData">
-                <Size X="180.0000" Y="180.0000" />
+              <AbstractNodeData Name="head" ActionTag="-989082212" Tag="476" IconVisible="False" LeftMargin="223.2120" RightMargin="755.7880" TopMargin="124.2511" BottomMargin="1439.7489" LeftEage="31" RightEage="31" TopEage="31" BottomEage="31" Scale9OriginX="31" Scale9OriginY="31" Scale9Width="33" Scale9Height="33" ctype="ImageViewObjectData">
+                <Size X="95.0000" Y="95.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="270.7120" Y="1487.2489" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Scale ScaleX="1.9000" ScaleY="1.9000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2521" Y="0.8965" />
-                <PreSize X="0.1676" Y="0.1085" />
-                <FileData Type="Normal" Path="ui/jsjs/TX.png" Plist="" />
+                <PreSize X="0.0885" Y="0.0573" />
+                <FileData Type="Normal" Path="ui/js/txk.png" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="esc" ActionTag="1066857999" Tag="515" IconVisible="False" LeftMargin="936.6754" RightMargin="59.3246" TopMargin="-49.8170" BottomMargin="1628.8170" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="48" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="78.0000" Y="80.0000" />
@@ -464,10 +464,10 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-            <Position X="539.0792" Y="1868.8237" />
+            <Position X="539.0791" Y="1856.8241" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4991" Y="0.9733" />
+            <PrePosition X="0.4991" Y="0.9671" />
             <PreSize X="0.9944" Y="0.8641" />
             <FileData Type="Normal" Path="ui/jsjs/bjdb.png" Plist="" />
           </AbstractNodeData>

@@ -99,7 +99,6 @@ void AchieveItem::initAchieveItem(int id)
 	}
 
 	auto numMax = Ruler::getInstance()->showNum(m_countMax);
-	num->setString(StringUtils::format("%d/%s", 0, numMax.c_str()).c_str());
 	money->setString(StringUtils::format("%d", m_money).c_str());
 	text->setString(SqLite::getInstance()->getAchieveByID(m_id)->discribe);
 	m_starUp = false;

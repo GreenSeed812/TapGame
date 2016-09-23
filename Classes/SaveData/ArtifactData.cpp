@@ -192,6 +192,7 @@ void ArtifactData::arStarUp()
 			break;
 		}
 	}
+	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
 	
 }
 int ArtifactData::getLevel(int id)

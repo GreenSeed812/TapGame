@@ -7,13 +7,32 @@
         <LastRunType Value="Windows" />
       </Value>
     </Item>
-<<<<<<< HEAD
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
-        <ActiveDocument />
+        <OpenedDocuments>
+          <FilePathData Path="AchieveItem.csd" />
+          <FilePathData Path="TaskItem.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="AchieveItem.csd" />
       </Value>
     </Item>
-=======
->>>>>>> e436ee035b2913ca2ed8714d2af3f3a7b554f0d8
+    <Item Key="PackageParamsKey">
+      <Value ctype="PackageParams">
+        <LuaIsEncrypt Value="False" />
+        <LuaEncryptKey Value="" />
+        <LuaEncryptSign Value="" />
+        <Android_PackageName Value="org.cocos.NewCocosProject1" />
+        <AndroidkeyStore Value="" />
+        <AndroidVersion Value="android-17" />
+        <iOS_Target Value="NewCocosProject1 iOS" />
+        <iOS_BundleID Value="" />
+        <Platform Value="None" />
+        <RunPlatform Value="None" />
+        <FrameworkVersion Value="cocos2d-x-3.10" />
+        <IsDebugKeystore Value="True" />
+        <EnableSourceMap Value="False" />
+        <EnableHTML5Advanced Value="False" />
+      </Value>
+    </Item>
   </Properties>
 </UserData>

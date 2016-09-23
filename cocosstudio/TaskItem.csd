@@ -23,7 +23,7 @@
             <Scale ScaleX="1.7394" ScaleY="1.6770" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1196" Y="0.4985" />
-            <PreSize X="0.0575" Y="0.2629" />
+            <PreSize X="0.1187" Y="0.5429" />
             <FileData Type="Normal" Path="ui/dj/txk.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
@@ -37,27 +37,27 @@
             <PreSize X="0.1437" Y="0.7429" />
             <FileData Type="Normal" Path="mm1.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="name" ActionTag="1782819010" Tag="111" IconVisible="False" LeftMargin="218.8786" RightMargin="521.1214" TopMargin="20.1211" BottomMargin="125.8789" FontSize="24" LabelText="任务1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="60.0000" Y="29.0000" />
+          <AbstractNodeData Name="name" ActionTag="1782819010" Tag="111" IconVisible="False" LeftMargin="218.8786" RightMargin="491.1214" TopMargin="14.1211" BottomMargin="119.8789" FontSize="36" LabelText="任务1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="90.0000" Y="41.0000" />
             <AnchorPoint ScaleY="0.5000" />
             <Position X="218.8786" Y="140.3789" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
+            <CColor A="255" R="240" G="203" B="148" />
             <PrePosition X="0.2736" Y="0.8022" />
-            <PreSize X="0.0750" Y="0.1657" />
-            <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+            <PreSize X="0.1125" Y="0.2343" />
+            <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="info" ActionTag="815624221" Tag="110" IconVisible="False" LeftMargin="220.5938" RightMargin="239.4062" TopMargin="99.9496" BottomMargin="46.0504" FontSize="24" LabelText="描述XXXXXXXXXXXXXXXXX" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="340.0000" Y="29.0000" />
+          <AbstractNodeData Name="info" ActionTag="815624221" Tag="110" IconVisible="False" LeftMargin="220.5938" RightMargin="218.4062" TopMargin="93.9496" BottomMargin="40.0504" FontSize="36" LabelText="描述XXXXXXXXXXX" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="361.0000" Y="41.0000" />
             <AnchorPoint ScaleY="0.5000" />
             <Position X="220.5938" Y="60.5504" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
+            <CColor A="255" R="240" G="203" B="148" />
             <PrePosition X="0.2757" Y="0.3460" />
-            <PreSize X="0.4250" Y="0.1657" />
-            <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+            <PreSize X="0.4512" Y="0.2343" />
+            <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -76,7 +76,7 @@
             <AnchorPoint ScaleX="1.0000" ScaleY="0.5000" />
             <Position X="699.2084" Y="139.8148" />
             <Scale ScaleX="0.6678" ScaleY="0.6483" />
-            <CColor A="255" R="255" G="255" B="255" />
+            <CColor A="255" R="240" G="203" B="148" />
             <PrePosition X="0.8740" Y="0.7989" />
             <PreSize X="0.1050" Y="0.4400" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
@@ -106,15 +106,15 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="submit" ActionTag="-1426640196" Tag="108" IconVisible="False" LeftMargin="661.9573" RightMargin="72.0427" TopMargin="83.2794" BottomMargin="53.7206" FontSize="32" LabelText="领取" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="66.0000" Y="38.0000" />
+          <AbstractNodeData Name="submit" ActionTag="-1426640196" Tag="108" IconVisible="False" LeftMargin="661.4573" RightMargin="71.5427" TopMargin="84.2794" BottomMargin="54.7206" FontSize="32" LabelText="领取" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="67.0000" Y="36.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="694.9573" Y="72.7206" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
+            <CColor A="255" R="240" G="203" B="148" />
             <PrePosition X="0.8687" Y="0.4155" />
-            <PreSize X="0.0825" Y="0.2171" />
-            <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+            <PreSize X="0.0838" Y="0.2057" />
+            <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

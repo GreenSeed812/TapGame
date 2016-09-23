@@ -47,8 +47,6 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	m_type = type;
 	if (type == PLAYER)
 	{	
-		head->loadTextureNormal("ui/downUi/hero/heroHead0.png");
-		head->loadTexturePressed("ui/downUi/hero/heroHead0.png");
 		m_upGold = PlayerData::getInstance()->getPlayerlvupGold();
 
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){

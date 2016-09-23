@@ -106,7 +106,6 @@ void ServantButton::initServantLayer(int id)
 	});
 
 	auto skillNum = PlayerData::getInstance()->getServantSkillNum(m_id);
-	log("%d-------%d", m_id, skillNum);
 	if (skillNum >= 7)
 	{
 		skillNum = 7;

@@ -39,15 +39,15 @@
                 <PreSize X="0.6862" Y="0.0048" />
                 <FileData Type="Normal" Path="ui/jsjs/g.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Info" ActionTag="110741711" Tag="471" IconVisible="False" LeftMargin="134.3881" RightMargin="108.6119" TopMargin="354.3845" BottomMargin="1175.6155" FontSize="36" LabelText="来自于黑暗神庙，由于感知到了艾泽拉斯大陆上即将&#xA;出现的危机，与大陆上的英雄们一起踏上了拯救世界&#xA;的旅途。" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="831.0000" Y="129.0000" />
+              <AbstractNodeData Name="Info" ActionTag="110741711" Tag="471" IconVisible="False" LeftMargin="199.8881" RightMargin="174.1119" TopMargin="357.3845" BottomMargin="1178.6155" IsCustomSize="True" FontSize="36" LabelText="来自于黑暗神庙，由于感知到了艾泽拉斯大陆上即将出现的危机，与大陆上的英雄们一起踏上了拯救世界的旅途。" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="700.0000" Y="123.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="549.8881" Y="1240.1155" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="245" G="187" B="108" />
                 <PrePosition X="0.5120" Y="0.7475" />
-                <PreSize X="0.7737" Y="0.0778" />
-                <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                <PreSize X="0.6518" Y="0.0741" />
+                <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -57,25 +57,27 @@
                   <AbstractNodeData Name="skill1" ActionTag="-56917534" Tag="466" IconVisible="False" LeftMargin="297.9314" RightMargin="162.0686" TopMargin="103.5529" BottomMargin="866.4471" LeftEage="181" RightEage="181" TopEage="42" BottomEage="42" Scale9OriginX="181" Scale9OriginY="42" Scale9Width="203" Scale9Height="45" ctype="ImageViewObjectData">
                     <Size X="565.0000" Y="129.0000" />
                     <Children>
-                      <AbstractNodeData Name="skillName_1" ActionTag="153554007" Tag="496" IconVisible="False" LeftMargin="204.9423" RightMargin="216.0577" TopMargin="21.5257" BottomMargin="71.4743" FontSize="36" LabelText="致死打击" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="144.0000" Y="36.0000" />
+                      <AbstractNodeData Name="skillName_1" ActionTag="153554007" Tag="496" IconVisible="False" LeftMargin="203.9423" RightMargin="215.0577" TopMargin="19.0257" BottomMargin="68.9743" FontSize="36" LabelText="致死打击" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="146.0000" Y="41.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="276.9423" Y="89.4743" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="239" G="203" B="148" />
+                        <CColor A="255" R="246" G="187" B="108" />
                         <PrePosition X="0.4902" Y="0.6936" />
-                        <PreSize X="0.2549" Y="0.2791" />
+                        <PreSize X="0.2584" Y="0.3178" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="skillInfo_1" ActionTag="917254350" Tag="497" IconVisible="False" LeftMargin="124.2342" RightMargin="140.7658" TopMargin="70.3430" BottomMargin="34.6570" IsCustomSize="True" FontSize="18" LabelText="一次点击伤害111.1aa的一击" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="300.0000" Y="24.0000" />
+                      <AbstractNodeData Name="skillInfo_1" ActionTag="917254350" Tag="497" IconVisible="False" LeftMargin="122.7342" RightMargin="139.2658" TopMargin="68.8430" BottomMargin="33.1570" FontSize="24" LabelText="一次点击伤害111.1aa的一击" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="303.0000" Y="27.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="274.2342" Y="46.6570" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="239" G="203" B="148" />
+                        <CColor A="255" R="246" G="187" B="108" />
                         <PrePosition X="0.4854" Y="0.3617" />
-                        <PreSize X="0.5310" Y="0.1860" />
+                        <PreSize X="0.5363" Y="0.2093" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
@@ -91,25 +93,27 @@
                   <AbstractNodeData Name="skill2" ActionTag="-330551300" Tag="456" IconVisible="False" LeftMargin="299.2618" RightMargin="160.7382" TopMargin="241.4625" BottomMargin="728.5375" LeftEage="181" RightEage="181" TopEage="42" BottomEage="42" Scale9OriginX="181" Scale9OriginY="42" Scale9Width="203" Scale9Height="45" ctype="ImageViewObjectData">
                     <Size X="565.0000" Y="129.0000" />
                     <Children>
-                      <AbstractNodeData Name="skillName_2" ActionTag="1930624346" Tag="499" IconVisible="False" LeftMargin="201.7717" RightMargin="219.2283" TopMargin="23.6296" BottomMargin="69.3704" FontSize="36" LabelText="快速射击" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="144.0000" Y="36.0000" />
+                      <AbstractNodeData Name="skillName_2" ActionTag="1930624346" Tag="499" IconVisible="False" LeftMargin="200.7717" RightMargin="218.2283" TopMargin="21.1296" BottomMargin="66.8704" FontSize="36" LabelText="快速射击" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="146.0000" Y="41.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="273.7717" Y="87.3704" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="239" G="203" B="148" />
+                        <CColor A="255" R="246" G="187" B="108" />
                         <PrePosition X="0.4846" Y="0.6773" />
-                        <PreSize X="0.2549" Y="0.2791" />
+                        <PreSize X="0.2584" Y="0.3178" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="skillInfo_2" ActionTag="1853151841" Tag="500" IconVisible="False" LeftMargin="96.5543" RightMargin="120.4457" TopMargin="73.0908" BottomMargin="31.9092" IsCustomSize="True" FontSize="18" LabelText="在30秒内，按住每秒自动点击7次" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="348.0000" Y="24.0000" />
+                      <AbstractNodeData Name="skillInfo_2" ActionTag="1853151841" Tag="500" IconVisible="False" LeftMargin="94.0543" RightMargin="117.9457" TopMargin="71.5908" BottomMargin="30.4092" FontSize="24" LabelText="在30秒内，按住每秒自动点击7次" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="353.0000" Y="27.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="270.5543" Y="43.9092" />
-                        <Scale ScaleX="0.8127" ScaleY="0.9165" />
-                        <CColor A="255" R="239" G="203" B="148" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="246" G="187" B="108" />
                         <PrePosition X="0.4789" Y="0.3404" />
-                        <PreSize X="0.6159" Y="0.1860" />
+                        <PreSize X="0.6248" Y="0.2093" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
@@ -125,25 +129,27 @@
                   <AbstractNodeData Name="skill3" ActionTag="596182932" Tag="458" IconVisible="False" LeftMargin="301.7386" RightMargin="158.2614" TopMargin="381.5806" BottomMargin="588.4194" LeftEage="181" RightEage="181" TopEage="42" BottomEage="42" Scale9OriginX="181" Scale9OriginY="42" Scale9Width="203" Scale9Height="45" ctype="ImageViewObjectData">
                     <Size X="565.0000" Y="129.0000" />
                     <Children>
-                      <AbstractNodeData Name="skillInfo_3" ActionTag="703468730" Tag="502" IconVisible="False" LeftMargin="116.7951" RightMargin="160.2049" TopMargin="74.7885" BottomMargin="30.2115" IsCustomSize="True" FontSize="18" LabelText="在30秒内，暴击几率增加x%" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="288.0000" Y="24.0000" />
+                      <AbstractNodeData Name="skillInfo_3" ActionTag="703468730" Tag="502" IconVisible="False" LeftMargin="109.2951" RightMargin="152.7049" TopMargin="73.2885" BottomMargin="28.7115" FontSize="24" LabelText="在30秒内，暴击几率增加x%" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="303.0000" Y="27.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="260.7951" Y="42.2115" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="239" G="203" B="148" />
+                        <CColor A="255" R="246" G="187" B="108" />
                         <PrePosition X="0.4616" Y="0.3272" />
-                        <PreSize X="0.5097" Y="0.1860" />
+                        <PreSize X="0.5363" Y="0.2093" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="skillName_3" ActionTag="307815974" Tag="512" IconVisible="False" LeftMargin="184.4184" RightMargin="200.5816" TopMargin="23.0354" BottomMargin="69.9646" FontSize="36" LabelText="十字军打击" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="180.0000" Y="36.0000" />
+                      <AbstractNodeData Name="skillName_3" ActionTag="307815974" Tag="512" IconVisible="False" LeftMargin="183.4184" RightMargin="199.5816" TopMargin="20.5354" BottomMargin="67.4646" FontSize="36" LabelText="十字军打击" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="182.0000" Y="41.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="274.4184" Y="87.9646" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="239" G="203" B="148" />
+                        <CColor A="255" R="246" G="187" B="108" />
                         <PrePosition X="0.4857" Y="0.6819" />
-                        <PreSize X="0.3186" Y="0.2791" />
+                        <PreSize X="0.3221" Y="0.3178" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
@@ -159,25 +165,27 @@
                   <AbstractNodeData Name="skill4" ActionTag="-161514486" Tag="460" IconVisible="False" LeftMargin="300.2444" RightMargin="159.7556" TopMargin="524.2653" BottomMargin="445.7347" LeftEage="181" RightEage="181" TopEage="42" BottomEage="42" Scale9OriginX="181" Scale9OriginY="42" Scale9Width="203" Scale9Height="45" ctype="ImageViewObjectData">
                     <Size X="565.0000" Y="129.0000" />
                     <Children>
-                      <AbstractNodeData Name="skillInfo_4" ActionTag="231334820" Tag="503" IconVisible="False" LeftMargin="109.3270" RightMargin="122.6730" TopMargin="77.8508" BottomMargin="33.1492" FontSize="18" LabelText="在30秒内每秒x次点击攻击，但不产生暴击" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="333.0000" Y="18.0000" />
+                      <AbstractNodeData Name="skillInfo_4" ActionTag="231334820" Tag="503" IconVisible="False" LeftMargin="51.3270" RightMargin="64.6730" TopMargin="73.3508" BottomMargin="28.6492" FontSize="24" LabelText="在30秒内每秒x次点击攻击，但不产生暴击" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="449.0000" Y="27.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="275.8270" Y="42.1492" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="239" G="203" B="148" />
+                        <CColor A="255" R="246" G="187" B="108" />
                         <PrePosition X="0.4882" Y="0.3267" />
-                        <PreSize X="0.5894" Y="0.1395" />
+                        <PreSize X="0.7947" Y="0.2093" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="skillName_4" ActionTag="1507357214" Tag="511" IconVisible="False" LeftMargin="223.9500" RightMargin="233.0500" TopMargin="23.0507" BottomMargin="69.9493" FontSize="36" LabelText="暴风雪" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="108.0000" Y="36.0000" />
+                      <AbstractNodeData Name="skillName_4" ActionTag="1507357214" Tag="511" IconVisible="False" LeftMargin="223.4500" RightMargin="232.5500" TopMargin="20.5507" BottomMargin="67.4493" FontSize="36" LabelText="暴风雪" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="109.0000" Y="41.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="277.9500" Y="87.9493" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="239" G="203" B="148" />
+                        <CColor A="255" R="246" G="187" B="108" />
                         <PrePosition X="0.4919" Y="0.6818" />
-                        <PreSize X="0.1912" Y="0.2791" />
+                        <PreSize X="0.1929" Y="0.3178" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
@@ -193,25 +201,27 @@
                   <AbstractNodeData Name="skill5" ActionTag="60122475" Tag="462" IconVisible="False" LeftMargin="302.3030" RightMargin="157.6970" TopMargin="657.3279" BottomMargin="312.6721" LeftEage="181" RightEage="181" TopEage="42" BottomEage="42" Scale9OriginX="181" Scale9OriginY="42" Scale9Width="203" Scale9Height="45" ctype="ImageViewObjectData">
                     <Size X="565.0000" Y="129.0000" />
                     <Children>
-                      <AbstractNodeData Name="skillInfo_5" ActionTag="421772204" Tag="504" IconVisible="False" LeftMargin="153.1595" RightMargin="177.8405" TopMargin="74.2558" BottomMargin="36.7442" FontSize="18" LabelText="在30秒内，点击攻击力增加x%" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="234.0000" Y="18.0000" />
+                      <AbstractNodeData Name="skillInfo_5" ActionTag="421772204" Tag="504" IconVisible="False" LeftMargin="106.6595" RightMargin="131.3405" TopMargin="69.7558" BottomMargin="32.2442" FontSize="24" LabelText="在30秒内，点击攻击力增加x%" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="327.0000" Y="27.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="270.1595" Y="45.7442" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="239" G="203" B="148" />
+                        <CColor A="255" R="246" G="187" B="108" />
                         <PrePosition X="0.4782" Y="0.3546" />
-                        <PreSize X="0.4142" Y="0.1395" />
+                        <PreSize X="0.5788" Y="0.2093" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="skillName_5" ActionTag="396079391" Tag="510" IconVisible="False" LeftMargin="236.9767" RightMargin="256.0233" TopMargin="17.8535" BottomMargin="75.1465" FontSize="36" LabelText="嗜血" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="72.0000" Y="36.0000" />
+                      <AbstractNodeData Name="skillName_5" ActionTag="396079391" Tag="510" IconVisible="False" LeftMargin="235.9767" RightMargin="255.0233" TopMargin="15.3535" BottomMargin="72.6465" FontSize="36" LabelText="嗜血" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="74.0000" Y="41.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="272.9767" Y="93.1465" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="239" G="203" B="148" />
+                        <CColor A="255" R="246" G="187" B="108" />
                         <PrePosition X="0.4831" Y="0.7221" />
-                        <PreSize X="0.1274" Y="0.2791" />
+                        <PreSize X="0.1310" Y="0.3178" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
@@ -227,25 +237,27 @@
                   <AbstractNodeData Name="skill6" ActionTag="-662509282" Tag="464" IconVisible="False" LeftMargin="308.1702" RightMargin="151.8298" TopMargin="795.4952" BottomMargin="174.5048" LeftEage="181" RightEage="181" TopEage="42" BottomEage="42" Scale9OriginX="181" Scale9OriginY="42" Scale9Width="203" Scale9Height="45" ctype="ImageViewObjectData">
                     <Size X="565.0000" Y="129.0000" />
                     <Children>
-                      <AbstractNodeData Name="skillInfo_6" ActionTag="-679268983" Tag="505" IconVisible="False" LeftMargin="90.1465" RightMargin="114.8535" TopMargin="72.1217" BottomMargin="38.8783" FontSize="18" LabelText="在30秒内每次点击掉落x%该关卡普通掉落金币" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="360.0000" Y="18.0000" />
+                      <AbstractNodeData Name="skillInfo_6" ActionTag="-679268983" Tag="505" IconVisible="False" LeftMargin="34.1460" RightMargin="36.8540" TopMargin="67.6219" BottomMargin="34.3781" FontSize="24" LabelText="在30秒内每次点击掉落x%该关卡普通掉落金币" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="494.0000" Y="27.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="270.1465" Y="47.8783" />
+                        <Position X="281.1460" Y="47.8781" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="239" G="203" B="148" />
-                        <PrePosition X="0.4781" Y="0.3711" />
-                        <PreSize X="0.6372" Y="0.1395" />
+                        <CColor A="255" R="246" G="187" B="108" />
+                        <PrePosition X="0.4976" Y="0.3711" />
+                        <PreSize X="0.8743" Y="0.2093" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="skillName_6" ActionTag="1473116468" Tag="509" IconVisible="False" LeftMargin="230.3652" RightMargin="262.6348" TopMargin="19.7469" BottomMargin="73.2531" FontSize="36" LabelText="偷窃" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="72.0000" Y="36.0000" />
+                      <AbstractNodeData Name="skillName_6" ActionTag="1473116468" Tag="509" IconVisible="False" LeftMargin="229.8652" RightMargin="262.1348" TopMargin="17.2469" BottomMargin="70.7531" FontSize="36" LabelText="偷窃" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="73.0000" Y="41.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="266.3652" Y="91.2531" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="239" G="203" B="148" />
+                        <CColor A="255" R="246" G="187" B="108" />
                         <PrePosition X="0.4714" Y="0.7074" />
-                        <PreSize X="0.1274" Y="0.2791" />
+                        <PreSize X="0.1292" Y="0.3178" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
@@ -261,25 +273,27 @@
                   <AbstractNodeData Name="skill7" ActionTag="522199244" Tag="454" IconVisible="False" LeftMargin="301.1896" RightMargin="158.8104" TopMargin="940.0091" BottomMargin="29.9909" LeftEage="181" RightEage="181" TopEage="42" BottomEage="42" Scale9OriginX="181" Scale9OriginY="42" Scale9Width="203" Scale9Height="45" ctype="ImageViewObjectData">
                     <Size X="565.0000" Y="129.0000" />
                     <Children>
-                      <AbstractNodeData Name="skillInfo_7" ActionTag="510419184" Tag="506" IconVisible="False" LeftMargin="258.1281" RightMargin="270.8719" TopMargin="77.9441" BottomMargin="33.0559" FontSize="18" LabelText="转生" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="36.0000" Y="18.0000" />
+                      <AbstractNodeData Name="skillInfo_7" ActionTag="510419184" Tag="506" IconVisible="False" LeftMargin="251.1281" RightMargin="263.8719" TopMargin="73.4441" BottomMargin="28.5559" FontSize="24" LabelText="转生" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="50.0000" Y="27.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="276.1281" Y="42.0559" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="239" G="203" B="148" />
+                        <CColor A="255" R="246" G="187" B="108" />
                         <PrePosition X="0.4887" Y="0.3260" />
-                        <PreSize X="0.0637" Y="0.1395" />
+                        <PreSize X="0.0885" Y="0.2093" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="skillName_7" ActionTag="-199243605" Tag="508" IconVisible="False" LeftMargin="240.0154" RightMargin="252.9846" TopMargin="21.9526" BottomMargin="71.0474" FontSize="36" LabelText="转生" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="72.0000" Y="36.0000" />
+                      <AbstractNodeData Name="skillName_7" ActionTag="-199243605" Tag="508" IconVisible="False" LeftMargin="239.5154" RightMargin="252.4846" TopMargin="19.4526" BottomMargin="68.5474" FontSize="36" LabelText="转生" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="73.0000" Y="41.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="276.0154" Y="89.0474" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="239" G="203" B="148" />
+                        <CColor A="255" R="246" G="187" B="108" />
                         <PrePosition X="0.4885" Y="0.6903" />
-                        <PreSize X="0.1274" Y="0.2791" />
+                        <PreSize X="0.1292" Y="0.3178" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
@@ -384,15 +398,15 @@
               <AbstractNodeData Name="infoBg" ActionTag="1342958931" Tag="470" IconVisible="False" LeftMargin="452.6786" RightMargin="219.3214" TopMargin="77.5190" BottomMargin="1394.4810" LeftEage="132" RightEage="132" TopEage="61" BottomEage="61" Scale9OriginX="132" Scale9OriginY="61" Scale9Width="138" Scale9Height="65" ctype="ImageViewObjectData">
                 <Size X="402.0000" Y="187.0000" />
                 <Children>
-                  <AbstractNodeData Name="name" ActionTag="-1346115035" Tag="477" IconVisible="False" LeftMargin="174.7942" RightMargin="152.2058" TopMargin="17.0218" BottomMargin="126.9782" FontSize="36" LabelText="名称" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="75.0000" Y="43.0000" />
+                  <AbstractNodeData Name="name" ActionTag="-1346115035" Tag="477" IconVisible="False" LeftMargin="162.7942" RightMargin="140.2058" TopMargin="11.0218" BottomMargin="120.9782" FontSize="48" LabelText="名称" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="99.0000" Y="55.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="212.2942" Y="148.4782" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="246" G="187" B="108" />
                     <PrePosition X="0.5281" Y="0.7940" />
-                    <PreSize X="0.1866" Y="0.2299" />
-                    <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                    <PreSize X="0.2463" Y="0.2941" />
+                    <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -406,15 +420,15 @@
                     <PreSize X="0.5721" Y="0.4118" />
                     <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Text_3" ActionTag="27799824" Tag="482" IconVisible="False" LeftMargin="63.5303" RightMargin="242.4697" TopMargin="112.1798" BottomMargin="26.8202" FontSize="40" LabelText="伤害：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="96.0000" Y="48.0000" />
+                  <AbstractNodeData Name="Text_3" ActionTag="27799824" Tag="482" IconVisible="False" LeftMargin="54.0303" RightMargin="232.9697" TopMargin="108.6798" BottomMargin="23.3202" FontSize="48" LabelText="伤害：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="115.0000" Y="55.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="111.5303" Y="50.8202" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="246" G="187" B="108" />
                     <PrePosition X="0.2774" Y="0.2718" />
-                    <PreSize X="0.2388" Y="0.2567" />
-                    <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                    <PreSize X="0.2861" Y="0.2941" />
+                    <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>

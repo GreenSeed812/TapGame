@@ -77,6 +77,11 @@ PlayerData::PlayerData()
 	}
 	m_skillData = SqLite::getInstance()->getSkillData();
 
+	for (int i = 0; i < 6; i++)
+	{
+		m_skillCD[i] = 0;
+	}
+
 }
 
 PlayerData::~PlayerData()
@@ -170,10 +175,16 @@ bool PlayerData::init()
 
 	}
 	m_leaveTime = jsd["m_leaveTime"].GetInt();
+	m_skillCD[0] = jsd["m_skillCD[0]"].GetDouble();
+	m_skillCD[1] = jsd["m_skillCD[1]"].GetDouble();
+	m_skillCD[2] = jsd["m_skillCD[2]"].GetDouble();
+	m_skillCD[3] = jsd["m_skillCD[3]"].GetDouble();
+	m_skillCD[4] = jsd["m_skillCD[4]"].GetDouble();
+	m_skillCD[5] = jsd["m_skillCD[5]"].GetDouble();
 	AchieveData::getInstance()->readUserDefault();
 	ArtifactData::getInstance()->readUserDefault();
 	MyState::getInstance()->readUserDefault();
-	
+	ShopData::getInstance()->readUserData();
 	return true;
 }
 
@@ -915,9 +926,16 @@ void PlayerData::saveUserData()
 	document.AddMember("m_servantSkill32", m_servantSkill[32], allocator);
 	document.AddMember("m_leaveTime", m_leaveTime, allocator);
 	document.AddMember("m_skillTap", m_skillTap, allocator);
+	document.AddMember("m_skillCD[0]", m_skillCD[0], allocator);
+	document.AddMember("m_skillCD[1]", m_skillCD[1], allocator);
+	document.AddMember("m_skillCD[2]", m_skillCD[2], allocator);
+	document.AddMember("m_skillCD[3]", m_skillCD[3], allocator);
+	document.AddMember("m_skillCD[4]", m_skillCD[4], allocator);
+	document.AddMember("m_skillCD[5]", m_skillCD[5], allocator);
 	ArtifactData::getInstance()->saveUserDefault(document);
 	AchieveData::getInstance()->saveUserDefault(document);
 	MyState::getInstance()->saveUserDefault(document);
+	ShopData::getInstance()->saveUserData(document);
 	StringBuffer buffer;
 	rapidjson::Writer<StringBuffer> writer(buffer);
 	document.Accept(writer);
@@ -986,4 +1004,8 @@ MyNum PlayerData::getPlayerlvup100Dps()
 		m_upDps = Ruler::getInstance()->multiplay(m_upDps, f);
 	}
 	return m_upDps;
+}
+void PlayerData::setSkillCD(int id,float t)
+{
+	m_skillCD[id-1] = t;
 }

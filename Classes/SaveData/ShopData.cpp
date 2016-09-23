@@ -90,7 +90,21 @@ ItemData * ShopData::getItemDataById(int id)
 {
 	return m_items[id];
 }
-
+void ShopData::readUserData()
+{
+	std::string json = cocos2d::UserDefault::getInstance()->getStringForKey("UserDefault");
+	rapidjson::Document jsd;
+	jsd.Parse<8>(json.c_str());
+	if (jsd.IsObject() && jsd.HasMember("m_items[12]->isUsing"))
+	{
+		for (int i = 0; i < 13; i++)
+		{
+			m_items[i]->leftTime = jsd[StringUtils::format("m_items[%d]->leftTime", i).c_str()].GetDouble();
+			m_items[i]->itemNum = jsd[StringUtils::format("m_items[%d]->itemNum", i).c_str()].GetInt();
+			m_items[i]->isUsing = jsd[StringUtils::format("m_items[%d]->isUsing", i).c_str()].GetBool();
+		}
+	}
+}
 void ShopData::setNum(int id){
 	if (m_items[id]->isUsing)
 	{
@@ -114,12 +128,48 @@ void ShopData::setNum(int id){
 }
 void ShopData::saveUserData(Document& document)
 {
-	
-	document.SetObject();
 	Document::AllocatorType& allocator = document.GetAllocator();
-	rapidjson::Value array(kArrayType);
-	rapidjson::Value object(kObjectType);
 	document.AddMember("m_shopGold",m_shopGold,allocator);
-	document.AddMember(StringRef(StringUtils::format("%d", 1).c_str()), m_items[1]->leftTime,allocator);
+	document.AddMember("m_items[0]->leftTime", m_items[0]->leftTime, allocator);
+	document.AddMember("m_items[0]->itemNum",  m_items[0]->itemNum, allocator);
+	document.AddMember("m_items[0]->isUsing", m_items[0]->isUsing, allocator);
+	document.AddMember("m_items[1]->leftTime", m_items[1]->leftTime, allocator);
+	document.AddMember("m_items[1]->itemNum", m_items[1]->itemNum, allocator);
+	document.AddMember("m_items[1]->isUsing", m_items[1]->isUsing, allocator);
+	document.AddMember("m_items[2]->leftTime", m_items[2]->leftTime, allocator);
+	document.AddMember("m_items[2]->itemNum", m_items[2]->itemNum, allocator);
+	document.AddMember("m_items[2]->isUsing", m_items[2]->isUsing, allocator);
+	document.AddMember("m_items[3]->leftTime", m_items[3]->leftTime, allocator);
+	document.AddMember("m_items[3]->itemNum", m_items[3]->itemNum, allocator);
+	document.AddMember("m_items[3]->isUsing", m_items[3]->isUsing, allocator);
+	document.AddMember("m_items[4]->leftTime", m_items[4]->leftTime, allocator);
+	document.AddMember("m_items[4]->itemNum", m_items[4]->itemNum, allocator);
+	document.AddMember("m_items[4]->isUsing", m_items[4]->isUsing, allocator);
+	document.AddMember("m_items[5]->leftTime", m_items[5]->leftTime, allocator);
+	document.AddMember("m_items[5]->itemNum", m_items[5]->itemNum, allocator);
+	document.AddMember("m_items[5]->isUsing", m_items[5]->isUsing, allocator);
+	document.AddMember("m_items[6]->leftTime", m_items[6]->leftTime, allocator);
+	document.AddMember("m_items[6]->itemNum", m_items[6]->itemNum, allocator);
+	document.AddMember("m_items[6]->isUsing", m_items[6]->isUsing, allocator);
+	document.AddMember("m_items[7]->leftTime", m_items[7]->leftTime, allocator);
+	document.AddMember("m_items[7]->itemNum", m_items[7]->itemNum, allocator);
+	document.AddMember("m_items[7]->isUsing", m_items[7]->isUsing, allocator);
+	document.AddMember("m_items[8]->leftTime", m_items[8]->leftTime, allocator);
+	document.AddMember("m_items[8]->itemNum", m_items[8]->itemNum, allocator);
+	document.AddMember("m_items[8]->isUsing", m_items[8]->isUsing, allocator);
+	document.AddMember("m_items[9]->leftTime", m_items[9]->leftTime, allocator);
+	document.AddMember("m_items[9]->itemNum", m_items[9]->itemNum, allocator);
+	document.AddMember("m_items[9]->isUsing", m_items[9]->isUsing, allocator);
+	document.AddMember("m_items[10]->leftTime", m_items[10]->leftTime, allocator);
+	document.AddMember("m_items[10]->itemNum", m_items[10]->itemNum, allocator);
+	document.AddMember("m_items[10]->isUsing", m_items[10]->isUsing, allocator);
+	document.AddMember("m_items[11]->leftTime", m_items[11]->leftTime, allocator);
+	document.AddMember("m_items[11]->itemNum", m_items[11]->itemNum, allocator);
+	document.AddMember("m_items[11]->isUsing", m_items[11]->isUsing, allocator);
+	document.AddMember("m_items[12]->leftTime", m_items[12]->leftTime, allocator);
+	document.AddMember("m_items[12]->itemNum", m_items[12]->itemNum, allocator);
+	document.AddMember("m_items[12]->isUsing", m_items[12]->isUsing, allocator);
+	
+	
 	
 }

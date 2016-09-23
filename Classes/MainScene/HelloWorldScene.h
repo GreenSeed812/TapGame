@@ -38,6 +38,7 @@ public:
 	void skillEff(float);
 	void skilleff1(Armature * armature, MovementEventType type, const std::string& action);
 	void skilleff2(Ref*);
+	void skillButtonInit();
 	void attackeffection();
 	void deleteSprite(Node *);
 	void deleteArmature(Armature * armature, MovementEventType type, const std::string& action);
@@ -60,6 +61,8 @@ public:
 	void bgChange(Node*);
 	void relife();
 	void shopItemCDUpDate(float dt);
+	void saveSkillCD(float dt);
+	void coinAni();
     CREATE_FUNC(HelloWorld);
 private:
 	Node* rootNode;

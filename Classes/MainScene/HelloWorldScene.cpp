@@ -25,6 +25,7 @@
 #include "Animation.h"
 #include "Ui/ItemLayer.h"
 #include "SaveData/MissionData.h"
+#include "Tool/CoinAnimation.h"
 using namespace cocostudio;
 
 USING_NS_CC;
@@ -74,6 +75,7 @@ bool HelloWorld::init()
 	m_exchangeCount = 5;
 	m_dayCount = 0;
     rootNode = CSLoader::createNode("MainScene.csb");
+	
 	if (!mapInit())
 	{
 		return false;
@@ -114,7 +116,7 @@ bool HelloWorld::init()
 	showTime = false;
 	Slider* timeSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("timeSlider");
 	timeNow = PlayerData::getInstance()->getMaxTime();
-
+	skillButtonInit();
 	scheduleUpdate();
 	attackeffection();
 	coinChange(this);
@@ -311,6 +313,7 @@ void HelloWorld::createMonster()
 }
 void HelloWorld::update(float dt)
 {
+	saveSkillCD(dt);
 	if (m_gamelogic == true)
 	{
 		if (PlayerData::getInstance()->getRelife())
@@ -662,6 +665,7 @@ void HelloWorld::killBoss()
 	{
 		m_hitlogic = false;
 		PlayerData::getInstance()->defeatMonsterGold();
+		coinAni();
 		if (PlayerData::getInstance()->getWaveNow() < PlayerData::getInstance()->getMaxWave() - 1 && PlayerData::getInstance()->getWaveNow() != 0)
 		{
 			PlayerData::getInstance()->waveUp();
@@ -1066,8 +1070,12 @@ void HelloWorld::skillEff(float dt)
 			{
 				if (!MyAnimation::getInstance()->getKSSJplaying())
 				{
-					m_kssjEffect->runAction(Show::create());
-					MyAnimation::getInstance()->setKSSJplaying(true);
+					if (m_kssjEffect->isRunning())
+					{
+						m_kssjEffect->runAction(Show::create());
+						MyAnimation::getInstance()->setKSSJplaying(true);
+					}
+					
 				}
 				if (t_now > 1 / 7.0f)
 				{
@@ -1094,7 +1102,10 @@ void HelloWorld::skillEff(float dt)
 			{
 				if (MyAnimation::getInstance()->getKSSJplaying())
 				{
-					m_kssjEffect->runAction(Hide::create());
+					if (m_kssjEffect->isRunning())
+					{
+						m_kssjEffect->runAction(Hide::create());
+					}
 					MyAnimation::getInstance()->setKSSJplaying(false);
 				}
 			
@@ -1578,4 +1589,71 @@ void HelloWorld::itemEff9(Armature * armature, MovementEventType type, const std
 		armature->removeFromParent();
 		PlayerData::getInstance()->setHpNow(num);
 	}
+}
+
+void HelloWorld::skillButtonInit()
+{
+	for (int i = 1; i < 7; i++)
+	{
+		if (PlayerData::getInstance()->getSkillLevel(i)>0)
+		{
+			auto str = StringUtils::format("SkillButton%d", i);
+			Button* skillbt = (Button*)rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName(str);
+			skillbt->runAction(Show::create());
+			if (PlayerData::getInstance()->getSkillCD(i) > 0)
+			{
+				auto skillCD = SkillCD::create();
+				skillCD->initImage(i,PlayerData::getInstance()->getSkillCD(i));
+
+				skillCD->setPosition(m_skill[i - 1]->getContentSize() / 2);
+
+				m_skill[i - 1]->addChild(skillCD);
+				skillCD->setName("SkillCD");
+
+				m_skill[i - 1]->setEnabled(false);
+			}
+		}
+	}
+
+}
+void HelloWorld::saveSkillCD(float dt)
+{
+	static float time_0 = 0;
+	time_0 += dt;
+	if (time_0 >= 1)
+	{
+		bool save = false;
+		for (int i = 0; i < 6; i++)
+		{
+			if (PlayerData::getInstance()->getSkillCD(i)>0)
+			{
+				save = true;
+				break;
+			}
+
+		}
+		if (save)
+		{
+			PlayerData::getInstance()->saveUserData();
+		}
+		time_0 = 0;
+	}
+
+}
+void HelloWorld::coinAni()
+{
+	auto coinnum = random(3, 5);
+	for (int i = 0; i < coinnum; i++)
+	{
+		Button* gold = Button::create("SpecialEffect/gold.png", "SpecialEffect/gold.png", "SpecialEffect/gold.png");
+		gold->setEnabled(false);
+		rootNode->getChildByName("normalAtk")->addChild(gold);
+		auto knum = CoinAnimation::getInstance()->getKnum();
+		auto xMove = random(-400, 400);
+		auto jumpNum = random(1, 3);
+		auto seq = Sequence::create(JumpBy::create(0.5, Point(xMove, -300), abs(xMove)*knum, 1), JumpBy::create(0.5, Point(xMove / 5, 0), 50, jumpNum), DelayTime::create(3), JumpTo::create(1, Point(-50, 400), 50, 1), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+		gold->runAction(seq);
+	}
+	
+	
 }

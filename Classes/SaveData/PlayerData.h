@@ -35,7 +35,7 @@ public:
 	MyNum getMaxHp();
 	int getServantAverLevel(); 
 	float getSkillEFF(int i);
-	int getSkillLevel(int i){ return m_skillLevel[i];}
+	int getSkillLevel(int i){ return m_skillLevel[i - 1];}
 	MyNum getTapDpsNoExp();
 	int getWaveNow(){ return m_waveNow; }
 	int getPlayerLevel(){ return m_playerLevel; }
@@ -96,6 +96,8 @@ public:
 	int getLeaveTime(){ return m_leaveTime; }
 	std::string getName(){ return m_name; }
 	void setName(std::string name){ m_name = name; }
+	void setSkillCD(int,float);
+	float getSkillCD(int id){ return m_skillCD[id - 1]; }
 	bool getRelife(){ return m_relife; }
 	void relifeEnd(){ m_relife = false; }
 private:
@@ -131,6 +133,7 @@ private:
 	float m_servantTapDps;
 	bool m_skillOpen[6];
 	float m_skillTap;
+	float m_skillCD[6];
 	std::vector<SkillData*> m_skillData;
 	int m_skillexploreProb;
 	float m_bossDpsMul;

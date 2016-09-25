@@ -153,7 +153,7 @@ void HelloWorld::coinChange(Ref *ref)
 	}
 	ExChange::setCount(m_exchangeCount);
 
-	PlayerData::getInstance()->saveUserData();
+	//PlayerData::getInstance()->saveUserData();
 
 }
 

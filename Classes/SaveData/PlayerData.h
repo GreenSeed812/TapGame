@@ -100,6 +100,7 @@ public:
 	float getSkillCD(int id){ return m_skillCD[id - 1]; }
 	bool getRelife(){ return m_relife; }
 	void relifeEnd(){ m_relife = false; }
+	void dataInit();
 private:
 	int m_waveNow;
 	int m_level;
@@ -144,5 +145,10 @@ private:
 	int m_leaveTime;
 	bool m_relife;
 	std::string m_name;
+private:
+	MyNum m_playerUpGold;
+	MyNum m_playerUpDps;
+	MyNum m_servantUpDps[33];
+	MyNum m_servantUpGold[33];
 };
 #endif

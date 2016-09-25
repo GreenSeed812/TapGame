@@ -30,6 +30,7 @@ void ServantButton::initServantLayer(int id)
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(ServantButton::coinChange), "CoinChange", nullptr);
 	
 	m_id = id;
+	m_count = 0;
 	m_state = false;
 	m_clickState = false;
 
@@ -132,8 +133,8 @@ void ServantButton::coinChange(Ref*)
 	
 	gold->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpGold(m_id)));
 	dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpDps(m_id)));
-	up10Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpDps(m_id)));
-	up100Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpDps(m_id)));
+	up10Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUp10Dps(m_id)));
+	up100Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUp100Dps(m_id)));
 	textlv->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getServantLevel(m_id)));
 
 	auto golds = PlayerData::getInstance()->getGold();
@@ -172,36 +173,40 @@ void ServantButton::upLevel()
 {
 	auto up10 = (Button*)m_layer->getChildByName("up10");
 	auto up100 = (Button*)m_layer->getChildByName("up100");
-
+	m_count++;
 	auto gold = PlayerData::getInstance()->getGold();
 	auto judge10 = Ruler::getInstance()->subNum(PlayerData::getInstance()->getservantLevelUp10Gold(m_id),*gold);
 	auto judge100 = Ruler::getInstance()->subNum(PlayerData::getInstance()->getservantLevelUp100Gold(m_id),*gold);
 
+	auto action = Sequence::create(DelayTime::create(4), CallFuncN::create(CC_CALLBACK_1(ServantButton::callbackSer, this)), nullptr);
 	if (Ruler::getInstance()->Zero(judge10))
 	{
-		up10->setVisible(true);
+		up10->runAction(Show::create());
+		up10->runAction(action);
 	}
 	if (Ruler::getInstance()->Zero(judge100))
 	{
-		up100->setVisible(true);
+		up100->setVisible(Show::create());
+		up100->runAction(action);
 	}
-
-	auto action = Sequence::create(DelayTime::create(5), CallFuncN::create(CC_CALLBACK_1(ServantButton::callbackSer, this)), nullptr);
-	up10->runAction(action);
-	up100->runAction(action);
+	
 }
 
 void ServantButton::callbackSer(Node * node)
 {
+	m_count--;
 	auto up10 = (Button*)m_layer->getChildByName("up10");
 	auto up100 = (Button*)m_layer->getChildByName("up100");
-	if (up10->isVisible())
+	if (m_count <= 0)
 	{
-		up10->setVisible(false);
-	}
-	if (up100->isVisible())
-	{
-		up100->setVisible(false);
+		if (up10->isVisible())
+		{
+			up10->runAction(Hide::create());
+		}
+		if (up100->isVisible())
+		{
+			up100->runAction(Hide::create());
+		}
 	}
 }
 

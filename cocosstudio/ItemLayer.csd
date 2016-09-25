@@ -12,7 +12,7 @@
               <AbstractNodeData Name="infoBg" ActionTag="795004290" Tag="426" IconVisible="False" LeftMargin="213.5028" RightMargin="251.4972" TopMargin="15.0257" BottomMargin="9.9743" ctype="SpriteObjectData">
                 <Size X="486.0000" Y="95.0000" />
                 <Children>
-                  <AbstractNodeData Name="info" ActionTag="-244621343" Tag="442" IconVisible="False" LeftMargin="11.0262" RightMargin="14.9738" TopMargin="0.3649" BottomMargin="4.6351" IsCustomSize="True" FontSize="36" LabelText="AAAAAAAAAAAAAAAAA" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="info" ActionTag="-244621343" Tag="442" IconVisible="False" LeftMargin="11.0262" RightMargin="14.9738" TopMargin="0.3649" BottomMargin="4.6351" IsCustomSize="True" FontSize="40" LabelText="AAAAAAAAAAAAAAAA" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="460.0000" Y="90.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="241.0262" Y="49.6351" />
@@ -86,7 +86,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="timeText" ActionTag="-1995745867" Tag="9" IconVisible="False" LeftMargin="793.7197" RightMargin="107.2803" TopMargin="12.1801" BottomMargin="84.8199" FontSize="20" LabelText="剩余：" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="timeText" ActionTag="-1995745867" Tag="9" IconVisible="False" LeftMargin="793.7207" RightMargin="107.2793" TopMargin="12.1800" BottomMargin="84.8200" FontSize="20" LabelText="剩余：" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="50.0000" Y="23.0000" />
                 <AnchorPoint ScaleX="0.4652" ScaleY="0.4728" />
                 <Position X="816.9807" Y="95.6944" />

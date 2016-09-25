@@ -564,15 +564,15 @@
             <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="dragon" ActionTag="-1966853615" VisibleForFrame="False" Tag="110" IconVisible="False" LeftMargin="793.2230" RightMargin="173.7770" TopMargin="101.3896" BottomMargin="1638.6104" LeftEage="36" RightEage="36" TopEage="59" BottomEage="59" Scale9OriginX="36" Scale9OriginY="59" Scale9Width="41" Scale9Height="62" ctype="ImageViewObjectData">
-            <Size X="113.0000" Y="180.0000" />
+          <AbstractNodeData Name="dragon" ActionTag="-1966853615" VisibleForFrame="False" Tag="110" IconVisible="False" LeftMargin="768.3610" RightMargin="203.6390" TopMargin="180.6749" BottomMargin="1663.3251" LeftEage="36" RightEage="36" TopEage="25" BottomEage="25" Scale9OriginX="36" Scale9OriginY="25" Scale9Width="36" Scale9Height="26" ctype="ImageViewObjectData">
+            <Size X="108.0000" Y="76.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="849.7230" Y="1728.6104" />
+            <Position X="822.3610" Y="1701.3251" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7868" Y="0.9003" />
-            <PreSize X="0.1046" Y="0.0938" />
-            <FileData Type="Normal" Path="jinlong.png" Plist="" />
+            <PrePosition X="0.7614" Y="0.8861" />
+            <PreSize X="0.1000" Y="0.0396" />
+            <FileData Type="Normal" Path="jin.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="Warning" ActionTag="1914623536" VisibleForFrame="False" Tag="438" IconVisible="False" LeftMargin="434.9318" RightMargin="483.0682" TopMargin="1148.8101" BottomMargin="747.1899" FontSize="20" LabelText="此功能正在开发中" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="162.0000" Y="24.0000" />
@@ -586,15 +586,15 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="grayDragon" ActionTag="805445610" VisibleForFrame="False" Tag="210" IconVisible="False" LeftMargin="794.4580" RightMargin="173.5420" TopMargin="100.6431" BottomMargin="1639.3569" ctype="SpriteObjectData">
-            <Size X="112.0000" Y="180.0000" />
+          <AbstractNodeData Name="grayDragon" ActionTag="805445610" VisibleForFrame="False" Tag="210" IconVisible="False" LeftMargin="774.5411" RightMargin="197.4589" TopMargin="179.7935" BottomMargin="1664.2065" ctype="SpriteObjectData">
+            <Size X="108.0000" Y="76.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="850.4580" Y="1729.3569" />
+            <Position X="828.5411" Y="1702.2065" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7875" Y="0.9007" />
-            <PreSize X="0.1037" Y="0.0938" />
-            <FileData Type="Normal" Path="yinlong.png" Plist="" />
+            <PrePosition X="0.7672" Y="0.8866" />
+            <PreSize X="0.1000" Y="0.0396" />
+            <FileData Type="Normal" Path="yin.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="leave" ActionTag="1421312511" VisibleForFrame="False" Tag="420" IconVisible="False" LeftMargin="103.1943" RightMargin="872.8057" TopMargin="503.4790" BottomMargin="1315.5210" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="74" Scale9Height="79" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">

@@ -72,9 +72,8 @@ void LoadingScene::initLoading()
 	auto load = (TextBMFont*)m_rootNode->getChildByName("loadText");
 
 	load->setVisible(true);
-	log("%s", PlayerData::getInstance()->getName());
-	if ((!cocos2d::UserDefault::getInstance()->getBoolForKey("isSaved")) || PlayerData::getInstance()->getName().compare("") == 0)
-	{			
+	if (!cocos2d::UserDefault::getInstance()->getBoolForKey("isSaved") || UserDefault::getInstance()->getStringForKey("name").compare("") == 0)
+	{
 		head->setVisible(true);
 		nameBg->setVisible(true);
 		img->setVisible(true);
@@ -104,6 +103,7 @@ void LoadingScene::initLoading()
 				if (str.compare("") !=0)
 				{
 					PlayerData::getInstance()->setName(name->getText());
+					UserDefault::getInstance()->setStringForKey("name", name->getText());
 					Director::getInstance()->replaceScene(scene);
 				}
 				else
@@ -119,6 +119,7 @@ void LoadingScene::initLoading()
 	else
 	{
 		auto scene = HelloWorld::createScene();
+		PlayerData::getInstance()->setName(UserDefault::getInstance()->getStringForKey("name"));
 		scene->retain();
 		Director::getInstance()->replaceScene(scene);
 	}

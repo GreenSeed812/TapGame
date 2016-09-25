@@ -16,6 +16,7 @@ bool PlayerButton::init()
 	{
 		return false;
 	}
+	m_count = 0;
 	playerLayer = CSLoader::createNode("zhujiaotiao.csb");
 	this->setContentSize(playerLayer->getContentSize());
 	this->addChild(playerLayer);
@@ -413,7 +414,8 @@ void PlayerButton::upLevelCount()
 	{
 		up100->setVisible(false);
 	}
-	auto action = Sequence::create(DelayTime::create(5), CallFuncN::create(CC_CALLBACK_1(PlayerButton::callback, this)), nullptr);
+	m_count++;
+	auto action = Sequence::create(DelayTime::create(4), CallFuncN::create(CC_CALLBACK_1(PlayerButton::callback, this)), nullptr);
 	if (up10->isVisible())
 	{
 		up10->runAction(action);
@@ -426,14 +428,18 @@ void PlayerButton::upLevelCount()
 
 void PlayerButton::callback(Node * node)
 {
+	m_count--;
 	Button* up10 = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up10");
 	Button* up100 = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up100");
-	if (up10->isVisible())
+	if (m_count <= 0)
 	{
-		up10->setVisible(false);
-		if (up100->isVisible())
+		if (up10->isVisible())
 		{
-			up100->setVisible(false);
+			up10->setVisible(false);
+			if (up100->isVisible())
+			{
+				up100->setVisible(false);
+			}
 		}
-	}	
+	}
 }

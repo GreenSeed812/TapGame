@@ -215,6 +215,7 @@
         <Image Name="jiaoselv (2).png" />
         <Image Name="jieshaok (2).png" />
         <Image Name="jieshaok.png" />
+        <Image Name="jin.png" />
         <Image Name="jinbi (2).png" />
         <Project Name="jinbi.csd" Type="Layer" />
         <Image Name="jinbi.png" />
@@ -257,7 +258,6 @@
         <Image Name="kuang1.png" />
         <Image Name="kuang2.png" />
         <Image Name="lan.png" />
-        <Project Name="starUp.csd" Type="Layer" />
         <Image Name="layer.png" />
         <Image Name="leijichengjiujiangli.png" />
         <Image Name="lhs.png" />
@@ -310,6 +310,7 @@
         <Image Name="sq0.png" />
         <Image Name="srmc.png" />
         <Image Name="srzjmc.png" />
+        <Project Name="starUp.csd" Type="Layer" />
         <Image Name="sx.png" />
         <Image Name="sx-js.png" />
         <Image Name="sx-zjm.png" />
@@ -354,6 +355,7 @@
         <Image Name="yb.png" />
         <Image Name="yb0.png" />
         <Image Name="ybjs.png" />
+        <Image Name="yin.png" />
         <Image Name="yinlong.png" />
         <Image Name="yinxiao.png" />
         <Image Name="yinxiao0.png" />

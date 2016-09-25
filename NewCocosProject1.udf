@@ -10,10 +10,10 @@
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
         <OpenedDocuments>
-          <FilePathData Path="AchieveItem.csd" />
-          <FilePathData Path="TaskItem.csd" />
+          <FilePathData Path="MainScene.csd" />
+          <FilePathData Path="ItemLayer.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="AchieveItem.csd" />
+        <ActiveDocument Path="ItemLayer.csd" />
       </Value>
     </Item>
     <Item Key="PackageParamsKey">

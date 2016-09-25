@@ -184,6 +184,7 @@ void ArtifactData::arStarUp()
 		if ((*it)->m_artifactID == id)
 		{
 			(*it)->m_artifactStar++;
+			(*it)->m_artimaxLevel = SqLite::getInstance()->getArtifactSkillByID((*it)->m_artifactID).ar.star[(*it)->m_artifactStar-1];
 			if ((*it)->m_artifactStar == 5)
 			{
 				remove(m_artifacts.begin(),m_artifacts.end(),*it);

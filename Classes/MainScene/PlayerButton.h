@@ -29,6 +29,7 @@ private:
 	MyNum m_upGold;
 	MyNum m_upGold10;
 	MyNum m_upGold100;
+	int m_count;
 	static Node * g_skillLayer;
 	static Node * g_node;
 	void upLevelCount();

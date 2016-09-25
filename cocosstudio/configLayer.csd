@@ -6,7 +6,7 @@
       <ObjectData Name="Layer" Tag="68" ctype="GameLayerObjectData">
         <Size X="1080.0000" Y="1920.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="-1652640400" Tag="69" IconVisible="False" LeftMargin="34.8713" RightMargin="30.1287" TopMargin="526.9924" BottomMargin="900.0076" ctype="SpriteObjectData">
+          <AbstractNodeData Name="bg" ActionTag="-1652640400" Tag="69" IconVisible="False" LeftMargin="34.8719" RightMargin="30.1281" TopMargin="453.9835" BottomMargin="973.0165" ctype="SpriteObjectData">
             <Size X="1015.0000" Y="493.0000" />
             <Children>
               <AbstractNodeData Name="Image_1" ActionTag="-1323880657" Tag="70" IconVisible="False" LeftMargin="-40.2109" RightMargin="-35.7891" TopMargin="-62.6807" BottomMargin="445.6807" LeftEage="30" RightEage="30" TopEage="14" BottomEage="14" Scale9OriginX="30" Scale9OriginY="14" Scale9Width="1031" Scale9Height="82" ctype="ImageViewObjectData">
@@ -66,32 +66,32 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-            <Position X="542.3713" Y="1393.0076" />
+            <Position X="542.3719" Y="1466.0165" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5022" Y="0.7255" />
+            <PrePosition X="0.5022" Y="0.7636" />
             <PreSize X="0.9398" Y="0.2568" />
             <FileData Type="Normal" Path="szdb.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Sprite_5" ActionTag="-170530830" Tag="723" IconVisible="False" LeftMargin="496.3737" RightMargin="491.6263" TopMargin="489.6710" BottomMargin="1387.3290" ctype="SpriteObjectData">
+          <AbstractNodeData Name="Sprite_5" ActionTag="-170530830" Tag="723" IconVisible="False" LeftMargin="496.3750" RightMargin="491.6250" TopMargin="416.6555" BottomMargin="1460.3445" ctype="SpriteObjectData">
             <Size X="92.0000" Y="43.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="542.3737" Y="1408.8290" />
+            <Position X="542.3750" Y="1481.8445" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5022" Y="0.7338" />
+            <PrePosition X="0.5022" Y="0.7718" />
             <PreSize X="0.0852" Y="0.0224" />
             <FileData Type="Normal" Path="sz.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="esc" ActionTag="-414797572" Tag="132" IconVisible="False" LeftMargin="920.9879" RightMargin="81.0121" TopMargin="475.5129" BottomMargin="1364.4871" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="48" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="esc" ActionTag="-414797572" Tag="132" IconVisible="False" LeftMargin="920.9888" RightMargin="81.0112" TopMargin="402.5062" BottomMargin="1437.4938" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="48" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="78.0000" Y="80.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="959.9879" Y="1404.4871" />
+            <Position X="959.9888" Y="1477.4938" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8889" Y="0.7315" />
+            <PrePosition X="0.8889" Y="0.7695" />
             <PreSize X="0.0722" Y="0.0417" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />

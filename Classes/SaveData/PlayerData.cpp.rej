@@ -1,0 +1,9 @@
+diff a/Classes/SaveData/PlayerData.cpp b/Classes/SaveData/PlayerData.cpp	(rejected hunks)
+@@ -104,6 +104,7 @@
+ {
+ 	std::string json = cocos2d::UserDefault::getInstance()->getStringForKey("UserDefault");
+ 	rapidjson::Document jsd;
++	jsd.Parse<2>(json.c_str());
+ 	if (jsd.HasParseError() && jsd.IsObject())  //��ӡ��������
+ 	{
+ 		CCLOG("GetParseError %s\n", jsd.GetParseError());

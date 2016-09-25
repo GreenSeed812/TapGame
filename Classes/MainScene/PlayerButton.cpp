@@ -262,8 +262,8 @@ void PlayerButton::coinChange(Ref* pSender)
 	{
 		dps->setString(StringUtils::format("+%.0lf", SqLite::getInstance()->getEffPer(0)).c_str());
 		textN->setString(StringUtils::format("%s",SqLite::getInstance()->getSkillNameByID(0).c_str()));
-		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
-		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
+		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type)));
+		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type);
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), eff));		
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
 		auto y = textD->getPositionY();
@@ -278,8 +278,8 @@ void PlayerButton::coinChange(Ref* pSender)
 	{
 		dps->setString(StringUtils::format("+%.0lf", SqLite::getInstance()->getEffPer(1)).c_str());
 		textN->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(1).c_str()));
-		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
-		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
+		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type)));
+		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type);
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), eff));
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
 		auto y = textD->getPositionY();
@@ -294,8 +294,8 @@ void PlayerButton::coinChange(Ref* pSender)
 	{
 		dps->setString(StringUtils::format("+%.1lf%%", SqLite::getInstance()->getEffPer(2)).c_str());
 		textN->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(2).c_str()));
-		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
-		float eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
+		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type)));
+		float eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type);
 		int _eff = eff;
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), _eff));
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
@@ -311,8 +311,8 @@ void PlayerButton::coinChange(Ref* pSender)
 	{
 		dps->setString(StringUtils::format("+%.0lf", SqLite::getInstance()->getEffPer(3)).c_str());
 		textN->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(3).c_str()));
-		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
-		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
+		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type)));
+		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type);
 		
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), eff));
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
@@ -328,8 +328,8 @@ void PlayerButton::coinChange(Ref* pSender)
 	{
 		dps->setString(StringUtils::format("+%.1lf", SqLite::getInstance()->getEffPer(4)).c_str());
 		textN->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(4).c_str()));
-		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
-		float eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
+		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type)));
+		float eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type);
 		int _eff = eff * 100;
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), _eff));
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
@@ -345,8 +345,8 @@ void PlayerButton::coinChange(Ref* pSender)
 	{
 		dps->setString(StringUtils::format("+%.1lf%%", SqLite::getInstance()->getEffPer(5)).c_str());
 		textN->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(5).c_str()));
-		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type - 1)));
-		float eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
+		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type)));
+		float eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type);
 		int _eff = eff * 100;
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), _eff));
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
@@ -362,7 +362,7 @@ void PlayerButton::coinChange(Ref* pSender)
 	{
 		dps->setString(StringUtils::format("+%.1lf%%", SqLite::getInstance()->getEffPer(6)).c_str());
 		textN->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(6).c_str()));
-		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type - 1);
+		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type);
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), eff));
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
 		auto y = textD->getPositionY();

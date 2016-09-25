@@ -177,23 +177,18 @@ void ArtifactData::arLevelUp(int id)
 }
 void ArtifactData::arStarUp()
 {
-	auto id = cocos2d::random(0, m_artifactNum - m_fiveStar);
-
-	for (std::vector<ArtiHave*>::iterator it = m_artifacts.begin();it!= m_artifacts.end() ;it++)
+	auto uparNum = cocos2d::random(0, m_artifactNum - m_fiveStar);
+	std::vector<ArtiHave*>::iterator it = m_artifacts.begin();
+	it = it + uparNum;
+	(*it)->m_artifactStar++;
+	(*it)->m_artimaxLevel = SqLite::getInstance()->getArtifactSkillByID((*it)->m_artifactID).ar.star[(*it)->m_artifactStar - 1];
+	if ((*it)->m_artifactStar == 5)
 	{
-		if ((*it)->m_artifactID == id)
-		{
-			(*it)->m_artifactStar++;
-			(*it)->m_artimaxLevel = SqLite::getInstance()->getArtifactSkillByID((*it)->m_artifactID).ar.star[(*it)->m_artifactStar-1];
-			if ((*it)->m_artifactStar == 5)
-			{
-				remove(m_artifacts.begin(),m_artifacts.end(),*it);
-				m_fiveStar++;
-			}
-			break;
-		}
+		remove(m_artifacts.begin(), m_artifacts.end(), *it);
+		m_fiveStar++;
 	}
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
+	
 	
 }
 int ArtifactData::getLevel(int id)
@@ -301,11 +296,16 @@ void ArtifactData::deleteArByID(int id)
 				servantUnlockDown -= artSkill.ar.effData;
 			}
 			m_AllDpsMul -= ((*it)->m_artifactLevel-1) * (*it)->m_artiDpsUp + SqLite::getInstance()->getArtifactSkillByID(id).ar.initAllDps;
+			if ((*it)->m_artifactStar == 5)
+			{
+				m_fiveStar--;
+			}
 			m_artifacts.erase(it);
 			m_artifactNum--;
 			break;
 		}
 	}
+	
 	PlayerData::getInstance()->saveUserData();
 }
 

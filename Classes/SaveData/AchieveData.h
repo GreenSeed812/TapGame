@@ -29,6 +29,14 @@ public:
 	int getTotalReword(){ return m_totalrewords; }
 	void addTotalReword(int add){ m_totalrewords += add; }
 public:
+	int getTapNum(){ return m_tapNum; }
+	int getMonsterKill(){ return m_monsterKill; }
+	int getRareKill(){ return m_killraremonster; }
+	int getBossKill(){ return m_bossKill; }
+	int getMaxxLevel(){ return m_maxLevel; }
+	int getRelifeNum(){ return m_relifeNum; }
+	MyNum getCoinCollect(){ return m_coinCollect; }
+public:
 	MyNum getMyNumByID(int id);
 	int getNumByID(int id);
 private:

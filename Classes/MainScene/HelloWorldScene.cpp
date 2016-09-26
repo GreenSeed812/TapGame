@@ -1553,10 +1553,13 @@ void HelloWorld::showSiTime(int id, float dt)
 void HelloWorld::relife()
 {
 	mapInit();
-
 	PlayerData::getInstance()->relifeEnd();
+	auto sceneDel = this->getParent();
 	auto scene = HelloWorld::createScene();
+	scene->retain();
 	Director::getInstance()->replaceScene(scene);
+	if (sceneDel)
+	sceneDel->release();
 }
 void HelloWorld::skilleff1(Armature * armature, MovementEventType type, const std::string& action)
 {

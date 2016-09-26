@@ -12,15 +12,15 @@
               <AbstractNodeData Name="infoBg" ActionTag="795004290" Tag="426" IconVisible="False" LeftMargin="213.5028" RightMargin="251.4972" TopMargin="15.0257" BottomMargin="9.9743" ctype="SpriteObjectData">
                 <Size X="486.0000" Y="95.0000" />
                 <Children>
-                  <AbstractNodeData Name="info" ActionTag="-244621343" Tag="442" IconVisible="False" LeftMargin="211.0261" RightMargin="214.9739" TopMargin="31.3650" BottomMargin="37.6350" FontSize="22" LabelText="NULL" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="60.0000" Y="26.0000" />
+                  <AbstractNodeData Name="info" ActionTag="-244621343" Tag="442" IconVisible="False" LeftMargin="11.0262" RightMargin="14.9738" TopMargin="0.3649" BottomMargin="4.6351" IsCustomSize="True" FontSize="40" LabelText="AAAAAAAAAAAAAAAA" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="460.0000" Y="90.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="241.0261" Y="50.6350" />
+                    <Position X="241.0262" Y="49.6351" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="240" G="203" B="148" />
-                    <PrePosition X="0.4959" Y="0.5330" />
-                    <PreSize X="0.1235" Y="0.2737" />
-                    <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                    <PrePosition X="0.4959" Y="0.5225" />
+                    <PreSize X="0.9465" Y="0.9474" />
+                    <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -37,25 +37,25 @@
               <AbstractNodeData Name="up" ActionTag="183972082" Tag="440" IconVisible="False" LeftMargin="767.4886" RightMargin="45.5114" TopMargin="37.3640" BottomMargin="10.6360" TouchEnable="True" FontSize="24" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="108" Scale9Height="50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="138.0000" Y="72.0000" />
                 <Children>
-                  <AbstractNodeData Name="moneyNum" ActionTag="-456286858" Tag="443" IconVisible="False" LeftMargin="57.9493" RightMargin="25.0507" TopMargin="22.6228" BottomMargin="25.3772" FontSize="20" LabelText="-111a" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="55.0000" Y="24.0000" />
-                    <AnchorPoint ScaleX="0.4973" ScaleY="0.5000" />
-                    <Position X="85.3008" Y="37.3772" />
+                  <AbstractNodeData Name="moneyNum" ActionTag="-456286858" Tag="443" IconVisible="False" LeftMargin="50.0657" RightMargin="22.9343" TopMargin="18.3792" BottomMargin="21.6208" FontSize="28" LabelText="111a" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="65.0000" Y="32.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="82.5657" Y="37.6208" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="240" G="203" B="148" />
-                    <PrePosition X="0.6181" Y="0.5191" />
-                    <PreSize X="0.3986" Y="0.3333" />
-                    <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                    <PrePosition X="0.5983" Y="0.5225" />
+                    <PreSize X="0.4710" Y="0.4444" />
+                    <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="money" ActionTag="-827012322" Tag="444" IconVisible="False" LeftMargin="33.3821" RightMargin="79.6179" TopMargin="21.2139" BottomMargin="23.7861" LeftEage="8" RightEage="8" TopEage="8" BottomEage="8" Scale9OriginX="8" Scale9OriginY="8" Scale9Width="9" Scale9Height="11" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="money" ActionTag="-827012322" Tag="444" IconVisible="False" LeftMargin="27.3817" RightMargin="85.6183" TopMargin="21.2141" BottomMargin="23.7859" LeftEage="8" RightEage="8" TopEage="8" BottomEage="8" Scale9OriginX="8" Scale9OriginY="8" Scale9Width="9" Scale9Height="11" ctype="ImageViewObjectData">
                     <Size X="25.0000" Y="27.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="45.8821" Y="37.2861" />
+                    <Position X="39.8817" Y="37.2859" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.3325" Y="0.5179" />
+                    <PrePosition X="0.2890" Y="0.5179" />
                     <PreSize X="0.1812" Y="0.3750" />
                     <FileData Type="Normal" Path="jinbi1 (10).png" Plist="" />
                   </AbstractNodeData>
@@ -86,27 +86,27 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="timeText" ActionTag="-1995745867" Tag="9" IconVisible="False" LeftMargin="793.7197" RightMargin="107.2803" TopMargin="10.7020" BottomMargin="85.2980" FontSize="20" LabelText="剩余：" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="50.0000" Y="24.0000" />
-                <AnchorPoint ScaleX="0.5735" ScaleY="0.5219" />
-                <Position X="822.3947" Y="97.8236" />
+              <AbstractNodeData Name="timeText" ActionTag="-1995745867" Tag="9" IconVisible="False" LeftMargin="793.7207" RightMargin="107.2793" TopMargin="12.1800" BottomMargin="84.8200" FontSize="20" LabelText="剩余：" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="50.0000" Y="23.0000" />
+                <AnchorPoint ScaleX="0.4652" ScaleY="0.4728" />
+                <Position X="816.9807" Y="95.6944" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="240" G="203" B="148" />
-                <PrePosition X="0.8648" Y="0.8152" />
-                <PreSize X="0.0526" Y="0.2000" />
-                <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                <PrePosition X="0.8591" Y="0.7975" />
+                <PreSize X="0.0526" Y="0.1917" />
+                <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="time" ActionTag="-1228318387" Tag="10" IconVisible="False" LeftMargin="845.8845" RightMargin="79.1155" TopMargin="12.8991" BottomMargin="83.1009" FontSize="20" LabelText="65" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="26.0000" Y="24.0000" />
+              <AbstractNodeData Name="time" ActionTag="-1228318387" Tag="10" IconVisible="False" LeftMargin="845.8845" RightMargin="80.1155" TopMargin="14.3991" BottomMargin="82.6009" FontSize="20" LabelText="65" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="25.0000" Y="23.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="845.8845" Y="95.1009" />
+                <Position X="845.8845" Y="94.1009" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="240" G="203" B="148" />
-                <PrePosition X="0.8895" Y="0.7925" />
-                <PreSize X="0.0273" Y="0.2000" />
-                <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                <PrePosition X="0.8895" Y="0.7842" />
+                <PreSize X="0.0263" Y="0.1917" />
+                <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>

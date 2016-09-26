@@ -191,7 +191,12 @@ bool ArtifactData::arStarUp()
 		remove(m_artifacts.begin(), m_artifacts.end(), *it);
 		m_fiveStar++;
 	}
+
 	return true;
+
+	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
+	
+
 	
 }
 int ArtifactData::getLevel(int id)

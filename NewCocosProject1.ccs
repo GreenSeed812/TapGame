@@ -80,6 +80,7 @@
             <Image Name="xx.png" />
           </Folder>
           <Folder Name="sz">
+            <Image Name="bjdb.png" />
             <Image Name="szk.png" />
           </Folder>
           <Folder Name="yb">
@@ -214,6 +215,7 @@
         <Image Name="jiaoselv (2).png" />
         <Image Name="jieshaok (2).png" />
         <Image Name="jieshaok.png" />
+        <Image Name="jin.png" />
         <Image Name="jinbi (2).png" />
         <Project Name="jinbi.csd" Type="Layer" />
         <Image Name="jinbi.png" />
@@ -308,6 +310,7 @@
         <Image Name="sq0.png" />
         <Image Name="srmc.png" />
         <Image Name="srzjmc.png" />
+        <Project Name="starUp.csd" Type="Layer" />
         <Image Name="sx.png" />
         <Image Name="sx-js.png" />
         <Image Name="sx-zjm.png" />
@@ -346,11 +349,13 @@
         <Image Name="xingxing_ar.png" />
         <Image Name="xsbz.png" />
         <Image Name="xuetiao.png" />
+        <Image Name="xx.png" />
         <Image Name="xx_ar.png" />
         <Image Name="xxx.png" />
         <Image Name="yb.png" />
         <Image Name="yb0.png" />
         <Image Name="ybjs.png" />
+        <Image Name="yin.png" />
         <Image Name="yinlong.png" />
         <Image Name="yinxiao.png" />
         <Image Name="yinxiao0.png" />

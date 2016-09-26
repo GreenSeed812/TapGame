@@ -18,6 +18,7 @@ private:
 	Node* node;
 	Layer* m_layer;
 	int m_id;
+	int m_count;
 	bool m_clickState;
 	bool m_state;
 	static Node* g_lv;

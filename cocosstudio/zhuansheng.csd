@@ -9,7 +9,7 @@
           <AbstractNodeData Name="layerBg" ActionTag="698662900" Tag="426" IconVisible="False" LeftMargin="4.5010" RightMargin="1.4990" TopMargin="36.5298" BottomMargin="224.4702" LeftEage="363" RightEage="363" TopEage="567" BottomEage="567" Scale9OriginX="363" Scale9OriginY="567" Scale9Width="348" Scale9Height="525" ctype="ImageViewObjectData">
             <Size X="1074.0000" Y="1659.0000" />
             <Children>
-              <AbstractNodeData Name="Sprite_4" ActionTag="321025660" Tag="724" IconVisible="False" LeftMargin="-12.4606" RightMargin="-4.5393" TopMargin="-33.9749" BottomMargin="1582.9749" ctype="SpriteObjectData">
+              <AbstractNodeData Name="Sprite_4" ActionTag="321025660" Tag="724" IconVisible="False" LeftMargin="-12.4606" RightMargin="-4.5394" TopMargin="-33.9749" BottomMargin="1582.9749" ctype="SpriteObjectData">
                 <Size X="1091.0000" Y="110.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="533.0394" Y="1637.9749" />

@@ -16,7 +16,7 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="yld.jpg" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="nameBg" ActionTag="638300879" Tag="416" IconVisible="False" LeftMargin="190.4237" RightMargin="225.5763" TopMargin="1169.9747" BottomMargin="551.0253" LeftEage="249" RightEage="249" TopEage="33" BottomEage="33" Scale9OriginX="249" Scale9OriginY="33" Scale9Width="166" Scale9Height="133" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="nameBg" ActionTag="638300879" Tag="416" IconVisible="False" LeftMargin="190.4237" RightMargin="225.5763" TopMargin="1169.9746" BottomMargin="551.0253" LeftEage="249" RightEage="249" TopEage="33" BottomEage="33" Scale9OriginX="249" Scale9OriginY="33" Scale9Width="166" Scale9Height="133" ctype="ImageViewObjectData">
             <Size X="664.0000" Y="199.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="522.4237" Y="650.5253" />
@@ -73,15 +73,15 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="no" ActionTag="1911665665" VisibleForFrame="False" Tag="9" IconVisible="False" LeftMargin="308.7882" RightMargin="311.2118" TopMargin="1389.2263" BottomMargin="444.7737" FontSize="72" LabelText="请输入角色名！" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="460.0000" Y="86.0000" />
+          <AbstractNodeData Name="no" ActionTag="1911665665" VisibleForFrame="False" Tag="9" IconVisible="False" LeftMargin="310.2882" RightMargin="312.7118" TopMargin="1391.2263" BottomMargin="446.7737" FontSize="72" LabelText="请输入角色名！" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="457.0000" Y="82.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="538.7882" Y="487.7737" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
+            <CColor A="255" R="240" G="203" B="148" />
             <PrePosition X="0.4989" Y="0.2540" />
-            <PreSize X="0.4259" Y="0.0448" />
-            <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+            <PreSize X="0.4231" Y="0.0427" />
+            <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

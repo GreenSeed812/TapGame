@@ -16,7 +16,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1077" Y="0.4877" />
-                <PreSize X="0.0484" Y="0.3833" />
+                <PreSize X="0.0999" Y="0.7917" />
                 <FileData Type="Normal" Path="ui/yb/txk.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -115,47 +115,47 @@
                     <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="dmg" ActionTag="-1757256222" Tag="138" IconVisible="False" LeftMargin="270.5870" RightMargin="33.4130" TopMargin="-5.7045" BottomMargin="53.7045" LeftEage="60" RightEage="60" TopEage="15" BottomEage="15" Scale9OriginX="60" Scale9OriginY="15" Scale9Width="62" Scale9Height="17" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="dmg" ActionTag="-1757256222" Tag="138" IconVisible="False" LeftMargin="254.9240" RightMargin="49.0760" TopMargin="-3.7045" BottomMargin="51.7045" LeftEage="60" RightEage="60" TopEage="15" BottomEage="15" Scale9OriginX="60" Scale9OriginY="15" Scale9Width="62" Scale9Height="17" ctype="ImageViewObjectData">
                     <Size X="182.0000" Y="47.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="361.5870" Y="77.2045" />
-                    <Scale ScaleX="0.3718" ScaleY="0.4771" />
+                    <Position X="345.9240" Y="75.2045" />
+                    <Scale ScaleX="0.5000" ScaleY="0.5000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.7440" Y="0.8127" />
+                    <PrePosition X="0.7118" Y="0.7916" />
                     <PreSize X="0.3745" Y="0.4947" />
                     <FileData Type="Normal" Path="cxsh.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="lv" ActionTag="1617761873" Tag="55" IconVisible="False" LeftMargin="237.1902" RightMargin="205.8098" TopMargin="5.7556" BottomMargin="65.2444" FontSize="20" LabelText="Lv 1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="43.0000" Y="24.0000" />
+                  <AbstractNodeData Name="lv" ActionTag="1617761873" Tag="55" IconVisible="False" LeftMargin="243.1897" RightMargin="199.8103" TopMargin="6.1800" BottomMargin="63.8200" FontSize="22" LabelText="Lv 1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="43.0000" Y="25.0000" />
                     <AnchorPoint ScaleX="0.4369" ScaleY="0.4244" />
-                    <Position X="255.9769" Y="75.4300" />
+                    <Position X="261.9764" Y="74.4300" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="240" G="212" B="172" />
-                    <PrePosition X="0.5267" Y="0.7940" />
-                    <PreSize X="0.0885" Y="0.2526" />
-                    <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                    <CColor A="255" R="240" G="203" B="148" />
+                    <PrePosition X="0.5390" Y="0.7835" />
+                    <PreSize X="0.0885" Y="0.2632" />
+                    <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="dps" ActionTag="-1618129796" Tag="139" IconVisible="False" LeftMargin="335.2170" RightMargin="-60.2170" TopMargin="-23.7195" BottomMargin="41.7195" LabelText="111.1aa" ctype="TextBMFontObjectData">
+                  <AbstractNodeData Name="dps" ActionTag="-1618129796" Tag="139" RotationSkewX="0.5014" RotationSkewY="0.5022" IconVisible="False" LeftMargin="332.2169" RightMargin="-57.2169" TopMargin="-21.7195" BottomMargin="39.7195" LabelText="111.1aa" ctype="TextBMFontObjectData">
                     <Size X="211.0000" Y="77.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="440.7170" Y="80.2195" />
-                    <Scale ScaleX="0.2942" ScaleY="0.3906" />
-                    <CColor A="255" R="237" G="209" B="169" />
-                    <PrePosition X="0.9068" Y="0.8444" />
+                    <Position X="437.7169" Y="78.2195" />
+                    <Scale ScaleX="0.3800" ScaleY="0.3800" />
+                    <CColor A="255" R="240" G="203" B="148" />
+                    <PrePosition X="0.9007" Y="0.8234" />
                     <PreSize X="0.4342" Y="0.8105" />
                     <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="name" ActionTag="-1811933507" Tag="54" IconVisible="False" LeftMargin="14.5817" RightMargin="269.4183" TopMargin="6.9772" BottomMargin="64.0228" FontSize="20" LabelText="伊利丹伊利灌灌灌灌的" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="202.0000" Y="24.0000" />
+                  <AbstractNodeData Name="name" ActionTag="-1811933507" Tag="54" IconVisible="False" LeftMargin="14.5817" RightMargin="249.4183" TopMargin="6.4772" BottomMargin="63.5228" FontSize="22" LabelText="伊利丹伊利灌灌灌灌的" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="222.0000" Y="25.0000" />
                     <AnchorPoint ScaleY="0.5000" />
                     <Position X="14.5817" Y="76.0228" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="245" G="217" B="177" />
+                    <CColor A="255" R="240" G="203" B="148" />
                     <PrePosition X="0.0300" Y="0.8002" />
-                    <PreSize X="0.4156" Y="0.2526" />
-                    <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                    <PreSize X="0.4568" Y="0.2632" />
+                    <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -169,16 +169,16 @@
                 <FileData Type="Normal" Path="ui/yb/k4.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="up100" ActionTag="1334016742" Tag="481" IconVisible="False" LeftMargin="569.8487" RightMargin="259.1513" TopMargin="15.0354" BottomMargin="10.9646" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="92" Scale9Height="72" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="up100" ActionTag="1334016742" VisibleForFrame="False" Tag="481" IconVisible="False" LeftMargin="569.8487" RightMargin="259.1513" TopMargin="15.0354" BottomMargin="10.9646" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="92" Scale9Height="72" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="122.0000" Y="94.0000" />
                 <Children>
-                  <AbstractNodeData Name="dps" ActionTag="-892248010" Tag="479" IconVisible="False" LeftMargin="-63.4354" RightMargin="-25.5646" TopMargin="-25.7791" BottomMargin="42.7791" LabelText="111.1aa" ctype="TextBMFontObjectData">
+                  <AbstractNodeData Name="dps" ActionTag="-892248010" Tag="479" RotationSkewX="0.5929" RotationSkewY="0.5928" IconVisible="False" LeftMargin="-62.0103" RightMargin="-26.9897" TopMargin="-25.7791" BottomMargin="42.7791" LabelText="111.1aa" ctype="TextBMFontObjectData">
                     <Size X="211.0000" Y="77.0000" />
                     <AnchorPoint ScaleX="0.4991" ScaleY="0.2576" />
-                    <Position X="41.8747" Y="62.6143" />
+                    <Position X="43.2998" Y="62.6143" />
                     <Scale ScaleX="0.3311" ScaleY="0.3399" />
                     <CColor A="255" R="241" G="203" B="149" />
-                    <PrePosition X="0.3432" Y="0.6661" />
+                    <PrePosition X="0.3549" Y="0.6661" />
                     <PreSize X="1.7295" Y="0.8191" />
                     <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
                   </AbstractNodeData>
@@ -206,7 +206,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="up10" ActionTag="-711031064" Tag="478" IconVisible="False" LeftMargin="656.5114" RightMargin="172.4886" TopMargin="14.6960" BottomMargin="11.3040" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="92" Scale9Height="72" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="up10" ActionTag="-711031064" VisibleForFrame="False" Tag="478" IconVisible="False" LeftMargin="656.5114" RightMargin="172.4886" TopMargin="14.6960" BottomMargin="11.3040" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="92" Scale9Height="72" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="122.0000" Y="94.0000" />
                 <Children>
                   <AbstractNodeData Name="dps" ActionTag="343746469" Tag="476" IconVisible="False" LeftMargin="-63.3851" RightMargin="-25.6149" TopMargin="-11.4669" BottomMargin="28.4669" LabelText="111.1aa" ctype="TextBMFontObjectData">
@@ -266,15 +266,15 @@
                     <PreSize X="1.2412" Y="0.7857" />
                     <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="up" ActionTag="1091150870" Tag="60" IconVisible="False" LeftMargin="71.2400" RightMargin="55.7600" TopMargin="40.5300" BottomMargin="33.4700" FontSize="20" LabelText="升级" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="43.0000" Y="24.0000" />
+                  <AbstractNodeData Name="up" ActionTag="1091150870" Tag="60" IconVisible="False" LeftMargin="66.8153" RightMargin="52.1847" TopMargin="42.5299" BottomMargin="28.4701" FontSize="24" LabelText="升级" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="51.0000" Y="27.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-                    <Position X="92.7400" Y="57.4700" />
+                    <Position X="92.3153" Y="55.4701" />
                     <Scale ScaleX="0.9775" ScaleY="0.8848" />
-                    <CColor A="255" R="235" G="209" B="168" />
-                    <PrePosition X="0.5455" Y="0.5864" />
-                    <PreSize X="0.2529" Y="0.2449" />
-                    <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                    <CColor A="255" R="240" G="203" B="148" />
+                    <PrePosition X="0.5430" Y="0.5660" />
+                    <PreSize X="0.3000" Y="0.2755" />
+                    <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>

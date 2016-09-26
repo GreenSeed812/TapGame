@@ -72,7 +72,6 @@ void LoadingScene::initLoading()
 	auto load = (TextBMFont*)m_rootNode->getChildByName("loadText");
 
 	load->setVisible(true);
-	
 	if (!cocos2d::UserDefault::getInstance()->getBoolForKey("isSaved") || UserDefault::getInstance()->getStringForKey("name").compare("") == 0)
 	{
 		head->setVisible(true);

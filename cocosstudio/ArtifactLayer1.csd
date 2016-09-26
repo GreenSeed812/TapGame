@@ -49,15 +49,15 @@
               <AbstractNodeData Name="arName" ActionTag="27077519" Tag="74" IconVisible="False" LeftMargin="393.4329" RightMargin="208.5671" TopMargin="113.7944" BottomMargin="767.2056" ctype="SpriteObjectData">
                 <Size X="413.0000" Y="126.0000" />
                 <Children>
-                  <AbstractNodeData Name="name" ActionTag="321427257" Tag="145" IconVisible="False" LeftMargin="149.0791" RightMargin="164.9209" TopMargin="39.2899" BottomMargin="57.7101" FontSize="24" LabelText="神器名称" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="99.0000" Y="29.0000" />
+                  <AbstractNodeData Name="name" ActionTag="321427257" Tag="145" IconVisible="False" LeftMargin="131.0791" RightMargin="142.9209" TopMargin="34.2900" BottomMargin="52.7100" FontSize="34" LabelText="神器名称" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="139.0000" Y="39.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="198.5791" Y="72.2101" />
+                    <Position X="200.5791" Y="72.2100" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="240" G="203" B="148" />
-                    <PrePosition X="0.4808" Y="0.5731" />
-                    <PreSize X="0.2397" Y="0.2302" />
-                    <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                    <PrePosition X="0.4857" Y="0.5731" />
+                    <PreSize X="0.3366" Y="0.3095" />
+                    <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -298,39 +298,39 @@
                   <AbstractNodeData Name="jiNeng1" ActionTag="337419924" Tag="758" IconVisible="False" LeftMargin="252.5303" RightMargin="73.4697" TopMargin="68.4497" BottomMargin="198.5503" ctype="SpriteObjectData">
                     <Size X="311.0000" Y="112.0000" />
                     <Children>
-                      <AbstractNodeData Name="Text_6" ActionTag="-645559744" Tag="148" IconVisible="False" LeftMargin="19.1265" RightMargin="209.8735" TopMargin="60.7646" BottomMargin="32.2354" FontSize="16" LabelText="所有攻击力" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="82.0000" Y="19.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="60.1265" Y="41.7354" />
+                      <AbstractNodeData Name="Text_6" ActionTag="-645559744" Tag="148" IconVisible="False" LeftMargin="15.1637" RightMargin="185.8363" TopMargin="57.2748" BottomMargin="29.7252" FontSize="22" LabelText="所有攻击力" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="110.0000" Y="25.0000" />
+                        <AnchorPoint ScaleX="0.4454" ScaleY="0.4020" />
+                        <Position X="64.1613" Y="39.7760" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="240" G="203" B="148" />
-                        <PrePosition X="0.1933" Y="0.3726" />
-                        <PreSize X="0.2637" Y="0.1696" />
-                        <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                        <PrePosition X="0.2063" Y="0.3551" />
+                        <PreSize X="0.3537" Y="0.2232" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="nengLi" ActionTag="-443569223" Tag="759" IconVisible="False" LeftMargin="17.6614" RightMargin="227.3386" TopMargin="23.6733" BottomMargin="69.3267" FontSize="16" LabelText="神器能力" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="66.0000" Y="19.0000" />
+                      <AbstractNodeData Name="nengLi" ActionTag="-443569223" Tag="759" IconVisible="False" LeftMargin="17.6614" RightMargin="205.3386" TopMargin="20.6733" BottomMargin="66.3267" FontSize="22" LabelText="神器能力" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="88.0000" Y="25.0000" />
                         <AnchorPoint ScaleY="0.5000" />
                         <Position X="17.6614" Y="78.8267" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="240" G="203" B="148" />
                         <PrePosition X="0.0568" Y="0.7038" />
-                        <PreSize X="0.2122" Y="0.1696" />
-                        <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                        <PreSize X="0.2830" Y="0.2232" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="gongJi" ActionTag="-182025997" Tag="143" IconVisible="False" LeftMargin="105.2234" RightMargin="151.7766" TopMargin="61.7652" BottomMargin="31.2348" FontSize="16" LabelText="+100%" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="54.0000" Y="19.0000" />
+                      <AbstractNodeData Name="gongJi" ActionTag="-182025997" Tag="143" IconVisible="False" LeftMargin="139.2220" RightMargin="100.7780" TopMargin="57.7652" BottomMargin="29.2348" FontSize="22" LabelText="+100%" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="71.0000" Y="25.0000" />
                         <AnchorPoint ScaleY="0.5000" />
-                        <Position X="105.2234" Y="40.7348" />
+                        <Position X="139.2220" Y="41.7348" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="240" G="203" B="148" />
-                        <PrePosition X="0.3383" Y="0.3637" />
-                        <PreSize X="0.1736" Y="0.1696" />
-                        <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                        <PrePosition X="0.4477" Y="0.3726" />
+                        <PreSize X="0.2283" Y="0.2232" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
@@ -347,39 +347,39 @@
                   <AbstractNodeData Name="jiNeng2" ActionTag="1158360287" Tag="764" IconVisible="False" LeftMargin="252.8055" RightMargin="73.1945" TopMargin="217.2927" BottomMargin="49.7073" ctype="SpriteObjectData">
                     <Size X="311.0000" Y="112.0000" />
                     <Children>
-                      <AbstractNodeData Name="nengLi" ActionTag="2046840785" Tag="765" IconVisible="False" LeftMargin="21.3965" RightMargin="223.6035" TopMargin="28.8065" BottomMargin="64.1935" FontSize="16" LabelText="神器能力" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="66.0000" Y="19.0000" />
+                      <AbstractNodeData Name="nengLi" ActionTag="2046840785" Tag="765" IconVisible="False" LeftMargin="21.3965" RightMargin="201.6035" TopMargin="25.8065" BottomMargin="61.1935" FontSize="22" LabelText="神器能力" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="88.0000" Y="25.0000" />
                         <AnchorPoint ScaleY="0.5000" />
                         <Position X="21.3965" Y="73.6935" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="240" G="203" B="148" />
                         <PrePosition X="0.0688" Y="0.6580" />
-                        <PreSize X="0.2122" Y="0.1696" />
-                        <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                        <PreSize X="0.2830" Y="0.2232" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="gongJi" ActionTag="-1757663653" Tag="766" IconVisible="False" LeftMargin="107.3505" RightMargin="150.6495" TopMargin="60.3727" BottomMargin="32.6273" FontSize="16" LabelText="+150%" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="53.0000" Y="19.0000" />
+                      <AbstractNodeData Name="gongJi" ActionTag="-1757663653" Tag="766" IconVisible="False" LeftMargin="142.0258" RightMargin="97.9742" TopMargin="56.9490" BottomMargin="30.0510" FontSize="22" LabelText="+150%" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="71.0000" Y="25.0000" />
                         <AnchorPoint ScaleY="0.5000" />
-                        <Position X="107.3505" Y="42.1273" />
+                        <Position X="142.0258" Y="42.5510" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="240" G="203" B="148" />
-                        <PrePosition X="0.3452" Y="0.3761" />
-                        <PreSize X="0.1704" Y="0.1696" />
-                        <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                        <PrePosition X="0.4567" Y="0.3799" />
+                        <PreSize X="0.2283" Y="0.2232" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Text_6_0" ActionTag="-1072387091" Tag="149" IconVisible="False" LeftMargin="22.9493" RightMargin="206.0507" TopMargin="59.2064" BottomMargin="33.7936" FontSize="16" LabelText="所有攻击力" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="82.0000" Y="19.0000" />
+                      <AbstractNodeData Name="Text_6_0" ActionTag="-1072387091" Tag="149" IconVisible="False" LeftMargin="19.6051" RightMargin="181.3949" TopMargin="56.0433" BottomMargin="30.9567" FontSize="22" LabelText="所有攻击力" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="110.0000" Y="25.0000" />
                         <AnchorPoint ScaleX="0.4971" ScaleY="0.4727" />
-                        <Position X="63.7115" Y="42.7749" />
+                        <Position X="74.2861" Y="42.7742" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="240" G="203" B="148" />
-                        <PrePosition X="0.2049" Y="0.3819" />
-                        <PreSize X="0.2637" Y="0.1696" />
-                        <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                        <PrePosition X="0.2389" Y="0.3819" />
+                        <PreSize X="0.3537" Y="0.2232" />
+                        <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
@@ -450,7 +450,7 @@
                 <FileData Type="Normal" Path="ui/sqjs/lhsk.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="reset" ActionTag="1334743615" Tag="150" IconVisible="False" LeftMargin="551.9492" RightMargin="223.0508" TopMargin="841.3064" BottomMargin="34.6936" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="210" Scale9Height="109" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="reset" ActionTag="1334743615" Tag="150" IconVisible="False" LeftMargin="551.9492" RightMargin="223.0508" TopMargin="841.3064" BottomMargin="34.6936" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="210" Scale9Height="109" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="240.0000" Y="131.0000" />
                 <Children>
                   <AbstractNodeData Name="Sprite_26" ActionTag="1303410431" Tag="770" IconVisible="False" LeftMargin="45.6455" RightMargin="151.3545" TopMargin="25.9600" BottomMargin="58.0400" ctype="SpriteObjectData">
@@ -475,15 +475,15 @@
                     <FileData Type="Normal" Path="xx_ar.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="num" ActionTag="-1435405509" Tag="772" IconVisible="False" LeftMargin="124.3187" RightMargin="54.6813" TopMargin="22.3191" BottomMargin="65.6809" FontSize="36" LabelText="100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="61.0000" Y="43.0000" />
+                  <AbstractNodeData Name="num" ActionTag="-1435405509" Tag="772" IconVisible="False" LeftMargin="123.8187" RightMargin="54.1813" TopMargin="23.3191" BottomMargin="66.6809" FontSize="36" LabelText="100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="62.0000" Y="41.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="154.8187" Y="87.1809" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="237" G="209" B="169" />
+                    <CColor A="255" R="240" G="203" B="148" />
                     <PrePosition X="0.6451" Y="0.6655" />
-                    <PreSize X="0.2542" Y="0.3282" />
-                    <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+                    <PreSize X="0.2583" Y="0.3130" />
+                    <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>

@@ -91,7 +91,7 @@ void MyAnimation::initXiangyunani()
 {
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("SpecialEffect/xiangyun.plist");
 	m_xiangyunani = Animation::create();
-	for (int i = 0; i < 40; i++)
+	for (int i = 0; i < 20; i++)
 	{
 		auto str = StringUtils::format("xiangyun%02d.png", i);
 		m_xiangyunani->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(StringUtils::format("xiangyun%02d.png", i)));

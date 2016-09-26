@@ -52,7 +52,8 @@ std::string Ruler::showNum(MyNum num)
 	std::string s;
 	if (num.number < 0)
 	{
-		num.number = -num.number;
+		num.number = 0;
+		num.Mathbit = 0;
 	}
 	s = StringUtils::format("%.1lf", num.number);
 	//sprintf_s(s, "%lf", num->number);

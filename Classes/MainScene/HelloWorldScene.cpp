@@ -153,7 +153,7 @@ void HelloWorld::coinChange(Ref *ref)
 	}
 	ExChange::setCount(m_exchangeCount);
 
-	//PlayerData::getInstance()->saveUserData();
+	PlayerData::getInstance()->saveUserData();
 
 }
 
@@ -396,7 +396,11 @@ void HelloWorld::update(float dt)
 			Slider* slider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider");
 			auto subNow = Ruler::getInstance()->subNum(PlayerData::getInstance()->getHpNow(), dps);
 			PlayerData::getInstance()->setHpNow(subNow);
-
+			if (PlayerData::getInstance()->getHpNow().number < 0)
+			{
+				MyNum zero;
+				PlayerData::getInstance()->setHpNow(zero);
+			}
 			if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit == PlayerData::getInstance()->getHpNow().Mathbit)
 				slider->setPercent(PlayerData::getInstance()->getHpNow().number * 1000000);
 			else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 1)
@@ -718,7 +722,7 @@ void HelloWorld::mapChange()
 		auto effect = Sprite::create();
 		/*effect->setZOrder(100);*/
 		auto animate = MyAnimation::getInstance()->getAnimate_xy();
-		effect->setScale(3.6);
+		effect->setScale(5);
 		effect->setAnchorPoint(Vec2(0, 0));
 		auto seq = Sequence::create(animate, CallFuncN::create(CC_CALLBACK_1(HelloWorld::bgChange, this)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)),CallFuncN::create(CC_CALLBACK_1(HelloWorld::gameContinue,this)), NULL);
 		this->addChild(effect);
@@ -1353,7 +1357,7 @@ void HelloWorld::shopItemEff(float dt)
 	}
 	if (ShopData::getInstance()->getItemBeUsedById(7))
 	{
-		ArtifactData::getInstance()->arStarUp();
+		
 		ShopData::getInstance()->stopItemById(7);
 	}
 	if (ShopData::getInstance()->getItemBeUsedById(9))

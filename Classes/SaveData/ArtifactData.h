@@ -36,7 +36,7 @@ public:
 	int getStarNum(int id);
 	int addArNum();
 	void arLevelUp(int id);
-	void arStarUp();
+	bool arStarUp();
 	void arReset(int id);
 	void deleteArByID(int id);
 	void saveUserDefault(Document& document);

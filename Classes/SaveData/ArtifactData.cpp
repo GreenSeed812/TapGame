@@ -57,7 +57,7 @@ int ArtifactData::addArNum()
 	{
 		id = cocos2d::random(1, 29);
 		loop = false;
-		for (int i = 8; i < m_artifactNum; i++)
+		for (int i = 0; i < m_artifactNum; i++)
 		{
 			if (m_artifacts.at(i)->m_artifactID == id)
 			{
@@ -175,9 +175,13 @@ void ArtifactData::arLevelUp(int id)
 			
 	}
 }
-void ArtifactData::arStarUp()
+bool ArtifactData::arStarUp()
 {
-	auto uparNum = cocos2d::random(0, m_artifactNum - m_fiveStar);
+	if (m_artifactNum - m_fiveStar - 1 < 0)
+	{
+		return false;
+	}
+	auto uparNum = cocos2d::random(0, m_artifactNum - m_fiveStar - 1);
 	std::vector<ArtiHave*>::iterator it = m_artifacts.begin();
 	it = it + uparNum;
 	(*it)->m_artifactStar++;
@@ -187,8 +191,12 @@ void ArtifactData::arStarUp()
 		remove(m_artifacts.begin(), m_artifacts.end(), *it);
 		m_fiveStar++;
 	}
+
+	return true;
+
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
 	
+
 	
 }
 int ArtifactData::getLevel(int id)
@@ -610,7 +618,7 @@ void ArtifactData::readUserDefault()
 {
 	std::string json = cocos2d::UserDefault::getInstance()->getStringForKey("UserDefault");
 	rapidjson::Document jsd;
-	jsd.Parse<8>(json.c_str());
+	jsd.Parse<0>(json.c_str());
 	if (jsd.IsObject() && jsd.HasMember("m_artifactStone"))
 	{
 		m_artifactStone = jsd["m_artifactStone"].GetInt();

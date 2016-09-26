@@ -29,7 +29,7 @@ bool ArStarUp::init(int id)
 	auto head = (Sprite*)m_node->getChildByName("head");
 	auto name = (Text*)m_node->getChildByName("name");
 	auto starNum = ArtifactData::getInstance()->getStarNum(id);
-	
+	head->setTexture(StringUtils::format("ui/downUi/artifact/%d.png",id+1).c_str());
 	for (size_t i = 1; i < starNum; i++)
 	{
 		auto star = m_node->getChildByName(StringUtils::format("star%d",i+1).c_str());

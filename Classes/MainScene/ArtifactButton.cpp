@@ -39,14 +39,6 @@ void ArtifactButton::initArtifactLayer(int id,bool check)
 		m_id = ArtifactData::getInstance()->addArNum();
 	}
 	m_level = ArtifactData::getInstance()->getLevel(m_id);
-	if (m_level < ArtifactData::getInstance()->getMaxLevel(m_id))
-	{
-		m_levelUp = true;
-	}
-	else
-	{
-		m_levelUp = false;
-	}
 
 	//»ñÈ¡¿Ø¼þ
 	auto head = (Button*)m_layer->getChildByName("arHead");
@@ -103,6 +95,15 @@ void ArtifactButton::initArtifactLayer(int id,bool check)
 
 void ArtifactButton::arChange(Ref*)
 {
+	if (m_level < ArtifactData::getInstance()->getMaxLevel(m_id))
+	{
+		m_levelUp = true;
+	}
+	else
+	{
+		m_levelUp = false;
+	}
+
 	if (m_node != nullptr)
 	{
 		if (m_layer)

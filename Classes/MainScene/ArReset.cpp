@@ -18,6 +18,8 @@ bool ArReset::init()
 		return false;
 	}
 
+	m_bgLayer = LayerColor::create(Color4B(50,50,50,155));
+	this->addChild(m_bgLayer);
 	m_node = CSLoader::createNode("ArtifactLayer1.csb");
 	m_layer = (Layer*)m_node->getChildByName("layer");
 	this->setContentSize(m_node->getContentSize());
@@ -106,6 +108,7 @@ void ArReset::initArResetLayer(int id)
 		if (Event == Widget::TouchEventType::ENDED)
 		{
 			m_node->removeFromParent();
+			m_bgLayer->removeFromParent();
 		}
 	});
 	arResetChange(this);

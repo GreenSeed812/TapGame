@@ -13,6 +13,8 @@ bool MissionLayer::init()
 	{
 		return false;
 	}
+	m_bgLayer = LayerColor::create(Color4B(50, 50, 50, 155));
+	this->addChild(m_bgLayer);
 	m_suc = false;
 	rootNode = CSLoader::createNode("everydayLayer.csb");
 	this->addChild(rootNode);
@@ -24,6 +26,7 @@ bool MissionLayer::init()
 	bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 		if (type == Widget::TouchEventType::ENDED)
 		{
+			m_bgLayer->removeFromParent();
 			this->removeFromParent();
 		}
 	});

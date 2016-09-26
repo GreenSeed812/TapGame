@@ -12,6 +12,7 @@ public:
 	static ArStarUp * g_asu;
 private:
 	Node * m_node;
+	LayerColor * m_bgLayer;
 	
 };
 

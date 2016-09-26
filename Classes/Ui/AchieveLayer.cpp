@@ -15,6 +15,8 @@ bool AchieveLayer::init()
 	{
 		return false;
 	}
+	m_bgLayer = LayerColor::create(Color4B(50, 50, 50, 155));
+	this->addChild(m_bgLayer);
 	m_rootNode = CSLoader::createNode("achieveLayer.csb");
 	m_bg = m_rootNode->getChildByName("bg");
 	this->addChild(m_rootNode);
@@ -27,6 +29,7 @@ bool AchieveLayer::init()
 		if (type == Widget::TouchEventType::ENDED)
 		{
 			CCNotificationCenter::getInstance()->removeObserver(this, "AchieveChange");
+			m_bgLayer->removeFromParent();
 			this->removeFromParent();
 		}
 	});

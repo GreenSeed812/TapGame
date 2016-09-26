@@ -1,12 +1,14 @@
 
 #include "PlayerInfo.h"
 #include "ui/CocosGUI.h"
+#include "cocos-ext.h"
 #include <cocostudio/CocoStudio.h> 
 #include "SaveData/PlayerData.h"
 #include "SaveData/ArtifactData.h"
 #include "SaveData/ShopData.h"
 #include "Tool/SqLite.h"
 using namespace ui;
+USING_NS_CC_EXT;
 
 bool PlayerInfo::init()
 {
@@ -14,7 +16,8 @@ bool PlayerInfo::init()
 	{
 		return false;
 	}
-
+	m_bgLayer = LayerColor::create(Color4B(50, 50, 50, 155));
+	this->addChild(m_bgLayer);
 	m_node = CSLoader::createNode("zhujiaojieshao.csb");
 	m_layer = (Layer*)m_node->getChildByName("LayerBg");
 	this->setContentSize(m_node->getContentSize());
@@ -53,6 +56,7 @@ void PlayerInfo::initPlayerInfo()
 		if (Event == Widget::TouchEventType::ENDED)
 		{
 			m_node->removeFromParent();
+			m_bgLayer->removeFromParent();
 		}
 	});
 

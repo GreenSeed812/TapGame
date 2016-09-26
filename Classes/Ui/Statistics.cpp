@@ -15,6 +15,8 @@ bool Statistics::init()
 		return false;
 	}
 
+	m_bgLayer = LayerColor::create(Color4B(50, 50, 50, 155));
+	this->addChild(m_bgLayer);
 	m_rootNode = CSLoader::createNode("shujutongji.csb");
 	this->setContentSize(m_rootNode->getContentSize());
 	this->addChild(m_rootNode);
@@ -32,6 +34,7 @@ void Statistics::initStatistics()
 		if (type == Widget::TouchEventType::ENDED)
 		{
 			m_rootNode->removeFromParent();
+			m_bgLayer->removeFromParent();
 		}
 	});
 	statisticsChange(this);

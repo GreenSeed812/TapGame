@@ -27,6 +27,7 @@ private:
 	static Node * g_listview;
 	Node * g_btn;
 	Layer* m_layer;
+	LayerColor * m_bgLayer;
 	int m_StoneNum;
 	int m_id;
 };

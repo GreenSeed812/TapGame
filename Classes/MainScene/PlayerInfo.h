@@ -15,6 +15,7 @@ public:
 private:
 	Node * m_node;
 	Layer* m_layer;
+	LayerColor * m_bgLayer;
 };
 
 

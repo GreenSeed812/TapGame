@@ -16,6 +16,7 @@ private:
 	static Node * g_node;
 	static bool m_mus_off_on;
 	static bool m_sou_off_on;
+	LayerColor * m_bgLayer;
 };
 
 

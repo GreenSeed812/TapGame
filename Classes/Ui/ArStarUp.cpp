@@ -23,6 +23,8 @@ bool ArStarUp::init(int id)
 		return false;
 	}
 
+	m_bgLayer = LayerColor::create(Color4B(50, 50, 50, 155));
+	this->addChild(m_bgLayer);
 	m_node = CSLoader::createNode("starUp.csb");
 	auto head = (Sprite*)m_node->getChildByName("head");
 	auto name = (Text*)m_node->getChildByName("name");

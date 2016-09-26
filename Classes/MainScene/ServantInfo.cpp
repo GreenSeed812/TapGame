@@ -14,6 +14,8 @@ bool ServantInfo::init()
 	{
 		return false;
 	}
+	m_bgLayer = LayerColor::create(Color4B(50,50,50,155));
+	this->addChild(m_bgLayer);
 	m_node = CSLoader::createNode("yongbing.csb");
 	m_layer = (Layer*)m_node->getChildByName("layerBg");
 	this->setContentSize(m_node->getContentSize());
@@ -63,6 +65,7 @@ void ServantInfo::initServantInfo(int id)
 		if (Event == Widget::TouchEventType::ENDED)
 		{
 			m_node->removeFromParent();
+			m_bgLayer->removeFromParent();
 		}
 	});
 }

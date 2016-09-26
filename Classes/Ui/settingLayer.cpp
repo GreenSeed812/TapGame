@@ -18,6 +18,8 @@ bool settingLayer::init()
 	{
 		return false; 
 	}
+	m_bgLayer = LayerColor::create(Color4B(50, 50, 50, 155));
+	this->addChild(m_bgLayer);
 	rootNode = CSLoader::createNode("configLayer.csb");
 	this->addChild(rootNode);
 	auto touchListener = EventListenerTouchOneByOne::create();
@@ -54,6 +56,7 @@ bool settingLayer::init()
 	bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 		if (type == Widget::TouchEventType::ENDED)
 		{
+			m_bgLayer->removeFromParent();
 			this->removeFromParent();
 		}
 	});

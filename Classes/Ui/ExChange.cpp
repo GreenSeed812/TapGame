@@ -18,6 +18,8 @@ bool ExChange::init()
 	{
 		return false;
 	}
+	m_bgLayer = LayerColor::create(Color4B(50, 50, 50, 155));
+	this->addChild(m_bgLayer);
 	m_countMax = 5;
 	m_money = 100;
 	m_gold = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(),100);
@@ -87,6 +89,7 @@ void ExChange::initExchange()
 		if (type == Widget::TouchEventType::ENDED)
 		{
 			m_rootNode->removeFromParent();
+			m_bgLayer->removeFromParent();
 		}
 	});
 

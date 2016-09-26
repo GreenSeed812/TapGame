@@ -264,7 +264,8 @@ void PlayerButton::coinChange(Ref* pSender)
 		textN->setString(StringUtils::format("%s",SqLite::getInstance()->getSkillNameByID(0).c_str()));
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type)));
 		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type);
-		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), eff));		
+		int _eff = eff;
+		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), _eff).c_str());		
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
 		auto y = textD->getPositionY();
 		textD->setPosition(Vec2(x, y));
@@ -280,7 +281,8 @@ void PlayerButton::coinChange(Ref* pSender)
 		textN->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(1).c_str()));
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type)));
 		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type);
-		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), eff));
+		int _eff = eff;
+		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), _eff));
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
 		auto y = textD->getPositionY();
 		textD->setPosition(Vec2(x, y));
@@ -313,8 +315,8 @@ void PlayerButton::coinChange(Ref* pSender)
 		textN->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(3).c_str()));
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type)));
 		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type);
-		
-		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), eff));
+		int _eff = eff;
+		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), _eff));
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
 		auto y = textD->getPositionY();
 		textD->setPosition(Vec2(x, y));

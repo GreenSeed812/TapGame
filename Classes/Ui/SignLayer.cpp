@@ -19,6 +19,8 @@ bool SignLayer::init()
 		return false;
 	}
 
+	m_bgLayer = LayerColor::create(Color4B(50, 50, 50, 155));
+	this->addChild(m_bgLayer);
 	m_state = true;
 	m_day = HelloWorld::getDay();
 	rootNode = CSLoader::createNode("singLayer.csb");
@@ -40,7 +42,8 @@ void SignLayer::initSignLayer()
 	bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 		if (type == Widget::TouchEventType::ENDED)
 		{
-			this->removeFromParent();
+			m_bgLayer->removeFromParent();
+			this->removeFromParent();	
 		}
 	});
 

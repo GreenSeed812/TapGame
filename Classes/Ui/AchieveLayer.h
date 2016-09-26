@@ -13,6 +13,7 @@ public:
 private:
 	Node* m_rootNode;
 	Node * m_bg;
+	LayerColor * m_bgLayer;
 	void achieveChange(Ref*);
 };
 

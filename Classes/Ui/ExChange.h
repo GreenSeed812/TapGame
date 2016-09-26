@@ -22,6 +22,7 @@ private:
 	int m_countMax;
 	int m_money;
 	MyNum m_gold;
+	LayerColor * m_bgLayer;
 	static Node * g_node;
 };
 

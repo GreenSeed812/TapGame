@@ -18,6 +18,7 @@ private:
 	bool m_state;
 	void signChange(Ref*);
 	void stateChange();
+	LayerColor * m_bgLayer;
 	cocos2d::ValueMap m_strings;
 };
 

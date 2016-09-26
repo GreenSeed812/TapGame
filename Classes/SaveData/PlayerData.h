@@ -101,6 +101,10 @@ public:
 	bool getRelife(){ return m_relife; }
 	void relifeEnd(){ m_relife = false; }
 	void dataInit();
+public:
+	float getgoldMul(){ return m_goldMulBase; }
+	float getexploreProb(){ return m_exploreProb + m_skillexploreProb; }
+	float getexplorePer(){ return m_explorePer; }
 private:
 	int m_waveNow;
 	int m_level;

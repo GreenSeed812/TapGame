@@ -65,8 +65,9 @@ void ArReset::initArResetLayer(int id)
 	auto level = ArtifactData::getInstance()->getMaxLevel(id);
 	LvNow->setString(StringUtils::format("%d",level).c_str());
 	LvNext->setString(StringUtils::format("%d", level + 1).c_str());
-	arLvNow->setString(StringUtils::format("Lv%d", level).c_str());
-	arlvNext->setString(StringUtils::format("Lv%d", level + 1).c_str());
+	auto lv = ArtifactData::getInstance()->getLevel(id);
+	arLvNow->setString(StringUtils::format("Lv%d", lv).c_str());
+	arlvNext->setString(StringUtils::format("Lv%d", lv + 1).c_str());
 	auto effid = SqLite::getInstance()->getArtifactSkillByID(id).ar.effid;
 	auto effData = SqLite::getInstance()->getArtifactSkillByID(id).ar.effData;
 	auto effDataUp = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.effDataUp;

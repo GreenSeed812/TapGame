@@ -223,6 +223,19 @@ int ArtifactData::getMaxLevel(int id)
 	}
 	return -1;
 }
+
+int ArtifactData::getnextMaxLevel(int id)
+{
+	for (int i = 0; i < m_artifactNum; i++)
+	{
+
+		if (m_artifacts.at(i)->m_artifactID == id)
+		{
+			return SqLite::getInstance()->getArtifactSkillByID(id).ar.star[m_artifacts.at(i)->m_artifactStar];
+		}
+	}
+	
+}
 void ArtifactData::deleteArByID(int id)
 {
 	
@@ -356,7 +369,8 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(0)->m_artifactID", m_artifacts.at(0)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(0)->m_artifactLevel", m_artifacts.at(0)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(0)->m_artimaxLevel", m_artifacts.at(0)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(0)->m_artiDpsUp", m_artifacts.at(0)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(0)->m_artifactStar", m_artifacts.at(0)->m_artifactStar, allocator);
+		
 
 	}
 	if (m_artifacts.size() > 1)
@@ -365,7 +379,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(1)->m_artifactID", m_artifacts.at(1)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(1)->m_artifactLevel", m_artifacts.at(1)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(1)->m_artimaxLevel", m_artifacts.at(1)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(1)->m_artiDpsUp", m_artifacts.at(1)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(1)->m_artifactStar", m_artifacts.at(1)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 2)
@@ -374,7 +388,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(2)->m_artifactID", m_artifacts.at(2)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(2)->m_artifactLevel", m_artifacts.at(2)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(2)->m_artimaxLevel", m_artifacts.at(2)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(2)->m_artiDpsUp", m_artifacts.at(2)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(2)->m_artifactStar", m_artifacts.at(2)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 3)
@@ -383,7 +397,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(3)->m_artifactID", m_artifacts.at(3)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(3)->m_artifactLevel", m_artifacts.at(3)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(3)->m_artimaxLevel", m_artifacts.at(3)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(3)->m_artiDpsUp", m_artifacts.at(3)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(3)->m_artifactStar", m_artifacts.at(3)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 4)
@@ -392,7 +406,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(4)->m_artifactID", m_artifacts.at(4)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(4)->m_artifactLevel", m_artifacts.at(4)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(4)->m_artimaxLevel", m_artifacts.at(4)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(4)->m_artiDpsUp", m_artifacts.at(4)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(4)->m_artifactStar", m_artifacts.at(4)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 5)
@@ -401,7 +415,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(5)->m_artifactID", m_artifacts.at(5)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(5)->m_artifactLevel", m_artifacts.at(5)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(5)->m_artimaxLevel", m_artifacts.at(5)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(5)->m_artiDpsUp", m_artifacts.at(5)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(5)->m_artifactStar", m_artifacts.at(5)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 6)
@@ -410,7 +424,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(6)->m_artifactID", m_artifacts.at(6)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(6)->m_artifactLevel", m_artifacts.at(6)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(6)->m_artimaxLevel", m_artifacts.at(6)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(6)->m_artiDpsUp", m_artifacts.at(6)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(6)->m_artifactStar", m_artifacts.at(6)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 7)
@@ -419,7 +433,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(7)->m_artifactID", m_artifacts.at(7)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(7)->m_artifactLevel", m_artifacts.at(7)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(7)->m_artimaxLevel", m_artifacts.at(7)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(7)->m_artiDpsUp", m_artifacts.at(7)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(7)->m_artifactStar", m_artifacts.at(7)->m_artifactStar, allocator);
 	}
 	if (m_artifacts.size() > 8)
 	{
@@ -427,7 +441,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(8)->m_artifactID", m_artifacts.at(8)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(8)->m_artifactLevel", m_artifacts.at(8)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(8)->m_artimaxLevel", m_artifacts.at(8)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(8)->m_artiDpsUp", m_artifacts.at(8)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(8)->m_artifactStar", m_artifacts.at(8)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 9)
@@ -436,7 +450,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(9)->m_artifactID", m_artifacts.at(9)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(9)->m_artifactLevel", m_artifacts.at(9)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(9)->m_artimaxLevel", m_artifacts.at(9)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(9)->m_artiDpsUp", m_artifacts.at(9)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(9)->m_artifactStar", m_artifacts.at(9)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 10)
@@ -445,7 +459,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(10)->m_artifactID", m_artifacts.at(10)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(10)->m_artifactLevel", m_artifacts.at(10)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(10)->m_artimaxLevel", m_artifacts.at(10)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(10)->m_artiDpsUp", m_artifacts.at(10)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(10)->m_artifactStar", m_artifacts.at(10)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 11)
@@ -454,7 +468,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(11)->m_artifactID", m_artifacts.at(11)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(11)->m_artifactLevel", m_artifacts.at(11)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(11)->m_artimaxLevel", m_artifacts.at(11)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(11)->m_artiDpsUp", m_artifacts.at(11)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(11)->m_artifactStar", m_artifacts.at(11)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 12)
@@ -463,7 +477,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(12)->m_artifactID", m_artifacts.at(12)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(12)->m_artifactLevel", m_artifacts.at(12)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(12)->m_artimaxLevel", m_artifacts.at(12)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(12)->m_artiDpsUp", m_artifacts.at(12)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(12)->m_artifactStar", m_artifacts.at(12)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 13)
@@ -472,7 +486,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(13)->m_artifactID", m_artifacts.at(13)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(13)->m_artifactLevel", m_artifacts.at(13)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(13)->m_artimaxLevel", m_artifacts.at(13)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(13)->m_artiDpsUp", m_artifacts.at(13)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(13)->m_artifactStar", m_artifacts.at(13)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 14)
@@ -481,7 +495,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(14)->m_artifactID", m_artifacts.at(14)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(14)->m_artifactLevel", m_artifacts.at(14)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(14)->m_artimaxLevel", m_artifacts.at(14)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(14)->m_artiDpsUp", m_artifacts.at(14)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(14)->m_artifactStar", m_artifacts.at(14)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 15)
@@ -490,7 +504,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(15)->m_artifactID", m_artifacts.at(15)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(15)->m_artifactLevel", m_artifacts.at(15)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(15)->m_artimaxLevel", m_artifacts.at(15)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(15)->m_artiDpsUp", m_artifacts.at(15)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(15)->m_artifactStar", m_artifacts.at(15)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 16)
@@ -499,7 +513,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(16)->m_artifactID", m_artifacts.at(16)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(16)->m_artifactLevel", m_artifacts.at(16)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(16)->m_artimaxLevel", m_artifacts.at(16)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(16)->m_artiDpsUp", m_artifacts.at(16)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(16)->m_artifactStar", m_artifacts.at(16)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 17)
@@ -508,7 +522,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(17)->m_artifactID", m_artifacts.at(17)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(17)->m_artifactLevel", m_artifacts.at(17)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(17)->m_artimaxLevel", m_artifacts.at(17)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(17)->m_artiDpsUp", m_artifacts.at(17)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(17)->m_artifactStar", m_artifacts.at(17)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 18)
@@ -517,7 +531,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(18)->m_artifactID", m_artifacts.at(18)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(18)->m_artifactLevel", m_artifacts.at(18)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(18)->m_artimaxLevel", m_artifacts.at(18)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(18)->m_artiDpsUp", m_artifacts.at(18)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(18)->m_artifactStar", m_artifacts.at(18)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 19)
@@ -526,7 +540,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(19)->m_artifactID", m_artifacts.at(19)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(19)->m_artifactLevel", m_artifacts.at(19)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(19)->m_artimaxLevel", m_artifacts.at(19)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(19)->m_artiDpsUp", m_artifacts.at(19)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(19)->m_artifactStar", m_artifacts.at(19)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 20)
@@ -535,7 +549,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(20)->m_artifactID", m_artifacts.at(20)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(20)->m_artifactLevel", m_artifacts.at(20)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(20)->m_artimaxLevel", m_artifacts.at(20)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(20)->m_artiDpsUp", m_artifacts.at(20)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(20)->m_artifactStar", m_artifacts.at(20)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 21)
@@ -544,7 +558,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(21)->m_artifactID", m_artifacts.at(21)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(21)->m_artifactLevel", m_artifacts.at(21)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(21)->m_artimaxLevel", m_artifacts.at(21)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(21)->m_artiDpsUp", m_artifacts.at(21)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(21)->m_artifactStar", m_artifacts.at(21)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 22)
@@ -553,7 +567,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(22)->m_artifactID", m_artifacts.at(22)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(22)->m_artifactLevel", m_artifacts.at(22)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(22)->m_artimaxLevel", m_artifacts.at(22)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(22)->m_artiDpsUp", m_artifacts.at(22)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(22)->m_artifactStar", m_artifacts.at(22)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 23)
@@ -562,7 +576,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(23)->m_artifactID", m_artifacts.at(23)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(23)->m_artifactLevel", m_artifacts.at(23)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(23)->m_artimaxLevel", m_artifacts.at(23)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(23)->m_artiDpsUp", m_artifacts.at(23)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(23)->m_artifactStar", m_artifacts.at(23)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 24)
@@ -571,7 +585,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(24)->m_artifactID", m_artifacts.at(24)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(24)->m_artifactLevel", m_artifacts.at(24)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(24)->m_artimaxLevel", m_artifacts.at(24)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(24)->m_artiDpsUp", m_artifacts.at(24)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(24)->m_artifactStar", m_artifacts.at(24)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 25)
@@ -580,7 +594,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(25)->m_artifactID", m_artifacts.at(25)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(25)->m_artifactLevel", m_artifacts.at(25)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(25)->m_artimaxLevel", m_artifacts.at(25)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(25)->m_artiDpsUp", m_artifacts.at(25)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(25)->m_artifactStar", m_artifacts.at(25)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 26)
@@ -589,7 +603,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(26)->m_artifactID", m_artifacts.at(26)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(26)->m_artifactLevel", m_artifacts.at(26)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(26)->m_artimaxLevel", m_artifacts.at(26)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(26)->m_artiDpsUp", m_artifacts.at(26)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(26)->m_artifactStar", m_artifacts.at(26)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 27)
@@ -598,7 +612,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(27)->m_artifactID", m_artifacts.at(27)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(27)->m_artifactLevel", m_artifacts.at(27)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(27)->m_artimaxLevel", m_artifacts.at(27)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(27)->m_artiDpsUp", m_artifacts.at(27)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(27)->m_artifactStar", m_artifacts.at(27)->m_artifactStar, allocator);
 
 	}
 	if (m_artifacts.size() > 28)
@@ -607,7 +621,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(28)->m_artifactID", m_artifacts.at(28)->m_artifactID, allocator);
 		document.AddMember("m_artifacts.at(28)->m_artifactLevel", m_artifacts.at(28)->m_artifactLevel, allocator);
 		document.AddMember("m_artifacts.at(28)->m_artimaxLevel", m_artifacts.at(28)->m_artimaxLevel, allocator);
-		document.AddMember("m_artifacts.at(28)->m_artiDpsUp", m_artifacts.at(28)->m_artiDpsUp, allocator);
+		document.AddMember("m_artifacts.at(28)->m_artifactStar", m_artifacts.at(28)->m_artifactStar, allocator);
 
 	}
 }
@@ -642,6 +656,7 @@ void ArtifactData::readUserDefault()
 			arhave->m_artifactID = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artifactID", i).c_str()].GetInt();
 			arhave->m_artifactLevel = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artifactLevel", i).c_str()].GetInt();
 			arhave->m_artimaxLevel = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artimaxLevel", i).c_str()].GetInt();
+			arhave->m_artifactStar = jsd[cocos2d::StringUtils::format("m_artifacts.at(%d)->m_artifactStar", i).c_str()].GetInt();
 			m_artifacts.push_back(arhave);
 		}
 		

@@ -33,6 +33,7 @@ public:
 	int getNeededArStone();
 	int getLevel(int id);
 	int getMaxLevel(int id);
+	int getnextMaxLevel(int id);
 	int getStarNum(int id);
 	int addArNum();
 	void arLevelUp(int id);

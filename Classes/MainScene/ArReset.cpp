@@ -62,7 +62,7 @@ void ArReset::initArResetLayer(int id)
 	auto starNum = ArtifactData::getInstance()->getStarNum(id);
 	starLvNow->setString(StringUtils::format("%d", starNum).c_str());
 	starLvNext->setString(StringUtils::format("%d", starNum+1).c_str());
-	auto level = ArtifactData::getInstance()->getLevel(id);
+	auto level = ArtifactData::getInstance()->getMaxLevel(id);
 	LvNow->setString(StringUtils::format("%d",level).c_str());
 	LvNext->setString(StringUtils::format("%d", level + 1).c_str());
 	arLvNow->setString(StringUtils::format("Lv%d", level).c_str());

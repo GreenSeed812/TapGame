@@ -363,11 +363,11 @@
                     <PreSize X="0.3667" Y="0.0820" />
                     <FileData Type="Normal" Path="lan.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="TotalDps" ActionTag="493277090" Tag="608" IconVisible="False" LeftMargin="108.7584" RightMargin="124.2416" TopMargin="357.8691" BottomMargin="246.1309" LeftEage="279" RightEage="279" TopEage="13" BottomEage="13" Scale9OriginX="279" Scale9OriginY="13" Scale9Width="289" Scale9Height="16" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="skill_time" ActionTag="493277090" VisibleForFrame="False" Tag="608" IconVisible="False" LeftMargin="108.7584" RightMargin="124.2416" TopMargin="357.8691" BottomMargin="246.1309" LeftEage="279" RightEage="279" TopEage="13" BottomEage="13" Scale9OriginX="279" Scale9OriginY="13" Scale9Width="289" Scale9Height="16" ctype="ImageViewObjectData">
                     <Size X="847.0000" Y="42.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="532.2584" Y="267.1309" />
-                    <Scale ScaleX="1.0765" ScaleY="0.5910" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.4928" Y="0.4135" />
                     <PreSize X="0.7843" Y="0.0650" />

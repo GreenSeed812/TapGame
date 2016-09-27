@@ -44,8 +44,8 @@ PlayerData::PlayerData()
 	m_hpNow.number = hp.number;
 	m_hpNow.Mathbit = hp.Mathbit;
 	
-	m_gold.number = 1000;
-	m_gold.Mathbit = 30;
+	m_gold.number = 0;
+	m_gold.Mathbit = 0;
 
 	m_basedps.number = 1;
 	m_basedps.Mathbit = 0;
@@ -82,7 +82,8 @@ PlayerData::PlayerData()
 		m_skillCD[i] = 0;
 	}
 	
-	
+	m_defeatMG.number = 1;
+	m_defeatMG.Mathbit = 0;
 	
 
 	
@@ -128,6 +129,20 @@ void PlayerData::dataInit()
 			m_servantUpDps[i] = Ruler::getInstance()->multiplay(m_servantUpDps[i], mul);
 
 
+		}
+	}
+	m_defeatMG.number = 1;
+	m_defeatMG.Mathbit = 0;
+	if (m_level == 0)
+		;
+	else if (m_level == 1)
+		m_defeatMG.number = 2;
+	else
+	{
+		for (int i = 2; i <= m_level + 1; i++)
+		{
+			auto tmp = Ruler::getInstance()->multiplay(m_defeatMG, 1.58);
+			m_defeatMG = tmp;
 		}
 	}
 }
@@ -264,6 +279,15 @@ void PlayerData::levelUp()
 {
 	m_level++;
 	AchieveData::getInstance()->maxLevel(m_level);
+	if (m_level == 2)
+	{
+		m_defeatMG.number = 2;
+		m_defeatMG.Mathbit = 0;
+	}
+	else
+	{
+		m_defeatMG = Ruler::getInstance()->multiplay(m_defeatMG, 1.58);
+	}
 	if (m_level > 4)
 	{
 		m_latest.m_HpData[m_level % 5] = Ruler::getInstance()->multiplay(m_latest.m_HpData[m_level % 5], 9.54);
@@ -353,23 +377,9 @@ MyNum PlayerData::getPlayerlvup100Gold()
 	m_up100Gold = Ruler::getInstance()->addNum(m_upGold, m_up100Gold);
 	return m_up100Gold;
 }
-void PlayerData::defeatMonsterGold()
+MyNum PlayerData::defeatMonsterGold()
 {
-	MyNum baseNum;
-	baseNum.number = 1;
-	baseNum.Mathbit = 0;
-	if (m_level == 0)
-		;
-	else if (m_level == 1)
-		baseNum.number = 2;
-	else
-	{
-		for (int i = 2; i <= m_level + 1; i++)
-		{
-			auto tmp = Ruler::getInstance()->multiplay(baseNum, 1.58);
-			baseNum = tmp;
-		}
-	}
+	auto baseNum = m_defeatMG;
 	auto random = cocos2d::random(0, 99);
 	if (random < ArtifactData::getInstance()->gettenGoldPer())
 	{
@@ -389,31 +399,11 @@ void PlayerData::defeatMonsterGold()
 	}
 	if (ShopData::getInstance()->getItemBeUsedById(10))
 		baseNum = Ruler::getInstance()->multiplay(baseNum, 1.5);
-	auto tmp = Ruler::getInstance()->addNumUp(m_gold, baseNum);
-	AchieveData::getInstance()->addCoin(baseNum);
-	m_gold = tmp;
-	cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
+	return baseNum;
 }
 MyNum PlayerData::getdefeatMonsterGold()
-{
-	MyNum baseNum;
-	baseNum.number = 1;
-	baseNum.Mathbit = 0;
-	
-	if (m_level == 0)
-		;
-	else if (m_level == 1)
-		baseNum.number = 2;
-	else
-	{
-		for (int i = 2; i <= m_level + 1; i++)
-		{
-			auto tmp = Ruler::getInstance()->multiplay(baseNum, 1.58);
-			baseNum = tmp;
-		}
-	}
-	
-	return baseNum;
+{	
+	return m_defeatMG;
 }
 
 MyNum PlayerData::getDps()

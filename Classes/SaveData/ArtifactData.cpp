@@ -73,12 +73,13 @@ int ArtifactData::addArNum()
 	arthave->m_artifactStar = 1;
 	arthave->m_artifactLevel = 1;
 	arthave->m_artimaxLevel = 1;
+	std::vector<ArtiHave*>::iterator insertIt = m_artifacts.begin() + m_artifactNum - m_fiveStar;
 	m_artifactNum++;
 	AchieveData::getInstance()->ArMaxNum(m_artifactNum);
 	auto artSkill = SqLite::getInstance()->getArtifactSkillByID(id);
 	arthave->m_artiDpsUp = artSkill.ar.AllDpsUp;
 	m_AllDpsMul += artSkill.ar.initAllDps;
-	m_artifacts.push_back(arthave);
+	m_artifacts.insert(insertIt, arthave);
 	if (artSkill.skillID != 0)
 	{
 		if (artSkill.ar.effid == 29)

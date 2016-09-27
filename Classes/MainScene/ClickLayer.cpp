@@ -42,8 +42,8 @@ bool ClickLayer::onTouchBegan(Touch *touch, Event*)
 {
 	
 	auto point = touch->getLocation();
-	
-	if (point.y >= 607)
+	log("%d",point.y);
+	if (point.y >= 714)
 	{
 
 		m_armature->getAnimation()->playByIndex(0, -1, 0);

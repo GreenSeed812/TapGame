@@ -5,6 +5,8 @@
 #include "SaveData/PlayerData.h"
 #include "SaveData/ArtifactData.h"
 #include "SaveData/ShopData.h"
+#include "Tool/TimeTool.h"
+#include "SaveData/DataStatics.h"
 #include "Tool/SqLite.h"
 using namespace ui;
 
@@ -66,6 +68,7 @@ void Relife::initRelife()
 			CCNotificationCenter::destroyInstance();
 			AchieveData::getInstance()->relife();
 			PlayerData::getInstance()->relife();
+			DataStatics::getInstance()->setRelifeTime(TimeTool::getInstance()->getTime());
 		}
 	});
 }

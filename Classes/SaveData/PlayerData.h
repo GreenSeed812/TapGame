@@ -3,6 +3,7 @@
 #include "Tool/Rule.h"
 #include "Tool/SqLite.h"
 #include <vector>
+
 struct LatestData
 {
 	std::vector<MyNum> m_HpData;

@@ -29,8 +29,6 @@ bool ArtifactButton::init()
 void ArtifactButton::initArtifactLayer(int id,bool check)
 {
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(ArtifactButton::arChange), "ArChange", nullptr);
-	auto head = (Button*)m_layer->getChildByName("arHead");
-	auto LevelUp = (Button*)m_layer->getChildByName("up");
 	if (check)
 	{
 		m_id = id;
@@ -38,7 +36,10 @@ void ArtifactButton::initArtifactLayer(int id,bool check)
 	else
 	{
 		m_id = ArtifactData::getInstance()->addArNum();
+		cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
 	}
+	auto head = (Button*)m_layer->getChildByName("arHead");
+	auto LevelUp = (Button*)m_layer->getChildByName("up");
 	LevelUp->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType event)
 	{
 		if (event == Widget::TouchEventType::ENDED)
@@ -69,7 +70,6 @@ void ArtifactButton::arChange(Ref*)
 	m_level = ArtifactData::getInstance()->getLevel(m_id);
 
 	//»ñÈ¡¿Ø¼þ
-	
 	auto name = (Text*)m_layer->getChildByName("discribe")->getChildByName("name");
 	auto level = (Text*)m_layer->getChildByName("discribe")->getChildByName("lv");
 	auto effect = (Text*)m_layer->getChildByName("discribe")->getChildByName("effect");
@@ -97,7 +97,7 @@ void ArtifactButton::arChange(Ref*)
 	dps->setString(StringUtils::format("%.1f%%", dpsData * 100).c_str());
 	arStone->setString(StringUtils::format("%d", ArtifactData::getInstance()->getLevel(m_id) * 2).c_str());
 
-	if (m_level < ArtifactData::getInstance()->getMaxLevel(m_id))
+	if (m_level < ArtifactData::getInstance()->getMaxLevel(m_id) || ArtifactData::getInstance()->getMaxLevel(m_id) == -1)
 	{
 		m_levelUp = true;
 	}

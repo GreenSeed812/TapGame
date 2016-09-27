@@ -59,22 +59,53 @@ void ArReset::initArResetLayer(int id)
 	//ÉèÖÃ¿Ø¼þ
 	head->setTexture(StringUtils::format("ui/downUi/artifact/big/%d.png",id));
 	name->setString(SqLite::getInstance()->getArtifactSkillByID(id).ar.NAME);
+
 	auto starNum = ArtifactData::getInstance()->getStarNum(id);
 	starLvNow->setString(StringUtils::format("%d", starNum).c_str());
 	starLvNext->setString(StringUtils::format("%d", starNum+1).c_str());
-	auto level = ArtifactData::getInstance()->getMaxLevel(id);
-	LvNow->setString(StringUtils::format("%d",level).c_str());
-	LvNext->setString(StringUtils::format("%d", level + 1).c_str());
+	if (starNum >= 5)
+	{
+		auto arrow1 = (Sprite*)m_layer->getChildByName("starBg")->getChildByName("arrow1");
+		auto arrow2 = (Sprite*)m_layer->getChildByName("starBg")->getChildByName("arrow2");
+		auto arrow3 = (Sprite*)m_layer->getChildByName("starBg")->getChildByName("arrow3");
+		auto arrow4 = (Sprite*)m_layer->getChildByName("starBg")->getChildByName("arrow4");
+		auto star = (Sprite*)m_layer->getChildByName("starBg")->getChildByName("star2");
+		auto x = (Sprite*)m_layer->getChildByName("starBg")->getChildByName("x");
+		arrow1->setVisible(false);
+		arrow2->setVisible(false);
+		arrow3->setVisible(false);
+		arrow4->setVisible(false);
+		LvNext->setVisible(false);
+		star->setVisible(false);
+		x->setVisible(false);
+		starLvNext->setVisible(false);
+	}
+
+	auto lvMaxNow = ArtifactData::getInstance()->getMaxLevel(id);
+	auto lvMaxNext = ArtifactData::getInstance()->getnextMaxLevel(m_id);
+	LvNow->setString(StringUtils::format("%d", lvMaxNow).c_str());
+	LvNext->setString(StringUtils::format("%d", lvMaxNext).c_str());
+	if (lvMaxNext == -1)
+	{
+		LvNext->setString("MAX");
+	}
+	if (lvMaxNow == -1)
+	{	
+		LvNow->setString("MAX");	
+	}
+
 	auto lv = ArtifactData::getInstance()->getLevel(id);
 	arLvNow->setString(StringUtils::format("Lv%d", lv).c_str());
 	arlvNext->setString(StringUtils::format("Lv%d", lv + 1).c_str());
+
 	auto effid = SqLite::getInstance()->getArtifactSkillByID(id).ar.effid;
 	auto effData = SqLite::getInstance()->getArtifactSkillByID(id).ar.effData;
 	auto effDataUp = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.effDataUp;
-	effData += effDataUp*level;
+	effData += effDataUp*lv;
 	arNowNL->setString(SqLite::getInstance()->getSkillEffDis(effid) + StringUtils::format("+%.1f%%", effData * 100).c_str());
-	effData += effDataUp*(level+1);
+	effData += effDataUp*(lv+1);
 	arNextNL->setString(SqLite::getInstance()->getSkillEffDis(effid) + StringUtils::format("+%.1f%%", effData * 100).c_str());
+	
 	auto dpsData = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.initAllDps;
 	auto dpsUp = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.AllDpsUp;
 	auto levelNum = ArtifactData::getInstance()->getLevel(m_id);
@@ -86,7 +117,6 @@ void ArReset::initArResetLayer(int id)
 	
 	auto artifactStone = (ArtifactData::getInstance()->getLevel(m_id)-1) * 2;
 	artifactStone += pow(2, ArtifactData::getInstance()->getArNum()- 1);
-
 	arStoneNum->setString(StringUtils::format("%d", artifactStone).c_str());
 	reSetNum->setString(StringUtils::format("%d", 200).c_str());
 

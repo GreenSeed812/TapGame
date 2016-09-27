@@ -1,8 +1,10 @@
 #include "Ui/ItemLayer.h"
 #include "ui/CocosGUI.h"
+#include "Ui/ArStarUp.h"
 #include <cocostudio/CocoStudio.h> 
 #include "SaveData/PlayerData.h"
 #include "SaveData/ShopData.h"
+#include "SaveData/ArtifactData.h"
 #include "Tool/SqLite.h"
 #include "Tool/Rule.h"
 using namespace ui;
@@ -23,6 +25,13 @@ bool ItemLayer::init()
 
 void ItemLayer::initItemLayer(int id)
 {
+	ArStarUp::getInstance()->setNode(m_node);
+	auto strings = FileUtils::getInstance()->getValueMapFromFile("fonts/text.xml");
+	m_text = TextFieldTTF::createWithTTF(strings["text2"].asString(), "fonts/FZDH.ttf", 36);
+	m_text->setPosition(m_node->getContentSize() / 2);
+	m_text->setName("itemText");
+	m_node->addChild(m_text);
+	m_text->setVisible(false);
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(ItemLayer::itemChange), "itemChange", nullptr);
 	m_id = id;
 	auto info = (Text*)m_layer->getChildByName("infoBg")->getChildByName("info");
@@ -65,7 +74,23 @@ void ItemLayer::initItemLayer(int id)
 			else
 			{
 				ShopData::getInstance()->buyItemByID(m_id);
-				ShopData::getInstance()->subShopGold(SqLite::getInstance()->getItemByID(m_id)->expense);
+				if (m_id == 7)
+				{
+					if (!ArtifactData::getInstance()->arStarUp())
+					{
+						m_text->setVisible(true);
+						auto action = Sequence::create(DelayTime::create(3), CallFuncN::create(CC_CALLBACK_1(ItemLayer::callBack, this)),nullptr);
+						m_text->runAction(action);					
+					}
+					else
+					{
+						ShopData::getInstance()->subShopGold(SqLite::getInstance()->getItemByID(m_id)->expense);
+					}
+				}
+				else
+				{
+					ShopData::getInstance()->subShopGold(SqLite::getInstance()->getItemByID(m_id)->expense);
+				}
 			}
 			CCNotificationCenter::getInstance()->postNotification("itemChange");
 		}
@@ -143,6 +168,10 @@ void ItemLayer::btnChange()
 			{
 				up->setEnabled(false);
 			}
+			if (m_id == 8)
+			{
+				up->setEnabled(false);
+			}
 		}
 		money->setVisible(true);
 		up->getChildByName("money")->setVisible(true);
@@ -181,4 +210,9 @@ void ItemLayer::btnChange()
 void ItemLayer::setTime()
 {
 	m_time = ShopData::getInstance()->getItemDataById(m_id)->leftTime;
+}
+
+void ItemLayer::callBack(Node* node)
+{
+	m_text->setVisible(false);
 }

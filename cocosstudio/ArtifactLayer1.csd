@@ -6,7 +6,7 @@
       <ObjectData Name="Layer" Tag="70" ctype="GameLayerObjectData">
         <Size X="1080.0000" Y="1920.0000" />
         <Children>
-          <AbstractNodeData Name="layer" ActionTag="-763526515" Tag="71" IconVisible="False" LeftMargin="24.8348" RightMargin="40.1652" TopMargin="297.8346" BottomMargin="615.1654" ctype="SpriteObjectData">
+          <AbstractNodeData Name="layer" ActionTag="-763526515" Tag="71" IconVisible="False" LeftMargin="24.8348" RightMargin="40.1653" TopMargin="297.8346" BottomMargin="615.1654" ctype="SpriteObjectData">
             <Size X="1015.0000" Y="1007.0000" />
             <Children>
               <AbstractNodeData Name="bgs" ActionTag="-1909258832" Tag="59" IconVisible="False" LeftMargin="155.4746" RightMargin="715.5254" TopMargin="104.4404" BottomMargin="759.5596" ctype="SpriteObjectData">
@@ -129,7 +129,7 @@
                     <FileData Type="Normal" Path="xx_ar.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Sprite_18" ActionTag="-2072432853" Tag="106" IconVisible="False" LeftMargin="492.4905" RightMargin="106.5095" TopMargin="42.0651" BottomMargin="92.9349" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="x" ActionTag="-2072432853" Tag="106" IconVisible="False" LeftMargin="492.4905" RightMargin="106.5095" TopMargin="42.0651" BottomMargin="92.9349" ctype="SpriteObjectData">
                     <Size X="25.0000" Y="28.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="504.9905" Y="106.9349" />
@@ -152,7 +152,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Sprite_8" ActionTag="-540163071" Tag="747" IconVisible="False" LeftMargin="361.6636" RightMargin="227.3364" TopMargin="35.3664" BottomMargin="90.6336" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="arrow1" ActionTag="-540163071" Tag="747" IconVisible="False" LeftMargin="361.6636" RightMargin="227.3364" TopMargin="35.3664" BottomMargin="90.6336" ctype="SpriteObjectData">
                     <Size X="35.0000" Y="37.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="379.1636" Y="109.1336" />
@@ -163,7 +163,7 @@
                     <FileData Type="Normal" Path="jiantou_ar.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Sprite_9" ActionTag="171442071" Tag="748" IconVisible="False" LeftMargin="384.7857" RightMargin="204.2143" TopMargin="35.3667" BottomMargin="90.6333" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="arrow2" ActionTag="171442071" Tag="748" IconVisible="False" LeftMargin="384.7857" RightMargin="204.2143" TopMargin="35.3667" BottomMargin="90.6333" ctype="SpriteObjectData">
                     <Size X="35.0000" Y="37.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="402.2857" Y="109.1333" />
@@ -210,7 +210,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Sprite_11" ActionTag="794069699" Tag="753" IconVisible="False" LeftMargin="359.5712" RightMargin="229.4288" TopMargin="89.3181" BottomMargin="36.6819" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="arrow3" ActionTag="794069699" Tag="753" IconVisible="False" LeftMargin="359.5712" RightMargin="229.4288" TopMargin="89.3181" BottomMargin="36.6819" ctype="SpriteObjectData">
                     <Size X="35.0000" Y="37.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="377.0712" Y="55.1819" />
@@ -221,7 +221,7 @@
                     <FileData Type="Normal" Path="jiantou_ar.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Sprite_14" ActionTag="-1836736828" Tag="754" RotationSkewX="-0.1853" RotationSkewY="-0.1853" IconVisible="False" LeftMargin="383.8611" RightMargin="205.1389" TopMargin="89.9810" BottomMargin="36.0190" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="arrow4" ActionTag="-1836736828" Tag="754" RotationSkewX="-0.1853" RotationSkewY="-0.1853" IconVisible="False" LeftMargin="383.8611" RightMargin="205.1389" TopMargin="89.9810" BottomMargin="36.0190" ctype="SpriteObjectData">
                     <Size X="35.0000" Y="37.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="401.3611" Y="54.5190" />
@@ -298,7 +298,7 @@
                   <AbstractNodeData Name="jiNeng1" ActionTag="337419924" Tag="758" IconVisible="False" LeftMargin="252.5303" RightMargin="73.4697" TopMargin="68.4497" BottomMargin="198.5503" ctype="SpriteObjectData">
                     <Size X="311.0000" Y="112.0000" />
                     <Children>
-                      <AbstractNodeData Name="Text_6" ActionTag="-645559744" Tag="148" IconVisible="False" LeftMargin="15.1637" RightMargin="185.8363" TopMargin="57.2748" BottomMargin="29.7252" FontSize="22" LabelText="所有攻击力" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="Text_6" ActionTag="-645559744" Tag="148" IconVisible="False" LeftMargin="15.1673" RightMargin="185.8327" TopMargin="57.2740" BottomMargin="29.7260" FontSize="22" LabelText="所有攻击力" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="110.0000" Y="25.0000" />
                         <AnchorPoint ScaleX="0.4454" ScaleY="0.4020" />
                         <Position X="64.1613" Y="39.7760" />

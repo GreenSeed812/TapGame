@@ -3,6 +3,7 @@
 #include "MissionData.h"
 #include "SaveData/ArtifactData.h"
 #include "Ui/ItemLayer.h"
+
 static ShopData* g_SD = nullptr;
 ShopData::ShopData()
 :m_shopGold(10000)
@@ -53,14 +54,10 @@ void ShopData::buyItemByID(int id)
 		{
 			MissionData::getInstance()->addMissionTimesById(5);
 		}
-		if (id == 7)
-		{
-			ArtifactData::getInstance()->arStarUp();
-		}
 		getItemDataById(id)->leftTime = SqLite::getInstance()->getItemByID(id)->time;
 		m_items[id]->isUsing = true;
 	}
-
+	CCNotificationCenter::getInstance()->postNotification("itemChange");
 }
 bool ShopData::getItemBeUsedById(int id)
 {
@@ -168,8 +165,5 @@ void ShopData::saveUserData(Document& document)
 	document.AddMember("m_items[11]->isUsing", m_items[11]->isUsing, allocator);
 	document.AddMember("m_items[12]->leftTime", m_items[12]->leftTime, allocator);
 	document.AddMember("m_items[12]->itemNum", m_items[12]->itemNum, allocator);
-	document.AddMember("m_items[12]->isUsing", m_items[12]->isUsing, allocator);
-	
-	
-	
+	document.AddMember("m_items[12]->isUsing", m_items[12]->isUsing, allocator);	
 }

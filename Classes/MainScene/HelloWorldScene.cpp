@@ -75,7 +75,7 @@ bool HelloWorld::init()
 	m_exchangeCount = 5;
 	m_dayCount = 0;
     rootNode = CSLoader::createNode("MainScene.csb");
-	
+	rootNode->setName("main");
 	if (!mapInit())
 	{
 		return false;
@@ -587,6 +587,7 @@ void HelloWorld::uiCallBack()
 						auto widget = Widget::create();
 						widget->setName(StringUtils::format("shopWidget%d", i).c_str());
 						auto item = ItemLayer::create();
+						item->setNode(rootNode);
 						item->setName(StringUtils::format("shopItem%d",i).c_str());
 						item->initItemLayer(i);
 						auto size = item->getContentSize();

@@ -2,6 +2,8 @@
 #include "math.h"
 #include "Tool/SqLite.h"
 #include "PlayerData.h"
+#include "Ui/ArStarUp.h"
+#include "SaveData/ShopData.h"
 #include <cocos2d.h>
 static ArtifactData* g_ar = nullptr;
 ArtifactData* ArtifactData::getInstance()
@@ -156,7 +158,6 @@ int ArtifactData::addArNum()
 		}
 	}
 	PlayerData::getInstance()->saveUserData();	
-	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
 	return id;
 
 }
@@ -185,17 +186,18 @@ bool ArtifactData::arStarUp()
 	auto uparNum = cocos2d::random(0, m_artifactNum - m_fiveStar - 1);
 	std::vector<ArtiHave*>::iterator it = m_artifacts.begin();
 	it = it + uparNum;
-	(*it)->m_artifactStar++;
 	(*it)->m_artimaxLevel = SqLite::getInstance()->getArtifactSkillByID((*it)->m_artifactID).ar.star[(*it)->m_artifactStar - 1];
+	(*it)->m_artifactStar++;
 	if ((*it)->m_artifactStar == 5)
 	{
 		remove(m_artifacts.begin(), m_artifacts.end(), *it);
 		m_fiveStar++;
 	}
-
+	ArStarUp::getInstance()->init((*it)->m_artifactID);
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
 	return true;
 }
+
 int ArtifactData::getLevel(int id)
 {
 	for (int i = 0; i < m_artifactNum; i++)
@@ -203,13 +205,12 @@ int ArtifactData::getLevel(int id)
 		
 		if (m_artifacts.at(i)->m_artifactID == id)
 		{
-
-			return m_artifacts.at(i)->m_artifactLevel;
-		
+			return m_artifacts.at(i)->m_artifactLevel;	
 		}
 	}
 	return -1;
 }
+
 int ArtifactData::getMaxLevel(int id)
 {
 	for (int i = 0; i < m_artifactNum; i++)
@@ -218,7 +219,6 @@ int ArtifactData::getMaxLevel(int id)
 		if (m_artifacts.at(i)->m_artifactID == id)
 		{
 			return m_artifacts.at(i)->m_artimaxLevel;
-
 		}
 	}
 	return -1;
@@ -231,7 +231,7 @@ int ArtifactData::getnextMaxLevel(int id)
 
 		if (m_artifacts.at(i)->m_artifactID == id)
 		{
-			return SqLite::getInstance()->getArtifactSkillByID(id).ar.star[m_artifacts.at(i)->m_artifactStar];
+			return SqLite::getInstance()->getArtifactSkillByID(id).ar.star[m_artifacts.at(i)->m_artifactStar-1];
 		}
 	}
 	
@@ -362,7 +362,7 @@ void ArtifactData::saveUserDefault(Document& document)
 	document.AddMember("servantLevelUpDown", servantLevelUpDown, allocator);
 	document.AddMember("WaveDown", WaveDown, allocator);
 	document.AddMember("servantUnlockDown", servantUnlockDown, allocator);
-	
+	document.AddMember("m_fiveStar", m_fiveStar, allocator);
 	if (m_artifacts.size() > 0)
 	{
 		document.AddMember("m_artifacts.at(0)->m_artiDpsUp", m_artifacts.at(0)->m_artiDpsUp, allocator);
@@ -624,6 +624,7 @@ void ArtifactData::saveUserDefault(Document& document)
 		document.AddMember("m_artifacts.at(28)->m_artifactStar", m_artifacts.at(28)->m_artifactStar, allocator);
 
 	}
+	
 }
 void ArtifactData::readUserDefault()
 {
@@ -648,7 +649,7 @@ void ArtifactData::readUserDefault()
 		servantLevelUpDown = jsd["servantLevelUpDown"].GetDouble();
 		WaveDown = jsd["WaveDown"].GetDouble();
 		servantUnlockDown = jsd["servantUnlockDown"].GetDouble();
-	
+		m_fiveStar = jsd["m_fiveStar"].GetInt();
 		for (int i = 0; i < m_artifactNum; i++)
 		{
 			ArtiHave * arhave = new ArtiHave();

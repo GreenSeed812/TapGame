@@ -5,7 +5,8 @@ public:
 	static DataStatics* getInstance();
 	std::string getCurrent(int id);
 	std::string getStatic(int id);
-
+	void setGameDay(int time){ m_initGameDay = time; };
+	void setRelifeTime(int time){ m_lastRelife = time; }
 private:
 	DataStatics();
 	~DataStatics();

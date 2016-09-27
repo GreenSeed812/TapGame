@@ -4,5 +4,7 @@
 <dict>
 	<key>text1</key>
 	<string>请输入角色名</string>
+	<key>text2</key>
+	<string>您所拥有的神器星级都已到达最大！</string>
 </dict>
 </plist>

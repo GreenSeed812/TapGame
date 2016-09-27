@@ -8,8 +8,10 @@
 #include "Tool/SqLite.h"
 #include "Tool/Rule.h"
 #include "Tool/SpecManager.h"
+#include "Tool/TimeTool.h"
 #include "SaveData/PlayerData.h"
 #include "SaveData/State.h"
+#include "SaveData/DataStatics.h"
 #include "Ui/bossButton.h"
 #include "MainScene/ClickLayer.h"
 #include "MainScene/PlayerButton.h"
@@ -105,6 +107,7 @@ void LoadingScene::initLoading()
 					PlayerData::getInstance()->setName(name->getText());
 					UserDefault::getInstance()->setStringForKey("name", name->getText());
 					Director::getInstance()->replaceScene(scene);
+					DataStatics::getInstance()->setGameDay(TimeTool::getInstance()->getTime());
 				}
 				else
 				{

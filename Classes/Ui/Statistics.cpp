@@ -4,6 +4,7 @@
 #include <cocostudio/CocoStudio.h> 
 #include "SaveData/PlayerData.h"
 #include "SaveData/ArtifactData.h"
+#include "SaveData/DataStatics.h"
 #include "Tool/SqLite.h"
 #include "Tool/Rule.h"
 using namespace ui;
@@ -62,19 +63,19 @@ void Statistics::statisticsChange(Ref* ref)
 
 	playerLv->setString(StringUtils::format("%d", PlayerData::getInstance()->getPlayerLevel()).c_str());
 	servantLv->setString(StringUtils::format("%d", PlayerData::getInstance()->getServantAverLevel()).c_str());
-	gold->setString(StringUtils::format("%d%%", ArtifactData::getInstance()->getrmGoldPer() * 100).c_str());
-	crit->setString(StringUtils::format("%d", 0).c_str());
-	critHurt->setString(StringUtils::format("%d", 0).c_str());
-	relifeTime->setString(StringUtils::format("%d", 0).c_str());
-	playerLvZ->setString(StringUtils::format("%d", 0).c_str());
-	goldZ->setString(StringUtils::format("%d", 0).c_str());
-	clickNum->setString(StringUtils::format("%d", 0).c_str());
-	monsterNum->setString(StringUtils::format("%d", 0).c_str());
-	monsterRareNum->setString(StringUtils::format("%d", 0).c_str());
-	boosNum->setString(StringUtils::format("%d", 0).c_str());
-	critNum->setString(StringUtils::format("%d", 0).c_str());
-	maxLv->setString(StringUtils::format("%d", 0).c_str());
-	relifeNum->setString(StringUtils::format("%d", 0).c_str());
-	playDays->setString(StringUtils::format("%d", 0).c_str());
-	maxSerNum->setString(StringUtils::format("%d", 0).c_str());
+	gold->setString(DataStatics::getInstance()->getCurrent(3));
+	crit->setString(DataStatics::getInstance()->getCurrent(4));
+	critHurt->setString(DataStatics::getInstance()->getCurrent(5));
+	relifeTime->setString(DataStatics::getInstance()->getCurrent(6));
+	playerLvZ->setString(DataStatics::getInstance()->getStatic(1));
+	goldZ->setString(DataStatics::getInstance()->getStatic(2));
+	clickNum->setString(DataStatics::getInstance()->getStatic(3));
+	monsterNum->setString(DataStatics::getInstance()->getStatic(4));
+	monsterRareNum->setString(DataStatics::getInstance()->getStatic(5));
+	boosNum->setString(DataStatics::getInstance()->getStatic(6));
+	critNum->setString(DataStatics::getInstance()->getStatic(7));
+	maxLv->setString(DataStatics::getInstance()->getStatic(8));
+	relifeNum->setString(DataStatics::getInstance()->getStatic(9));
+	playDays->setString(DataStatics::getInstance()->getStatic(10));
+	maxSerNum->setString(DataStatics::getInstance()->getStatic(11));
 }

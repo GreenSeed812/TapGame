@@ -7,6 +7,7 @@ class ItemLayer : public cocos2d::Layer
 {
 public:
 	bool init();
+	void setNode(Node * node){ m_node = node; }
 	void initItemLayer(int id);
 	void itemChange(Ref*);
 	void setTime();
@@ -16,8 +17,11 @@ private:
 	Node * m_layer;
 	float m_time;
 	int m_id;
+	Node * m_node;
+	Label * m_text;
 	void btnChange();
 	void timeCalculate();
+	void callBack(Node*);
 };
 
 #endif

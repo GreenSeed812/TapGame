@@ -27,10 +27,7 @@
     </Item>
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="ArtifactLayer1.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="ArtifactLayer1.csd" />
+        <ActiveDocument />
       </Value>
     </Item>
   </Properties>

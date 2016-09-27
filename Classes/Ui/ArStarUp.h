@@ -10,10 +10,12 @@ public:
 	bool init(int);
 	static ArStarUp* getInstance();
 	static ArStarUp * g_asu;
+	void setNode(Node * node){ m_mainNode = node; }
 private:
 	Node * m_node;
+	Node * m_mainNode;
 	LayerColor * m_bgLayer;
-	
+	void arCallBack(Node *);
 };
 
 #endif

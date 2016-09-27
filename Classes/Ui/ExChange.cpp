@@ -30,6 +30,7 @@ bool ExChange::init()
 	listener->setSwallowTouches(true);
 	listener->onTouchBegan = [](Touch*, Event*)->bool{return true; };
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, m_rootNode);
+
 	return true;
 }
 

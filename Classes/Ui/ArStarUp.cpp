@@ -3,6 +3,7 @@
 #include "ui/CocosGUI.h"
 #include <cocostudio/CocoStudio.h> 
 #include "SaveData/ArtifactData.h"
+#include "Tool/SqLite.h"
 using namespace ui;
 
 ArStarUp * ArStarUp::g_asu = nullptr;
@@ -29,8 +30,8 @@ bool ArStarUp::init(int id)
 	auto head = (Sprite*)m_node->getChildByName("head");
 	auto name = (Text*)m_node->getChildByName("name");
 	auto starNum = ArtifactData::getInstance()->getStarNum(id);
-	head->setTexture(StringUtils::format("ui/downUi/artifact/%d.png",id+1).c_str());
-
+	head->setTexture(StringUtils::format("ui/downUi/artifact/%d.png",id).c_str());
+	name->setString(SqLite::getInstance()->getArtifactSkillByID(id).ar.NAME);
 	for (size_t i = 1; i <= starNum; i++)
 	{
 		auto star = m_node->getChildByName(StringUtils::format("star%d",i).c_str());
@@ -46,11 +47,20 @@ bool ArStarUp::init(int id)
 			star->setColor(color);
 		}
 	}
+	m_bgLayer = LayerColor::create(Color4B(50, 50, 50, 155));
+	m_mainNode->addChild(m_bgLayer);
 	m_mainNode->addChild(m_node);
+
+	auto listener = EventListenerTouchOneByOne::create();
+	listener->setSwallowTouches(true);
+	listener->onTouchBegan = [](Touch*, Event*)->bool{return true; };
+	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, m_node);
+	
 	return true;
 }
 
 void ArStarUp::arCallBack(Node * node)
 {
+	m_bgLayer->removeFromParent();
 	m_node->removeFromParent();
 }

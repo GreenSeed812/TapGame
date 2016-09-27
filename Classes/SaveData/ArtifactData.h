@@ -6,6 +6,7 @@
 #include "json/document.h"
 #include "json/writer.h"
 #include "json/stringbuffer.h"
+#include "PlayerData.h"
 using namespace  rapidjson;
 struct ArtiHave
 {
@@ -21,11 +22,13 @@ class ArtifactData
 public:
 	static ArtifactData* getInstance();
 	void subArtiStone(int i){ m_artifactStone -= i; 
+	PlayerData::getInstance()->saveUserData();
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArtiChange");
 	}
 	void addArtiStone(int i){
 		AchieveData::getInstance()->addArStone(i);
 		m_artifactStone += i;
+		PlayerData::getInstance()->saveUserData();
 		cocos2d::CCNotificationCenter::getInstance()->postNotification("ArtiChange");
 	}
 	int getArtiStone(){ return m_artifactStone; }

@@ -10,6 +10,7 @@
 #include "json/writer.h"
 #include "json/stringbuffer.h"
 #include "MissionData.h"
+#include "SaveData/DataStatics.h"
 using namespace  rapidjson;
 #include <math.h>
 #include<cocos2d.h>
@@ -44,8 +45,8 @@ PlayerData::PlayerData()
 	m_hpNow.number = hp.number;
 	m_hpNow.Mathbit = hp.Mathbit;
 	
-	m_gold.number = 0;
-	m_gold.Mathbit = 0;
+	m_gold.number = 999;
+	m_gold.Mathbit = 20;
 
 	m_basedps.number = 1;
 	m_basedps.Mathbit = 0;
@@ -245,6 +246,7 @@ bool PlayerData::init()
 	ArtifactData::getInstance()->readUserDefault();
 	MyState::getInstance()->readUserDefault();
 	ShopData::getInstance()->readUserData();
+	DataStatics::getInstance()->readUserDefault();
 	return true;
 }
 
@@ -337,7 +339,7 @@ void PlayerData::heroLevelUp()
 	m_playerUpGold = Ruler::getInstance()->multiplayUp(m_playerUpGold, mul);
 	AchieveData::getInstance()->maxPlayerLevel(m_playerLevel);
 	MissionData::getInstance()->addMissionTimesById(7);
-	
+	DataStatics::getInstance()->playerLevelUp();
 }
 MyNum PlayerData::getPlayerlvupDps()
 {
@@ -927,6 +929,7 @@ void PlayerData::saveUserData()
 	AchieveData::getInstance()->saveUserDefault(document);
 	MyState::getInstance()->saveUserDefault(document);
 	ShopData::getInstance()->saveUserData(document);
+	DataStatics::getInstance()->saveUserDefault(document);
 	StringBuffer buffer;
 	rapidjson::Writer<StringBuffer> writer(buffer);
 	document.Accept(writer);
@@ -1000,4 +1003,10 @@ MyNum PlayerData::getPlayerlvup100Dps()
 void PlayerData::setSkillCD(int id,float t)
 {
 	m_skillCD[id-1] = t;
+}
+void PlayerData::addServantNum()
+{
+	m_servantNum++; 
+	if (DataStatics::getInstance()->getservantMaxNum() < m_servantNum)
+		DataStatics::getInstance()->setservantNumMax(m_servantNum);
 }

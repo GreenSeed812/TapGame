@@ -40,10 +40,12 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/SaveData/MonsterState.cpp \
 				   ../../Classes/SaveData/MissionData.cpp \
 				   ../../Classes/SaveData/LeaveGold.cpp \
+				   ../../Classes/SaveData/DataStatics.cpp \
 				   ../../Classes/Ui/bossButton.cpp \
 				   ../../Classes/LoadingScene/LoadingScene.cpp \
 				   ../../Classes/Ui/AchieveLayer.cpp \
 				   ../../Classes/Ui/AchieveItem.cpp \
+				   ../../Classes/Ui/ArStarUp.cpp \
 				   ../../Classes/Ui/MissionLayer.cpp \
 				   ../../Classes/Ui/TaskItem.cpp \
 				   ../../Classes/Ui/settingLayer.cpp \

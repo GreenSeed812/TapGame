@@ -473,7 +473,8 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/Ui/SignLayer.o: \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h \
  jni/../../Classes/SaveData/ArtifactData.h \
- jni/../../Classes/SaveData/AchieveData.h
+ jni/../../Classes/SaveData/AchieveData.h \
+ jni/../../Classes/SaveData/PlayerData.h
 
 jni/../../Classes/Ui/SignLayer.h:
 
@@ -1430,3 +1431,5 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuf
 jni/../../Classes/SaveData/ArtifactData.h:
 
 jni/../../Classes/SaveData/AchieveData.h:
+
+jni/../../Classes/SaveData/PlayerData.h:

@@ -538,6 +538,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/LoadingScene/Loadin
  jni/../../Classes/Tool/SqLite.h jni/../../Classes/Tool/sqlite3.h \
  jni/../../Classes/Tool/MyNum.h jni/../../Classes/Tool/SpecManager.h \
  jni/../../Classes/Tool/SqLite.h jni/../../Classes/Tool/sqlite3.h \
+ jni/../../Classes/Tool/TimeTool.h \
  jni/../../Classes/SaveData/PlayerData.h \
  jni/../../Classes/SaveData/State.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/writer.h \
@@ -546,6 +547,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/LoadingScene/Loadin
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/itoa.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h \
+ jni/../../Classes/SaveData/DataStatics.h \
  jni/../../Classes/Ui/bossButton.h \
  jni/../../Classes/MainScene/ClickLayer.h \
  jni/../../Classes/MainScene/PlayerButton.h \
@@ -1636,6 +1638,8 @@ jni/../../Classes/Tool/SqLite.h:
 
 jni/../../Classes/Tool/sqlite3.h:
 
+jni/../../Classes/Tool/TimeTool.h:
+
 jni/../../Classes/SaveData/PlayerData.h:
 
 jni/../../Classes/SaveData/State.h:
@@ -1651,6 +1655,8 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuf
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h:
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h:
+
+jni/../../Classes/SaveData/DataStatics.h:
 
 jni/../../Classes/Ui/bossButton.h:
 

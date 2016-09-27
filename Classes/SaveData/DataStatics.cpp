@@ -9,7 +9,6 @@ static DataStatics* g_data;
 DataStatics::DataStatics()
 	:m_playerTotalLevel(0)
 	, m_servantMaxNum(0)
-	, m_exploreNum(0)
 {
 }
 
@@ -102,7 +101,7 @@ std::string DataStatics::getStatic(int id)
 	}
 	if (id == 7)
 	{
-		return StringUtils::format("%d", m_exploreNum);
+		return StringUtils::format("%d", AchieveData::getInstance()->getexploreNum());
 	}
 	if (id == 8)
 	{
@@ -126,5 +125,26 @@ std::string DataStatics::getStatic(int id)
 	if (id == 11)
 	{
 		return StringUtils::format("%d", m_servantMaxNum);
+	}
+}
+void DataStatics::saveUserDefault(Document& document)
+{
+	Document::AllocatorType& allocator = document.GetAllocator();
+	document.AddMember("m_playerTotalLevel",m_playerTotalLevel, allocator);
+	document.AddMember("m_lastRelife", m_lastRelife, allocator);
+	document.AddMember("m_initGameDay", m_initGameDay, allocator);
+	document.AddMember("m_servantMaxNum", m_servantMaxNum, allocator);
+}
+void DataStatics::readUserDefault()
+{
+	std::string json = cocos2d::UserDefault::getInstance()->getStringForKey("UserDefault");
+	rapidjson::Document jsd;
+	jsd.Parse<0>(json.c_str());
+	if (jsd.IsObject())
+	{
+		m_playerTotalLevel = jsd["m_playerTotalLevel"].GetInt();
+		m_lastRelife = jsd["m_lastRelife"].GetInt();
+		m_initGameDay = jsd["m_initGameDay"].GetInt();
+		m_servantMaxNum = jsd["m_servantMaxNum"].GetInt();
 	}
 }

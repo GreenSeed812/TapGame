@@ -475,6 +475,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/Ui/TaskItem.o: \
  jni/../../Classes/SaveData/AchieveData.h \
  jni/../../Classes/SaveData/ArtifactData.h \
  jni/../../Classes/SaveData/AchieveData.h \
+ jni/../../Classes/SaveData/PlayerData.h \
  jni/../../Classes/SaveData/MissionData.h
 
 jni/../../Classes/Ui/TaskItem.h:
@@ -1434,5 +1435,7 @@ jni/../../Classes/SaveData/AchieveData.h:
 jni/../../Classes/SaveData/ArtifactData.h:
 
 jni/../../Classes/SaveData/AchieveData.h:
+
+jni/../../Classes/SaveData/PlayerData.h:
 
 jni/../../Classes/SaveData/MissionData.h:

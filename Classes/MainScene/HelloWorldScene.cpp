@@ -155,7 +155,7 @@ void HelloWorld::coinChange(Ref *ref)
 	}
 	ExChange::setCount(m_exchangeCount);
 
-	PlayerData::getInstance()->saveUserData();
+	//PlayerData::getInstance()->saveUserData();
 
 }
 
@@ -335,6 +335,7 @@ void HelloWorld::createMonster()
 		armature->setScale(1.5f);
 	}
 	monsterNode->addChild(armature);
+	PlayerData::getInstance()->saveUserData();
 }
 void HelloWorld::update(float dt)
 {

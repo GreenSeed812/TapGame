@@ -469,7 +469,8 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/MainScene/SkillCD.o
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/itoa.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/itoa.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h \
+ jni/../../Classes/SaveData/PlayerData.h
 
 jni/../../Classes/MainScene/SkillCD.h:
 
@@ -1416,3 +1417,5 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuf
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h:
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h:
+
+jni/../../Classes/SaveData/PlayerData.h:

@@ -3,7 +3,7 @@
 #include "MissionData.h"
 #include "SaveData/ArtifactData.h"
 #include "Ui/ItemLayer.h"
-
+#include "PlayerData.h"
 static ShopData* g_SD = nullptr;
 ShopData::ShopData()
 :m_shopGold(10000)
@@ -76,11 +76,14 @@ int ShopData::getCount(int id)
 
 void ShopData::subShopGold(int gold)
 {
+	PlayerData::getInstance()->saveUserData();
 	m_shopGold -= gold; 
 }
 void ShopData::addShopGold(int gold)
 {
+	PlayerData::getInstance()->saveUserData();
 	m_shopGold += gold; 
+	
 }
 
 ItemData * ShopData::getItemDataById(int id)

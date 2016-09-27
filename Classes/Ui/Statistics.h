@@ -11,6 +11,7 @@ public:
 	bool init();
 	void initStatistics();
 	void statisticsChange(Ref * ref);
+
 	CREATE_FUNC(Statistics);
 
 private:

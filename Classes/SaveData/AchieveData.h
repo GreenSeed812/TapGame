@@ -35,6 +35,7 @@ public:
 	int getBossKill(){ return m_bossKill; }
 	int getMaxxLevel(){ return m_maxLevel; }
 	int getRelifeNum(){ return m_relifeNum; }
+	int getexploreNum(){ return exploreNum; }
 	MyNum getCoinCollect(){ return m_coinCollect; }
 public:
 	MyNum getMyNumByID(int id);

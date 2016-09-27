@@ -19,7 +19,7 @@ public:
 	void addGold(MyNum* gold);
 	void addServantNum(){m_servantNum++;}
 	int getArtiStone(){ return 1000; }
-	void defeatMonsterGold();
+	MyNum defeatMonsterGold();
 	static PlayerData * getInstance();
 	float getBanTime(int i){ return m_skillData.at(i-1)->baseBanTime; }
 	MyNum getdefeatMonsterGold();
@@ -154,5 +154,6 @@ private:
 	MyNum m_playerUpDps;
 	MyNum m_servantUpDps[33];
 	MyNum m_servantUpGold[33];
+	MyNum m_defeatMG;
 };
 #endif

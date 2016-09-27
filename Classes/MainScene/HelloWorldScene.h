@@ -63,6 +63,13 @@ public:
 	void shopItemCDUpDate(float dt);
 	void saveSkillCD(float dt);
 	void coinAni();
+public:
+	void addSktShow(){ m_skilltimeSliderShow++; }
+	void delSktShow(){ m_skilltimeSliderShow-- ;
+	if (m_skilltimeSliderShow == 0)
+		m_skilltimeSlider->runAction(Hide::create());
+	}
+	void delexploreCoin(Ref*,int);
     CREATE_FUNC(HelloWorld);
 private:
 	Node* rootNode;
@@ -74,6 +81,7 @@ private:
 	Node * m_shopLayer;
 	Node * noNode;
 	Node * m_skillButton[6];
+	Node * m_skilltimeSlider;
 	bool showTime;
 	int timeNow;
 	int m_exchangeCount;
@@ -93,7 +101,8 @@ private:
 	static tm* m_time;
 	Sprite* m_kssjEffect;
 	Sprite* m_klgjEffect;
-	
+	int m_skilltimeSliderShow;
+	int m_exploreCoinNum;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

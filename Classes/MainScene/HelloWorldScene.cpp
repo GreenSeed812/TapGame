@@ -127,7 +127,9 @@ bool HelloWorld::init()
 	waveNum->setString(StringUtils::format("%d/%d", PlayerData::getInstance()->getWaveNow(), PlayerData::getInstance()->getMaxWave() - 1));
 	bossBt = nullptr;
 	m_gamelogic = true;
-	
+	m_skilltimeSlider = rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("skill_time");
+	m_skilltimeSliderShow = 0;
+	m_exploreCoinNum = 0;
     return true;
 }
 void HelloWorld::coinChange(Ref *ref)
@@ -231,13 +233,7 @@ void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const
 void HelloWorld::createMonster()
 {
 	auto r = random(0, 4);
-	auto monster = SqLite::getInstance()->getMonsterByID(PlayerData::getInstance()->getRandNpc(r));
-	ArmatureDataManager::getInstance()->addArmatureFileInfo(monster->png, monster->plist, monster->exportJson);//读取动画相关文件
-	armature = Armature::create(monster->name);
-	armature->setName("MonsterArmature");
-	armature->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(HelloWorld::callBackFunc));
-	Node* monsterNode = (Node*)rootNode->getChildByName("MonsterNode");
-	armature->getAnimation()->play("Start");
+	
 	Slider * hpSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider");
 
 	auto hpNum = PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel());
@@ -249,15 +245,13 @@ void HelloWorld::createMonster()
 	TextBMFont* tbm = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider")->getChildByName("hpNow");
 	tbm->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel())));
 	PlayerData::getInstance()->setHpNow(PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()));
-	monsterNode->addChild(armature);
+	
 
 	Slider* timeSlider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("timeSlider");
-	armature->setScale(1.5f);
 	if (PlayerData::getInstance()->getWaveNow() == PlayerData::getInstance()->getMaxWave())
 	{
 		
 		PlayerData::getInstance()->resetTime();
-		armature->setScale(2.0f);
 		timeNow = PlayerData::getInstance()->getMaxTime() * 1000;
 		timeSlider->runAction(Show::create());
 		timeSlider->setMaxPercent(PlayerData::getInstance()->getMaxTime()*1000);
@@ -281,6 +275,10 @@ void HelloWorld::createMonster()
 				bossBt->onTouchEnded(nullptr, nullptr);
 
 			}
+		}
+		else
+		{
+			MonsterState::getInstance()->setSaveBoss(false);
 		}
 		PlayerData::getInstance()->randRareMonster();
 		timeSlider->runAction(Hide::create());
@@ -306,7 +304,37 @@ void HelloWorld::createMonster()
 			rootNode->getChildByName("grayDragon")->runAction(Hide::create());
 		}
 	}
-	
+	MonsterData* monster;
+	if (MonsterState::getInstance()->getTypeNow() == MONSTER_TYPE::BOSS)
+	{
+		if (!MonsterState::getInstance()->getSaveBoss())
+		{
+			MonsterState::getInstance()->saveBoss(SqLite::getInstance()->getMonsterByID(PlayerData::getInstance()->getRandNpc(r)));
+			monster = MonsterState::getInstance()->getBoss();
+		}
+		else
+			monster = MonsterState::getInstance()->getBoss();
+	}
+	else
+	{
+		
+		monster = SqLite::getInstance()->getMonsterByID(PlayerData::getInstance()->getRandNpc(r));
+	}
+	ArmatureDataManager::getInstance()->addArmatureFileInfo(monster->png, monster->plist, monster->exportJson);//读取动画相关文件
+	armature = Armature::create(monster->name);
+	armature->setName("MonsterArmature");
+	armature->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(HelloWorld::callBackFunc));
+	Node* monsterNode = (Node*)rootNode->getChildByName("MonsterNode");
+	armature->getAnimation()->play("Start");
+	if (MonsterState::getInstance()->getTypeNow() == MONSTER_TYPE::BOSS)
+	{
+		armature->setScale(2.0f);
+	}
+	else
+	{
+		armature->setScale(1.5f);
+	}
+	monsterNode->addChild(armature);
 }
 void HelloWorld::update(float dt)
 {
@@ -665,7 +693,7 @@ void HelloWorld::killBoss()
 	if (Ruler::getInstance()->Zero(PlayerData::getInstance()->getHpNow()))
 	{
 		m_hitlogic = false;
-		PlayerData::getInstance()->defeatMonsterGold();
+		//PlayerData::getInstance()->defeatMonsterGold();
 		coinAni();
 		if (PlayerData::getInstance()->getWaveNow() < PlayerData::getInstance()->getMaxWave() - 1 && PlayerData::getInstance()->getWaveNow() != 0)
 		{
@@ -913,6 +941,16 @@ void HelloWorld::playerSkillCallBack()
 				m_skill[i - 1]->setEnabled(false);
 				PlayerData::getInstance()->openSkill(i - 1);
 				AchieveData::getInstance()->skillUsed(i-1);
+				
+				if (i != 1)
+				{
+					m_skilltimeSlider->runAction(Show::create());
+					auto skillSp = Sprite::create(StringUtils::format("skillCD/s%d.png", i));
+					skillSp->setPosition(skillSp->getContentSize() / 2);
+					auto seq = Sequence::create(CallFuncN::create(CC_CALLBACK_0(HelloWorld::addSktShow, this)), MoveBy::create(PlayerData::getInstance()->getKeepTime(i), Vec2(800, 0)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), CallFuncN::create(CC_CALLBACK_0(HelloWorld::delSktShow, this)), NULL);
+					m_skilltimeSlider->addChild(skillSp);
+					skillSp->runAction(seq);
+				}
 				if (i == 2)
 				{
 					m_kssjEffect = Sprite::create();
@@ -1141,7 +1179,11 @@ void HelloWorld::normalAtk()
 {
 	
 	Slider* slider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider");
-
+	if (PlayerData::getInstance()->getHpNow().number < 0)
+	{
+		MyNum num0;
+		PlayerData::getInstance()->setHpNow(num0);
+	}
 	if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit == PlayerData::getInstance()->getHpNow().Mathbit)
 		slider->setPercent(PlayerData::getInstance()->getHpNow().number * 1000000);
 	else if (PlayerData::getInstance()->getHpByID(PlayerData::getInstance()->getLevel()).Mathbit - PlayerData::getInstance()->getHpNow().Mathbit == 1)
@@ -1395,6 +1437,7 @@ void HelloWorld::shopItemEff(float dt)
 			m_klgjEffect->runAction(RepeatForever::create(animate));
 			MyAnimation::getInstance()->setKLGJplaying(true);
 		}
+		auto tmpTime = ShopData::getInstance()->getItemDataById(12)->leftTime;
 		ShopData::getInstance()->getItemDataById(12)->leftTime -= dt;
 		if (ShopData::getInstance()->getItemDataById(12)->leftTime / 1 != (ShopData::getInstance()->getItemDataById(12)->leftTime - dt) / 1)
 		{
@@ -1403,10 +1446,11 @@ void HelloWorld::shopItemEff(float dt)
 		PlayerData::getInstance()->subHp(Ruler::getInstance()->multiplay(PlayerData::getInstance()->getTapDps(),10*dt));
 		if (ShopData::getInstance()->getItemDataById(12)->leftTime <= 0)
 		{
-			ShopData::getInstance()->stopItemById(12);
+			
 			ShopData::getInstance()->getItemDataById(12)->leftTime = 0;
 			MyAnimation::getInstance()->setKLGJplaying(false);
 			m_klgjEffect->removeFromParent();
+			ShopData::getInstance()->stopItemById(12);
 		}	
 		
 	}
@@ -1423,10 +1467,12 @@ void HelloWorld::shopItemCDUpDate(float dt)
 			{
 				showSiTime(10, ShopData::getInstance()->getItemDataById(i)->leftTime - dt);
 			}
-			if (ShopData::getInstance()->getItemDataById(i)->leftTime <= 0)
+			/*if (ShopData::getInstance()->getItemDataById(i)->leftTime <= 0)
 			{
+				
 				ShopData::getInstance()->stopItemById(i);
-			}
+				
+			}*/
 		}
 		
 		
@@ -1655,9 +1701,18 @@ void HelloWorld::coinAni()
 		auto knum = CoinAnimation::getInstance()->getKnum();
 		auto xMove = random(-400, 400);
 		auto jumpNum = random(1, 3);
-		auto seq = Sequence::create(JumpBy::create(0.5, Point(xMove, -300), abs(xMove)*knum, 1), JumpBy::create(0.5, Point(xMove / 5, 0), 50, jumpNum), DelayTime::create(3), JumpTo::create(1, Point(-50, 400), 50, 1), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+		auto seq = Sequence::create(JumpBy::create(0.5, Point(xMove, -300), abs(xMove)*knum, 1), JumpBy::create(0.5, Point(xMove / 5, 0), 50, jumpNum), DelayTime::create(3), JumpTo::create(1, Point(-50, 400), 50, 1), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)),CallFuncN::create(CC_CALLBACK_1(HelloWorld::delexploreCoin,this,coinnum)),NULL);
 		gold->runAction(seq);
 	}
 	
 	
+}
+void HelloWorld::delexploreCoin(Ref*,int num)
+{
+
+	MyNum n;
+	n.Mathbit = 0;
+	n.number = num;
+	auto gold = Ruler::getInstance()->devide(PlayerData::getInstance()->defeatMonsterGold(), n);
+	PlayerData::getInstance()->addGold(&gold);
 }

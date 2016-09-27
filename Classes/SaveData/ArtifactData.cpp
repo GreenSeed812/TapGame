@@ -189,12 +189,14 @@ bool ArtifactData::arStarUp()
 	it = it + uparNum;
 	(*it)->m_artimaxLevel = SqLite::getInstance()->getArtifactSkillByID((*it)->m_artifactID).ar.star[(*it)->m_artifactStar - 1];
 	(*it)->m_artifactStar++;
+	ArStarUp::getInstance()->init((*it)->m_artifactID);
 	if ((*it)->m_artifactStar == 5)
 	{
+		auto tmp = *it;
 		remove(m_artifacts.begin(), m_artifacts.end(), *it);
+		*it = tmp;
 		m_fiveStar++;
 	}
-	ArStarUp::getInstance()->init((*it)->m_artifactID);
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
 	return true;
 }

@@ -75,6 +75,20 @@
           </AbstractNodeData>
           <AbstractNodeData Name="btn1" ActionTag="-2050615184" Tag="188" IconVisible="False" LeftMargin="119.8870" RightMargin="703.1130" TopMargin="588.0785" BottomMargin="1142.9215" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="227" Scale9Height="167" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="257.0000" Y="189.0000" />
+            <Children>
+              <AbstractNodeData Name="text" ActionTag="1666663662" Tag="30" IconVisible="False" LeftMargin="45.9275" RightMargin="66.0725" TopMargin="63.6057" BottomMargin="70.3943" FontSize="48" LabelText="未签到" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="145.0000" Y="55.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="118.4275" Y="97.8943" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4608" Y="0.5180" />
+                <PreSize X="0.5642" Y="0.2910" />
+                <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="248.3870" Y="1237.4215" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -100,6 +114,20 @@
           </AbstractNodeData>
           <AbstractNodeData Name="btn2" ActionTag="1857287386" Tag="192" IconVisible="False" LeftMargin="407.2570" RightMargin="415.7430" TopMargin="584.9453" BottomMargin="1142.0547" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="227" Scale9Height="171" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="257.0000" Y="193.0000" />
+            <Children>
+              <AbstractNodeData Name="text" ActionTag="611260874" Tag="53" IconVisible="False" LeftMargin="63.8489" RightMargin="48.1511" TopMargin="66.2254" BottomMargin="71.7746" FontSize="48" LabelText="未签到" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="145.0000" Y="55.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="136.3489" Y="99.2746" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5305" Y="0.5144" />
+                <PreSize X="0.5642" Y="0.2850" />
+                <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="535.7570" Y="1238.5547" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -115,6 +143,20 @@
           </AbstractNodeData>
           <AbstractNodeData Name="btn6" ActionTag="-685850627" Tag="193" IconVisible="False" LeftMargin="692.4247" RightMargin="130.5753" TopMargin="819.8218" BottomMargin="909.1782" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="227" Scale9Height="169" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="257.0000" Y="191.0000" />
+            <Children>
+              <AbstractNodeData Name="text" ActionTag="2067790928" Tag="54" IconVisible="False" LeftMargin="59.0073" RightMargin="52.9927" TopMargin="68.5338" BottomMargin="67.4662" FontSize="48" LabelText="未签到" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="145.0000" Y="55.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="131.5073" Y="94.9662" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5117" Y="0.4972" />
+                <PreSize X="0.5642" Y="0.2880" />
+                <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="820.9247" Y="1004.6782" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -130,6 +172,20 @@
           </AbstractNodeData>
           <AbstractNodeData Name="btn5" ActionTag="411711085" Tag="194" IconVisible="False" LeftMargin="405.9819" RightMargin="417.0181" TopMargin="820.3250" BottomMargin="906.6750" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="227" Scale9Height="171" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="257.0000" Y="193.0000" />
+            <Children>
+              <AbstractNodeData Name="text" ActionTag="819812881" Tag="57" IconVisible="False" LeftMargin="59.4806" RightMargin="52.5194" TopMargin="69.3127" BottomMargin="68.6873" FontSize="48" LabelText="未签到" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="145.0000" Y="55.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="131.9806" Y="96.1873" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5135" Y="0.4984" />
+                <PreSize X="0.5642" Y="0.2850" />
+                <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="534.4819" Y="1003.1750" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -145,6 +201,20 @@
           </AbstractNodeData>
           <AbstractNodeData Name="btn4" ActionTag="-608386828" Tag="195" IconVisible="False" LeftMargin="119.3833" RightMargin="703.6167" TopMargin="822.5647" BottomMargin="908.4353" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="227" Scale9Height="167" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="257.0000" Y="189.0000" />
+            <Children>
+              <AbstractNodeData Name="text" ActionTag="-506590915" Tag="56" IconVisible="False" LeftMargin="47.7867" RightMargin="64.2133" TopMargin="66.2328" BottomMargin="67.7672" FontSize="48" LabelText="未签到" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="145.0000" Y="55.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="120.2867" Y="95.2672" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4680" Y="0.5041" />
+                <PreSize X="0.5642" Y="0.2910" />
+                <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="247.8833" Y="1002.9353" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -160,6 +230,20 @@
           </AbstractNodeData>
           <AbstractNodeData Name="btn3" ActionTag="-1629272897" Tag="196" IconVisible="False" LeftMargin="690.9176" RightMargin="132.0824" TopMargin="584.2227" BottomMargin="1144.7773" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="227" Scale9Height="169" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="257.0000" Y="191.0000" />
+            <Children>
+              <AbstractNodeData Name="text" ActionTag="1897292265" Tag="55" IconVisible="False" LeftMargin="60.0871" RightMargin="51.9129" TopMargin="65.3815" BottomMargin="70.6185" FontSize="48" LabelText="未签到" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="145.0000" Y="55.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="132.5871" Y="98.1185" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5159" Y="0.5137" />
+                <PreSize X="0.5642" Y="0.2880" />
+                <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="819.4176" Y="1240.2773" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -225,6 +309,20 @@
           </AbstractNodeData>
           <AbstractNodeData Name="btn7" ActionTag="2079568964" Tag="215" IconVisible="False" LeftMargin="374.3682" RightMargin="377.6318" TopMargin="1030.2655" BottomMargin="724.7345" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="298" Scale9Height="143" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="328.0000" Y="165.0000" />
+            <Children>
+              <AbstractNodeData Name="text" ActionTag="526425526" Tag="58" IconVisible="False" LeftMargin="83.2381" RightMargin="99.7619" TopMargin="49.3821" BottomMargin="60.6179" FontSize="48" LabelText="未签到" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="145.0000" Y="55.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="155.7381" Y="88.1179" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4748" Y="0.5340" />
+                <PreSize X="0.4421" Y="0.3333" />
+                <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="538.3682" Y="807.2345" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />

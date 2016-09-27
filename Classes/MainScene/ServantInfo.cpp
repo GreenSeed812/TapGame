@@ -42,7 +42,9 @@ void ServantInfo::initServantInfo(int id)
 		auto skillName = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName(StringUtils::format("skillBg_%d", i + 1).c_str())->getChildByName(StringUtils::format("skillName_%d", i + 1).c_str());
 		auto skillInfo = (Text*)m_layer->getChildByName("skillInfoBg")->getChildByName(StringUtils::format("skillBg_%d", i + 1).c_str())->getChildByName(StringUtils::format("skillInfo_%d", i + 1).c_str());
 		skillName->setString(SqLite::getInstance()->getServantByID(id)->skill[i].skillname);
-		skillInfo->setString(SqLite::getInstance()->getSkillEffDis(SqLite::getInstance()->getServantByID(id)->skill[i].skillID));
+		auto str = SqLite::getInstance()->getSkillEffDis(SqLite::getInstance()->getServantByID(id)->skill[i].skillID);
+		auto eff = StringUtils::format("%.1f%%", SqLite::getInstance()->getServantByID(id)->skill[i].effect*100);
+		skillInfo->setString(StringUtils::format("%s%s",str.c_str(),eff.c_str()).c_str());
 		for (size_t j = 0; j < PlayerData::getInstance()->getServantSkillNum(id); j++)
 		{
 			auto skillHead = (ImageView*)m_layer->getChildByName("skillInfoBg")->getChildByName(StringUtils::format("skillHead_%d", j + 1).c_str());

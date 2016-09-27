@@ -196,7 +196,6 @@
         <TTF Name="font.ttf" />
         <Image Name="frame.png" />
         <TTF Name="FZDH.ttf" />
-        <TTF Name="FZXH.ttf" />
         <Image Name="g.png" />
         <Image Name="gold.png" />
         <Image Name="gongqiao (1).png" />
@@ -264,7 +263,6 @@
         <Image Name="lhs_ar.png" />
         <Image Name="lhsk.png" />
         <Image Name="linghunshi.png" />
-        <Image Name="Load.png" />
         <Image Name="lv (3).png" />
         <Image Name="lv.png" />
         <Image Name="lxsy.png" />
@@ -335,8 +333,6 @@
         <Image Name="tx-d.png" />
         <Image Name="txk.png" />
         <Image Name="upButton.png" />
-        <Image Name="weiqiandao.png" />
-        <Image Name="weiqiandao0.png" />
         <Image Name="x (2).png" />
         <Image Name="x.png" />
         <Image Name="x_ar.png" />
@@ -351,7 +347,6 @@
         <Image Name="xuetiao.png" />
         <Image Name="xx.png" />
         <Image Name="xx_ar.png" />
-        <Image Name="xxx.png" />
         <Image Name="yb.png" />
         <Image Name="yb0.png" />
         <Image Name="ybjs.png" />
@@ -361,8 +356,6 @@
         <Image Name="yinxiao0.png" />
         <Image Name="yinyue.png" />
         <Image Name="yinyue0.png" />
-        <Image Name="yiqiandao0.png" />
-        <Image Name="yiquandao.png" />
         <Image Name="yld.jpg" />
         <Project Name="yongbing.csd" Type="Layer" />
         <TTF Name="youyuan.ttf" />
@@ -374,12 +367,10 @@
         <Image Name="zhuansheng (12).png" />
         <Image Name="zhuansheng (2).png" />
         <Image Name="zhuansheng (3).png" />
-        <Image Name="zhuansheng (4).png" />
         <Image Name="zhuansheng (5).png" />
         <Image Name="zhuansheng (6).png" />
         <Image Name="zhuansheng (7).png" />
         <Image Name="zhuansheng (8).png" />
-        <Image Name="zhuansheng (9).png" />
         <Project Name="zhuansheng.csd" Type="Layer" />
         <Image Name="zhujiao-2.png" />
         <Project Name="zhujiaojieshao.csd" Type="Layer" />

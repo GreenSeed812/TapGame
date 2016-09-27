@@ -65,6 +65,7 @@ void SignLayer::initSignLayer()
 							HelloWorld::dayChange();
 							btn->setEnabled(false);
 							m_state = false;
+							signChange(this);
 							auto num = (TextBMFont*)rootNode->getChildByName("bg")->getChildByName("dayNum");
 							num->setString(StringUtils::format("%d", 1).c_str());
 						}
@@ -194,6 +195,7 @@ void SignLayer::initSignLayer()
 							m_state = false;
 							auto num = (TextBMFont*)rootNode->getChildByName("bg")->getChildByName("dayNum");
 							num->setString(StringUtils::format("%d",7).c_str());
+							signChange(this);
 						}					
 					}
 				}
@@ -302,6 +304,14 @@ void SignLayer::signChange(Ref*ref)
 			{
 				auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (i + 1)).c_str());
 				btn->setEnabled(true);
+			}
+		}
+		for (size_t i = 0; i < 7; i++)
+		{
+			auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (i + 1)).c_str());
+			if (!btn->isEnabled())
+			{
+				btn->getChildByName("text")->setVisible(false);
 			}
 		}
 	}

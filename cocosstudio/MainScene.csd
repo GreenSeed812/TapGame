@@ -564,10 +564,10 @@
             <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="dragon" ActionTag="-1966853615" VisibleForFrame="False" Tag="110" IconVisible="False" LeftMargin="768.3610" RightMargin="203.6390" TopMargin="180.6749" BottomMargin="1663.3251" LeftEage="36" RightEage="36" TopEage="25" BottomEage="25" Scale9OriginX="36" Scale9OriginY="25" Scale9Width="36" Scale9Height="26" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="dragon" ActionTag="-1966853615" VisibleForFrame="False" Tag="110" IconVisible="False" LeftMargin="768.3600" RightMargin="203.6400" TopMargin="180.6700" BottomMargin="1663.3300" LeftEage="36" RightEage="36" TopEage="25" BottomEage="25" Scale9OriginX="36" Scale9OriginY="25" Scale9Width="36" Scale9Height="26" ctype="ImageViewObjectData">
             <Size X="108.0000" Y="76.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="822.3610" Y="1701.3251" />
+            <Position X="822.3600" Y="1701.3300" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.7614" Y="0.8861" />
@@ -586,10 +586,10 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="grayDragon" ActionTag="805445610" VisibleForFrame="False" Tag="210" IconVisible="False" LeftMargin="774.5411" RightMargin="197.4589" TopMargin="179.7935" BottomMargin="1664.2065" ctype="SpriteObjectData">
+          <AbstractNodeData Name="grayDragon" ActionTag="805445610" VisibleForFrame="False" Tag="210" IconVisible="False" LeftMargin="774.5400" RightMargin="197.4600" TopMargin="179.7900" BottomMargin="1664.2100" ctype="SpriteObjectData">
             <Size X="108.0000" Y="76.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="828.5411" Y="1702.2065" />
+            <Position X="828.5400" Y="1702.2100" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.7672" Y="0.8866" />

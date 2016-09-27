@@ -39,7 +39,7 @@ bool ArStarUp::init(int id)
 		auto tinTo = TintTo::create(3,color);
 		if (i == starNum)
 		{
-			auto action = Sequence::create(tinTo,CallFuncN::create(CC_CALLBACK_1(ArStarUp::arCallBack, this)), nullptr);
+			auto action = Sequence::create(tinTo,DelayTime::create(2),CallFuncN::create(CC_CALLBACK_1(ArStarUp::arCallBack, this)), nullptr);
 			star->runAction(action);
 		}
 		else

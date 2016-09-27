@@ -10,6 +10,7 @@ DataStatics::DataStatics()
 	:m_playerTotalLevel(0)
 	, m_servantMaxNum(0)
 	, m_exploreNum(0)
+	, m_lastRelife(0)
 {
 }
 
@@ -46,32 +47,38 @@ std::string DataStatics::getCurrent(int id)
 		}
 	}
 	if (id == 6)
-	{
-		auto timeNow = TimeTool::getInstance()->getTime();
-		auto time = (float)(timeNow - m_lastRelife) / 86400;
-		if (time < 1)
+	{	
+		if (m_lastRelife != 0)
 		{
-			time = (float)(timeNow - m_lastRelife) / 3600;
-			if (time < 24)
+			auto timeNow = TimeTool::getInstance()->getTime();
+			auto time = (float)(timeNow - m_lastRelife) / 86400;
+			if (time < 1)
 			{
-				time = (float)(timeNow - m_lastRelife) / 60;
-				if (time < 60)
+				time = (float)(timeNow - m_lastRelife) / 3600;
+				if (time < 24)
 				{
+					time = (float)(timeNow - m_lastRelife) / 60;
+					if (time < 60)
+					{
+						auto _time = (int)time;
+						return StringUtils::format("%ds", _time).c_str();
+					}
 					auto _time = (int)time;
-					return StringUtils::format("%ds", _time).c_str();
+					return StringUtils::format("%dm", _time).c_str();
 				}
 				auto _time = (int)time;
-				return StringUtils::format("%dm", _time).c_str();
+				return StringUtils::format("%dh", _time).c_str();
 			}
-			auto _time = (int)time;
-			return StringUtils::format("%dh", _time).c_str();
+			else
+			{
+				auto _time = (int)time;
+				return StringUtils::format("%dd", _time).c_str();
+			}
 		}
 		else
 		{
-			auto _time = (int)time;
-			return StringUtils::format("%dd",_time).c_str();
+			return StringUtils::format("%ds", 0).c_str();
 		}
-		return StringUtils::format("%ds", 0).c_str();
 	}
 }
 std::string DataStatics::getStatic(int id)

@@ -130,6 +130,7 @@ bool HelloWorld::init()
 	m_skilltimeSlider = rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("skill_time");
 	m_skilltimeSliderShow = 0;
 	m_exploreCoinNum = 0;
+	checkType();
     return true;
 }
 void HelloWorld::coinChange(Ref *ref)
@@ -1716,4 +1717,15 @@ void HelloWorld::delexploreCoin(Ref*,int num)
 	n.number = num;
 	auto gold = Ruler::getInstance()->devide(PlayerData::getInstance()->defeatMonsterGold(), n);
 	PlayerData::getInstance()->addGold(&gold);
+}
+
+void HelloWorld::checkType()
+{
+	#if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
+		g_phoneType = true;
+	#endif
+
+	#if  CC_TARGET_PLATFORM == CC_PLATFORM_IOS
+		g_phoneType = false;
+	#endif
 }

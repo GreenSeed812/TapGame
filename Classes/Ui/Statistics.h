@@ -16,7 +16,6 @@ public:
 private:
 	Node* m_rootNode;
 	Node * m_layer;
-	LayerColor * m_bgLayer;
 };
 
 

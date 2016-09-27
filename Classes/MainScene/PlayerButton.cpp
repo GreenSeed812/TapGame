@@ -265,6 +265,10 @@ void PlayerButton::coinChange(Ref* pSender)
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type)));
 		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type);
 		int _eff = eff;
+		if (PlayerData::getInstance()->getSkillLevel(m_type) <= 0)
+		{
+			_eff = 0;
+		}
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), _eff).c_str());		
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
 		auto y = textD->getPositionY();
@@ -282,6 +286,10 @@ void PlayerButton::coinChange(Ref* pSender)
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type)));
 		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type);
 		int _eff = eff;
+		if (PlayerData::getInstance()->getSkillLevel(m_type) <= 0)
+		{
+			_eff = 0;
+		}
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), _eff));
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
 		auto y = textD->getPositionY();
@@ -299,6 +307,10 @@ void PlayerButton::coinChange(Ref* pSender)
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type)));
 		float eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type);
 		int _eff = eff;
+		if (PlayerData::getInstance()->getSkillLevel(m_type) <= 0)
+		{
+			_eff = 0;
+		}
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), _eff));
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
 		auto y = textD->getPositionY();
@@ -316,6 +328,10 @@ void PlayerButton::coinChange(Ref* pSender)
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type)));
 		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type);
 		int _eff = eff;
+		if (PlayerData::getInstance()->getSkillLevel(m_type) <= 0)
+		{
+			_eff = 0;
+		}
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), _eff));
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
 		auto y = textD->getPositionY();
@@ -333,6 +349,10 @@ void PlayerButton::coinChange(Ref* pSender)
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type)));
 		float eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type);
 		int _eff = eff * 100;
+		if (PlayerData::getInstance()->getSkillLevel(m_type) <= 0)
+		{
+			_eff = 0;
+		}
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), _eff));
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
 		auto y = textD->getPositionY();
@@ -350,6 +370,10 @@ void PlayerButton::coinChange(Ref* pSender)
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type)));
 		float eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type);
 		int _eff = eff * 100;
+		if (PlayerData::getInstance()->getSkillLevel(m_type) <= 0)
+		{
+			_eff = 0;
+		}
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), _eff));
 		auto x = (playerLayer->getChildByName("Layer")->getChildByName("discribe")->getContentSize().width) / 2;
 		auto y = textD->getPositionY();

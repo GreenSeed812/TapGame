@@ -29,7 +29,8 @@ bool ArtifactButton::init()
 void ArtifactButton::initArtifactLayer(int id,bool check)
 {
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(ArtifactButton::arChange), "ArChange", nullptr);
-	m_lhs = ArtifactData::getInstance()->getArtiStone();
+	auto head = (Button*)m_layer->getChildByName("arHead");
+	auto LevelUp = (Button*)m_layer->getChildByName("up");
 	if (check)
 	{
 		m_id = id;
@@ -38,50 +39,11 @@ void ArtifactButton::initArtifactLayer(int id,bool check)
 	{
 		m_id = ArtifactData::getInstance()->addArNum();
 	}
-	m_level = ArtifactData::getInstance()->getLevel(m_id);
-	if (m_level < ArtifactData::getInstance()->getMaxLevel(m_id))
-	{
-		m_levelUp = true;
-	}
-	else
-	{
-		m_levelUp = false;
-	}
-
-	//获取控件
-	auto head = (Button*)m_layer->getChildByName("arHead");
-	auto name = (Text*)m_layer->getChildByName("discribe")->getChildByName("name");
-	auto level = (Text*)m_layer->getChildByName("discribe")->getChildByName("lv");
-	auto effect = (Text*)m_layer->getChildByName("discribe")->getChildByName("effect");
-	auto dps = (Text*)m_layer->getChildByName("discribe")->getChildByName("dps");
-	auto LevelUp = (Button*)m_layer->getChildByName("up");
-	auto arStone = (TextBMFont*)LevelUp->getChildByName("linghunshi");
-
-	head->loadTextureNormal(StringUtils::format("ui/downUi/artifact/%d.png", m_id));
-	head->loadTexturePressed(StringUtils::format("ui/downUi/artifact/%d.png", m_id));
-	name->setString(SqLite::getInstance()->getArtifactSkillByID(m_id).ar.NAME);
-	level->setString(StringUtils::format("Lv%d",ArtifactData::getInstance()->getLevel(m_id)).c_str());
-	auto effid = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.effid;
-	auto effData = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.effData;
-	{
-		auto effDataUp = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.effDataUp;	
-		effData += effDataUp*m_level;
-	}
-	effect->setString(SqLite::getInstance()->getSkillEffDis(effid) + StringUtils::format("+%.1f%%", effData * 100).c_str());
-	auto dpsData = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.initAllDps;
-	{
-		auto dpsUp = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.AllDpsUp;
-		dpsData += dpsUp*(m_level-1);
-	}
-	dps->setString(StringUtils::format("%.1f%%", dpsData * 100).c_str());
-	arStone->setString(StringUtils::format("%d", ArtifactData::getInstance()->getLevel(m_id)*2).c_str());
-
 	LevelUp->addTouchEventListener([this](Ref* Sender, Widget::TouchEventType event)
 	{
 		if (event == Widget::TouchEventType::ENDED)
 		{
 			ArtifactData::getInstance()->arLevelUp(m_id);
-			cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
 		}
 		
 	});
@@ -98,11 +60,52 @@ void ArtifactButton::initArtifactLayer(int id,bool check)
 			g_node->addChild(arReset);
 		}
 	});
-	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
+	arChange(this);
 }
 
 void ArtifactButton::arChange(Ref*)
 {
+	m_lhs = ArtifactData::getInstance()->getArtiStone();
+	m_level = ArtifactData::getInstance()->getLevel(m_id);
+
+	//获取控件
+	
+	auto name = (Text*)m_layer->getChildByName("discribe")->getChildByName("name");
+	auto level = (Text*)m_layer->getChildByName("discribe")->getChildByName("lv");
+	auto effect = (Text*)m_layer->getChildByName("discribe")->getChildByName("effect");
+	auto dps = (Text*)m_layer->getChildByName("discribe")->getChildByName("dps");
+	auto head = (Button*)m_layer->getChildByName("arHead");
+	auto LevelUp = (Button*)m_layer->getChildByName("up");
+	auto arStone = (TextBMFont*)LevelUp->getChildByName("linghunshi");
+
+	head->loadTextureNormal(StringUtils::format("ui/downUi/artifact/%d.png", m_id));
+	head->loadTexturePressed(StringUtils::format("ui/downUi/artifact/%d.png", m_id));
+	name->setString(SqLite::getInstance()->getArtifactSkillByID(m_id).ar.NAME);
+	level->setString(StringUtils::format("Lv%d", ArtifactData::getInstance()->getLevel(m_id)).c_str());
+	auto effid = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.effid;
+	auto effData = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.effData;
+	{
+		auto effDataUp = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.effDataUp;
+		effData += effDataUp*m_level;
+	}
+	effect->setString(SqLite::getInstance()->getSkillEffDis(effid) + StringUtils::format("+%.1f%%", effData * 100).c_str());
+	auto dpsData = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.initAllDps;
+	{
+		auto dpsUp = SqLite::getInstance()->getArtifactSkillByID(m_id).ar.AllDpsUp;
+		dpsData += dpsUp*(m_level - 1);
+	}
+	dps->setString(StringUtils::format("%.1f%%", dpsData * 100).c_str());
+	arStone->setString(StringUtils::format("%d", ArtifactData::getInstance()->getLevel(m_id) * 2).c_str());
+
+	if (m_level < ArtifactData::getInstance()->getMaxLevel(m_id))
+	{
+		m_levelUp = true;
+	}
+	else
+	{
+		m_levelUp = false;
+	}
+
 	if (m_node != nullptr)
 	{
 		if (m_layer)

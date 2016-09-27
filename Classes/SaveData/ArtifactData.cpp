@@ -175,6 +175,7 @@ void ArtifactData::arLevelUp(int id)
 		}
 			
 	}
+	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
 }
 bool ArtifactData::arStarUp()
 {
@@ -193,12 +194,8 @@ bool ArtifactData::arStarUp()
 		m_fiveStar++;
 	}
 
-	return true;
-
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
-	
-
-	
+	return true;
 }
 int ArtifactData::getLevel(int id)
 {

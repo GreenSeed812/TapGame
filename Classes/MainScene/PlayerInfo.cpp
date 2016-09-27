@@ -41,9 +41,18 @@ void PlayerInfo::initPlayerInfo()
 	{
 		auto skillName = (Text*)m_layer->getChildByName("skillBg")->getChildByName(StringUtils::format("skill%d", i + 1).c_str())->getChildByName(StringUtils::format("skillName_%d", i + 1).c_str());
 		auto skillInfo = (Text*)m_layer->getChildByName("skillBg")->getChildByName(StringUtils::format("skill%d", i + 1).c_str())->getChildByName(StringUtils::format("skillInfo_%d", i + 1).c_str());
-		auto eff = SqLite::getInstance()->getEff(i) + SqLite::getInstance()->getEffPer(i) * PlayerData::getInstance()->getSkillLevel(i);
+		auto eff = SqLite::getInstance()->getEff(i) + SqLite::getInstance()->getEffPer(i) * PlayerData::getInstance()->getSkillLevel(i+1);
 		skillName->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(i).c_str()));
-		skillInfo->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(i).c_str(), eff));
+		int _eff = eff;
+		if (PlayerData::getInstance()->getPlayerLevel() <= 0)
+		{
+			_eff = 0;
+		}
+		if (i>3)
+		{
+			_eff = eff * 100;
+		}
+		skillInfo->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(i).c_str(), _eff));
 
 	}
 

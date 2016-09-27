@@ -30,13 +30,13 @@
                 <PreSize X="0.1321" Y="0.6111" />
                 <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Dps" ActionTag="470883295" Tag="128" RotationSkewX="-0.0128" RotationSkewY="-0.0117" IconVisible="False" LeftMargin="208.4679" RightMargin="730.5321" TopMargin="55.0812" BottomMargin="-6.0812" LabelText="+0%" ctype="TextBMFontObjectData">
+              <AbstractNodeData Name="Dps" ActionTag="470883295" Tag="128" RotationSkewX="-0.0128" RotationSkewY="-0.0117" IconVisible="False" LeftMargin="241.4696" RightMargin="697.5304" TopMargin="54.0814" BottomMargin="-5.0814" LabelText="+0%" ctype="TextBMFontObjectData">
                 <Size X="136.0000" Y="77.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="276.4679" Y="32.4188" />
+                <Position X="309.4696" Y="33.4186" />
                 <Scale ScaleX="0.6182" ScaleY="0.8223" />
                 <CColor A="255" R="246" G="218" B="178" />
-                <PrePosition X="0.2572" Y="0.2573" />
+                <PrePosition X="0.2879" Y="0.2652" />
                 <PreSize X="0.1265" Y="0.6111" />
                 <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
               </AbstractNodeData>

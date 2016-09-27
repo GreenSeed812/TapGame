@@ -310,14 +310,14 @@
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="nengLi" ActionTag="-443569223" Tag="759" IconVisible="False" LeftMargin="17.6614" RightMargin="205.3386" TopMargin="20.6733" BottomMargin="66.3267" FontSize="22" LabelText="神器能力" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="88.0000" Y="25.0000" />
+                      <AbstractNodeData Name="nengLi" ActionTag="-443569223" Tag="759" IconVisible="False" LeftMargin="17.6614" RightMargin="220.3386" TopMargin="23.1733" BottomMargin="68.8267" FontSize="18" LabelText="神器能力" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="73.0000" Y="20.0000" />
                         <AnchorPoint ScaleY="0.5000" />
                         <Position X="17.6614" Y="78.8267" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="240" G="203" B="148" />
                         <PrePosition X="0.0568" Y="0.7038" />
-                        <PreSize X="0.2830" Y="0.2232" />
+                        <PreSize X="0.2347" Y="0.1786" />
                         <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
@@ -347,14 +347,14 @@
                   <AbstractNodeData Name="jiNeng2" ActionTag="1158360287" Tag="764" IconVisible="False" LeftMargin="252.8055" RightMargin="73.1945" TopMargin="217.2927" BottomMargin="49.7073" ctype="SpriteObjectData">
                     <Size X="311.0000" Y="112.0000" />
                     <Children>
-                      <AbstractNodeData Name="nengLi" ActionTag="2046840785" Tag="765" IconVisible="False" LeftMargin="21.3965" RightMargin="201.6035" TopMargin="25.8065" BottomMargin="61.1935" FontSize="22" LabelText="神器能力" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="88.0000" Y="25.0000" />
+                      <AbstractNodeData Name="nengLi" ActionTag="2046840785" Tag="765" IconVisible="False" LeftMargin="21.3965" RightMargin="216.6035" TopMargin="28.3065" BottomMargin="63.6935" FontSize="18" LabelText="神器能力" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="73.0000" Y="20.0000" />
                         <AnchorPoint ScaleY="0.5000" />
                         <Position X="21.3965" Y="73.6935" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="240" G="203" B="148" />
                         <PrePosition X="0.0688" Y="0.6580" />
-                        <PreSize X="0.2830" Y="0.2232" />
+                        <PreSize X="0.2347" Y="0.1786" />
                         <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />

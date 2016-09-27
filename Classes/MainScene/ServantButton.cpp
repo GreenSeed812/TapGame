@@ -176,18 +176,18 @@ void ServantButton::upLevel()
 	m_count++;
 	auto gold = PlayerData::getInstance()->getGold();
 	auto judge10 = Ruler::getInstance()->subNum(PlayerData::getInstance()->getservantLevelUp10Gold(m_id),*gold);
-	auto judge100 = Ruler::getInstance()->subNum(PlayerData::getInstance()->getservantLevelUp100Gold(m_id),*gold);
-
+	
 	auto action = Sequence::create(DelayTime::create(4), CallFuncN::create(CC_CALLBACK_1(ServantButton::callbackSer, this)), nullptr);
 	if (Ruler::getInstance()->Zero(judge10))
 	{
 		up10->runAction(Show::create());
 		up10->runAction(action);
-	}
-	if (Ruler::getInstance()->Zero(judge100))
-	{
-		up100->setVisible(Show::create());
-		up100->runAction(action);
+		auto judge100 = Ruler::getInstance()->subNum(PlayerData::getInstance()->getservantLevelUp100Gold(m_id), *gold);
+		if (Ruler::getInstance()->Zero(judge100))
+		{
+			up100->setVisible(Show::create());
+			up100->runAction(action);
+		}
 	}
 	
 }

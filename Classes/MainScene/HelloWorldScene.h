@@ -53,6 +53,7 @@ public:
 	static int getDay(){ return m_dayCount; }
 	static int getSignCount(){ return m_signCount; }
 	static tm* getTime(){ return m_time; }
+	static bool getPhoneType(){ return g_phoneType; }
 	void initAr();
 	void initSer();
 	void runAni();
@@ -103,6 +104,8 @@ private:
 	Sprite* m_klgjEffect;
 	int m_skilltimeSliderShow;
 	int m_exploreCoinNum;
+	static bool g_phoneType;
+	void checkType();
 };
 
 #endif // __HELLOWORLD_SCENE_H__

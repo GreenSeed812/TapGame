@@ -192,7 +192,9 @@ bool ArtifactData::arStarUp()
 	ArStarUp::getInstance()->init((*it)->m_artifactID);
 	if ((*it)->m_artifactStar == 5)
 	{
+		auto tmp = *it;
 		remove(m_artifacts.begin(), m_artifacts.end(), *it);
+		*it = tmp;
 		m_fiveStar++;
 	}
 	cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");

@@ -40,6 +40,10 @@ PlayerData::PlayerData()
 	, m_leaveTime(0)
 	, m_skillTap(0)
 	, m_name("")
+	, m_signCount(0)
+	, m_signTime(0)
+	, m_bg(true)
+	, m_sou(true)
 {
 	auto hp = SqLite::getInstance()->getHpByID(m_level%5);
 	m_hpNow.number = hp.number;
@@ -242,11 +246,17 @@ bool PlayerData::init()
 	m_skillCD[3] = jsd["m_skillCD[3]"].GetDouble();
 	m_skillCD[4] = jsd["m_skillCD[4]"].GetDouble();
 	m_skillCD[5] = jsd["m_skillCD[5]"].GetDouble();
+	m_signCount = jsd["m_signCount"].GetInt();
+	m_signTime = jsd["m_signTime"].GetInt();
+	m_bg = jsd["m_bg"].GetBool();
+	m_sou = jsd["m_sou"].GetBool();
+
 	AchieveData::getInstance()->readUserDefault();
 	ArtifactData::getInstance()->readUserDefault();
 	MyState::getInstance()->readUserDefault();
 	ShopData::getInstance()->readUserData();
 	DataStatics::getInstance()->readUserDefault();
+	MissionData::getInstance()->readUserDefault();
 	return true;
 }
 
@@ -925,11 +935,17 @@ void PlayerData::saveUserData()
 	document.AddMember("m_skillCD[3]", m_skillCD[3], allocator);
 	document.AddMember("m_skillCD[4]", m_skillCD[4], allocator);
 	document.AddMember("m_skillCD[5]", m_skillCD[5], allocator);
+	document.AddMember("m_signCount", m_signCount, allocator);
+	document.AddMember("m_signTime", m_signTime, allocator);
+	document.AddMember("m_bg", m_bg, allocator);
+	document.AddMember("m_sou", m_sou, allocator);
+
 	ArtifactData::getInstance()->saveUserDefault(document);
 	AchieveData::getInstance()->saveUserDefault(document);
 	MyState::getInstance()->saveUserDefault(document);
 	ShopData::getInstance()->saveUserData(document);
 	DataStatics::getInstance()->saveUserDefault(document);
+	MissionData::getInstance()->saveUserDefault(document);
 	StringBuffer buffer;
 	rapidjson::Writer<StringBuffer> writer(buffer);
 	document.Accept(writer);
@@ -1009,4 +1025,21 @@ void PlayerData::addServantNum()
 	m_servantNum++; 
 	if (DataStatics::getInstance()->getservantMaxNum() < m_servantNum)
 		DataStatics::getInstance()->setservantNumMax(m_servantNum);
+}
+
+void PlayerData::setSignCount()
+{
+	if (m_signCount >= 6)
+	{
+		m_signCount++;
+		m_signCount = 0;
+	}
+	else
+	{
+		m_signCount++;
+	}
+	if (m_signCount > 1)
+	{
+		m_signCount = 0;
+	}
 }

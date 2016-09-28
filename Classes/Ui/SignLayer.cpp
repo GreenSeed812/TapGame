@@ -62,9 +62,11 @@ void SignLayer::initSignLayer()
 						{
 							auto gold = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 100);
 							PlayerData::getInstance()->addGold(&gold);
-							HelloWorld::dayChange();
+							PlayerData::getInstance()->setSignCount();
 							btn->setEnabled(false);
 							m_state = false;
+							PlayerData::getInstance()->setSignTime();
+							PlayerData::getInstance()->saveUserData();
 							signChange(this);
 							auto num = (TextBMFont*)rootNode->getChildByName("bg")->getChildByName("dayNum");
 							num->setString(StringUtils::format("%d", 1).c_str());
@@ -81,7 +83,7 @@ void SignLayer::initSignLayer()
 					{
 						if (m_state)
 						{
-							if (HelloWorld::getSignCount() == 0)
+							if (PlayerData::getInstance()->getSignCount() == 0)
 							{
 								ShopData::getInstance()->getItemDataById(0)->itemNum++;
 							}
@@ -89,9 +91,11 @@ void SignLayer::initSignLayer()
 							{
 								ShopData::getInstance()->getItemDataById(2)->itemNum++;
 							}
-							HelloWorld::dayChange();
+							PlayerData::getInstance()->setSignCount();
 							btn->setEnabled(false);
 							m_state = false;
+							PlayerData::getInstance()->setSignTime();
+							PlayerData::getInstance()->saveUserData();
 							signChange(this);
 							CCNotificationCenter::getInstance()->postNotification("itemChange");
 						}	
@@ -109,8 +113,10 @@ void SignLayer::initSignLayer()
 						{
 							ShopData::getInstance()->addShopGold(10);
 							btn->setEnabled(false);
-							HelloWorld::dayChange();
+							PlayerData::getInstance()->setSignCount();
 							m_state = false;
+							PlayerData::getInstance()->setSignTime();
+							PlayerData::getInstance()->saveUserData();
 							signChange(this);
 						}					
 					}
@@ -128,8 +134,10 @@ void SignLayer::initSignLayer()
 							auto gold = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), 1000);
 							PlayerData::getInstance()->addGold(&gold);
 							btn->setEnabled(false);
-							HelloWorld::dayChange();
+							PlayerData::getInstance()->setSignCount();
+							PlayerData::getInstance()->setSignTime();
 							m_state = false;
+							PlayerData::getInstance()->saveUserData();
 							signChange(this);
 						}
 					}
@@ -144,7 +152,7 @@ void SignLayer::initSignLayer()
 					{
 						if (m_state)
 						{
-							if (HelloWorld::getSignCount() == 0)
+							if (PlayerData::getInstance()->getSignCount() == 0)
 							{
 								ShopData::getInstance()->getItemDataById(1)->itemNum++;
 							}
@@ -153,8 +161,10 @@ void SignLayer::initSignLayer()
 								ShopData::getInstance()->getItemDataById(3)->itemNum++;
 							}
 							btn->setEnabled(false);
-							HelloWorld::dayChange();
+							PlayerData::getInstance()->setSignCount();
+							PlayerData::getInstance()->setSignTime();
 							m_state = false;
+							PlayerData::getInstance()->saveUserData();
 							signChange(this);
 							CCNotificationCenter::getInstance()->postNotification("itemChange");
 						}						
@@ -173,8 +183,10 @@ void SignLayer::initSignLayer()
 						{
 							ShopData::getInstance()->addShopGold(50);
 							btn->setEnabled(false);
-							HelloWorld::dayChange();
+							PlayerData::getInstance()->setSignCount();
+							PlayerData::getInstance()->setSignTime();
 							m_state = false;
+							PlayerData::getInstance()->saveUserData();
 							signChange(this);
 						}					
 					}
@@ -191,10 +203,12 @@ void SignLayer::initSignLayer()
 						{
 							ArtifactData::getInstance()->addArtiStone(1);
 							btn->setEnabled(false);
-							HelloWorld::dayChange();
+							PlayerData::getInstance()->setSignCount();
+							PlayerData::getInstance()->setSignTime();
 							m_state = false;
 							auto num = (TextBMFont*)rootNode->getChildByName("bg")->getChildByName("dayNum");
 							num->setString(StringUtils::format("%d",7).c_str());
+							PlayerData::getInstance()->saveUserData();
 							signChange(this);
 						}					
 					}
@@ -210,11 +224,11 @@ void SignLayer::signChange(Ref*ref)
 {	
 	if (ref)
 	{
-		m_day = HelloWorld::getDay();
-		m_time = HelloWorld::getTime();
+		m_day = PlayerData::getInstance()->getSignCount();
+		m_time = TimeTool::getInstance()->calTime(PlayerData::getInstance()->getSignTime());
 		auto num = (TextBMFont*)rootNode->getChildByName("bg")->getChildByName("dayNum");
 		num->setString(StringUtils::format("%d", m_day));
-		stateChange();
+		
 		for (size_t i = 0; i < 7; i++)
 		{
 			auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (i + 1)).c_str());
@@ -232,13 +246,13 @@ void SignLayer::signChange(Ref*ref)
 			break;
 			case 1:
 			{
-				if (HelloWorld::getSignCount() == 0)
+				if (PlayerData::getInstance()->getSignCount() == 0)
 				{
 					btn->loadTextureNormal("sign/sign1.png");
 					btn->loadTexturePressed("sign/sign1.png");
 					btn->loadTextureDisabled("sign/signed1.png");
 				}
-				else if (HelloWorld::getSignCount() == 1)
+				else if (PlayerData::getInstance()->getSignCount() == 1)
 				{
 					btn->loadTextureNormal("sign/sign3.png");
 					btn->loadTexturePressed("sign/sign3.png");
@@ -266,13 +280,13 @@ void SignLayer::signChange(Ref*ref)
 			break;
 			case 4:
 			{
-				if (HelloWorld::getSignCount() == 0)
+				if (PlayerData::getInstance()->getSignCount() == 0)
 				{
 					btn->loadTextureNormal("sign/sign2.png");
 					btn->loadTexturePressed("sign/sign2.png");
 					btn->loadTextureDisabled("sign/signed2.png");
 				}
-				else if (HelloWorld::getSignCount() == 1)
+				else if (PlayerData::getInstance()->getSignCount() == 1)
 				{
 					btn->loadTextureNormal("sign/sign4.png");
 					btn->loadTexturePressed("sign/sign4.png");
@@ -313,8 +327,9 @@ void SignLayer::signChange(Ref*ref)
 			{
 				btn->getChildByName("text")->setVisible(false);
 			}
-		}
+		}	
 	}
+	stateChange();
 }
 
 void SignLayer::stateChange()
@@ -330,6 +345,8 @@ void SignLayer::stateChange()
 		if (m_day == 0)
 		{
 			m_state = true;
+			auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (m_day + 1)).c_str());
+			btn->getChildByName("text")->setVisible(true);
 		}
 		else
 		{
@@ -339,5 +356,7 @@ void SignLayer::stateChange()
 	else
 	{
 		m_state = true;
+		auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (m_day + 1)).c_str());
+		btn->getChildByName("text")->setVisible(true);
 	}
 }

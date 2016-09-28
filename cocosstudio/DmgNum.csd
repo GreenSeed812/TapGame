@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="48" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Text" ActionTag="-1975883078" Tag="52" IconVisible="False" LeftMargin="-18.0013" RightMargin="-17.9987" TopMargin="-7.4996" BottomMargin="-7.5004" LabelText="111.aa" ctype="TextBMFontObjectData">
+          <AbstractNodeData Name="Text" ActionTag="-1975883078" Tag="52" IconVisible="False" LeftMargin="-91.0013" RightMargin="-90.9987" TopMargin="-38.4996" BottomMargin="-38.5004" LabelText="111.aa" ctype="TextBMFontObjectData">
             <Size X="36.0000" Y="15.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-0.0013" Y="-0.0004" />
@@ -14,7 +14,6 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <LabelBMFontFile_CNB Type="Normal" Path="" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

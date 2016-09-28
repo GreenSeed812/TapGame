@@ -44,7 +44,7 @@ void AchieveLayer::initAchieveLayer()
 	auto allStone = (TextBMFont*)m_rootNode->getChildByName("allStone");
 	allStone->setString(StringUtils::format("%d", AchieveData::getInstance()->getTotalReword()).c_str());
 	auto listview = (ListView*)m_bg->getChildByName("ListView");
-	for (size_t i = 1; i < 24; i++)
+	for (size_t i = 1; i < 19; i++)
 	{
 		auto item = AchieveItem::create();
 		item->initAchieveItem(i);

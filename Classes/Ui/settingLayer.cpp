@@ -8,8 +8,7 @@
 using namespace cocostudio;
 using namespace cocos2d;
 using namespace ui;
-bool settingLayer::m_mus_off_on = true;
-bool settingLayer::m_sou_off_on = true;
+
 Node * settingLayer::g_node = nullptr;
 
 bool settingLayer::init()
@@ -30,7 +29,8 @@ bool settingLayer::init()
 	auto musicBtn = (Button*)rootNode->getChildByName("bg")->getChildByName("music");
 	auto soundBtn = (Button*)rootNode->getChildByName("bg")->getChildByName("sound");
 	auto dataStatistics = (Button*)rootNode->getChildByName("bg")->getChildByName("data");
-
+	m_sou_off_on = PlayerData::getInstance()->getSou();
+	m_mus_off_on = PlayerData::getInstance()->getBg();
 	if (m_mus_off_on)
 	{
 		((Button*)rootNode->getChildByName("bg")->getChildByName("music"))->loadTextureNormal("yinxiao.png");
@@ -77,7 +77,7 @@ bool settingLayer::init()
 				((Button*)rootNode->getChildByName("bg")->getChildByName("music"))->loadTexturePressed("yinxiao0.png");
 			}
 			BgMusic::getInstance()->playBg(m_mus_off_on);
-			HelloWorld::setBg(m_mus_off_on);
+			PlayerData::getInstance()->setBg(m_mus_off_on);
 		}
 	});
 	soundBtn->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type)
@@ -97,7 +97,7 @@ bool settingLayer::init()
 				((Button*)rootNode->getChildByName("bg")->getChildByName("sound"))->loadTexturePressed("yinyue0.png");
 			}
 			BgMusic::getInstance()->setState(m_sou_off_on);
-			HelloWorld::setSou(m_sou_off_on);
+			PlayerData::getInstance()->setSou(m_sou_off_on);
 		}
 	});
 

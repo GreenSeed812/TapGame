@@ -33,13 +33,12 @@ USING_NS_CC_EXT;
 
 using namespace ui;
 
-bool HelloWorld::m_bg = true;
-bool HelloWorld::m_sou = true;
 bool HelloWorld::m_coutChange = false;
 int HelloWorld::m_dayCount = 0;
 int HelloWorld::m_signCount = 0;
 tm* HelloWorld::m_time = TimeTool::getInstance()->getcurrTime();
 bool HelloWorld::g_phoneType = true;
+
 Scene* HelloWorld::createScene()
 {
     // 'scene' is an autorelease object
@@ -65,17 +64,27 @@ bool HelloWorld::init()
     }
 
 	auto leaveGold = new LeaveGold();
-	BgMusic::getInstance()->playBg(true);
+	BgMusic::getInstance()->playBg(PlayerData::getInstance()->getBg());
 	m_hitlogic = true;
 	m_heroLayer = nullptr;
 	m_servantLayer = nullptr;
     m_artifactLayer = nullptr;
 	m_shopLayer = nullptr;
+	m_leaveText = nullptr;
 	m_arCount = 0;
 	m_exchangeCount = 5;
 	m_dayCount = 0;
     rootNode = CSLoader::createNode("MainScene.csb");
 	rootNode->setName("main");
+
+	m_leaveText = CSLoader::createNode("LeaveGold.csb");
+	rootNode->addChild(m_leaveText);
+	m_leaveText->setPosition(rootNode->getContentSize() / 2);
+	auto text = (Text*)m_leaveText->getChildByName("text");
+	text->setVisible(false);
+	auto img = (Sprite*)m_leaveText->getChildByName("img");
+	img->setVisible(false);
+
 	if (!mapInit())
 	{
 		return false;
@@ -100,8 +109,15 @@ bool HelloWorld::init()
 		{
 			auto leveG = leaveGold->getGolds();
 			PlayerData::getInstance()->addGold(&leveG);
-			delete leaveGold;
 			leaveBtn->setVisible(false);
+			auto action = Sequence::create(DelayTime::create(5),CallFuncN::create(CC_CALLBACK_1(HelloWorld::leaveCallBack,this)),nullptr);
+			auto text = (Text*)m_leaveText->getChildByName("text");
+			auto img = (Sprite*)m_leaveText->getChildByName("img");
+			img->setVisible(true);
+			text->setString(Ruler::getInstance()->showNum(leveG).c_str());
+			text->setVisible(true);
+			text->runAction(action);	
+			delete leaveGold;
 		}
 	});
 
@@ -625,17 +641,24 @@ void HelloWorld::uiCallBack()
 				lv->setName("shop");
 				for (size_t i = 0; i < 13; i++)
 				{
+					if (i == 6)
+					{
+
+					}
+					else
+					{
 						auto widget = Widget::create();
 						widget->setName(StringUtils::format("shopWidget%d", i).c_str());
 						auto item = ItemLayer::create();
 						item->setNode(rootNode);
-						item->setName(StringUtils::format("shopItem%d",i).c_str());
+						item->setName(StringUtils::format("shopItem%d", i).c_str());
 						item->initItemLayer(i);
 						auto size = item->getContentSize();
 						widget->setContentSize(size);
 						widget->addChild(item);
 						lv->pushBackCustomItem(widget);
 						cocos2d::CCNotificationCenter::getInstance()->postNotification("itemChange");
+					}	
 				}
 			}
 			itemChange(this);
@@ -649,7 +672,6 @@ void HelloWorld::uiCallBack()
 		if (type == Widget::TouchEventType::ENDED) {
 			// 注意node的生命周期的问题  
 			Button* bt = (Button*)sender;
-			settingLayer::setOff_On(m_bg, m_sou);
 			auto layer = settingLayer::create();
 			layer->setNode(rootNode);
 			rootNode->addChild(layer);
@@ -1454,6 +1476,18 @@ void HelloWorld::shopItemEff(float dt)
 			ShopData::getInstance()->stopItemById(10);
 		}
 	}
+	if (ShopData::getInstance()->getItemBeUsedById(11))
+	{
+		ShopData::getInstance()->getItemDataById(11)->leftTime -= dt;
+		if (ShopData::getInstance()->getItemDataById(11)->leftTime / 1 != (ShopData::getInstance()->getItemDataById(11)->leftTime - dt) / 1)
+		{
+			showSiTime(11, ShopData::getInstance()->getItemDataById(11)->leftTime - dt);
+		}
+		if (ShopData::getInstance()->getItemDataById(11)->leftTime <= 0)
+		{
+			ShopData::getInstance()->stopItemById(11);
+		}
+	}
 	if (ShopData::getInstance()->getItemBeUsedById(12))
 	{
 		if (!MyAnimation::getInstance()->getKLGJplaying())
@@ -1472,7 +1506,7 @@ void HelloWorld::shopItemEff(float dt)
 		ShopData::getInstance()->getItemDataById(12)->leftTime -= dt;
 		if (ShopData::getInstance()->getItemDataById(12)->leftTime / 1 != (ShopData::getInstance()->getItemDataById(12)->leftTime - dt) / 1)
 		{
-			showSiTime(10, ShopData::getInstance()->getItemDataById(12)->leftTime - dt);
+			showSiTime(12, ShopData::getInstance()->getItemDataById(12)->leftTime - dt);
 		}
 		PlayerData::getInstance()->subHp(Ruler::getInstance()->multiplay(PlayerData::getInstance()->getTapDps(),10*dt));
 		if (ShopData::getInstance()->getItemDataById(12)->leftTime <= 0)
@@ -1511,22 +1545,6 @@ void HelloWorld::shopItemCDUpDate(float dt)
 	
 }
 
-void HelloWorld::dayChange()
-{
-	if (m_dayCount >=6)
-	{
-		m_signCount++;
-		m_dayCount = 0;	
-	}
-	else
-	{	
-		m_dayCount++;
-	}
-	if (m_signCount > 1)
-	{
-		m_signCount = 0;
-	}
-}
 //void HelloWorld::runAni()
 //{
 //
@@ -1762,4 +1780,12 @@ void HelloWorld::checkType()
 	#if  CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 		HelloWorld::g_phoneType = false;
 	#endif
+}
+
+void HelloWorld::leaveCallBack(Node * node)
+{
+	auto text = (Text*)m_leaveText->getChildByName("text");
+	text->setVisible(false);
+	auto img = (Sprite*)m_leaveText->getChildByName("img");
+	img->setVisible(false);
 }

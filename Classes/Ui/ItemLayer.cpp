@@ -27,9 +27,10 @@ void ItemLayer::initItemLayer(int id)
 {
 	ArStarUp::getInstance()->setNode(m_node);
 	auto strings = FileUtils::getInstance()->getValueMapFromFile("fonts/text.xml");
-	m_text = TextFieldTTF::createWithTTF(strings["text2"].asString(), "fonts/FZDH.ttf", 36);
+	m_text = TextFieldTTF::createWithTTF(strings["text2"].asString(), "fonts/FZDH.ttf", 48);
 	m_text->setPosition(m_node->getContentSize() / 2);
 	m_text->setName("itemText");
+	m_text->setColor(ccc3(239,203,148));
 	m_node->addChild(m_text);
 	m_text->setVisible(false);
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(ItemLayer::itemChange), "itemChange", nullptr);
@@ -39,10 +40,8 @@ void ItemLayer::initItemLayer(int id)
 	auto time = (Text*)m_layer->getChildByName("time");
 	auto up = (Button*)m_layer->getChildByName("up");
 	auto head = (Sprite*)m_layer->getChildByName("head");
-	if (m_id < 4)
-	{
-		head->setTexture(StringUtils::format("item/%d.png",m_id+1).c_str());
-	}
+
+	head->setTexture(StringUtils::format("item/%d.png",m_id+1).c_str());
 
 	info->setString(SqLite::getInstance()->getItemByID(m_id)->effdis);
 	money->setString(StringUtils::format("%d", SqLite::getInstance()->getItemByID(m_id)->expense).c_str());
@@ -73,7 +72,30 @@ void ItemLayer::initItemLayer(int id)
 			}
 			else
 			{
-				ShopData::getInstance()->buyItemByID(m_id);
+				if (m_id == 5)
+				{
+					auto off_on = false;
+					for (size_t i = 0; i < 6; i++)
+					{
+						if (PlayerData::getInstance()->getSkillCD(i+1) > 0)
+						{
+							off_on = true;
+						}
+					}
+					if (off_on)
+					{
+						ShopData::getInstance()->buyItemByID(m_id);
+					}
+					else
+					{
+						ShopData::getInstance()->addShopGold(SqLite::getInstance()->getItemByID(m_id)->expense);
+					}				
+				}
+				else
+				{
+					ShopData::getInstance()->buyItemByID(m_id);
+				}
+				
 				if (m_id == 7)
 				{
 					if (!ArtifactData::getInstance()->arStarUp())

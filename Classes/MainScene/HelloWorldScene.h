@@ -45,13 +45,8 @@ public:
 	void gameContinue(Node*);
 	void normalAtk();
 	void shopItemEff(float);
-	static void setBg(bool off_on){ m_bg = off_on; }
-	static void setSou(bool off_on){ m_sou = off_on; }
 	static void changeCount(bool state){ m_coutChange = state; }
-	static void dayChange();
 	static int getDay(){ return m_dayCount; }
-	static int getSignCount(){ return m_signCount; }
-	static tm* getTime(){ return m_time; }
 	static bool getPhoneType(){ return g_phoneType; }
 	void initAr();
 	void initSer();
@@ -63,6 +58,7 @@ public:
 	void shopItemCDUpDate(float dt);
 	void saveSkillCD(float dt);
 	void coinAni();
+	void leaveCallBack(Node * node);
 public:
 	void addSktShow(){ m_skilltimeSliderShow++; }
 	void delSktShow(){ m_skilltimeSliderShow-- ;
@@ -92,8 +88,6 @@ private:
 	bool m_hitlogic;
 	bool m_gamelogic;
 	int m_arCount;
-	static bool m_bg;
-	static bool m_sou;
 	static bool m_coutChange;
 	static int m_dayCount;
 	static int m_signCount;
@@ -105,6 +99,7 @@ private:
 	int m_exploreCoinNum;
 	static bool g_phoneType;
 	void checkType();
+	Node * m_leaveText;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

@@ -39,7 +39,6 @@ public:
 	void skilleff1(Armature * armature, MovementEventType type, const std::string& action);
 	void skilleff2(Ref*);
 	void skillButtonInit();
-	void attackeffection();
 	void deleteSprite(Node *);
 	void deleteArmature(Armature * armature, MovementEventType type, const std::string& action);
 	void playMusic(Node * node);
@@ -89,7 +88,6 @@ private:
 	bossButton * bossBt;
 	Button * m_skill[6];
 	Animation* ani;
-	Sprite * effectSprite;
 	MyNum num;
 	bool m_hitlogic;
 	bool m_gamelogic;
@@ -102,6 +100,7 @@ private:
 	static tm* m_time;
 	Sprite* m_kssjEffect;
 	Sprite* m_klgjEffect;
+	Sprite* m_fnttEffect;
 	int m_skilltimeSliderShow;
 	int m_exploreCoinNum;
 	static bool g_phoneType;

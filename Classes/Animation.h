@@ -20,6 +20,7 @@ public:
 	void inittouqie();
 	void initkuangluan();
 	void initbaodian();
+	void initfengnu();
 	Animate* getAnimate_xy();
 	Animate* getAnimate_zs();
 	Animate* getAnimate_szj();
@@ -30,11 +31,14 @@ public:
 	Animate* getAnimate_tq();
 	Animate* getAnimate_kl();
 	Animate* getAnimate_bd();
+	Animate* getAnimate_fn();
 	void setPos();
 	bool getKSSJplaying(){ return m_kssj; }
 	bool getKLGJplaying(){ return m_klgj; }
+	bool getFNTTplaying(){ return m_fntt; }
 	void setKSSJplaying(bool kssj){ m_kssj = kssj; }
 	void setKLGJplaying(bool klgj){ m_klgj = klgj; }
+	void setFNTTplaying(bool fntt){ m_fntt = fntt; }
 private:
 	MyAnimation();
 	Animation* m_harmaer;
@@ -50,8 +54,10 @@ private:
 	Animation* m_touqieani;
 	Animation* m_kuangluanani;
 	Animation* m_baodian;
+	Animation* m_fengnuani;
 	bool m_kssj;
 	bool m_klgj;
+	bool m_fntt;
 };
 
 

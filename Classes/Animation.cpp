@@ -5,6 +5,7 @@ using namespace cocostudio;
 MyAnimation::MyAnimation()
 	:m_kssj(false)
 	,m_klgj(false)
+	, m_fntt(false)
 {
 	//SpriteFrameCache::getInstance()->addSpriteFramesWithFile("SpecialEffect/gongjianzuo.plist");
 	//m_harmaer = Animation::create();
@@ -40,6 +41,7 @@ MyAnimation* MyAnimation::getInstance()
 		m_animation->inittouqie();
 		m_animation->initkuangluan();
 		m_animation->initbaodian();
+		m_animation->initfengnu();
 		ArmatureDataManager::getInstance()->addArmatureFileInfo("old/Effect_appear_dust0.png", "old/Effect_appear_dust0.plist", "old/Effect_appear_dust.ExportJson");//读取动画相关文件
 		ArmatureDataManager::getInstance()->addArmatureFileInfo("old/Effect_atk_hunter0.png", "old/Effect_atk_hunter0.plist", "old/Effect_atk_hunter.ExportJson");//读取动画相关文件
 		ArmatureDataManager::getInstance()->addArmatureFileInfo("old/Effect_atk_magister0.png", "old/Effect_atk_magister0.plist", "old/Effect_atk_magister.ExportJson");//读取动画相关文件
@@ -194,10 +196,10 @@ void MyAnimation::initkuangluan()
 {
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("SpecialEffect/kuangluan.plist");
 	m_kuangluanani = Animation::create();
-	for (int i = 3; i < 18; i++)
+	for (int i = 1; i < 10; i++)
 	{
-		auto str = StringUtils::format("kuangluan%02d.png", i);
-		m_kuangluanani->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(StringUtils::format("kuangluan%02d.png", i)));
+		auto str = StringUtils::format("kuangluan%d.png", i);
+		m_kuangluanani->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(str));
 	}
 	m_kuangluanani->setDelayPerUnit(0.0416f);
 	m_kuangluanani->retain();
@@ -213,6 +215,22 @@ void MyAnimation::initbaodian()
 	}
 	m_baodian->setDelayPerUnit(0.0416f);
 	m_baodian->retain();
+}
+void MyAnimation::initfengnu()
+{
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("SpecialEffect/fengnu.plist");
+	m_fengnuani = Animation::create();
+	for (int i = 1; i < 10; i++)
+	{
+		auto str = StringUtils::format("f%d.png", i);
+		m_fengnuani->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(str));
+	}
+	m_fengnuani->setDelayPerUnit(0.0416f);
+	m_fengnuani->retain();
+}
+Animate* MyAnimation::getAnimate_fn()
+{
+	return Animate::create(m_fengnuani);
 }
 Animate* MyAnimation::getAnimate_xy()
 {

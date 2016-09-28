@@ -170,6 +170,79 @@ void ArtifactData::arLevelUp(int id)
 	{
 		if (m_artifacts.at(i)->m_artifactID == id)
 		{
+			auto artSkill = SqLite::getInstance()->getArtifactSkillByID(id);
+			if (artSkill.ar.effid == 29)
+			{
+				skillBanTimeS[artSkill.skillID] += artSkill.ar.effDataUp;
+			}
+			if (artSkill.ar.effid == 30)
+			{
+				skilleffUp[artSkill.skillID] += artSkill.ar.effDataUp;
+			}
+			if (artSkill.ar.effid == 31)
+			{
+				skillTimeA[artSkill.skillID] += artSkill.ar.effDataUp;
+			}
+			if (artSkill.ar.effid == 2)
+			{
+				m_dpsexper += artSkill.ar.effDataUp;
+			}
+			if (artSkill.ar.effid == 6)
+			{
+				m_exploreProb += artSkill.ar.effDataUp;
+			}
+			if (artSkill.ar.effid == 7)
+			{
+				m_explorePer += artSkill.ar.effDataUp;
+			}
+			if (artSkill.ar.effid == 8)
+			{
+				m_AllDpsMul += artSkill.ar.effDataUp;
+			}
+			if (artSkill.ar.effid == 19)
+			{
+				rmGoldPer += artSkill.ar.effDataUp;
+			}
+			if (artSkill.ar.effid == 20)
+			{
+				tenGoldPer += artSkill.ar.effDataUp;
+			}
+			if (artSkill.ar.effid == 21)
+			{
+				bossGoldPer += artSkill.ar.effDataUp;
+			}
+			if (artSkill.ar.effid == 22)
+			{
+				leaveGoldPer += artSkill.ar.effDataUp;
+			}
+			if (artSkill.ar.effid == 32)
+			{
+				bossHpS += artSkill.ar.effDataUp;
+			}
+			if (artSkill.ar.effid == 33)
+			{
+				heroLevelUpDown += artSkill.ar.effDataUp;
+			}
+			if (artSkill.ar.effid == 34)
+			{
+				bossTimeUp += artSkill.ar.effDataUp;
+			}
+			if (artSkill.ar.effid == 35)
+			{
+				artiUpPer += artSkill.ar.effDataUp;
+			}
+			if (artSkill.ar.effid == 36)
+			{
+				servantLevelUpDown += artSkill.ar.effDataUp;
+			}
+			if (artSkill.ar.effid == 37)
+			{
+				WaveDown += artSkill.ar.effDataUp;
+			}
+			if (artSkill.ar.effid == 38)
+			{
+				servantUnlockDown += artSkill.ar.effDataUp;
+			}
 			m_AllDpsMul += m_artifacts.at(i)->m_artiDpsUp;
 			m_artifacts.at(i)->m_artifactLevel++;
 			break;
@@ -256,65 +329,77 @@ void ArtifactData::deleteArByID(int id)
 		auto artSkill = SqLite::getInstance()->getArtifactSkillByID(id);
 		if ((*it)->m_artifactID == id)
 		{
+			if (artSkill.ar.effid == 29)
+			{
+				skillBanTimeS[artSkill.skillID] -= artSkill.ar.effData + artSkill.ar.effDataUp * ((*it)->m_artifactLevel - 1);
+			}
+			if (artSkill.ar.effid == 30)
+			{
+				skilleffUp[artSkill.skillID] -= artSkill.ar.effData + artSkill.ar.effDataUp * ((*it)->m_artifactLevel - 1);
+			}
+			if (artSkill.ar.effid == 31)
+			{
+				skillTimeA[artSkill.skillID] -= artSkill.ar.effData + artSkill.ar.effDataUp * ((*it)->m_artifactLevel - 1);
+			}
 			if (artSkill.ar.effid == 2)
 			{
-				m_dpsexper -= artSkill.ar.effData;
+				m_dpsexper -= artSkill.ar.effData + artSkill.ar.effDataUp * ((*it)->m_artifactLevel - 1);
 			}
 			if (artSkill.ar.effid == 6)
 			{
-				m_exploreProb -= artSkill.ar.effData;
+				m_exploreProb -= artSkill.ar.effData + artSkill.ar.effDataUp * ((*it)->m_artifactLevel - 1);
 			}
 			if (artSkill.ar.effid == 7)
 			{
-				m_explorePer -= artSkill.ar.effData;
+				m_explorePer -= artSkill.ar.effData + artSkill.ar.effDataUp * ((*it)->m_artifactLevel - 1);
 			}
 			if (artSkill.ar.effid == 8)
 			{
-				m_AllDpsMul -= artSkill.ar.effData;
+				m_AllDpsMul -= artSkill.ar.effData + artSkill.ar.effDataUp * ((*it)->m_artifactLevel - 1);
 			}
 			if (artSkill.ar.effid == 19)
 			{
-				rmGoldPer -= artSkill.ar.effData;
+				rmGoldPer -= artSkill.ar.effData + artSkill.ar.effDataUp * ((*it)->m_artifactLevel - 1);
 			}
 			if (artSkill.ar.effid == 20)
 			{
-				tenGoldPer -= artSkill.ar.effData;
+				tenGoldPer -= artSkill.ar.effData + artSkill.ar.effDataUp * ((*it)->m_artifactLevel - 1);
 			}
 			if (artSkill.ar.effid == 21)
 			{
-				bossGoldPer -= artSkill.ar.effData;
+				bossGoldPer -= artSkill.ar.effData + artSkill.ar.effDataUp * ((*it)->m_artifactLevel - 1);
 			}
 			if (artSkill.ar.effid == 22)
 			{
-				leaveGoldPer -= artSkill.ar.effData;
+				leaveGoldPer -= artSkill.ar.effData + artSkill.ar.effDataUp * ((*it)->m_artifactLevel - 1);
 			}
 			if (artSkill.ar.effid == 32)
 			{
-				bossHpS -= artSkill.ar.effData;
+				bossHpS -= artSkill.ar.effData + artSkill.ar.effDataUp * ((*it)->m_artifactLevel - 1);
 			}
 			if (artSkill.ar.effid == 33)
 			{
-				heroLevelUpDown -= artSkill.ar.effData;
+				heroLevelUpDown -= artSkill.ar.effData + artSkill.ar.effDataUp * ((*it)->m_artifactLevel - 1);
 			}
 			if (artSkill.ar.effid == 34)
 			{
-				bossTimeUp -= artSkill.ar.effData;
+				bossTimeUp -= artSkill.ar.effData + artSkill.ar.effDataUp * ((*it)->m_artifactLevel - 1);
 			}
 			if (artSkill.ar.effid == 35)
 			{
-				artiUpPer -= artSkill.ar.effData;
+				artiUpPer -= artSkill.ar.effData + artSkill.ar.effDataUp * ((*it)->m_artifactLevel - 1);
 			}
 			if (artSkill.ar.effid == 36)
 			{
-				servantLevelUpDown -= artSkill.ar.effData;
+				servantLevelUpDown -= artSkill.ar.effData + artSkill.ar.effDataUp * ((*it)->m_artifactLevel - 1);
 			}
 			if (artSkill.ar.effid == 37)
 			{
-				WaveDown -= artSkill.ar.effData;
+				WaveDown -= artSkill.ar.effData + artSkill.ar.effDataUp * ((*it)->m_artifactLevel - 1);
 			}
 			if (artSkill.ar.effid == 38)
 			{
-				servantUnlockDown -= artSkill.ar.effData;
+				servantUnlockDown -= artSkill.ar.effData + artSkill.ar.effDataUp * ((*it)->m_artifactLevel - 1);
 			}
 			m_AllDpsMul -= ((*it)->m_artifactLevel-1) * (*it)->m_artiDpsUp + SqLite::getInstance()->getArtifactSkillByID(id).ar.initAllDps;
 			if ((*it)->m_artifactStar == 5)

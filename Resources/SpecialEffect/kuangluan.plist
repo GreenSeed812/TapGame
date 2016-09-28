@@ -4,108 +4,18 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>kuangluan03.png</key>
+            <key>kuangluan1.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>spriteSourceSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>textureRect</key>
-                <string>{{0,0},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>kuangluan04.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{640,0},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>kuangluan05.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{1280,0},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>kuangluan06.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{1920,0},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>kuangluan07.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{2560,0},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>kuangluan08.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{3200,0},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>kuangluan09.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{0,480},{640,480}}</string>
+                <string>{{0,0},{192,192}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -116,11 +26,11 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>spriteSourceSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>textureRect</key>
-                <string>{{640,480},{640,480}}</string>
+                <string>{{192,768},{192,192}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -131,11 +41,11 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>spriteSourceSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>textureRect</key>
-                <string>{{1280,480},{640,480}}</string>
+                <string>{{0,960},{192,192}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -146,101 +56,131 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>spriteSourceSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>textureRect</key>
-                <string>{{1920,480},{640,480}}</string>
+                <string>{{192,960},{192,192}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>kuangluan13.png</key>
+            <key>kuangluan2.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>spriteSourceSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>textureRect</key>
-                <string>{{2560,480},{640,480}}</string>
+                <string>{{192,0},{192,192}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>kuangluan14.png</key>
+            <key>kuangluan3.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>spriteSourceSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>textureRect</key>
-                <string>{{3200,480},{640,480}}</string>
+                <string>{{0,192},{192,192}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>kuangluan15.png</key>
+            <key>kuangluan4.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>spriteSourceSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>textureRect</key>
-                <string>{{0,960},{640,480}}</string>
+                <string>{{192,192},{192,192}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>kuangluan16.png</key>
+            <key>kuangluan5.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>spriteSourceSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>textureRect</key>
-                <string>{{640,960},{640,480}}</string>
+                <string>{{0,384},{192,192}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>kuangluan17.png</key>
+            <key>kuangluan6.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>spriteSourceSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>textureRect</key>
-                <string>{{1280,960},{640,480}}</string>
+                <string>{{192,384},{192,192}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>kuangluan18.png</key>
+            <key>kuangluan7.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>spriteSourceSize</key>
-                <string>{640,480}</string>
+                <string>{192,192}</string>
                 <key>textureRect</key>
-                <string>{{1920,960},{640,480}}</string>
+                <string>{{0,576},{192,192}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>kuangluan8.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{192,192}</string>
+                <key>spriteSourceSize</key>
+                <string>{192,192}</string>
+                <key>textureRect</key>
+                <string>{{192,576},{192,192}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>kuangluan9.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{192,192}</string>
+                <key>spriteSourceSize</key>
+                <string>{192,192}</string>
+                <key>textureRect</key>
+                <string>{{0,768},{192,192}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -256,9 +196,9 @@
             <key>realTextureFileName</key>
             <string>kuangluan.png</string>
             <key>size</key>
-            <string>{4096,2048}</string>
+            <string>{384,1152}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:c2ad4beb67523cdb9472712f63a65ee6:374e3cfe655b21f3d2d02b804e175aab:a9b8c94309b940dd2d922aab19ebdb60$</string>
+            <string>$TexturePacker:SmartUpdate:03752e24487b8d405f77537371ad33b9:afe09eaa5aa407178011d6b88c39d2f6:03f8c52c3ee8e40b3603b0661727edea$</string>
             <key>textureFileName</key>
             <string>kuangluan.png</string>
         </dict>

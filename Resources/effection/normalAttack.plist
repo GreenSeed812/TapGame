@@ -4,134 +4,201 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>normalAttack_0.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,996},{1,1}}</string>
-                <key>offset</key>
-                <string>{-319.5,239.5}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{1,1}}</string>
-                <key>sourceSize</key>
-                <string>{640,480}</string>
-            </dict>
             <key>normalAttack_1.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{644,2},{330,198}}</string>
-                <key>offset</key>
-                <string>{155,73}</string>
-                <key>rotated</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{192,192}</string>
+                <key>spriteSourceSize</key>
+                <string>{192,192}</string>
+                <key>textureRect</key>
+                <string>{{0,0},{192,192}}</string>
+                <key>textureRotated</key>
                 <false/>
-                <key>sourceColorRect</key>
-                <string>{{310,68},{330,198}}</string>
-                <key>sourceSize</key>
-                <string>{640,480}</string>
+            </dict>
+            <key>normalAttack_10.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{192,192}</string>
+                <key>spriteSourceSize</key>
+                <string>{192,192}</string>
+                <key>textureRect</key>
+                <string>{{192,768},{192,192}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>normalAttack_11.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{192,192}</string>
+                <key>spriteSourceSize</key>
+                <string>{192,192}</string>
+                <key>textureRect</key>
+                <string>{{0,960},{192,192}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>normalAttack_12.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{192,192}</string>
+                <key>spriteSourceSize</key>
+                <string>{192,192}</string>
+                <key>textureRect</key>
+                <string>{{192,960},{192,192}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>normalAttack_2.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{644,202},{524,280}}</string>
-                <key>offset</key>
-                <string>{58,31}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{116,69},{524,280}}</string>
-                <key>sourceSize</key>
-                <string>{640,480}</string>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{192,192}</string>
+                <key>spriteSourceSize</key>
+                <string>{192,192}</string>
+                <key>textureRect</key>
+                <string>{{192,0},{192,192}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>normalAttack_3.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,2},{640,338}}</string>
-                <key>offset</key>
-                <string>{0,-2}</string>
-                <key>rotated</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{192,192}</string>
+                <key>spriteSourceSize</key>
+                <string>{192,192}</string>
+                <key>textureRect</key>
+                <string>{{0,192},{192,192}}</string>
+                <key>textureRotated</key>
                 <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,73},{640,338}}</string>
-                <key>sourceSize</key>
-                <string>{640,480}</string>
             </dict>
             <key>normalAttack_4.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,342},{640,304}}</string>
-                <key>offset</key>
-                <string>{0,-12}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{0,100},{640,304}}</string>
-                <key>sourceSize</key>
-                <string>{640,480}</string>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{192,192}</string>
+                <key>spriteSourceSize</key>
+                <string>{192,192}</string>
+                <key>textureRect</key>
+                <string>{{192,192},{192,192}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>normalAttack_5.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,993},{1,1}}</string>
-                <key>offset</key>
-                <string>{-319.5,239.5}</string>
-                <key>rotated</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{192,192}</string>
+                <key>spriteSourceSize</key>
+                <string>{192,192}</string>
+                <key>textureRect</key>
+                <string>{{0,384},{192,192}}</string>
+                <key>textureRotated</key>
                 <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{1,1}}</string>
-                <key>sourceSize</key>
-                <string>{640,480}</string>
             </dict>
             <key>normalAttack_6.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,990},{1,1}}</string>
-                <key>offset</key>
-                <string>{-319.5,239.5}</string>
-                <key>rotated</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{192,192}</string>
+                <key>spriteSourceSize</key>
+                <string>{192,192}</string>
+                <key>textureRect</key>
+                <string>{{192,384},{192,192}}</string>
+                <key>textureRotated</key>
                 <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{1,1}}</string>
-                <key>sourceSize</key>
-                <string>{640,480}</string>
             </dict>
             <key>normalAttack_7.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,987},{1,1}}</string>
-                <key>offset</key>
-                <string>{-319.5,239.5}</string>
-                <key>rotated</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{192,192}</string>
+                <key>spriteSourceSize</key>
+                <string>{192,192}</string>
+                <key>textureRect</key>
+                <string>{{0,576},{192,192}}</string>
+                <key>textureRotated</key>
                 <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{1,1}}</string>
-                <key>sourceSize</key>
-                <string>{640,480}</string>
             </dict>
             <key>normalAttack_8.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,984},{1,1}}</string>
-                <key>offset</key>
-                <string>{-319.5,239.5}</string>
-                <key>rotated</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{192,192}</string>
+                <key>spriteSourceSize</key>
+                <string>{192,192}</string>
+                <key>textureRect</key>
+                <string>{{192,576},{192,192}}</string>
+                <key>textureRotated</key>
                 <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{1,1}}</string>
-                <key>sourceSize</key>
-                <string>{640,480}</string>
+            </dict>
+            <key>normalAttack_9.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{192,192}</string>
+                <key>spriteSourceSize</key>
+                <string>{192,192}</string>
+                <key>textureRect</key>
+                <string>{{0,768},{192,192}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
         </dict>
         <key>metadata</key>
         <dict>
             <key>format</key>
-            <integer>2</integer>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
             <key>realTextureFileName</key>
             <string>normalAttack.png</string>
             <key>size</key>
-            <string>{1024,1024}</string>
+            <string>{384,1152}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:1c07e022ea5029c15ef26449f540c2b8$</string>
+            <string>$TexturePacker:SmartUpdate:03752e24487b8d405f77537371ad33b9:afe09eaa5aa407178011d6b88c39d2f6:03f8c52c3ee8e40b3603b0661727edea$</string>
             <key>textureFileName</key>
             <string>normalAttack.png</string>
         </dict>

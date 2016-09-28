@@ -258,6 +258,7 @@
         <Image Name="kuang2.png" />
         <Image Name="lan.png" />
         <Image Name="layer.png" />
+        <Project Name="LeaveGold.csd" Type="Node" />
         <Image Name="leijichengjiujiangli.png" />
         <Image Name="lhs.png" />
         <Image Name="lhs_ar.png" />

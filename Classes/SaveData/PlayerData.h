@@ -2,6 +2,7 @@
 #define _PlayerData_H_
 #include "Tool/Rule.h"
 #include "Tool/SqLite.h"
+#include "Tool/TimeTool.h"
 #include <vector>
 
 struct LatestData
@@ -102,6 +103,15 @@ public:
 	bool getRelife(){ return m_relife; }
 	void relifeEnd(){ m_relife = false; }
 	void dataInit();
+	void setSignCount();
+	int getSignCount(){ return m_signCount; }
+	void setSignTime(){ m_signTime = TimeTool::getInstance()->getTime(); }
+	int getSignTime(){ return m_signTime; }
+	void setBg(bool off_on){ m_bg = off_on; };
+	bool getBg(){ return m_bg; }
+	void setSou(bool off_on){ m_sou = off_on; }
+	bool getSou(){ return m_sou; }
+
 public:
 	float getgoldMul(){ return m_goldMulBase; }
 	float getexploreProb(){ return m_exploreProb + m_skillexploreProb; }
@@ -156,5 +166,10 @@ private:
 	MyNum m_servantUpDps[33];
 	MyNum m_servantUpGold[33];
 	MyNum m_defeatMG;
+	int m_signCount;
+	int m_signTime;
+	bool m_bg;
+	bool m_sou;
+
 };
 #endif

@@ -1,5 +1,6 @@
 
 #include "BgMusic.h"
+#include "SaveData/PlayerData.h"
 
 BgMusic*  bgm = nullptr;
 
@@ -35,6 +36,7 @@ void BgMusic::playBg(bool off_on)
 
 void BgMusic::playEff()
 {
+	m_Off_ON = PlayerData::getInstance()->getSou();
 	if (m_Off_ON)
 	{
 		SimpleAudioEngine::getInstance()->playEffect(EFFECT_MUSIC);

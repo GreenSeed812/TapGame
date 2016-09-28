@@ -81,13 +81,13 @@
             <PreSize X="0.1050" Y="0.4400" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="text1" ActionTag="451933660" Tag="114" IconVisible="False" LeftMargin="517.2759" RightMargin="184.7241" TopMargin="20.3727" BottomMargin="109.6273" LeftEage="32" RightEage="32" TopEage="14" BottomEage="14" Scale9OriginX="32" Scale9OriginY="14" Scale9Width="34" Scale9Height="17" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="text1" ActionTag="451933660" Tag="114" IconVisible="False" LeftMargin="496.2761" RightMargin="205.7239" TopMargin="20.3727" BottomMargin="109.6273" LeftEage="32" RightEage="32" TopEage="14" BottomEage="14" Scale9OriginX="32" Scale9OriginY="14" Scale9Width="34" Scale9Height="17" ctype="ImageViewObjectData">
             <Size X="98.0000" Y="45.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="566.2759" Y="132.1273" />
+            <Position X="545.2761" Y="132.1273" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7078" Y="0.7550" />
+            <PrePosition X="0.6816" Y="0.7550" />
             <PreSize X="0.1225" Y="0.2571" />
             <FileData Type="Normal" Path="jiangli.png" Plist="" />
           </AbstractNodeData>

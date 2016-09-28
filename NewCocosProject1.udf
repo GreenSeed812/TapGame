@@ -27,7 +27,10 @@
     </Item>
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
-        <ActiveDocument />
+        <OpenedDocuments>
+          <FilePathData Path="LeaveGold.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="LeaveGold.csd" />
       </Value>
     </Item>
   </Properties>

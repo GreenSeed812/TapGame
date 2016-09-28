@@ -47,6 +47,7 @@ void TaskItem::initTaskItem(int id)
 				m_state = false;
 				m_clicked = false;
 				MissionData::getInstance()->setMissionTimesById(m_id, -100000000);
+				PlayerData::getInstance()->saveUserData();
 				taskChange(this);
 			}
 		});
@@ -63,6 +64,7 @@ void TaskItem::initTaskItem(int id)
 				m_state = false;
 				m_clicked = false;
 				MissionData::getInstance()->setMissionTimesById(m_id, -100000000);
+				PlayerData::getInstance()->saveUserData();
 				taskChange(this);
 			}
 		});
@@ -75,6 +77,7 @@ void TaskItem::initTaskItem(int id)
 				m_state = false;
 				m_clicked = false;
 				MissionData::getInstance()->setMissionTimesById(m_id, -100000000);
+				PlayerData::getInstance()->saveUserData();
 				taskChange(this);
 			}
 		});	
@@ -137,10 +140,12 @@ void TaskItem::taskChange(Ref* ref)
 
 void TaskItem::stateChange()
 {
-	auto time = TimeTool::getInstance()->getcurrTime();
-	auto year = time->tm_year;
-	auto day = time->tm_yday;
-	if (!(HelloWorld::getTime()->tm_year == year && HelloWorld::getTime()->tm_yday == day))
+	auto timeNow = TimeTool::getInstance()->getcurrTime();
+	auto year = timeNow->tm_year;
+	auto day = timeNow->tm_yday;
+	auto signTime = TimeTool::getInstance()->calTime(PlayerData::getInstance()->getSignTime());
+	log("%d------%d", day, signTime->tm_yday);
+	if (signTime->tm_year == year && ((signTime->tm_yday - day) == 1))
 	{
 		m_state = true;
 		m_clicked = true;
@@ -201,7 +206,8 @@ void TaskItem::stateChange()
 		break;
 	case 5:
 	{
-		auto hour = time->tm_hour;
+		auto timeNow = TimeTool::getInstance()->getcurrTime();
+		auto hour = timeNow->tm_hour;
 		if (hour >= 9 && hour <= 12)
 		{
 			if (m_clicked)
@@ -213,7 +219,8 @@ void TaskItem::stateChange()
 	break;
 	case 6:
 	{	
-		auto hour = time->tm_hour;
+		auto timeNow = TimeTool::getInstance()->getcurrTime();
+		auto hour = timeNow->tm_hour;
 		if (hour >= 18 && hour <= 21)
 		{
 			if (m_clicked)

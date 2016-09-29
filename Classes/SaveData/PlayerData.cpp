@@ -397,17 +397,14 @@ MyNum PlayerData::defeatMonsterGold()
 	{
 		baseNum = Ruler::getInstance()->multiplay(baseNum, 10);
 	}
-	AchieveData::getInstance()->killMonster();
 	baseNum = Ruler::getInstance()->multiplay(baseNum, 1 + m_goldMulBase);
 	if (MonsterState::getInstance()->getTypeNow() == MONSTER_TYPE::RARE)
 	{
 		baseNum = Ruler::getInstance()->multiplay(baseNum, 3 * (1 + m_goldMulBox + ArtifactData::getInstance()->getrmGoldPer()));
-		AchieveData::getInstance()->killRareMonster();
 	}
 	else if (MonsterState::getInstance()->getTypeNow() == MONSTER_TYPE::BOSS)
 	{
 		baseNum = Ruler::getInstance()->multiplay(baseNum, 5);
-		AchieveData::getInstance()->killBoss();
 	}
 	if (ShopData::getInstance()->getItemBeUsedById(10))
 		baseNum = Ruler::getInstance()->multiplay(baseNum, 1.5);

@@ -463,7 +463,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/Ui/MissionLayer.o: 
  jni/../../Classes/Tool/SqLite.h jni/../../Classes/Tool/sqlite3.h \
  jni/../../Classes/Tool/MyNum.h jni/../../Classes/SaveData/PlayerData.h \
  jni/../../Classes/Tool/Rule.h jni/../../Classes/Tool/MyNum.h \
- jni/../../Classes/Tool/TimeTool.h
+ jni/../../Classes/Tool/TimeTool.h jni/../../Classes/AppDelegate.h
 
 jni/../../Classes/Ui/MissionLayer.h:
 
@@ -1398,3 +1398,5 @@ jni/../../Classes/Tool/Rule.h:
 jni/../../Classes/Tool/MyNum.h:
 
 jni/../../Classes/Tool/TimeTool.h:
+
+jni/../../Classes/AppDelegate.h:

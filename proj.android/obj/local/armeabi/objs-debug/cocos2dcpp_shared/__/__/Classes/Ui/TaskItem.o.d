@@ -1,5 +1,5 @@
-obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/Ui/AchieveItem.o: \
- jni/../../Classes/Ui/AchieveItem.cpp jni/../../Classes/Ui/AchieveItem.h \
+obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/Ui/TaskItem.o: \
+ jni/../../Classes/Ui/TaskItem.cpp jni/../../Classes/Ui/TaskItem.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../cocos2d.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../base/ccConfig.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../platform/CCPlatformConfig.h \
@@ -347,7 +347,6 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/Ui/AchieveItem.o: \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCSet.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCString.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCDeprecated.h \
- jni/../../Classes/Tool/MyNum.h jni/../../Classes/Ui/AchieveLayer.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/CocosGUI.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/UIWidget.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../2d/CCProtectedNode.h \
@@ -383,6 +382,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/Ui/AchieveItem.o: \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/UIEditBox/UIEditBox.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/UILayoutComponent.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../editor-support/cocostudio/CocosStudioExtension.h \
+ jni/../../Classes/MainScene/HelloWorldScene.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocoStudio.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCActionFrame.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocosStudioExport.h \
@@ -459,9 +459,12 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/Ui/AchieveItem.o: \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../renderer/CCRenderer.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCBoneNode.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CSLoader.h \
+ jni/../../Classes/MainScene/ClickLayer.h \
+ jni/../../Classes/Ui/bossButton.h jni/../../Classes/Tool/MyNum.h \
  jni/../../Classes/Tool/SqLite.h jni/../../Classes/Tool/sqlite3.h \
- jni/../../Classes/Tool/MyNum.h jni/../../Classes/SaveData/PlayerData.h \
- jni/../../Classes/Tool/Rule.h jni/../../Classes/Tool/TimeTool.h \
+ jni/../../Classes/Tool/MyNum.h jni/../../Classes/Tool/Rule.h \
+ jni/../../Classes/Tool/TimeTool.h \
+ jni/../../Classes/SaveData/PlayerData.h \
  jni/../../Classes/SaveData/ShopData.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/writer.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/dtoa.h \
@@ -469,9 +472,13 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/Ui/AchieveItem.o: \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/internal/itoa.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h \
- jni/../../Classes/SaveData/AchieveData.h jni/../../Classes/AppDelegate.h
+ jni/../../Classes/SaveData/AchieveData.h \
+ jni/../../Classes/SaveData/ArtifactData.h \
+ jni/../../Classes/SaveData/AchieveData.h \
+ jni/../../Classes/SaveData/PlayerData.h \
+ jni/../../Classes/SaveData/MissionData.h jni/../../Classes/AppDelegate.h
 
-jni/../../Classes/Ui/AchieveItem.h:
+jni/../../Classes/Ui/TaskItem.h:
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../cocos2d.h:
 
@@ -1167,10 +1174,6 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../depr
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCDeprecated.h:
 
-jni/../../Classes/Tool/MyNum.h:
-
-jni/../../Classes/Ui/AchieveLayer.h:
-
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/CocosGUI.h:
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/UIWidget.h:
@@ -1240,6 +1243,8 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/U
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../ui/UILayoutComponent.h:
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../editor-support/cocostudio/CocosStudioExtension.h:
+
+jni/../../Classes/MainScene/HelloWorldScene.h:
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocoStudio.h:
 
@@ -1393,17 +1398,23 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-sup
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CSLoader.h:
 
+jni/../../Classes/MainScene/ClickLayer.h:
+
+jni/../../Classes/Ui/bossButton.h:
+
+jni/../../Classes/Tool/MyNum.h:
+
 jni/../../Classes/Tool/SqLite.h:
 
 jni/../../Classes/Tool/sqlite3.h:
 
 jni/../../Classes/Tool/MyNum.h:
 
-jni/../../Classes/SaveData/PlayerData.h:
-
 jni/../../Classes/Tool/Rule.h:
 
 jni/../../Classes/Tool/TimeTool.h:
+
+jni/../../Classes/SaveData/PlayerData.h:
 
 jni/../../Classes/SaveData/ShopData.h:
 
@@ -1420,5 +1431,13 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuf
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h:
 
 jni/../../Classes/SaveData/AchieveData.h:
+
+jni/../../Classes/SaveData/ArtifactData.h:
+
+jni/../../Classes/SaveData/AchieveData.h:
+
+jni/../../Classes/SaveData/PlayerData.h:
+
+jni/../../Classes/SaveData/MissionData.h:
 
 jni/../../Classes/AppDelegate.h:

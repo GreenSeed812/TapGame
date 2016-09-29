@@ -723,12 +723,12 @@ void HelloWorld::killBoss()
 		if (PlayerData::getInstance()->getWaveNow() < PlayerData::getInstance()->getMaxWave() - 1 && PlayerData::getInstance()->getWaveNow() != 0)
 		{
 			PlayerData::getInstance()->waveUp();
-			
-			waveNum->setString(StringUtils::format("%d/%d", PlayerData::getInstance()->getWaveNow(),PlayerData::getInstance()->getMaxWave() - 1));
+
+			waveNum->setString(StringUtils::format("%d/%d", PlayerData::getInstance()->getWaveNow(), PlayerData::getInstance()->getMaxWave() - 1));
 		}
-		else if (PlayerData::getInstance()->getWaveNow() == PlayerData::getInstance()->getMaxWave()-1)
+		else if (PlayerData::getInstance()->getWaveNow() == PlayerData::getInstance()->getMaxWave() - 1)
 		{
-			
+
 			waveNum->runAction(Hide::create());
 			escapeBoss->runAction(Show::create());
 			PlayerData::getInstance()->waveUp();
@@ -737,9 +737,9 @@ void HelloWorld::killBoss()
 			{
 				bossBt = bossButton::create();
 				bossButtonNode->addChild(bossBt);
-				bossBt->setName("bt");			
+				bossBt->setName("bt");
 			}
-				
+
 		}
 		else if (PlayerData::getInstance()->getWaveNow() == 0)
 		{
@@ -751,11 +751,11 @@ void HelloWorld::killBoss()
 			PlayerData::getInstance()->levelUp();
 			mapChange();
 			TextBMFont* textLast = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("level");
-			textLast->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel()-1));
+			textLast->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel() - 1));
 			TextBMFont* textNow = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("level_1");
 			textNow->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel()));
 			TextBMFont* textNext = (TextBMFont*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("level_0");
-			textNext->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel()+1));
+			textNext->setString(StringUtils::format("%d", 1 + PlayerData::getInstance()->getLevel() + 1));
 			Node* bossButtonNode = (Node*)rootNode->getChildByName("UiNode")->getChildByName("Wave_Button")->getChildByName("escapeBoss");
 			bossButtonNode->removeChildByName("bt");
 			waveNum->setString(StringUtils::format("%d/%d", PlayerData::getInstance()->getWaveNow(), PlayerData::getInstance()->getMaxWave() - 1));
@@ -763,6 +763,20 @@ void HelloWorld::killBoss()
 		}
 		auto hpnow = PlayerData::getInstance()->getHpNow();
 		armature->getAnimation()->play("Leave");
+	
+		if (MonsterState::getInstance()->getTypeNow() == MONSTER_TYPE::RARE)
+		{
+			AchieveData::getInstance()->killRareMonster();
+			AchieveData::getInstance()->killMonster();
+		}
+		if (MonsterState::getInstance()->getTypeNow() == MONSTER_TYPE::BOSS)
+		{
+			AchieveData::getInstance()->killBoss();
+		}
+		else
+		{
+			AchieveData::getInstance()->killMonster();
+		}
 	}
 	
 }

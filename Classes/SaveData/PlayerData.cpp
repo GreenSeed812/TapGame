@@ -392,6 +392,7 @@ MyNum PlayerData::getPlayerlvup100Gold()
 MyNum PlayerData::defeatMonsterGold()
 {
 	auto baseNum = m_defeatMG;
+	
 	auto random = cocos2d::random(0, 99);
 	if (random < ArtifactData::getInstance()->gettenGoldPer())
 	{
@@ -589,14 +590,7 @@ void PlayerData::servantLevelUp(int id)
 }
 MyNum PlayerData::getservantToalDps(int id)
 {
-	auto servantDps = SqLite::getInstance()->getServantDpsByID(id);
-	for (int i = 0; i < m_servantLevel[id]; i++)
-	{
-		auto pow1 = pow(i + 1, 0.7);
-		auto pow2 = pow(i + 1, 6);
-		auto mul = 1 + 1 / pow1 - 1 / pow2;
-		servantDps = Ruler::getInstance()->multiplay(servantDps, mul);
-	}
+	auto servantDps = Ruler::getInstance()->multiplay(m_servantBaseDps[id],m_servantMul[id]);
 	return servantDps;
 	
 }
@@ -646,7 +640,7 @@ MyNum PlayerData::getservantLevelUp10Gold(int id)
 	m_up10Gold.number = 0;
 	m_up10Gold.Mathbit = 0;
 	auto m_upGold = getservantLevelUpGold(id);
-	for (size_t i = 1; i <= 10; i++)
+	for (size_t i = m_servantLevel[id]; i <= m_servantLevel[id]+10; i++)
 	{
 		m_up10Gold = Ruler::getInstance()->addNum(m_up10Gold, m_upGold);
 		auto mul = 1 + 1 / (pow(i + 1, 0.45) - 1 / pow(i + 1, 6.13));
@@ -662,7 +656,7 @@ MyNum PlayerData::getservantLevelUp100Gold(int id)
 	m_up100Gold.number = 0;
 	m_up100Gold.Mathbit = 0;
 	auto m_upGold = getservantLevelUpGold(id);
-	for (size_t i = 1; i <= 100; i++)
+	for (size_t i = m_servantLevel[id]; i <= m_servantLevel[id] + 100; i++)
 	{
 		m_up100Gold = Ruler::getInstance()->addNum(m_up100Gold, m_upGold);
 		auto mul = 1 + 1 / (pow(i + 1, 0.45) - 1 / pow(i + 1, 6.13));

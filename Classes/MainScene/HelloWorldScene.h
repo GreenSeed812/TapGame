@@ -63,7 +63,7 @@ public:
 	if (m_skilltimeSliderShow == 0)
 		m_skilltimeSlider->runAction(Hide::create());
 	}
-	void delexploreCoin(Ref*,int);
+	void delexploreCoin(Ref*,int,MyNum);
     CREATE_FUNC(HelloWorld);
 private:
 	Node* rootNode;

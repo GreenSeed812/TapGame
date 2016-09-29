@@ -1765,19 +1765,19 @@ void HelloWorld::coinAni()
 		auto knum = CoinAnimation::getInstance()->getKnum();
 		auto xMove = random(-400, 400);
 		auto jumpNum = random(1, 3);
-		auto seq = Sequence::create(JumpBy::create(0.5, Point(xMove, -300), abs(xMove)*knum, 1), JumpBy::create(0.5, Point(xMove / 5, 0), 50, jumpNum), DelayTime::create(3), JumpTo::create(1, Point(-50, 400), 50, 1), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)),CallFuncN::create(CC_CALLBACK_1(HelloWorld::delexploreCoin,this,coinnum)),NULL);
+		auto seq = Sequence::create(JumpBy::create(0.5, Point(xMove, -300), abs(xMove)*knum, 1), JumpBy::create(0.5, Point(xMove / 5, 0), 50, jumpNum), DelayTime::create(3), JumpTo::create(1, Point(-50, 400), 50, 1), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::delexploreCoin, this, coinnum, PlayerData::getInstance()->defeatMonsterGold())), NULL);
 		gold->runAction(seq);
 	}
 	
 	
 }
-void HelloWorld::delexploreCoin(Ref*,int num)
+void HelloWorld::delexploreCoin(Ref*,int num,MyNum Defeatgold)
 {
 
 	MyNum n;
 	n.Mathbit = 0;
 	n.number = num;
-	auto gold = Ruler::getInstance()->devide(PlayerData::getInstance()->defeatMonsterGold(), n);
+	auto gold = Ruler::getInstance()->devide(Defeatgold, n);
 	PlayerData::getInstance()->addGold(&gold);
 }
 

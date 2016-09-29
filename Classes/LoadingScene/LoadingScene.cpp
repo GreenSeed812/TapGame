@@ -45,7 +45,7 @@ bool LoadingScene::init()
 		return false;
 	}
 
-	//remove(cocos2d::UserDefault::getInstance()->getXMLFilePath().c_str());
+	remove(cocos2d::UserDefault::getInstance()->getXMLFilePath().c_str());
 	m_rootNode = CSLoader::createNode("denglu.csb");
 
 	auto head = (ImageView*)m_rootNode->getChildByName("head");

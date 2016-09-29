@@ -34,10 +34,8 @@ USING_NS_CC_EXT;
 using namespace ui;
 
 bool HelloWorld::m_coutChange = false;
-int HelloWorld::m_dayCount = 0;
 int HelloWorld::m_signCount = 0;
 tm* HelloWorld::m_time = TimeTool::getInstance()->getcurrTime();
-bool HelloWorld::g_phoneType = true;
 
 Scene* HelloWorld::createScene()
 {
@@ -73,7 +71,6 @@ bool HelloWorld::init()
 	m_leaveText = nullptr;
 	m_arCount = 0;
 	m_exchangeCount = 5;
-	m_dayCount = 0;
     rootNode = CSLoader::createNode("MainScene.csb");
 	rootNode->setName("main");
 
@@ -145,7 +142,6 @@ bool HelloWorld::init()
 	m_skilltimeSlider = rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("skill_time");
 	m_skilltimeSliderShow = 0;
 	m_exploreCoinNum = 0;
-	checkType();
     return true;
 }
 void HelloWorld::coinChange(Ref *ref)
@@ -170,9 +166,6 @@ void HelloWorld::coinChange(Ref *ref)
 		m_coutChange = false;
 	}
 	ExChange::setCount(m_exchangeCount);
-
-	//PlayerData::getInstance()->saveUserData();
-
 }
 
 void HelloWorld::ArChange(Ref* ref)
@@ -253,7 +246,6 @@ void HelloWorld::callBackFunc(Armature * armature, MovementEventType type, const
 	if (action == "Hurt")
 	{
 		Slider* hpSlider = (Slider*)rootNode->getChildByName("HpSlider");
-	//	killBoss();
 	}
 	return;
 }
@@ -478,11 +470,7 @@ void HelloWorld::update(float dt)
 			shopItemCDUpDate(dt);
 		}
 	}
-	
-
-	//PlayerData::getInstance()->saveUserData();
 	//runAni();
-
  }
 void HelloWorld::uiInit()
 {
@@ -1563,15 +1551,7 @@ void HelloWorld::shopItemCDUpDate(float dt)
 //		}
 //}
 bool HelloWorld::mapInit()
-{
-	/*if (PlayerData::getInstance()->getLevel() == 0)
-	{
-		Sprite* mapL = (Sprite*)rootNode->getChildByName("UiNode")->getChildByName("Map")->getChildByName("MapOtherL");
-		mapL->runAction(Hide::create());
-		
-	}*/
-	
-	
+{	
 	if (PlayerData::getInstance()->getLevel() % 5 == 0)
 	{
 		auto mapNum = PlayerData::getInstance()->getLevel() / 5;
@@ -1768,18 +1748,6 @@ void HelloWorld::delexploreCoin(Ref*,int num)
 	n.number = num;
 	auto gold = Ruler::getInstance()->devide(PlayerData::getInstance()->defeatMonsterGold(), n);
 	PlayerData::getInstance()->addGold(&gold);
-}
-
-void HelloWorld::checkType()
-{
-	
-	#if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
-		HelloWorld::g_phoneType = true;
-	#endif
-
-	#if  CC_TARGET_PLATFORM == CC_PLATFORM_IOS
-		HelloWorld::g_phoneType = false;
-	#endif
 }
 
 void HelloWorld::leaveCallBack(Node * node)

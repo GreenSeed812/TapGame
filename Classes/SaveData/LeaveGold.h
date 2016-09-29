@@ -17,6 +17,7 @@ public:
 	MyNum getGolds(){ return m_golds; }
 private:
 	MyNum m_golds;
+	void calculate();
 };
 
 #endif

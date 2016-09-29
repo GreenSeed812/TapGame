@@ -16,13 +16,13 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="yld.jpg" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="nameBg" ActionTag="638300879" Tag="416" IconVisible="False" LeftMargin="190.4237" RightMargin="225.5763" TopMargin="1169.9746" BottomMargin="551.0253" LeftEage="249" RightEage="249" TopEage="33" BottomEage="33" Scale9OriginX="249" Scale9OriginY="33" Scale9Width="166" Scale9Height="133" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="nameBg" ActionTag="638300879" Tag="416" IconVisible="False" LeftMargin="209.4246" RightMargin="206.5754" TopMargin="1169.9747" BottomMargin="551.0253" LeftEage="249" RightEage="249" TopEage="33" BottomEage="33" Scale9OriginX="249" Scale9OriginY="33" Scale9Width="166" Scale9Height="133" ctype="ImageViewObjectData">
             <Size X="664.0000" Y="199.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="522.4237" Y="650.5253" />
+            <Position X="541.4246" Y="650.5253" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4837" Y="0.3388" />
+            <PrePosition X="0.5013" Y="0.3388" />
             <PreSize X="0.6148" Y="0.1036" />
             <FileData Type="Normal" Path="dl.png" Plist="" />
           </AbstractNodeData>
@@ -36,15 +36,17 @@
             <PreSize X="0.3315" Y="0.1865" />
             <FileData Type="Normal" Path="dltx.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="loadText" ActionTag="1564493955" Tag="418" IconVisible="False" LeftMargin="307.0000" RightMargin="307.0000" TopMargin="1708.7786" BottomMargin="134.2215" LabelText="NOW LOADING" ctype="TextBMFontObjectData">
-            <Size X="466.0000" Y="77.0000" />
+          <AbstractNodeData Name="loadText" ActionTag="-1947002442" Tag="12" IconVisible="False" LeftMargin="366.2518" RightMargin="367.7482" TopMargin="1629.3616" BottomMargin="208.6385" FontSize="72" LabelText="正在读取..." HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="346.0000" Y="82.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="540.0000" Y="172.7215" />
+            <Position X="539.2518" Y="249.6385" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="229" B="192" />
-            <PrePosition X="0.5000" Y="0.0900" />
-            <PreSize X="0.4315" Y="0.0401" />
-            <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
+            <PrePosition X="0.4993" Y="0.1300" />
+            <PreSize X="0.3204" Y="0.0427" />
+            <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
           <AbstractNodeData Name="btn" ActionTag="-1318306932" Tag="92" IconVisible="False" LeftMargin="396.0000" RightMargin="396.0000" TopMargin="1510.1263" BottomMargin="246.8737" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="258" Scale9Height="141" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="288.0000" Y="163.0000" />

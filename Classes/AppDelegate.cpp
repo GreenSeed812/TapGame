@@ -4,9 +4,10 @@
 #include "LoadingScene\LoadingScene.h"
 #include "Animation.h"
 USING_NS_CC;
+bool AppDelegate::g_phoneType = true;
 
 AppDelegate::AppDelegate() {
-
+	checkType();
 }
 
 AppDelegate::~AppDelegate() 
@@ -63,4 +64,17 @@ void AppDelegate::applicationWillEnterForeground() {
 
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+}
+
+void AppDelegate::checkType()
+{
+#if CC_TARGET_PLATFORM == CC_PLATFORM_WIN32
+	AppDelegate::g_phoneType = false;
+#endif
+#if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
+	AppDelegate::g_phoneType = true;
+#endif
+#if  CC_TARGET_PLATFORM == CC_PLATFORM_IOS
+	AppDelegate::g_phoneType = false;
+#endif
 }

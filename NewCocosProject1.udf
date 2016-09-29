@@ -25,13 +25,5 @@
         <EnableHTML5Advanced Value="False" />
       </Value>
     </Item>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="LeaveGold.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="LeaveGold.csd" />
-      </Value>
-    </Item>
   </Properties>
 </UserData>

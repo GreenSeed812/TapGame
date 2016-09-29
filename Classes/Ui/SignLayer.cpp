@@ -8,6 +8,7 @@
 #include "SaveData/PlayerData.h"
 #include "SaveData/ShopData.h"
 #include "SaveData/ArtifactData.h"
+#include "AppDelegate.h"
 using namespace cocostudio;
 using namespace cocos2d;
 using namespace ui;
@@ -18,11 +19,10 @@ bool SignLayer::init()
 	{
 		return false;
 	}
-
+	m_Rate = 1;
 	m_bgLayer = LayerColor::create(Color4B(50, 50, 50, 155));
 	this->addChild(m_bgLayer);
 	m_state = true;
-	m_day = HelloWorld::getDay();
 	rootNode = CSLoader::createNode("singLayer.csb");
 	this->addChild(rootNode);
 	auto touchListener = EventListenerTouchOneByOne::create();
@@ -36,7 +36,14 @@ bool SignLayer::init()
 void SignLayer::initSignLayer()
 {	
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(SignLayer::signChange), "signChange", nullptr);
-
+	if (AppDelegate::getPhoneType())
+	{
+		m_Rate = 1;
+	}
+	else
+	{
+		m_Rate = 2;
+	}
 	m_strings = FileUtils::getInstance()->getValueMapFromFile("fonts/skillState.xml");
 	auto bt = (Button*)rootNode->getChildByName("bg")->getChildByName("esc");	
 	bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
@@ -83,13 +90,14 @@ void SignLayer::initSignLayer()
 					{
 						if (m_state)
 						{
+							int num = 1 * m_Rate;
 							if (PlayerData::getInstance()->getSignCount() == 0)
 							{
-								ShopData::getInstance()->getItemDataById(0)->itemNum++;
+								ShopData::getInstance()->getItemDataById(0)->itemNum += ShopData::getInstance()->getItemDataById(0)->itemNum + num;
 							}
 							else
 							{
-								ShopData::getInstance()->getItemDataById(2)->itemNum++;
+								ShopData::getInstance()->getItemDataById(2)->itemNum += ShopData::getInstance()->getItemDataById(2)->itemNum + num;
 							}
 							PlayerData::getInstance()->setSignCount();
 							btn->setEnabled(false);
@@ -152,13 +160,14 @@ void SignLayer::initSignLayer()
 					{
 						if (m_state)
 						{
+							int num = 1 * m_Rate;
 							if (PlayerData::getInstance()->getSignCount() == 0)
 							{
-								ShopData::getInstance()->getItemDataById(1)->itemNum++;
+								ShopData::getInstance()->getItemDataById(1)->itemNum += ShopData::getInstance()->getItemDataById(1)->itemNum + num;
 							}
 							else
 							{
-								ShopData::getInstance()->getItemDataById(3)->itemNum++;
+								ShopData::getInstance()->getItemDataById(3)->itemNum += ShopData::getInstance()->getItemDataById(3)->itemNum + num;
 							}
 							btn->setEnabled(false);
 							PlayerData::getInstance()->setSignCount();
@@ -225,7 +234,6 @@ void SignLayer::signChange(Ref*ref)
 	if (ref)
 	{
 		m_day = PlayerData::getInstance()->getSignCount();
-		m_time = TimeTool::getInstance()->calTime(PlayerData::getInstance()->getSignTime());
 		auto num = (TextBMFont*)rootNode->getChildByName("bg")->getChildByName("dayNum");
 		num->setString(StringUtils::format("%d", m_day));
 		
@@ -334,13 +342,9 @@ void SignLayer::signChange(Ref*ref)
 
 void SignLayer::stateChange()
 {
-	auto dayNum = HelloWorld::getDay();
-	auto time = TimeTool::getInstance()->getcurrTime();
-	auto year = time->tm_year;
-	auto mon = time->tm_mon;
-	auto day = time->tm_mday;
-	
-	if (m_time->tm_year == year && m_time->tm_mon == mon && m_time->tm_mday == day)
+	auto timeNow = (tm*)TimeTool::getInstance()->calTime(TimeTool::getInstance()->getTime());
+	auto signTime = TimeTool::getInstance()->calTime(PlayerData::getInstance()->getSignTime());
+	if (timeNow->tm_year == signTime->tm_year && timeNow->tm_yday == signTime->tm_yday)
 	{
 		if (m_day == 0)
 		{

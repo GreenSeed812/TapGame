@@ -4,15 +4,22 @@
 
 LeaveGold::LeaveGold()
 {
-	int time;
+	calculate();
+}
+
+LeaveGold::~LeaveGold()
+{
+
+}
+
+void LeaveGold::calculate()
+{
+	int time = 0;
 	if (cocos2d::UserDefault::getInstance()->getBoolForKey("isSaved"))
 	{
 		time = PlayerData::getInstance()->getLeaveTime();
 	}
-	else
-	{
-		time = 0;
-	}
+
 	if (time != 0)
 	{
 		auto timeNow = TimeTool::getInstance()->getTime();
@@ -20,11 +27,6 @@ LeaveGold::LeaveGold()
 		auto dps = PlayerData::getInstance()->getHeroDps();
 		auto gold = PlayerData::getInstance()->getdefeatMonsterGold();
 		auto hp = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getHpNow(), 2);
-		MyNum dou;
-		if (ShopData::getInstance()->getItemDataById(11)->leftTime > 0)
-		{
-			dou = Ruler::getInstance()->multiplay(Ruler::getInstance()->multiplay(gold, ShopData::getInstance()->getItemDataById(11)->leftTime), hp);
-		}
 		if (num >= 72000)
 		{
 			m_golds = Ruler::getInstance()->multiplay(Ruler::getInstance()->multiplay(gold, 72000), hp);
@@ -35,12 +37,30 @@ LeaveGold::LeaveGold()
 			{
 				m_golds = Ruler::getInstance()->multiplay(Ruler::getInstance()->multiplay(gold, num), hp);
 			}
+			else
+			{
+				m_golds.number = 0;
+				m_golds.Mathbit = 0;
+			}
 		}
-		m_golds = Ruler::getInstance()->addNum(m_golds,dou);
+		//¼ÆËã¼Ó³É
+		MyNum addition;
+		addition.number = 0;
+		addition.Mathbit = 0;
+		auto time= ShopData::getInstance()->getItemDataById(11)->leftTime;
+		if (time > 0)
+		{
+			if (num > 43200)
+			{
+				time = 0;
+			}
+			else
+			{
+				time -= num;
+			}
+			ShopData::getInstance()->getItemDataById(11)->leftTime = time;
+			addition = Ruler::getInstance()->multiplay(Ruler::getInstance()->multiplay(gold, time), hp);
+		}
+		m_golds = Ruler::getInstance()->addNum(m_golds, addition);
 	}
-}
-
-LeaveGold::~LeaveGold()
-{
-
 }

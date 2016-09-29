@@ -33,6 +33,10 @@ public:
     @param  the pointer of the application
     */
     virtual void applicationWillEnterForeground();
+	static bool getPhoneType(){ return g_phoneType; }
+	void checkType();
+private:
+	static bool g_phoneType;
 };
 
 #endif // _APP_DELEGATE_H_

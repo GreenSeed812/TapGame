@@ -20,6 +20,7 @@ private:
 	void stateChange();
 	LayerColor * m_bgLayer;
 	cocos2d::ValueMap m_strings;
+	int m_Rate;
 };
 
 

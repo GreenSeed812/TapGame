@@ -7,6 +7,7 @@
 #include "SaveData/PlayerData.h"
 #include "SaveData/ShopData.h"
 #include "SaveData/AchieveData.h"
+#include "AppDelegate.h"
 using namespace cocostudio;
 using namespace cocos2d;
 using namespace ui;
@@ -19,6 +20,7 @@ bool AchieveItem::init()
 	{
 		return false;
 	}
+	m_Rate = 1;
 	m_money = 5;
 	m_starUp = false;
 	m_starUped = false;
@@ -60,28 +62,36 @@ void AchieveItem::initAchieveItem(int id)
 	auto num = (TextBMFont*)m_node->getChildByName("bgAchieve")->getChildByName("num");
 	auto money = (TextBMFont*)m_node->getChildByName("bgAchieve")->getChildByName("btn")->getChildByName("money");
 	m_starNum = AchieveData::getInstance()->getStarNumByID(m_id);
+	if (AppDelegate::getPhoneType())
+	{
+		m_Rate = 1;
+	}
+	else
+	{
+		m_Rate = 10;
+	}
 	if (m_starNum < 5)
 	{
 		switch (m_starNum)
 		{
 		case 0:
-			m_money = 5;
+			m_money = (5 * m_Rate);
 			m_countMax = SqLite::getInstance()->getAchieveByID(m_id)->Star_1;
 			break;
 		case 1:
-			m_money = 10;
+			m_money = (10 * m_Rate);
 			m_countMax = SqLite::getInstance()->getAchieveByID(m_id)->Star_2;
 			break;
 		case 2:
-			m_money = 15;
+			m_money = (15 * m_Rate);
 			m_countMax = SqLite::getInstance()->getAchieveByID(m_id)->Star_3;
 			break;
 		case 3:
-			m_money = 30;
+			m_money = (30 * m_Rate);
 			m_countMax = SqLite::getInstance()->getAchieveByID(m_id)->Star_4;
 			break;
 		case 4:
-			m_money = 50;
+			m_money = (50 * m_Rate);
 			m_countMax = SqLite::getInstance()->getAchieveByID(m_id)->Star_5;
 			break;
 		}

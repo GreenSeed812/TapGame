@@ -11,6 +11,7 @@
 #include "SaveData/AchieveData.h"
 #include "SaveData/ArtifactData.h"
 #include "SaveData/MissionData.h"
+#include "AppDelegate.h"
 USING_NS_CC;
 using namespace cocostudio;
 using namespace ui;
@@ -34,53 +35,93 @@ void TaskItem::initTaskItem(int id)
 {
 	m_id = id;
 	auto btn = (Button*)m_rootNode->getChildByName("btn");
-	switch (m_id)
+	if (AppDelegate::getPhoneType())
 	{
-	case 0:
-	case 1:
-	case 5:
-	case 6:
-		btn->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
-			if (type == Widget::TouchEventType::ENDED)
-			{
-				ShopData::getInstance()->addShopGold(SqLite::getInstance()->getQuestById(m_id)->reward);
-				m_state = false;
-				m_clicked = false;
-				MissionData::getInstance()->setMissionTimesById(m_id, -100000000);
-				PlayerData::getInstance()->saveUserData();
-				taskChange(this);
-			}
-		});
-		break;
-	case 2:
-	case 4:
-	case 7:
-	case 8:
-		btn->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
-			if (type == Widget::TouchEventType::ENDED)
-			{
-				auto num = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), SqLite::getInstance()->getQuestById(m_id)->reward);
-				PlayerData::getInstance()->addGold(&num);
-				m_state = false;
-				m_clicked = false;
-				MissionData::getInstance()->setMissionTimesById(m_id, -100000000);
-				PlayerData::getInstance()->saveUserData();
-				taskChange(this);
-			}
-		});
-		break;
-	case 3:
-		btn->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
-			if (type == Widget::TouchEventType::ENDED)
-			{
-				ArtifactData::getInstance()->addArtiStone(SqLite::getInstance()->getQuestById(m_id)->reward);
-				m_state = false;
-				m_clicked = false;
-				MissionData::getInstance()->setMissionTimesById(m_id, -100000000);
-				PlayerData::getInstance()->saveUserData();
-				taskChange(this);
-			}
-		});	
+		switch (m_id)
+		{
+		case 0:
+		case 1:
+		case 5:
+		case 6:
+			btn->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
+				if (type == Widget::TouchEventType::ENDED)
+				{
+					ShopData::getInstance()->addShopGold(SqLite::getInstance()->getQuestById(m_id)->reward);
+					m_state = false;
+					m_clicked = false;
+					MissionData::getInstance()->setMissionTimesById(m_id, -100000000);
+					PlayerData::getInstance()->saveUserData();
+					taskChange(this);
+				}
+			});
+			break;
+		case 2:
+		case 4:
+		case 7:
+		case 8:
+			btn->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
+				if (type == Widget::TouchEventType::ENDED)
+				{
+					auto num = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), SqLite::getInstance()->getQuestById(m_id)->reward);
+					PlayerData::getInstance()->addGold(&num);
+					m_state = false;
+					m_clicked = false;
+					MissionData::getInstance()->setMissionTimesById(m_id, -100000000);
+					PlayerData::getInstance()->saveUserData();
+					taskChange(this);
+				}
+			});
+			break;
+		case 3:
+			btn->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
+				if (type == Widget::TouchEventType::ENDED)
+				{
+					ArtifactData::getInstance()->addArtiStone(SqLite::getInstance()->getQuestById(m_id)->reward);
+					m_state = false;
+					m_clicked = false;
+					MissionData::getInstance()->setMissionTimesById(m_id, -100000000);
+					PlayerData::getInstance()->saveUserData();
+					taskChange(this);
+				}
+			});
+		}
+	}
+	else
+	{
+		switch (m_id)
+		{
+		case 0:
+		case 1:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:	
+			btn->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
+				if (type == Widget::TouchEventType::ENDED)
+				{
+					ShopData::getInstance()->addShopGold(SqLite::getInstance()->getQuestById(m_id)->reward);
+					m_state = false;
+					m_clicked = false;
+					MissionData::getInstance()->setMissionTimesById(m_id, -100000000);
+					PlayerData::getInstance()->saveUserData();
+					taskChange(this);
+				}
+			});
+			break;
+		case 2:
+			btn->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
+				if (type == Widget::TouchEventType::ENDED)
+				{
+					ArtifactData::getInstance()->addArtiStone(SqLite::getInstance()->getQuestById(m_id)->reward);
+					m_state = false;
+					m_clicked = false;
+					MissionData::getInstance()->setMissionTimesById(m_id, -100000000);
+					PlayerData::getInstance()->saveUserData();
+					taskChange(this);
+				}
+			});
+		}
 	}
 	taskChange(this);
 }
@@ -95,31 +136,58 @@ void TaskItem::taskChange(Ref* ref)
 
 	name->setString(SqLite::getInstance()->getQuestById(m_id)->MissionName);
 	info->setString(SqLite::getInstance()->getQuestById(m_id)->MissionDis);
-	switch (m_id)
+	if (AppDelegate::getPhoneType())
 	{
-	case 0:
-	case 1:
-	case 5:
-	case 6:
-	{
-		gold->setString(StringUtils::format("%d", SqLite::getInstance()->getQuestById(m_id)->reward).c_str());
-		img->loadTexture("dim.png");
-	}
+		switch (m_id)
+		{
+		case 0:
+		case 1:
+		case 5:
+		case 6:
+		{
+			gold->setString(StringUtils::format("%d", SqLite::getInstance()->getQuestById(m_id)->reward).c_str());
+			img->loadTexture("dim.png");
+		}
 		break;
-	case 2:
-	case 4:
-	case 7:
-	case 8:
-	{
-		auto num = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), SqLite::getInstance()->getQuestById(m_id)->reward);
-		gold->setString(Ruler::getInstance()->showNum(num));
-		img->loadTexture("gold.png");
-	}
+		case 2:
+		case 4:
+		case 7:
+		case 8:
+		{
+			auto num = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getdefeatMonsterGold(), SqLite::getInstance()->getQuestById(m_id)->reward);
+			gold->setString(Ruler::getInstance()->showNum(num));
+			img->loadTexture("gold.png");
+		}
 		break;
-	case 3:
-		gold->setString(StringUtils::format("%d", SqLite::getInstance()->getQuestById(m_id)->reward).c_str());
-		img->loadTexture("stone.png");
+		case 3:
+			gold->setString(StringUtils::format("%d", SqLite::getInstance()->getQuestById(m_id)->reward).c_str());
+			img->loadTexture("stone.png");
+		}
 	}
+	else
+	{
+		switch (m_id)
+		{
+		case 0:
+		case 1:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		{
+			log("%d", SqLite::getInstance()->getQuestById(m_id)->reward);
+			gold->setString(StringUtils::format("%d", SqLite::getInstance()->getQuestById(m_id)->reward).c_str());
+			img->loadTexture("dim.png");
+		}
+		break;
+		case 2:
+			log("%d", SqLite::getInstance()->getQuestById(m_id)->reward);
+			gold->setString(StringUtils::format("%d", SqLite::getInstance()->getQuestById(m_id)->reward).c_str());
+			img->loadTexture("stone.png");
+		}
+	}
+
 	stateChange();
 	auto btn = (Button*)m_rootNode->getChildByName("btn");
 	if (m_state)
@@ -144,7 +212,7 @@ void TaskItem::stateChange()
 	auto year = timeNow->tm_year;
 	auto day = timeNow->tm_yday;
 	auto signTime = TimeTool::getInstance()->calTime(PlayerData::getInstance()->getSignTime());
-	log("%d------%d", day, signTime->tm_yday);
+
 	if (signTime->tm_year == year && ((signTime->tm_yday - day) == 1))
 	{
 		m_state = true;
@@ -157,98 +225,193 @@ void TaskItem::stateChange()
 		m_state = false;
 		m_clicked = false;
 	}
-	switch (m_id)
+	
+	if (AppDelegate::getPhoneType())
 	{
-	case 0:
-		if (MissionData::getInstance()->getMissionTimesById(0) != 0)
+		switch (m_id)
 		{
-			if (m_clicked)
+		case 0:
+			if (MissionData::getInstance()->getMissionTimesById(0) != 0)
 			{
-				m_state = true;
-			}	
-		}
-		break;
-	case 1:
-		if (MissionData::getInstance()->getMissionTimesById(1) != 0)
+				if (m_clicked)
+				{
+					m_state = true;
+				}
+			}
+			break;
+		case 1:
+			if (MissionData::getInstance()->getMissionTimesById(1) != 0)
+			{
+				if (m_clicked)
+				{
+					m_state = true;
+				}
+			}
+			break;
+		case 2:
+			if (MissionData::getInstance()->getMissionTimesById(2) >= 6)
+			{
+				if (m_clicked)
+				{
+					m_state = true;
+				}
+			}
+			break;
+		case 3:
+			if (MissionData::getInstance()->getMissionTimesById(3) >= 2)
+			{
+				if (m_clicked)
+				{
+					m_state = true;
+				}
+			}
+			break;
+		case 4:
+			if (MissionData::getInstance()->getMissionTimesById(4) >= 800)
+			{
+				if (m_clicked)
+				{
+					m_state = true;
+				}
+			}
+			break;
+		case 5:
 		{
-			if (m_clicked)
+			auto timeNow = TimeTool::getInstance()->getcurrTime();
+			auto hour = timeNow->tm_hour;
+			if (hour >= 9 && hour <= 12)
 			{
-				m_state = true;
+				if (m_clicked)
+				{
+					m_state = true;
+				}
 			}
 		}
 		break;
-	case 2:
-		if (MissionData::getInstance()->getMissionTimesById(2) >= 6)
+		case 6:
 		{
-			if (m_clicked)
+			auto timeNow = TimeTool::getInstance()->getcurrTime();
+			auto hour = timeNow->tm_hour;
+			if (hour >= 18 && hour <= 21)
 			{
-				m_state = true;
+				if (m_clicked)
+				{
+					m_state = true;
+				}
 			}
 		}
 		break;
-	case 3:
-		if (MissionData::getInstance()->getMissionTimesById(3) >= 2)
-		{
-			if (m_clicked)
+		case 7:
+			if (MissionData::getInstance()->getMissionTimesById(7) >= 20)
 			{
-				m_state = true;
+				if (m_clicked)
+				{
+					m_state = true;
+				}
+			}
+			break;
+		case 8:
+		{
+			if (AppDelegate::getPhoneType())
+			{
+				if (MissionData::getInstance()->getMissionTimesById(8) >= 10)
+				{
+					if (m_clicked)
+					{
+						m_state = true;
+					}
+				}
 			}
 		}
 		break;
-	case 4:
-		if (MissionData::getInstance()->getMissionTimesById(4) >= 800)
-		{
-			if (m_clicked)
-			{
-				m_state = true;
-			}
-		}
-		break;
-	case 5:
-	{
-		auto timeNow = TimeTool::getInstance()->getcurrTime();
-		auto hour = timeNow->tm_hour;
-		if (hour >= 9 && hour <= 12)
-		{
-			if (m_clicked)
-			{
-				m_state = true;
-			}
 		}
 	}
-	break;
-	case 6:
-	{	
-		auto timeNow = TimeTool::getInstance()->getcurrTime();
-		auto hour = timeNow->tm_hour;
-		if (hour >= 18 && hour <= 21)
-		{
-			if (m_clicked)
-			{
-				m_state = true;
-			}
-		}
-	}		
-		break;
-	case 7:
-		if (MissionData::getInstance()->getMissionTimesById(7) >= 20)
-		{
-			if (m_clicked)
-			{
-				m_state = true;
-			}
-		}
-		break;
-	case 8:
+	else
 	{
-		if (MissionData::getInstance()->getMissionTimesById(8) >= 10)
+		switch (m_id)
 		{
-			if (m_clicked)
+		case 0:
+			if (MissionData::getInstance()->getMissionTimesById(0) >= 100)
 			{
-				m_state = true;
+				if (m_clicked)
+				{
+					m_state = true;
+				}
+			}
+			break;
+		case 1:
+			if (MissionData::getInstance()->getMissionTimesById(1) >= 2)
+			{
+				if (m_clicked)
+				{
+					m_state = true;
+				}
+			}
+			break;
+		case 2:
+			if (MissionData::getInstance()->getMissionTimesById(2) >= 2)
+			{
+				if (m_clicked)
+				{
+					m_state = true;
+				}
+			}
+			break;
+		case 3:
+			if (MissionData::getInstance()->getMissionTimesById(3) >= 800)
+			{
+				if (m_clicked)
+				{
+					m_state = true;
+				}
+			}
+			break;
+		case 4:
+		{
+			auto timeNow = TimeTool::getInstance()->getcurrTime();
+			auto hour = timeNow->tm_hour;
+			if (hour >= 9 && hour <= 12)
+			{
+				if (m_clicked)
+				{
+					m_state = true;
+				}
 			}
 		}
-	}	
 		break;
+		case 5:
+		{
+			auto timeNow = TimeTool::getInstance()->getcurrTime();
+			auto hour = timeNow->tm_hour;
+			if (hour >= 18 && hour <= 21)
+			{
+				if (m_clicked)
+				{
+					m_state = true;
+				}
+			}
+		}
+		break;
+		case 6:
+			if (MissionData::getInstance()->getMissionTimesById(7) >= 20)
+			{
+				if (m_clicked)
+				{
+					m_state = true;
+				}
+			}
+			break;
+		case 7:
+		{
+			if (MissionData::getInstance()->getMissionTimesById(8) >= 10)
+			{
+				if (m_clicked)
+				{
+					m_state = true;
+				}
+			}
+		}
+		break;
+		}
 	}
 }

@@ -46,8 +46,6 @@ public:
 	void normalAtk();
 	void shopItemEff(float);
 	static void changeCount(bool state){ m_coutChange = state; }
-	static int getDay(){ return m_dayCount; }
-	static bool getPhoneType(){ return g_phoneType; }
 	void initAr();
 	void initSer();
 	void runAni();
@@ -89,7 +87,6 @@ private:
 	bool m_gamelogic;
 	int m_arCount;
 	static bool m_coutChange;
-	static int m_dayCount;
 	static int m_signCount;
 	static tm* m_time;
 	Sprite* m_kssjEffect;
@@ -97,8 +94,6 @@ private:
 	Sprite* m_fnttEffect;
 	int m_skilltimeSliderShow;
 	int m_exploreCoinNum;
-	static bool g_phoneType;
-	void checkType();
 	Node * m_leaveText;
 };
 

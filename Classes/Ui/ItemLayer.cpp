@@ -72,30 +72,7 @@ void ItemLayer::initItemLayer(int id)
 			}
 			else
 			{
-				if (m_id == 5)
-				{
-					auto off_on = false;
-					for (size_t i = 0; i < 6; i++)
-					{
-						if (PlayerData::getInstance()->getSkillCD(i+1) > 0)
-						{
-							off_on = true;
-						}
-					}
-					if (off_on)
-					{
-						ShopData::getInstance()->buyItemByID(m_id);
-					}
-					else
-					{
-						ShopData::getInstance()->addShopGold(SqLite::getInstance()->getItemByID(m_id)->expense);
-					}				
-				}
-				else
-				{
-					ShopData::getInstance()->buyItemByID(m_id);
-				}
-				
+				ShopData::getInstance()->buyItemByID(m_id);		
 				if (m_id == 7)
 				{
 					if (!ArtifactData::getInstance()->arStarUp())

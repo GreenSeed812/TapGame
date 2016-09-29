@@ -78,6 +78,7 @@ bool settingLayer::init()
 			}
 			BgMusic::getInstance()->playBg(m_mus_off_on);
 			PlayerData::getInstance()->setBg(m_mus_off_on);
+			PlayerData::getInstance()->saveUserData();
 		}
 	});
 	soundBtn->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type)
@@ -98,6 +99,7 @@ bool settingLayer::init()
 			}
 			BgMusic::getInstance()->setState(m_sou_off_on);
 			PlayerData::getInstance()->setSou(m_sou_off_on);
+			PlayerData::getInstance()->saveUserData();
 		}
 	});
 

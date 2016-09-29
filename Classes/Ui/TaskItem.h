@@ -18,6 +18,7 @@ private:
 	ValueMap m_strings;
 	void taskChange(Ref*);
 	void stateChange();
+
 };
 
 #endif

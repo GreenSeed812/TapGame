@@ -24,5 +24,6 @@ private:
 	static Node * g_node;
 	Node * m_node;
 	void stateChange();
+	int m_Rate;
 };
 #endif

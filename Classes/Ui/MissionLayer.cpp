@@ -4,6 +4,7 @@
 #include <cocostudio/CocoStudio.h> 
 #include "Tool/SqLite.h"
 #include "SaveData/PlayerData.h"
+#include "AppDelegate.h"
 using namespace cocostudio;
 using namespace cocos2d;
 using namespace ui;
@@ -37,7 +38,16 @@ bool MissionLayer::init()
 void MissionLayer::initMission()
 {
 	auto lv = (ListView*)rootNode->getChildByName("bg")->getChildByName("lv");
-	for (size_t i = 0; i < 8; i++)
+	int num;
+	if (AppDelegate::getPhoneType())
+	{
+		num = 8;
+	}
+	else
+	{
+		num = 7;
+	}
+	for (size_t i = 0; i < num; i++)
 	{
 		auto item = TaskItem::create();
 		item->initTaskItem(i);

@@ -36,13 +36,13 @@
             <PreSize X="0.3315" Y="0.1865" />
             <FileData Type="Normal" Path="dltx.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="loadText" ActionTag="-1947002442" Tag="12" IconVisible="False" LeftMargin="366.2518" RightMargin="367.7482" TopMargin="1629.3616" BottomMargin="208.6385" FontSize="72" LabelText="正在读取..." HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="loadText" ActionTag="-1947002442" Tag="12" IconVisible="False" LeftMargin="369.5788" RightMargin="364.4212" TopMargin="1569.4772" BottomMargin="268.5229" FontSize="72" LabelText="正在读取..." HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="346.0000" Y="82.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="539.2518" Y="249.6385" />
+            <Position X="542.5788" Y="309.5229" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="229" B="192" />
-            <PrePosition X="0.4993" Y="0.1300" />
+            <PrePosition X="0.5024" Y="0.1612" />
             <PreSize X="0.3204" Y="0.0427" />
             <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />

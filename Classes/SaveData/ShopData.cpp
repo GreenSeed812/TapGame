@@ -6,7 +6,7 @@
 #include "PlayerData.h"
 static ShopData* g_SD = nullptr;
 ShopData::ShopData()
-:m_shopGold(0)
+	:m_shopGold(0)
 {
 }
 
@@ -80,13 +80,15 @@ int ShopData::getCount(int id)
 
 void ShopData::subShopGold(int gold)
 {
-	PlayerData::getInstance()->saveUserData();
 	m_shopGold -= gold; 
+	PlayerData::getInstance()->saveUserData();
+	CCNotificationCenter::getInstance()->postNotification("itemChange");
 }
 void ShopData::addShopGold(int gold)
 {
-	PlayerData::getInstance()->saveUserData();
 	m_shopGold += gold; 
+	PlayerData::getInstance()->saveUserData();
+	CCNotificationCenter::getInstance()->postNotification("itemChange");
 	
 }
 
@@ -108,6 +110,7 @@ void ShopData::readUserData()
 			m_items[i]->isUsing = jsd[StringUtils::format("m_items[%d]->isUsing", i).c_str()].GetBool();
 		}
 	}
+	m_shopGold = jsd["m_shopGold"].GetInt();
 }
 void ShopData::setNum(int id){
 	if (m_items[id]->isUsing)

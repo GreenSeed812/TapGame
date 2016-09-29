@@ -41,6 +41,7 @@ void ServantButton::initServantLayer(int id)
 	auto gold = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("gold");
 	auto head = (Button*)m_layer->getChildByName("serHead");
 	auto name = (Text*)m_layer->getChildByName("discribe")->getChildByName("name");
+	auto dps1 = (TextBMFont*)m_layer->getChildByName("discribe")->getChildByName("dps");
 
 	up10->setVisible(false);
 	up100->setVisible(false);
@@ -48,7 +49,8 @@ void ServantButton::initServantLayer(int id)
 	gold->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpGold(m_id)));
 	head->loadTextureNormal(StringUtils::format("ui/downUi/servant/head/%d.png",id+1));
 	head->loadTexturePressed(StringUtils::format("ui/downUi/servant/head/%d.png", id + 1));
-	name->setString(SqLite::getInstance()->getServantNameByID(m_id));
+	//name->setString(SqLite::getInstance()->getServantNameByID(m_id));
+	//dps1->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getServantDps(m_id)));
 
 	for (int skillNum = 1; skillNum < 8; skillNum++)
 	{
@@ -126,16 +128,18 @@ void ServantButton::coinChange(Ref*)
 	Button* bt = (Button*)m_layer->getChildByName("up");
 	Text* text = (Text*)m_layer->getChildByName("up")->getChildByName("up");
 	auto gold = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("gold");
-	auto * dps = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("dps");
+	auto dps = (TextBMFont*)m_layer->getChildByName("up")->getChildByName("dps");
 	auto up10Dps = (TextBMFont*)m_layer->getChildByName("up10")->getChildByName("dps");
 	auto up100Dps = (TextBMFont*)m_layer->getChildByName("up100")->getChildByName("dps");
-	auto * textlv = (Text*)m_layer->getChildByName("discribe")->getChildByName("lv");
-	
+	auto textlv = (Text*)m_layer->getChildByName("discribe")->getChildByName("lv");
+	auto dps1 = (TextBMFont*)m_layer->getChildByName("discribe")->getChildByName("dps");
+
 	gold->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpGold(m_id)));
 	dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpDps(m_id)));
 	up10Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUp10Dps(m_id)));
 	up100Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUp100Dps(m_id)));
 	textlv->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getServantLevel(m_id)));
+	dps1->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getServantDps(m_id)));
 
 	auto golds = PlayerData::getInstance()->getGold();
 	auto judge = Ruler::getInstance()->subNum(PlayerData::getInstance()->getservantLevelUpGold(m_id),*golds);

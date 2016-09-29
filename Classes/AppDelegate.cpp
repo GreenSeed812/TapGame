@@ -72,7 +72,7 @@ void AppDelegate::checkType()
 	AppDelegate::g_phoneType = false;
 #endif
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
-	AppDelegate::g_phoneType = true;
+	AppDelegate::g_phoneType = false;
 #endif
 #if  CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 	AppDelegate::g_phoneType = false;

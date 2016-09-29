@@ -90,6 +90,7 @@ void AchieveData::saveUserDefault(Document& document)
 	document.AddMember("starNum[20]", starNum[20], allocator);
 	document.AddMember("starNum[21]", starNum[21], allocator);
 	document.AddMember("starNum[22]", starNum[22], allocator);
+	document.AddMember("m_totalrewords", m_totalrewords, allocator);
 }
 void AchieveData::readUserDefault()
 {
@@ -141,6 +142,7 @@ void AchieveData::readUserDefault()
 		starNum[20] = jsd["starNum[20]"].GetInt();
 		starNum[21] = jsd["starNum[21]"].GetInt();
 		starNum[22] = jsd["starNum[22]"].GetInt();
+		m_totalrewords = jsd["m_totalrewords"].GetInt();
 	}
 }
 

@@ -776,3 +776,11 @@ void SqLite::readSignData()
 		}
 	}
 }
+daoju * SqLite::getItemByID(int id)
+{
+	for (int i = 0; i < m_daoju.size(); i++)
+	{
+		if (m_daoju.at(i)->id == id+1)
+			return m_daoju.at(i);
+	}
+}

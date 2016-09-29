@@ -376,7 +376,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/SaveData/ShopData.o
  jni/../../Classes/SaveData/ArtifactData.h \
  jni/../../Classes/SaveData/AchieveData.h jni/../../Classes/Tool/MyNum.h \
  jni/../../Classes/Tool/Rule.h jni/../../Classes/SaveData/PlayerData.h \
- jni/../../Classes/Ui/ItemLayer.h
+ jni/../../Classes/Tool/TimeTool.h jni/../../Classes/Ui/ItemLayer.h
 
 jni/../../Classes/SaveData/ShopData.h:
 
@@ -1137,5 +1137,7 @@ jni/../../Classes/Tool/MyNum.h:
 jni/../../Classes/Tool/Rule.h:
 
 jni/../../Classes/SaveData/PlayerData.h:
+
+jni/../../Classes/Tool/TimeTool.h:
 
 jni/../../Classes/Ui/ItemLayer.h:

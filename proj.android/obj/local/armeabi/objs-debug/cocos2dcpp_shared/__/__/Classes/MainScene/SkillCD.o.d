@@ -386,6 +386,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/MainScene/SkillCD.o
  jni/../../Classes/SaveData/PlayerData.h jni/../../Classes/Tool/Rule.h \
  jni/../../Classes/Tool/MyNum.h jni/../../Classes/Tool/SqLite.h \
  jni/../../Classes/Tool/sqlite3.h jni/../../Classes/Tool/MyNum.h \
+ jni/../../Classes/Tool/TimeTool.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocoStudio.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CCActionFrame.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocosStudioExport.h \
@@ -1249,6 +1250,8 @@ jni/../../Classes/Tool/SqLite.h:
 jni/../../Classes/Tool/sqlite3.h:
 
 jni/../../Classes/Tool/MyNum.h:
+
+jni/../../Classes/Tool/TimeTool.h:
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocoStudio.h:
 

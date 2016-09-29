@@ -462,7 +462,8 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/Ui/MissionLayer.o: 
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CSLoader.h \
  jni/../../Classes/Tool/SqLite.h jni/../../Classes/Tool/sqlite3.h \
  jni/../../Classes/Tool/MyNum.h jni/../../Classes/SaveData/PlayerData.h \
- jni/../../Classes/Tool/Rule.h jni/../../Classes/Tool/MyNum.h
+ jni/../../Classes/Tool/Rule.h jni/../../Classes/Tool/MyNum.h \
+ jni/../../Classes/Tool/TimeTool.h
 
 jni/../../Classes/Ui/MissionLayer.h:
 
@@ -1395,3 +1396,5 @@ jni/../../Classes/SaveData/PlayerData.h:
 jni/../../Classes/Tool/Rule.h:
 
 jni/../../Classes/Tool/MyNum.h:
+
+jni/../../Classes/Tool/TimeTool.h:

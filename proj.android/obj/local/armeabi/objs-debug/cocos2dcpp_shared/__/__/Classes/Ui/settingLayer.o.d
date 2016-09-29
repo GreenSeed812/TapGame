@@ -467,7 +467,8 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/Ui/settingLayer.o: 
  jni/../../Classes/Ui/bossButton.h jni/../../Classes/Tool/MyNum.h \
  jni/../../Classes/Tool/SqLite.h jni/../../Classes/Tool/sqlite3.h \
  jni/../../Classes/Tool/MyNum.h jni/../../Classes/SaveData/PlayerData.h \
- jni/../../Classes/Tool/Rule.h jni/../../Classes/Ui/Statistics.h
+ jni/../../Classes/Tool/Rule.h jni/../../Classes/Tool/TimeTool.h \
+ jni/../../Classes/Ui/Statistics.h
 
 jni/../../Classes/Ui/settingLayer.h:
 
@@ -1410,5 +1411,7 @@ jni/../../Classes/Tool/MyNum.h:
 jni/../../Classes/SaveData/PlayerData.h:
 
 jni/../../Classes/Tool/Rule.h:
+
+jni/../../Classes/Tool/TimeTool.h:
 
 jni/../../Classes/Ui/Statistics.h:

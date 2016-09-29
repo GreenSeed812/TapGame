@@ -468,7 +468,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/Ui/ArStarUp.o: \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h \
  jni/../../Classes/Tool/Rule.h jni/../../Classes/SaveData/PlayerData.h \
  jni/../../Classes/Tool/SqLite.h jni/../../Classes/Tool/sqlite3.h \
- jni/../../Classes/Tool/MyNum.h
+ jni/../../Classes/Tool/MyNum.h jni/../../Classes/Tool/TimeTool.h
 
 jni/../../Classes/Ui/ArStarUp.h:
 
@@ -1415,3 +1415,5 @@ jni/../../Classes/Tool/SqLite.h:
 jni/../../Classes/Tool/sqlite3.h:
 
 jni/../../Classes/Tool/MyNum.h:
+
+jni/../../Classes/Tool/TimeTool.h:

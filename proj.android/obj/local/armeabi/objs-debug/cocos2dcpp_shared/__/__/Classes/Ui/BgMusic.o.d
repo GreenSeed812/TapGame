@@ -348,7 +348,11 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/Ui/BgMusic.o: \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCString.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCDeprecated.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../include/SimpleAudioEngine.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../include/Export.h
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../include/Export.h \
+ jni/../../Classes/SaveData/PlayerData.h jni/../../Classes/Tool/Rule.h \
+ jni/../../Classes/Tool/MyNum.h jni/../../Classes/Tool/SqLite.h \
+ jni/../../Classes/Tool/sqlite3.h jni/../../Classes/Tool/MyNum.h \
+ jni/../../Classes/Tool/TimeTool.h
 
 jni/../../Classes/Ui/BgMusic.h:
 
@@ -1049,3 +1053,17 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../depr
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../include/SimpleAudioEngine.h:
 
 C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/audio/android/../include/Export.h:
+
+jni/../../Classes/SaveData/PlayerData.h:
+
+jni/../../Classes/Tool/Rule.h:
+
+jni/../../Classes/Tool/MyNum.h:
+
+jni/../../Classes/Tool/SqLite.h:
+
+jni/../../Classes/Tool/sqlite3.h:
+
+jni/../../Classes/Tool/MyNum.h:
+
+jni/../../Classes/Tool/TimeTool.h:

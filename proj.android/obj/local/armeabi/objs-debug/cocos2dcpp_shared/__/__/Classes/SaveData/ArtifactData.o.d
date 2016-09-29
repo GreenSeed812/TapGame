@@ -374,8 +374,8 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/SaveData/ArtifactDa
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/3d/../deprecated/CCDeprecated.h \
  jni/../../Classes/Tool/Rule.h jni/../../Classes/SaveData/PlayerData.h \
  jni/../../Classes/Tool/SqLite.h jni/../../Classes/Tool/sqlite3.h \
- jni/../../Classes/Tool/MyNum.h jni/../../Classes/Ui/ArStarUp.h \
- jni/../../Classes/SaveData/ShopData.h
+ jni/../../Classes/Tool/MyNum.h jni/../../Classes/Tool/TimeTool.h \
+ jni/../../Classes/Ui/ArStarUp.h jni/../../Classes/SaveData/ShopData.h
 
 jni/../../Classes/SaveData/ArtifactData.h:
 
@@ -1132,6 +1132,8 @@ jni/../../Classes/Tool/SqLite.h:
 jni/../../Classes/Tool/sqlite3.h:
 
 jni/../../Classes/Tool/MyNum.h:
+
+jni/../../Classes/Tool/TimeTool.h:
 
 jni/../../Classes/Ui/ArStarUp.h:
 

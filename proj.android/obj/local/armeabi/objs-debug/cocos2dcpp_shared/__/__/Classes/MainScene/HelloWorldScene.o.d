@@ -504,6 +504,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/MainScene/HelloWorl
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/extensions/./Particle3D/PU/CCPUParticleSystem3D.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/extensions/../extensions/Particle3D/CCParticleSystem3D.h \
  jni/../../Classes/SaveData/PlayerData.h \
+ jni/../../Classes/Tool/TimeTool.h \
  jni/../../Classes/SaveData/ArtifactData.h \
  jni/../../Classes/SaveData/AchieveData.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/writer.h \
@@ -513,7 +514,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/MainScene/HelloWorl
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h \
  C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuffers/../json/stringbuffer.h \
  jni/../../Classes/SaveData/PlayerData.h \
- jni/../../Classes/SaveData/ShopData.h jni/../../Classes/Tool/TimeTool.h \
+ jni/../../Classes/SaveData/ShopData.h \
  jni/../../Classes/MainScene/PlayerButton.h \
  jni/../../Classes/MainScene/ServantButton.h \
  jni/../../Classes/MainScene/ArtifactButton.h \
@@ -1542,6 +1543,8 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/extensions/../ex
 
 jni/../../Classes/SaveData/PlayerData.h:
 
+jni/../../Classes/Tool/TimeTool.h:
+
 jni/../../Classes/SaveData/ArtifactData.h:
 
 jni/../../Classes/SaveData/AchieveData.h:
@@ -1561,8 +1564,6 @@ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/external/flatbuf
 jni/../../Classes/SaveData/PlayerData.h:
 
 jni/../../Classes/SaveData/ShopData.h:
-
-jni/../../Classes/Tool/TimeTool.h:
 
 jni/../../Classes/MainScene/PlayerButton.h:
 

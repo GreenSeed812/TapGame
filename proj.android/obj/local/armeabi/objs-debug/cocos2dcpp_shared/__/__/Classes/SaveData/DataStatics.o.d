@@ -376,8 +376,8 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/SaveData/DataStatic
  jni/../../Classes/SaveData/AchieveData.h jni/../../Classes/Tool/MyNum.h \
  jni/../../Classes/Tool/Rule.h jni/../../Classes/SaveData/PlayerData.h \
  jni/../../Classes/Tool/SqLite.h jni/../../Classes/Tool/sqlite3.h \
- jni/../../Classes/Tool/MyNum.h jni/../../Classes/SaveData/ShopData.h \
- jni/../../Classes/Tool/TimeTool.h
+ jni/../../Classes/Tool/MyNum.h jni/../../Classes/Tool/TimeTool.h \
+ jni/../../Classes/SaveData/ShopData.h
 
 jni/../../Classes/SaveData/DataStatics.h:
 
@@ -1139,6 +1139,6 @@ jni/../../Classes/Tool/sqlite3.h:
 
 jni/../../Classes/Tool/MyNum.h:
 
-jni/../../Classes/SaveData/ShopData.h:
-
 jni/../../Classes/Tool/TimeTool.h:
+
+jni/../../Classes/SaveData/ShopData.h:

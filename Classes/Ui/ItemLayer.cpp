@@ -17,6 +17,7 @@ bool ItemLayer::init()
 	}
 	m_time = 0;
 	m_rootNode = CSLoader::createNode("ItemLayer.csb");
+	m_rootNode->setTag(0);
 	m_layer = m_rootNode->getChildByName("bg");
 	this->setContentSize(m_rootNode->getContentSize());
 	this->addChild(m_rootNode);
@@ -33,6 +34,7 @@ void ItemLayer::initItemLayer(int id)
 	m_text->setColor(ccc3(239,203,148));
 	m_node->addChild(m_text);
 	m_text->setVisible(false);
+	this->setTag(0);
 	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(ItemLayer::itemChange), "itemChange", nullptr);
 	m_id = id;
 	auto info = (Text*)m_layer->getChildByName("infoBg")->getChildByName("info");
@@ -182,7 +184,7 @@ void ItemLayer::btnChange()
 		else
 		{
 			auto judge = ShopData::getInstance()->getShopGold() - SqLite::getInstance()->getItemByID(m_id)->expense;
-			if (judge >= 0)
+			if (judge >= 0 && m_id != 5)
 			{
 				up->setEnabled(true);
 			}
@@ -202,7 +204,7 @@ void ItemLayer::btnChange()
 	else
 	{
 		auto judge = ShopData::getInstance()->getShopGold() - SqLite::getInstance()->getItemByID(m_id)->expense;
-		if (judge >= 0 && !ShopData::getInstance()->getItemBeUsedById(m_id))
+		if (judge >= 0 && !ShopData::getInstance()->getItemBeUsedById(m_id) && m_id != 5)
 		{
 			up->setEnabled(true);
 			if (m_id < 4)

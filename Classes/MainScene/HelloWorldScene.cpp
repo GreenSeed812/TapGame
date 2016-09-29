@@ -62,7 +62,7 @@ bool HelloWorld::init()
     {
         return false;
     }
-
+	m_kssjEffect = nullptr;
 	auto leaveGold = new LeaveGold();
 	BgMusic::getInstance()->playBg(PlayerData::getInstance()->getBg());
 	m_hitlogic = true;
@@ -656,6 +656,7 @@ void HelloWorld::uiCallBack()
 						auto size = item->getContentSize();
 						widget->setContentSize(size);
 						widget->addChild(item);
+						widget->setTag(i);
 						lv->pushBackCustomItem(widget);
 						cocos2d::CCNotificationCenter::getInstance()->postNotification("itemChange");
 					}	
@@ -977,7 +978,12 @@ void HelloWorld::playerSkillCallBack()
 				m_skill[i - 1]->setEnabled(false);
 				PlayerData::getInstance()->openSkill(i - 1);
 				AchieveData::getInstance()->skillUsed(i-1);
-				
+				if (m_shopLayer)
+				{
+					Button* bt = (Button*)m_shopLayer->getChildByName("shop")->getChildByTag(5)->getChildByTag(0)->getChildByTag(0)->getChildByName("bg")->getChildByName("up");
+					bt->setEnabled(true);
+				}
+			
 				if (i != 1)
 				{
 					m_skilltimeSlider->runAction(Show::create());
@@ -989,9 +995,10 @@ void HelloWorld::playerSkillCallBack()
 				}
 				if (i == 2)
 				{
-					if (!m_kssjEffect->isRunning())
+					if (!m_kssjEffect)
 					{
 						m_kssjEffect = Sprite::create();
+						m_kssjEffect->retain();
 					}					
 					m_kssjEffect->setScale(4.0f);
 					m_kssjEffect->setColor(Color3B(0, 0, 0));
@@ -1443,6 +1450,16 @@ void HelloWorld::shopItemEff(float dt)
 			if(m_skill[i - 1]->getChildByName("SkillKpCD"))
 				m_skill[i - 1]->getChildByName("SkillKpCD")->removeFromParent();
 			m_skill[i - 1]->setEnabled(true);
+			ImageView* skt = (ImageView*)rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("skill_time");
+			skt->removeAllChildren();
+			m_skilltimeSliderShow = 0;
+			PlayerData::getInstance()->closeSkill(i - 1);
+		}
+		if (m_shopLayer)
+		{
+			
+			Button* bt = (Button*)m_shopLayer->getChildByName("shop")->getChildByTag(5)->getChildByTag(0)->getChildByTag(0)->getChildByName("bg")->getChildByName("up");
+			bt->setEnabled(false);
 		}
 		ShopData::getInstance()->stopItemById(5);
 	}

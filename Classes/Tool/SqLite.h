@@ -131,7 +131,7 @@ public:
 	std::string getSkillEffDis(int i);
 	double getEff(int i){ return m_skillData.at(i)->initEffect; }
 	double getEffPer(int i){ return m_skillData.at(i)->effPerLevel; }
-	daoju * getItemByID(int id){ return m_daoju.at(id); }
+	daoju * getItemByID(int id);
 	Quest * getQuestById(int id){ return m_quest.at(id); }
 	MyNum getServantDpsByID(int i){ return m_servantData.at(i)->dps; }
 	MyNum getServantGoldByID(int i){ return m_servantData.at(i)->gold; }

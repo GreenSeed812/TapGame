@@ -767,15 +767,18 @@ void HelloWorld::killBoss()
 	
 		if (MonsterState::getInstance()->getTypeNow() == MONSTER_TYPE::RARE)
 		{
+			MissionData::getInstance()->addMissionTimesById(0);
 			AchieveData::getInstance()->killRareMonster();
 			AchieveData::getInstance()->killMonster();
 		}
 		if (MonsterState::getInstance()->getTypeNow() == MONSTER_TYPE::BOSS)
 		{
+			MissionData::getInstance()->addMissionTimesById(1);
 			AchieveData::getInstance()->killBoss();
 		}
 		else
 		{
+			MissionData::getInstance()->addMissionTimesById(0);
 			AchieveData::getInstance()->killMonster();
 		}
 	}
@@ -977,7 +980,6 @@ void HelloWorld::playerSkillCallBack()
 				skillKpCD->setName("SkillKpCD");
 
 				skillCD->setName("SkillCD");
-
 				m_skill[i - 1]->setEnabled(false);
 				PlayerData::getInstance()->openSkill(i - 1);
 				AchieveData::getInstance()->skillUsed(i-1);

@@ -107,8 +107,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 			if (type == Widget::TouchEventType::ENDED)
 			{		
 				PlayerData::getInstance()->skillLevelUp(1);
-				PlayerData::getInstance()->subGold(&m_upGold);
 				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
+				PlayerData::getInstance()->subGold(&m_upGold);
 				Button* button = (Button*)g_skillLayer->getChildByName("SkillButton1");
 				button->runAction(Show::create());
 				coinChange(this);			

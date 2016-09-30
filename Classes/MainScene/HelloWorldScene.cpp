@@ -60,6 +60,7 @@ bool HelloWorld::init()
     {
         return false;
     }
+	
 	m_kssjEffect = nullptr;
 	auto leaveGold = new LeaveGold();
 	BgMusic::getInstance()->playBg(PlayerData::getInstance()->getBg());
@@ -445,7 +446,7 @@ void HelloWorld::update(float dt)
 			Slider* slider = (Slider*)rootNode->getChildByName("UiNode")->getChildByName("HpSlider");
 			auto subNow = Ruler::getInstance()->subNum(PlayerData::getInstance()->getHpNow(), dps);
 			PlayerData::getInstance()->setHpNow(subNow);
-			if (PlayerData::getInstance()->getHpNow().number < 0)
+			if (PlayerData::getInstance()->getHpNow().number <= 0)
 			{
 				MyNum zero;
 				PlayerData::getInstance()->setHpNow(zero);
@@ -1460,8 +1461,8 @@ void HelloWorld::shopItemEff(float dt)
 		if (m_shopLayer)
 		{
 			
-			Button* bt = (Button*)m_shopLayer->getChildByName("shop")->getChildByTag(5)->getChildByTag(0)->getChildByTag(0)->getChildByName("bg")->getChildByName("up");
-			bt->setEnabled(false);
+			/*Button* bt = (Button*)m_shopLayer->getChildByName("shop")->getChildByTag(5)->getChildByTag(0)->getChildByTag(0)->getChildByName("bg")->getChildByName("up");
+			bt->setEnabled(false);*/
 		}
 		ShopData::getInstance()->stopItemById(5);
 	}

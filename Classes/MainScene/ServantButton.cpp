@@ -159,15 +159,19 @@ void ServantButton::oneUp()
 {
 	if (PlayerData::getInstance()->getServantLevel(m_id) == 0)
 	{
-		auto newNode = ServantButton::create();
-		auto frame = Widget::create();
-		ListView* lv = (ListView*)g_lv;
-		PlayerData::getInstance()->addServantNum();
-		newNode->initServantLayer(PlayerData::getInstance()->getServantNum());
-		frame->setContentSize(newNode->getContentSize());
-		frame->addChild(newNode);
-		lv->pushBackCustomItem(frame);
-		lv->jumpToBottom();
+		if (m_id < 32)
+		{
+			auto newNode = ServantButton::create();
+			auto frame = Widget::create();
+			ListView* lv = (ListView*)g_lv;
+			PlayerData::getInstance()->addServantNum();
+			newNode->initServantLayer(PlayerData::getInstance()->getServantNum());
+			frame->setContentSize(newNode->getContentSize());
+			frame->addChild(newNode);
+			lv->pushBackCustomItem(frame);
+			lv->jumpToBottom();
+		}
+		
 	}
 
 	PlayerData::getInstance()->servantLevelUp(m_id);

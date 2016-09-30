@@ -161,7 +161,7 @@ void ItemLayer::btnChange()
 		else
 		{
 			auto judge = ShopData::getInstance()->getShopGold() - SqLite::getInstance()->getItemByID(m_id)->expense;
-			if (judge >= 0 && m_id != 5)
+			if (judge >= 0)
 			{
 				up->setEnabled(true);
 			}
@@ -181,7 +181,7 @@ void ItemLayer::btnChange()
 	else
 	{
 		auto judge = ShopData::getInstance()->getShopGold() - SqLite::getInstance()->getItemByID(m_id)->expense;
-		if (judge >= 0 && !ShopData::getInstance()->getItemBeUsedById(m_id) && m_id != 5)
+		if (judge >= 0 && !ShopData::getInstance()->getItemBeUsedById(m_id))
 		{
 			up->setEnabled(true);
 			if (m_id < 4)

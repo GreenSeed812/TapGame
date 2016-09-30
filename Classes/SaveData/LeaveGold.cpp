@@ -26,6 +26,7 @@ void LeaveGold::calculate()
 	{
 		auto timeNow = TimeTool::getInstance()->getTime();
 		auto num = timeNow - time;
+		log("Time--%d",num);
 		auto dps = PlayerData::getInstance()->getHeroDps();
 		auto gold = PlayerData::getInstance()->getdefeatMonsterGold();
 		auto hp = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getHpNow(), 2);
@@ -53,19 +54,24 @@ void LeaveGold::calculate()
 		MyNum addition;
 		addition.number = 0;
 		addition.Mathbit = 0;
-		auto time= ShopData::getInstance()->getItemDataById(11)->leftTime;
-		if (time > 0)
+		if (ShopData::getInstance()->getItemDataById(11)->isUsing)
 		{
-			if (num > 43200)
+			auto itemTime = ShopData::getInstance()->getItemDataById(11)->leftTime;
+			if (itemTime > 0)
 			{
-				time = 0;
+				if (num > 43200)
+				{
+					itemTime = 0;
+				}
+				else
+				{
+					itemTime -= num;
+				}
+				ShopData::getInstance()->getItemDataById(11)->leftTime = itemTime;
+				addition = Ruler::getInstance()->multiplay(gold, itemTime);
+				addition = Ruler::getInstance()->multiplay(addition, dps);
+				addition = Ruler::getInstance()->devide(addition, hp);
 			}
-			else
-			{
-				time -= num;
-			}
-			ShopData::getInstance()->getItemDataById(11)->leftTime = time;
-			addition = Ruler::getInstance()->multiplay(Ruler::getInstance()->multiplay(gold, time), hp);
 		}
 		m_golds = Ruler::getInstance()->addNum(m_golds, addition);
 	}

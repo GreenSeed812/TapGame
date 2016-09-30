@@ -50,23 +50,26 @@ std::string DataStatics::getCurrent(int id)
 		if (m_lastRelife != 0)
 		{
 			auto timeNow = TimeTool::getInstance()->getTime();
-			auto time = (float)(timeNow - m_lastRelife) / 86400;
+			auto time = (timeNow - m_lastRelife) / 86400;
 			if (time < 1)
 			{
-				time = (float)(timeNow - m_lastRelife) / 3600;
+				time = (timeNow - m_lastRelife) / 3600;
 				if (time < 24)
 				{
-					time = (float)(timeNow - m_lastRelife) / 60;
+					time = (timeNow - m_lastRelife) / 60;
 					if (time < 60)
 					{
-						auto _time = (int)time;
-						return StringUtils::format("%ds", _time).c_str();
+						return StringUtils::format("%ds", time).c_str();
 					}
-					auto _time = (int)time;
-					return StringUtils::format("%dm", _time).c_str();
+					else
+					{
+						return StringUtils::format("%dm", time).c_str();
+					}
 				}
-				auto _time = (int)time;
-				return StringUtils::format("%dh", _time).c_str();
+				else
+				{
+					return StringUtils::format("%dh", time).c_str();
+				}
 			}
 			else
 			{
@@ -120,14 +123,17 @@ std::string DataStatics::getStatic(int id)
 	}
 	if (id == 10)
 	{
-		auto timeNow = TimeTool::getInstance()->getTime();
-		auto day = ((float)(timeNow - m_initGameDay)) / 86400;
-		if (day > 1)
+		auto timeNow = TimeTool::getInstance()->getcurrTime();
+		auto initDay = TimeTool::getInstance()->calTime(m_initGameDay);
+		auto day = timeNow->tm_year - initDay->tm_year;
+		if (day >= 1)
 		{
-			auto _day = (int)day;
-			return StringUtils::format("%dd", _day).c_str();
+			return StringUtils::format("%dd", day).c_str();
 		}
-		return StringUtils::format("%dd", 0).c_str();
+		else
+		{
+			return StringUtils::format("%dd", 0).c_str();
+		}	
 	}
 	if (id == 11)
 	{

@@ -60,7 +60,9 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				double playerLevel = PlayerData::getInstance()->getPlayerLevel();
 				auto mul = 1 / pow(playerLevel, 0.55) - 1 / pow(playerLevel, 1.03) + 1;
 				m_upGold = Ruler::getInstance()->multiplayUp(m_upGold, mul) ;
-				coinChange(this);
+				upLevelCount();
+				cocos2d::CCNotificationCenter::getInstance()->postNotification("TapDpsChange");
+				cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 			}
 		});
 		up10->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type)
@@ -73,10 +75,10 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 					double playerLevel = PlayerData::getInstance()->getPlayerLevel();
 					auto mul = 1 / pow(playerLevel, 0.55) - 1 / pow(playerLevel, 1.03) + 1;
 					m_upGold = Ruler::getInstance()->multiplayUp(m_upGold, mul);
+					upLevelCount();
 				}	
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("TapDpsChange");
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
-				upLevelCount();
 			}
 		});
 		up100->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type)
@@ -89,10 +91,10 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 					double playerLevel = PlayerData::getInstance()->getPlayerLevel();
 					auto mul = 1 / pow(playerLevel, 0.55) - 1 / pow(playerLevel, 1.03) + 1;
 					m_upGold = Ruler::getInstance()->multiplayUp(m_upGold, mul);
+					upLevelCount();
 				}
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("TapDpsChange");
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
-				upLevelCount();
 			}
 		});
 	}
@@ -411,37 +413,35 @@ void PlayerButton::upLevelCount()
 	MyNum judge10;
 	MyNum judge100;
 
-	auto levelNow = PlayerData::getInstance()->getPlayerLevel();
-	for (size_t i = levelNow; i < (levelNow + 100); i++)
+	auto judge = Ruler::getInstance()->subNum(PlayerData::getInstance()->getPlayerlvupGold(),*PlayerData::getInstance()->getGold());
+	judge10 = Ruler::getInstance()->subNum(PlayerData::getInstance()->getPlayerlvup10Gold(),*PlayerData::getInstance()->getGold());
+	judge100 = Ruler::getInstance()->subNum(PlayerData::getInstance()->getPlayerlvup100Gold(),*PlayerData::getInstance()->getGold());
+	if (Ruler::getInstance()->Zero(judge))
 	{
-		if (i == levelNow + 10)
+		if (Ruler::getInstance()->Zero(judge10))
 		{
+			up10->setVisible(true);
 			upGold = PlayerData::getInstance()->getPlayerlvup10Gold();
-			judge10 = Ruler::getInstance()->subNum(upGold, *PlayerData::getInstance()->getGold());
-			if (Ruler::getInstance()->Zero(judge10))
+			m_upGold10 = upGold;
+			judge100 = Ruler::getInstance()->subNum(*PlayerData::getInstance()->getGold(), upGold);
+			if (Ruler::getInstance()->Zero(judge100))
 			{
-				up10->setVisible(true);
-				m_upGold10 = upGold;
+				up100->setVisible(true);
+				upGold = PlayerData::getInstance()->getPlayerlvup100Gold();
+				m_upGold100 = upGold;
 			}
 			else
 			{
-				up10->setVisible(false);
+				up100->setVisible(false);
 			}
 		}
-	}
-	upGold = PlayerData::getInstance()->getPlayerlvup100Gold();
-	judge100 = Ruler::getInstance()->subNum(upGold, *PlayerData::getInstance()->getGold());
-	if (Ruler::getInstance()->Zero(judge100))
-	{
-		up100->setVisible(true);
-		m_upGold100 = upGold;
-	}
-	else
-	{
-		up100->setVisible(false);
+		else
+		{
+			up10->setVisible(false);
+		}
 	}
 	m_count++;
-	auto action = Sequence::create(DelayTime::create(4), CallFuncN::create(CC_CALLBACK_1(PlayerButton::callback, this)), nullptr);
+	auto action = Sequence::create(CallFuncN::create(CC_CALLBACK_0(PlayerButton::upLevelCount, this)), DelayTime::create(4), CallFuncN::create(CC_CALLBACK_1(PlayerButton::callback, this)), nullptr);
 	if (up10->isVisible())
 	{
 		up10->runAction(action);

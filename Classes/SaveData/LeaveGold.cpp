@@ -14,6 +14,8 @@ LeaveGold::~LeaveGold()
 
 void LeaveGold::calculate()
 {
+	m_golds.number = 0;
+	m_golds.Mathbit = 0;
 	int time = 0;
 	if (cocos2d::UserDefault::getInstance()->getBoolForKey("isSaved"))
 	{
@@ -29,13 +31,17 @@ void LeaveGold::calculate()
 		auto hp = Ruler::getInstance()->multiplay(PlayerData::getInstance()->getHpNow(), 2);
 		if (num >= 72000)
 		{
-			m_golds = Ruler::getInstance()->multiplay(Ruler::getInstance()->multiplay(gold, 72000), hp);
+			m_golds = Ruler::getInstance()->multiplay(gold, 72000);
+			m_golds = Ruler::getInstance()->multiplay(m_golds, dps);
+			m_golds = Ruler::getInstance()->devide(m_golds, hp);
 		}
 		else
 		{
 			if (num > 300)
 			{
-				m_golds = Ruler::getInstance()->multiplay(Ruler::getInstance()->multiplay(gold, num), hp);
+				m_golds = Ruler::getInstance()->multiplay(gold, num);
+				m_golds = Ruler::getInstance()->multiplay(m_golds, dps);
+				m_golds = Ruler::getInstance()->devide(m_golds, hp);
 			}
 			else
 			{

@@ -68,7 +68,8 @@ void ServantButton::initServantLayer(int id)
 			}
 			else
 			{
-				oneUp();			
+				oneUp();
+				upLevel();
 			}		
 			cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 		}
@@ -81,6 +82,7 @@ void ServantButton::initServantLayer(int id)
 			{
 				oneUp();
 			}
+			upLevel();
 			cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 		}
 	});
@@ -92,6 +94,7 @@ void ServantButton::initServantLayer(int id)
 			{
 				oneUp();
 			}
+			upLevel();
 			cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 		}
 	});
@@ -130,6 +133,8 @@ void ServantButton::coinChange(Ref*)
 	auto up100Dps = (TextBMFont*)m_layer->getChildByName("up100")->getChildByName("dps");
 	auto textlv = (Text*)m_layer->getChildByName("discribe")->getChildByName("lv");
 	auto dps1 = (TextBMFont*)m_layer->getChildByName("discribe")->getChildByName("dps");
+	auto up10 = (Button*)m_layer->getChildByName("up10");
+	auto up100 = (Button*)m_layer->getChildByName("up100");
 
 	gold->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpGold(m_id)));
 	dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpDps(m_id)));
@@ -148,6 +153,8 @@ void ServantButton::coinChange(Ref*)
 	else
 	{
 		bt->setEnabled(false);
+		up10->setVisible(false);
+		up100->setVisible(false);
 	}
 	lockState();
 }
@@ -171,30 +178,38 @@ void ServantButton::oneUp()
 		
 	}
 	PlayerData::getInstance()->servantLevelUp(m_id);
-	upLevel();
 }
 
 void ServantButton::upLevel()
 {
 	auto up10 = (Button*)m_layer->getChildByName("up10");
 	auto up100 = (Button*)m_layer->getChildByName("up100");
-	m_count++;
 	auto gold = PlayerData::getInstance()->getGold();
+	auto judge = Ruler::getInstance()->subNum(PlayerData::getInstance()->getservantLevelUpGold(m_id), *gold);
 	auto judge10 = Ruler::getInstance()->subNum(PlayerData::getInstance()->getservantLevelUp10Gold(m_id),*gold);
-	
-	auto action = Sequence::create(CallFuncN::create(CC_CALLBACK_0(ServantButton::upLevel, this)), DelayTime::create(4), CallFuncN::create(CC_CALLBACK_1(ServantButton::callbackSer, this)), nullptr);
-	if (Ruler::getInstance()->Zero(judge10))
+	auto judge100 = Ruler::getInstance()->subNum(PlayerData::getInstance()->getservantLevelUp100Gold(m_id), *gold);
+	auto action = Sequence::create(DelayTime::create(4), CallFuncN::create(CC_CALLBACK_1(ServantButton::callbackSer, this)), nullptr);
+	if (Ruler::getInstance()->Zero(judge))
 	{
-		up10->runAction(Show::create());
-		up10->runAction(action);
-		auto judge100 = Ruler::getInstance()->subNum(PlayerData::getInstance()->getservantLevelUp100Gold(m_id), *gold );
-		if (Ruler::getInstance()->Zero(judge100))
+		if (Ruler::getInstance()->Zero(judge10))
 		{
-			up100->setVisible(Show::create());
-			up100->runAction(action);
+			up10->runAction(Show::create());
+			up10->runAction(action);
+			if (Ruler::getInstance()->Zero(judge100))
+			{
+				up100->setVisible(Show::create());
+				up100->runAction(action);
+			}
 		}
 	}
-	
+	else
+	{
+		up10->setVisible(false);
+		up100->setVisible(false);
+		up10->stopAction(action);
+		up100->stopAction(action);
+	}
+	m_count++;
 }
 
 void ServantButton::callbackSer(Node * node)

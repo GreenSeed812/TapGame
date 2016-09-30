@@ -342,9 +342,10 @@ void SignLayer::signChange(Ref*ref)
 
 void SignLayer::stateChange()
 {
-	auto timeNow = (tm*)TimeTool::getInstance()->calTime(TimeTool::getInstance()->getTime());
+	auto timeNow = TimeTool::getInstance()->getcurrTime();
 	auto signTime = TimeTool::getInstance()->calTime(PlayerData::getInstance()->getSignTime());
-	if (timeNow->tm_year == signTime->tm_year && timeNow->tm_yday == signTime->tm_yday)
+	auto num = timeNow->tm_yday - signTime->tm_yday;
+	if (timeNow->tm_year == signTime->tm_year && num <= 0)
 	{
 		if (m_day == 0)
 		{

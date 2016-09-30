@@ -254,8 +254,11 @@ MyNum Ruler::devide(MyNum dividend, MyNum divisor)
 	MyNum num;
 	num.Mathbit = dividend.Mathbit - divisor.Mathbit;
 	num.number = dividend.number / divisor.number;
+	if (num.number == 0)
+		return num;
 	while (num.number < 0.1)
 	{
+		
 		num.number = num.number * 1000;
 		num.Mathbit--;
 	}

@@ -53,7 +53,6 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
-				upLevelCount();
 				PlayerData::getInstance()->heroLevelUp();
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("TapDpsChange");
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
@@ -64,6 +63,7 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("TapDpsChange");
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 			}
+			upLevelCount();
 		});
 		up10->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type)
 		{
@@ -75,8 +75,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 					double playerLevel = PlayerData::getInstance()->getPlayerLevel();
 					auto mul = 1 / pow(playerLevel, 0.55) - 1 / pow(playerLevel, 1.03) + 1;
 					m_upGold = Ruler::getInstance()->multiplayUp(m_upGold, mul);
-					upLevelCount();
 				}	
+				upLevelCount();
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("TapDpsChange");
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 			}
@@ -91,8 +91,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 					double playerLevel = PlayerData::getInstance()->getPlayerLevel();
 					auto mul = 1 / pow(playerLevel, 0.55) - 1 / pow(playerLevel, 1.03) + 1;
 					m_upGold = Ruler::getInstance()->multiplayUp(m_upGold, mul);
-					upLevelCount();
 				}
+				upLevelCount();
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("TapDpsChange");
 				cocos2d::CCNotificationCenter::getInstance()->postNotification("CoinChange");
 			}
@@ -249,6 +249,8 @@ void PlayerButton::coinChange(Ref* pSender)
 	else
 	{
 		bt->setEnabled(false);
+		up10->setVisible(false);
+		up100->setVisible(false);
 	}
 	if (m_type == PLAYER)
 	{		
@@ -406,27 +408,28 @@ void PlayerButton::coinChange(Ref* pSender)
 
 void PlayerButton::upLevelCount()
 {
-	Button* up10 = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up10");
-	Button* up100 = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up100");
-
 	MyNum upGold;
 	MyNum judge10;
 	MyNum judge100;
+	Button* up10 = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up10");
+	Button* up100 = (Button*)playerLayer->getChildByName("Layer")->getChildByName("up100");
 
 	auto judge = Ruler::getInstance()->subNum(PlayerData::getInstance()->getPlayerlvupGold(),*PlayerData::getInstance()->getGold());
 	judge10 = Ruler::getInstance()->subNum(PlayerData::getInstance()->getPlayerlvup10Gold(),*PlayerData::getInstance()->getGold());
 	judge100 = Ruler::getInstance()->subNum(PlayerData::getInstance()->getPlayerlvup100Gold(),*PlayerData::getInstance()->getGold());
+	auto action = Sequence::create(DelayTime::create(4), CallFuncN::create(CC_CALLBACK_1(PlayerButton::callback, this)), nullptr);
 	if (Ruler::getInstance()->Zero(judge))
 	{
 		if (Ruler::getInstance()->Zero(judge10))
 		{
 			up10->setVisible(true);
+			up10->runAction(action);
 			upGold = PlayerData::getInstance()->getPlayerlvup10Gold();
 			m_upGold10 = upGold;
-			judge100 = Ruler::getInstance()->subNum(*PlayerData::getInstance()->getGold(), upGold);
 			if (Ruler::getInstance()->Zero(judge100))
 			{
 				up100->setVisible(true);
+				up100->runAction(action);
 				upGold = PlayerData::getInstance()->getPlayerlvup100Gold();
 				m_upGold100 = upGold;
 			}
@@ -440,16 +443,15 @@ void PlayerButton::upLevelCount()
 			up10->setVisible(false);
 		}
 	}
-	m_count++;
-	auto action = Sequence::create(CallFuncN::create(CC_CALLBACK_0(PlayerButton::upLevelCount, this)), DelayTime::create(4), CallFuncN::create(CC_CALLBACK_1(PlayerButton::callback, this)), nullptr);
-	if (up10->isVisible())
+	else
 	{
-		up10->runAction(action);
-		if (up100->isVisible())
-		{
-			up100->runAction(action);
-		}
-	}	
+		up10->setVisible(false);
+		up100->setVisible(false);
+		up10->stopAction(action);
+		up100->stopAction(action);
+	}
+	m_count++;
+	
 }
 
 void PlayerButton::callback(Node * node)

@@ -111,12 +111,7 @@
         </Folder>
         <Image Name="1.png" />
         <Image Name="10.png" />
-        <Image Name="100 (2).png" />
-        <Image Name="200 (2).png" />
         <Image Name="25.png" />
-        <Image Name="400 (2).png" />
-        <Image Name="50 (2).png" />
-        <Image Name="8.png" />
         <Image Name="800.png" />
         <Project Name="AchieveItem.csd" Type="Layer" />
         <Project Name="achieveLayer.csd" Type="Layer" />
@@ -134,11 +129,8 @@
         <Image Name="artifact_1.png" />
         <Project Name="ArtifactLayer1.csd" Type="Layer" />
         <Project Name="artifactNode.csd" Type="Layer" />
-        <Image Name="baofengxue.png" />
-        <Image Name="baofengxue-jieshao.png" />
         <Image Name="baofengxue-zjm.png" />
         <Image Name="beijing (2).png" />
-        <Image Name="bg.jpg" />
         <Image Name="bjb.png" />
         <Image Name="bjdb.png" />
         <Image Name="bossButton.png" />
@@ -188,7 +180,6 @@
         <Image Name="dpsPerS.png" />
         <Image Name="dpsPerS_1.png" />
         <Image Name="dqxs_ar.png" />
-        <Image Name="escbg.png" />
         <Image Name="escButton.png" />
         <Project Name="everydayLayer.csd" Type="Layer" />
         <Image Name="flfb.png" />
@@ -199,10 +190,8 @@
         <Image Name="g.png" />
         <Image Name="gold.png" />
         <Image Name="gongqiao (1).png" />
-        <Image Name="gongqiao (2).png" />
-        <Image Name="gongqiao (6).png" />
+        <Image Name="gongqiao.png" />
         <Image Name="head.png" />
-        <Image Name="HelloWorld.png" />
         <Image Name="hpSlider.png" />
         <Image Name="hpSliderDemo.png" />
         <Image Name="hpSliderGray.png" />
@@ -229,7 +218,6 @@
         <Image Name="jinbi1 (9).png" />
         <Image Name="jinbi1.png" />
         <Image Name="jinengk.png" />
-        <Image Name="jinlong.png" />
         <Image Name="js.png" />
         <Image Name="js0.png" />
         <Image Name="jsdb.png" />
@@ -248,8 +236,6 @@
         <Image Name="k5.png" />
         <Image Name="k5_ar.png" />
         <Image Name="keepDps .png" />
-        <Image Name="kssj.png" />
-        <Image Name="kssj-js.png" />
         <Image Name="kssj-zjm.png" />
         <Image Name="kuang.png" />
         <Image Name="kuang_ar.png" />
@@ -267,7 +253,6 @@
         <Image Name="lv (3).png" />
         <Image Name="lv.png" />
         <Image Name="lxsy.png" />
-        <Image Name="mainBG.jpg" />
         <Project Name="MainScene.csd" Type="Scene" />
         <Image Name="mapLayer.png" />
         <Image Name="mapNow.png" />
@@ -279,8 +264,6 @@
         <Image Name="mingchengkuang_ar.png" />
         <Image Name="mission.png" />
         <Image Name="mm1.png" />
-        <ExportJsonFile Name="monster_01.ExportJson" />
-        <Image Name="monster_010.png" />
         <Image Name="ms.png" />
         <Image Name="msdb.png" />
         <Image Name="OptionButton.png" />
@@ -310,14 +293,11 @@
         <Image Name="srmc.png" />
         <Image Name="srzjmc.png" />
         <Project Name="starUp.csd" Type="Layer" />
-        <Image Name="sx.png" />
-        <Image Name="sx-js.png" />
         <Image Name="sx-zjm.png" />
         <Image Name="sysh.png" />
         <Image Name="sz.png" />
         <Image Name="szdb.png" />
         <Image Name="szjdj-zjm.png" />
-        <Image Name="szjdz-js.png" />
         <Image Name="tapDps.png" />
         <Project Name="TaskItem.csd" Type="Layer" />
         <Image Name="tianshukuang.png" />
@@ -325,25 +305,19 @@
         <Image Name="touxiangk.png" />
         <Image Name="touxiangkuang.png" />
         <Image Name="touxiangkuang_ar.png" />
-        <Image Name="tq.png" />
-        <Image Name="tq-js.png" />
         <Image Name="tq-zjm.png" />
         <Image Name="tubiao.png" />
         <Image Name="tuteng.png" />
-        <Image Name="tx.png" />
         <Image Name="tx-d.png" />
         <Image Name="txk.png" />
         <Image Name="upButton.png" />
         <Image Name="x (2).png" />
         <Image Name="x.png" />
         <Image Name="x_ar.png" />
-        <Image Name="xiaogongqiao (4).png" />
         <Image Name="xiaogongqiao (8).png" />
         <Image Name="xiaoguok (2).png" />
         <Image Name="xiaotiaotiao.png" />
-        <Image Name="xing1.png" />
         <Image Name="xing2.png" />
-        <Image Name="xingxing_ar.png" />
         <Image Name="xsbz.png" />
         <Image Name="xuetiao.png" />
         <Image Name="xx.png" />
@@ -352,12 +326,11 @@
         <Image Name="yb0.png" />
         <Image Name="ybjs.png" />
         <Image Name="yin.png" />
-        <Image Name="yinlong.png" />
         <Image Name="yinxiao.png" />
         <Image Name="yinxiao0.png" />
         <Image Name="yinyue.png" />
         <Image Name="yinyue0.png" />
-        <Image Name="yld.jpg" />
+        <Image Name="yld.png" />
         <Project Name="yongbing.csd" Type="Layer" />
         <TTF Name="youyuan.ttf" />
         <Image Name="zgdj_ar.png" />
@@ -370,23 +343,17 @@
         <Image Name="zhuansheng (3).png" />
         <Image Name="zhuansheng (5).png" />
         <Image Name="zhuansheng (6).png" />
-        <Image Name="zhuansheng (7).png" />
         <Image Name="zhuansheng (8).png" />
         <Project Name="zhuansheng.csd" Type="Layer" />
-        <Image Name="zhujiao-2.png" />
         <Project Name="zhujiaojieshao.csd" Type="Layer" />
         <Project Name="zhujiaotiao.csd" Type="Layer" />
-        <Image Name="zjtx.png" />
         <Image Name="zs_ar.png" />
         <Image Name="zsdb.png" />
-        <Image Name="zsdj.png" />
-        <Image Name="zsdj-js.png" />
         <Image Name="zsdj-zjn.png" />
         <Image Name="zstx.png" />
         <Image Name="zuanshi (2).png" />
         <Image Name="zuanshi.png" />
         <Image Name="zuanshida.png" />
-        <Image Name="zz.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

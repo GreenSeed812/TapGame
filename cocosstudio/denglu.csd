@@ -14,9 +14,9 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5014" />
             <PreSize X="1.0000" Y="1.0000" />
-            <FileData Type="Normal" Path="yld.jpg" Plist="" />
+            <FileData Type="Normal" Path="yld.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="nameBg" ActionTag="638300879" Tag="416" IconVisible="False" LeftMargin="209.4246" RightMargin="206.5754" TopMargin="1169.9747" BottomMargin="551.0253" LeftEage="249" RightEage="249" TopEage="33" BottomEage="33" Scale9OriginX="249" Scale9OriginY="33" Scale9Width="166" Scale9Height="133" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="nameBg" ActionTag="638300879" Tag="416" IconVisible="False" LeftMargin="209.4246" RightMargin="206.5754" TopMargin="1169.9746" BottomMargin="551.0253" LeftEage="249" RightEage="249" TopEage="33" BottomEage="33" Scale9OriginX="249" Scale9OriginY="33" Scale9Width="166" Scale9Height="133" ctype="ImageViewObjectData">
             <Size X="664.0000" Y="199.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="541.4246" Y="650.5253" />
@@ -36,13 +36,13 @@
             <PreSize X="0.3315" Y="0.1865" />
             <FileData Type="Normal" Path="dltx.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="loadText" ActionTag="-1947002442" Tag="12" IconVisible="False" LeftMargin="369.5788" RightMargin="364.4212" TopMargin="1569.4772" BottomMargin="268.5229" FontSize="72" LabelText="正在读取..." HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="loadText" ActionTag="-1947002442" Tag="12" IconVisible="False" LeftMargin="369.5785" RightMargin="364.4215" TopMargin="1691.4789" BottomMargin="146.5211" FontSize="72" LabelText="正在读取..." HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="346.0000" Y="82.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="542.5788" Y="309.5229" />
+            <Position X="542.5785" Y="187.5211" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="229" B="192" />
-            <PrePosition X="0.5024" Y="0.1612" />
+            <PrePosition X="0.5024" Y="0.0977" />
             <PreSize X="0.3204" Y="0.0427" />
             <FontResource Type="Normal" Path="FZDH.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />

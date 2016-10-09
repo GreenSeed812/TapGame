@@ -344,11 +344,9 @@
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/..\cocostudio/ActionTimeline/CCSkinNode.h \
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/..\cocostudio/ActionTimeline/CCSkeletonNode.h \
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/..\cocostudio/ActionTimeline/CSLoader.h \
-  jni/../../Classes\MainScene/HelloWorldScene.h \
-  jni/../../Classes\MainScene/ClickLayer.h \
-  jni/../../Classes\Ui/bossButton.h jni/../../Classes\Tool/MyNum.h \
   jni/../../Classes\Tool/SqLite.h jni/../../Classes\Tool/sqlite3.h \
-  jni/../../Classes\Tool/Rule.h jni/../../Classes\Tool/TimeTool.h \
+  jni/../../Classes\Tool/MyNum.h jni/../../Classes\Tool/Rule.h \
+  jni/../../Classes\Tool/TimeTool.h \
   jni/../../Classes\SaveData/PlayerData.h \
   jni/../../Classes\SaveData/ShopData.h \
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/writer.h \
@@ -1049,17 +1047,11 @@ E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/
 
 E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/editor-support/cocostudio/..\cocostudio/ActionTimeline/CSLoader.h:
 
-jni/../../Classes\MainScene/HelloWorldScene.h:
-
-jni/../../Classes\MainScene/ClickLayer.h:
-
-jni/../../Classes\Ui/bossButton.h:
-
-jni/../../Classes\Tool/MyNum.h:
-
 jni/../../Classes\Tool/SqLite.h:
 
 jni/../../Classes\Tool/sqlite3.h:
+
+jni/../../Classes\Tool/MyNum.h:
 
 jni/../../Classes\Tool/Rule.h:
 

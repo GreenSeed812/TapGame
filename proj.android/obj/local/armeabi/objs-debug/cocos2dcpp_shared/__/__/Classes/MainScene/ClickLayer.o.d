@@ -386,7 +386,7 @@
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/dtoa.h \
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/internal/itoa.h \
   E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/stringbuffer.h \
-  jni/../../Classes\Animation.h
+  jni/../../Classes\Animation.h jni/../../Classes\SaveData/MissionData.h
 
 jni/../../Classes/MainScene/ClickLayer.h:
 
@@ -1167,3 +1167,5 @@ E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/int
 E:\GreenSeed812\TapGame\proj.android\../cocos2d/external/flatbuffers/..\json/stringbuffer.h:
 
 jni/../../Classes\Animation.h:
+
+jni/../../Classes\SaveData/MissionData.h:

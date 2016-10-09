@@ -176,13 +176,11 @@ void TaskItem::taskChange(Ref* ref)
 		case 6:
 		case 7:
 		{
-			log("%d", SqLite::getInstance()->getQuestById(m_id)->reward);
 			gold->setString(StringUtils::format("%d", SqLite::getInstance()->getQuestById(m_id)->reward).c_str());
 			img->loadTexture("dim.png");
 		}
 		break;
 		case 2:
-			log("%d", SqLite::getInstance()->getQuestById(m_id)->reward);
 			gold->setString(StringUtils::format("%d", SqLite::getInstance()->getQuestById(m_id)->reward).c_str());
 			img->loadTexture("stone.png");
 		}
@@ -331,6 +329,7 @@ void TaskItem::stateChange()
 		switch (m_id)
 		{
 		case 0:
+			log("%d",MissionData::getInstance()->getMissionTimesById(0));
 			if (MissionData::getInstance()->getMissionTimesById(0) >= 100)
 			{
 				if (m_clicked)

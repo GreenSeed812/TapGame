@@ -65,8 +65,7 @@ bool LoadingScene::init()
 }
 
 void LoadingScene::initLoading()
-{
-	
+{	
 	auto head = (ImageView*)m_rootNode->getChildByName("head");
 	auto nameBg = (ImageView*)m_rootNode->getChildByName("nameBg");
 	auto btn = (Button*)m_rootNode->getChildByName("btn");

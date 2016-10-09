@@ -27,10 +27,7 @@
     </Item>
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="singLayer.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="singLayer.csd" />
+        <ActiveDocument />
       </Value>
     </Item>
   </Properties>

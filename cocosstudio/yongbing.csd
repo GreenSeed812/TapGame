@@ -201,7 +201,7 @@
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.4955" Y="0.3222" />
                         <PreSize X="0.6458" Y="0.3285" />
-                        <FileData Type="Normal" Path="400 (2).png" Plist="" />
+                        <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -269,7 +269,7 @@
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.4862" Y="0.3220" />
                         <PreSize X="0.6458" Y="0.3285" />
-                        <FileData Type="Normal" Path="200 (2).png" Plist="" />
+                        <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -337,7 +337,7 @@
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.5209" Y="0.3072" />
                         <PreSize X="0.5903" Y="0.3285" />
-                        <FileData Type="Normal" Path="100 (2).png" Plist="" />
+                        <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -405,7 +405,7 @@
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.5116" Y="0.3104" />
                         <PreSize X="0.4375" Y="0.3285" />
-                        <FileData Type="Normal" Path="50 (2).png" Plist="" />
+                        <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5142" ScaleY="0.5924" />

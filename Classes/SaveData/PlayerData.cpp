@@ -50,8 +50,6 @@ PlayerData::PlayerData()
 	m_hpNow.number = hp.number;
 	m_hpNow.Mathbit = hp.Mathbit;
 	
-
-
 	m_basedps.number = 1;
 	m_basedps.Mathbit = 0;
 
@@ -89,8 +87,6 @@ PlayerData::PlayerData()
 	
 	m_defeatMG.number = 1;
 	m_defeatMG.Mathbit = 0;
-	
-
 	
 }
 PlayerData::~PlayerData()
@@ -150,8 +146,8 @@ void PlayerData::dataInit()
 			m_defeatMG = tmp;
 		}
 	}
-	m_gold.number = 999;
-	m_gold.Mathbit = 58;
+	m_gold.number = 0;
+	m_gold.Mathbit = 0;
 }
 
 PlayerData * PlayerData::getInstance()

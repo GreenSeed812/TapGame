@@ -214,8 +214,6 @@ void SignLayer::initSignLayer()
 							PlayerData::getInstance()->setSignCount();
 							PlayerData::getInstance()->setSignTime();
 							m_state = false;
-							auto num = (TextBMFont*)rootNode->getChildByName("bg")->getChildByName("dayNum");
-							num->setString(StringUtils::format("%d",7).c_str());
 							PlayerData::getInstance()->saveUserData();
 							signChange(this);
 						}					
@@ -234,8 +232,7 @@ void SignLayer::signChange(Ref*ref)
 	{
 		m_day = PlayerData::getInstance()->getSignCount();
 		auto dayNum = (TextBMFont*)rootNode->getChildByName("bg")->getChildByName("dayNum");
-		dayNum->setString(StringUtils::format("%d", m_day));
-
+		dayNum->setString(StringUtils::format("%d", m_day).c_str());
 		stateChange();
 		btnChange();
 	}
@@ -243,17 +240,22 @@ void SignLayer::signChange(Ref*ref)
 
 void SignLayer::stateChange()
 {
-	auto timeNow = *(TimeTool::getInstance()->getcurrTime());
-	auto signTime = *(TimeTool::getInstance()->calTime(PlayerData::getInstance()->getSignTime()));
-	auto num = timeNow.tm_yday - signTime.tm_yday;
-	//num += 1;
-	if (timeNow.tm_year == signTime.tm_year && num <= 0)
+	if (!checkDay())
 	{
 		if (m_day == 0)
 		{
-			m_state = true;
-			auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (m_day + 1)).c_str());
-			btn->getChildByName("text")->setVisible(true);
+			if (checkDay() && PlayerData::getInstance()->getSignTime() != 0 && PlayerData::getInstance()->getSignNum() != 0)
+			{
+				m_state = false;
+				auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (m_day + 1)).c_str());
+				btn->getChildByName("text")->setVisible(false);
+			}
+			else
+			{
+				m_state = true;
+				auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (m_day + 1)).c_str());
+				btn->getChildByName("text")->setVisible(true);
+			}
 		}
 		else
 		{
@@ -279,7 +281,7 @@ void SignLayer::dayChange()
 		auto num = timeNow.tm_yday - signTime.tm_yday;
 		auto dayNum = (TextBMFont*)rootNode->getChildByName("bg")->getChildByName("dayNum");
 		auto btn1 = (Button*)rootNode->getChildByName("btn1");
-		if (timeNow.tm_year == signTime.tm_year && num > 0)
+		if (checkDay() || PlayerData::getInstance()->getSignTime() == 0 || PlayerData::getInstance()->getSignNum() == 0)
 		{
 			btn1->getChildByName("text")->setVisible(true);
 			for (size_t i = 0; i < 7; i++)
@@ -291,10 +293,14 @@ void SignLayer::dayChange()
 		}
 		else
 		{
-			btn1->getChildByName("text")->setVisible(false);
 			dayNum->setString(StringUtils::format("%d", 7).c_str());
+			for (size_t i = 0; i < 7; i++)
+			{
+				auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (i + 1)).c_str());
+				btn->setEnabled(false);
+			}
 			stateChange();
-		}
+		}		
 	}
 	reset();
 }
@@ -397,4 +403,19 @@ void SignLayer::btnChange()
 		}
 	}
 	dayChange();
+}
+
+bool SignLayer::checkDay()
+{
+	auto timeNow = *(TimeTool::getInstance()->getcurrTime());
+	auto signTime = *(TimeTool::getInstance()->calTime(PlayerData::getInstance()->getSignTime()));
+	auto num = timeNow.tm_yday - signTime.tm_yday;
+	if (timeNow.tm_year == signTime.tm_year && num > 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }

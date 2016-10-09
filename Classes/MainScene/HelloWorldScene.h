@@ -87,8 +87,6 @@ private:
 	bool m_gamelogic;
 	int m_arCount;
 	static bool m_coutChange;
-	static int m_signCount;
-	static tm* m_time;
 	Sprite* m_kssjEffect;
 	Sprite* m_klgjEffect;
 	Sprite* m_fnttEffect;

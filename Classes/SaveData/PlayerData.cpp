@@ -41,6 +41,7 @@ PlayerData::PlayerData()
 	, m_skillTap(0)
 	, m_name("")
 	, m_signCount(0)
+	, m_signNum(0)
 	, m_signTime(0)
 	, m_bg(true)
 	, m_sou(true)
@@ -246,6 +247,7 @@ bool PlayerData::init()
 	m_skillCD[4] = jsd["m_skillCD[4]"].GetDouble();
 	m_skillCD[5] = jsd["m_skillCD[5]"].GetDouble();
 	m_signCount = jsd["m_signCount"].GetInt();
+	m_signNum = jsd["m_signNum"].GetInt();
 	m_signTime = jsd["m_signTime"].GetInt();
 	m_bg = jsd["m_bg"].GetBool();
 	m_sou = jsd["m_sou"].GetBool();
@@ -928,6 +930,7 @@ void PlayerData::saveUserData()
 	document.AddMember("m_signTime", m_signTime, allocator);
 	document.AddMember("m_bg", m_bg, allocator);
 	document.AddMember("m_sou", m_sou, allocator);
+	document.AddMember("m_signNum", m_signNum, allocator);
 
 	ArtifactData::getInstance()->saveUserDefault(document);
 	AchieveData::getInstance()->saveUserDefault(document);
@@ -1020,15 +1023,24 @@ void PlayerData::setSignCount()
 {
 	if (m_signCount >= 6)
 	{
-		m_signCount++;
+		m_signNum++;
 		m_signCount = 0;
 	}
 	else
 	{
 		m_signCount++;
 	}
-	if (m_signCount > 1)
+	if (m_signNum > 1)
 	{
-		m_signCount = 0;
+		m_signNum = 0;
 	}
+}
+
+int PlayerData::getSignTime()
+{
+	if (m_signTime == 0)
+	{
+		return TimeTool::getInstance()->getTime();
+	}
+	return m_signTime;
 }

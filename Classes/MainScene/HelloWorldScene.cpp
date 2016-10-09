@@ -35,8 +35,6 @@ USING_NS_CC_EXT;
 using namespace ui;
 
 bool HelloWorld::m_coutChange = false;
-int HelloWorld::m_signCount = 0;
-tm* HelloWorld::m_time = TimeTool::getInstance()->getcurrTime();
 
 Scene* HelloWorld::createScene()
 {

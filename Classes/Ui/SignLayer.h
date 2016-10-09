@@ -18,6 +18,9 @@ private:
 	bool m_state;
 	void signChange(Ref*);
 	void stateChange();
+	void dayChange();
+	void reset();
+	void btnChange();
 	LayerColor * m_bgLayer;
 	cocos2d::ValueMap m_strings;
 	int m_Rate;

@@ -81,7 +81,7 @@ void ExChange::initExchange()
 				auto action = Sequence::create(DelayTime::create(2), CallFuncN::create(CC_CALLBACK_1(ExChange::callback, this)), nullptr);
 				text->runAction(action);
 			}
-			MissionData::getInstance()->addMissionTimesById(3);
+			MissionData::getInstance()->addMissionTimesById(2);
 			exChange(this);
 		}
 	});

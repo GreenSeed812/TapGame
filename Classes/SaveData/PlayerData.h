@@ -105,8 +105,9 @@ public:
 	void dataInit();
 	void setSignCount();
 	int getSignCount(){ return m_signCount; }
+	int getSignNum(){ return m_signNum; }
 	void setSignTime(){ m_signTime = TimeTool::getInstance()->getTime(); }
-	int getSignTime(){ return m_signTime; }
+	int getSignTime();
 	void setBg(bool off_on){ m_bg = off_on; };
 	bool getBg(){ return m_bg; }
 	void setSou(bool off_on){ m_sou = off_on; }
@@ -167,6 +168,7 @@ private:
 	MyNum m_servantUpGold[33];
 	MyNum m_defeatMG;
 	int m_signCount;
+	int m_signNum;
 	int m_signTime;
 	bool m_bg;
 	bool m_sou;

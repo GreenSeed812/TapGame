@@ -1,7 +1,6 @@
 #include "Ui/SignLayer.h"
 #include "ui/CocosGUI.h"
 #include <cocostudio/CocoStudio.h> 
-#include <MainScene/HelloWorldScene.h>
 #include "Tool/SqLite.h"
 #include "Tool/Rule.h"
 #include "Tool/TimeTool.h"
@@ -91,7 +90,7 @@ void SignLayer::initSignLayer()
 						if (m_state)
 						{
 							int num = 1 * m_Rate;
-							if (PlayerData::getInstance()->getSignCount() == 0)
+							if (PlayerData::getInstance()->getSignNum() == 0)
 							{
 								ShopData::getInstance()->getItemDataById(0)->itemNum += ShopData::getInstance()->getItemDataById(0)->itemNum + num;
 							}
@@ -161,7 +160,7 @@ void SignLayer::initSignLayer()
 						if (m_state)
 						{
 							int num = 1 * m_Rate;
-							if (PlayerData::getInstance()->getSignCount() == 0)
+							if (PlayerData::getInstance()->getSignNum() == 0)
 							{
 								ShopData::getInstance()->getItemDataById(1)->itemNum += ShopData::getInstance()->getItemDataById(1)->itemNum + num;
 							}
@@ -234,118 +233,21 @@ void SignLayer::signChange(Ref*ref)
 	if (ref)
 	{
 		m_day = PlayerData::getInstance()->getSignCount();
-		auto num = (TextBMFont*)rootNode->getChildByName("bg")->getChildByName("dayNum");
-		num->setString(StringUtils::format("%d", m_day));
-		
-		for (size_t i = 0; i < 7; i++)
-		{
-			auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (i + 1)).c_str());
-			auto text = (TextBMFont *)rootNode->getChildByName("bg")->getChildByName(StringUtils::format("day%d", (i + 1)).c_str());
+		auto dayNum = (TextBMFont*)rootNode->getChildByName("bg")->getChildByName("dayNum");
+		dayNum->setString(StringUtils::format("%d", m_day));
 
-			switch (i)
-			{
-			case 0:
-			{
-				if (m_day > 0)
-				{
-					btn->setEnabled(false);
-				}
-			}
-			break;
-			case 1:
-			{
-				if (PlayerData::getInstance()->getSignCount() == 0)
-				{
-					btn->loadTextureNormal("sign/sign1.png");
-					btn->loadTexturePressed("sign/sign1.png");
-					btn->loadTextureDisabled("sign/signed1.png");
-				}
-				else if (PlayerData::getInstance()->getSignCount() == 1)
-				{
-					btn->loadTextureNormal("sign/sign3.png");
-					btn->loadTexturePressed("sign/sign3.png");
-					btn->loadTextureDisabled("sign/signed3.png");
-				}
-				if (m_day > 1)
-				{
-					btn->setEnabled(false);
-				}
-			}
-			break;
-			case 2:
-				if (m_day > 2)
-				{
-					btn->setEnabled(false);
-				}
-				break;
-			case 3:
-			{
-				if (m_day > 3)
-				{
-					btn->setEnabled(false);
-				}
-			}
-			break;
-			case 4:
-			{
-				if (PlayerData::getInstance()->getSignCount() == 0)
-				{
-					btn->loadTextureNormal("sign/sign2.png");
-					btn->loadTexturePressed("sign/sign2.png");
-					btn->loadTextureDisabled("sign/signed2.png");
-				}
-				else if (PlayerData::getInstance()->getSignCount() == 1)
-				{
-					btn->loadTextureNormal("sign/sign4.png");
-					btn->loadTexturePressed("sign/sign4.png");
-					btn->loadTextureDisabled("sign/signed4.png");
-				}
-				if (m_day > 4)
-				{
-					btn->setEnabled(false);
-				}
-			}
-			break;
-			case 5:
-				if (m_day > 5)
-				{
-					btn->setEnabled(false);
-				}
-				break;
-			case 6:
-				if (m_day > 6)
-				{
-					btn->setEnabled(false);
-				}
-				break;
-			}
-		}
-		if (m_day == 0)
-		{
-			for (size_t i = 0; i < 7; i++)
-			{
-				auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (i + 1)).c_str());
-				btn->setEnabled(true);
-			}
-		}
-		for (size_t i = 0; i < 7; i++)
-		{
-			auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (i + 1)).c_str());
-			if (!btn->isEnabled())
-			{
-				btn->getChildByName("text")->setVisible(false);
-			}
-		}	
+		stateChange();
+		btnChange();
 	}
-	stateChange();
 }
 
 void SignLayer::stateChange()
 {
-	auto timeNow = TimeTool::getInstance()->getcurrTime();
-	auto signTime = TimeTool::getInstance()->calTime(PlayerData::getInstance()->getSignTime());
-	auto num = timeNow->tm_yday - signTime->tm_yday;
-	if (timeNow->tm_year == signTime->tm_year && num <= 0)
+	auto timeNow = *(TimeTool::getInstance()->getcurrTime());
+	auto signTime = *(TimeTool::getInstance()->calTime(PlayerData::getInstance()->getSignTime()));
+	auto num = timeNow.tm_yday - signTime.tm_yday;
+	//num += 1;
+	if (timeNow.tm_year == signTime.tm_year && num <= 0)
 	{
 		if (m_day == 0)
 		{
@@ -363,5 +265,136 @@ void SignLayer::stateChange()
 		m_state = true;
 		auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (m_day + 1)).c_str());
 		btn->getChildByName("text")->setVisible(true);
+		auto dayNum = (TextBMFont*)rootNode->getChildByName("bg")->getChildByName("dayNum");
+		dayNum->setString(StringUtils::format("%d", m_day).c_str());
 	}
+}
+
+void SignLayer::dayChange()
+{
+	if (m_day == 0)
+	{
+		auto timeNow = *(TimeTool::getInstance()->getcurrTime());
+		auto signTime = *(TimeTool::getInstance()->calTime(PlayerData::getInstance()->getSignTime()));
+		auto num = timeNow.tm_yday - signTime.tm_yday;
+		auto dayNum = (TextBMFont*)rootNode->getChildByName("bg")->getChildByName("dayNum");
+		auto btn1 = (Button*)rootNode->getChildByName("btn1");
+		if (timeNow.tm_year == signTime.tm_year && num > 0)
+		{
+			btn1->getChildByName("text")->setVisible(true);
+			for (size_t i = 0; i < 7; i++)
+			{
+				auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (i + 1)).c_str());
+				dayNum->setString(StringUtils::format("%d", m_day).c_str());
+				btn->setEnabled(true);
+			}
+		}
+		else
+		{
+			btn1->getChildByName("text")->setVisible(false);
+			dayNum->setString(StringUtils::format("%d", 7).c_str());
+			stateChange();
+		}
+	}
+	reset();
+}
+
+void SignLayer::reset()
+{
+	for (size_t i = 0; i < 7; i++)
+	{
+		auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (i + 1)).c_str());
+		if (!btn->isEnabled())
+		{
+			btn->getChildByName("text")->setVisible(false);
+		}
+	}
+}
+
+void SignLayer::btnChange()
+{
+	for (size_t i = 0; i < 7; i++)
+	{
+		auto btn = (Button*)rootNode->getChildByName(StringUtils::format("btn%d", (i + 1)).c_str());
+		auto text = (TextBMFont *)rootNode->getChildByName("bg")->getChildByName(StringUtils::format("day%d", (i + 1)).c_str());
+
+		switch (i)
+		{
+		case 0:
+		{
+			if (m_day > 0)
+			{
+				btn->setEnabled(false);
+			}
+		}
+		break;
+		case 1:
+		{
+			if (PlayerData::getInstance()->getSignNum() == 0)
+			{
+				btn->loadTextureNormal("sign/sign1.png");
+				btn->loadTexturePressed("sign/sign1.png");
+				btn->loadTextureDisabled("sign/signed1.png");
+			}
+			else if (PlayerData::getInstance()->getSignNum() == 1)
+			{
+				btn->loadTextureNormal("sign/sign3.png");
+				btn->loadTexturePressed("sign/sign3.png");
+				btn->loadTextureDisabled("sign/signed3.png");
+			}
+			if (m_day > 1)
+			{
+				btn->setEnabled(false);
+			}
+		}
+		break;
+		case 2:
+			if (m_day > 2)
+			{
+				btn->setEnabled(false);
+			}
+			break;
+		case 3:
+		{
+			if (m_day > 3)
+			{
+				btn->setEnabled(false);
+			}
+		}
+		break;
+		case 4:
+		{
+			if (PlayerData::getInstance()->getSignNum() == 0)
+			{
+				btn->loadTextureNormal("sign/sign2.png");
+				btn->loadTexturePressed("sign/sign2.png");
+				btn->loadTextureDisabled("sign/signed2.png");
+			}
+			else if (PlayerData::getInstance()->getSignNum() == 1)
+			{
+				btn->loadTextureNormal("sign/sign4.png");
+				btn->loadTexturePressed("sign/sign4.png");
+				btn->loadTextureDisabled("sign/signed4.png");
+			}
+			if (m_day > 4)
+			{
+				btn->setEnabled(false);
+			}
+		}
+		break;
+		case 5:
+			if (m_day > 5)
+			{
+				btn->setEnabled(false);
+			}
+			break;
+		case 6:
+			if (PlayerData::getInstance()->getSignNum() > 1)
+			{
+				btn->setEnabled(false);
+			}
+			break;
+		}
+	}
+	dayChange();
 }

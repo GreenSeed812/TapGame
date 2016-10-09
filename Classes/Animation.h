@@ -32,6 +32,7 @@ public:
 	Animate* getAnimate_kl();
 	Animate* getAnimate_bd();
 	Animate* getAnimate_fn();
+	Sequence* getAction_sx();
 	void setPos();
 	bool getKSSJplaying(){ return m_kssj; }
 	bool getKLGJplaying(){ return m_klgj; }
@@ -39,6 +40,7 @@ public:
 	void setKSSJplaying(bool kssj){ m_kssj = kssj; }
 	void setKLGJplaying(bool klgj){ m_klgj = klgj; }
 	void setFNTTplaying(bool fntt){ m_fntt = fntt; }
+	void initsxAction();
 private:
 	MyAnimation();
 	Animation* m_harmaer;
@@ -55,6 +57,7 @@ private:
 	Animation* m_kuangluanani;
 	Animation* m_baodian;
 	Animation* m_fengnuani;
+	Sequence * m_sxAct;
 	bool m_kssj;
 	bool m_klgj;
 	bool m_fntt;

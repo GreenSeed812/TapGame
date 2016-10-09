@@ -1,35 +1,35 @@
-./obj/local/armeabi/objs-debug/cocos2dx_internal_static/__/external/poly2tri/sweep/sweep.o: \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/sweep.cc \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\stdexcept \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/sweep.h \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\vector \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/sweep_context.h \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\list \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cstddef \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/advancing_front.h \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/../common/shapes.h \
-  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\assert.h \
-  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cmath \
-  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/../common/utils.h
+obj/local/armeabi/objs-debug/cocos2dx_internal_static/__/external/poly2tri/sweep/sweep.o: \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/sweep.cc \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/stdexcept \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/sweep.h \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/vector \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/sweep_context.h \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/list \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstddef \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/advancing_front.h \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/../common/shapes.h \
+ D:/android/ndk/platforms/android-18/arch-arm/usr/include/assert.h \
+ D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cmath \
+ C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/../common/utils.h
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\stdexcept:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/stdexcept:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/sweep.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/sweep.h:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\vector:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/vector:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/sweep_context.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/sweep_context.h:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\list:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/list:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cstddef:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstddef:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/advancing_front.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/advancing_front.h:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/../common/shapes.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/../common/shapes.h:
 
-D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\assert.h:
+D:/android/ndk/platforms/android-18/arch-arm/usr/include/assert.h:
 
-D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cmath:
+D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cmath:
 
-E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/../common/utils.h:
+C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../external/poly2tri/sweep/../common/utils.h:

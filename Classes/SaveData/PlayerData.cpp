@@ -149,8 +149,6 @@ void PlayerData::dataInit()
 			m_defeatMG = tmp;
 		}
 	}
-	m_gold.number = 999;
-	m_gold.Mathbit = 58;
 }
 
 PlayerData * PlayerData::getInstance()

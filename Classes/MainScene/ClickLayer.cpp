@@ -37,6 +37,7 @@ bool ClickLayer::init()
 
 void ClickLayer::updateOnce(float dt)
 {
+	m_armature->setPosition(Vec2(-300, -300));
 	this->getParent()->addChild(m_armature);
 }
 bool ClickLayer::onTouchBegan(Touch *touch, Event*)

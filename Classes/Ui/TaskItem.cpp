@@ -208,14 +208,14 @@ void TaskItem::taskChange(Ref* ref)
 
 void TaskItem::stateChange()
 {
-	auto timeNow = TimeTool::getInstance()->getcurrTime();
-	auto year = timeNow->tm_year;
-	auto day = timeNow->tm_yday;
-	auto signTime = TimeTool::getInstance()->calTime(PlayerData::getInstance()->getSignTime());
-
-	if (signTime->tm_year == year && ((signTime->tm_yday - day) == 1))
+	auto timeNow = *(TimeTool::getInstance()->getcurrTime());
+	auto year = timeNow.tm_year;
+	auto day = timeNow.tm_yday;
+	auto signTime = *(TimeTool::getInstance()->calTime(PlayerData::getInstance()->getSignTime()));
+	auto num = signTime.tm_yday - day;
+	if (signTime.tm_year == year && num > 0)
 	{
-		m_state = true;
+		m_state = false;
 		m_clicked = true;
 		MissionData::getInstance()->reset();
 	}

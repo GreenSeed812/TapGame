@@ -27,11 +27,9 @@ tm* TimeTool::getcurrTime()
 #endif
 
 #if ( CC_TARGET_PLATFORM == CC_PLATFORM_WIN32 )
-
-	struct tm* tm;
 	time_t timep;
 	time(&timep);
-	tm = localtime(&timep);
+	auto tm = localtime(&timep);
 	return tm;
 #endif
 }
@@ -59,8 +57,8 @@ int TimeTool::getTime()
 
 tm* TimeTool::calTime(int time)
 {
-	time_t timep;
-	timep = (time_t)time;
-	auto times = localtime(&timep);
+	time_t timeps;
+	timeps = (time_t)time;
+	auto times = localtime(&timeps);
 	return times;
 }

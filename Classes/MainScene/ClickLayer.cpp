@@ -7,6 +7,7 @@
 #include "ui/CocosGUI.h"
 #include "SaveData/State.h"
 #include "Animation.h"
+#include "SaveData/MissionData.h"
 #include <time.h>
 USING_NS_CC_EXT;
 USING_NS_CC;
@@ -48,7 +49,7 @@ bool ClickLayer::onTouchBegan(Touch *touch, Event*)
 
 		m_armature->getAnimation()->playByIndex(0, -1, 0);
 		m_armature->setPosition(point);
-		
+		MissionData::getInstance()->addMissionTimesById(3);
 		MyState::getInstance()->setTaped(true);
 		MyState::getInstance()->setKTap(true);
 		BgMusic::getInstance()->playEff();

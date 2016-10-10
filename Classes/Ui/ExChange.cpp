@@ -61,6 +61,7 @@ void ExChange::initExchange()
 					g_countNow--;
 					ShopData::getInstance()->subShopGold(m_money);
 					PlayerData::getInstance()->addGold(&m_gold);
+					MissionData::getInstance()->addMissionTimesById(2);
 				}
 				else
 				{

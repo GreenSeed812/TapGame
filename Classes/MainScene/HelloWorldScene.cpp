@@ -59,12 +59,6 @@ bool HelloWorld::init()
     {
         return false;
     }
-	{
-		MyNum num;
-		num.number = 999;
-		num.Mathbit = 50;
-		PlayerData::getInstance()->addGold(&num);
-	}
 	m_kssjEffect = nullptr;
 	auto leaveGold = new LeaveGold();
 	BgMusic::getInstance()->playBg(PlayerData::getInstance()->getBg());

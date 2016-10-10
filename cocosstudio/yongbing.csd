@@ -201,7 +201,7 @@
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.4955" Y="0.3222" />
                         <PreSize X="0.6458" Y="0.3285" />
-                        <FileData Type="Normal" Path="400 (2).png" Plist="" />
+                        <FileData Type="Normal" Path="400.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -215,7 +215,7 @@
                   <AbstractNodeData Name="skillBg_6" ActionTag="1972499877" Tag="420" IconVisible="False" LeftMargin="295.0000" RightMargin="140.0000" TopMargin="806.6621" BottomMargin="163.3379" LeftEage="181" RightEage="181" TopEage="42" BottomEage="42" Scale9OriginX="181" Scale9OriginY="42" Scale9Width="203" Scale9Height="45" ctype="ImageViewObjectData">
                     <Size X="590.0000" Y="129.0000" />
                     <Children>
-                      <AbstractNodeData Name="skillName_6" ActionTag="-521323591" Tag="406" IconVisible="False" LeftMargin="200.5424" RightMargin="242.4576" TopMargin="18.5450" BottomMargin="69.4550" FontSize="36" LabelText="技能名称" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="skillName_6" ActionTag="-521323591" Tag="406" IconVisible="False" LeftMargin="200.5448" RightMargin="242.4552" TopMargin="18.5443" BottomMargin="69.4557" FontSize="36" LabelText="技能名称" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="147.0000" Y="41.0000" />
                         <AnchorPoint ScaleX="0.4594" ScaleY="0.4326" />
                         <Position X="268.0766" Y="87.1923" />
@@ -269,7 +269,7 @@
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.4862" Y="0.3220" />
                         <PreSize X="0.6458" Y="0.3285" />
-                        <FileData Type="Normal" Path="200 (2).png" Plist="" />
+                        <FileData Type="Normal" Path="200.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -337,7 +337,7 @@
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.5209" Y="0.3072" />
                         <PreSize X="0.5903" Y="0.3285" />
-                        <FileData Type="Normal" Path="100 (2).png" Plist="" />
+                        <FileData Type="Normal" Path="100.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -405,7 +405,7 @@
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.5116" Y="0.3104" />
                         <PreSize X="0.4375" Y="0.3285" />
-                        <FileData Type="Normal" Path="50 (2).png" Plist="" />
+                        <FileData Type="Normal" Path="50.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5142" ScaleY="0.5924" />

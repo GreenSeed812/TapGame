@@ -200,6 +200,27 @@ void ItemLayer::btnChange()
 					up->getChildByName("text")->setVisible(false);
 				}
 			}
+			if (m_id == 5)
+			{
+				if (judge >= 0 && !ShopData::getInstance()->getItemBeUsedById(m_id))
+				{
+					for (size_t i = 0; i < 6; i++)
+					{
+						if (PlayerData::getInstance()->getSkillCD(i + 1) > 0)
+						{
+							up->setEnabled(true);
+						}
+						else
+						{
+							up->setEnabled(false);
+						}
+					}
+				}
+				else
+				{
+					up->setEnabled(false);
+				}
+			}
 		}
 		else
 		{

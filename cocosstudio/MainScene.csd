@@ -6,13 +6,13 @@
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
         <Size X="1080.0000" Y="1920.0000" />
         <Children>
-          <AbstractNodeData Name="mainBG" ActionTag="-1314747278" Tag="114" IconVisible="False" LeftMargin="217.3789" RightMargin="222.6211" TopMargin="248.1221" BottomMargin="931.8779" ctype="SpriteObjectData">
+          <AbstractNodeData Name="mainBG" ActionTag="-1314747278" Tag="114" IconVisible="False" LeftMargin="217.3789" RightMargin="222.6211" TopMargin="241.4619" BottomMargin="938.5381" ctype="SpriteObjectData">
             <Size X="640.0000" Y="740.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="537.3789" Y="1301.8779" />
+            <Position X="537.3789" Y="1308.5381" />
             <Scale ScaleX="1.7021" ScaleY="1.6685" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4976" Y="0.6781" />
+            <PrePosition X="0.4976" Y="0.6815" />
             <PreSize X="0.5926" Y="0.3854" />
             <FileData Type="Normal" Path="1.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
@@ -166,7 +166,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5290" Y="0.7719" />
                     <PreSize X="0.2720" Y="1.2976" />
-                    <FileData Type="Normal" Path="gongqiao (2).png" Plist="" />
+                    <FileData Type="Normal" Path="gongqiao.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="MapOtherL" ActionTag="-147955816" Tag="47" IconVisible="False" LeftMargin="11.3200" RightMargin="300.6800" TopMargin="0.1730" BottomMargin="-1.1730" ctype="SpriteObjectData">

@@ -451,15 +451,15 @@
                 <PreSize X="0.3743" Y="0.1127" />
                 <FileData Type="Normal" Path="ui/jsjs/mck.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="head" ActionTag="-989082212" Tag="476" IconVisible="False" LeftMargin="223.2120" RightMargin="755.7880" TopMargin="124.2511" BottomMargin="1439.7489" LeftEage="31" RightEage="31" TopEage="31" BottomEage="31" Scale9OriginX="31" Scale9OriginY="31" Scale9Width="33" Scale9Height="33" ctype="ImageViewObjectData">
-                <Size X="95.0000" Y="95.0000" />
+              <AbstractNodeData Name="head" ActionTag="-989082212" Tag="476" IconVisible="False" LeftMargin="185.7120" RightMargin="718.2880" TopMargin="86.7511" BottomMargin="1402.2489" LeftEage="31" RightEage="31" TopEage="31" BottomEage="31" Scale9OriginX="31" Scale9OriginY="31" Scale9Width="108" Scale9Height="108" ctype="ImageViewObjectData">
+                <Size X="170.0000" Y="170.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="270.7120" Y="1487.2489" />
-                <Scale ScaleX="1.9000" ScaleY="1.9000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2521" Y="0.8965" />
-                <PreSize X="0.0885" Y="0.0573" />
-                <FileData Type="Normal" Path="ui/js/txk.png" Plist="" />
+                <PreSize X="0.1583" Y="0.1025" />
+                <FileData Type="Normal" Path="tx-d.png" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="esc" ActionTag="1066857999" Tag="515" IconVisible="False" LeftMargin="936.6754" RightMargin="59.3246" TopMargin="-49.8170" BottomMargin="1628.8170" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="48" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="78.0000" Y="80.0000" />

@@ -52,7 +52,7 @@ MyAnimation* MyAnimation::getInstance()
 		ArmatureDataManager::getInstance()->addArmatureFileInfo("old/Effect_strike_magister0.png", "old/Effect_strike_magister0.plist", "old/Effect_strike_magister.ExportJson");//读取动画相关文件
 		ArmatureDataManager::getInstance()->addArmatureFileInfo("old/Effect_strike_warrior0.png", "old/Effect_strike_warrior0.plist", "old/Effect_strike_warrior.ExportJson");//读取动画相关文件
 		ArmatureDataManager::getInstance()->addArmatureFileInfo("old/goldcoin_drop0.png", "old/goldcoin_drop0.plist", "old/goldcoin_drop.ExportJson");//读取动画相关文件
-
+		m_animation->initsxAction();
 	}
 	return m_animation;
 }
@@ -95,8 +95,7 @@ void MyAnimation::initXiangyunani()
 	m_xiangyunani = Animation::create();
 	for (int i = 0; i < 20; i++)
 	{
-		auto str = StringUtils::format("xiangyun%02d.png", i);
-		m_xiangyunani->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(StringUtils::format("xiangyun%02d.png", i)));
+		m_xiangyunani->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(StringUtils::format("guochang%02d.png", i)));
 	}
 	m_xiangyunani->setDelayPerUnit(0.0416f);
 
@@ -146,10 +145,10 @@ void MyAnimation::initBaofengxueani()
 {
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("SpecialEffect/baofengxue.plist");
 	m_baofengxueani = Animation::create();
-	for (int i = 1; i < 78; i++)
+	for (int i = 1; i < 17; i++)
 	{
-		auto str = StringUtils::format("baofengxue%02d.png", i);
-		m_baofengxueani->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(StringUtils::format("baofengxue%02d.png", i)));
+		auto str = StringUtils::format("BFX%02d.png", i);
+		m_baofengxueani->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(StringUtils::format("BFX%02d.png", i)));
 	}
 	m_baofengxueani->setDelayPerUnit(0.0416f);
 
@@ -228,6 +227,14 @@ void MyAnimation::initfengnu()
 	m_fengnuani->setDelayPerUnit(0.0416f);
 	m_fengnuani->retain();
 }
+void MyAnimation::initsxAction()
+{
+	auto fadein = FadeIn::create(1.0f);
+	auto fadeout = FadeOut::create(1.0f);
+	m_sxAct = Sequence::create(fadein, fadeout, NULL);
+	m_sxAct->retain();
+	
+}
 Animate* MyAnimation::getAnimate_fn()
 {
 	return Animate::create(m_fengnuani);
@@ -258,6 +265,10 @@ Animate* MyAnimation::getAnimate_bfx()
 Animate* MyAnimation::getAnimate_sx()
 {
 	return Animate::create(m_shixieani);
+}
+Sequence* MyAnimation::getAction_sx()
+{
+	return m_sxAct;
 }
 Animate* MyAnimation::getAnimate_sxk()
 {

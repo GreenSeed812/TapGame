@@ -3,6 +3,10 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
+        <Folder Name="logo">
+          <Image Name="greenSeed.png" />
+          <Image Name="huiZhong.png" />
+        </Folder>
         <Folder Name="ui">
           <Folder Name="chengjiu">
             <Image Name="k1.png" />
@@ -111,7 +115,11 @@
         </Folder>
         <Image Name="1.png" />
         <Image Name="10.png" />
+        <Image Name="100.png" />
+        <Image Name="200.png" />
         <Image Name="25.png" />
+        <Image Name="400.png" />
+        <Image Name="50.png" />
         <Image Name="800.png" />
         <Project Name="AchieveItem.csd" Type="Layer" />
         <Project Name="achieveLayer.csd" Type="Layer" />
@@ -129,6 +137,7 @@
         <Image Name="artifact_1.png" />
         <Project Name="ArtifactLayer1.csd" Type="Layer" />
         <Project Name="artifactNode.csd" Type="Layer" />
+        <Image Name="baofengxue-jieshao.png" />
         <Image Name="baofengxue-zjm.png" />
         <Image Name="beijing (2).png" />
         <Image Name="bjb.png" />
@@ -236,6 +245,7 @@
         <Image Name="k5.png" />
         <Image Name="k5_ar.png" />
         <Image Name="keepDps .png" />
+        <Image Name="kssj-js.png" />
         <Image Name="kssj-zjm.png" />
         <Image Name="kuang.png" />
         <Image Name="kuang_ar.png" />
@@ -293,11 +303,13 @@
         <Image Name="srmc.png" />
         <Image Name="srzjmc.png" />
         <Project Name="starUp.csd" Type="Layer" />
+        <Image Name="sx-js.png" />
         <Image Name="sx-zjm.png" />
         <Image Name="sysh.png" />
         <Image Name="sz.png" />
         <Image Name="szdb.png" />
         <Image Name="szjdj-zjm.png" />
+        <Image Name="szjdz-js.png" />
         <Image Name="tapDps.png" />
         <Project Name="TaskItem.csd" Type="Layer" />
         <Image Name="tianshukuang.png" />
@@ -305,6 +317,7 @@
         <Image Name="touxiangk.png" />
         <Image Name="touxiangkuang.png" />
         <Image Name="touxiangkuang_ar.png" />
+        <Image Name="tq-js.png" />
         <Image Name="tq-zjm.png" />
         <Image Name="tubiao.png" />
         <Image Name="tuteng.png" />
@@ -349,6 +362,7 @@
         <Project Name="zhujiaotiao.csd" Type="Layer" />
         <Image Name="zs_ar.png" />
         <Image Name="zsdb.png" />
+        <Image Name="zsdj-js.png" />
         <Image Name="zsdj-zjn.png" />
         <Image Name="zstx.png" />
         <Image Name="zuanshi (2).png" />

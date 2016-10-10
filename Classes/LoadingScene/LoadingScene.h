@@ -12,6 +12,7 @@ public:
 	CREATE_FUNC(LoadingScene);
 private:
 	Node * m_rootNode;
+	LayerColor * m_bgLayer;
 	void initLoading();
 	void end(float);
 	void editBoxEditingDidBegin(cocos2d::extension::EditBox* editBox){};
@@ -19,6 +20,8 @@ private:
 	void editBoxTextChanged(cocos2d::extension::EditBox* editBox, const std::string &text){};
 	void editBoxReturn(cocos2d::extension::EditBox *editBox){};
 	void callback(Node *node);
+	void callbackLogoH(Node * node);
+	void callbackLogoG(Node * node);
 };
 
 

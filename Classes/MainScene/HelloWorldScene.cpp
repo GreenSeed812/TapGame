@@ -26,6 +26,7 @@
 #include "Ui/ItemLayer.h"
 #include "SaveData/MissionData.h"
 #include "Tool/CoinAnimation.h"
+#include "Tool/Mask.h"
 using namespace cocostudio;
 
 USING_NS_CC;
@@ -58,7 +59,6 @@ bool HelloWorld::init()
     {
         return false;
     }
-	
 	m_kssjEffect = nullptr;
 	auto leaveGold = new LeaveGold();
 	BgMusic::getInstance()->playBg(PlayerData::getInstance()->getBg());
@@ -141,7 +141,15 @@ bool HelloWorld::init()
 	m_skilltimeSlider = rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("skill_time");
 	m_skilltimeSliderShow = 0;
 	m_exploreCoinNum = 0;
-    return true;
+	Mask::readUserdefault();
+	if (Mask::step == 0)
+	{
+		auto mask = Mask::create();
+		this->addChild(mask);
+		mask->initAnimation();
+	}
+
+	 return true;
 }
 void HelloWorld::coinChange(Ref *ref)
 {
@@ -150,11 +158,13 @@ void HelloWorld::coinChange(Ref *ref)
 	gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
 	if (m_heroLayer)
 	{
+		m_heroLayer->setTag(0);
 		TextBMFont* gold = (TextBMFont*)m_heroLayer->getChildByName("message")->getChildByName("gold");
 		gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
 	}
 	if (m_servantLayer)
 	{
+		m_servantLayer->setTag(1);
 		TextBMFont* gold = (TextBMFont*)m_servantLayer->getChildByName("message")->getChildByName("gold");
 		gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
 	}
@@ -358,6 +368,71 @@ void HelloWorld::createMonster()
 }
 void HelloWorld::update(float dt)
 {
+	
+	if (Mask::step == 1 && !Mask::existing)
+	{
+		auto num = MyNum();
+		num.number = 1;
+		num.Mathbit = 0;
+		if (Ruler::getInstance()->Zero(Ruler::getInstance()->subNum(num, *PlayerData::getInstance()->getGold())))
+		{
+			auto mask = Mask::create();
+			this->addChild(mask);
+			mask->initAnimation();
+		}
+	}
+	if (Mask::step == 2 && !Mask::existing)
+	{
+		if (m_heroLayer)
+		{
+			
+			auto mask = Mask::create();
+			this->addChild(mask);
+			mask->initAnimation();
+			
+		}
+	}
+	if (Mask::step == 3 && !Mask::existing)
+	{
+		auto num = MyNum();
+		num = SqLite::getInstance()->getServantGoldByID(0);
+		if (Ruler::getInstance()->Zero(Ruler::getInstance()->subNum(num, *PlayerData::getInstance()->getGold())))
+		{
+			auto mask = Mask::create();
+			this->addChild(mask);
+			mask->initAnimation();
+		}
+	}
+	if (Mask::step == 4 && !Mask::existing)
+	{
+		if (m_servantLayer)
+		{
+			auto mask = Mask::create();
+			this->addChild(mask);
+			mask->initAnimation();
+		}
+	}
+	if (Mask::step == 5 && !Mask::existing)
+	{
+		auto num = MyNum();
+		num = SqLite::getInstance()->getSkillData().at(0)->unlockGold;
+		if (Ruler::getInstance()->Zero(Ruler::getInstance()->subNum(num, *PlayerData::getInstance()->getGold())))
+		{
+			auto mask = Mask::create();
+			this->addChild(mask);
+			mask->initAnimation();
+		}
+	}
+	if (Mask::step == 6 && !Mask::existing)
+	{
+		
+		if (m_heroLayer)
+		{
+			auto mask = Mask::create();
+			this->addChild(mask);
+			mask->initAnimation();
+		}
+	}
 	saveSkillCD(dt);
 	if (m_gamelogic == true)
 	{
@@ -1029,7 +1104,8 @@ void HelloWorld::playerSkillCallBack()
 				if (i == 4)
 				{
 					auto effect = Sprite::create();
-					effect->setScale(4.0f);
+					effect->setPosition(100, -100);
+					effect->setScale(20.0f);
 					auto animate = MyAnimation::getInstance()->getAnimate_bfx();
 					auto kptime = PlayerData::getInstance()->getKeepTime(i);
 					kptime *= (1 + ArtifactData::getInstance()->getskillTimeA(i));
@@ -1048,17 +1124,14 @@ void HelloWorld::playerSkillCallBack()
 					//rootNode->getChildByName("normalAtk")
 					rootNode->getChildByName("normalAtk")->addChild(effectSx);
 					effectSx->runAction(RepeatForever::create(seqSx));
-					auto effetsxk = Sprite::create();
-					effectSx->setPosition(Vec2(0, -100));
-					effetsxk->setScale(2.1f,2.1);
+					auto effetsxk = Sprite::create("SpecialEffect/sxSprite9.png");
+					effectSx->setPosition(Vec2(0, 100));
+					effetsxk->setScale(11.0f,10.5f);
+					auto actionSxk = MyAnimation::getInstance()->getAction_sx();
 					effetsxk->setPosition(0,100);
-					auto animateSxk = MyAnimation::getInstance()->getAnimate_sxk();
 					auto kptime = PlayerData::getInstance()->getKeepTime(i);
 					kptime *= (1 + ArtifactData::getInstance()->getskillTimeA(i));
-					auto t1 = animateSxk->getAnimation()->getDelayPerUnit();
-					auto t2 = animateSxk->getAnimation()->getTotalDelayUnits();
-					auto num = kptime / (t1*t2);
-					auto seqSxk = Sequence::create(Repeat::create(animateSxk, kptime / (t1*t2)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+					auto seqSxk = Sequence::create(Repeat::create(actionSxk, kptime / 2), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
 					rootNode->getChildByName("normalAtk")->addChild(effetsxk);
 					effetsxk->runAction(seqSxk);
 

@@ -48,19 +48,26 @@ bool LoadingScene::init()
 	//remove(cocos2d::UserDefault::getInstance()->getXMLFilePath().c_str());
 	m_rootNode = CSLoader::createNode("denglu.csb");
 
+	auto bg = (ImageView*)m_rootNode->getChildByName("bg");
 	auto head = (ImageView*)m_rootNode->getChildByName("head");
 	auto nameBg = (ImageView*)m_rootNode->getChildByName("nameBg");
 	auto btn = (Button*)m_rootNode->getChildByName("btn");
 	auto img = (ImageView*)btn->getChildByName("img");
 	auto load = (TextBMFont*)m_rootNode->getChildByName("loadText");
+	auto huizhong = (Sprite*)m_rootNode->getChildByName("huizhong");
 
+	m_bgLayer = LayerColor::create(Color4B(255,255,255,255));
+	bg->setVisible(false);
 	head->setVisible(false);
 	nameBg->setVisible(false);
 	img->setVisible(false);
 	btn->setVisible(false);
-	load->setVisible(true);
+	load->setVisible(false);
+	this->addChild(m_bgLayer);
 	this->addChild(m_rootNode);
-	scheduleOnce(CC_SCHEDULE_SELECTOR(LoadingScene::end),0);
+	auto action = Sequence::create(DelayTime::create(2),FadeOut::create(1),CallFuncN::create(CC_CALLBACK_1(LoadingScene::callbackLogoH, this)), nullptr);
+	huizhong->runAction(action);
+
 	return true;
 }
 
@@ -71,8 +78,7 @@ void LoadingScene::initLoading()
 	auto btn = (Button*)m_rootNode->getChildByName("btn");
 	auto img = (ImageView*)btn->getChildByName("img");
 	auto load = (TextBMFont*)m_rootNode->getChildByName("loadText");
-
-	load->setVisible(true);
+	
 	if (!cocos2d::UserDefault::getInstance()->getBoolForKey("isSaved") || UserDefault::getInstance()->getStringForKey("name").compare("") == 0)
 	{
 		head->setVisible(true);
@@ -139,4 +145,22 @@ void LoadingScene::callback(Node *node)
 {
 	auto text = (Text*)m_rootNode->getChildByName("no");
 	text->setVisible(false);
+}
+
+void LoadingScene::callbackLogoH(Node * node)
+{
+	auto action = Sequence::create(DelayTime::create(2), FadeOut::create(1), CallFuncN::create(CC_CALLBACK_1(LoadingScene::callbackLogoG, this)), nullptr);
+	auto greenseed = (Sprite*)m_rootNode->getChildByName("greenseed");
+	greenseed->setVisible(true);
+	greenseed->runAction(action);
+}
+
+
+void LoadingScene::callbackLogoG(Node * node)
+{
+	auto load = (TextBMFont*)m_rootNode->getChildByName("loadText");
+	auto bg = (ImageView*)m_rootNode->getChildByName("bg");
+	bg->setVisible(true);
+	load->setVisible(true);
+	scheduleOnce(CC_SCHEDULE_SELECTOR(LoadingScene::end), 0);
 }

@@ -30,6 +30,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/Tool/SpecManager.cpp \
 				   ../../Classes/Tool/sqlite3.c \
 				   ../../Classes/Tool/TimeTool.cpp \
+				   ../../Classes/Tool/Mask.cpp \
 				   ../../Classes/Tool/CoinAnimation.cpp \
 				   ../../Classes/SaveData/State.cpp \
 				   ../../Classes/SaveData/PlayerData.cpp \

@@ -49,7 +49,8 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 	if (type == PLAYER)
 	{	
 		m_upGold = PlayerData::getInstance()->getPlayerlvupGold();
-
+		this->setTag(0);
+ 		playerLayer->setTag(0);
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
@@ -104,13 +105,16 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 		head->loadTextureNormal("ui/downUi/hero/heroHead1.png");
 		head->loadTexturePressed("ui/downUi/hero/heroHead1.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(1);
-		
+		for (int i = 0; i < PlayerData::getInstance()->getSkillLevel(SKILL1); i++)
+		{
+			m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
+		}
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{		
 				PlayerData::getInstance()->skillLevelUp(1);
-				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
 				PlayerData::getInstance()->subGold(&m_upGold);
+				m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
 				Button* button = (Button*)g_skillLayer->getChildByName("SkillButton1");
 				button->runAction(Show::create());
 				coinChange(this);			
@@ -123,6 +127,10 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 		head->loadTextureNormal("ui/downUi/hero/heroHead2.png");
 		head->loadTexturePressed("ui/downUi/hero/heroHead2.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(2);
+		for (int i = 0; i < PlayerData::getInstance()->getSkillLevel(SKILL2); i++)
+		{
+			m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
+		}
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
@@ -141,6 +149,10 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 		head->loadTextureNormal("ui/downUi/hero/heroHead3.png");
 		head->loadTexturePressed("ui/downUi/hero/heroHead3.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(3);
+		for (int i = 0; i < PlayerData::getInstance()->getSkillLevel(SKILL3); i++)
+		{
+			m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
+		}
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
@@ -159,6 +171,10 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 		head->loadTextureNormal("ui/downUi/hero/heroHead4.png");
 		head->loadTexturePressed("ui/downUi/hero/heroHead4.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(4);
+		for (int i = 0; i < PlayerData::getInstance()->getSkillLevel(SKILL4); i++)
+		{
+			m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
+		}
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
@@ -177,6 +193,10 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 		head->loadTextureNormal("ui/downUi/hero/heroHead5.png");
 		head->loadTexturePressed("ui/downUi/hero/heroHead5.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(5);
+		for (int i = 0; i < PlayerData::getInstance()->getSkillLevel(SKILL5); i++)
+		{
+			m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
+		}
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{
@@ -195,6 +215,10 @@ void PlayerButton::initPlayerButton(BUTTONTYPE type)
 		head->loadTextureNormal("ui/downUi/hero/heroHead6.png");
 		head->loadTexturePressed("ui/downUi/hero/heroHead6.png");
 		m_upGold = SqLite::getInstance()->getGoldByID(6);
+		for (int i = 0; i < PlayerData::getInstance()->getSkillLevel(SKILL6); i++)
+		{
+			m_upGold = Ruler::getInstance()->multiplay(m_upGold, 50);
+		}
 		bt->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type){
 			if (type == Widget::TouchEventType::ENDED)
 			{

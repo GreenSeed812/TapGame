@@ -465,6 +465,7 @@ void PlayerButton::upLevelCount()
 		else
 		{
 			up10->setVisible(false);
+			up100->setVisible(false);
 		}
 	}
 	else

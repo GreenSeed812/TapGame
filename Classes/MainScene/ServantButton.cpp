@@ -200,6 +200,18 @@ void ServantButton::upLevel()
 				up100->setVisible(Show::create());
 				up100->runAction(action);
 			}
+			else
+			{
+				up100->setVisible(false);
+				up100->stopAction(action);
+			}
+		}
+		else
+		{
+			up10->setVisible(false);
+			up100->setVisible(false);
+			up10->stopAction(action);
+			up100->stopAction(action);
 		}
 	}
 	else
@@ -255,6 +267,7 @@ void ServantButton::lockState()
 			goldText->setString(Ruler::getInstance()->showNum(gold));
 			bt->loadTextureNormal("ui/downUi/servant/anniu2.png");
 			bt->loadTexturePressed("ui/downUi/servant/anniu2.png");
+			bt->setEnabled(true);
 		}
 		else
 		{

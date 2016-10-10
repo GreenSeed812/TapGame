@@ -6,14 +6,17 @@
       <ObjectData Name="Node" Tag="48" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Text" ActionTag="-1975883078" Tag="52" IconVisible="False" LeftMargin="-91.0013" RightMargin="-90.9987" TopMargin="-38.4996" BottomMargin="-38.5004" LabelText="111.aa" ctype="TextBMFontObjectData">
-            <Size X="36.0000" Y="15.0000" />
+          <AbstractNodeData Name="Text" ActionTag="-72991436" Tag="31" IconVisible="False" LeftMargin="-72.4989" RightMargin="-86.5011" TopMargin="-32.3466" BottomMargin="-25.6534" FontSize="48" LabelText="111.1aa" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="159.0000" Y="58.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-0.0013" Y="-0.0004" />
-            <Scale ScaleX="4.2161" ScaleY="3.6112" />
+            <Position X="7.0011" Y="3.3466" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="zhuan.ttf" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

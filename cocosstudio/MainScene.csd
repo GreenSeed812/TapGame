@@ -145,10 +145,10 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <ProgressBarData Type="Normal" Path="time.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="gold" ActionTag="1418775638" Tag="27" IconVisible="False" LeftMargin="467.4783" RightMargin="-528.4783" TopMargin="-1629.4989" BottomMargin="1563.4989" LeftEage="20" RightEage="20" TopEage="21" BottomEage="21" Scale9OriginX="20" Scale9OriginY="21" Scale9Width="21" Scale9Height="24" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="gold" ActionTag="1418775638" Tag="27" IconVisible="False" LeftMargin="429.0972" RightMargin="-490.0972" TopMargin="-1633.6484" BottomMargin="1567.6484" LeftEage="20" RightEage="20" TopEage="21" BottomEage="21" Scale9OriginX="20" Scale9OriginY="21" Scale9Width="21" Scale9Height="24" ctype="ImageViewObjectData">
                 <Size X="61.0000" Y="66.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.3382" />
-                <Position X="497.9783" Y="1585.8201" />
+                <Position X="459.5972" Y="1589.9696" />
                 <Scale ScaleX="1.3520" ScaleY="1.3129" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
@@ -231,10 +231,10 @@
                 <FileData Type="Normal" Path="gongqiao (1).png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="frame1" ActionTag="-625926874" Tag="30" IconVisible="False" LeftMargin="-1.2247" RightMargin="-1084.7754" TopMargin="-1930.7250" BottomMargin="175.7250" ctype="SpriteObjectData">
+              <AbstractNodeData Name="frame1" ActionTag="-625926874" Tag="30" IconVisible="False" LeftMargin="-1.2246" RightMargin="-1084.7754" TopMargin="-1923.7252" BottomMargin="168.7252" ctype="SpriteObjectData">
                 <Size X="1086.0000" Y="1755.0000" />
                 <AnchorPoint ScaleX="0.5000" />
-                <Position X="541.7753" Y="175.7250" />
+                <Position X="541.7754" Y="168.7252" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
@@ -554,13 +554,13 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="goldNum" ActionTag="2061361315" Tag="41" IconVisible="False" LeftMargin="613.5100" RightMargin="427.4900" TopMargin="278.6241" BottomMargin="1564.3759" LabelText="0" ctype="TextBMFontObjectData">
+          <AbstractNodeData Name="goldNum" ActionTag="2061361315" Tag="41" IconVisible="False" LeftMargin="576.1700" RightMargin="464.8300" TopMargin="272.3975" BottomMargin="1570.6025" LabelText="0" ctype="TextBMFontObjectData">
             <Size X="39.0000" Y="77.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="633.0100" Y="1602.8759" />
+            <Position X="595.6700" Y="1609.1025" />
             <Scale ScaleX="0.7931" ScaleY="0.8817" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5861" Y="0.8348" />
+            <PrePosition X="0.5515" Y="0.8381" />
             <PreSize X="0.0361" Y="0.0401" />
             <LabelBMFontFile_CNB Type="Normal" Path="font.fnt" Plist="" />
           </AbstractNodeData>

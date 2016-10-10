@@ -95,8 +95,7 @@ void MyAnimation::initXiangyunani()
 	m_xiangyunani = Animation::create();
 	for (int i = 0; i < 20; i++)
 	{
-		auto str = StringUtils::format("xiangyun%02d.png", i);
-		m_xiangyunani->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(StringUtils::format("xiangyun%02d.png", i)));
+		m_xiangyunani->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(StringUtils::format("guochang%02d.png", i)));
 	}
 	m_xiangyunani->setDelayPerUnit(0.0416f);
 

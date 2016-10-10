@@ -529,7 +529,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/MainScene/HelloWorl
  jni/../../Classes/MainScene/SkillCD.h jni/../../Classes/Animation.h \
  jni/../../Classes/Ui/ItemLayer.h \
  jni/../../Classes/SaveData/MissionData.h \
- jni/../../Classes/Tool/CoinAnimation.h
+ jni/../../Classes/Tool/CoinAnimation.h jni/../../Classes/Tool/Mask.h
 
 jni/../../Classes/MainScene/HelloWorldScene.h:
 
@@ -1602,3 +1602,5 @@ jni/../../Classes/Ui/ItemLayer.h:
 jni/../../Classes/SaveData/MissionData.h:
 
 jni/../../Classes/Tool/CoinAnimation.h:
+
+jni/../../Classes/Tool/Mask.h:

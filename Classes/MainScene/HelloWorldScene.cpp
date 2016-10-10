@@ -362,6 +362,18 @@ void HelloWorld::createMonster()
 	armature->getAnimation()->play("Start");
 	if (MonsterState::getInstance()->getTypeNow() == MONSTER_TYPE::BOSS)
 	{
+	
+		auto armT = Armature::create("Effect_nextmap");
+		armT->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(HelloWorld::deleteArmature));
+		armT->getAnimation()->playByIndex(0, -1, 0);
+		armT->getAnimation()->setSpeedScale(4.0f);
+		//armT->setScale(0.5f);
+		auto lable = Sprite::create("boss.png");
+		lable->setScale(0.5);
+		auto seq = Sequence::create(Hide::create(), DelayTime::create(0.25f), Show::create(), DelayTime::create(0.7f), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+		lable->runAction(seq);
+		rootNode->getChildByName("normalAtk")->addChild(armT);
+		rootNode->getChildByName("normalAtk")->addChild(lable);
 		armature->setScale(2.0f);
 		armature->setPosition(0, -100);
 	}
@@ -420,14 +432,18 @@ void HelloWorld::update(float dt)
 	}
 	if (Mask::step == 5 && !Mask::existing)
 	{
-		auto num = MyNum();
-		num = SqLite::getInstance()->getSkillData().at(0)->unlockGold;
-		if (Ruler::getInstance()->Zero(Ruler::getInstance()->subNum(num, *PlayerData::getInstance()->getGold())))
+		if (PlayerData::getInstance()->getPlayerLevel() >= 50)
 		{
-			auto mask = Mask::create();
-			this->addChild(mask);
-			mask->initAnimation();
+			auto num = MyNum();
+			num = SqLite::getInstance()->getSkillData().at(0)->unlockGold;
+			if (Ruler::getInstance()->Zero(Ruler::getInstance()->subNum(num, *PlayerData::getInstance()->getGold())))
+			{
+				auto mask = Mask::create();
+				this->addChild(mask);
+				mask->initAnimation();
+			}
 		}
+		
 	}
 	if (Mask::step == 6 && !Mask::existing)
 	{
@@ -792,7 +808,6 @@ void HelloWorld::killBoss()
 		m_hitlogic = false;
 		clickLayer->setTouchEnabled(false);
 		armature->getAnimation()->play("Leave");
-		
 		MyState::getInstance()->setBossButtonDown(false);
 	}
 	if (Ruler::getInstance()->Zero(PlayerData::getInstance()->getHpNow()))
@@ -860,6 +875,7 @@ void HelloWorld::killBoss()
 			MissionData::getInstance()->addMissionTimesById(0);
 			AchieveData::getInstance()->killMonster();
 		}
+		
 	}
 	
 }
@@ -1341,7 +1357,8 @@ void HelloWorld::normalAtk()
 
 	//effectSprite->runAction(seq);
 	//effectSprite->setScale(2.0f);
-	TextBMFont* text = (TextBMFont*)CSLoader::createNode("DmgNum.csb")->getChildByName("Text");
+	Text* text = (Text*)CSLoader::createNode("DmgNum.csb")->getChildByName("Text");
+	text->setColor(Color3B(255, 0, 0));
 	text->retain();
 	text->removeFromParent();
 
@@ -1845,7 +1862,7 @@ void HelloWorld::coinAni()
 		auto knum = CoinAnimation::getInstance()->getKnum();
 		auto xMove = random(-400, 400);
 		auto jumpNum = random(1, 3);
-		auto seq = Sequence::create(JumpBy::create(0.5, Point(xMove, -300), abs(xMove)*knum, 1), JumpBy::create(0.5, Point(xMove / 5, 0), 50, jumpNum), DelayTime::create(3), JumpTo::create(1, Point(-50, 400), 50, 1), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::delexploreCoin, this, coinnum, PlayerData::getInstance()->defeatMonsterGold())), NULL);
+		auto seq = Sequence::create(JumpBy::create(0.5, Point(xMove, -300), abs(xMove)*knum, 1), JumpBy::create(0.5, Point(xMove / 5, 0), 50, jumpNum), DelayTime::create(3), CallFuncN::create(CC_CALLBACK_1(HelloWorld::goldenUp, this,coinnum, PlayerData::getInstance()->defeatMonsterGold())), JumpTo::create(1, Point(-65, 400), 50, 1), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::delexploreCoin, this, coinnum, PlayerData::getInstance()->defeatMonsterGold())), NULL);
 		gold->runAction(seq);
 	}
 	
@@ -1867,4 +1884,21 @@ void HelloWorld::leaveCallBack(Node * node)
 	text->setVisible(false);
 	auto img = (Sprite*)m_leaveText->getChildByName("img");
 	img->setVisible(false);
+}
+void HelloWorld::goldenUp(Node* node,int num,MyNum Defeatgold)
+{
+	auto goldNum = CSLoader::getInstance()->createNode("DmgNum.csb");
+	goldNum->setColor(Color3B(254, 254, 65));
+	this->addChild(goldNum);
+	auto pos = 	node->getParent()->convertToWorldSpace(node->getPosition());
+	pos = pos + Point(0, 20);
+	MyNum n;
+	n.Mathbit = 0;
+	n.number = num;
+	auto gold = Ruler::getInstance()->devide(Defeatgold, n);
+	Text* goldNumText = (Text*)goldNum->getChildByName("Text");
+	goldNumText->setString(Ruler::getInstance()->showNum(gold));
+	goldNum->setPosition(pos);
+	auto seq = Sequence::create(MoveBy::create(0.5, Vec2(0, 200)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+	goldNum->runAction(seq);
 }

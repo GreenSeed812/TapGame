@@ -57,6 +57,7 @@ public:
 	void saveSkillCD(float dt);
 	void coinAni();
 	void leaveCallBack(Node * node);
+	void goldenUp(Node*,int,MyNum);
 public:
 	void addSktShow(){ m_skilltimeSliderShow++; }
 	void delSktShow(){ m_skilltimeSliderShow-- ;

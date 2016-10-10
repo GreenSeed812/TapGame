@@ -57,7 +57,7 @@ std::string Ruler::showNum(MyNum num)
 	}
 	s = StringUtils::format("%.1lf", num.number);
 	//sprintf_s(s, "%lf", num->number);
-	if (num.Mathbit == 0)
+	/*if (num.Mathbit == 0)
 	{
 		for (int i = 0; i < 10; i++)
 		{
@@ -80,7 +80,7 @@ std::string Ruler::showNum(MyNum num)
 			}
 
 		}
-	}
+	}*/
 	
 	s += unit[num.Mathbit] ;
 	

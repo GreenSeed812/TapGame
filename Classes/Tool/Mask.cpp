@@ -1,5 +1,5 @@
 #include "Mask.h"
-int Mask::step = 0;
+int Mask::step = 100;
 bool Mask::existing = false;
 bool Mask::init()
 {

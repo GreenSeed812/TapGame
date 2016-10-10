@@ -207,6 +207,7 @@
         <Image Name="hpSliderDemo.png" />
         <Image Name="hpSliderGray.png" />
         <Image Name="hpSliderRed.png" />
+        <Image Name="icon_shenqigoumai.png" />
         <Project Name="ItemLayer.csd" Type="Layer" />
         <Image Name="jiahao.png" />
         <Image Name="jiangli.png" />

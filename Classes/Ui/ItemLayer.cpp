@@ -202,17 +202,21 @@ void ItemLayer::btnChange()
 			}
 			if (m_id == 5)
 			{
-				if (judge >= 0 && !ShopData::getInstance()->getItemBeUsedById(m_id))
+				if (judge >= 0)
 				{
 					for (size_t i = 0; i < 6; i++)
 					{
 						if (PlayerData::getInstance()->getSkillCD(i + 1) > 0)
 						{
 							up->setEnabled(true);
+							break;
 						}
 						else
 						{
-							up->setEnabled(false);
+							if (i == 6)
+							{
+								up->setEnabled(false);
+							}
 						}
 					}
 				}

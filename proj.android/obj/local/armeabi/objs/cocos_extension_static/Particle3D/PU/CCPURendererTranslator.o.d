@@ -1,233 +1,224 @@
-obj/local/armeabi/objs/cocos_extension_static/Particle3D/PU/CCPURendererTranslator.o: \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/extensions/Particle3D/PU/CCPURendererTranslator.cpp \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/extensions/Particle3D/PU/CCPURendererTranslator.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPURender.h \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/vector \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCRef.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformMacros.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccConfig.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformConfig.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformDefine.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCPlatformDefine-android.h \
- D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/log.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/CCMath.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec2.h \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/algorithm \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/CCMathBase.h \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/memory \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec2.inl \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec2.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec3.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec3.inl \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec3.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Mat4.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccMacros.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCConsole.h \
- D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/select.h \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/thread \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/map \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/mutex \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCStdC.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCStdC-android.h \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cassert \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccRandom.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec4.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec4.inl \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Mat4.inl \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec4.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Mat4.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Quaternion.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Quaternion.inl \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/CCParticle3DRender.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCRenderState.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccTypes.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/CCGeometry.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCGL.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCGL-android.h \
- D:/android/ndk/platforms/android-18/arch-arm/usr/include/GLES2/gl2platform.h \
- D:/android/ndk/platforms/android-18/arch-arm/usr/include/KHR/khrplatform.h \
- D:/android/ndk/platforms/android-18/arch-arm/usr/include/GLES2/gl2.h \
- D:/android/ndk/platforms/android-18/arch-arm/usr/include/GLES2/gl2ext.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCVector.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPUBeamRender.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPUListener.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPUBillboardChain.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPURibbonTrailRender.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPURibbonTrail.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPUParticleSystem3D.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./2d/CCNode.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCProtocols.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCTexture2D.h \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/unordered_map \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCScriptSupport.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCCommon.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCTouch.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEventTouch.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEvent.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEventKeyboard.h \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/list \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/CCAffineTransform.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./2d/CCComponentContainer.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCMap.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./2d/CCComponent.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/CCParticleSystem3D.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPUScriptTranslator.h \
- D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/iostream \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPUScriptCompiler.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPUScriptParser.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPUScriptLexer.h \
- C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPUMaterialManager.h
+./obj/local/armeabi/objs/cocos_extension_static/Particle3D/PU/CCPURendererTranslator.o: \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/extensions/Particle3D/PU/CCPURendererTranslator.cpp \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/extensions/Particle3D/PU/CCPURendererTranslator.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPURender.h \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\vector \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCRef.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformMacros.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccConfig.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformConfig.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformDefine.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/android/CCPlatformDefine-android.h \
+  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\android/log.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/CCMath.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec2.h \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\algorithm \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/CCMathBase.h \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\memory \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec2.inl \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec3.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec3.inl \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Mat4.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccMacros.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCConsole.h \
+  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\sys/select.h \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\thread \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\map \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\mutex \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCStdC.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/android/CCStdC-android.h \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cassert \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccRandom.h \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cstdlib \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec4.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec4.inl \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Mat4.inl \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Quaternion.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Quaternion.inl \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/CCParticle3DRender.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCRenderState.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccTypes.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/CCGeometry.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCGL.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/android/CCGL-android.h \
+  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\GLES2/gl2platform.h \
+  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\KHR/khrplatform.h \
+  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\GLES2/gl2.h \
+  D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\GLES2/gl2ext.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCVector.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPUBeamRender.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPUListener.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPUBillboardChain.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPURibbonTrailRender.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPURibbonTrail.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPUParticleSystem3D.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\2d/CCNode.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCProtocols.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCTexture2D.h \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\unordered_map \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCScriptSupport.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCCommon.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCTouch.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEventTouch.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEvent.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEventKeyboard.h \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\list \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/CCAffineTransform.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\2d/CCComponentContainer.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCMap.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\2d/CCComponent.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/CCParticleSystem3D.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPUScriptTranslator.h \
+  D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\iostream \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPUScriptCompiler.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPUScriptParser.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPUScriptLexer.h \
+  E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPUMaterialManager.h
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/extensions/Particle3D/PU/CCPURendererTranslator.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/extensions/Particle3D/PU/CCPURendererTranslator.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPURender.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPURender.h:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/vector:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\vector:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCRef.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCRef.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformMacros.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformMacros.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccConfig.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccConfig.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformConfig.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformConfig.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCPlatformDefine.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCPlatformDefine.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCPlatformDefine-android.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/android/CCPlatformDefine-android.h:
 
-D:/android/ndk/platforms/android-18/arch-arm/usr/include/android/log.h:
+D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\android/log.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/CCMath.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/CCMath.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec2.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec2.h:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/algorithm:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\algorithm:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/CCMathBase.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/CCMathBase.h:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/memory:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\memory:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec2.inl:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec2.inl:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec2.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec3.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec3.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec3.inl:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec3.inl:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Mat4.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec3.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccMacros.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Mat4.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCConsole.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccMacros.h:
+D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\sys/select.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCConsole.h:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\thread:
 
-D:/android/ndk/platforms/android-18/arch-arm/usr/include/sys/select.h:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\map:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/thread:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\mutex:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/map:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCStdC.h:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/mutex:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/android/CCStdC-android.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCStdC.h:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cassert:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCStdC-android.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccRandom.h:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cassert:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\cstdlib:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccRandom.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec4.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec4.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Vec4.inl:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec4.inl:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Mat4.inl:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Mat4.inl:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Quaternion.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Vec4.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/Quaternion.inl:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Mat4.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/CCParticle3DRender.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Quaternion.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCRenderState.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/Quaternion.inl:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/ccTypes.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/CCParticle3DRender.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/CCGeometry.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCRenderState.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCGL.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/ccTypes.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/android/CCGL-android.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/CCGeometry.h:
+D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\GLES2/gl2platform.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCGL.h:
+D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\KHR/khrplatform.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/android/CCGL-android.h:
+D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\GLES2/gl2.h:
 
-D:/android/ndk/platforms/android-18/arch-arm/usr/include/GLES2/gl2platform.h:
+D:/Android/android-ndk-r10b/platforms/android-18/arch-arm/usr/include\GLES2/gl2ext.h:
 
-D:/android/ndk/platforms/android-18/arch-arm/usr/include/KHR/khrplatform.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCVector.h:
 
-D:/android/ndk/platforms/android-18/arch-arm/usr/include/GLES2/gl2.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPUBeamRender.h:
 
-D:/android/ndk/platforms/android-18/arch-arm/usr/include/GLES2/gl2ext.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPUListener.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCVector.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPUBillboardChain.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPUBeamRender.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPURibbonTrailRender.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPUListener.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPURibbonTrail.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPUBillboardChain.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPUParticleSystem3D.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPURibbonTrailRender.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\2d/CCNode.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPURibbonTrail.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCProtocols.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPUParticleSystem3D.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\renderer/CCTexture2D.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./2d/CCNode.h:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\unordered_map:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCProtocols.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCScriptSupport.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./renderer/CCTexture2D.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\platform/CCCommon.h:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/unordered_map:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCTouch.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCScriptSupport.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEventTouch.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./platform/CCCommon.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEvent.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCTouch.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCEventKeyboard.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEventTouch.h:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\list:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEvent.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\math/CCAffineTransform.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCEventKeyboard.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\2d/CCComponentContainer.h:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/list:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\base/CCMap.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./math/CCAffineTransform.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/.\2d/CCComponent.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./2d/CCComponentContainer.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/CCParticleSystem3D.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./base/CCMap.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPUScriptTranslator.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./2d/CCComponent.h:
+D:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include\iostream:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/CCParticleSystem3D.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPUScriptCompiler.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPUScriptTranslator.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPUScriptParser.h:
 
-D:/android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/iostream:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPUScriptLexer.h:
 
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPUScriptCompiler.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPUScriptParser.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPUScriptLexer.h:
-
-C:\Users\Dengyz\Documents\Cocos\TapGame\proj.android\../cocos2d/cocos/./../extensions/Particle3D/PU/CCPUMaterialManager.h:
+E:\GreenSeed812\TapGame\proj.android\../cocos2d/cocos/./..\extensions/Particle3D/PU/CCPUMaterialManager.h:

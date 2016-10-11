@@ -227,7 +227,14 @@ void ItemLayer::btnChange()
 				}
 			}
 		}
-		log("%d", up->isEnabled());
+		if (ShopData::getInstance()->getShopGold() >= SqLite::getInstance()->getItemByID(m_id)->expense)
+		{
+			up->setEnabled(true);
+		}
+		else
+		{
+			up->setEnabled(false);
+		}
 	}
 }
 

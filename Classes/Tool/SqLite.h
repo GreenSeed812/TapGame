@@ -54,6 +54,7 @@ struct SkillData
 	float initEffect;
 	float effPerLevel;
 	MyNum unlockGold;
+	int needLevel;
 	std::string name;
 };
 struct SkillEffect

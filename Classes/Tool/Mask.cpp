@@ -23,7 +23,7 @@ bool Mask::onTouchBegan(Touch *touch, Event *pEvent)
 			if (point.y >= 714)
 			{
 				touchListener->setSwallowTouches(false);
-				saveUserdefault();
+				//saveUserdefault();
 				Mask::step++;
 				Mask::existing = false;
 				this->removeFromParent();
@@ -57,7 +57,7 @@ bool Mask::onTouchBegan(Touch *touch, Event *pEvent)
 			this->removeFromParent();
 			Mask::existing = false;
 			Mask::step++;
-			saveUserdefault();
+			//saveUserdefault();
 		}
 		break;
 		case 3:
@@ -81,7 +81,7 @@ bool Mask::onTouchBegan(Touch *touch, Event *pEvent)
 			this->removeFromParent();
 			Mask::existing = false;
 			Mask::step++;
-			saveUserdefault();
+			//saveUserdefault();
 		}
 		break;
 		case 6:
@@ -90,7 +90,7 @@ bool Mask::onTouchBegan(Touch *touch, Event *pEvent)
 			this->removeFromParent();
 			Mask::existing = false;
 			Mask::step++;
-			saveUserdefault();
+			//saveUserdefault();
 		}
 	default:
 		break;
@@ -180,12 +180,12 @@ void Mask::initAnimation()
 			break;
 	}
 }
-void Mask::saveUserdefault()
-{
-	UserDefault::getInstance()->setIntegerForKey("Guide",step);
-	UserDefault::getInstance()->flush();
-}
-void Mask::readUserdefault()
-{
-	step = UserDefault::getInstance()->getIntegerForKey("Guide");
-}
+//void Mask::saveUserdefault()
+//{
+//	UserDefault::getInstance()->setIntegerForKey("Guide",step);
+//	UserDefault::getInstance()->flush();
+//}
+//void Mask::readUserdefault()
+//{
+//	step = UserDefault::getInstance()->getIntegerForKey("Guide");
+//}

@@ -56,7 +56,7 @@ void ItemLayer::initItemLayer(int id)
 		time->setString(StringUtils::format("%d", 0));
 	}
 
-	up->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type)
+	up->addTouchEventListener([this,up](Ref* sender, Widget::TouchEventType type)
 	{
 		if (type == Widget::TouchEventType::ENDED)
 		{
@@ -75,6 +75,10 @@ void ItemLayer::initItemLayer(int id)
 			else
 			{
 				ShopData::getInstance()->buyItemByID(m_id);		
+				if (m_id == 5)
+				{
+					up->setEnabled(false);
+				}
 				if (m_id == 7)
 				{
 					if (!ArtifactData::getInstance()->arStarUp())
@@ -163,7 +167,7 @@ void ItemLayer::btnChange()
 			auto judge = ShopData::getInstance()->getShopGold() - SqLite::getInstance()->getItemByID(m_id)->expense;
 			if (judge >= 0)
 			{
-				up->setEnabled(true);
+				up->setEnabled(true);	
 			}
 			else
 			{
@@ -200,36 +204,30 @@ void ItemLayer::btnChange()
 					up->getChildByName("text")->setVisible(false);
 				}
 			}
-			if (m_id == 5)
-			{
-				if (judge >= 0)
-				{
-					for (size_t i = 0; i < 6; i++)
-					{
-						if (PlayerData::getInstance()->getSkillCD(i + 1) > 0)
-						{
-							up->setEnabled(true);
-							break;
-						}
-						else
-						{
-							if (i == 6)
-							{
-								up->setEnabled(false);
-							}
-						}
-					}
-				}
-				else
-				{
-					up->setEnabled(false);
-				}
-			}
 		}
 		else
 		{
 			up->setEnabled(false);
 		}
+	}
+	if (m_id == 5)
+	{
+		for (size_t i = 0; i < 6; i++)
+		{
+			if (PlayerData::getInstance()->getSkillCD(i + 1) > 0)
+			{
+				up->setEnabled(true);
+				break;
+			}
+			else
+			{
+				if (i == 5)
+				{
+					up->setEnabled(false);
+				}
+			}
+		}
+		log("%d", up->isEnabled());
 	}
 }
 

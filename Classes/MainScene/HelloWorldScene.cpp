@@ -54,7 +54,10 @@ Scene* HelloWorld::createScene()
 // on "init" you need to initialize your instance
 bool HelloWorld::init()
 {
-
+	MyNum num;
+	num.number = 999;
+	num.Mathbit = 40;
+	PlayerData::getInstance()->addGold(&num);
 	if ( !Layer::init() )
     {
         return false;
@@ -1103,7 +1106,7 @@ void HelloWorld::playerSkillCallBack()
 						m_kssjEffect = Sprite::create();
 						m_kssjEffect->retain();
 					}					
-					m_kssjEffect->setScale(4.0f);
+					m_kssjEffect->setScale(20.0f);
 					m_kssjEffect->setColor(Color3B(0, 0, 0));
 					auto animate = MyAnimation::getInstance()->getAnimate_kssj();
 					auto kptime = PlayerData::getInstance()->getKeepTime(i);
@@ -1113,7 +1116,7 @@ void HelloWorld::playerSkillCallBack()
 					auto num = kptime / (t1*t2);
 					auto seq = Sequence::create(Repeat::create(animate, kptime / (t1*t2)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
 					rootNode->getChildByName("normalAtk")->addChild(m_kssjEffect);
-					m_kssjEffect->runAction(seq);
+					m_kssjEffect->runAction(seq);		
 					MyAnimation::getInstance()->setKSSJplaying(true);
 				}
 				if (i == 3)

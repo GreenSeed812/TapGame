@@ -129,15 +129,14 @@ void MyAnimation::initShizijun()
 }
 void MyAnimation::initKuaisusheji()
 {
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("SpecialEffect/KSSJ.plist");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("SpecialEffect/KS.plist");
 	m_kuaisusheji = Animation::create();
-	for (int i = 0; i < 51; i++)
+	for (int i = 1; i < 18; i++)
 	{
 		auto str = StringUtils::format("KSSJ%02d.png", i);
-		m_kuaisusheji->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(StringUtils::format("KSSJ%02d.png", i)));
+		m_kuaisusheji->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(StringUtils::format("KS%02d.png", i)));
 	}
 	m_kuaisusheji->setDelayPerUnit(0.0416f);
-
 	m_kuaisusheji->retain();
 
 }

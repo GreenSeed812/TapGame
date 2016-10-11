@@ -87,7 +87,9 @@ PlayerData::PlayerData()
 	
 	m_defeatMG.number = 1;
 	m_defeatMG.Mathbit = 0;
-	
+
+	m_gold.number = 0;
+	m_gold.Mathbit = 0;
 }
 PlayerData::~PlayerData()
 {
@@ -128,8 +130,6 @@ void PlayerData::dataInit()
 			auto pow2 = pow(lv + 1, 6);
 			auto mul = 1 + 1 / pow1 - 1 / pow2;
 			m_servantUpDps[i] = Ruler::getInstance()->multiplay(m_servantUpDps[i], mul);
-
-
 		}
 	}
 	m_defeatMG.number = 1;
@@ -146,8 +146,6 @@ void PlayerData::dataInit()
 			m_defeatMG = tmp;
 		}
 	}
-	m_gold.number = 0;
-	m_gold.Mathbit = 0;
 }
 
 PlayerData * PlayerData::getInstance()

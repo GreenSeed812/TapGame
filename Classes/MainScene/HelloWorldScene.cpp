@@ -1354,7 +1354,6 @@ void HelloWorld::normalAtk()
 	armT->getAnimation()->setMovementEventCallFunc(this, movementEvent_selector(HelloWorld::deleteArmature));
 	armT->getAnimation()->playByIndex(0, -1, 0);
 	effection->addChild(armT);
-	auto r = random(0, 360);
 	/*auto rotate = RotateBy::create(0.0416f, Vec3(0, 0, r));
 	auto spawn = Spawn::create(rotate, animate, NULL);*/
 

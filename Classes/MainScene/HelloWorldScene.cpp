@@ -54,7 +54,6 @@ Scene* HelloWorld::createScene()
 // on "init" you need to initialize your instance
 bool HelloWorld::init()
 {
-	PlayerData::getInstance()->addGold(&num);
 	if ( !Layer::init() )
     {
         return false;

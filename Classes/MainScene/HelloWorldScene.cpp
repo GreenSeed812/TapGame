@@ -1556,6 +1556,10 @@ void HelloWorld::shopItemEff(float dt)
 			skt->removeAllChildren();
 			m_skilltimeSliderShow = 0;
 			PlayerData::getInstance()->closeSkill(i - 1);
+			for (size_t i = 0; i < 6; i++)
+			{
+				PlayerData::getInstance()->setSkillCD(i + 1, 0);
+			}
 		}
 		if (m_shopLayer)
 		{

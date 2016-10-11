@@ -52,11 +52,7 @@ void ShopData::buyItemByID(int id)
 	{
 		if (id == 5)
 		{
-			MissionData::getInstance()->addMissionTimesById(5);
-			for (size_t i = 0; i < 6; i++)
-			{
-				PlayerData::getInstance()->setSkillCD(i+1,0);
-			}	
+			MissionData::getInstance()->addMissionTimesById(5);	
 		}
 		getItemDataById(id)->leftTime = SqLite::getInstance()->getItemByID(id)->time;
 		m_items[id]->isUsing = true;

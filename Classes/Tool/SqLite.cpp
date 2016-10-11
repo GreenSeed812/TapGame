@@ -263,6 +263,7 @@ void SqLite::readSkillData()
 		std::string effPerLevel = "effPerLevel";
 		std::string unlockGold = "unlockGold";
 		std::string name = "name";
+		std::string needLevel = "needLevel";
 		auto index = nColum;
 		for (int i = 0; i < nRow; i++)
 		{
@@ -292,6 +293,8 @@ void SqLite::readSkillData()
 				}
 				if (name.compare(dbResult[j]) == 0)
 					skill->name = dbResult[index];
+				if (needLevel.compare(dbResult[j]) == 0)
+					skill->needLevel = atoi(dbResult[index]);
 				++index;
 			}
  			m_skillData.push_back(skill);

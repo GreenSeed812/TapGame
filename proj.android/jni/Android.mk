@@ -32,7 +32,6 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/Tool/TimeTool.cpp \
 				   ../../Classes/Tool/Mask.cpp \
 				   ../../Classes/Tool/CoinAnimation.cpp \
-				   ../../Classes/Tool/Mask.cpp \
 				   ../../Classes/SaveData/State.cpp \
 				   ../../Classes/SaveData/PlayerData.cpp \
 				   ../../Classes/SaveData/PlayerButtonData.cpp \

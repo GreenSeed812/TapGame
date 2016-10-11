@@ -141,7 +141,7 @@ bool HelloWorld::init()
 	m_skilltimeSlider = rootNode->getChildByName("UiNode")->getChildByName("SkillLayer")->getChildByName("skill_time");
 	m_skilltimeSliderShow = 0;
 	m_exploreCoinNum = 0;
-	Mask::readUserdefault();
+	//Mask::readUserdefault();
 	if (Mask::step == 0)
 	{
 		auto mask = Mask::create();
@@ -366,8 +366,8 @@ void HelloWorld::createMonster()
 		lable->setScale(0.5);
 		auto seq = Sequence::create(Hide::create(), DelayTime::create(0.25f), Show::create(), DelayTime::create(0.7f), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
 		lable->runAction(seq);
-		rootNode->getChildByName("normalAtk")->addChild(armT);
-		rootNode->getChildByName("normalAtk")->addChild(lable);
+		rootNode->getChildByName("normalAtk")->addChild(armT,1);
+		rootNode->getChildByName("normalAtk")->addChild(lable,2);
 		armature->setScale(2.0f);
 		armature->setPosition(0, -100);
 	}
@@ -619,6 +619,15 @@ void HelloWorld::uiCallBack()
 				});
 				TextBMFont* gold = (TextBMFont*)m_heroLayer->getChildByName("message")->getChildByName("gold");
 				gold->setString(Ruler::getInstance()->showNum(*PlayerData::getInstance()->getGold()));
+				/*auto n = 1;
+				for (int i = 0; i < 7; i++)
+				{
+					n = i + 1;
+					if (SqLite::getInstance()->getSkillData().at(i)->needLevel < PlayerData::getInstance()->getPlayerLevel())
+						continue;
+					else
+						break;
+				}*/
 				for (int i = 0; i < 8; i++)
 				{
 					PlayerButton* bt = PlayerButton::create();

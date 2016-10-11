@@ -9,8 +9,8 @@ public:
 	void initAnimation();
 	static int step;
 	static bool existing;
-	static void saveUserdefault();
-	static void readUserdefault();
+	//static void saveUserdefault();
+	//static void readUserdefault();
 private:
 	
 	EventListenerTouchOneByOne *touchListener;

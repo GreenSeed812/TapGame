@@ -54,9 +54,6 @@ Scene* HelloWorld::createScene()
 // on "init" you need to initialize your instance
 bool HelloWorld::init()
 {
-	MyNum num;
-	num.number = 999;
-	num.Mathbit = 40;
 	PlayerData::getInstance()->addGold(&num);
 	if ( !Layer::init() )
     {
@@ -1152,6 +1149,7 @@ void HelloWorld::playerSkillCallBack()
 					//rootNode->getChildByName("normalAtk")
 					rootNode->getChildByName("normalAtk")->addChild(effectSx);
 					effectSx->runAction(RepeatForever::create(seqSx));
+					effectSx->setScale(3.0f);
 					auto effetsxk = Sprite::create("SpecialEffect/sxSprite9.png");
 					effectSx->setPosition(Vec2(0, 100));
 					effetsxk->setScale(11.0f,10.5f);
@@ -1167,7 +1165,7 @@ void HelloWorld::playerSkillCallBack()
 				if (i == 6)
 				{
 					auto effect = Sprite::create();
-					effect->setScale(3.5f);
+					effect->setScale(35.0f);
 					auto animate = MyAnimation::getInstance()->getAnimate_tq();
 					auto seq = Sequence::create(animate, CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
 					rootNode->getChildByName("normalAtk")->addChild(effect);

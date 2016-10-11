@@ -1,759 +1,410 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
     <dict>
         <key>frames</key>
         <dict>
-            <key>touqie00.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{0,0},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
             <key>touqie01.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{640,0},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{140,120},{6,20}}</string>
+                <key>offset</key>
+                <string>{0,10}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{61,28},{6,20}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie02.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{1280,0},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
+                <key>frame</key>
+                <string>{{24,120},{6,20}}</string>
+                <key>offset</key>
+                <string>{0,10}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{61,28},{6,20}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie03.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{1920,0},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{104,118},{8,18}}</string>
+                <key>offset</key>
+                <string>{0,11}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{60,28},{8,18}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie04.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{2560,0},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{116,24},{8,20}}</string>
+                <key>offset</key>
+                <string>{0,10}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{60,28},{8,20}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie05.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{3200,0},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
+                <key>frame</key>
+                <string>{{74,136},{10,16}}</string>
+                <key>offset</key>
+                <string>{0,10}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{59,30},{10,16}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie06.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{3840,0},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{90,118},{12,16}}</string>
+                <key>offset</key>
+                <string>{0,10}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{58,30},{12,16}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie07.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{4480,0},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{74,112},{14,22}}</string>
+                <key>offset</key>
+                <string>{0,9}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{57,28},{14,22}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie08.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{5120,0},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{76,52},{14,28}}</string>
+                <key>offset</key>
+                <string>{1,7}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{58,27},{14,28}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie09.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{5760,0},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
+                <key>frame</key>
+                <string>{{92,72},{18,28}}</string>
+                <key>offset</key>
+                <string>{1,7}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{56,27},{18,28}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie10.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{0,480},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
+                <key>frame</key>
+                <string>{{114,120},{18,24}}</string>
+                <key>offset</key>
+                <string>{2,8}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{57,28},{18,24}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie11.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{640,480},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{126,44},{20,22}}</string>
+                <key>offset</key>
+                <string>{2,8}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{56,29},{20,22}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie12.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{1280,480},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
+                <key>frame</key>
+                <string>{{118,96},{22,24}}</string>
+                <key>offset</key>
+                <string>{2,6}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{55,30},{22,24}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie13.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{1920,480},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{122,68},{24,26}}</string>
+                <key>offset</key>
+                <string>{2,6}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{54,29},{24,26}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie14.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{2560,480},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{90,92},{26,24}}</string>
+                <key>offset</key>
+                <string>{2,6}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{53,30},{26,24}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie15.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{3200,480},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{46,120},{26,26}}</string>
+                <key>offset</key>
+                <string>{3,4}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{54,31},{26,26}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie16.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{3840,480},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{92,46},{28,24}}</string>
+                <key>offset</key>
+                <string>{3,2}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{53,34},{28,24}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie17.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{4480,480},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{84,24},{30,20}}</string>
+                <key>offset</key>
+                <string>{4,1}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{53,37},{30,20}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie18.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{5120,480},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
+                <key>frame</key>
+                <string>{{50,80},{32,22}}</string>
+                <key>offset</key>
+                <string>{4,1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{52,36},{32,22}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie19.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{5760,480},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
+                <key>frame</key>
+                <string>{{24,84},{34,24}}</string>
+                <key>offset</key>
+                <string>{4,1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{51,35},{34,24}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie20.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{0,960},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{40,52},{34,26}}</string>
+                <key>offset</key>
+                <string>{4,1}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{51,34},{34,26}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie21.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{640,960},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{2,56},{36,26}}</string>
+                <key>offset</key>
+                <string>{4,1}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{50,34},{36,26}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie22.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{1280,960},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{2,28},{36,26}}</string>
+                <key>offset</key>
+                <string>{5,0}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{51,35},{36,26}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie23.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{1920,960},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{44,2},{38,24}}</string>
+                <key>offset</key>
+                <string>{5,-1}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{50,37},{38,24}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie24.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{2560,960},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{2,2},{40,24}}</string>
+                <key>offset</key>
+                <string>{5,-1}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{49,37},{40,24}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie25.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{3200,960},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{40,28},{40,22}}</string>
+                <key>offset</key>
+                <string>{5,0}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{49,37},{40,22}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie26.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{3840,960},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
+                <key>frame</key>
+                <string>{{126,2},{40,20}}</string>
+                <key>offset</key>
+                <string>{6,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{50,39},{40,20}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie27.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{4480,960},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{84,2},{40,20}}</string>
+                <key>offset</key>
+                <string>{7,-1}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{51,39},{40,20}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie28.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{5120,960},{640,480}}</string>
-                <key>textureRotated</key>
+                <key>frame</key>
+                <string>{{2,128},{42,18}}</string>
+                <key>offset</key>
+                <string>{7,-2}</string>
+                <key>rotated</key>
                 <false/>
+                <key>sourceColorRect</key>
+                <string>{{50,41},{42,18}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie29.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{5760,960},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
+                <key>frame</key>
+                <string>{{2,84},{42,20}}</string>
+                <key>offset</key>
+                <string>{7,-3}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{50,41},{42,20}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
             <key>touqie30.png</key>
             <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{0,1440},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>touqie31.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{640,1440},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>touqie32.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{1280,1440},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>touqie33.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{1920,1440},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>touqie34.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{2560,1440},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>touqie35.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{3200,1440},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>touqie36.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{3840,1440},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>touqie37.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{4480,1440},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>touqie38.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{5120,1440},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>touqie39.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{5760,1440},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>touqie40.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{0,1920},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>touqie41.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{640,1920},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>touqie42.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{1280,1920},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>touqie43.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{1920,1920},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>touqie44.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{2560,1920},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>touqie45.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{3200,1920},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>touqie46.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{3840,1920},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>touqie47.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{4480,1920},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>touqie48.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{640,480}</string>
-                <key>spriteSourceSize</key>
-                <string>{640,480}</string>
-                <key>textureRect</key>
-                <string>{{5120,1920},{640,480}}</string>
-                <key>textureRotated</key>
-                <false/>
+                <key>frame</key>
+                <string>{{74,82},{28,14}}</string>
+                <key>offset</key>
+                <string>{-1,-5}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{49,46},{28,14}}</string>
+                <key>sourceSize</key>
+                <string>{128,96}</string>
             </dict>
         </dict>
         <key>metadata</key>
         <dict>
             <key>format</key>
-            <integer>3</integer>
-            <key>pixelFormat</key>
-            <string>RGBA8888</string>
-            <key>premultiplyAlpha</key>
-            <false/>
+            <integer>2</integer>
             <key>realTextureFileName</key>
             <string>touqie.png</string>
             <key>size</key>
-            <string>{6400,2400}</string>
+            <string>{148,148}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:484419cce87889159b4cc86e617381fe:26122d0f3cfa2e3ba0ac09c4a628ceb5:bc1cd452b5136d66569363f7772181ae$</string>
+            <string>$TexturePacker:SmartUpdate:034ce44a656a259d390fdaadcd9423ea$</string>
             <key>textureFileName</key>
             <string>touqie.png</string>
         </dict>

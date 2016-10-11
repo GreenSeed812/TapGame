@@ -181,7 +181,7 @@ void MyAnimation::inittouqie()
 {
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("SpecialEffect/touqie.plist");
 	m_touqieani = Animation::create();
-	for (int i = 0; i < 49; i++)
+	for (int i = 1; i < 31; i++)
 	{
 		auto str = StringUtils::format("touqie%02d.png", i);
 		m_touqieani->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(StringUtils::format("touqie%02d.png", i)));

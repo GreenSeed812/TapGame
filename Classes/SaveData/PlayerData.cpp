@@ -677,7 +677,7 @@ int PlayerData::getHeroRelifeStone()
 }
 int PlayerData::getServantRelifeStone()
 {
-	return getServantAverLevel() / 33;
+	return getServantAverLevel() * m_servantNum / 66;
 }
 
 int PlayerData::getLevelRelifeStone()

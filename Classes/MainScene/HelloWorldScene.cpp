@@ -53,7 +53,6 @@ Scene* HelloWorld::createScene()
 // on "init" you need to initialize your instance
 bool HelloWorld::init()
 {
-	PlayerData::getInstance()->addGold(&num);
 	if ( !Layer::init() )
     {
         return false;
@@ -1164,7 +1163,7 @@ void HelloWorld::playerSkillCallBack()
 				if (i == 6)
 				{
 					auto effect = Sprite::create();
-					effect->setScale(35.0f);
+					effect->setScale(15.0f);
 					auto animate = MyAnimation::getInstance()->getAnimate_tq();
 					auto seq = Sequence::create(animate, CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
 					rootNode->getChildByName("normalAtk")->addChild(effect);
@@ -1863,12 +1862,22 @@ void HelloWorld::coinAni()
 	for (int i = 0; i < coinnum; i++)
 	{
 		Button* gold = Button::create("SpecialEffect/gold.png", "SpecialEffect/gold.png", "SpecialEffect/gold.png");
-		gold->setEnabled(false);
+		//gold->setEnabled(false);
 		rootNode->getChildByName("normalAtk")->addChild(gold);
 		auto knum = CoinAnimation::getInstance()->getKnum();
 		auto xMove = random(-400, 400);
 		auto jumpNum = random(1, 3);
-		auto seq = Sequence::create(JumpBy::create(0.5, Point(xMove, -300), abs(xMove)*knum, 1), JumpBy::create(0.5, Point(xMove / 5, 0), 50, jumpNum), DelayTime::create(3), CallFuncN::create(CC_CALLBACK_1(HelloWorld::goldenUp, this,coinnum, PlayerData::getInstance()->defeatMonsterGold())), JumpTo::create(1, Point(-65, 400), 50, 1), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::delexploreCoin, this, coinnum, PlayerData::getInstance()->defeatMonsterGold())), NULL);
+		auto delayEnd = false;
+		gold->addTouchEventListener([this, gold, coinnum](Ref* sender, Widget::TouchEventType type)
+		{
+			if (type == Widget::TouchEventType::ENDED)
+			{
+				
+				auto seq = Sequence::create(CallFuncN::create(CC_CALLBACK_1(HelloWorld::goldenUp, this, coinnum, PlayerData::getInstance()->defeatMonsterGold())), CallFuncN::create(CC_CALLBACK_1(HelloWorld::delexploreCoin, this, coinnum, PlayerData::getInstance()->defeatMonsterGold())), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), NULL);
+				gold->runAction(seq);
+			}
+		});
+		auto seq = Sequence::create(JumpBy::create(0.5, Point(xMove, -300), abs(xMove)*knum, 1), JumpBy::create(0.5, Point(xMove / 5, 0), 50, jumpNum), DelayTime::create(3.0f), CallFuncN::create(CC_CALLBACK_1(HelloWorld::goldenUp, this, coinnum, PlayerData::getInstance()->defeatMonsterGold())), JumpTo::create(1, Point(-65, 400), 50, 1), CallFuncN::create(CC_CALLBACK_1(HelloWorld::deleteSprite, this)), CallFuncN::create(CC_CALLBACK_1(HelloWorld::delexploreCoin, this, coinnum, PlayerData::getInstance()->defeatMonsterGold())), NULL);
 		gold->runAction(seq);
 	}
 	
@@ -1895,7 +1904,7 @@ void HelloWorld::goldenUp(Node* node,int num,MyNum Defeatgold)
 {
 	auto goldNum = CSLoader::getInstance()->createNode("DmgNum.csb");
 	goldNum->setColor(Color3B(254, 254, 65));
-	this->addChild(goldNum);
+	rootNode->getChildByName("UiNode")->addChild(goldNum);
 	auto pos = 	node->getParent()->convertToWorldSpace(node->getPosition());
 	pos = pos + Point(0, 20);
 	MyNum n;

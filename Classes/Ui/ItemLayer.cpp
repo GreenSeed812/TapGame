@@ -212,29 +212,29 @@ void ItemLayer::btnChange()
 	}
 	if (m_id == 5)
 	{
-		for (size_t i = 0; i < 6; i++)
-		{
-			if (PlayerData::getInstance()->getSkillCD(i + 1) > 0)
-			{
-				up->setEnabled(true);
-				break;
-			}
-			else
-			{
-				if (i == 5)
-				{
-					up->setEnabled(false);
-				}
-			}
-		}
 		if (ShopData::getInstance()->getShopGold() >= SqLite::getInstance()->getItemByID(m_id)->expense)
 		{
 			up->setEnabled(true);
+			for (size_t i = 0; i < 6; i++)
+			{
+				if (PlayerData::getInstance()->getSkillCD(i + 1) > 0)
+				{
+					up->setEnabled(true);
+					break;
+				}
+				else
+				{
+					if (i == 5)
+					{
+						up->setEnabled(false);
+					}
+				}
+			}
 		}
 		else
 		{
 			up->setEnabled(false);
-		}
+		}	
 	}
 }
 

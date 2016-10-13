@@ -322,7 +322,7 @@ void ArtifactData::deleteArByID(int id)
 	{
 		if (m_artifacts.at(i)->m_artifactID == id)
 		{
-			m_artifactStone += (m_artifacts.at(i)->m_artifactLevel) * 2;
+			m_artifactStone += m_artifacts.at(i)->m_artifactLevel * (m_artifacts.at(i)->m_artifactLevel - 1);
 
 		}
 	}

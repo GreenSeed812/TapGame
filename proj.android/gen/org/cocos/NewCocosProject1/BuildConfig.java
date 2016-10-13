@@ -2,5 +2,5 @@
 package org.cocos.NewCocosProject1;
 
 public final class BuildConfig {
-    public final static boolean DEBUG = false;
+    public final static boolean DEBUG = true;
 }

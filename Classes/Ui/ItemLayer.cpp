@@ -234,7 +234,7 @@ void ItemLayer::btnChange()
 		else
 		{
 			up->setEnabled(false);
-		}
+		}	
 	}
 }
 

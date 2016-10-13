@@ -1,5 +1,4 @@
 #include "HelloWorldScene.h"
-
 #include "Tool/Rule.h"
 #include "Tool/SqLite.h"
 #include <cocostudio/CocoStudio.h>
@@ -744,11 +743,11 @@ void HelloWorld::uiCallBack()
 						widget->addChild(item);
 						widget->setTag(i);
 						lv->pushBackCustomItem(widget);
-						cocos2d::CCNotificationCenter::getInstance()->postNotification("itemChange");
+						//cocos2d::CCNotificationCenter::getInstance()->postNotification("itemChange");
 					}	
 				}
 			}
-			itemChange(this);
+			CCNotificationCenter::getInstance()->postNotification("itemChange");
 		}
 	});
 	settingButton->addTouchEventListener([this](Ref* sender, Widget::TouchEventType type) {

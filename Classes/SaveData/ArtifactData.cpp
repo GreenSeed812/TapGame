@@ -15,8 +15,8 @@ ArtifactData* ArtifactData::getInstance()
 	return g_ar;
 }
 ArtifactData::ArtifactData()
- :m_artifactStone(0)
- ,m_artifactNum(0)
+ :m_artifactStone(100000)
+ ,m_artifactNum()
  , m_dpsexper(0)
  ,m_AllDpsMul(0)
  ,m_exploreProb(0)
@@ -261,12 +261,14 @@ bool ArtifactData::arStarUp()
 	std::vector<ArtiHave*>::iterator it = m_artifacts.begin();
 	it = it + uparNum;
 	(*it)->m_artimaxLevel = SqLite::getInstance()->getArtifactSkillByID((*it)->m_artifactID).ar.star[(*it)->m_artifactStar - 1];
+	auto tmp_art = (*it)->m_artifactStar;
 	(*it)->m_artifactStar++;
 	ArStarUp::getInstance()->init((*it)->m_artifactID);
 	if ((*it)->m_artifactStar == 5)
 	{
 		auto tmp = *it;
-		remove(m_artifacts.begin(), m_artifacts.end(), *it);
+		//std::swap(it, m_artifacts.end() - 1);
+		it = remove(m_artifacts.begin(), m_artifacts.end(), *it);
 		*it = tmp;
 		m_fiveStar++;
 	}
@@ -319,7 +321,7 @@ void ArtifactData::deleteArByID(int id)
 	{
 		if (m_artifacts.at(i)->m_artifactID == id)
 		{
-			m_artifactStone += (m_artifacts.at(i)->m_artimaxLevel - 1) * 2;
+			m_artifactStone += (m_artifacts.at(i)->m_artifactLevel - 1) * 2;
 
 		}
 	}

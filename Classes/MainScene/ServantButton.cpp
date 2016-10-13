@@ -174,8 +174,11 @@ void ServantButton::oneUp()
 			frame->addChild(newNode);
 			lv->pushBackCustomItem(frame);
 			lv->jumpToBottom();
+			newNode->node->getChildByName("Layer")->getChildByName("headbg")->setColor(Color3B(96, 96, 96));
+			newNode->node->getChildByName("Layer")->getChildByName("discribe")->setColor(Color3B(96, 96, 96));
+			this->node->getChildByName("Layer")->getChildByName("headbg")->setColor(Color3B(255, 255, 255));
+			this->node->getChildByName("Layer")->getChildByName("discribe")->setColor(Color3B(255, 255, 255));
 		}
-		
 	}
 	PlayerData::getInstance()->servantLevelUp(m_id);
 }

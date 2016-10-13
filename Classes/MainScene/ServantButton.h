@@ -14,6 +14,7 @@ public:
 	static void getListView(Node* lv){ g_lv = lv; }
 	static void getRootNode(Node * node){ g_node = node; }
 	void coinChange(Ref*);
+	Node* getNode(){ return node; }
 private:
 	Node* node;
 	Layer* m_layer;

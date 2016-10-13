@@ -15,8 +15,8 @@ ArtifactData* ArtifactData::getInstance()
 	return g_ar;
 }
 ArtifactData::ArtifactData()
- :m_artifactStone(100000)
- ,m_artifactNum()
+ :m_artifactStone(10000)
+ ,m_artifactNum(0)
  , m_dpsexper(0)
  ,m_AllDpsMul(0)
  ,m_exploreProb(0)

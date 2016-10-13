@@ -244,6 +244,7 @@ void ArtifactData::arLevelUp(int id)
 				servantUnlockDown += artSkill.ar.effDataUp;
 			}
 			m_AllDpsMul += m_artifacts.at(i)->m_artiDpsUp;
+			m_artifactStone -= m_artifacts.at(i)->m_artifactLevel * 2;
 			m_artifacts.at(i)->m_artifactLevel++;
 			break;
 		}
@@ -321,7 +322,7 @@ void ArtifactData::deleteArByID(int id)
 	{
 		if (m_artifacts.at(i)->m_artifactID == id)
 		{
-			m_artifactStone += (m_artifacts.at(i)->m_artifactLevel - 1) * 2;
+			m_artifactStone += (m_artifacts.at(i)->m_artifactLevel) * 2;
 
 		}
 	}

@@ -146,7 +146,7 @@ bool HelloWorld::init()
 		this->addChild(mask);
 		mask->initAnimation();
 	}
-
+	CCNotificationCenter::getInstance()->addObserver(this, callfuncO_selector(HelloWorld::ArChange), "ArChange", nullptr);
 	 return true;
 }
 void HelloWorld::coinChange(Ref *ref)

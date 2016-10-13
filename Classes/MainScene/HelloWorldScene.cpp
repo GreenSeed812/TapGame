@@ -1400,6 +1400,8 @@ void HelloWorld::playMusic(Node * node)
 
 void HelloWorld::initSer()
 {
+	ServantButton* bt;
+	int _i;
 	ListView* lv = (ListView*)m_servantLayer->getChildByName("ListView");
 	for (size_t i = 0; i <= PlayerData::getInstance()->getServantNum(); i++)
 	{
@@ -1409,7 +1411,14 @@ void HelloWorld::initSer()
 		widget->setContentSize(button->getContentSize());
 		widget->addChild(button);
 		lv->pushBackCustomItem(widget);
+		bt = button;
+		_i = i;
 	}		
+	if (_i < 32)
+	{
+		bt->getNode()->getChildByName("Layer")->getChildByName("headbg")->setColor(Color3B(96, 96, 96));
+		bt->getNode()->getChildByName("Layer")->getChildByName("discribe")->setColor(Color3B(96, 96, 96));
+	}
 }
 
 void HelloWorld::initAr()

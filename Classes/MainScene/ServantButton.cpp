@@ -137,7 +137,7 @@ void ServantButton::coinChange(Ref*)
 	auto up100 = (Button*)m_layer->getChildByName("up100");
 
 	gold->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpGold(m_id)));
-	dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpDps(m_id)));
+	dps->setString(StringUtils::format("+%s",Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUpDps(m_id)).c_str()).c_str());
 	up10Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUp10Dps(m_id)));
 	up100Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getservantLevelUp100Dps(m_id)));
 	textlv->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getServantLevel(m_id)));

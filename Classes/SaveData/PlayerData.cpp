@@ -87,9 +87,6 @@ PlayerData::PlayerData()
 	
 	m_defeatMG.number = 1;
 	m_defeatMG.Mathbit = 0;
-
-	m_gold.number = 0;
-	m_gold.Mathbit = 0;
 }
 PlayerData::~PlayerData()
 {

@@ -279,7 +279,7 @@ void PlayerButton::coinChange(Ref* pSender)
 	if (m_type == PLAYER)
 	{		
 		textDps->setVisible(true);
-		dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvupDps()));
+		dps->setString(StringUtils::format("+%s",Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvupDps()).c_str()).c_str());
 		up10Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvup10Dps()));
 		up100Dps->setString(Ruler::getInstance()->showNum(PlayerData::getInstance()->getPlayerlvup100Dps()));
 		textN->setString(PlayerData::getInstance()->getName());
@@ -288,7 +288,7 @@ void PlayerButton::coinChange(Ref* pSender)
 	}
 	else if (m_type == SKILL1)
 	{
-		dps->setString(StringUtils::format("+%.0lf", SqLite::getInstance()->getEffPer(0)).c_str());
+		dps->setString(StringUtils::format("+%.0lf%%", SqLite::getInstance()->getEffPer(0)).c_str());
 		textN->setString(StringUtils::format("%s",SqLite::getInstance()->getSkillNameByID(0).c_str()));
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type)));
 		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type);
@@ -372,7 +372,7 @@ void PlayerButton::coinChange(Ref* pSender)
 	}
 	else if (m_type == SKILL5)
 	{
-		dps->setString(StringUtils::format("+%.1lf", SqLite::getInstance()->getEffPer(4)).c_str());
+		dps->setString(StringUtils::format("+%.1lf%%", SqLite::getInstance()->getEffPer(4)).c_str());
 		textN->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(4).c_str()));
 		text->setString(StringUtils::format("lv%d", PlayerData::getInstance()->getSkillLevel(m_type)));
 		float eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type);
@@ -414,7 +414,8 @@ void PlayerButton::coinChange(Ref* pSender)
 	}
 	else if (m_type == RELIFE)
 	{
-		dps->setString(StringUtils::format("+%.1lf%%", SqLite::getInstance()->getEffPer(6)).c_str());
+		dps->setVisible(false);
+		lb->setVisible(false);
 		textN->setString(StringUtils::format("%s", SqLite::getInstance()->getSkillNameByID(6).c_str()));
 		auto eff = SqLite::getInstance()->getEff(m_type - 1) + SqLite::getInstance()->getEffPer(m_type - 1) * PlayerData::getInstance()->getSkillLevel(m_type);
 		textD->setString(StringUtils::format(SqLite::getInstance()->getSkillDis(m_type - 1).c_str(), eff));
@@ -422,6 +423,12 @@ void PlayerButton::coinChange(Ref* pSender)
 		auto y = textD->getPositionY();
 		textD->setPosition(Vec2(x, y));
 		textD->setFontSize(30);
+		auto text = (Text*)playerLayer->getChildByName("Text_3");
+		auto str = FileUtils::getInstance()->getValueMapFromFile("fonts/text.xml");
+		text->setString(str["relife"].asString());
+		text->setFontSize(36);
+		auto img = (ImageView*)playerLayer->getChildByName("Image_1");
+		img->setVisible(false);
 		if (PlayerData::getInstance()->getPlayerLevel() < 600)
 		{
 			bt->setEnabled(false);

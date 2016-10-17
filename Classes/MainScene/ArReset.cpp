@@ -126,7 +126,7 @@ void ArReset::initArResetLayer(int id)
 		{
 			ShopData::getInstance()->subShopGold(200);
 			ArtifactData::getInstance()->deleteArByID(m_id);	
-			cocos2d::CCNotificationCenter::getInstance()->postNotification("ArtiChange");
+			cocos2d::CCNotificationCenter::getInstance()->postNotification("ArChange");
 			CCNotificationCenter::getInstance()->removeObserver(g_btn, "ArChange");
 			g_listview->removeChild(m_widget);
 			g_listview->visit();

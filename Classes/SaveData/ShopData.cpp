@@ -6,7 +6,7 @@
 #include "PlayerData.h"
 static ShopData* g_SD = nullptr;
 ShopData::ShopData()
-	:m_shopGold(100000)
+	:m_shopGold(0)
 {
 }
 

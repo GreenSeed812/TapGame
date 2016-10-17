@@ -113,7 +113,7 @@ void ArtifactButton::arChange(Ref*)
 			auto bt = (Button*)m_layer->getChildByName("up");
 			if (m_levelUp)
 			{
-				auto judge = m_lhs - ArtifactData::getInstance()->getNeededArStone();
+				auto judge = m_lhs - (ArtifactData::getInstance()->getLevel(m_id) * 2);
 				if (judge >= 0)
 				{
 					m_StoneNum += ArtifactData::getInstance()->getNeededArStone();

@@ -16,6 +16,7 @@ bool PlayerButton::init()
 	{
 		return false;
 	}
+	m_isLocked = false;
 	m_count = 0;
 	playerLayer = CSLoader::createNode("zhujiaotiao.csb");
 	this->setContentSize(playerLayer->getContentSize());
@@ -268,10 +269,12 @@ void PlayerButton::coinChange(Ref* pSender)
 	textDps->setVisible(false);
 	if (Ruler::getInstance()->Zero(judge))
 	{
+		
 		bt->setEnabled(true);
 	}
 	else
 	{
+		
 		bt->setEnabled(false);
 		up10->setVisible(false);
 		up100->setVisible(false);
@@ -304,7 +307,28 @@ void PlayerButton::coinChange(Ref* pSender)
 		textD->setFontSize(30);
 		if (PlayerData::getInstance()->getPlayerLevel() < 50)
 		{
+			if (!m_isLocked)
+			{
+				playerLayer->getChildByName("Layer")->getChildByName("discribe")->setColor(Color3B(96, 96, 96));
+				Sprite* head = Sprite::create("ui/downUi/hero/50.png");
+				head->setPosition(playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getContentSize() / 2);
+				head->setName("head");
+				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->addChild(head);
+				m_isLocked = true;
+			}
 			bt->setEnabled(false);
+		}
+		else
+		{
+			if (m_isLocked)
+			{
+				playerLayer->getChildByName("Layer")->getChildByName("discribe")->setColor(Color3B(255, 255, 255));
+				if (playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head"))
+				{
+					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head")->removeFromParent();
+				}
+				m_isLocked = false;
+			}
 		}
 	}
 	else if (m_type == SKILL2)
@@ -325,7 +349,28 @@ void PlayerButton::coinChange(Ref* pSender)
 		textD->setFontSize(30);
 		if (PlayerData::getInstance()->getPlayerLevel() < 100)
 		{
+			if (!m_isLocked)
+			{
+				playerLayer->getChildByName("Layer")->getChildByName("discribe")->setColor(Color3B(96, 96, 96));
+				Sprite* head = Sprite::create("ui/downUi/hero/100.png");
+				head->setPosition(playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getContentSize() / 2);
+				head->setName("head");
+				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->addChild(head);
+				m_isLocked = true;
+			}
 			bt->setEnabled(false);
+		}
+		else
+		{
+			if (m_isLocked)
+			{
+				playerLayer->getChildByName("Layer")->getChildByName("discribe")->setColor(Color3B(255, 255, 255));
+				if (playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head"))
+				{
+					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head")->removeFromParent();
+				}
+				m_isLocked = false;
+			}
 		}
 	}
 	else if (m_type == SKILL3)
@@ -346,7 +391,28 @@ void PlayerButton::coinChange(Ref* pSender)
 		textD->setFontSize(30);
 		if (PlayerData::getInstance()->getPlayerLevel() < 200)
 		{
+			if (!m_isLocked)
+			{
+				playerLayer->getChildByName("Layer")->getChildByName("discribe")->setColor(Color3B(96, 96, 96));
+				Sprite* head = Sprite::create("ui/downUi/hero/200.png");
+				head->setPosition(playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getContentSize() / 2);
+				head->setName("head");
+				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->addChild(head);
+				m_isLocked = true;
+			}
 			bt->setEnabled(false);
+		}
+		else
+		{
+			if (m_isLocked)
+			{
+				playerLayer->getChildByName("Layer")->getChildByName("discribe")->setColor(Color3B(255, 255, 255));
+				if (playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head"))
+				{
+					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head")->removeFromParent();
+				}
+				m_isLocked = false;
+			}
 		}
 	}
 	else if (m_type == SKILL4)
@@ -367,7 +433,28 @@ void PlayerButton::coinChange(Ref* pSender)
 		textD->setFontSize(30);
 		if (PlayerData::getInstance()->getPlayerLevel() < 300)
 		{
+			if (!m_isLocked)
+			{
+				playerLayer->getChildByName("Layer")->getChildByName("discribe")->setColor(Color3B(96, 96, 96));
+				Sprite* head = Sprite::create("ui/downUi/hero/300.png");
+				head->setPosition(playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getContentSize() / 2);
+				head->setName("head");
+				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->addChild(head);
+				m_isLocked = true;
+			}
 			bt->setEnabled(false);
+		}
+		else
+		{
+			if (m_isLocked)
+			{
+				playerLayer->getChildByName("Layer")->getChildByName("discribe")->setColor(Color3B(255, 255, 255));
+				if (playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head"))
+				{
+					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head")->removeFromParent();
+				}
+				m_isLocked = false;
+			}
 		}
 	}
 	else if (m_type == SKILL5)
@@ -388,7 +475,28 @@ void PlayerButton::coinChange(Ref* pSender)
 		textD->setFontSize(30);
 		if (PlayerData::getInstance()->getPlayerLevel() < 400)
 		{
+			if (!m_isLocked)
+			{
+				playerLayer->getChildByName("Layer")->getChildByName("discribe")->setColor(Color3B(96, 96, 96));
+				Sprite* head = Sprite::create("ui/downUi/hero/400.png");
+				head->setPosition(playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getContentSize() / 2);
+				head->setName("head");
+				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->addChild(head);
+				m_isLocked = true;
+			}
 			bt->setEnabled(false);
+		}
+		else
+		{
+			if (m_isLocked)
+			{
+				playerLayer->getChildByName("Layer")->getChildByName("discribe")->setColor(Color3B(255, 255, 255));
+				if (playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head"))
+				{
+					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head")->removeFromParent();
+				}
+				m_isLocked = false;
+			}
 		}
 	}
 	else if (m_type == SKILL6)
@@ -409,7 +517,28 @@ void PlayerButton::coinChange(Ref* pSender)
 		textD->setFontSize(30);
 		if (PlayerData::getInstance()->getPlayerLevel() < 500)
 		{
+			if (!m_isLocked)
+			{
+				playerLayer->getChildByName("Layer")->getChildByName("discribe")->setColor(Color3B(96, 96, 96));
+				Sprite* head = Sprite::create("ui/downUi/hero/500.png");
+				head->setPosition(playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getContentSize() / 2);
+				head->setName("head");
+				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->addChild(head);
+				m_isLocked = true;
+			}
 			bt->setEnabled(false);
+		}
+		else
+		{
+			if (m_isLocked)
+			{
+				playerLayer->getChildByName("Layer")->getChildByName("discribe")->setColor(Color3B(255, 255, 255));
+				if (playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head"))
+				{
+					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head")->removeFromParent();
+				}
+				m_isLocked = false;
+			}
 		}
 	}
 	else if (m_type == RELIFE)
@@ -424,7 +553,28 @@ void PlayerButton::coinChange(Ref* pSender)
 		textD->setFontSize(30);
 		if (PlayerData::getInstance()->getPlayerLevel() < 600)
 		{
+			if (!m_isLocked)
+			{
+				playerLayer->getChildByName("Layer")->getChildByName("discribe")->setColor(Color3B(96, 96, 96));
+				Sprite* head = Sprite::create("ui/downUi/hero/600.png");
+				head->setPosition(playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getContentSize() / 2);
+				head->setName("head");
+				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->addChild(head);
+				m_isLocked = true;
+			}
 			bt->setEnabled(false);
+		}
+		else
+		{
+			if (m_isLocked)
+			{
+				playerLayer->getChildByName("Layer")->getChildByName("discribe")->setColor(Color3B(255, 255, 255));
+				if (playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head"))
+				{
+					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head")->removeFromParent();
+				}
+				m_isLocked = false;
+			}
 		}
 	}
 	lb->setString(Ruler::getInstance()->showNum(m_upGold));

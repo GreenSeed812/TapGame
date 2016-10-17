@@ -65,8 +65,10 @@ bool LoadingScene::init()
 	load->setVisible(false);
 	this->addChild(m_bgLayer);
 	this->addChild(m_rootNode);
-	auto action = Sequence::create(DelayTime::create(2),FadeOut::create(1),CallFuncN::create(CC_CALLBACK_1(LoadingScene::callbackLogoH, this)), nullptr);
-	huizhong->runAction(action);
+	huizhong->setVisible(false);
+	//auto action = Sequence::create(DelayTime::create(2),FadeOut::create(1),CallFuncN::create(CC_CALLBACK_1(LoadingScene::callbackLogoH, this)), nullptr);
+	//huizhong->runAction(action);
+	callbackLogoH(this);
 
 	return true;
 }

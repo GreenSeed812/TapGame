@@ -34,6 +34,7 @@ private:
 	static Node * g_node;
 	void upLevelCount();
 	void callback(Node * node);
+	bool m_isLocked;
 };
 
 

@@ -7,31 +7,16 @@
         <LastRunType Value="Windows" />
       </Value>
     </Item>
-    <Item Key="PackageParamsKey">
-      <Value ctype="PackageParams">
-        <LuaIsEncrypt Value="False" />
-        <LuaEncryptKey Value="" />
-        <LuaEncryptSign Value="" />
-        <Android_PackageName Value="org.cocos.NewCocosProject1" />
-        <AndroidkeyStore Value="" />
-        <AndroidVersion Value="android-17" />
-        <iOS_Target Value="NewCocosProject1 iOS" />
-        <iOS_BundleID Value="" />
-        <Platform Value="None" />
-        <RunPlatform Value="None" />
-        <FrameworkVersion Value="cocos2d-x-3.10" />
-        <IsDebugKeystore Value="True" />
-        <EnableSourceMap Value="False" />
-        <EnableHTML5Advanced Value="False" />
-      </Value>
-    </Item>
-<<<<<<< HEAD
-=======
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
-        <ActiveDocument />
+        <OpenedDocuments>
+          <FilePathData Path="servantNode.csd" />
+          <FilePathData Path="downLayer.csd" />
+          <FilePathData Path="downUiButtonLayer.csd" />
+          <FilePathData Path="MainScene.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="downUiButtonLayer.csd" />
       </Value>
     </Item>
->>>>>>> 229b3ec04b1012b3d4070143950f1197941514bb
   </Properties>
 </UserData>

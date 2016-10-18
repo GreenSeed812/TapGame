@@ -313,6 +313,7 @@ void PlayerButton::coinChange(Ref* pSender)
 				Sprite* head = Sprite::create("ui/downUi/hero/50.png");
 				head->setPosition(playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getContentSize() / 2);
 				head->setName("head");
+				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->setColor(Color3B(96, 96, 96));
 				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->addChild(head);
 				m_isLocked = true;
 			}
@@ -326,6 +327,7 @@ void PlayerButton::coinChange(Ref* pSender)
 				if (playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head"))
 				{
 					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head")->removeFromParent();
+					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->setColor(Color3B(255, 255 ,255));
 				}
 				m_isLocked = false;
 			}
@@ -355,6 +357,7 @@ void PlayerButton::coinChange(Ref* pSender)
 				Sprite* head = Sprite::create("ui/downUi/hero/100.png");
 				head->setPosition(playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getContentSize() / 2);
 				head->setName("head");
+				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->setColor(Color3B(96, 96, 96));
 				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->addChild(head);
 				m_isLocked = true;
 			}
@@ -368,6 +371,7 @@ void PlayerButton::coinChange(Ref* pSender)
 				if (playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head"))
 				{
 					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head")->removeFromParent();
+					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->setColor(Color3B(255, 255, 255));
 				}
 				m_isLocked = false;
 			}
@@ -397,6 +401,7 @@ void PlayerButton::coinChange(Ref* pSender)
 				Sprite* head = Sprite::create("ui/downUi/hero/200.png");
 				head->setPosition(playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getContentSize() / 2);
 				head->setName("head");
+				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->setColor(Color3B(96, 96, 96));
 				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->addChild(head);
 				m_isLocked = true;
 			}
@@ -410,6 +415,7 @@ void PlayerButton::coinChange(Ref* pSender)
 				if (playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head"))
 				{
 					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head")->removeFromParent();
+					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->setColor(Color3B(255, 255, 255));
 				}
 				m_isLocked = false;
 			}
@@ -439,6 +445,7 @@ void PlayerButton::coinChange(Ref* pSender)
 				Sprite* head = Sprite::create("ui/downUi/hero/300.png");
 				head->setPosition(playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getContentSize() / 2);
 				head->setName("head");
+				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->setColor(Color3B(96, 96, 96));
 				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->addChild(head);
 				m_isLocked = true;
 			}
@@ -452,6 +459,7 @@ void PlayerButton::coinChange(Ref* pSender)
 				if (playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head"))
 				{
 					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head")->removeFromParent();
+					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->setColor(Color3B(255, 255, 255));
 				}
 				m_isLocked = false;
 			}
@@ -481,6 +489,7 @@ void PlayerButton::coinChange(Ref* pSender)
 				Sprite* head = Sprite::create("ui/downUi/hero/400.png");
 				head->setPosition(playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getContentSize() / 2);
 				head->setName("head");
+				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->setColor(Color3B(96, 96, 96));
 				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->addChild(head);
 				m_isLocked = true;
 			}
@@ -494,6 +503,7 @@ void PlayerButton::coinChange(Ref* pSender)
 				if (playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head"))
 				{
 					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head")->removeFromParent();
+					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->setColor(Color3B(255, 255, 255));
 				}
 				m_isLocked = false;
 			}
@@ -523,6 +533,7 @@ void PlayerButton::coinChange(Ref* pSender)
 				Sprite* head = Sprite::create("ui/downUi/hero/500.png");
 				head->setPosition(playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getContentSize() / 2);
 				head->setName("head");
+				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->setColor(Color3B(96, 96, 96));
 				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->addChild(head);
 				m_isLocked = true;
 			}
@@ -536,6 +547,7 @@ void PlayerButton::coinChange(Ref* pSender)
 				if (playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head"))
 				{
 					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head")->removeFromParent();
+					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->setColor(Color3B(255, 255, 255));
 				}
 				m_isLocked = false;
 			}
@@ -566,6 +578,7 @@ void PlayerButton::coinChange(Ref* pSender)
 				Sprite* head = Sprite::create("ui/downUi/hero/600.png");
 				head->setPosition(playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getContentSize() / 2);
 				head->setName("head");
+				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->setColor(Color3B(96, 96, 96));
 				playerLayer->getChildByName("Layer")->getChildByName("playerHead")->addChild(head);
 				m_isLocked = true;
 			}
@@ -579,6 +592,7 @@ void PlayerButton::coinChange(Ref* pSender)
 				if (playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head"))
 				{
 					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->getChildByName("head")->removeFromParent();
+					playerLayer->getChildByName("Layer")->getChildByName("playerHead")->setColor(Color3B(255, 255, 255));
 				}
 				m_isLocked = false;
 			}

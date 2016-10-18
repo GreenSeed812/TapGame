@@ -9,7 +9,13 @@
     </Item>
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
-        <ActiveDocument />
+        <OpenedDocuments>
+          <FilePathData Path="servantNode.csd" />
+          <FilePathData Path="downLayer.csd" />
+          <FilePathData Path="downUiButtonLayer.csd" />
+          <FilePathData Path="MainScene.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="downUiButtonLayer.csd" />
       </Value>
     </Item>
   </Properties>
